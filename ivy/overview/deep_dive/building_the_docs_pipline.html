@@ -1,0 +1,1116 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Building the Docs Pipeline &#8212; Ivy Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'overview/deep_dive/building_the_docs_pipline';</script>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Open Tasks" href="../contributing/open_tasks.html" />
+    <link rel="prev" title="Gradients" href="gradients.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo_dark.png?raw=true" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><div></div></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><div></div></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../design.html">Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../related_work.html">Related Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../extensions.html">Extensions</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../contributing.html">Contributing</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../contributing/setting_up.html">Setting Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/the_basics.html">The Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/building_the_docs.html">Building the Docs</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../deep_dive.html">Deep Dive</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="navigating_the_code.html">Navigating the Code</a></li>
+<li class="toctree-l3"><a class="reference internal" href="function_types.html">Function Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="superset_behaviour.html">Superset Behaviour</a></li>
+<li class="toctree-l3"><a class="reference internal" href="backend_setting.html">Backend Setting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="arrays.html">Arrays</a></li>
+<li class="toctree-l3"><a class="reference internal" href="containers.html">Containers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="data_types.html">Data Types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l3"><a class="reference internal" href="inplace_updates.html">Inplace Updates</a></li>
+<li class="toctree-l3"><a class="reference internal" href="function_wrapping.html">Function Wrapping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="formatting.html">Formatting</a></li>
+<li class="toctree-l3"><a class="reference internal" href="function_arguments.html">Function Arguments</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docstrings.html">Docstrings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docstring_examples.html">Docstring Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="array_api_tests.html">Array API Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ivy_tests.html">Ivy Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ivy_frontends.html">Ivy Frontends</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ivy_frontends_tests.html">Ivy Frontend Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="exception_handling.html">Exception Handling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="continuous_integration.html">Continuous Integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gradients.html">Gradients</a></li>
+<li class="toctree-l3 current active has-children"><a class="current reference internal" href="#">Building the Docs Pipeline</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+
+
+
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/open_tasks.html">Open Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/applied_libraries.html">Applied Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../contributing/helpful_resources.html">Helpful Resources</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../deep_dive.html">Deep Dive</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="navigating_the_code.html">Navigating the Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_types.html">Function Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="superset_behaviour.html">Superset Behaviour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="backend_setting.html">Backend Setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="arrays.html">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="containers.html">Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_types.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="devices.html">Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inplace_updates.html">Inplace Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_wrapping.html">Function Wrapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="formatting.html">Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_arguments.html">Function Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docstrings.html">Docstrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docstring_examples.html">Docstring Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="array_api_tests.html">Array API Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivy_tests.html">Ivy Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivy_frontends.html">Ivy Frontends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivy_frontends_tests.html">Ivy Frontend Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exception_handling.html">Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="continuous_integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gradients.html">Gradients</a></li>
+<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Building the Docs Pipeline</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+
+
+
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.control_flow_ops.html">Control flow ops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.creation.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.data_type.html">Data type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.elementwise.html">Elementwise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.experimental.html">Experimental</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.general.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.gradients.html">Gradients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.linear_algebra.html">Linear algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.losses.html">Losses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.manipulation.html">Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.meta.html">Meta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.nest.html">Nest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.random.html">Random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.searching.html">Searching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.set.html">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.sorting.html">Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.statistical.html">Statistical</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/data_classes/ivy.data_classes.array.html">Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/data_classes/ivy.data_classes.container.html">Container</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Framework classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/framework/stateful/ivy.stateful.activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/framework/stateful/ivy.stateful.converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/framework/stateful/ivy.stateful.helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/framework/stateful/ivy.stateful.initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/framework/stateful/ivy.stateful.layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/framework/stateful/ivy.stateful.module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/framework/stateful/ivy.stateful.norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/framework/stateful/ivy.stateful.optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/framework/stateful/ivy.stateful.sequential.html">Sequential</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nested array</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/nested-array/nested_array/ivy.nested_array.nested_array.html">Nested array</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Utils</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/utilities/utils/ivy.utils.assertions.html">Assertions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/utilities/utils/ivy.utils.backend.html">Backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/utilities/utils/ivy.utils.dynamic_import.html">Dynamic import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/utilities/utils/ivy.utils.exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/utilities/utils/ivy.utils.inspection.html">Inspection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/utilities/utils/ivy.utils.verbosity.html">Verbosity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../docs/testing/helpers/ivy_tests.test_ivy.helpers.assertions.html">Assertions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/testing/helpers/ivy_tests.test_ivy.helpers.available_frameworks.html">Available frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/testing/helpers/ivy_tests.test_ivy.helpers.function_testing.html">Function testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/testing/helpers/ivy_tests.test_ivy.helpers.globals.html">Globals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/testing/helpers/ivy_tests.test_ivy.helpers.hypothesis_helpers.html">Hypothesis helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/testing/helpers/ivy_tests.test_ivy.helpers.structs.html">Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/testing/helpers/ivy_tests.test_ivy.helpers.test_parameter_flags.html">Test parameter flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../docs/testing/helpers/ivy_tests.test_ivy.helpers.testing_helpers.html">Testing helpers</a></li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading">
+            <span class="caption-text">Docs</span>
+        </p>
+        <ul class="nav bd-sidenav">
+            <li class="toctree-l1">
+                <a class="reference external" href="/ivy">
+                    Ivy
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/mech">
+                    Ivy mech
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/vision">
+                    Ivy vision
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/robot">
+                    Ivy robot
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/gym">
+                    Ivy gym
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/memory">
+                    Ivy memory
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/builder">
+                    Ivy builder
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/models">
+                    Ivy models
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/ecosystem">
+                    Ivy ecosystem
+                </a>
+            </li>
+            </ul>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../contributing.html" class="nav-link">Contributing</a></li>
+    
+    
+    <li class="breadcrumb-item"><a href="../deep_dive.html" class="nav-link">Deep Dive</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Building the Docs Pipeline</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="building-the-docs-pipeline">
+<h1>Building the Docs Pipeline<a class="headerlink" href="#building-the-docs-pipeline" title="Permalink to this heading">#</a></h1>
+<p>To build our docs, we use <a class="reference external" href="http://sphinx-doc.org/">Sphinx</a>. Sphinx is an extendable documentation generator
+for Python. As our building pipeline is complex, we heavily customize Sphinx using
+custom and third party extensions. As well as having a convenience script to build
+the docs.</p>
+<section id="how-the-doc-builder-is-being-run">
+<h2>How the doc-builder is being run<a class="headerlink" href="#how-the-doc-builder-is-being-run" title="Permalink to this heading">#</a></h2>
+<p>There are 2 ways to build the docs:</p>
+<ol class="arabic simple">
+<li><p>Through a convenience script, which is useful for local development.</p></li>
+<li><p>Through a Docker image, which is the recommended way.</p></li>
+</ol>
+<p>We will go through how they work in the following sections.</p>
+<section id="the-convenience-script">
+<h3>The convenience script<a class="headerlink" href="#the-convenience-script" title="Permalink to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">make_docs_without_docker.sh</span></code> is a convenience script to build the docs. It takes
+one argument, the path to a project to document. The project should have the following
+characteristics:</p>
+<ol class="arabic simple">
+<li><p>It should have a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>, or alternatively a <code class="docutils literal notranslate"><span class="pre">requirements</span></code> folder,
+which includes a <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> and an optional <code class="docutils literal notranslate"><span class="pre">optional.txt</span></code> file.</p></li>
+<li><p>It can have an optional <code class="docutils literal notranslate"><span class="pre">optional.txt</span></code> file, if not the script the script will
+simply ignore it.</p></li>
+<li><p>It should have a <code class="docutils literal notranslate"><span class="pre">docs</span></code> folder, which contains an <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> file. This file
+is the root of the documentation.</p></li>
+<li><p>It can contain an optional <code class="docutils literal notranslate"><span class="pre">docs/prebuild.sh</span></code> file, which will be executed before
+the docs are built. This is useful if you need to install some dependencies for the
+docs to build.</p></li>
+<li><p>It can contain an optional <code class="docutils literal notranslate"><span class="pre">docs/partial_conf.py</span></code> which is a partial <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">Sphinx
+configuration file</a>.
+This file will be imported with the default <code class="docutils literal notranslate"><span class="pre">conf.py</span></code> file located in the
+<code class="docutils literal notranslate"><span class="pre">doc-builder</span></code> repo.</p></li>
+</ol>
+<p>Running the script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./make_docs_without_docker.sh<span class="w"> </span>/path/to/project
+</pre></div>
+</div>
+<p>will result in the creation of documentation for the project in the directory
+<code class="docutils literal notranslate"><span class="pre">doc/build</span></code>.</p>
+<section id="options">
+<h4>Options<a class="headerlink" href="#options" title="Permalink to this heading">#</a></h4>
+<dl class="option-list">
+<dt><kbd><span class="option">--no-cleanup</span></kbd></dt>
+<dd><p>Disable the backup/cleanup procedure</p>
+</dd>
+<dt><kbd><span class="option">--git-add</span></kbd></dt>
+<dd><p>Stage changed files before generating the docs, this is
+useful if you want know which files changed by you when
+used with <code class="docutils literal notranslate"><span class="pre">--no-cleanup</span></code></p>
+</dd>
+<dt><kbd><span class="option">--skip-dependencies-install</span></kbd></dt>
+<dd><p>Skip installing python dependencies</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="the-docker-image">
+<h3>The Docker image<a class="headerlink" href="#the-docker-image" title="Permalink to this heading">#</a></h3>
+<p>The Docker image <a class="reference external" href="https://hub.docker.com/r/unifyai/doc-builder">unifyai/doc-builder</a>
+works as a wrapper around the <code class="docutils literal notranslate"><span class="pre">make_docs_without_docker.sh</span></code> script. It runs the script</p>
+<blockquote>
+<div><p>on the <code class="docutils literal notranslate"><span class="pre">/project</span></code> directory, located in the container <a class="reference external" href="https://github.com/unifyai/doc-builder/blob/master/Dockerfile#L20">as shown here</a>:</p>
+</div></blockquote>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./make_docs_without_docker.sh<span class="w"> </span>/project
+</pre></div>
+</div>
+<p>To build the docs through docker you use this command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span>/path/to/project:/project<span class="w"> </span>unifyai/doc-builder
+</pre></div>
+</div>
+</section>
+</section>
+<section id="how-ivy-s-docs-is-structured">
+<h2>How Ivy’s docs is structured<a class="headerlink" href="#how-ivy-s-docs-is-structured" title="Permalink to this heading">#</a></h2>
+<p>Looking at <a class="reference external" href="https://github.com/unifyai/ivy/tree/master/docs">Ivy docs</a>, we can see
+that it structured like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docs
+├──<span class="w"> </span>index.rst
+├──<span class="w"> </span>partial_conf.py
+├──<span class="w"> </span>prebuild.sh
+├──<span class="w"> </span>overview
+│<span class="w">   </span>├──<span class="w"> </span>background.rst
+│<span class="w">   </span>├──<span class="w"> </span>...
+│<span class="w">   </span>└──<span class="w"> </span>...
+└──<span class="w"> </span>...
+</pre></div>
+</div>
+<p>Let’s go through each of these files and folders.</p>
+<section id="index-rst">
+<h3><code class="docutils literal notranslate"><span class="pre">index.rst</span></code><a class="headerlink" href="#index-rst" title="Permalink to this heading">#</a></h3>
+<p>This is the root of the documentation. It is the first file that Sphinx will read when
+building the docs. It is also the file that will be displayed when you open the docs
+in a browser.</p>
+<p>Here is a segment of the file:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">include</span><span class="p">::</span> ../README.rst
+
+<span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+    <span class="nc">:hidden:</span>
+    <span class="nc">:maxdepth:</span> -1
+    <span class="nc">:caption:</span> Overview
+
+    overview/background.rst
+    overview/design.rst
+    overview/related_work.rst
+    overview/extensions.rst
+    overview/contributing.rst
+    overview/deep_dive.rst
+    overview/faq.rst
+    overview/glossary.rst
+
+<span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
+    <span class="nc">:toctree:</span> docs/functional
+    <span class="nc">:template:</span> top_level_toc.rst
+    <span class="nc">:recursive:</span>
+    <span class="nc">:include:</span>
+
+    ivy.functional.ivy
+</pre></div>
+</div>
+<p>You can see here different reStructuredText directives. The first one is <code class="docutils literal notranslate"><span class="pre">include</span></code>,
+which simply includes the main README file of the project, this is a good place if you
+want to make the rendered docs looks different from the README, or simply include it as
+is.</p>
+<p>The second directive is <code class="docutils literal notranslate"><span class="pre">toctree</span></code>, which is used to create a table of contents. The
+<code class="docutils literal notranslate"><span class="pre">:hidden:</span></code> option hides the table of contents from the rendered docs, only keeping it
+on the left side of the docs, not inline in the page itself. The <code class="docutils literal notranslate"><span class="pre">:maxdepth:</span></code> option
+is used to specify how deep the table of contents should go. The <code class="docutils literal notranslate"><span class="pre">:caption:</span></code> option
+is used to specify the title of the table of contents. The rest of the arguments are
+the files that should be included in the table of contents. Which in recursively points
+to every page in this documentation, for example this page is included in the
+<code class="docutils literal notranslate"><span class="pre">toctree</span></code> of <code class="docutils literal notranslate"><span class="pre">overview/deep_dive.rst</span></code>, which is included in the <code class="docutils literal notranslate"><span class="pre">toctree</span></code> of
+<code class="docutils literal notranslate"><span class="pre">index.rst</span></code>. You can read more about the <code class="docutils literal notranslate"><span class="pre">toctree</span></code> directive in <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-toctree">sphinx docs</a>, from
+now on we’ll only explain the directives that are custom to Ivy’s doc-builder.</p>
+<p>The last directive is <code class="docutils literal notranslate"><span class="pre">autosummary</span></code>, which is used to automatically generate a table
+of contents for a module, as well as the documentation itself automatically by
+discovering the docstrings of the module. This is a custom directive, built on the original
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html">autosummary</a>
+extension. We will explain in details how did we change it, in <a class="reference internal" href="#custom-extensions"><span class="std std-ref">Custom Extensions</span></a>.</p>
+</section>
+<section id="partial-conf-py">
+<h3><code class="docutils literal notranslate"><span class="pre">partial_conf.py</span></code><a class="headerlink" href="#partial-conf-py" title="Permalink to this heading">#</a></h3>
+<p>This is a partial <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">Sphinx configuration file</a>. Which is being imported in the
+<a class="reference external" href="https://github.com/unifyai/doc-builder/blob/master/docs/conf.py#L150">conf.py</a>,
+it’s used to customize options that are specific to the project being documented.
+While importing common configuration such as the theme, the extensions, etc in the
+original <code class="docutils literal notranslate"><span class="pre">conf.py</span></code></p>
+<p>This is a part of <code class="docutils literal notranslate"><span class="pre">partial_conf.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ivy_toctree_caption_map</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;ivy.functional.ivy&quot;</span><span class="p">:</span> <span class="s2">&quot;Functions&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ivy.stateful&quot;</span><span class="p">:</span> <span class="s2">&quot;Framework classes&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ivy.nested_array&quot;</span><span class="p">:</span> <span class="s2">&quot;Nested array&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ivy.utils&quot;</span><span class="p">:</span> <span class="s2">&quot;Utils&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ivy_tests.test_ivy.helpers&quot;</span><span class="p">:</span> <span class="s2">&quot;Testing&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Here we are overriding the <code class="docutils literal notranslate"><span class="pre">ivy_toctree_caption_map</span></code> configuration, which is used to
+customize the title of the table of contents for each module.
+<code class="docutils literal notranslate"><span class="pre">ivy_toctree_caption_map</span></code> is one of the configuration options we have in our
+<code class="docutils literal notranslate"><span class="pre">custom_autosummary</span></code> extension, which will be covered extensively in
+<a class="reference internal" href="#custom-extensions"><span class="std std-ref">Custom Extensions</span></a>.</p>
+</section>
+<section id="prebuild-sh">
+<h3><code class="docutils literal notranslate"><span class="pre">prebuild.sh</span></code><a class="headerlink" href="#prebuild-sh" title="Permalink to this heading">#</a></h3>
+<p>This is an optional file, which is executed before the docs are built. This is useful
+if you need to install some dependencies for the docs to build. In Ivy’s case, we
+install <code class="docutils literal notranslate"><span class="pre">torch</span></code> then <code class="docutils literal notranslate"><span class="pre">torch-scatter</span></code> sequentially to avoid a bug in
+<code class="docutils literal notranslate"><span class="pre">torch-scatter</span></code>’s setup. And if we want to do any changes to the docker container
+before building the docs.</p>
+</section>
+</section>
+<section id="custom-extensions">
+<h2>Custom Extensions<a class="headerlink" href="#custom-extensions" title="Permalink to this heading">#</a></h2>
+<p>As of writing this documentation, Ivy’s doc-builder is using 3 custom extensions:</p>
+<ol class="arabic simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">custom_autosummary</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">custom_builder</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">discussion_linker</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">skippable_function</span></code></p></li>
+</ol>
+<section id="custom-autosummary">
+<h3><code class="docutils literal notranslate"><span class="pre">custom_autosummary</span></code><a class="headerlink" href="#custom-autosummary" title="Permalink to this heading">#</a></h3>
+<p>This extension is a modified version of the original <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html">autosummary</a>, which is used to
+discover and automatically document the docstrings of a module. This is done by
+generating “stub” rst files for each module listed in the <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive,
+you can add a template for these stub files using the <code class="docutils literal notranslate"><span class="pre">:template:</span></code> option. Which can
+inturn include the <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive again, recursing on the whole module.</p>
+<p>Unfortunately, the original <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> extension is very limited, forcing you to
+have a table of contents for each modules, and the customized stub file can’t be
+included, which we needed to discover the modules automatically.</p>
+<p>We’ll go through each option or configuration value added to the original <code class="docutils literal notranslate"><span class="pre">autosummary</span></code></p>
+<section id="hide-table">
+<h4><code class="docutils literal notranslate"><span class="pre">:hide-table:</span></code><a class="headerlink" href="#hide-table" title="Permalink to this heading">#</a></h4>
+<p>As the name suggests, the original behavior of <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> is to generate a table
+of contents for each module. And it generate stub files only if <code class="docutils literal notranslate"><span class="pre">:toctree:</span></code> option is
+specified. As we only need the <code class="docutils literal notranslate"><span class="pre">toctree</span></code> this option hides the table of contents, but
+it require the <code class="docutils literal notranslate"><span class="pre">:toctree:</span></code> option to be specified.</p>
+</section>
+<section id="include">
+<h4><code class="docutils literal notranslate"><span class="pre">:include:</span></code><a class="headerlink" href="#include" title="Permalink to this heading">#</a></h4>
+<p>This option is to include generated stub files in the current page, instead of linking
+it in the <code class="docutils literal notranslate"><span class="pre">toctree</span></code>. To demonstrate why we need that look at this example:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
+    <span class="nc">:toctree:</span> docs/functional
+    <span class="nc">:template:</span> top_level_toc.rst
+    <span class="nc">:recursive:</span>
+    <span class="nc">:include:</span>
+
+    ivy.functional.ivy
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">top_level_toc.rst</span></code> has this in it:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>{{name | underline}}
+
+<span class="cp">.. This is a placeholder so the include directive removes what&#39;s before it</span>
+<span class="cp">.. REMOVE_BEFORE_HERE</span>
+<span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
+    <span class="nc">:toctree:</span> {{name}}
+    <span class="nc">:template:</span> top_level_module.rst
+    <span class="nc">:caption:</span> {{fullname}}
+    <span class="nc">:substitute-caption:</span>
+    <span class="nc">:hide-table:</span>
+    <span class="nc">:fix-directory:</span>
+{% for submodule in modules %}
+{{ submodule }}
+{%- endfor %}
+</pre></div>
+</div>
+<p>So, the stub file generated from the <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive should be another
+<code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive, which will discover the modules in the <code class="docutils literal notranslate"><span class="pre">ivy.functional.ivy</span></code>
+module.</p>
+<p>So what we do is including that generated stub file into the <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> file, which
+will discover all modules under <code class="docutils literal notranslate"><span class="pre">ivy.functional.ivy</span></code> for us instead of writing it by
+hand.</p>
+<blockquote>
+<div><p>ℹ <strong>Note:</strong> The <code class="docutils literal notranslate"><span class="pre">:include:</span></code> option is only available if the <code class="docutils literal notranslate"><span class="pre">:toctree:</span></code> option
+is specified.</p>
+</div></blockquote>
+<blockquote>
+<div><p>ℹ <strong>Note:</strong> If you use <code class="docutils literal notranslate"><span class="pre">:include:</span></code> option, the template you use should have the
+<code class="docutils literal notranslate"><span class="pre">REMOVE_BEFORE_HERE</span></code> comment, which is used to remove the content before it.</p>
+<p>This is used because each file should have a title, which we don’t include, so you
+can see that the <code class="docutils literal notranslate"><span class="pre">REMOVE_BEFORE_HERE</span></code> comment is written after the title.</p>
+</div></blockquote>
+</section>
+<section id="fix-directory">
+<h4><code class="docutils literal notranslate"><span class="pre">:fix-directory:</span></code><a class="headerlink" href="#fix-directory" title="Permalink to this heading">#</a></h4>
+<p>Because of the nature of the <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive, it generates stub files relative
+to the current file. If we used include, and there is an <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive in
+the stub file, this directive will become invalid, because sphinx include the stub file
+by substitution.</p>
+<p>Let’s assume you have a file called <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> which has this in it:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
+    <span class="nc">:toctree:</span> toctree
+    <span class="nc">:template:</span> top_level_toc.rst
+    <span class="nc">:recursive:</span>
+    <span class="nc">:include:</span>
+
+    module
+</pre></div>
+</div>
+<p>Let’s assume that <code class="docutils literal notranslate"><span class="pre">module</span></code> have 2 submodules <code class="docutils literal notranslate"><span class="pre">foo</span></code>, and <code class="docutils literal notranslate"><span class="pre">bar</span></code>, then the generated
+stub file will be:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">module</span>
+<span class="gh">======</span>
+
+<span class="cp">.. This is a placeholder so the include directive removes what&#39;s before it</span>
+<span class="cp">.. REMOVE_BEFORE_HERE</span>
+<span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
+    <span class="nc">:toctree:</span> module
+    <span class="nc">:template:</span> top_level_module.rst
+    <span class="nc">:caption:</span> module
+    <span class="nc">:substitute-caption:</span>
+    <span class="nc">:hide-table:</span>
+    <span class="nc">:fix-directory:</span>
+
+    foo
+    bar
+</pre></div>
+</div>
+<p>and the file structure of the generated docs will be:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>index.rst
+toctree/
+    module.rst
+    module/
+        foo.rst
+        bar.rst
+</pre></div>
+</div>
+<p>The problem resides that now we include <code class="docutils literal notranslate"><span class="pre">module.rst</span></code> in <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>. So if we wanted
+to visualize what the <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> will look like, we will have this:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
+    <span class="nc">:toctree:</span> module
+    <span class="nc">:template:</span> top_level_module.rst
+    <span class="nc">:caption:</span> module
+    <span class="nc">:substitute-caption:</span>
+    <span class="nc">:hide-table:</span>
+    <span class="nc">:fix-directory:</span>
+
+    foo
+    bar
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">:toctree:</span></code> option is now invalid, because it’s now pointing to the
+<code class="docutils literal notranslate"><span class="pre">module</span></code> directory, which doesn’t exist in the root folder.</p>
+<p>So, the <code class="docutils literal notranslate"><span class="pre">:fix-directory:</span></code> option is used to fix this problem, by changing the
+<code class="docutils literal notranslate"><span class="pre">:toctree:</span></code> option to point to the correct directory. This is done by finding
+the directory that has been skipped by the <code class="docutils literal notranslate"><span class="pre">include</span></code> directive.</p>
+<blockquote>
+<div><p>⚠️ <strong>Warning:</strong> Avoid giving <code class="docutils literal notranslate"><span class="pre">:toctree:</span></code> a name that is the same as the name of
+the module, because of the way the <code class="docutils literal notranslate"><span class="pre">:fix-directory:</span></code> option works, it get confused
+with multiple directories with the same name.</p>
+<p>If you get <code class="docutils literal notranslate"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">find</span> <span class="pre">a</span> <span class="pre">single</span> <span class="pre">candidate</span> <span class="pre">for</span> <span class="pre">&lt;&gt;</span> <span class="pre">while</span> <span class="pre">fixing</span> <span class="pre">toctree</span> <span class="pre">path.</span></code>
+warning, this is probably its cause.</p>
+</div></blockquote>
+</section>
+<section id="substitute-caption">
+<h4><code class="docutils literal notranslate"><span class="pre">:substitute-caption:</span></code><a class="headerlink" href="#substitute-caption" title="Permalink to this heading">#</a></h4>
+<p>This option looks into the caption of the <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive, and replace the
+values found in <code class="docutils literal notranslate"><span class="pre">ivy_toctree_caption_map</span></code>. This useful because in the
+<code class="docutils literal notranslate"><span class="pre">top_level_module.rst</span></code> we put the name of the module as a caption, because we can’t
+infer the caption directly within sphinx.</p>
+<p>An example of <code class="docutils literal notranslate"><span class="pre">ivy_toctree_caption_map</span></code> can be found in the <code class="docutils literal notranslate"><span class="pre">partial_conf.py</span></code> file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ivy_toctree_caption_map</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;ivy.functional.ivy&quot;</span><span class="p">:</span> <span class="s2">&quot;Functions&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ivy.stateful&quot;</span><span class="p">:</span> <span class="s2">&quot;Framework classes&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ivy.nested_array&quot;</span><span class="p">:</span> <span class="s2">&quot;Nested array&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ivy.utils&quot;</span><span class="p">:</span> <span class="s2">&quot;Utils&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ivy_tests.test_ivy.helpers&quot;</span><span class="p">:</span> <span class="s2">&quot;Testing&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="custom-builder">
+<h3><code class="docutils literal notranslate"><span class="pre">custom_builder</span></code><a class="headerlink" href="#custom-builder" title="Permalink to this heading">#</a></h3>
+<p>The custom builder now is a simple layer that executes while building the HTML files,
+it’s currently searching for <code class="docutils literal notranslate"><span class="pre">ivy.functional.ivy</span></code> and replacing it with <code class="docutils literal notranslate"><span class="pre">ivy.</span></code>.</p>
+<p>It can be expanded in the future to do more postprocessing.</p>
+</section>
+<section id="discussion-linker">
+<h3><code class="docutils literal notranslate"><span class="pre">discussion_linker</span></code><a class="headerlink" href="#discussion-linker" title="Permalink to this heading">#</a></h3>
+<p>Discussion linker is a simple extension that adds a link to our discord server, as well
+as specific discussion boards for each modules.</p>
+<p>The directive is included like this:</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">discussion-links</span><span class="p">::</span> module.foo
+</pre></div>
+</div>
+<p>First it will look for <code class="docutils literal notranslate"><span class="pre">discussion_channel_map</span></code> configuration, in Ivy it looks like
+this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">discussion_channel_map</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="o">...</span><span class="p">,</span>
+    <span class="s2">&quot;ivy.functional.ivy.creation&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1000043690254946374&quot;</span><span class="p">,</span> <span class="s2">&quot;1028298816526499912&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;ivy.functional.ivy.data_type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;1000043749088436315&quot;</span><span class="p">,</span> <span class="s2">&quot;1028298847950225519&quot;</span><span class="p">],</span>
+    <span class="o">...</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The key is the module name, if it’s not found the <code class="docutils literal notranslate"><span class="pre">discussion-link</span></code> directive will
+render an empty node. The first value in the list is the channel id of the module, and
+the second is forum id of the module.</p>
+<p>The output string is generated by a series of replaces on template strings, which are
+customizable using the config. To understand how it works, let’s look at the default
+configurations and their values:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">discussion_paragraph</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;This</span> <span class="pre">should</span> <span class="pre">have</span> <span class="pre">hopefully</span> <span class="pre">given</span> <span class="pre">you</span> <span class="pre">an</span> <span class="pre">overview</span> <span class="pre">of</span> <span class="pre">the</span>
+<span class="pre">{{submodule}}</span> <span class="pre">submodule,</span> <span class="pre">if</span> <span class="pre">you</span> <span class="pre">have</span> <span class="pre">any</span> <span class="pre">questions,</span> <span class="pre">please</span> <span class="pre">feel</span> <span class="pre">free</span> <span class="pre">to</span> <span class="pre">reach</span> <span class="pre">out</span> <span class="pre">on</span>
+<span class="pre">our</span> <span class="pre">[discord]({{discord_link}})</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">[{{submodule}}</span> <span class="pre">channel]({{channel_link}})</span> <span class="pre">or</span> <span class="pre">in</span>
+<span class="pre">the</span> <span class="pre">[{{submodule}}</span> <span class="pre">forum]({{forum_link}})!&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">discord_link</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;https://discord.gg/ZVQdvbzNQJ&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">channel_link</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;https://discord.com/channels/799879767196958751/{{channel_id}}&quot;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">forum_link</span></code>: <code class="docutils literal notranslate"><span class="pre">&quot;https://discord.com/channels/799879767196958751/{{forum_id}}&quot;</span></code></p></li>
+</ul>
+<p>Here is an example of how it works for <code class="docutils literal notranslate"><span class="pre">ivy.functional.ivy.creation</span></code>:</p>
+<ol class="arabic">
+<li><p>First we resolve the <code class="docutils literal notranslate"><span class="pre">{{submodule}}</span></code> template string, which is the last part of the
+module name, in this case it’s <code class="docutils literal notranslate"><span class="pre">creation</span></code>.</p>
+<p>The result will be like this:</p>
+<blockquote>
+<div><p>This should have hopefully given you an overview of the
+<strong>creation</strong> submodule, if you have any questions, please feel free to reach out on
+our [discord]({{discord_link}}) in the [<strong>creation</strong> channel]({{channel_link}}) or in
+the [<strong>creation</strong> forum]({{forum_link}})!</p>
+</div></blockquote>
+</li>
+<li><p>Then we resolve the <code class="docutils literal notranslate"><span class="pre">{{discord_link}}</span></code> template string.</p>
+<p>The result will be like this:</p>
+<blockquote>
+<div><p>This should have hopefully given you an overview of the
+creation submodule, if you have any questions, please feel free to reach out on
+our [discord](<strong>https://discord.gg/ZVQdvbzNQJ</strong>) in the [creation channel]({{channel_link}}) or in
+the [creation forum]({{forum_link}})!</p>
+</div></blockquote>
+</li>
+<li><p>Then we resolve the <code class="docutils literal notranslate"><span class="pre">{{channel_link}}</span></code> template string.</p>
+<p>The result will be like this:</p>
+<blockquote>
+<div><p>This should have hopefully given you an overview of the
+creation submodule, if you have any questions, please feel free to reach out on
+our [discord](https://discord.gg/ZVQdvbzNQJ) in the [creation channel](<strong>https://discord.com/channels/799879767196958751/{{channel_id}}</strong>) or in
+the [creation forum]({{forum_link}})!</p>
+</div></blockquote>
+</li>
+<li><p>Then we resolve the <code class="docutils literal notranslate"><span class="pre">{{forum_link}}</span></code> template string.</p>
+<p>The result will be like this:</p>
+<blockquote>
+<div><p>This should have hopefully given you an overview of the
+creation submodule, if you have any questions, please feel free to reach out on
+our [discord](https://discord.gg/ZVQdvbzNQJ) in the [creation channel](https://discord.com/channels/799879767196958751/{{channel_id}}) or in
+the [creation forum](<strong>https://discord.com/channels/799879767196958751/{{forum_id}}</strong>)!</p>
+</div></blockquote>
+</li>
+<li><p>We finally resolve <code class="docutils literal notranslate"><span class="pre">{{channel_id}}</span></code> and <code class="docutils literal notranslate"><span class="pre">{{forum_id}}</span></code> template strings.</p>
+<p>The result will be like this:</p>
+<blockquote>
+<div><p>This should have hopefully given you an overview of the
+creation submodule, if you have any questions, please feel free to reach out on
+our [discord](https://discord.gg/ZVQdvbzNQJ) in the [creation channel](https://discord.com/channels/799879767196958751/<strong>1000043690254946374</strong>) or in
+the [creation forum](https://discord.com/channels/799879767196958751/<strong>1028298816526499912</strong>)!</p>
+</div></blockquote>
+</li>
+<li><p>After that we render the node paragraph as if it’s a Markdown text resulting this:</p>
+<blockquote>
+<div><p>This should have hopefully given you an overview of the
+creation submodule, if you have any questions, please feel free to reach out on
+our <a class="reference external" href="https://discord.gg/ZVQdvbzNQJ">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/1000043690254946374">creation channel</a> or in the
+<a class="reference external" href="https://discord.com/channels/799879767196958751/1028298816526499912">creation forum</a>!</p>
+</div></blockquote>
+</li>
+</ol>
+<p>All of the above template strings can be customized using the configuration, so feel free
+to change them to your liking.</p>
+</section>
+<section id="skippable-function">
+<h3><code class="docutils literal notranslate"><span class="pre">skippable_function</span></code><a class="headerlink" href="#skippable-function" title="Permalink to this heading">#</a></h3>
+<p>This extension provides a custom auto documenter <code class="docutils literal notranslate"><span class="pre">autoskippablemethod</span></code> that skip
+functions that match values in <code class="docutils literal notranslate"><span class="pre">skippable_method_attributes</span></code> configuration.</p>
+<p>This is an example of <code class="docutils literal notranslate"><span class="pre">skippable_method_attributes</span></code> configuration in
+<code class="docutils literal notranslate"><span class="pre">partial_conf.py</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">skippable_method_attributes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;__qualname__&quot;</span><span class="p">:</span> <span class="s2">&quot;_wrap_function.&lt;locals&gt;.new_function&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>This will remove any function that has <code class="docutils literal notranslate"><span class="pre">__qualname__</span></code> attribute equal to
+<code class="docutils literal notranslate"><span class="pre">_wrap_function.&lt;locals&gt;.new_function</span></code>.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="gradients.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Gradients</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../contributing/open_tasks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Open Tasks</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-the-doc-builder-is-being-run">How the doc-builder is being run</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-convenience-script">The convenience script</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#options">Options</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-docker-image">The Docker image</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-ivy-s-docs-is-structured">How Ivy’s docs is structured</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#index-rst"><code class="docutils literal notranslate"><span class="pre">index.rst</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-conf-py"><code class="docutils literal notranslate"><span class="pre">partial_conf.py</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prebuild-sh"><code class="docutils literal notranslate"><span class="pre">prebuild.sh</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-extensions">Custom Extensions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-autosummary"><code class="docutils literal notranslate"><span class="pre">custom_autosummary</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hide-table"><code class="docutils literal notranslate"><span class="pre">:hide-table:</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#include"><code class="docutils literal notranslate"><span class="pre">:include:</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fix-directory"><code class="docutils literal notranslate"><span class="pre">:fix-directory:</span></code></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#substitute-caption"><code class="docutils literal notranslate"><span class="pre">:substitute-caption:</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-builder"><code class="docutils literal notranslate"><span class="pre">custom_builder</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-linker"><code class="docutils literal notranslate"><span class="pre">discussion_linker</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skippable-function"><code class="docutils literal notranslate"><span class="pre">skippable_function</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2020-2023, Ivy Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

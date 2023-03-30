@@ -288,7 +288,6 @@ document.write(`
 <li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Building the Docs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 
 
-
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../deep_dive.html">Deep Dive</a></li>
@@ -483,241 +482,73 @@ document.write(`
                   
   <section id="building-the-docs">
 <h1>Building the Docs<a class="headerlink" href="#building-the-docs" title="Permalink to this heading">#</a></h1>
-<blockquote>
-<div><p>⚠️ <strong>Deprecated</strong>: This documentation is for the old Ivy doc-builder, this
-<a class="reference external" href="https://github.com/unifyai/doc-builder/pull/15">PR</a> has changed the current behavior
-of the doc-builder. We will update this documentation soon.</p>
-</div></blockquote>
-<section id="building-the-docs-with-docker">
-<h2>Building the Docs with Docker<a class="headerlink" href="#building-the-docs-with-docker" title="Permalink to this heading">#</a></h2>
-<ol class="arabic">
-<li><p>Build the docker image using the doc-builder Dockerfile</p></li>
-<li><p>Clone or pull the <code class="code docutils literal notranslate"><span class="pre">unifyai/doc-builder</span></code> repository</p></li>
-<li><p>Change to the doc-builder folder</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd doc-builder
+<p>This document describes how to build the Ivy docs. If you want to know more about how
+our custom building pipeline work, check our <a class="reference internal" href="../deep_dive/building_the_docs_pipline.html#building-the-docs-pipeline"><span class="std std-ref">Building the Docs Pipeline</span></a> deep dive</p>
+<section id="building-the-docs-using-docker">
+<h2>Building the Docs using Docker<a class="headerlink" href="#building-the-docs-using-docker" title="Permalink to this heading">#</a></h2>
+<section id="using-convenience-script">
+<h3>Using convenience script<a class="headerlink" href="#using-convenience-script" title="Permalink to this heading">#</a></h3>
+<p>The easiest way to build the docs is to use the <code class="docutils literal notranslate"><span class="pre">docs/make_docs.sh</span></code> script.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>docs
+./make_docs.sh
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p>Build the docker image using the following command</p>
-<blockquote>
-<div><ol class="arabic">
-<li><p>For Windows and MacOS users:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker build -t unifyai/doc-builder:latest -f Dockerfile .
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>For Ubuntu users:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker build --build-arg user=&lt;your-user-name&gt; --build-arg uid=&lt;your-uid&gt;  -t unifyai/doc-builder:latest -f Dockerfile .
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-</div></blockquote>
-</li>
-<li><p>Build the docs using the image:</p>
-<blockquote>
-<div><ol class="arabic">
-<li><p>Clone or pull the <code class="code docutils literal notranslate"><span class="pre">unifyai/ivy</span></code> repository.</p></li>
-<li><p>Change to the docs folder</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cd ivy\docs
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>Build the docs using <code class="code docutils literal notranslate"><span class="pre">make_docs.sh</span></code></p>
-<blockquote>
-<div><ol class="arabic">
-<li><p>For Windows users</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sh make_docs.sh
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>For MacOS users</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash make_docs.sh root
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>For Ubuntu users</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>./make_docs.sh
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-</div></blockquote>
-</li>
-</ol>
-</div></blockquote>
-</li>
-</ol>
+<p>This script will build the docs for Ivy and store it in <code class="docutils literal notranslate"><span class="pre">docs/build</span></code>.</p>
 </section>
-<section id="dockerless-doc-building">
-<h2>Dockerless Doc-building<a class="headerlink" href="#dockerless-doc-building" title="Permalink to this heading">#</a></h2>
-<p>To build the Ivy documentation locally, we will need to clone both the <code class="code docutils literal notranslate"><span class="pre">unifyai/doc-builder</span></code> and <code class="code docutils literal notranslate"><span class="pre">unifyai/ivy</span></code> repositories.
-After cloning repos, we need to create a virtual environment using either <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a> or <a class="reference external" href="https://docs.python.org/3/library/venv.html">venv</a>:</p>
-<section id="using-miniconda">
-<h3>Using miniconda<a class="headerlink" href="#using-miniconda" title="Permalink to this heading">#</a></h3>
-<ol class="arabic">
-<li><p>Install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a></p></li>
-<li><p>Open conda terminal</p></li>
-<li><p>Create the environment by running the command (<code class="code docutils literal notranslate"><span class="pre">ivy_dev</span></code> is the name of the environment)</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda create --name ivy_dev python=3.8.10
+<section id="using-existing-image-on-docker-hub">
+<h3>Using existing image on Docker Hub<a class="headerlink" href="#using-existing-image-on-docker-hub" title="Permalink to this heading">#</a></h3>
+<p>You can also use the <code class="docutils literal notranslate"><span class="pre">unifyai/doc-builder</span></code> image hosted on
+<a class="reference external" href="https://hub.docker.com/r/unifyai/doc-builder">Docker Hub</a> to build the
+docs. This will be helpful if you want to build the docs for Ivy applied libraries.</p>
+<p>Run <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> to build the docs. The following command will build the docs for
+the project in the current directory and output them to <code class="docutils literal notranslate"><span class="pre">docs/build</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>&lt;ivy<span class="w"> </span>directory<span class="w"> </span>or<span class="w"> </span>applied<span class="w"> </span>library<span class="w"> </span>directory&gt;
+docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/project<span class="w"> </span>unifyai/doc-builder
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p>Activate the environment by:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate ivy_dev
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
+<p>This command will mount the module directory to <code class="docutils literal notranslate"><span class="pre">/project</span></code> in the container, the
+current directory can be the root of <code class="docutils literal notranslate"><span class="pre">ivy</span></code> or any applied library such as <code class="docutils literal notranslate"><span class="pre">mech</span></code>.</p>
 </section>
-<section id="using-venv">
-<h3>Using venv<a class="headerlink" href="#using-venv" title="Permalink to this heading">#</a></h3>
-<p>This is a built-in package and doesn’t require explicit installation.</p>
-<ol class="arabic">
-<li><p>Open your terminal/cmd in the directory where you would like to have the folder with the environment files</p></li>
-<li><p>Create the environment by running the command below with a new environment name. We named it <code class="code docutils literal notranslate"><span class="pre">ivy_dev</span></code> like above.</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m venv ivy_dev
+<section id="building-the-image-locally">
+<h3>Building the image locally<a class="headerlink" href="#building-the-image-locally" title="Permalink to this heading">#</a></h3>
+<p>You can also build the image locally. You will first need to clone the <code class="docutils literal notranslate"><span class="pre">doc-builder</span></code>
+repository.</p>
+<p>Run this command if you are using HTTPS:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/unifyai/doc-builder.git
 </pre></div>
 </div>
-<p>Try <code class="code docutils literal notranslate"><span class="pre">python3</span></code> if <code class="code docutils literal notranslate"><span class="pre">python</span></code> doesn’t work.</p>
-</div></blockquote>
-</li>
-<li><p>Activate the created environment by running (in the same working directory as the environment folder)</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ivy_dev\Scripts\activate.bat
+<p>Or this command if you are using SSH:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:unifyai/doc-builder.git
 </pre></div>
 </div>
-<p>(on Windows)</p>
-<p>OR</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>source ivy_dev/bin/activate
+<p>Then, run the following command to build the image:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>doc-builder
+docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>unifyai/doc-builder<span class="w"> </span>.
 </pre></div>
 </div>
-<p>(on Mac/Linux)</p>
-</div></blockquote>
-</li>
-</ol>
-</section>
-<section id="id1">
-<h3>Building the docs<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
-<p>After setting up the virtual environment, we can build the documentation locally.
-Move to the <code class="code docutils literal notranslate"><span class="pre">ivy/docs</span></code> folder in a terminal and execute the following command to build the docs from inside the virtual environment.</p>
-<ol class="arabic">
-<li><p>For Windows users</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sh make_docs_without_docker.sh
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>For MacOS users</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash make_docs_without_docker.sh &lt;path to doc-builder folder relative to current folder i.e. ivy/docs&gt;
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>For Ubuntu users</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash make_docs_without_docker.sh &lt;path to doc-builder folder relative to current folder i.e. ivy/docs&gt;
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-<p>Assuming that we cloned the <code class="code docutils literal notranslate"><span class="pre">doc-builder</span></code> and <code class="code docutils literal notranslate"><span class="pre">ivy</span></code> repositories in the same folder, we can run <code class="code docutils literal notranslate"><span class="pre">make_docs_without_docker.sh</span></code> as follows:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash make_docs_without_docker.sh ../../doc-builder/
-</pre></div>
-</div>
-<p>You will now see the <cite>build</cite> folder where you can find generated <cite>html</cite> files.
-You can open them using any preferred browser and see how your changes affected the documentation pages.</p>
 </section>
 </section>
-<section id="working-of-the-documentation-building-pipeline">
-<h2>Working of the Documentation Building Pipeline<a class="headerlink" href="#working-of-the-documentation-building-pipeline" title="Permalink to this heading">#</a></h2>
-<p>Following are the files involved in the documentation building pipeline:</p>
-<section id="make-docs-sh">
-<h3>make_docs.sh:<a class="headerlink" href="#make-docs-sh" title="Permalink to this heading">#</a></h3>
-<p>This file exists in the docs folder of the project for which documentation is to be generated.
-It uses the unifyai/doc-builder:latest image and creates a container for documentation building.</p>
-</section>
-<section id="entrypoint-sh">
-<h3>entrypoint.sh:<a class="headerlink" href="#entrypoint-sh" title="Permalink to this heading">#</a></h3>
-<p>This is the first file involved in the documentation building pipeline.
-It installs the requirements, synchronizes the container’s folder with the project’s build folder.
-It is responsible for executing the rest of the pipeline as it runs the <code class="code docutils literal notranslate"><span class="pre">_make_docs.sh</span></code> and <code class="code docutils literal notranslate"><span class="pre">remove_docs.sh</span></code> files.</p>
-</section>
-<section id="id2">
-<h3>_make_docs.sh:<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
-<div class="line-block">
-<div class="line">This file contains commands for executing files involved in generation of the documentation. _ at the start is to indicate that this is a privately accessed file.</div>
-<div class="line">This file fulfils the following purpose</div>
-<div class="line">1. It deletes any previously generated documentation in the <code class="code docutils literal notranslate"><span class="pre">autogenerated_source</span></code> folder and the <code class="code docutils literal notranslate"><span class="pre">build</span></code> folder.</div>
-<div class="line">2. Then it executes the <code class="code docutils literal notranslate"><span class="pre">generate_src_rst_files.py`</span></code> file, followed by the <code class="code docutils literal notranslate"><span class="pre">sphinx-build.py</span></code> file.</div>
-<div class="line">3. Then it deletes all files of format <code class="code docutils literal notranslate"><span class="pre">X.png</span></code> from the <code class="code docutils literal notranslate"><span class="pre">build/_images`</span></code> folder.</div>
-<div class="line">4. Lastly, it executes the <code class="code docutils literal notranslate"><span class="pre">correct_built_html_files.py</span></code> file.</div>
+<section id="building-the-docs-without-docker">
+<h2>Building the Docs without Docker<a class="headerlink" href="#building-the-docs-without-docker" title="Permalink to this heading">#</a></h2>
+<p>You can also build the docs without Docker. You will first need to clone the
+<code class="docutils literal notranslate"><span class="pre">unifyai/doc-builder</span></code> repository. Then use the convenience script
+<code class="docutils literal notranslate"><span class="pre">make_docs_without_docker.sh</span></code>.</p>
+<p>Run this command if you are using HTTPS:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/unifyai/doc-builder.git
+</pre></div>
 </div>
-</section>
-<section id="generate-src-rst-files-py">
-<h3>generate_src_rst_files.py:<a class="headerlink" href="#generate-src-rst-files-py" title="Permalink to this heading">#</a></h3>
-<div class="line-block">
-<div class="line">This file is the first stage of documentation generation. It involves the use of code docstrings and project structure to generate rst files for the project.</div>
-<div class="line"><br /></div>
-<div class="line">The <code class="code docutils literal notranslate"><span class="pre">main</span></code> function does the following:</div>
-<div class="line">1. It looks for the submodules to be skipped, stepped into and processed out of order.</div>
-<div class="line">2. It reads the configuration from the <code class="code docutils literal notranslate"><span class="pre">partial_source/conf.py</span></code> file.</div>
-<div class="line">3. It deletes any previously generated documentation in the <code class="code docutils literal notranslate"><span class="pre">autogenerated_source</span></code> folder.</div>
-<div class="line">4. It copies files from the <code class="code docutils literal notranslate"><span class="pre">partial_source/images</span></code> folder to the <code class="code docutils literal notranslate"><span class="pre">build/_images</span></code> folder.</div>
-<div class="line">5. It calls the <code class="code docutils literal notranslate"><span class="pre">create_rst_files</span></code> function.</div>
-<div class="line"><br /></div>
-<div class="line">The <code class="code docutils literal notranslate"><span class="pre">create_rst_files</span></code> function does the following:</div>
-<div class="line">1. Lists all files in the current folder.</div>
-<div class="line">2. Filters out the submodules to be skipped.</div>
-<div class="line">3. Recursively accesses all submodules.</div>
-<div class="line">4. For every submodule, it creates a directory structure.</div>
-<div class="line">5. Every python module will be represented with a folder which will contain rst files for all its functions and a rst file which will use these files to generate the overall markup for the module.</div>
-<div class="line">6. Writing the rst files involves extracting function and class names using the <code class="code docutils literal notranslate"><span class="pre">get_functions_and_classes</span></code> function, followed by their doctrings.</div>
-<div class="line">7. A README.rst file is generated for every module and is named as module_name.rst using the <code class="code docutils literal notranslate"><span class="pre">copy_readme_to_rst</span></code> function.</div>
-<div class="line">8. The Table of Contents(TOC) tree is generated for the module according to the order followed and is appended to the rst file using the <code class="code docutils literal notranslate"><span class="pre">append_toctree_to_rst</span></code>.</div>
-<div class="line">9. An index.rst file is generated for the root directory using the <code class="code docutils literal notranslate"><span class="pre">create_index_rst</span></code> function.</div>
-<div class="line">10. If a module is to be stepped into, then this folder structure is not generated for it.</div>
+<p>Or this command if you are using SSH:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:unifyai/doc-builder.git
+</pre></div>
 </div>
-</section>
-<section id="sphinx-build-py">
-<h3>sphinx-build.py<a class="headerlink" href="#sphinx-build-py" title="Permalink to this heading">#</a></h3>
-<p>This file is used to generate the HTML files for the documentation using the rst files generated previously.</p>
-</section>
-<section id="correct-built-html-files-py">
-<h3>correct_built_html_files.py<a class="headerlink" href="#correct-built-html-files-py" title="Permalink to this heading">#</a></h3>
-<p>This file is used for further processing on the HTML files generated by Sphinx.
-This involves replacing 3.14 with π, updating paths according to current folder, and updating namespaces in the code in the documentation.</p>
-</section>
-<section id="remove-files-sh">
-<h3>remove_files.sh<a class="headerlink" href="#remove-files-sh" title="Permalink to this heading">#</a></h3>
-<p>All files involved in the generation of documentation are removed by executing these commands.</p>
-<p><strong>Round Up</strong></p>
-<p>This should have hopefully given you a good understanding of the basics for
-building the docs locally.</p>
-<p>If you have any questions, please feel free to reach out on <a class="reference external" href="https://discord.gg/ZVQdvbzNQJ">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/982733967998484520">doc building channel</a>!</p>
-</section>
+<p>Then, run the following command to build the docs:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>doc-builder
+./make_docs_without_docker.sh<span class="w"> </span>&lt;ivy<span class="w"> </span>directory<span class="w"> </span>or<span class="w"> </span>applied<span class="w"> </span>library<span class="w"> </span>directory&gt;
+</pre></div>
+</div>
+<p>The script will install required dependencies for <a class="reference external" href="https://www.sphinx-doc.org">sphinx</a>
+which is used to build the docs, as well as dependencies required by Ivy or the Ivy
+applied library. Then it will build the docs for Ivy and store it in <code class="docutils literal notranslate"><span class="pre">docs/build</span></code>.</p>
 </section>
 </section>
 
@@ -762,23 +593,13 @@ building the docs locally.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-docs-with-docker">Building the Docs with Docker</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dockerless-doc-building">Dockerless Doc-building</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-miniconda">Using miniconda</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-venv">Using venv</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Building the docs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-docs-using-docker">Building the Docs using Docker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-convenience-script">Using convenience script</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-existing-image-on-docker-hub">Using existing image on Docker Hub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-image-locally">Building the image locally</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-of-the-documentation-building-pipeline">Working of the Documentation Building Pipeline</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#make-docs-sh">make_docs.sh:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#entrypoint-sh">entrypoint.sh:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">_make_docs.sh:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-src-rst-files-py">generate_src_rst_files.py:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx-build-py">sphinx-build.py</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#correct-built-html-files-py">correct_built_html_files.py</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-files-sh">remove_files.sh</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#building-the-docs-without-docker">Building the Docs without Docker</a></li>
 </ul>
   </nav></div>
 

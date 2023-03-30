@@ -1,0 +1,8 @@
+matmul
+======
+
+.. autofunction:: ivy.matmul
+
+.. autoskippablemethod:: ivy.Array.matmul
+
+.. autoskippablemethod:: ivy.Container.matmul

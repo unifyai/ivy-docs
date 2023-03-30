@@ -1,0 +1,8 @@
+get\_tmp\_dir
+=============
+
+.. autofunction:: ivy.get_tmp_dir
+
+.. autoskippablemethod:: ivy.Array.get_tmp_dir
+
+.. autoskippablemethod:: ivy.Container.get_tmp_dir

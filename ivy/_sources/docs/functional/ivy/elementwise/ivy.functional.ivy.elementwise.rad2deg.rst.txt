@@ -1,0 +1,8 @@
+rad2deg
+=======
+
+.. autofunction:: ivy.rad2deg
+
+.. autoskippablemethod:: ivy.Array.rad2deg
+
+.. autoskippablemethod:: ivy.Container.rad2deg

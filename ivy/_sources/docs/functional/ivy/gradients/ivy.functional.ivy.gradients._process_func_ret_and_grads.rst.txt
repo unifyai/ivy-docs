@@ -1,0 +1,8 @@
+\_process\_func\_ret\_and\_grads
+================================
+
+.. autofunction:: ivy._process_func_ret_and_grads
+
+.. autoskippablemethod:: ivy.Array._process_func_ret_and_grads
+
+.. autoskippablemethod:: ivy.Container._process_func_ret_and_grads

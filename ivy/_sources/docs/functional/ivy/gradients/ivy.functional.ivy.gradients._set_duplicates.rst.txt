@@ -1,0 +1,8 @@
+\_set\_duplicates
+=================
+
+.. autofunction:: ivy._set_duplicates
+
+.. autoskippablemethod:: ivy.Array._set_duplicates
+
+.. autoskippablemethod:: ivy.Container._set_duplicates

@@ -1,0 +1,8 @@
+\_get\_promoted\_type\_of\_operands
+===================================
+
+.. autofunction:: ivy._get_promoted_type_of_operands
+
+.. autoskippablemethod:: ivy.Array._get_promoted_type_of_operands
+
+.. autoskippablemethod:: ivy.Container._get_promoted_type_of_operands

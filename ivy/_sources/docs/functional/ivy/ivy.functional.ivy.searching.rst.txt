@@ -1,0 +1,27 @@
+Searching
+=========
+
+.. autosummary::
+   :toctree: searching
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   ivy.functional.ivy.searching.argmax
+   ivy.functional.ivy.searching.argmin
+   ivy.functional.ivy.searching.argwhere
+   ivy.functional.ivy.searching.nonzero
+   ivy.functional.ivy.searching.where
+
+
+
+.. automodule:: ivy.functional.ivy.searching
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.searching

@@ -1,0 +1,8 @@
+cholesky
+========
+
+.. autofunction:: ivy.cholesky
+
+.. autoskippablemethod:: ivy.Array.cholesky
+
+.. autoskippablemethod:: ivy.Container.cholesky

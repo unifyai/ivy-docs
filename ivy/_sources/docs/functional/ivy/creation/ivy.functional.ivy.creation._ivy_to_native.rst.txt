@@ -1,0 +1,8 @@
+\_ivy\_to\_native
+=================
+
+.. autofunction:: ivy._ivy_to_native
+
+.. autoskippablemethod:: ivy.Array._ivy_to_native
+
+.. autoskippablemethod:: ivy.Container._ivy_to_native

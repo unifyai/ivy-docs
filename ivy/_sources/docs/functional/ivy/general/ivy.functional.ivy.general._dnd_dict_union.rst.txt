@@ -1,0 +1,8 @@
+\_dnd\_dict\_union
+==================
+
+.. autofunction:: ivy._dnd_dict_union
+
+.. autoskippablemethod:: ivy.Array._dnd_dict_union
+
+.. autoskippablemethod:: ivy.Container._dnd_dict_union

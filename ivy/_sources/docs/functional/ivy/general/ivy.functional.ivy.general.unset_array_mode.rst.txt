@@ -1,0 +1,8 @@
+unset\_array\_mode
+==================
+
+.. autofunction:: ivy.unset_array_mode
+
+.. autoskippablemethod:: ivy.Array.unset_array_mode
+
+.. autoskippablemethod:: ivy.Container.unset_array_mode

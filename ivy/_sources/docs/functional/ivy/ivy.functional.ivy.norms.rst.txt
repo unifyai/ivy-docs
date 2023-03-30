@@ -1,0 +1,23 @@
+Norms
+=====
+
+.. autosummary::
+   :toctree: norms
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   ivy.functional.ivy.norms.layer_norm
+
+
+
+.. automodule:: ivy.functional.ivy.norms
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.norms

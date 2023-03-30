@@ -1,0 +1,47 @@
+Creation
+========
+
+.. autosummary::
+   :toctree: creation
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   ivy.functional.ivy.creation._ivy_to_native
+   ivy.functional.ivy.creation.arange
+   ivy.functional.ivy.creation.array
+   ivy.functional.ivy.creation.asarray
+   ivy.functional.ivy.creation.asarray_handle_nestable
+   ivy.functional.ivy.creation.asarray_infer_device
+   ivy.functional.ivy.creation.asarray_to_native_arrays_and_back
+   ivy.functional.ivy.creation.copy_array
+   ivy.functional.ivy.creation.empty
+   ivy.functional.ivy.creation.empty_like
+   ivy.functional.ivy.creation.eye
+   ivy.functional.ivy.creation.from_dlpack
+   ivy.functional.ivy.creation.full
+   ivy.functional.ivy.creation.full_like
+   ivy.functional.ivy.creation.linspace
+   ivy.functional.ivy.creation.logspace
+   ivy.functional.ivy.creation.meshgrid
+   ivy.functional.ivy.creation.native_array
+   ivy.functional.ivy.creation.one_hot
+   ivy.functional.ivy.creation.ones
+   ivy.functional.ivy.creation.ones_like
+   ivy.functional.ivy.creation.tril
+   ivy.functional.ivy.creation.triu
+   ivy.functional.ivy.creation.zeros
+   ivy.functional.ivy.creation.zeros_like
+
+
+
+.. automodule:: ivy.functional.ivy.creation
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.creation

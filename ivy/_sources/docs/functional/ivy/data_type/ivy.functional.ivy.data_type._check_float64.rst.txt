@@ -1,0 +1,8 @@
+\_check\_float64
+================
+
+.. autofunction:: ivy._check_float64
+
+.. autoskippablemethod:: ivy.Array._check_float64
+
+.. autoskippablemethod:: ivy.Container._check_float64

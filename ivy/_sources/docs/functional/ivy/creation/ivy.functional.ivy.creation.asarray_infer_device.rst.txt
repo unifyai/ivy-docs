@@ -1,0 +1,8 @@
+asarray\_infer\_device
+======================
+
+.. autofunction:: ivy.asarray_infer_device
+
+.. autoskippablemethod:: ivy.Array.asarray_infer_device
+
+.. autoskippablemethod:: ivy.Container.asarray_infer_device

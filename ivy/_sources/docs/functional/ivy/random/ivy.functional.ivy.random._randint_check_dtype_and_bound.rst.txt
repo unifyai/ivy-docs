@@ -1,0 +1,8 @@
+\_randint\_check\_dtype\_and\_bound
+===================================
+
+.. autofunction:: ivy._randint_check_dtype_and_bound
+
+.. autoskippablemethod:: ivy.Array._randint_check_dtype_and_bound
+
+.. autoskippablemethod:: ivy.Container._randint_check_dtype_and_bound

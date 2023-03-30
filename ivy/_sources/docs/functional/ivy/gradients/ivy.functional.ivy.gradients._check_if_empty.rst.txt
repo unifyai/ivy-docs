@@ -1,0 +1,8 @@
+\_check\_if\_empty
+==================
+
+.. autofunction:: ivy._check_if_empty
+
+.. autoskippablemethod:: ivy.Array._check_if_empty
+
+.. autoskippablemethod:: ivy.Container._check_if_empty

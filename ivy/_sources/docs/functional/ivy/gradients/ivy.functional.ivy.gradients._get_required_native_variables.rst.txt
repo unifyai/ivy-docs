@@ -1,0 +1,8 @@
+\_get\_required\_native\_variables
+==================================
+
+.. autofunction:: ivy._get_required_native_variables
+
+.. autoskippablemethod:: ivy.Array._get_required_native_variables
+
+.. autoskippablemethod:: ivy.Container._get_required_native_variables

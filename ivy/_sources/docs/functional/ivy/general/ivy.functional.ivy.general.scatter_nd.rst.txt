@@ -1,0 +1,8 @@
+scatter\_nd
+===========
+
+.. autofunction:: ivy.scatter_nd
+
+.. autoskippablemethod:: ivy.Array.scatter_nd
+
+.. autoskippablemethod:: ivy.Container.scatter_nd

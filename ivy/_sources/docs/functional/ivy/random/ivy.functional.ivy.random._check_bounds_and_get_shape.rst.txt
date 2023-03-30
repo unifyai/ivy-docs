@@ -1,0 +1,8 @@
+\_check\_bounds\_and\_get\_shape
+================================
+
+.. autofunction:: ivy._check_bounds_and_get_shape
+
+.. autoskippablemethod:: ivy.Array._check_bounds_and_get_shape
+
+.. autoskippablemethod:: ivy.Container._check_bounds_and_get_shape

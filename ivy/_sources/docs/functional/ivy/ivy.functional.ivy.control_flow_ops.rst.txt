@@ -1,0 +1,26 @@
+Control flow ops
+================
+
+.. autosummary::
+   :toctree: control_flow_ops
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   ivy.functional.ivy.control_flow_ops.IfElse
+   ivy.functional.ivy.control_flow_ops.WhileLoop
+   ivy.functional.ivy.control_flow_ops.if_else
+   ivy.functional.ivy.control_flow_ops.while_loop
+
+
+
+.. automodule:: ivy.functional.ivy.control_flow_ops
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.control_flow_ops

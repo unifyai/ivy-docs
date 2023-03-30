@@ -1,0 +1,40 @@
+Layers
+======
+
+.. autosummary::
+   :toctree: layers
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   ivy.functional.ivy.layers._deconv_length
+   ivy.functional.ivy.layers._get_x_data_format
+   ivy.functional.ivy.layers._handle_padding
+   ivy.functional.ivy.layers.conv
+   ivy.functional.ivy.layers.conv1d
+   ivy.functional.ivy.layers.conv1d_transpose
+   ivy.functional.ivy.layers.conv2d
+   ivy.functional.ivy.layers.conv2d_transpose
+   ivy.functional.ivy.layers.conv3d
+   ivy.functional.ivy.layers.conv3d_transpose
+   ivy.functional.ivy.layers.conv_general_dilated
+   ivy.functional.ivy.layers.conv_general_transpose
+   ivy.functional.ivy.layers.depthwise_conv2d
+   ivy.functional.ivy.layers.dropout
+   ivy.functional.ivy.layers.linear
+   ivy.functional.ivy.layers.lstm_update
+   ivy.functional.ivy.layers.multi_head_attention
+   ivy.functional.ivy.layers.scaled_dot_product_attention
+
+
+
+.. automodule:: ivy.functional.ivy.layers
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.layers

@@ -1,0 +1,8 @@
+\_get\_native\_y
+================
+
+.. autofunction:: ivy._get_native_y
+
+.. autoskippablemethod:: ivy.Array._get_native_y
+
+.. autoskippablemethod:: ivy.Container._get_native_y

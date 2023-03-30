@@ -1,0 +1,8 @@
+split\_func\_call
+=================
+
+.. autofunction:: ivy.split_func_call
+
+.. autoskippablemethod:: ivy.Array.split_func_call
+
+.. autoskippablemethod:: ivy.Container.split_func_call

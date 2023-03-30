@@ -1,0 +1,107 @@
+General
+=======
+
+.. autosummary::
+   :toctree: general
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   ivy.functional.ivy.general._all_dnd_combinations
+   ivy.functional.ivy.general._dnd_dict_difference
+   ivy.functional.ivy.general._dnd_dict_intersection
+   ivy.functional.ivy.general._dnd_dict_union
+   ivy.functional.ivy.general._get_devices_and_dtypes
+   ivy.functional.ivy.general._is_valid_device_and_dtypes_attributes
+   ivy.functional.ivy.general._parse_ellipsis
+   ivy.functional.ivy.general._valid_attrib_combinations
+   ivy.functional.ivy.general.all_equal
+   ivy.functional.ivy.general.arg_info
+   ivy.functional.ivy.general.arg_names
+   ivy.functional.ivy.general.array_equal
+   ivy.functional.ivy.general.assert_supports_inplace
+   ivy.functional.ivy.general.cache_fn
+   ivy.functional.ivy.general.clip_matrix_norm
+   ivy.functional.ivy.general.clip_vector_norm
+   ivy.functional.ivy.general.container_types
+   ivy.functional.ivy.general.current_backend_str
+   ivy.functional.ivy.general.default
+   ivy.functional.ivy.general.einops_rearrange
+   ivy.functional.ivy.general.einops_reduce
+   ivy.functional.ivy.general.einops_repeat
+   ivy.functional.ivy.general.exists
+   ivy.functional.ivy.general.fourier_encode
+   ivy.functional.ivy.general.function_supported_devices_and_dtypes
+   ivy.functional.ivy.general.function_unsupported_devices_and_dtypes
+   ivy.functional.ivy.general.gather
+   ivy.functional.ivy.general.gather_nd
+   ivy.functional.ivy.general.get_all_arrays_in_memory
+   ivy.functional.ivy.general.get_array_mode
+   ivy.functional.ivy.general.get_exception_trace_mode
+   ivy.functional.ivy.general.get_item
+   ivy.functional.ivy.general.get_min_base
+   ivy.functional.ivy.general.get_min_denominator
+   ivy.functional.ivy.general.get_nestable_mode
+   ivy.functional.ivy.general.get_num_dims
+   ivy.functional.ivy.general.get_queue_timeout
+   ivy.functional.ivy.general.get_referrers_recursive
+   ivy.functional.ivy.general.get_show_func_wrapper_trace_mode
+   ivy.functional.ivy.general.get_tmp_dir
+   ivy.functional.ivy.general.has_nans
+   ivy.functional.ivy.general.inplace_arrays_supported
+   ivy.functional.ivy.general.inplace_decrement
+   ivy.functional.ivy.general.inplace_increment
+   ivy.functional.ivy.general.inplace_update
+   ivy.functional.ivy.general.inplace_variables_supported
+   ivy.functional.ivy.general.is_array
+   ivy.functional.ivy.general.is_ivy_array
+   ivy.functional.ivy.general.is_ivy_container
+   ivy.functional.ivy.general.is_native_array
+   ivy.functional.ivy.general.isscalar
+   ivy.functional.ivy.general.match_kwargs
+   ivy.functional.ivy.general.multiprocessing
+   ivy.functional.ivy.general.num_arrays_in_memory
+   ivy.functional.ivy.general.print_all_arrays_in_memory
+   ivy.functional.ivy.general.scatter_flat
+   ivy.functional.ivy.general.scatter_nd
+   ivy.functional.ivy.general.set_array_mode
+   ivy.functional.ivy.general.set_exception_trace_mode
+   ivy.functional.ivy.general.set_min_base
+   ivy.functional.ivy.general.set_min_denominator
+   ivy.functional.ivy.general.set_nestable_mode
+   ivy.functional.ivy.general.set_queue_timeout
+   ivy.functional.ivy.general.set_shape_array_mode
+   ivy.functional.ivy.general.set_show_func_wrapper_trace_mode
+   ivy.functional.ivy.general.set_tmp_dir
+   ivy.functional.ivy.general.shape
+   ivy.functional.ivy.general.shape_array_mode
+   ivy.functional.ivy.general.stable_divide
+   ivy.functional.ivy.general.stable_pow
+   ivy.functional.ivy.general.supports_inplace_updates
+   ivy.functional.ivy.general.to_ivy_shape
+   ivy.functional.ivy.general.to_list
+   ivy.functional.ivy.general.to_native_shape
+   ivy.functional.ivy.general.to_numpy
+   ivy.functional.ivy.general.to_scalar
+   ivy.functional.ivy.general.try_else_none
+   ivy.functional.ivy.general.unset_array_mode
+   ivy.functional.ivy.general.unset_exception_trace_mode
+   ivy.functional.ivy.general.unset_nestable_mode
+   ivy.functional.ivy.general.unset_queue_timeout
+   ivy.functional.ivy.general.unset_shape_array_mode
+   ivy.functional.ivy.general.unset_show_func_wrapper_trace_mode
+   ivy.functional.ivy.general.value_is_nan
+   ivy.functional.ivy.general.vmap
+
+
+
+.. automodule:: ivy.functional.ivy.general
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.general

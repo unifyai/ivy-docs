@@ -1,0 +1,8 @@
+\_check\_complex128
+===================
+
+.. autofunction:: ivy._check_complex128
+
+.. autoskippablemethod:: ivy.Array._check_complex128
+
+.. autoskippablemethod:: ivy.Container._check_complex128

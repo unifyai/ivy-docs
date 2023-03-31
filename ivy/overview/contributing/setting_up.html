@@ -673,8 +673,9 @@ For some Windows users, it might be necessary to enable virtualisation from the 
 <p><strong>Video</strong></p>
 <iframe width="420" height="315"
 src="https://www.youtube.com/embed/7I_46c2AvJg" class="video" allowfullscreen="true">
-</iframe><p>MacOS
-<a href="#id3"><span class="problematic" id="id4">**</span></a><a href="#id5"><span class="problematic" id="id6">**</span></a><a href="#id7"><span class="problematic" id="id8">*</span></a>What type of work is it in sales? 😅</p>
+</iframe></section>
+<section id="macos">
+<h3>MacOS<a class="headerlink" href="#macos" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install <a class="reference external" href="https://www.docker.com/products/docker-desktop">Docker Desktop</a>.</p></li>
 <li><p>Get the latest Docker Image for Ivy by:</p>
@@ -763,6 +764,16 @@ Type python3 (with the number) in python interpreter path and press ok.</p></li>
 </ol>
 </li>
 </ol>
+<p><strong>Docker Connection not Successfull</strong></p>
+<p>This is a common error which you might face. If you are not successfully able to connect docker with Pycharm(point 4a) and your docker is also running, the issue is that you are not able to use your docker socket. So, executing the below two commands should solve this.</p>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo chmod a+rwx /var/run/docker.sock
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo chmod a+rwx /var/run/docker.pid
+</pre></div>
+</div>
+</div></blockquote>
 <p>For questions, please reach out on <a class="reference external" href="https://discord.gg/sXyFF8tDtm">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/942114744691740772">docker channel</a>!</p>
 <p><strong>Video</strong></p>
 <iframe width="420" height="315"
@@ -844,8 +855,8 @@ To get more detailed information on errors in the code, we recommend doing the f
 The most easiest and the most efficient way would be using Visual Studio Code with the Docker extension.
 You’ll hopefully be done with this in no time.
 The steps to be followed are listed below:</p>
-<section id="id12">
-<h3>Windows<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<section id="id6">
+<h3>Windows<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install <a class="reference external" href="https://www.docker.com/products/docker-desktop">Docker Desktop</a></p></li>
 <li><p>Install <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code here</a></p></li>
@@ -863,8 +874,8 @@ In case the window doesn’t pop up, search for the “Dev Containers” extensi
 </li>
 </ol>
 </section>
-<section id="id14">
-<h3>Ubuntu<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<section id="id8">
+<h3>Ubuntu<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Install <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine</a></p></li>
 <li><p>Install <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a></p></li>
@@ -1037,14 +1048,15 @@ To proceed with the commit, the modified files must be re-added using git, and t
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-interpreter-with-pycharm">Docker Interpreter with PyCharm</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">MacOS</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ubuntu">Ubuntu</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-testing">Setting Up Testing</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-detailed-hypothesis-logs">More Detailed Hypothesis Logs</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-for-free">Setting up for Free</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">Windows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">Ubuntu</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">Windows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">Ubuntu</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#github-codespaces">GitHub Codespaces</a></li>
 </ul>
 </li>

@@ -926,7 +926,15 @@ document.write(`
                 <span class="c1"># extend Hypothesis given kwargs with our strategies</span>
                 <span class="n">_given_kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">possible_arguments</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
             <span class="c1"># Wrap the test with the @given decorator</span>
-            <span class="n">wrapped_test</span> <span class="o">=</span> <span class="n">given</span><span class="p">(</span><span class="o">**</span><span class="n">_given_kwargs</span><span class="p">)(</span><span class="n">test_fn</span><span class="p">)</span>
+            <span class="n">hypothesis_test_fn</span> <span class="o">=</span> <span class="n">given</span><span class="p">(</span><span class="o">**</span><span class="n">_given_kwargs</span><span class="p">)(</span><span class="n">test_fn</span><span class="p">)</span>
+
+            <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">hypothesis_test_fn</span><span class="p">)</span>
+            <span class="k">def</span> <span class="nf">wrapped_test</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">hypothesis_test_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">except</span> <span class="n">ivy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">IvyNotImplementedException</span><span class="p">:</span>
+                    <span class="n">pytest</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="s2">&quot;Function not implemented in backend.&quot;</span><span class="p">)</span>
+
         <span class="k">else</span><span class="p">:</span>
             <span class="n">wrapped_test</span> <span class="o">=</span> <span class="n">test_fn</span>
 
@@ -1158,7 +1166,16 @@ document.write(`
             <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">filtered_args</span><span class="p">:</span>
                 <span class="c1"># extend Hypothesis given kwargs with our strategies</span>
                 <span class="n">_given_kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">possible_arguments</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-            <span class="n">wrapped_test</span> <span class="o">=</span> <span class="n">given</span><span class="p">(</span><span class="o">**</span><span class="n">_given_kwargs</span><span class="p">)(</span><span class="n">test_fn</span><span class="p">)</span>
+
+            <span class="n">hypothesis_test_fn</span> <span class="o">=</span> <span class="n">given</span><span class="p">(</span><span class="o">**</span><span class="n">_given_kwargs</span><span class="p">)(</span><span class="n">test_fn</span><span class="p">)</span>
+
+            <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">hypothesis_test_fn</span><span class="p">)</span>
+            <span class="k">def</span> <span class="nf">wrapped_test</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">hypothesis_test_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="k">except</span> <span class="n">ivy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">IvyNotImplementedException</span><span class="p">:</span>
+                    <span class="n">pytest</span><span class="o">.</span><span class="n">skip</span><span class="p">(</span><span class="s2">&quot;Function not implemented in backend.&quot;</span><span class="p">)</span>
+
         <span class="k">else</span><span class="p">:</span>
             <span class="n">wrapped_test</span> <span class="o">=</span> <span class="n">test_fn</span>
 

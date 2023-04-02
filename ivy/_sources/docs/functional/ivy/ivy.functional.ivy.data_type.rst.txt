@@ -41,6 +41,7 @@ Data type
    ivy.functional.ivy.data_type.is_complex_dtype
    ivy.functional.ivy.data_type.is_float_dtype
    ivy.functional.ivy.data_type.is_int_dtype
+   ivy.functional.ivy.data_type.is_native_dtype
    ivy.functional.ivy.data_type.is_uint_dtype
    ivy.functional.ivy.data_type.promote_types
    ivy.functional.ivy.data_type.promote_types_of_inputs

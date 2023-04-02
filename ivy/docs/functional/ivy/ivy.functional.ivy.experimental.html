@@ -429,7 +429,6 @@ document.write(`
 
 
 
-
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ivy.functional.ivy.general.html">General</a></li>
@@ -3410,34 +3409,6 @@ have a shape that the inputs broadcast to.</p></li>
 <dd></dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="ivy.functional.ivy.experimental.is_native_dtype">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">is_native_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dtype_in</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/functional/ivy/experimental/data_type.html#is_native_dtype"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.experimental.is_native_dtype" title="Permalink to this definition">#</a></dt>
-<dd><p>Determines whether the input dtype is a Native dtype.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>dtype_in</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]) – Determine whether the input data type is a native data type object.</p>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></p>
-</dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>ret</em> – Boolean, whether or not dtype_in is a native data type.</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">is_native_dtype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
-<span class="go">True</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">is_native_array</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
-<span class="go">False</span>
-</pre></div>
-</div>
-</dd></dl>
-
-<dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.experimental.is_native_sparse_array">
 <span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">is_native_sparse_array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/functional/ivy/experimental/sparse_array.html#is_native_sparse_array"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.experimental.is_native_sparse_array" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
@@ -5792,7 +5763,6 @@ input arrays’ values.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.interp"><code class="docutils literal notranslate"><span class="pre">interp()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.interpolate"><code class="docutils literal notranslate"><span class="pre">interpolate()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.is_ivy_sparse_array"><code class="docutils literal notranslate"><span class="pre">is_ivy_sparse_array()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.is_native_dtype"><code class="docutils literal notranslate"><span class="pre">is_native_dtype()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.is_native_sparse_array"><code class="docutils literal notranslate"><span class="pre">is_native_sparse_array()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.isclose"><code class="docutils literal notranslate"><span class="pre">isclose()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.kaiser_bessel_derived_window"><code class="docutils literal notranslate"><span class="pre">kaiser_bessel_derived_window()</span></code></a></li>

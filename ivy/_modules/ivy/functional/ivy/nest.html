@@ -1251,12 +1251,15 @@ document.write(`
 
 <div class="viewcode-block" id="all_nested_indices"><a class="viewcode-back" href="../../../../docs/functional/ivy/nest/ivy.functional.ivy.nest.all_nested_indices.html#ivy.functional.ivy.nest.all_nested_indices">[docs]</a><span class="nd">@handle_exceptions</span>
 <span class="k">def</span> <span class="nf">all_nested_indices</span><span class="p">(</span>
-    <span class="n">nest</span><span class="p">:</span> <span class="n">Iterable</span><span class="p">,</span>
+    <span class="n">nest</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">/</span><span class="p">,</span>
     <span class="n">include_nests</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
-    <span class="n">_index</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">_index</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="n">_base</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="n">extra_nest_types</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">type</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">type</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">Iterable</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]:</span>
+    <span class="n">extra_nest_types</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns indices of all the elements in nest</span>
 
 <span class="sd">    Parameters</span>
@@ -1264,23 +1267,52 @@ document.write(`
 <span class="sd">    nest</span>
 <span class="sd">        The nest to check the leaves of.</span>
 <span class="sd">    include_nests</span>
-<span class="sd">        Whether to also include indices of the nests themselves, not only leaves.</span>
-<span class="sd">        Default is ``False``.</span>
+<span class="sd">        Whether to also include indices of the nests themselves, not only</span>
+<span class="sd">        leaves. Default is ``False``.</span>
 <span class="sd">    _index</span>
-<span class="sd">        The indices detected so far. None at the beginning. Used internally, do not set</span>
-<span class="sd">        manually.</span>
+<span class="sd">        The indices detected so far. None at the beginning. Used internally, </span>
+<span class="sd">        do not set manually.</span>
 <span class="sd">    _base</span>
-<span class="sd">        Whether the current function call is the first function call in the recursive</span>
-<span class="sd">        stack. Used internally, do not set manually.</span>
+<span class="sd">        Whether the current function call is the first function call in the </span>
+<span class="sd">        recursive stack. Used internally, do not set manually.</span>
 <span class="sd">    extra_nest_types</span>
 <span class="sd">        Types to recursively check when deciding whether to go deeper into the</span>
 <span class="sd">        nest or not</span>
+<span class="sd">    out</span>
+<span class="sd">        Optional output array, for writing the result to. It must have a shape</span>
+<span class="sd">        that the inputs broadcast to.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    ret</span>
 <span class="sd">        A set of indices of all elements in nest</span>
+<span class="sd">    </span>
+<span class="sd">    Both the description and the type hints above assumes an array input </span>
+<span class="sd">    for simplicity, but this function is nestable, and therefore also </span>
+<span class="sd">    accepts :class:ivy.Container instances in place of the arguments.</span>
 
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    With :class:`Dict` input:</span>
+
+<span class="sd">    &gt;&gt;&gt; x = {&#39;a&#39;: 2., &#39;b&#39;: [6., [15., 9.]], &#39;c&#39;: (7., 56.)}</span>
+<span class="sd">    &gt;&gt;&gt; y = ivy.all_nested_indices(x)</span>
+<span class="sd">    &gt;&gt;&gt; print(y)</span>
+<span class="sd">    [[&#39;a&#39;], [&#39;b&#39;, 0], [&#39;b&#39;, 1, 0], [&#39;b&#39;, 1, 1], [&#39;c&#39;, 0], [&#39;c&#39;, 1]]</span>
+
+<span class="sd">    With :class:`ivy.Array` input:</span>
+
+<span class="sd">    &gt;&gt;&gt; x = ivy.array([0., 1., 2., 3., 4.])</span>
+<span class="sd">    &gt;&gt;&gt; y = ivy.all_nested_indices(x, False, out=x)</span>
+<span class="sd">    &gt;&gt;&gt; print(y)</span>
+<span class="sd">    [[]]</span>
+
+<span class="sd">    With :class:`ivy.Container` input:</span>
+
+<span class="sd">    &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0., 1., 2.]), b=ivy.array([3., 4., 5.]))</span>
+<span class="sd">    &gt;&gt;&gt; y = ivy.all_nested_indices(x, True)</span>
+<span class="sd">    &gt;&gt;&gt; print(y)</span>
+<span class="sd">    [[&#39;a&#39;], [&#39;b&#39;]]</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">_index</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span> <span class="k">if</span> <span class="n">_index</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">_index</span>
     <span class="n">extra_nest_types</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">extra_nest_types</span><span class="p">,</span> <span class="p">())</span>

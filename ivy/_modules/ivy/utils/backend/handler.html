@@ -745,7 +745,7 @@ document.write(`
         <span class="n">backend</span><span class="o">.</span><span class="n">set_global_attr</span><span class="p">(</span><span class="s2">&quot;RNG&quot;</span><span class="p">,</span> <span class="n">backend</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RNG</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">convert_from_source_backend_to_numpy</span><span class="p">(</span><span class="n">variable_ids</span><span class="p">,</span> <span class="n">numpy_objs</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">convert_from_source_backend_to_numpy</span><span class="p">(</span><span class="n">variable_ids</span><span class="p">,</span> <span class="n">numpy_objs</span><span class="p">,</span> <span class="n">devices</span><span class="p">):</span>
     <span class="c1"># Dynamic Backend</span>
     <span class="kn">from</span> <span class="nn">ivy.functional.ivy.gradients</span> <span class="kn">import</span> <span class="n">_is_variable</span><span class="p">,</span> <span class="n">_variable_data</span>
 
@@ -810,6 +810,7 @@ document.write(`
     <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">new_objs</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">obj</span><span class="o">.</span><span class="n">dynamic_backend</span><span class="p">:</span>
             <span class="n">numpy_objs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+            <span class="n">devices</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">device</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">_is_var</span><span class="p">(</span><span class="n">obj</span><span class="p">):</span>
                 <span class="c1"># add variable object id to set</span>
                 <span class="n">variable_ids</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">obj</span><span class="p">))</span>
@@ -824,27 +825,33 @@ document.write(`
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">obj</span><span class="o">.</span><span class="n">_data</span> <span class="o">=</span> <span class="n">np_data</span>
 
-    <span class="k">return</span> <span class="n">variable_ids</span><span class="p">,</span> <span class="n">numpy_objs</span>
+    <span class="k">return</span> <span class="n">variable_ids</span><span class="p">,</span> <span class="n">numpy_objs</span><span class="p">,</span> <span class="n">devices</span>
 
 
-<span class="k">def</span> <span class="nf">convert_from_numpy_to_target_backend</span><span class="p">(</span><span class="n">variable_ids</span><span class="p">,</span> <span class="n">numpy_objs</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">convert_from_numpy_to_target_backend</span><span class="p">(</span><span class="n">variable_ids</span><span class="p">,</span> <span class="n">numpy_objs</span><span class="p">,</span> <span class="n">devices</span><span class="p">):</span>
     <span class="c1"># Dynamic Backend</span>
     <span class="kn">from</span> <span class="nn">ivy.functional.ivy.gradients</span> <span class="kn">import</span> <span class="n">_variable</span>
 
     <span class="c1"># convert all ivy.Array and ivy.Container instances from numpy</span>
     <span class="c1"># to native arrays using the newly set backend</span>
-    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">numpy_objs</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">obj</span><span class="p">,</span> <span class="n">device</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">numpy_objs</span><span class="p">,</span> <span class="n">devices</span><span class="p">):</span>
         <span class="n">np_arr</span> <span class="o">=</span> <span class="n">obj</span><span class="o">.</span><span class="n">data</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="k">else</span> <span class="n">obj</span>
         <span class="c1"># check if object was originally a variable</span>
         <span class="k">if</span> <span class="nb">id</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="ow">in</span> <span class="n">variable_ids</span><span class="p">:</span>
             <span class="n">native_arr</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">nested_map</span><span class="p">(</span>
-                <span class="n">np_arr</span><span class="p">,</span> <span class="n">current_backend</span><span class="p">()</span><span class="o">.</span><span class="n">asarray</span><span class="p">,</span> <span class="n">include_derived</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shallow</span><span class="o">=</span><span class="kc">False</span>
+                <span class="n">np_arr</span><span class="p">,</span>
+                <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">current_backend</span><span class="p">()</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">),</span>
+                <span class="n">include_derived</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">shallow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
             <span class="p">)</span>
             <span class="n">new_data</span> <span class="o">=</span> <span class="n">_variable</span><span class="p">(</span><span class="n">native_arr</span><span class="p">)</span>
 
         <span class="k">else</span><span class="p">:</span>
             <span class="n">new_data</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">nested_map</span><span class="p">(</span>
-                <span class="n">np_arr</span><span class="p">,</span> <span class="n">current_backend</span><span class="p">()</span><span class="o">.</span><span class="n">asarray</span><span class="p">,</span> <span class="n">include_derived</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">shallow</span><span class="o">=</span><span class="kc">False</span>
+                <span class="n">np_arr</span><span class="p">,</span>
+                <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">current_backend</span><span class="p">()</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">),</span>
+                <span class="n">include_derived</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                <span class="n">shallow</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
             <span class="p">)</span>
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">):</span>
@@ -883,11 +890,12 @@ document.write(`
 
     <span class="n">variable_ids</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>  <span class="c1"># create an empty set to store variable object ids</span>
     <span class="n">numpy_objs</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># create an empty list to store numpy objects</span>
+    <span class="n">devices</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># create an empty list to store device strings</span>
     <span class="c1"># created during 1st conversion step</span>
 
     <span class="k">if</span> <span class="n">dynamic</span><span class="p">:</span>
-        <span class="n">variable_ids</span><span class="p">,</span> <span class="n">numpy_objs</span> <span class="o">=</span> <span class="n">convert_from_source_backend_to_numpy</span><span class="p">(</span>
-            <span class="n">variable_ids</span><span class="p">,</span> <span class="n">numpy_objs</span>
+        <span class="n">variable_ids</span><span class="p">,</span> <span class="n">numpy_objs</span><span class="p">,</span> <span class="n">devices</span> <span class="o">=</span> <span class="n">convert_from_source_backend_to_numpy</span><span class="p">(</span>
+            <span class="n">variable_ids</span><span class="p">,</span> <span class="n">numpy_objs</span><span class="p">,</span> <span class="n">devices</span>
         <span class="p">)</span>
 
     <span class="c1"># update the global dict with the new backend</span>
@@ -911,7 +919,7 @@ document.write(`
     <span class="n">_set_backend_as_ivy</span><span class="p">(</span><span class="n">ivy_original_dict</span><span class="p">,</span> <span class="n">ivy</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">dynamic</span><span class="p">:</span>
-        <span class="n">convert_from_numpy_to_target_backend</span><span class="p">(</span><span class="n">variable_ids</span><span class="p">,</span> <span class="n">numpy_objs</span><span class="p">)</span>
+        <span class="n">convert_from_numpy_to_target_backend</span><span class="p">(</span><span class="n">variable_ids</span><span class="p">,</span> <span class="n">numpy_objs</span><span class="p">,</span> <span class="n">devices</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">verbosity</span><span class="o">.</span><span class="n">level</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">verbosity</span><span class="o">.</span><span class="n">cprint</span><span class="p">(</span><span class="s2">&quot;backend stack: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">backend_stack</span><span class="p">))</span>

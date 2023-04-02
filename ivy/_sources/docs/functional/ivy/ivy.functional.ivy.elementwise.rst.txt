@@ -33,6 +33,7 @@ Elementwise
    ivy.functional.ivy.elementwise.expm1
    ivy.functional.ivy.elementwise.floor
    ivy.functional.ivy.elementwise.floor_divide
+   ivy.functional.ivy.elementwise.fmod
    ivy.functional.ivy.elementwise.greater
    ivy.functional.ivy.elementwise.greater_equal
    ivy.functional.ivy.elementwise.isfinite

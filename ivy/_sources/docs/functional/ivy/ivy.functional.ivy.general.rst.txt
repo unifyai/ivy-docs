@@ -57,6 +57,7 @@ General
    ivy.functional.ivy.general.is_ivy_array
    ivy.functional.ivy.general.is_ivy_container
    ivy.functional.ivy.general.is_native_array
+   ivy.functional.ivy.general.isin
    ivy.functional.ivy.general.isscalar
    ivy.functional.ivy.general.match_kwargs
    ivy.functional.ivy.general.multiprocessing

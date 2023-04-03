@@ -1,0 +1,873 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Graph Compiler &#8212; Ivy Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'compiler/compiler';</script>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Transpiler" href="transpiler.html" />
+    <link rel="prev" title="Glossary" href="../overview/glossary.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo_dark.png?raw=true" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><div></div></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><div></div></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../overview/background.html">Background</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/design.html">Design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/related_work.html">Related Work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/extensions.html">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/deep_dive.html">Deep Dive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/glossary.html">Glossary</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Compiling and Transpiling</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Graph Compiler</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="transpiler.html">Transpiler</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.constants.html">Constants</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.control_flow_ops.html">Control flow ops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.creation.html">Creation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.data_type.html">Data type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.device.html">Device</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.elementwise.html">Elementwise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.experimental.html">Experimental</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.general.html">General</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.gradients.html">Gradients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.linear_algebra.html">Linear algebra</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.losses.html">Losses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.manipulation.html">Manipulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.meta.html">Meta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.nest.html">Nest</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.random.html">Random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.searching.html">Searching</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.set.html">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.sorting.html">Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.statistical.html">Statistical</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Data classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../docs/data_classes/ivy.data_classes.array.html">Array</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/data_classes/ivy.data_classes.container.html">Container</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Framework classes</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../docs/framework/stateful/ivy.stateful.activations.html">Activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/framework/stateful/ivy.stateful.converters.html">Converters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/framework/stateful/ivy.stateful.helpers.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/framework/stateful/ivy.stateful.initializers.html">Initializers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/framework/stateful/ivy.stateful.layers.html">Layers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/framework/stateful/ivy.stateful.module.html">Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/framework/stateful/ivy.stateful.norms.html">Norms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/framework/stateful/ivy.stateful.optimizers.html">Optimizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/framework/stateful/ivy.stateful.sequential.html">Sequential</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Nested array</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../docs/nested-array/nested_array/ivy.nested_array.nested_array.html">Nested array</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Utils</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../docs/utilities/utils/ivy.utils.assertions.html">Assertions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/utilities/utils/ivy.utils.backend.html">Backend</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/utilities/utils/ivy.utils.dynamic_import.html">Dynamic import</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/utilities/utils/ivy.utils.exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/utilities/utils/ivy.utils.inspection.html">Inspection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/utilities/utils/ivy.utils.verbosity.html">Verbosity</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Testing</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../docs/testing/helpers/ivy_tests.test_ivy.helpers.assertions.html">Assertions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/testing/helpers/ivy_tests.test_ivy.helpers.available_frameworks.html">Available frameworks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/testing/helpers/ivy_tests.test_ivy.helpers.function_testing.html">Function testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/testing/helpers/ivy_tests.test_ivy.helpers.globals.html">Globals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/testing/helpers/ivy_tests.test_ivy.helpers.hypothesis_helpers.html">Hypothesis helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/testing/helpers/ivy_tests.test_ivy.helpers.structs.html">Structs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/testing/helpers/ivy_tests.test_ivy.helpers.test_parameter_flags.html">Test parameter flags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/testing/helpers/ivy_tests.test_ivy.helpers.testing_helpers.html">Testing helpers</a></li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading">
+            <span class="caption-text">Docs</span>
+        </p>
+        <ul class="nav bd-sidenav">
+            <li class="toctree-l1">
+                <a class="reference external" href="/ivy">
+                    Ivy
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/mech">
+                    Ivy mech
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/vision">
+                    Ivy vision
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/robot">
+                    Ivy robot
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/gym">
+                    Ivy gym
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/memory">
+                    Ivy memory
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/builder">
+                    Ivy builder
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/models">
+                    Ivy models
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/ecosystem">
+                    Ivy ecosystem
+                </a>
+            </li>
+            </ul>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Graph Compiler</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="graph-compiler">
+<h1>Graph Compiler<a class="headerlink" href="#graph-compiler" title="Permalink to this heading">#</a></h1>
+<blockquote>
+<div><p>⚠️ <strong>Warning</strong>: The compiler and the transpiler are not publicly available yet, so certain parts of this doc won’t work as expected as of now!</p>
+</div></blockquote>
+<p>When we call an Ivy function, there is always a small performance hit due to added
+Python wrapping. This overhead becomes increasingly noticeable when we use large
+models with multiple function calls. The Graph Compiler improves the performance of
+Ivy by removing the extra wrapping around each function call.</p>
+<p>The Graph Compiler takes in any Ivy function, framework-specific (backend) function,
+or composition of both, and produces a simplified executable computation graph composed
+of functions from the backend functional API only, which results in:</p>
+<ul class="simple">
+<li><p>Simplified code: The Graph Compiler simplifies the code by removing all the wrapping
+and functions that don’t contribute to the output: print statements, loggers, etc.</p></li>
+<li><p>Improved performance: The compiled graph has no performance overhead due to Ivy’s
+function wrapping, likewise, redundant operations from the original function are also
+removed, increasing its overall performance.</p></li>
+</ul>
+<section id="compiler-api">
+<h2>Compiler API<a class="headerlink" href="#compiler-api" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ivy.compile">
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">compile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">objs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stateful</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg_stateful_idxs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwarg_stateful_idxs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_generators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_caching</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_backend_compiled_fn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">static_argnums</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">static_argnames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ivy.compile" title="Permalink to this definition">#</a></dt>
+<dd><p>Compiles a <code class="docutils literal notranslate"><span class="pre">Callable</span></code> or set of them into an Ivy graph. If <code class="docutils literal notranslate"><span class="pre">args</span></code> or <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> are specified,
+compilation is performed eagerly, otherwise, compilation will happen lazily.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>objs</strong> (<code class="docutils literal notranslate"><span class="pre">Callable</span></code>) – Callable(s) to compile and create a graph of.</p></li>
+<li><p><strong>stateful</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[List]</span></code>) – List of instances to be considered stateful during the graph compilation.</p></li>
+<li><p><strong>arg_stateful_idxs</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[List]</span></code>) – Positional arguments to be considered stateful during the graph compilation.</p></li>
+<li><p><strong>kwarg_stateful_idxs</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[List]</span></code>) – Keyword arguments to be considered stateful during the graph compilation.</p></li>
+<li><p><strong>to</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[str]</span></code>) – Backend that the graph will be compiled to. If not specified, the current backend will be used.</p></li>
+<li><p><strong>include_generators</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) – Include array creation/generation functions as part of the graph.</p></li>
+<li><p><strong>array_caching</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) – Cache the constant arrays that appear as arguments to the functions in the graph.</p></li>
+<li><p><strong>return_backend_compiled_fn</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to apply the native compilers, i.e. tf.function, after ivy’s compilation.</p></li>
+<li><p><strong>static_argnums</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[Union[int,</span> <span class="pre">Iterable[int]]]</span></code>) – For jax’s jit compilation.</p></li>
+<li><p><strong>static_argnames</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[Union[str,</span> <span class="pre">Iterable[str]]]</span></code>) – For jax’s jit compilation.</p></li>
+<li><p><strong>args</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[Tuple]</span></code>) – Positional arguments for obj.</p></li>
+<li><p><strong>kwargs</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[dict]</span></code>) – Keyword arguments for obj.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Union[Graph,</span> <span class="pre">LazyGraph,</span> <span class="pre">ivy.Module,</span> <span class="pre">ModuleType]</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A compiled <code class="docutils literal notranslate"><span class="pre">Graph</span></code> or a non-initialized <code class="docutils literal notranslate"><span class="pre">LazyGraph</span></code>. If the object is an <code class="docutils literal notranslate"><span class="pre">ivy.Module</span></code>, the forward pass will be compiled and the same module will be returned. If the object is a <code class="docutils literal notranslate"><span class="pre">ModuleType</span></code>, the function will return a copy of the module with every method lazily compiled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="using-the-compiler">
+<h2>Using the compiler<a class="headerlink" href="#using-the-compiler" title="Permalink to this heading">#</a></h2>
+<p>To use the <code class="docutils literal notranslate"><span class="pre">ivy.compile()</span></code> function, you need to pass a callable object and the corresponding inputs
+to the function.</p>
+<p>Let’s start with a simple function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
+
+<span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s2">&quot;torch&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">fn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="n">y</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">y</span><span class="p">])</span>
+    <span class="n">sum_j</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">j</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">z</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+
+<span class="c1"># Compile the function</span>
+<span class="n">compiled_fn</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>In this case, the compiled graph would be:</p>
+<img alt="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/compiler/figure1.png" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/compiler/figure1.png" />
+<p>From the graph, we can observe that:</p>
+<ol class="arabic simple">
+<li><p>As <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> are the only variables used when calculating the returned value <code class="docutils literal notranslate"><span class="pre">z</span></code>,
+the non-contributing variable(s), <code class="docutils literal notranslate"><span class="pre">k</span></code> was not included in the graph. Function calls that
+don’t contribute to the output like the <code class="docutils literal notranslate"><span class="pre">print</span></code> function were also excluded.</p></li>
+<li><p>As we set the backend to <code class="docutils literal notranslate"><span class="pre">torch</span></code> during the compilation process, the compiled
+functions are torch functions, and the input and output types are torch tensors.</p></li>
+<li><p>The tensor shape in the graph only indicates the shape of the inputs the graph was
+traced with. The compiler doesn’t impose additional restrictions on the shape or
+datatype of the input array(s).</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Original set of inputs</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">compiled_fn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="c1"># Inputs of different shape</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">]])</span>
+
+<span class="c1"># New set of inputs</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">compiled_fn</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<section id="eager-vs-lazy-compilation">
+<h3>Eager vs lazy Compilation<a class="headerlink" href="#eager-vs-lazy-compilation" title="Permalink to this heading">#</a></h3>
+<p>The graph compiler runs the original function under the hood and tracks its computation
+to create the compiled graph. The <strong>eager compilation</strong> method traces the graph in the
+corresponding function call with the specified inputs before we use the compiled
+function.</p>
+<p>Instead of compiling functions before using them, Ivy also allows you to compile the
+function dynamically. This can be done by passing only the function to the
+compile method and not including the function arguments. In this case, the output will be a
+<code class="docutils literal notranslate"><span class="pre">LazyGraph</span></code> instead of a <code class="docutils literal notranslate"><span class="pre">Graph</span></code> instance. When this <code class="docutils literal notranslate"><span class="pre">LazyGraph</span></code> object is first invoked with
+function arguments, it compiles the function and returns the output of the compiled
+function. Once the graph has been initialized, calls to the <code class="docutils literal notranslate"><span class="pre">LazyGraph</span></code> object will
+use the compiled function to compute the outputs directly.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compile the function eagerly (compilation happens here)</span>
+<span class="n">eager_graph</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+
+<span class="c1"># Compile the function lazily (compilation does not happen here)</span>
+<span class="n">lazy_graph</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
+
+<span class="c1"># Compile and return the output</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">lazy_graph</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To sum up, lazy compilation enables you to delay the compilation process until you have
+the necessary inputs during execution. This is particularly useful in cases like
+compiling libraries, where it’s not feasible to provide valid arguments for every
+function call.</p>
+<p>Now let’s look at additional functionalities that you can find in the
+compiler.</p>
+</section>
+<section id="array-caching">
+<h3>Array caching<a class="headerlink" href="#array-caching" title="Permalink to this heading">#</a></h3>
+<p>The compiler is able to cache constant arrays and their operations through the
+<code class="docutils literal notranslate"><span class="pre">array_caching</span></code> flag, reducing computation time after compilation.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
+
+<span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s2">&quot;torch&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">fn</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">])</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">**</span> <span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">z</span>
+
+<span class="n">comp_func</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,))</span>
+</pre></div>
+</div>
+<p>When calling <code class="docutils literal notranslate"><span class="pre">ivy.compile()</span></code>, the <code class="docutils literal notranslate"><span class="pre">array_caching</span></code> argument is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> by
+default, which returns the following graph.</p>
+<img alt="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/compiler/figure2.png" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/compiler/figure2.png" />
+<p>This shows that by caching the constant operation in the graph, a simpler graph can be
+obtained. However, if desired, this argument can be set to <code class="docutils literal notranslate"><span class="pre">False</span></code>, which results in the
+graph below. This ultimately results in a trade-off between time and memory, as
+cached results need to be stored in memory but if they are not cached these operations
+need to be performed.</p>
+<img alt="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/compiler/figure3.png" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/compiler/figure3.png" />
+</section>
+<section id="generators">
+<h3>Generators<a class="headerlink" href="#generators" title="Permalink to this heading">#</a></h3>
+<p>By using the <code class="docutils literal notranslate"><span class="pre">include_generators</span></code> argument, you can choose whether generator functions
+are included as nodes or “baked” into the graph.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
+
+<span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s2">&quot;torch&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">fn</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">z</span> <span class="o">+</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">comp_func</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">include_generators</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,))</span>
+</pre></div>
+</div>
+<p>Returns:</p>
+<img alt="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/compiler/figure4.png" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/compiler/figure4.png" />
+<p>And instead,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
+
+<span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s2">&quot;torch&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">fn</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">a</span>
+    <span class="k">return</span> <span class="n">z</span> <span class="o">+</span> <span class="n">torch</span><span class="o">.</span><span class="n">rand</span><span class="p">([</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">comp_func</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">include_generators</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">x</span><span class="p">,))</span>
+</pre></div>
+</div>
+<p>Returns:</p>
+<img alt="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/compiler/figure5.png" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/compiler/figure5.png" />
+</section>
+<section id="stateful">
+<h3>Stateful<a class="headerlink" href="#stateful" title="Permalink to this heading">#</a></h3>
+<p>Finally, you can also track <code class="docutils literal notranslate"><span class="pre">__setattr__</span></code> and <code class="docutils literal notranslate"><span class="pre">__getattr__</span></code> methods of
+arbitrary classes using the <code class="docutils literal notranslate"><span class="pre">stateful</span></code> parameters.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
+
+<span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s2">&quot;torch&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">fn</span><span class="p">(</span><span class="n">cont</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+    <span class="n">cont</span><span class="o">.</span><span class="n">new_attribute</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">cont</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">args</span> <span class="o">=</span> <span class="p">(</span><span class="n">cont</span><span class="o">.</span><span class="n">cont_deep_copy</span><span class="p">(),</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">comp_func</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">fn</span><span class="p">,</span> <span class="n">arg_stateful_idxs</span><span class="o">=</span><span class="p">[[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">args</span><span class="o">=</span><span class="n">args</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/compiler/figure6.png" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/compiler/figure6.png" />
+</section>
+</section>
+<section id="sharp-bits">
+<h2>Sharp bits<a class="headerlink" href="#sharp-bits" title="Permalink to this heading">#</a></h2>
+<p>As some parts of the graph compiler are still under development, there are some sharp
+bits to take into account when using it. All of these points are WIP, so they’ll be
+removed soon!</p>
+<ol class="arabic simple">
+<li><p><strong>Dynamic control flow</strong>: The compiled graph is built using function tracing at the
+moment, so dynamic control flow such as conditional branches or conditional loops
+will not be registered correctly. As an example, if there is a while loop in your
+code that depends on a changing value, the number of iterations in the final graph
+will be the same as the number of iterations performed with the input passed to the
+compile function.</p></li>
+<li><p><strong>Non-framework-specific code</strong>: As the compiler traces the function using the
+functional API of the underlying framework, any piece of code inside the model that
+is not from said framework will not be correctly registered, this includes other
+frameworks code (such as NumPy statements inside a torch model) or python statements
+such as len().</p></li>
+<li><p><strong>Incorrectly cached parts of the graph</strong>: There are certain cases where compilation
+can succeed but hide some cached parts of the graph which shouldn’t really be cached.
+To check this, it’s recommended to compile with a noise array of the same shape and
+then check if the output of the original function and the compiled graph with another
+input is the same. If you find out that the graph is not right, feel free to open an
+<a class="reference external" href="https://github.com/unifyai/ivy/issues">issue</a> with a minimal example and we’ll look
+into it!</p></li>
+</ol>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<p>Below, we compile a ResNet50 model from
+<a class="reference external" href="https://huggingface.co/microsoft/resnet-50">Hugging Face</a> and use it to classify the
+breed of a cat.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoImageProcessor</span><span class="p">,</span> <span class="n">ResNetForImageClassification</span>
+<span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
+
+<span class="c1"># Set backend to torch</span>
+<span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s2">&quot;torch&quot;</span><span class="p">)</span>
+
+<span class="c1"># Download the input image</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;huggingface/cats-image&quot;</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">][</span><span class="s2">&quot;image&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Setting the model</span>
+<span class="n">image_processor</span> <span class="o">=</span> <span class="n">AutoImageProcessor</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;microsoft/resnet-50&quot;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ResNetForImageClassification</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;microsoft/resnet-50&quot;</span><span class="p">)</span>
+
+<span class="c1"># Preprocessing the input image</span>
+<span class="n">inputs</span> <span class="o">=</span> <span class="n">image_processor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Normally, we would then feed these inputs to the model itself without compiling it</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Normal flow using pytorch</span>
+<span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+<span class="n">logits</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span><span class="o">.</span><span class="n">logits</span>
+</pre></div>
+</div>
+<p>With ivy, you can compile your model to a computation graph for increased performance.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compiling the model</span>
+<span class="n">compiled_graph</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">,))</span>
+
+<span class="c1"># Using the compiled function</span>
+<span class="n">logits</span> <span class="o">=</span> <span class="n">compiled_graph</span><span class="p">(</span><span class="o">**</span><span class="n">inputs</span><span class="p">)</span><span class="o">.</span><span class="n">logits</span>
+</pre></div>
+</div>
+<p>Time for the final output of our computation graph.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">predicted_label</span> <span class="o">=</span> <span class="n">logits</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">id2label</span><span class="p">[</span><span class="n">predicted_label</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../overview/glossary.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Glossary</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="transpiler.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Transpiler</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compiler-api">Compiler API</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.compile"><code class="docutils literal notranslate"><span class="pre">ivy.compile()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-compiler">Using the compiler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eager-vs-lazy-compilation">Eager vs lazy Compilation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-caching">Array caching</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generators">Generators</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#stateful">Stateful</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sharp-bits">Sharp bits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2020-2023, Ivy Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

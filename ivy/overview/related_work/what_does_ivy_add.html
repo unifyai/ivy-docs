@@ -312,6 +312,11 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Compiling and Transpiling</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../compiler/compiler.html">Graph Compiler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../compiler/transpiler.html">Transpiler</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Functions</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.activations.html">Activations</a></li>
@@ -521,7 +526,7 @@ It therefore extends what is possible in any of the specific individual framewor
 </section>
 <section id="graph-tracers">
 <h2>Graph Tracers<a class="headerlink" href="#graph-tracers" title="Permalink to this heading">#</a></h2>
-<p>Ivy’s <span class="xref std std-ref">Graph Compiler</span> exhibits similar properties to many of the framework-specific graph tracers.
+<p>Ivy’s <a class="reference internal" href="../../compiler/compiler.html#graph-compiler"><span class="std std-ref">Graph Compiler</span></a> exhibits similar properties to many of the framework-specific graph tracers.
 Ivy’s graph compiler employs function tracing for computing the graph, and uses this graph as an intermediate representation during the transpilation process.
 Of all the graph tracers, Ivy’s graph compiler is most similar to <a class="reference external" href="https://pytorch.org/docs/stable/fx.html">torch.fx</a>.
 This is because <code class="code docutils literal notranslate"><span class="pre">torch.fx</span></code> also operates entirely in Python, without deferring to lower level languages for tracing and extracting the computation graph or the intermediate representation.

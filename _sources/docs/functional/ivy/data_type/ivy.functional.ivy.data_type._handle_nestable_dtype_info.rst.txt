@@ -1,0 +1,8 @@
+\_handle\_nestable\_dtype\_info
+===============================
+
+.. autofunction:: ivy._handle_nestable_dtype_info
+
+.. autoskippablemethod:: ivy.Array._handle_nestable_dtype_info
+
+.. autoskippablemethod:: ivy.Container._handle_nestable_dtype_info

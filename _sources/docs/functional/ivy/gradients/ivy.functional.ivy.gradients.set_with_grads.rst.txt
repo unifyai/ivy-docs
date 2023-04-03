@@ -1,0 +1,8 @@
+set\_with\_grads
+================
+
+.. autofunction:: ivy.set_with_grads
+
+.. autoskippablemethod:: ivy.Array.set_with_grads
+
+.. autoskippablemethod:: ivy.Container.set_with_grads

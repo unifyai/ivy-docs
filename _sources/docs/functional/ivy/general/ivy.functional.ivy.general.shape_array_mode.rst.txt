@@ -1,0 +1,8 @@
+shape\_array\_mode
+==================
+
+.. autofunction:: ivy.shape_array_mode
+
+.. autoskippablemethod:: ivy.Array.shape_array_mode
+
+.. autoskippablemethod:: ivy.Container.shape_array_mode

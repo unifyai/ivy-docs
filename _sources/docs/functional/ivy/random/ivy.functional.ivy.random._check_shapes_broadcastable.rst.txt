@@ -1,0 +1,8 @@
+\_check\_shapes\_broadcastable
+==============================
+
+.. autofunction:: ivy._check_shapes_broadcastable
+
+.. autoskippablemethod:: ivy.Array._check_shapes_broadcastable
+
+.. autoskippablemethod:: ivy.Container._check_shapes_broadcastable

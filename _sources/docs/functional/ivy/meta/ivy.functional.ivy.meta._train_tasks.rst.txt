@@ -1,0 +1,8 @@
+\_train\_tasks
+==============
+
+.. autofunction:: ivy._train_tasks
+
+.. autoskippablemethod:: ivy.Array._train_tasks
+
+.. autoskippablemethod:: ivy.Container._train_tasks

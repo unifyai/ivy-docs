@@ -1,0 +1,8 @@
+tile
+====
+
+.. autofunction:: ivy.tile
+
+.. autoskippablemethod:: ivy.Array.tile
+
+.. autoskippablemethod:: ivy.Container.tile

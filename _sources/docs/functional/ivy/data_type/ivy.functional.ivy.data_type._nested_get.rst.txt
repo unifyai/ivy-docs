@@ -1,0 +1,8 @@
+\_nested\_get
+=============
+
+.. autofunction:: ivy._nested_get
+
+.. autoskippablemethod:: ivy.Array._nested_get
+
+.. autoskippablemethod:: ivy.Container._nested_get

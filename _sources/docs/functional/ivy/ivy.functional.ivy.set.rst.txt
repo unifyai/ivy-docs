@@ -1,0 +1,26 @@
+Set
+===
+
+.. autosummary::
+   :toctree: set
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   ivy.functional.ivy.set.unique_all
+   ivy.functional.ivy.set.unique_counts
+   ivy.functional.ivy.set.unique_inverse
+   ivy.functional.ivy.set.unique_values
+
+
+
+.. automodule:: ivy.functional.ivy.set
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.set

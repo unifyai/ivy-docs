@@ -1,0 +1,8 @@
+unset\_with\_grads
+==================
+
+.. autofunction:: ivy.unset_with_grads
+
+.. autoskippablemethod:: ivy.Array.unset_with_grads
+
+.. autoskippablemethod:: ivy.Container.unset_with_grads

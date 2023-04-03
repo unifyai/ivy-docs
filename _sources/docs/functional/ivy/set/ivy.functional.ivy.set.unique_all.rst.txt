@@ -1,0 +1,8 @@
+unique\_all
+===========
+
+.. autofunction:: ivy.unique_all
+
+.. autoskippablemethod:: ivy.Array.unique_all
+
+.. autoskippablemethod:: ivy.Container.unique_all

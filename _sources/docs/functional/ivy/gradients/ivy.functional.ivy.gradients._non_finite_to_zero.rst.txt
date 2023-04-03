@@ -1,0 +1,8 @@
+\_non\_finite\_to\_zero
+=======================
+
+.. autofunction:: ivy._non_finite_to_zero
+
+.. autoskippablemethod:: ivy.Array._non_finite_to_zero
+
+.. autoskippablemethod:: ivy.Container._non_finite_to_zero

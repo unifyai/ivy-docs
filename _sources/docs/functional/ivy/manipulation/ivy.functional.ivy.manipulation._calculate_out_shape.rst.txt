@@ -1,0 +1,8 @@
+\_calculate\_out\_shape
+=======================
+
+.. autofunction:: ivy._calculate_out_shape
+
+.. autoskippablemethod:: ivy.Array._calculate_out_shape
+
+.. autoskippablemethod:: ivy.Container._calculate_out_shape

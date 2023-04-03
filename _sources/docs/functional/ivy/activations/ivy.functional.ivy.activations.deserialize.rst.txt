@@ -1,0 +1,8 @@
+deserialize
+===========
+
+.. autofunction:: ivy.deserialize
+
+.. autoskippablemethod:: ivy.Array.deserialize
+
+.. autoskippablemethod:: ivy.Container.deserialize

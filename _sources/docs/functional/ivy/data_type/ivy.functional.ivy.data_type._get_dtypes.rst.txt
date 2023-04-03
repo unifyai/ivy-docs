@@ -1,0 +1,8 @@
+\_get\_dtypes
+=============
+
+.. autofunction:: ivy._get_dtypes
+
+.. autoskippablemethod:: ivy.Array._get_dtypes
+
+.. autoskippablemethod:: ivy.Container._get_dtypes

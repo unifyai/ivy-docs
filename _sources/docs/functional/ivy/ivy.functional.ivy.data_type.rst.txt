@@ -1,0 +1,72 @@
+Data type
+=========
+
+.. autosummary::
+   :toctree: data_type
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   ivy.functional.ivy.data_type._check_complex128
+   ivy.functional.ivy.data_type._check_float64
+   ivy.functional.ivy.data_type._get_dtypes
+   ivy.functional.ivy.data_type._get_function_list
+   ivy.functional.ivy.data_type._get_functions_from_string
+   ivy.functional.ivy.data_type._handle_nestable_dtype_info
+   ivy.functional.ivy.data_type._is_valid_dtypes_attributes
+   ivy.functional.ivy.data_type._lstrip_lines
+   ivy.functional.ivy.data_type._nested_get
+   ivy.functional.ivy.data_type.as_ivy_dtype
+   ivy.functional.ivy.data_type.as_native_dtype
+   ivy.functional.ivy.data_type.astype
+   ivy.functional.ivy.data_type.broadcast_arrays
+   ivy.functional.ivy.data_type.broadcast_to
+   ivy.functional.ivy.data_type.can_cast
+   ivy.functional.ivy.data_type.check_float
+   ivy.functional.ivy.data_type.closest_valid_dtype
+   ivy.functional.ivy.data_type.default_complex_dtype
+   ivy.functional.ivy.data_type.default_dtype
+   ivy.functional.ivy.data_type.default_float_dtype
+   ivy.functional.ivy.data_type.default_int_dtype
+   ivy.functional.ivy.data_type.default_uint_dtype
+   ivy.functional.ivy.data_type.dtype
+   ivy.functional.ivy.data_type.dtype_bits
+   ivy.functional.ivy.data_type.finfo
+   ivy.functional.ivy.data_type.function_supported_dtypes
+   ivy.functional.ivy.data_type.function_unsupported_dtypes
+   ivy.functional.ivy.data_type.iinfo
+   ivy.functional.ivy.data_type.infer_default_dtype
+   ivy.functional.ivy.data_type.invalid_dtype
+   ivy.functional.ivy.data_type.is_bool_dtype
+   ivy.functional.ivy.data_type.is_complex_dtype
+   ivy.functional.ivy.data_type.is_float_dtype
+   ivy.functional.ivy.data_type.is_int_dtype
+   ivy.functional.ivy.data_type.is_uint_dtype
+   ivy.functional.ivy.data_type.promote_types
+   ivy.functional.ivy.data_type.promote_types_of_inputs
+   ivy.functional.ivy.data_type.result_type
+   ivy.functional.ivy.data_type.set_default_complex_dtype
+   ivy.functional.ivy.data_type.set_default_dtype
+   ivy.functional.ivy.data_type.set_default_float_dtype
+   ivy.functional.ivy.data_type.set_default_int_dtype
+   ivy.functional.ivy.data_type.set_default_uint_dtype
+   ivy.functional.ivy.data_type.type_promote_arrays
+   ivy.functional.ivy.data_type.unset_default_complex_dtype
+   ivy.functional.ivy.data_type.unset_default_dtype
+   ivy.functional.ivy.data_type.unset_default_float_dtype
+   ivy.functional.ivy.data_type.unset_default_int_dtype
+   ivy.functional.ivy.data_type.unset_default_uint_dtype
+   ivy.functional.ivy.data_type.valid_dtype
+
+
+
+.. automodule:: ivy.functional.ivy.data_type
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.data_type

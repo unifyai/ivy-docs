@@ -1,0 +1,8 @@
+tensordot
+=========
+
+.. autofunction:: ivy.tensordot
+
+.. autoskippablemethod:: ivy.Array.tensordot
+
+.. autoskippablemethod:: ivy.Container.tensordot

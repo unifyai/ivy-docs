@@ -1,0 +1,8 @@
+\_get\_y\_and\_ret\_idxs
+========================
+
+.. autofunction:: ivy._get_y_and_ret_idxs
+
+.. autoskippablemethod:: ivy.Array._get_y_and_ret_idxs
+
+.. autoskippablemethod:: ivy.Container._get_y_and_ret_idxs

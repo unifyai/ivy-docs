@@ -1,0 +1,32 @@
+Random
+======
+
+.. autosummary::
+   :toctree: random
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   ivy.functional.ivy.random._check_bounds_and_get_shape
+   ivy.functional.ivy.random._check_shapes_broadcastable
+   ivy.functional.ivy.random._check_valid_scale
+   ivy.functional.ivy.random._randint_check_dtype_and_bound
+   ivy.functional.ivy.random.multinomial
+   ivy.functional.ivy.random.randint
+   ivy.functional.ivy.random.random_normal
+   ivy.functional.ivy.random.random_uniform
+   ivy.functional.ivy.random.seed
+   ivy.functional.ivy.random.shuffle
+
+
+
+.. automodule:: ivy.functional.ivy.random
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.random

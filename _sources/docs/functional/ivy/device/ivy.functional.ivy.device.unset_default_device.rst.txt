@@ -1,0 +1,8 @@
+unset\_default\_device
+======================
+
+.. autofunction:: ivy.unset_default_device
+
+.. autoskippablemethod:: ivy.Array.unset_default_device
+
+.. autoskippablemethod:: ivy.Container.unset_default_device

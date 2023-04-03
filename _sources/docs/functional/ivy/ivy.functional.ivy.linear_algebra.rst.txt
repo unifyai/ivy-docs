@@ -1,0 +1,52 @@
+Linear algebra
+==============
+
+.. autosummary::
+   :toctree: linear_algebra
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   ivy.functional.ivy.linear_algebra.cholesky
+   ivy.functional.ivy.linear_algebra.cross
+   ivy.functional.ivy.linear_algebra.det
+   ivy.functional.ivy.linear_algebra.diag
+   ivy.functional.ivy.linear_algebra.diagonal
+   ivy.functional.ivy.linear_algebra.eig
+   ivy.functional.ivy.linear_algebra.eigh
+   ivy.functional.ivy.linear_algebra.eigvalsh
+   ivy.functional.ivy.linear_algebra.inner
+   ivy.functional.ivy.linear_algebra.inv
+   ivy.functional.ivy.linear_algebra.lu_factor
+   ivy.functional.ivy.linear_algebra.matmul
+   ivy.functional.ivy.linear_algebra.matrix_norm
+   ivy.functional.ivy.linear_algebra.matrix_power
+   ivy.functional.ivy.linear_algebra.matrix_rank
+   ivy.functional.ivy.linear_algebra.matrix_transpose
+   ivy.functional.ivy.linear_algebra.outer
+   ivy.functional.ivy.linear_algebra.pinv
+   ivy.functional.ivy.linear_algebra.qr
+   ivy.functional.ivy.linear_algebra.slogdet
+   ivy.functional.ivy.linear_algebra.solve
+   ivy.functional.ivy.linear_algebra.svd
+   ivy.functional.ivy.linear_algebra.svdvals
+   ivy.functional.ivy.linear_algebra.tensordot
+   ivy.functional.ivy.linear_algebra.tensorsolve
+   ivy.functional.ivy.linear_algebra.trace
+   ivy.functional.ivy.linear_algebra.vander
+   ivy.functional.ivy.linear_algebra.vecdot
+   ivy.functional.ivy.linear_algebra.vector_norm
+   ivy.functional.ivy.linear_algebra.vector_to_skew_symmetric_matrix
+
+
+
+.. automodule:: ivy.functional.ivy.linear_algebra
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.linear_algebra

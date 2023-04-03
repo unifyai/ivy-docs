@@ -1,0 +1,8 @@
+\_is\_valid\_dtypes\_attributes
+===============================
+
+.. autofunction:: ivy._is_valid_dtypes_attributes
+
+.. autoskippablemethod:: ivy.Array._is_valid_dtypes_attributes
+
+.. autoskippablemethod:: ivy.Container._is_valid_dtypes_attributes

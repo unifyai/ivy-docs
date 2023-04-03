@@ -1,0 +1,8 @@
+\_deconv\_length
+================
+
+.. autofunction:: ivy._deconv_length
+
+.. autoskippablemethod:: ivy.Array._deconv_length
+
+.. autoskippablemethod:: ivy.Container._deconv_length

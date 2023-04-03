@@ -1,0 +1,8 @@
+\_dnd\_dict\_intersection
+=========================
+
+.. autofunction:: ivy._dnd_dict_intersection
+
+.. autoskippablemethod:: ivy.Array._dnd_dict_intersection
+
+.. autoskippablemethod:: ivy.Container._dnd_dict_intersection

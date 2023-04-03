@@ -1,0 +1,8 @@
+flip
+====
+
+.. autofunction:: ivy.flip
+
+.. autoskippablemethod:: ivy.Array.flip
+
+.. autoskippablemethod:: ivy.Container.flip

@@ -1,0 +1,41 @@
+Nest
+====
+
+.. autosummary::
+   :toctree: nest
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   ivy.functional.ivy.nest.all_nested_indices
+   ivy.functional.ivy.nest.copy_nest
+   ivy.functional.ivy.nest.duplicate_array_index_chains
+   ivy.functional.ivy.nest.index_nest
+   ivy.functional.ivy.nest.insert_into_nest_at_index
+   ivy.functional.ivy.nest.insert_into_nest_at_indices
+   ivy.functional.ivy.nest.map
+   ivy.functional.ivy.nest.map_nest_at_index
+   ivy.functional.ivy.nest.map_nest_at_indices
+   ivy.functional.ivy.nest.multi_index_nest
+   ivy.functional.ivy.nest.nested_any
+   ivy.functional.ivy.nest.nested_argwhere
+   ivy.functional.ivy.nest.nested_map
+   ivy.functional.ivy.nest.nested_multi_map
+   ivy.functional.ivy.nest.prune_empty
+   ivy.functional.ivy.nest.prune_nest_at_index
+   ivy.functional.ivy.nest.prune_nest_at_indices
+   ivy.functional.ivy.nest.set_nest_at_index
+   ivy.functional.ivy.nest.set_nest_at_indices
+
+
+
+.. automodule:: ivy.functional.ivy.nest
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.nest

@@ -1,0 +1,8 @@
+get\_show\_func\_wrapper\_trace\_mode
+=====================================
+
+.. autofunction:: ivy.get_show_func_wrapper_trace_mode
+
+.. autoskippablemethod:: ivy.Array.get_show_func_wrapper_trace_mode
+
+.. autoskippablemethod:: ivy.Container.get_show_func_wrapper_trace_mode

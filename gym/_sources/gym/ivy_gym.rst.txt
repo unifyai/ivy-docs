@@ -1,0 +1,18 @@
+﻿ivy_gym
+=======
+
+.. This is a placeholder so the include directive removes what's before it
+.. REMOVE_BEFORE_HERE
+.. autosummary::
+   :toctree: ivy_gym
+   :template: top_level_module.rst
+   :caption: ivy_gym
+   :substitute-caption:
+   :hide-table:
+   :fix-directory:
+
+   ivy_gym.cartpole
+   ivy_gym.mountain_car
+   ivy_gym.pendulum
+   ivy_gym.reacher
+   ivy_gym.swimmer

@@ -1,8 +1,0 @@
-is\_complex\_dtype
-==================
-
-.. autofunction:: ivy.is_complex_dtype
-
-.. autoskippablemethod:: ivy.Array.is_complex_dtype
-
-.. autoskippablemethod:: ivy.Container.is_complex_dtype

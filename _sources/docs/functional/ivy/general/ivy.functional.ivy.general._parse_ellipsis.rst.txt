@@ -1,8 +1,0 @@
-\_parse\_ellipsis
-=================
-
-.. autofunction:: ivy._parse_ellipsis
-
-.. autoskippablemethod:: ivy.Array._parse_ellipsis
-
-.. autoskippablemethod:: ivy.Container._parse_ellipsis

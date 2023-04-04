@@ -1,8 +1,0 @@
-default\_int\_dtype
-===================
-
-.. autofunction:: ivy.default_int_dtype
-
-.. autoskippablemethod:: ivy.Array.default_int_dtype
-
-.. autoskippablemethod:: ivy.Container.default_int_dtype

@@ -1,8 +1,0 @@
-get\_array\_mode
-================
-
-.. autofunction:: ivy.get_array_mode
-
-.. autoskippablemethod:: ivy.Array.get_array_mode
-
-.. autoskippablemethod:: ivy.Container.get_array_mode

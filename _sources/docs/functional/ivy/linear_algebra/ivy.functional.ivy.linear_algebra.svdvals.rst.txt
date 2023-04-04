@@ -1,8 +1,0 @@
-svdvals
-=======
-
-.. autofunction:: ivy.svdvals
-
-.. autoskippablemethod:: ivy.Array.svdvals
-
-.. autoskippablemethod:: ivy.Container.svdvals

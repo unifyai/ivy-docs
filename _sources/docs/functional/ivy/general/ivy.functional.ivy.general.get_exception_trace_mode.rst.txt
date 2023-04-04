@@ -1,8 +1,0 @@
-get\_exception\_trace\_mode
-===========================
-
-.. autofunction:: ivy.get_exception_trace_mode
-
-.. autoskippablemethod:: ivy.Array.get_exception_trace_mode
-
-.. autoskippablemethod:: ivy.Container.get_exception_trace_mode

@@ -1,8 +1,0 @@
-\_get\_functions\_from\_string
-==============================
-
-.. autofunction:: ivy._get_functions_from_string
-
-.. autoskippablemethod:: ivy.Array._get_functions_from_string
-
-.. autoskippablemethod:: ivy.Container._get_functions_from_string

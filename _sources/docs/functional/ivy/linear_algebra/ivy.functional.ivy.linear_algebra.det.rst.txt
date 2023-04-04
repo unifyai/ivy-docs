@@ -1,8 +1,0 @@
-det
-===
-
-.. autofunction:: ivy.det
-
-.. autoskippablemethod:: ivy.Array.det
-
-.. autoskippablemethod:: ivy.Container.det

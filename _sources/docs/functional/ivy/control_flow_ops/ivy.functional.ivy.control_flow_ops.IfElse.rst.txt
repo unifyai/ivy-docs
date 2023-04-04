@@ -1,8 +1,0 @@
-IfElse
-======
-
-.. autofunction:: ivy.IfElse
-
-.. autoskippablemethod:: ivy.Array.IfElse
-
-.. autoskippablemethod:: ivy.Container.IfElse

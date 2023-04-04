@@ -1,8 +1,0 @@
-get
-===
-
-.. autofunction:: ivy.get
-
-.. autoskippablemethod:: ivy.Array.get
-
-.. autoskippablemethod:: ivy.Container.get

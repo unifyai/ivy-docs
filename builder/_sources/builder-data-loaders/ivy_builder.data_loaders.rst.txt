@@ -1,0 +1,15 @@
+﻿data_loaders
+============
+
+.. This is a placeholder so the include directive removes what's before it
+.. REMOVE_BEFORE_HERE
+.. autosummary::
+   :toctree: data_loaders
+   :template: top_level_module.rst
+   :caption: ivy_builder.data_loaders
+   :substitute-caption:
+   :hide-table:
+   :fix-directory:
+
+   ivy_builder.data_loaders.seq_data_loader
+   ivy_builder.data_loaders.specs

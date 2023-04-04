@@ -1,0 +1,15 @@
+Spec
+====
+
+
+
+.. automodule:: ivy_builder.specs.spec
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy_builder.specs.spec

@@ -1,0 +1,15 @@
+Data loader spec
+================
+
+
+
+.. automodule:: ivy_builder.specs.data_loader_spec
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy_builder.specs.data_loader_spec

@@ -1,0 +1,16 @@
+﻿empty
+=====
+
+.. This is a placeholder so the include directive removes what's before it
+.. REMOVE_BEFORE_HERE
+.. autosummary::
+   :toctree: empty
+   :template: top_level_module.rst
+   :caption: ivy_builder.empty
+   :substitute-caption:
+   :hide-table:
+   :fix-directory:
+
+   ivy_builder.empty.data_loader
+   ivy_builder.empty.network
+   ivy_builder.empty.trainer

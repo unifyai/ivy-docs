@@ -528,7 +528,7 @@ and take a look at the <a class="reference external" href="https://lets-unify.ai
 <section id="ivy-as-a-transpiler">
 <h1>Ivy as a transpiler<a class="headerlink" href="#ivy-as-a-transpiler" title="Permalink to this heading">#</a></h1>
 <p>Ivy’s transpiler allows you to use code from any other framework (or from any other version of the same framework!) in your own code, by just adding one line of code. Under the hood, Ivy traces a computational graph and leverages the frontends and backends to link one framework to another.</p>
-<p>This way, Ivy makes all ML-related projects available for you, independently of the framework you want to use to research, develop, or deploy systems. Feel free to head over to the docs for the full API reference, but the functions you’d most likely wanto to use are:</p>
+<p>This way, Ivy makes all ML-related projects available for you, independently of the framework you want to use to research, develop, or deploy systems. Feel free to head over to the docs for the full API reference, but the functions you’d most likely want to use are:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compiles a function into an efficient fully-functional graph, removing all wrapping and redundant code</span>
 <span class="n">ivy</span><span class="o">.</span><span class="n">compile</span><span class="p">()</span>
 
@@ -571,7 +571,7 @@ and take a look at the <a class="reference external" href="https://lets-unify.ai
 <p>If you want to learn more, you can find more information in the <a class="reference external" href="https://lets-unify.ai/ivy/overview/design/ivy_as_a_transpiler.html">Ivy as a transpiler section of the docs!</a></p>
 <section id="when-should-i-use-ivy-as-a-transpiler">
 <h2>When should I use Ivy as a transpiler?<a class="headerlink" href="#when-should-i-use-ivy-as-a-transpiler" title="Permalink to this heading">#</a></h2>
-<p>If you want to use building blocks published in other frameworks (neural networks, layers, array computing libraries, training pipelines…), you want to integrate code developed in various frameworks, or maybe straight up move code from one framework to another, the transpiler is definitely the tool 🔧 for the job! As the output of transpilation is native code in the target framework, you can use the converted code just as if it was code originally developed in that framework, appliying framework-specific optimizations or tools, instantly exposing your project to all of the unique perks of a different framework.</p>
+<p>If you want to use building blocks published in other frameworks (neural networks, layers, array computing libraries, training pipelines…), you want to integrate code developed in various frameworks, or maybe straight up move code from one framework to another, the transpiler is definitely the tool 🔧 for the job! As the output of transpilation is native code in the target framework, you can use the converted code just as if it was code originally developed in that framework, applying framework-specific optimizations or tools, instantly exposing your project to all of the unique perks of a different framework.</p>
 </section>
 </section>
 <section id="ivy-as-a-framework">
@@ -609,7 +609,7 @@ This is the same for ALL Ivy functions. They can accept tensors from any framewo
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">linear1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>If we put it all toghether, we’ll have something like this. This example uses PyTorch as the backend,
+<p>If we put it all together, we’ll have something like this. This example uses PyTorch as the backend,
 but this can easily be changed to your favorite framework, such as TensorFlow, or JAX.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
 
@@ -752,7 +752,7 @@ pip<span class="w"> </span>install<span class="w"> </span>--user<span class="w">
 <section id="documentation">
 <h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h1>
 <p>The <a class="reference external" href="https://lets-unify.ai/ivy/">Ivy Docs page</a> holds all the relevant information about Ivy’s and it’s framework API reference.</p>
-<p>There, you will find the <a class="reference external" href="https://lets-unify.ai/ivy/overview/design.html">Design</a> page, which is an user-focused guide about the architecture and the building blocks of Ivy. Likewise, you can take a look at the <a class="reference external" href="https://lets-unify.ai/ivy/overview/deep_dive.html">Deep dive</a>, which is oriented towards potential contributors of the code base and explains the nuances of Ivy in full detail 🔎</p>
+<p>There, you will find the <a class="reference external" href="https://lets-unify.ai/ivy/overview/design.html">Design</a> page, which is a user-focused guide about the architecture and the building blocks of Ivy. Likewise, you can take a look at the <a class="reference external" href="https://lets-unify.ai/ivy/overview/deep_dive.html">Deep dive</a>, which is oriented towards potential contributors of the code base and explains the nuances of Ivy in full detail 🔎</p>
 <p>Another important sections of the docs is <a class="reference external" href="https://lets-unify.ai/ivy/overview/background.html">Background</a>, which contextualises the problem Ivy is trying to solve and the current <a class="reference external" href="https://lets-unify.ai/ivy/overview/background/ml_explosion.html#ml-explosion">ML Explosion</a>, explaining both (1) why is important <a class="reference external" href="https://lets-unify.ai/ivy/overview/background/why_unify.html#why-unify">to solve this problem</a> and (2) how we are adhering to existing <a class="reference external" href="https://lets-unify.ai/ivy/overview/background/standardization.html#standardization">standards</a> to make this happen.</p>
 <p>Lastly, you can also find there the <a class="reference external" href="https://lets-unify.ai/ivy/overview/related_work.html">Related Work</a> section, which paints a clear picture of the role Ivy plays in the ML stack, comparing it to other existing solutions in terms of functionalities and level.</p>
 </section>

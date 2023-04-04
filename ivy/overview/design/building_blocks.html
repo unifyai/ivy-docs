@@ -544,7 +544,7 @@ Let’s take the function <a class="reference internal" href="../../docs/functio
  <span class="n">stack</span><span class="o">.</span><span class="n">support_native_out</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
-<p>There were no changes required for this function, however NumPy and PyTorch both had to be marked as supporting the <a class="reference external" href="https://lets-unify.ai/ivy/deep_dive/inplace_updates.html#out-argument">out argument</a> natively.</p>
+<p>There were no changes required for this function, however NumPy and PyTorch both had to be marked as supporting the <a class="reference external" href="https://lets-unify.ai/docs/ivy/deep_dive/inplace_updates.html#out-argument">out argument</a> natively.</p>
 <p>For more complicated functions, we need to do more than simply wrap and maybe change the name.
 For functions with differing behavior then we must modify the function to fit the unified in-out behavior of Ivy’s API.
 For example, the APIs of JAX, PyTorch and NumPy all have a <code class="code docutils literal notranslate"><span class="pre">logspace</span></code> method, but TensorFlow does not at the time of writing.

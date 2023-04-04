@@ -567,7 +567,7 @@ See the <a class="reference external" href="https://www.git-scm.com/book/en/v2/G
 <p>The entire test suite is run independently <a class="reference external" href="https://github.com/unifyai/ivy/tree/20d07d7887766bb0d1707afdabe6e88df55f27a5/.github/workflows">for each backend</a> on every push to the repo.
 Therefore, every function which exists in the standard is thoroughly tested for adherence to the standard on a continuous basis.</p>
 <p>You will need to make sure the Array API tests are passing for each backend framework if/when making any changes to Ivy functions which are part of the standard.
-If a test fails on the CI, you can see details about the failure under <cite>Details -&gt; Run [backend] Tests</cite> as shown in <a class="reference external" href="https://lets-unify.ai/ivy/deep_dive/continuous_integration.html#ci-pipeline">CI Pipeline</a>.</p>
+If a test fails on the CI, you can see details about the failure under <cite>Details -&gt; Run [backend] Tests</cite> as shown in <a class="reference external" href="https://lets-unify.ai/docs/ivy/deep_dive/continuous_integration.html#ci-pipeline">CI Pipeline</a>.</p>
 <p>You can also run the tests locally before making a PR.
 There are two ways to do this: using the terminal or using your IDE.</p>
 <section id="using-terminal">
@@ -600,15 +600,15 @@ pytest -vv ivy_tests/test_array_api/array_api_tests/test_manipulation_functions.
 <p>You can also run a specific test or test file by using your IDE.
 To make this work, you should set the backend explicitly in the <cite>_array_module.py</cite> file as explained in the previous subsection.
 After that, you can run the API test files as you typically would with other tests.
-See <a class="reference external" href="https://lets-unify.ai/ivy/contributing/setting_up.html#setting-up-testing">here</a>  for instructions on how to run tests in ivy more generally.</p>
+See <a class="reference external" href="https://lets-unify.ai/docs/ivy/contributing/setting_up.html#setting-up-testing">here</a>  for instructions on how to run tests in ivy more generally.</p>
 <p><em>NB</em>: make sure to not add any changes to the array-api files to your commit.</p>
 </section>
 </section>
 <section id="regenerating-test-failures">
 <h2>Regenerating Test Failures<a class="headerlink" href="#regenerating-test-failures" title="Permalink to this heading">#</a></h2>
-<p>Array-API tests are written using <a class="reference external" href="https://hypothesis.readthedocs.io/en/latest/">hypothesis</a> to perform property-based testing, just like the <a class="reference external" href="https://lets-unify.ai/ivy/deep_dive/ivy_tests.html">ivy tests</a>.
+<p>Array-API tests are written using <a class="reference external" href="https://hypothesis.readthedocs.io/en/latest/">hypothesis</a> to perform property-based testing, just like the <a class="reference external" href="https://lets-unify.ai/docs/ivy/deep_dive/ivy_tests.html">ivy tests</a>.
 However, unlike the ivy tests, the Array-API tests make liberal use of <code class="code docutils literal notranslate"><span class="pre">data.draw</span></code> in the main body of the test function instead of generating the data in the <code class="code docutils literal notranslate"><span class="pre">&#64;given</span></code> decorator that wraps it.
-This means that failed tests cannot be re-run with the <code class="code docutils literal notranslate"><span class="pre">&#64;example</span></code> decorator, as explained in the <a class="reference external" href="https://lets-unify.ai/ivy/deep_dive/ivy_tests.html#re-running-failed-ivy-tests">final section</a> of the ivy tests deep dive.
+This means that failed tests cannot be re-run with the <code class="code docutils literal notranslate"><span class="pre">&#64;example</span></code> decorator, as explained in the <a class="reference external" href="https://lets-unify.ai/docs/ivy/deep_dive/ivy_tests.html#re-running-failed-ivy-tests">final section</a> of the ivy tests deep dive.
 Fortunately, it is possible to regenerate test failures using a unique decorator that appears in the final line of the falsifying example in the error stack trace:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>=================================== FAILURES ===================================
 ______________________ test_remainder[remainder(x1, x2)] _______________________

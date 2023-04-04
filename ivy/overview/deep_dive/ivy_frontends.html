@@ -562,7 +562,7 @@ document.write(`
 <h1>Ivy Frontends<a class="headerlink" href="#ivy-frontends" title="Permalink to this heading">#</a></h1>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
-<p>On top of the Ivy functional API and backend functional APIs, Ivy has another set of framework-specific frontend functional APIs, which play an important role in code transpilations, as explained <a class="reference external" href="https://lets-unify.ai/ivy/design/ivy_as_a_transpiler.html">here</a>.</p>
+<p>On top of the Ivy functional API and backend functional APIs, Ivy has another set of framework-specific frontend functional APIs, which play an important role in code transpilations, as explained <a class="reference external" href="https://lets-unify.ai/docs/ivy/design/ivy_as_a_transpiler.html">here</a>.</p>
 <p>Let’s start with some examples to have a better idea on Ivy Frontends!</p>
 </section>
 <section id="the-frontend-basics">
@@ -590,13 +590,13 @@ In the case of TensorFlow, this would mean writing <code class="code docutils li
 <li><p>You should ensure that the tests are passing before merging any frontend PRs.
 The only exception to this rule is if the test is failing due to a bug in the Ivy functional API, which does not need to be solved as part of the frontend task.</p></li>
 </ul>
-<p>There will be some implicit discussion of the locations of frontend functions in these examples, however an explicit explanation of how to place a frontend function can be found in a sub-section of the Frontend APIs <a class="reference external" href="https://lets-unify.ai/ivy/contributing/open_tasks.html#open-tasks">open task</a>.</p>
+<p>There will be some implicit discussion of the locations of frontend functions in these examples, however an explicit explanation of how to place a frontend function can be found in a sub-section of the Frontend APIs <a class="reference external" href="https://lets-unify.ai/docs/ivy/contributing/open_tasks.html#open-tasks">open task</a>.</p>
 <p><strong>NOTE:</strong> Type hints, docstrings and examples are not required when working on frontend functions.</p>
 <p><strong>Frontend Arrays</strong></p>
 <p>The native arrays of each framework have their own attributes and instance methods which differ from the attributes and instance methods of <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code>.
 As such we have implemented framework-specific array classes: <code class="xref py py-class docutils literal notranslate"><span class="pre">tf_frontend.Tensor</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">torch_frontend.Tensor</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">numpy_frontend.ndarray</span></code>, and <code class="xref py py-class docutils literal notranslate"><span class="pre">jax_frontend.DeviceArray</span></code>.
 These classes simply wrap an <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code>, which is stored in the <code class="code docutils literal notranslate"><span class="pre">ivy_array</span></code> attribute, and behave as closely as possible to the native framework array classes.
-This is explained further in the <a class="reference external" href="https://lets-unify.ai/ivy/deep_dive/ivy_frontends.html#classes-and-instance-methods">Classes and Instance Methods</a> section.</p>
+This is explained further in the <a class="reference external" href="https://lets-unify.ai/docs/ivy/deep_dive/ivy_frontends.html#classes-and-instance-methods">Classes and Instance Methods</a> section.</p>
 <p>As we aim to replicate the frontend frameworks as closely as possible, all functions accept their frontend array class (as well as <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code>) and return a frontend array.
 However, since most logic in each function is handled by Ivy, the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> must be extracted from any frontend array inputs.
 Therefore we add the wrapper <code class="code docutils literal notranslate"><span class="pre">&#64;to_ivy_arrays_and_back</span></code> to virtually all functions in the frontends.</p>
@@ -852,7 +852,7 @@ Once merged, you can then resume working on the frontend function, which will no
 <section id="temporary-compositions">
 <h2>Temporary Compositions<a class="headerlink" href="#temporary-compositions" title="Permalink to this heading">#</a></h2>
 <p>Alternatively, if after creating the new issue you would rather not wait around for a member of our team to review and possibly add to the “Extend Ivy Functional API” <a class="reference external" href="https://github.com/unifyai/ivy/issues/3856">ToDo list issue</a>, you can instead go straight ahead add the frontend function as a heavy composition of the existing Ivy functions, with a <code class="code docutils literal notranslate"><span class="pre">#ToDo</span></code> comment included, explaining that this frontend implementation will be simplified if/when <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.func_name()</span></code> is add to Ivy.</p>
-<p>The entire workflow for extending the Ivy Frontends as an external contributor is explained in more detail in the <a class="reference external" href="https://lets-unify.ai/ivy/contributing/open_tasks.html#frontend-apis">Open Tasks</a> section.</p>
+<p>The entire workflow for extending the Ivy Frontends as an external contributor is explained in more detail in the <a class="reference external" href="https://lets-unify.ai/docs/ivy/contributing/open_tasks.html#frontend-apis">Open Tasks</a> section.</p>
 </section>
 <section id="supported-data-types-and-devices">
 <h2>Supported Data Types and Devices<a class="headerlink" href="#supported-data-types-and-devices" title="Permalink to this heading">#</a></h2>

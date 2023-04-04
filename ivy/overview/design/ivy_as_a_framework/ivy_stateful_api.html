@@ -829,7 +829,7 @@ The actual implementation for the <code class="xref py py-class docutils literal
 </pre></div>
 </div>
 <p>The <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Initializer</span></code> class has a single abstract method, <code class="code docutils literal notranslate"><span class="pre">create_variables(var_shape,</span> <span class="pre">dev,</span> <span class="pre">fan_out=None,</span> <span class="pre">fan_in=None,</span> <span class="pre">*args,</span> <span class="pre">**kwargs)</span></code>.
-Check out the <a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/stateful/initializers.py">code</a> or <a class="reference external" href="https://lets-unify.ai/ivy/neural_net_stateful/initializers.html">docs</a> for more details.
+Check out the <a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/stateful/initializers.py">code</a> or <a class="reference external" href="https://lets-unify.ai/docs/ivy/neural_net_stateful/initializers.html">docs</a> for more details.
 The default initializer for the weights is <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.GlorotUniform</span></code> and for this bias is <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Zeros</span></code>.
 Let’s take a quick look at what these look like.
 <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.GlorotUniform</span></code> derives from a more general <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Uniform</span></code> initializer class, and is then simply implemented as follows:</p>

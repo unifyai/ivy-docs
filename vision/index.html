@@ -1,0 +1,862 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Contents &#8212; Ivy Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Containers" href="vision/ivy_vision/ivy_vision.containers.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo_dark.png?raw=true" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><div></div></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><div></div></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.containers.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.image.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.implicit.html">Implicit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.mesh.html">Mesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.optical_flow.html">Optical flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.padding.html">Padding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.projective_geometry.html">Projective geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.sdf.html">Sdf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.single_view_geometry.html">Single view geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.smoothing.html">Smoothing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.two_view_geometry.html">Two view geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.voxel_grids.html">Voxel grids</a></li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading">
+            <span class="caption-text">Docs</span>
+        </p>
+        <ul class="nav bd-sidenav">
+            <li class="toctree-l1">
+                <a class="reference external" href="/ivy">
+                    Ivy
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/mech">
+                    Ivy mech
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/vision">
+                    Ivy vision
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/robot">
+                    Ivy robot
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/gym">
+                    Ivy gym
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/memory">
+                    Ivy memory
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/builder">
+                    Ivy builder
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/models">
+                    Ivy models
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/ecosystem">
+                    Ivy ecosystem
+                </a>
+            </li>
+            </ul>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <a class="only-light reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true#gh-light-mode-only"><img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true#gh-light-mode-only" class="only-light" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true#gh-light-mode-only" style="width: 100%;" /></a>
+<a class="only-dark reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo_dark.png?raw=true#gh-dark-mode-only"><img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo_dark.png?raw=true#gh-dark-mode-only" class="only-dark" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo_dark.png?raw=true#gh-dark-mode-only" style="width: 100%;" /></a>
+<br/>
+<a href="https://pypi.org/project/ivy-vision">
+    <img class="dark-light" style="float: left; padding-right: 4px; padding-bottom: 4px;" src="https://badge.fury.io/py/ivy-vision.svg">
+</a>
+<a href="https://github.com/unifyai/vision/actions?query=workflow%3Adocs">
+    <img class="dark-light" style="float: left; padding-right: 4px; padding-bottom: 4px;" src="https://github.com/unifyai/vision/actions/workflows/docs.yml/badge.svg">
+</a>
+<a href="https://github.com/unifyai/vision/actions?query=workflow%3Anightly-tests">
+    <img class="dark-light" style="float: left; padding-right: 4px; padding-bottom: 4px;" src="https://github.com/unifyai/vision/actions/workflows/nightly-tests.yml/badge.svg">
+</a>
+<a href="https://discord.gg/G4aR9Q7DTN">
+    <img class="dark-light" style="float: left; padding-right: 4px; padding-bottom: 4px;" src="https://img.shields.io/discord/799879767196958751?color=blue&label=%20&logo=discord&logoColor=white">
+</a>
+<br clear="all" /><p><strong>3D Vision functions with end-to-end support for machine learning developers, written in Ivy.</strong></p>
+<div style="display: block;" align="center">
+    <img class="dark-light" width="6%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/empty.png">
+    <a href="https://jax.readthedocs.io">
+        <img class="dark-light" width="13%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/jax_logo.png">
+    </a>
+    <img class="dark-light" width="12%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/empty.png">
+    <a href="https://www.tensorflow.org">
+        <img class="dark-light" width="13%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/tensorflow_logo.png">
+    </a>
+    <img class="dark-light" width="12%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/empty.png">
+    <a href="https://pytorch.org">
+        <img class="dark-light" width="13%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/pytorch_logo.png">
+    </a>
+    <img class="dark-light" width="12%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/empty.png">
+    <a href="https://numpy.org">
+        <img class="dark-light" width="13%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/numpy_logo.png">
+    </a>
+    <img class="dark-light" width="6%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/supported/empty.png">
+</div><section id="contents">
+<h1>Contents<a class="headerlink" href="#contents" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="#overview">Overview</a></p></li>
+<li><p><a class="reference internal" href="#run-through">Run Through</a></p></li>
+<li><p><a class="reference internal" href="#interactive-demos">Interactive Demos</a></p></li>
+<li><p><a class="reference internal" href="#get-involved">Get Involved</a></p></li>
+</ul>
+</section>
+<section id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h1>
+<p><strong>What is Ivy Vision?</strong></p>
+<p>Ivy vision focuses predominantly on 3D vision, with functions for camera geometry, image projections,
+co-ordinate frame transformations, forward warping, inverse warping, optical flow, depth triangulation, voxel grids,
+point clouds, signed distance functions, and others.  Check out the <a class="reference external" href="https://lets-unify.ai/vision">docs</a> for more info!</p>
+<p>The library is built on top of the Ivy machine learning framework.
+This means all functions simultaneously support:
+Jax, Tensorflow, PyTorch, MXNet, and Numpy.</p>
+<p><strong>Ivy Libraries</strong></p>
+<p>There are a host of derived libraries written in Ivy, in the areas of mechanics, 3D vision, robotics, gym environments,
+neural memory, pre-trained models + implementations, and builder tools with trainers, data loaders and more. Click on the icons below to learn more!</p>
+<div style="display: block;">
+    <a href="https://github.com/unifyai/mech">
+        <img width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/ivy_mech.png">
+    </a>
+    <a href="https://github.com/unifyai/vision">
+        <img width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/ivy_vision.png">
+    </a>
+    <a href="https://github.com/unifyai/robot">
+        <img width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/ivy_robot.png">
+    </a>
+    <a href="https://github.com/unifyai/gym">
+        <img width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/ivy_gym.png">
+    </a>
+
+    <br clear="all" />
+
+    <a href="https://pypi.org/project/ivy-mech">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://badge.fury.io/py/ivy-mech.svg">
+    </a>
+    <a href="https://pypi.org/project/ivy-vision">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://badge.fury.io/py/ivy-vision.svg">
+    </a>
+    <a href="https://pypi.org/project/ivy-robot">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://badge.fury.io/py/ivy-robot.svg">
+    </a>
+    <a href="https://pypi.org/project/ivy-gym">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;"width="15%" style="float: left; margin: 0% 5%;" src="https://badge.fury.io/py/ivy-gym.svg">
+    </a>
+
+    <br clear="all" />
+
+    <a href="https://github.com/unifyai/mech/actions?query=workflow%3Anightly-tests">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;"src="https://github.com/unifyai/mech/actions/workflows/nightly-tests.yml/badge.svg">
+    </a>
+    <a href="https://github.com/unifyai/vision/actions?query=workflow%3Anightly-tests">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://github.com/unifyai/vision/actions/workflows/nightly-tests.yml/badge.svg">
+    </a>
+    <a href="https://github.com/unifyai/robot/actions?query=workflow%3Anightly-tests">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://github.com/unifyai/robot/actions/workflows/nightly-tests.yml/badge.svg">
+    </a>
+    <a href="https://github.com/unifyai/gym/actions?query=workflow%3Anightly-tests">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://github.com/unifyai/gym/actions/workflows/nightly-tests.yml/badge.svg">
+    </a>
+
+    <br clear="all" />
+
+    <a href="https://github.com/unifyai/memory">
+        <img width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/ivy_memory.png">
+    </a>
+    <a href="https://github.com/unifyai/builder">
+        <img width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/ivy_builder.png">
+    </a>
+    <a href="https://github.com/unifyai/models">
+        <img width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/ivy_models.png">
+    </a>
+    <a href="https://github.com/unifyai/ecosystem">
+        <img width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/logos/ivy_ecosystem.png">
+    </a>
+
+    <br clear="all" />
+
+    <a href="https://pypi.org/project/ivy-memory">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://badge.fury.io/py/ivy-memory.svg">
+    </a>
+    <a href="https://pypi.org/project/ivy-builder">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://badge.fury.io/py/ivy-builder.svg">
+    </a>
+    <a href="https://pypi.org/project/ivy-models">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://badge.fury.io/py/ivy-models.svg">
+    </a>
+    <a href="https://github.com/unifyai/ecosystem/actions?query=workflow%3Adocs">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://github.com/unifyai/ecosystem/actions/workflows/docs.yml/badge.svg">
+    </a>
+
+    <br clear="all" />
+
+    <a href="https://github.com/unifyai/memory/actions?query=workflow%3Anightly-tests">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://github.com/unifyai/memory/actions/workflows/nightly-tests.yml/badge.svg">
+    </a>
+    <a href="https://github.com/unifyai/builder/actions?query=workflow%3Anightly-tests">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://github.com/unifyai/builder/actions/workflows/nightly-tests.yml/badge.svg">
+    </a>
+    <a href="https://github.com/unifyai/models/actions?query=workflow%3Anightly-tests">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://github.com/unifyai/models/actions/workflows/nightly-tests.yml/badge.svg">
+    </a>
+
+    <br clear="all" />
+
+</div>
+<br clear="all" /><p><strong>Quick Start</strong></p>
+<p>Ivy vision can be installed like so: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">ivy-vision</span></code></p>
+<p>To quickly see the different aspects of the library, we suggest you check out the <a class="reference external" href="https://github.com/unifyai/vision/tree/master/ivy_vision_demos">demos</a>!
+we suggest you start by running the script <code class="docutils literal notranslate"><span class="pre">run_through.py</span></code>,
+and read the “Run Through” section below which explains this script.</p>
+<p>For more interactive demos, we suggest you run either
+<code class="docutils literal notranslate"><span class="pre">coords_to_voxel_grid.py</span></code> or <code class="docutils literal notranslate"><span class="pre">render_image.py</span></code> in the <a class="reference external" href="https://github.com/unifyai/vision/tree/master/ivy_vision_demos/interactive">interactive</a> demos folder.</p>
+</section>
+<section id="run-through">
+<h1>Run Through<a class="headerlink" href="#run-through" title="Permalink to this heading">#</a></h1>
+<p>We run through some of the different parts of the library via a simple ongoing example script.
+The full script is available in the <a class="reference external" href="https://github.com/unifyai/vision/tree/master/ivy_vision_demos">demos</a> folder, as file <code class="docutils literal notranslate"><span class="pre">run_through.py</span></code>.
+First, we select a random backend framework to use for the examples, from the options
+<code class="docutils literal notranslate"><span class="pre">ivy.jax</span></code>, <code class="docutils literal notranslate"><span class="pre">ivy.tensorflow</span></code>, <code class="docutils literal notranslate"><span class="pre">ivy.torch</span></code>, <code class="docutils literal notranslate"><span class="pre">ivy.mxnet</span></code> or <code class="docutils literal notranslate"><span class="pre">ivy.numpy</span></code>,
+and use this to set the ivy backend framework.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
+<span class="kn">from</span> <span class="nn">ivy_demo_utils.framework_utils</span> <span class="kn">import</span> <span class="n">choose_random_framework</span>
+<span class="n">ivy</span><span class="o">.</span><span class="n">set_framework</span><span class="p">(</span><span class="n">choose_random_framework</span><span class="p">())</span>
+</pre></div>
+</div>
+<p><strong>Camera Geometry</strong></p>
+<p>To get to grips with some of the basics, we next show how to construct ivy containers which represent camera geometry.
+The camera intrinsic matrix, extrinsic matrix, full matrix, and all of their inverses are central to most of the
+functions in this library.</p>
+<p>All of these matrices are contained within the Ivy camera geometry class.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># intrinsics</span>
+
+<span class="c1"># common intrinsic params</span>
+<span class="n">img_dims</span> <span class="o">=</span> <span class="p">[</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">]</span>
+<span class="n">pp_offsets</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">dim</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="mf">0.5</span> <span class="k">for</span> <span class="n">dim</span> <span class="ow">in</span> <span class="n">img_dims</span><span class="p">],</span> <span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+<span class="n">cam_persp_angles</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">60</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+
+<span class="c1"># ivy cam intrinsics container</span>
+<span class="n">intrinsics</span> <span class="o">=</span> <span class="n">ivy_vision</span><span class="o">.</span><span class="n">persp_angles_and_pp_offsets_to_intrinsics_object</span><span class="p">(</span>
+    <span class="n">cam_persp_angles</span><span class="p">,</span> <span class="n">pp_offsets</span><span class="p">,</span> <span class="n">img_dims</span><span class="p">)</span>
+
+<span class="c1"># extrinsics</span>
+
+<span class="c1"># 3 x 4</span>
+<span class="n">cam1_inv_ext_mat</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">+</span> <span class="s1">&#39;/cam1_inv_ext_mat.npy&#39;</span><span class="p">),</span> <span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+<span class="n">cam2_inv_ext_mat</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">+</span> <span class="s1">&#39;/cam2_inv_ext_mat.npy&#39;</span><span class="p">),</span> <span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+
+<span class="c1"># full geometry</span>
+
+<span class="c1"># ivy cam geometry container</span>
+<span class="n">cam1_geom</span> <span class="o">=</span> <span class="n">ivy_vision</span><span class="o">.</span><span class="n">inv_ext_mat_and_intrinsics_to_cam_geometry_object</span><span class="p">(</span>
+    <span class="n">cam1_inv_ext_mat</span><span class="p">,</span> <span class="n">intrinsics</span><span class="p">)</span>
+<span class="n">cam2_geom</span> <span class="o">=</span> <span class="n">ivy_vision</span><span class="o">.</span><span class="n">inv_ext_mat_and_intrinsics_to_cam_geometry_object</span><span class="p">(</span>
+    <span class="n">cam2_inv_ext_mat</span><span class="p">,</span> <span class="n">intrinsics</span><span class="p">)</span>
+<span class="n">cam_geoms</span> <span class="o">=</span> <span class="p">[</span><span class="n">cam1_geom</span><span class="p">,</span> <span class="n">cam2_geom</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The geometries used in this quick start demo are based upon the scene presented below.</p>
+<a class="reference internal image-reference" href="https://github.com/unifyai/vision/blob/master/docs/images/scene.png?raw=true"><img alt="https://github.com/unifyai/vision/blob/master/docs/images/scene.png?raw=true" src="https://github.com/unifyai/vision/blob/master/docs/images/scene.png?raw=true" style="width: 100%;" /></a>
+<p>The code sample below demonstrates all of the attributes contained within the Ivy camera geometry class.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">cam_geom</span> <span class="ow">in</span> <span class="n">cam_geoms</span><span class="p">:</span>
+
+    <span class="k">assert</span> <span class="n">cam_geom</span><span class="o">.</span><span class="n">intrinsics</span><span class="o">.</span><span class="n">focal_lengths</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">2</span><span class="p">,)</span>
+    <span class="k">assert</span> <span class="n">cam_geom</span><span class="o">.</span><span class="n">intrinsics</span><span class="o">.</span><span class="n">persp_angles</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">2</span><span class="p">,)</span>
+    <span class="k">assert</span> <span class="n">cam_geom</span><span class="o">.</span><span class="n">intrinsics</span><span class="o">.</span><span class="n">pp_offsets</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">2</span><span class="p">,)</span>
+    <span class="k">assert</span> <span class="n">cam_geom</span><span class="o">.</span><span class="n">intrinsics</span><span class="o">.</span><span class="n">calib_mats</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">cam_geom</span><span class="o">.</span><span class="n">intrinsics</span><span class="o">.</span><span class="n">inv_calib_mats</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="n">cam_geom</span><span class="o">.</span><span class="n">extrinsics</span><span class="o">.</span><span class="n">cam_centers</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">cam_geom</span><span class="o">.</span><span class="n">extrinsics</span><span class="o">.</span><span class="n">Rs</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">cam_geom</span><span class="o">.</span><span class="n">extrinsics</span><span class="o">.</span><span class="n">inv_Rs</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">cam_geom</span><span class="o">.</span><span class="n">extrinsics</span><span class="o">.</span><span class="n">ext_mats_homo</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">cam_geom</span><span class="o">.</span><span class="n">extrinsics</span><span class="o">.</span><span class="n">inv_ext_mats_homo</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+
+    <span class="k">assert</span> <span class="n">cam_geom</span><span class="o">.</span><span class="n">full_mats_homo</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">cam_geom</span><span class="o">.</span><span class="n">inv_full_mats_homo</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Load Images</strong></p>
+<p>We next load the color and depth images corresponding to the two camera frames.
+We also construct the depth-scaled homogeneous pixel co-ordinates for each image,
+which is a central representation for the ivy_vision functions.
+This representation simplifies projections between frames.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># load images</span>
+
+<span class="c1"># h x w x 3</span>
+<span class="n">color1</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">+</span> <span class="s1">&#39;/rgb1.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="mi">255</span><span class="p">)</span>
+<span class="n">color2</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">data_dir</span> <span class="o">+</span> <span class="s1">&#39;/rgb2.png&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span> <span class="o">/</span> <span class="mi">255</span><span class="p">)</span>
+
+<span class="c1"># h x w x 1</span>
+<span class="n">depth1</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span>
+    <span class="n">data_dir</span> <span class="o">+</span> <span class="s1">&#39;/depth1.png&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tobytes</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span> <span class="n">img_dims</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">depth2</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span>
+    <span class="n">data_dir</span> <span class="o">+</span> <span class="s1">&#39;/depth2.png&#39;</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">tobytes</span><span class="p">(),</span> <span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span> <span class="n">img_dims</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="c1"># depth scaled pixel coords</span>
+
+<span class="c1"># h x w x 3</span>
+<span class="n">u_pix_coords</span> <span class="o">=</span> <span class="n">ivy_vision</span><span class="o">.</span><span class="n">create_uniform_pixel_coords_image</span><span class="p">(</span><span class="n">img_dims</span><span class="p">)</span>
+<span class="n">ds_pixel_coords1</span> <span class="o">=</span> <span class="n">u_pix_coords</span> <span class="o">*</span> <span class="n">depth1</span>
+<span class="n">ds_pixel_coords2</span> <span class="o">=</span> <span class="n">u_pix_coords</span> <span class="o">*</span> <span class="n">depth2</span>
+</pre></div>
+</div>
+<p>The rgb and depth images are presented below.</p>
+<a class="reference internal image-reference" href="https://github.com/unifyai/vision/blob/master/docs/images/rgb_and_depth.png?raw=true"><img alt="https://github.com/unifyai/vision/blob/master/docs/images/rgb_and_depth.png?raw=true" src="https://github.com/unifyai/vision/blob/master/docs/images/rgb_and_depth.png?raw=true" style="width: 100%;" /></a>
+<p><strong>Optical Flow and Depth Triangulation</strong></p>
+<p>Now that we have two cameras, their geometries, and their images fully defined,
+we can start to apply some of the more interesting vision functions.
+We start with some optical flow and depth triangulation functions.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># required mat formats</span>
+<span class="n">cam1to2_full_mat_homo</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">cam2_geom</span><span class="o">.</span><span class="n">full_mats_homo</span><span class="p">,</span> <span class="n">cam1_geom</span><span class="o">.</span><span class="n">inv_full_mats_homo</span><span class="p">)</span>
+<span class="n">cam1to2_full_mat</span> <span class="o">=</span> <span class="n">cam1to2_full_mat_homo</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">full_mats_homo</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">ivy</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">cam1_geom</span><span class="o">.</span><span class="n">full_mats_homo</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+                                  <span class="n">ivy</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">cam2_geom</span><span class="o">.</span><span class="n">full_mats_homo</span><span class="p">,</span> <span class="mi">0</span><span class="p">)),</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">full_mats</span> <span class="o">=</span> <span class="n">full_mats_homo</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span>
+
+<span class="c1"># flow</span>
+<span class="n">flow1to2</span> <span class="o">=</span> <span class="n">ivy_vision</span><span class="o">.</span><span class="n">flow_from_depth_and_cam_mats</span><span class="p">(</span><span class="n">ds_pixel_coords1</span><span class="p">,</span> <span class="n">cam1to2_full_mat</span><span class="p">)</span>
+
+<span class="c1"># depth again</span>
+<span class="n">depth1_from_flow</span> <span class="o">=</span> <span class="n">ivy_vision</span><span class="o">.</span><span class="n">depth_from_flow_and_cam_mats</span><span class="p">(</span><span class="n">flow1to2</span><span class="p">,</span> <span class="n">full_mats</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Visualizations of these images are given below.</p>
+<a class="reference internal image-reference" href="https://github.com/unifyai/vision/blob/master/docs/images/flow_and_depth.png?raw=true"><img alt="https://github.com/unifyai/vision/blob/master/docs/images/flow_and_depth.png?raw=true" src="https://github.com/unifyai/vision/blob/master/docs/images/flow_and_depth.png?raw=true" style="width: 100%;" /></a>
+<p><strong>Inverse and Forward Warping</strong></p>
+<p>Most of the vision functions, including the flow and depth functions above,
+make use of image projections,
+whereby an image of depth-scaled homogeneous pixel-coordinates is transformed into
+cartesian co-ordinates relative to the acquiring camera, the world, another camera,
+or transformed directly to pixel co-ordinates in another camera frame.
+These projections also allow warping of the color values from one camera to another.</p>
+<p>For inverse warping, we assume depth to be known for the target frame.
+We can then determine the pixel projections into the source frame,
+and bilinearly interpolate these color values at the pixel projections,
+to infer the color image in the target frame.</p>
+<p>Treating frame 1 as our target frame,
+we can use the previously calculated optical flow from frame 1 to 2, in order
+to inverse warp the color data from frame 2 to frame 1, as shown below.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># inverse warp rendering</span>
+<span class="n">warp</span> <span class="o">=</span> <span class="n">u_pix_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="n">flow1to2</span>
+<span class="n">color2_warp_to_f1</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">bilinear_resample</span><span class="p">(</span><span class="n">color2</span><span class="p">,</span> <span class="n">warp</span><span class="p">)</span>
+
+<span class="c1"># projected depth scaled pixel coords 2</span>
+<span class="n">ds_pixel_coords1_wrt_f2</span> <span class="o">=</span> <span class="n">ivy_vision</span><span class="o">.</span><span class="n">ds_pixel_to_ds_pixel_coords</span><span class="p">(</span><span class="n">ds_pixel_coords1</span><span class="p">,</span> <span class="n">cam1to2_full_mat</span><span class="p">)</span>
+
+<span class="c1"># projected depth 2</span>
+<span class="n">depth1_wrt_f2</span> <span class="o">=</span> <span class="n">ds_pixel_coords1_wrt_f2</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">:]</span>
+
+<span class="c1"># inverse warp depth</span>
+<span class="n">depth2_warp_to_f1</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">bilinear_resample</span><span class="p">(</span><span class="n">depth2</span><span class="p">,</span> <span class="n">warp</span><span class="p">)</span>
+
+<span class="c1"># depth validity</span>
+<span class="n">depth_validity</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">depth1_wrt_f2</span> <span class="o">-</span> <span class="n">depth2_warp_to_f1</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.01</span>
+
+<span class="c1"># inverse warp rendering with mask</span>
+<span class="n">color2_warp_to_f1_masked</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">depth_validity</span><span class="p">,</span> <span class="n">color2_warp_to_f1</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">color2_warp_to_f1</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Again, visualizations of these images are given below.
+The images represent intermediate steps for the inverse warping of color from frame 2 to frame 1,
+which is shown in the bottom right corner.</p>
+<a class="reference internal image-reference" href="https://github.com/unifyai/vision/blob/master/docs/images/inverse_warped.png?raw=true"><img alt="https://github.com/unifyai/vision/blob/master/docs/images/inverse_warped.png?raw=true" src="https://github.com/unifyai/vision/blob/master/docs/images/inverse_warped.png?raw=true" style="width: 100%;" /></a>
+<p>For forward warping, we instead assume depth to be known in the source frame.
+A common approach is to construct a mesh, and then perform rasterization of the mesh.</p>
+<p>The ivy method <code class="docutils literal notranslate"><span class="pre">ivy_vision.render_pixel_coords</span></code> instead takes a simpler approach,
+by determining the pixel projections into the target frame,
+quantizing these to integer pixel co-ordinates,
+and scattering the corresponding color values directly into these integer pixel co-ordinates.</p>
+<p>This process in general leads to holes and duplicates in the resultant image,
+but when compared to inverse warping,
+it has the beneft that the target frame does not need to correspond to a real camera with known depth.
+Only the target camera geometry is required, which can be for any hypothetical camera.</p>
+<p>We now consider the case of forward warping the color data from camera frame 2 to camera frame 1,
+and again render the new color image in target frame 1.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># forward warp rendering</span>
+<span class="n">ds_pixel_coords1_proj</span> <span class="o">=</span> <span class="n">ivy_vision</span><span class="o">.</span><span class="n">ds_pixel_to_ds_pixel_coords</span><span class="p">(</span>
+    <span class="n">ds_pixel_coords2</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">cam1to2_full_mat_homo</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:])</span>
+<span class="n">depth1_proj</span> <span class="o">=</span> <span class="n">ds_pixel_coords1_proj</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">ds_pixel_coords1_proj</span> <span class="o">=</span> <span class="n">ds_pixel_coords1_proj</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">/</span> <span class="n">depth1_proj</span>
+<span class="n">features_to_render</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">depth1_proj</span><span class="p">,</span> <span class="n">color2</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># without depth buffer</span>
+<span class="n">f1_forward_warp_no_db</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ivy_vision</span><span class="o">.</span><span class="n">quantize_to_image</span><span class="p">(</span>
+    <span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ds_pixel_coords1_proj</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span> <span class="n">img_dims</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">features_to_render</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span>
+    <span class="n">ivy</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">features_to_render</span><span class="p">),</span> <span class="n">with_db</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># with depth buffer</span>
+<span class="n">f1_forward_warp_w_db</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">ivy_vision</span><span class="o">.</span><span class="n">quantize_to_image</span><span class="p">(</span>
+    <span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ds_pixel_coords1_proj</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)),</span> <span class="n">img_dims</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">features_to_render</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">)),</span>
+    <span class="n">ivy</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">features_to_render</span><span class="p">),</span> <span class="n">with_db</span><span class="o">=</span><span class="kc">False</span> <span class="k">if</span> <span class="n">ivy</span><span class="o">.</span><span class="n">get_framework</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;mxnet&#39;</span> <span class="k">else</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Again, visualizations of these images are given below.
+The images show the forward warping of both depth and color from frame 2 to frame 1,
+which are shown with and without depth buffers in the right-hand and central columns respectively.</p>
+<a class="reference internal image-reference" href="https://github.com/unifyai/vision/blob/master/docs/images/forward_warped.png?raw=true"><img alt="https://github.com/unifyai/vision/blob/master/docs/images/forward_warped.png?raw=true" src="https://github.com/unifyai/vision/blob/master/docs/images/forward_warped.png?raw=true" style="width: 100%;" /></a>
+</section>
+<section id="interactive-demos">
+<h1>Interactive Demos<a class="headerlink" href="#interactive-demos" title="Permalink to this heading">#</a></h1>
+<p>In addition to the examples above, we provide two further demo scripts,
+which are more visual and interactive, and are each built around a particular function.</p>
+<p>Rather than presenting the code here, we show visualizations of the demos.
+The scripts for these demos can be found in the <a class="reference external" href="https://github.com/unifyai/vision/tree/master/ivy_vision_demos/interactive">interactive</a> demos folder.</p>
+<p><strong>Neural Rendering</strong></p>
+<p>The first demo uses method <code class="docutils literal notranslate"><span class="pre">ivy_vision.render_implicit_features_and_depth</span></code>
+to train a Neural Radiance Field (NeRF) model to encode a lego digger. The NeRF model can then be queried at new camera
+poses to render new images from poses unseen during training.</p>
+<p align="center">
+    <img width="50%" style="display: block;" src='https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_vision/nerf_demo.gif?raw=true'>
+</p><p><strong>Co-ordinates to Voxel Grid</strong></p>
+<p>The second demo captures depth and color images from a set of cameras,
+converts the depth to world-centric co-ordinartes,
+and uses the method <code class="docutils literal notranslate"><span class="pre">ivy_vision.coords_to_voxel_grid</span></code> to
+voxelize the depth and color values into a grid, as shown below:</p>
+<p align="center">
+    <img width="75%" style="display: block;" src='https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_vision/voxel_grid_demo.gif?raw=true'>
+</p><p><strong>Point Rendering</strong></p>
+<p>The final demo again captures depth and color images from a set of cameras,
+but this time uses the method <code class="docutils literal notranslate"><span class="pre">ivy_vision.quantize_to_image</span></code> to
+dynamically forward warp and point render the images into a new target frame, as shown below.
+The acquiring cameras all remain static, while the target frame for point rendering moves freely.</p>
+<p align="center">
+    <img width="75%" style="display: block;" src='https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_vision/point_render_demo.gif?raw=true'>
+</p></section>
+<section id="get-involved">
+<h1>Get Involved<a class="headerlink" href="#get-involved" title="Permalink to this heading">#</a></h1>
+<p>We hope the functions in this library are useful to a wide range of machine learning developers.
+However, there are many more areas of 3D vision which could be covered by this library.</p>
+<p>If there are any particular vision functions you feel are missing,
+and your needs are not met by the functions currently on offer,
+then we are very happy to accept pull requests!</p>
+<p>We look forward to working with the community on expanding and improving the Ivy vision library.</p>
+</section>
+<section id="citation">
+<h1>Citation<a class="headerlink" href="#citation" title="Permalink to this heading">#</a></h1>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="n">lenton2021ivy</span><span class="p">,</span>
+  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Ivy</span><span class="p">:</span> <span class="n">Templated</span> <span class="n">deep</span> <span class="n">learning</span> <span class="k">for</span> <span class="n">inter</span><span class="o">-</span><span class="n">framework</span> <span class="n">portability</span><span class="p">},</span>
+  <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Lenton</span><span class="p">,</span> <span class="n">Daniel</span> <span class="ow">and</span> <span class="n">Pardo</span><span class="p">,</span> <span class="n">Fabio</span> <span class="ow">and</span> <span class="n">Falck</span><span class="p">,</span> <span class="n">Fabian</span> <span class="ow">and</span> <span class="n">James</span><span class="p">,</span> <span class="n">Stephen</span> <span class="ow">and</span> <span class="n">Clark</span><span class="p">,</span> <span class="n">Ronald</span><span class="p">},</span>
+  <span class="n">journal</span><span class="o">=</span><span class="p">{</span><span class="n">arXiv</span> <span class="n">preprint</span> <span class="n">arXiv</span><span class="p">:</span><span class="mf">2102.02886</span><span class="p">},</span>
+  <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2021</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="autosummary-vision/ivy_vision.rst">
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="right-next"
+       href="vision/ivy_vision/ivy_vision.containers.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Containers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Contents</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#run-through">Run Through</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-demos">Interactive Demos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#get-involved">Get Involved</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#autosummary-vision/ivy_vision.rst"></a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2020-2023, Ivy Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

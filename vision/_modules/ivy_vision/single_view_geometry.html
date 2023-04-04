@@ -1,0 +1,1947 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ivy_vision.single_view_geometry &#8212; Ivy Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ivy_vision/single_view_geometry';</script>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo_dark.png?raw=true" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><div></div></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><div></div></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.containers.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.image.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.implicit.html">Implicit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.mesh.html">Mesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.optical_flow.html">Optical flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.padding.html">Padding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.projective_geometry.html">Projective geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.sdf.html">Sdf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html">Single view geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.smoothing.html">Smoothing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.two_view_geometry.html">Two view geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.voxel_grids.html">Voxel grids</a></li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading">
+            <span class="caption-text">Docs</span>
+        </p>
+        <ul class="nav bd-sidenav">
+            <li class="toctree-l1">
+                <a class="reference external" href="/ivy">
+                    Ivy
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/mech">
+                    Ivy mech
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/vision">
+                    Ivy vision
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/robot">
+                    Ivy robot
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/gym">
+                    Ivy gym
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/memory">
+                    Ivy memory
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/builder">
+                    Ivy builder
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/models">
+                    Ivy models
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/ecosystem">
+                    Ivy ecosystem
+                </a>
+            </li>
+            </ul>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">ivy_vision.single_view_geometry</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for ivy_vision.single_view_geometry</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Collection of Single-View-Geometry Functions&quot;&quot;&quot;</span>
+
+<span class="c1"># global</span>
+<span class="kn">import</span> <span class="nn">ivy</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">ivy_mech</span> 
+<span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">mul</span> 
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="n">reduce</span> 
+
+<span class="c1"># local</span>
+<span class="kn">from</span> <span class="nn">ivy_vision</span> <span class="kn">import</span> <span class="n">projective_geometry</span> <span class="k">as</span> <span class="n">ivy_pg</span>
+<span class="kn">from</span> <span class="nn">ivy_vision</span> <span class="kn">import</span> <span class="n">image</span> <span class="k">as</span> <span class="n">ivy_img</span>
+<span class="kn">from</span> <span class="nn">ivy_vision.containers</span> <span class="kn">import</span> <span class="n">Intrinsics</span> 
+<span class="kn">from</span> <span class="nn">ivy_vision.containers</span> <span class="kn">import</span> <span class="n">Extrinsics</span> 
+<span class="kn">from</span> <span class="nn">ivy_vision.containers</span> <span class="kn">import</span> <span class="n">CameraGeometry</span> 
+
+
+<span class="n">MIN_DENOMINATOR</span> <span class="o">=</span> <span class="mf">1e-12</span>
+
+
+<div class="viewcode-block" id="create_uniform_pixel_coords_image"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.create_uniform_pixel_coords_image">[docs]</a><span class="k">def</span> <span class="nf">create_uniform_pixel_coords_image</span><span class="p">(</span><span class="n">image_dims</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normalized</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">homogeneous</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dev_str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create image of homogeneous integer :math:`xy` pixel co-ordinates :math:`\mathbf{X}\in\mathbb{Z}^{h×w×3}`, stored</span>
+<span class="sd">    as floating point values. The origin is at the top-left corner of the image, with :math:`+x` rightwards, and</span>
+<span class="sd">    :math:`+y` downwards. The final homogeneous dimension are all ones. In subsequent use of this image, the depth of</span>
+<span class="sd">    each pixel can be represented using this same homogeneous representation, by simply scaling each 3-vector by the</span>
+<span class="sd">    depth value. The final dimension therefore always holds the depth value, while the former two dimensions hold depth</span>
+<span class="sd">    scaled pixel co-ordinates.\n</span>
+<span class="sd">    `[reference] &lt;localhost:63342/ivy/docs/source/references/mvg_textbook.pdf#page=172&gt;`_</span>
+<span class="sd">    deduction from top of page 154, section 6.1, equation 6.1</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image_dims</span>
+<span class="sd">        Image dimensions.</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Assumed no batch dimensions if None. (Default value = None)</span>
+<span class="sd">    normalized</span>
+<span class="sd">        Whether to normalize x-y pixel co-ordinates to the range 0-1. Default is False.</span>
+<span class="sd">    homogeneous</span>
+<span class="sd">        Whether the pixel co-ordinates should be 3D homogeneous or just 2D. Default is True.</span>
+<span class="sd">    dev_str</span>
+<span class="sd">        device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Image of homogeneous pixel co-ordinates *[batch_shape,height,width,3]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># shapes as lists</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">batch_shape</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_dims</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># other shape specs</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">flat_shape</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_batch_dims</span> <span class="o">+</span> <span class="n">image_dims</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">tile_shape</span> <span class="o">=</span> <span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span>
+
+    <span class="c1"># H x W x 1</span>
+    <span class="n">pixel_x_coords</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">image_dims</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">),</span> <span class="p">[</span><span class="n">image_dims</span><span class="p">[</span><span class="mi">0</span><span class="p">]]),</span>
+                                            <span class="p">(</span><span class="n">image_dims</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">image_dims</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1</span><span class="p">)),</span> <span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">normalized</span><span class="p">:</span>
+        <span class="n">pixel_x_coords</span> <span class="o">=</span> <span class="n">pixel_x_coords</span> <span class="o">/</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">image_dims</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">MIN_DENOMINATOR</span><span class="p">)</span>
+
+    <span class="c1"># W x H x 1</span>
+    <span class="n">pixel_y_coords_</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">image_dims</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">),</span> <span class="p">[</span><span class="n">image_dims</span><span class="p">[</span><span class="mi">1</span><span class="p">]]),</span>
+                                             <span class="p">(</span><span class="n">image_dims</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">image_dims</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)),</span> <span class="s1">&#39;float32&#39;</span><span class="p">)</span>
+
+    <span class="c1"># H x W x 1</span>
+    <span class="n">pixel_y_coords</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">permute_dims</span><span class="p">(</span><span class="n">pixel_y_coords_</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">normalized</span><span class="p">:</span>
+        <span class="n">pixel_y_coords</span> <span class="o">=</span> <span class="n">pixel_y_coords</span> <span class="o">/</span> <span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">image_dims</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="n">MIN_DENOMINATOR</span><span class="p">)</span>
+
+    <span class="c1"># BS x H x W x 2</span>
+    <span class="n">pix_coords</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">pixel_x_coords</span><span class="p">,</span> <span class="n">pixel_y_coords</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="n">flat_shape</span><span class="p">),</span> <span class="n">tile_shape</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">homogeneous</span><span class="p">:</span>
+        <span class="c1"># BS x H x W x 3</span>
+        <span class="n">pix_coords</span> <span class="o">=</span> <span class="n">ivy_mech</span><span class="o">.</span><span class="n">make_coordinates_homogeneous</span><span class="p">(</span><span class="n">pix_coords</span><span class="p">)</span>
+
+    <span class="c1"># BS x H x W x 2or3</span>
+    <span class="k">return</span> <span class="n">pix_coords</span></div>
+
+
+<div class="viewcode-block" id="persp_angles_to_focal_lengths"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.persp_angles_to_focal_lengths">[docs]</a><span class="k">def</span> <span class="nf">persp_angles_to_focal_lengths</span><span class="p">(</span><span class="n">persp_angles</span><span class="p">,</span> <span class="n">image_dims</span><span class="p">,</span> <span class="n">dev_str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute focal lengths :math:`f_x, f_y` from perspective angles :math:`θ_x, θ_y`.\n</span>
+<span class="sd">    `[reference] &lt;localhost:63342/ivy/docs/source/references/mvg_textbook.pdf#page=172&gt;`_</span>
+<span class="sd">    deduction from page 154, section 6.1, figure 6.1</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    persp_angles</span>
+<span class="sd">        Perspective angles *[batch_shape,2]*</span>
+<span class="sd">    image_dims</span>
+<span class="sd">        Image dimensions.</span>
+<span class="sd">    dev_str</span>
+<span class="sd">        device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc. Same as x if None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Focal lengths *[batch_shape,2]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">dev_str</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dev_str</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dev</span><span class="p">(</span><span class="n">persp_angles</span><span class="p">)</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">image_dims</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># BS x 2</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">ivy</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">image_dims</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">),</span> <span class="s1">&#39;float32&#39;</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span>\
+           <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">ivy</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">persp_angles</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">MIN_DENOMINATOR</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="focal_lengths_to_persp_angles"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.focal_lengths_to_persp_angles">[docs]</a><span class="k">def</span> <span class="nf">focal_lengths_to_persp_angles</span><span class="p">(</span><span class="n">focal_lengths</span><span class="p">,</span> <span class="n">image_dims</span><span class="p">,</span> <span class="n">dev_str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute perspective angles :math:`θ_x, θ_y` from focal lengths :math:`f_x, f_y`.\n</span>
+<span class="sd">    `[reference] &lt;localhost:63342/ivy/docs/source/references/mvg_textbook.pdf#page=172&gt;`_</span>
+<span class="sd">    deduction from page 154, section 6.1, figure 6.1</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    focal_lengths</span>
+<span class="sd">        batch_shape,2]*</span>
+<span class="sd">    image_dims</span>
+<span class="sd">        Image dimensions.</span>
+<span class="sd">    dev_str</span>
+<span class="sd">        device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc. Same as x if None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Perspective angles *[batch_shape,2]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">dev_str</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dev_str</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dev</span><span class="p">(</span><span class="n">focal_lengths</span><span class="p">)</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">image_dims</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># BS x 2</span>
+    <span class="k">return</span> <span class="o">-</span><span class="mi">2</span> <span class="o">*</span> <span class="n">ivy</span><span class="o">.</span><span class="n">atan</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">image_dims</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">),</span>
+                                              <span class="s1">&#39;float32&#39;</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">focal_lengths</span> <span class="o">+</span> <span class="n">MIN_DENOMINATOR</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="focal_lengths_and_pp_offsets_to_calib_mat"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.focal_lengths_and_pp_offsets_to_calib_mat">[docs]</a><span class="k">def</span> <span class="nf">focal_lengths_and_pp_offsets_to_calib_mat</span><span class="p">(</span><span class="n">focal_lengths</span><span class="p">,</span> <span class="n">pp_offsets</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dev_str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute calibration matrix :math:`\mathbf{K}\in\mathbb{R}^{3×3}` from focal lengths :math:`f_x, f_y` and</span>
+<span class="sd">    principal-point offsets :math:`p_x, p_y`.\n</span>
+<span class="sd">    `[reference] &lt;localhost:63342/ivy/docs/source/references/mvg_textbook.pdf#page=173&gt;`_</span>
+<span class="sd">    page 155, section 6.1, equation 6.4</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    focal_lengths</span>
+<span class="sd">        Focal lengths *[batch_shape,2]*</span>
+<span class="sd">    pp_offsets</span>
+<span class="sd">        Principal-point offsets *[batch_shape,2]*</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    dev_str</span>
+<span class="sd">        device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc. Same as x if None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Calibration matrix *[batch_shape,3,3]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">focal_lengths</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">dev_str</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dev_str</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dev</span><span class="p">(</span><span class="n">focal_lengths</span><span class="p">)</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x 1 x 1</span>
+    <span class="n">zeros</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">)</span>
+    <span class="n">ones</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">)</span>
+
+    <span class="c1"># BS x 2 x 1</span>
+    <span class="n">focal_lengths_reshaped</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">focal_lengths</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">pp_offsets_reshaped</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">pp_offsets</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># BS x 1 x 3</span>
+    <span class="n">row1</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">focal_lengths_reshaped</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="p">:],</span> <span class="n">zeros</span><span class="p">,</span> <span class="n">pp_offsets_reshaped</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">row2</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">zeros</span><span class="p">,</span> <span class="n">focal_lengths_reshaped</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:],</span> <span class="n">pp_offsets_reshaped</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">row3</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">zeros</span><span class="p">,</span> <span class="n">zeros</span><span class="p">,</span> <span class="n">ones</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># BS x 3 x 3</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">row1</span><span class="p">,</span> <span class="n">row2</span><span class="p">,</span> <span class="n">row3</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span></div>
+
+
+<span class="c1"># noinspection PyUnresolvedReferences</span>
+<div class="viewcode-block" id="rot_mat_and_cam_center_to_ext_mat"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.rot_mat_and_cam_center_to_ext_mat">[docs]</a><span class="k">def</span> <span class="nf">rot_mat_and_cam_center_to_ext_mat</span><span class="p">(</span><span class="n">rotation_mat</span><span class="p">,</span> <span class="n">camera_center</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get extrinsic matrix :math:`\mathbf{E}\in\mathbb{R}^{3×4}` from rotation matrix</span>
+<span class="sd">    :math:`\mathbf{R}\in\mathbb{R}^{3×3}` and camera centers :math:`\overset{\sim}{\mathbf{C}}\in\mathbb{R}^{3×1}`.\n</span>
+<span class="sd">    `[reference] &lt;localhost:63342/ivy/docs/source/references/mvg_textbook.pdf#page=175&gt;`_</span>
+<span class="sd">    page 157, section 6.1, equation 6.11</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    rotation_mat</span>
+<span class="sd">        Rotation matrix *[batch_shape,3,3]*</span>
+<span class="sd">    camera_center</span>
+<span class="sd">        Camera center *[batch_shape,3,1]*</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Extrinsic matrix *[batch_shape,3,4]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">rotation_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="c1"># num batch dims</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x 3 x 3</span>
+    <span class="n">identity</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_batch_dims</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">]),</span>
+                         <span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="c1"># BS x 3 x 4</span>
+    <span class="n">identity_w_cam_center</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">identity</span><span class="p">,</span> <span class="o">-</span><span class="n">camera_center</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># BS x 3 x 4</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">rotation_mat</span><span class="p">,</span> <span class="n">identity_w_cam_center</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="depth_to_ds_pixel_coords"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.depth_to_ds_pixel_coords">[docs]</a><span class="k">def</span> <span class="nf">depth_to_ds_pixel_coords</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span> <span class="n">uniform_pixel_coords</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_dims</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get depth scaled homogeneous pixel co-ordinates image :math:`\mathbf{X}_p\in\mathbb{R}^{h×w×3}` from depth image</span>
+<span class="sd">    :math:`\mathbf{X}_d\in\mathbb{R}^{h×w×1}`.\n</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    depth</span>
+<span class="sd">        Depth image *[batch_shape,h,w,1]*</span>
+<span class="sd">    uniform_pixel_coords</span>
+<span class="sd">        Image of homogeneous pixel co-ordinates. Created if None. *[batch_shape,h,w,3]* (Default value = None)</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_dims</span>
+<span class="sd">        Image dimensions. Inferred from inputs in None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Depth scaled homogeneous pixel co-ordinates image *[batch_shape,h,w,3]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">depth</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">image_dims</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_dims</span> <span class="o">=</span> <span class="n">depth</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_dims</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># BS x H x W x 3</span>
+    <span class="k">if</span> <span class="n">uniform_pixel_coords</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">uniform_pixel_coords</span> <span class="o">=</span> <span class="n">create_uniform_pixel_coords_image</span><span class="p">(</span><span class="n">image_dims</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">dev_str</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">dev</span><span class="p">(</span><span class="n">depth</span><span class="p">))</span>
+
+    <span class="c1"># BS x H x W x 3</span>
+    <span class="k">return</span> <span class="n">uniform_pixel_coords</span> <span class="o">*</span> <span class="n">depth</span></div>
+
+
+<div class="viewcode-block" id="depth_to_radial_depth"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.depth_to_radial_depth">[docs]</a><span class="k">def</span> <span class="nf">depth_to_radial_depth</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span> <span class="n">inv_calib_mat</span><span class="p">,</span> <span class="n">uniform_pix_coords</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_dims</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get radial depth image :math:`\mathbf{X}_{rd}\in\mathbb{R}^{hxw×1}` from depth image</span>
+<span class="sd">    :math:`\mathbf{X}_d\in\mathbb{R}^{hxw×1}`.\n</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    depth</span>
+<span class="sd">        Depth scaled homogeneous pixel co-ordinates image *[batch_shape,image_dims,1]*</span>
+<span class="sd">    inv_calib_mat</span>
+<span class="sd">        Inverse calibration matrix *[batch_shape,3,3]*</span>
+<span class="sd">    uniform_pix_coords</span>
+<span class="sd">        Uniform homogeneous pixel co-ordinates, constructed if None. *[batch_shape,image_dims,3]* (Default value = None)</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_dims</span>
+<span class="sd">        Image shape. Inferred from inputs in None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Radial depth image *[batch_shape,image_dims,1]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">inv_calib_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">image_dims</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_dims</span> <span class="o">=</span> <span class="n">depth</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">num_batch_dims</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_dims</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># BS x H x W x 3</span>
+    <span class="k">if</span> <span class="n">uniform_pix_coords</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">uniform_pix_coords</span> <span class="o">=</span> <span class="n">create_uniform_pixel_coords_image</span><span class="p">(</span><span class="n">image_dims</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">dev_str</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">dev</span><span class="p">(</span><span class="n">depth</span><span class="p">))</span>
+    <span class="n">ds_pixel_coords</span> <span class="o">=</span> <span class="n">uniform_pix_coords</span> <span class="o">*</span> <span class="n">depth</span>
+
+    <span class="c1"># BS x H x W x 1</span>
+    <span class="k">return</span> <span class="n">ds_pixel_coords_to_radial_depth</span><span class="p">(</span><span class="n">ds_pixel_coords</span><span class="p">,</span> <span class="n">inv_calib_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_dims</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ds_pixel_coords_to_radial_depth"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.ds_pixel_coords_to_radial_depth">[docs]</a><span class="k">def</span> <span class="nf">ds_pixel_coords_to_radial_depth</span><span class="p">(</span><span class="n">ds_pixel_coords</span><span class="p">,</span> <span class="n">inv_calib_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get radial depth image :math:`\mathbf{X}_{rd}\in\mathbb{R}^{is×1}` from depth scaled homogeneous pixel</span>
+<span class="sd">    co-ordinates image :math:`\mathbf{X}_p\in\mathbb{R}^{is×3}`.\n</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ds_pixel_coords</span>
+<span class="sd">        Depth scaled homogeneous pixel co-ordinates image *[batch_shape,image_shape,1]*</span>
+<span class="sd">    inv_calib_mat</span>
+<span class="sd">        Inverse calibration matrix *[batch_shape,3,3]*</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_shape</span>
+<span class="sd">        Image shape. Inferred from inputs in None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Radial depth image *[batch_shape,image_shape,1]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">inv_calib_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">image_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_shape</span> <span class="o">=</span> <span class="n">ds_pixel_coords</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">num_batch_dims</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 3</span>
+    <span class="n">cam_coords</span> <span class="o">=</span> <span class="n">ds_pixel_to_cam_coords</span><span class="p">(</span><span class="n">ds_pixel_coords</span><span class="p">,</span> <span class="n">inv_calib_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="c1"># BS x IS x 1</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">cam_coords</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span></div>
+
+
+<div class="viewcode-block" id="cam_to_ds_pixel_coords"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.cam_to_ds_pixel_coords">[docs]</a><span class="k">def</span> <span class="nf">cam_to_ds_pixel_coords</span><span class="p">(</span><span class="n">coords_wrt_cam</span><span class="p">,</span> <span class="n">calib_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get depth scaled homogeneous pixel co-ordinates image :math:`\mathbf{X}_p\in\mathbb{R}^{is×3}` from camera-centric</span>
+<span class="sd">    homogeneous co-ordinates image :math:`\mathbf{X}_c\in\mathbb{R}^{is×4}`.\n</span>
+<span class="sd">    `[reference] &lt;localhost:63342/ivy/docs/source/references/mvg_textbook.pdf#page=173&gt;`_</span>
+<span class="sd">    page 155, equation 6.3</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    coords_wrt_cam</span>
+<span class="sd">        Camera-centric homogeneous co-ordinates image *[batch_shape,image_shape,4]*</span>
+<span class="sd">    calib_mat</span>
+<span class="sd">        Calibration matrix *[batch_shape,3,3]*</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_shape</span>
+<span class="sd">        Image shape. Inferred from inputs in None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Depth scaled homogeneous pixel co-ordinates image *[batch_shape,image_shape,3]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">calib_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">image_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_shape</span> <span class="o">=</span> <span class="n">coords_wrt_cam</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">num_batch_dims</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 3</span>
+    <span class="n">coords_wrt_cam</span> <span class="o">=</span> <span class="n">coords_wrt_cam</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="c1"># BS x IS x 3</span>
+    <span class="k">return</span> <span class="n">ivy_pg</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">coords_wrt_cam</span><span class="p">,</span> <span class="n">calib_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="cam_coords_to_depth"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.cam_coords_to_depth">[docs]</a><span class="k">def</span> <span class="nf">cam_coords_to_depth</span><span class="p">(</span><span class="n">coords_wrt_cam</span><span class="p">,</span> <span class="n">calib_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get depth image :math:`\mathbf{X}_p\in\mathbb{R}^{is×1}` from camera-centric</span>
+<span class="sd">    homogeneous co-ordinates image :math:`\mathbf{X}_c\in\mathbb{R}^{is×4}`.\n</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    coords_wrt_cam</span>
+<span class="sd">        Camera-centric homogeneous co-ordinates image *[batch_shape,image_shape,4]*</span>
+<span class="sd">    calib_mat</span>
+<span class="sd">        Calibration matrix *[batch_shape,3,3]*</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_shape</span>
+<span class="sd">        Image shape. Inferred from inputs in None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Depth image *[batch_shape,image_shape,1]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># BS x IS x 1</span>
+    <span class="k">return</span> <span class="n">cam_to_ds_pixel_coords</span><span class="p">(</span><span class="n">coords_wrt_cam</span><span class="p">,</span> <span class="n">calib_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">:]</span></div>
+
+
+<div class="viewcode-block" id="ds_pixel_to_cam_coords"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.ds_pixel_to_cam_coords">[docs]</a><span class="k">def</span> <span class="nf">ds_pixel_to_cam_coords</span><span class="p">(</span><span class="n">ds_pixel_coords</span><span class="p">,</span> <span class="n">inv_calib_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dev_str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get camera-centric homogeneous co-ordinates image :math:`\mathbf{X}_c\in\mathbb{R}^{is×4}` from</span>
+<span class="sd">    depth scaled homogeneous pixel co-ordinates image :math:`\mathbf{X}_p\in\mathbb{R}^{is×3}`.\n</span>
+<span class="sd">    `[reference] &lt;localhost:63342/ivy/docs/source/references/mvg_textbook.pdf#page=173&gt;`_</span>
+<span class="sd">    page 155, matrix inverse of equation 6.3</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ds_pixel_coords</span>
+<span class="sd">        Depth scaled homogeneous pixel co-ordinates image *[batch_shape,image_shap,3]*</span>
+<span class="sd">    inv_calib_mat</span>
+<span class="sd">        Inverse calibration matrix *[batch_shape,3,3]*</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_shape</span>
+<span class="sd">        Image dimensions. Inferred from inputs in None. (Default value = None)</span>
+<span class="sd">    dev_str</span>
+<span class="sd">        device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc. Same as x if None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Camera-centric homogeneous co-ordinates image *[batch_shape,image_shape,4]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">inv_calib_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">image_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_shape</span> <span class="o">=</span> <span class="n">ds_pixel_coords</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">num_batch_dims</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">dev_str</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dev_str</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dev</span><span class="p">(</span><span class="n">ds_pixel_coords</span><span class="p">)</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 3</span>
+    <span class="n">cam_coords</span> <span class="o">=</span> <span class="n">ivy_pg</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">ds_pixel_coords</span><span class="p">,</span> <span class="n">inv_calib_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 4</span>
+    <span class="k">return</span> <span class="n">ivy_mech</span><span class="o">.</span><span class="n">make_coordinates_homogeneous</span><span class="p">(</span><span class="n">cam_coords</span><span class="p">,</span> <span class="n">batch_shape</span> <span class="o">+</span> <span class="n">image_shape</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="depth_to_cam_coords"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.depth_to_cam_coords">[docs]</a><span class="k">def</span> <span class="nf">depth_to_cam_coords</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span> <span class="n">inv_calib_mat</span><span class="p">,</span> <span class="n">uniform_pixel_coords</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_dims</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                        <span class="n">dev_str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get camera-centric homogeneous co-ordinates image :math:`\mathbf{X}_c\in\mathbb{R}^{hxw×4}` from</span>
+<span class="sd">    depth image :math:`\mathbf{X}_p\in\mathbb{R}^{hxw×1}`.\n</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    depth</span>
+<span class="sd">        Depth image *[batch_shape,h,w,1]*</span>
+<span class="sd">    inv_calib_mat</span>
+<span class="sd">        Inverse calibration matrix *[batch_shape,3,3]*</span>
+<span class="sd">    uniform_pixel_coords</span>
+<span class="sd">        Image of homogeneous pixel co-ordinates. Created if None. *[batch_shape,h,w,3]* (Default value = None)</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_dims</span>
+<span class="sd">        Image dimensions. Inferred from inputs in None. (Default value = None)</span>
+<span class="sd">    dev_str</span>
+<span class="sd">        device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc. Same as x if None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Camera-centric homogeneous co-ordinates image *[batch_shape,h,w,4]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">inv_calib_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">image_dims</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_dims</span> <span class="o">=</span> <span class="n">depth</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">dev_str</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dev_str</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dev</span><span class="p">(</span><span class="n">depth</span><span class="p">)</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_dims</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># BS x H x W x 3</span>
+    <span class="n">ds_pixel_coords</span> <span class="o">=</span> <span class="n">depth_to_ds_pixel_coords</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span> <span class="n">uniform_pixel_coords</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># BS x H x W x 4</span>
+    <span class="k">return</span> <span class="n">ds_pixel_to_cam_coords</span><span class="p">(</span><span class="n">ds_pixel_coords</span><span class="p">,</span> <span class="n">inv_calib_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_dims</span><span class="p">,</span> <span class="n">dev_str</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="world_to_cam_coords"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.world_to_cam_coords">[docs]</a><span class="k">def</span> <span class="nf">world_to_cam_coords</span><span class="p">(</span><span class="n">coords_wrt_world</span><span class="p">,</span> <span class="n">ext_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dev_str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get camera-centric homogeneous co-ordinates image :math:`\mathbf{X}_c\in\mathbb{R}^{is×4}` from world-centric</span>
+<span class="sd">    homogeneous co-ordinates image :math:`\mathbf{X}_w\in\mathbb{R}^{is×4}`.\n</span>
+<span class="sd">    `[reference] &lt;localhost:63342/ivy/docs/source/references/mvg_textbook.pdf#page=174&gt;`_</span>
+<span class="sd">    page 156, equation 6.6</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    coords_wrt_world</span>
+<span class="sd">        World-centric homogeneous co-ordinates image *[batch_shape,image_shape,4]*</span>
+<span class="sd">    ext_mat</span>
+<span class="sd">        Extrinsic matrix *[batch_shape,3,4]*</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_shape</span>
+<span class="sd">        Image shape. Inferred from inputs in None. (Default value = None)</span>
+<span class="sd">    dev_str</span>
+<span class="sd">        device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc. Same as x if None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Camera-centric homogeneous co-ordinates image *[batch_shape,image_shape,4]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">ext_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">image_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_shape</span> <span class="o">=</span> <span class="n">coords_wrt_world</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">num_batch_dims</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">dev_str</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dev_str</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dev</span><span class="p">(</span><span class="n">coords_wrt_world</span><span class="p">)</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 3</span>
+    <span class="n">cam_coords</span> <span class="o">=</span> <span class="n">ivy_pg</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">coords_wrt_world</span><span class="p">,</span> <span class="n">ext_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 4</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">cam_coords</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">batch_shape</span> <span class="o">+</span> <span class="n">image_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="cam_to_world_coords"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.cam_to_world_coords">[docs]</a><span class="k">def</span> <span class="nf">cam_to_world_coords</span><span class="p">(</span><span class="n">coords_wrt_cam</span><span class="p">,</span> <span class="n">inv_ext_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dev_str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get world-centric homogeneous co-ordinates image :math:`\mathbf{X}_w\in\mathbb{R}^{is×4}` from camera-centric</span>
+<span class="sd">    homogeneous co-ordinates image :math:`\mathbf{X}_c\in\mathbb{R}^{is×4}`.\n</span>
+<span class="sd">    `[reference] &lt;localhost:63342/ivy/docs/source/references/mvg_textbook.pdf#page=174&gt;`_</span>
+<span class="sd">    matrix inverse of page 156, equation 6.6</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    coords_wrt_cam</span>
+<span class="sd">        Camera-centric homogeneous co-ordinates image *[batch_shape,image_shape,4]*</span>
+<span class="sd">    inv_ext_mat</span>
+<span class="sd">        Inverse extrinsic matrix *[batch_shape,3,4]*</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_shape</span>
+<span class="sd">        Image shape. Inferred from inputs in None. (Default value = None)</span>
+<span class="sd">    dev_str</span>
+<span class="sd">        device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc. Same as x if None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        World-centric homogeneous co-ordinates image *[batch_shape,image_shape,4]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">inv_ext_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">image_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_shape</span> <span class="o">=</span> <span class="n">coords_wrt_cam</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">num_batch_dims</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">dev_str</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dev_str</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dev</span><span class="p">(</span><span class="n">coords_wrt_cam</span><span class="p">)</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 3</span>
+    <span class="n">world_coords</span> <span class="o">=</span> <span class="n">ivy_pg</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">coords_wrt_cam</span><span class="p">,</span> <span class="n">inv_ext_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 4</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">world_coords</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">batch_shape</span> <span class="o">+</span> <span class="n">image_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">)),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="world_to_ds_pixel_coords"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.world_to_ds_pixel_coords">[docs]</a><span class="k">def</span> <span class="nf">world_to_ds_pixel_coords</span><span class="p">(</span><span class="n">coords_wrt_world</span><span class="p">,</span> <span class="n">full_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get depth scaled homogeneous pixel co-ordinates image :math:`\mathbf{X}_p\in\mathbb{R}^{is×3}` from world-centric</span>
+<span class="sd">    homogeneous co-ordinates image :math:`\mathbf{X}_w\in\mathbb{R}^{is×4}`.\n</span>
+<span class="sd">    `[reference] &lt;localhost:63342/ivy/docs/source/references/mvg_textbook.pdf#page=173&gt;`_</span>
+<span class="sd">    combination of page 156, equation 6.6, and page 155, equation 6.3</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    coords_wrt_world</span>
+<span class="sd">        World-centric homogeneous co-ordinates image *[batch_shape,image_shape,4]*</span>
+<span class="sd">    full_mat</span>
+<span class="sd">        Full projection matrix *[batch_shape,3,4]*</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_shape</span>
+<span class="sd">        Image shape. Inferred from inputs in None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Depth scaled homogeneous pixel co-ordinates image *[batch_shape,image_shape,3]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">full_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">image_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_shape</span> <span class="o">=</span> <span class="n">coords_wrt_world</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">num_batch_dims</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 3</span>
+    <span class="k">return</span> <span class="n">ivy_pg</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">coords_wrt_world</span><span class="p">,</span> <span class="n">full_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="world_coords_to_depth"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.world_coords_to_depth">[docs]</a><span class="k">def</span> <span class="nf">world_coords_to_depth</span><span class="p">(</span><span class="n">coords_wrt_world</span><span class="p">,</span> <span class="n">full_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get depth image :math:`\mathbf{X}_d\in\mathbb{R}^{is×1}` from world-centric</span>
+<span class="sd">    homogeneous co-ordinates image :math:`\mathbf{X}_w\in\mathbb{R}^{is×4}`.\n</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    coords_wrt_world</span>
+<span class="sd">        World-centric homogeneous co-ordinates image *[batch_shape,image_shape,4]*</span>
+<span class="sd">    full_mat</span>
+<span class="sd">        Full projection matrix *[batch_shape,3,4]*</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_shape</span>
+<span class="sd">        Image shape. Inferred from inputs in None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Depth image *[batch_shape,image_shape,1]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># BS x IS x 1</span>
+    <span class="k">return</span> <span class="n">world_to_ds_pixel_coords</span><span class="p">(</span><span class="n">coords_wrt_world</span><span class="p">,</span> <span class="n">full_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">:]</span></div>
+
+
+<div class="viewcode-block" id="ds_pixel_to_world_coords"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.ds_pixel_to_world_coords">[docs]</a><span class="k">def</span> <span class="nf">ds_pixel_to_world_coords</span><span class="p">(</span><span class="n">ds_pixel_coords</span><span class="p">,</span> <span class="n">inv_full_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get world-centric homogeneous co-ordinates image :math:`\mathbf{X}_w\in\mathbb{R}^{is×4}` from depth scaled</span>
+<span class="sd">    homogeneous pixel co-ordinates image :math:`\mathbf{X}_p\in\mathbb{R}^{is×3}`.\n</span>
+<span class="sd">    `[reference] &lt;localhost:63342/ivy/docs/source/references/mvg_textbook.pdf#page=173&gt;`_</span>
+<span class="sd">    combination of page 155, matrix inverse of equation 6.3, and matrix inverse of page 156, equation 6.6</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ds_pixel_coords</span>
+<span class="sd">        Depth scaled homogeneous pixel co-ordinates image: *[batch_shape,image_shape,3]*</span>
+<span class="sd">    inv_full_mat</span>
+<span class="sd">        Inverse full projection matrix *[batch_shape,3,4]*</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_shape</span>
+<span class="sd">        Image shape. Inferred from inputs in None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        World-centric homogeneous co-ordinates image *[batch_shape,image_shape,4]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">inv_full_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">image_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_shape</span> <span class="o">=</span> <span class="n">ds_pixel_coords</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">num_batch_dims</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 4</span>
+    <span class="n">ds_pixel_coords</span> <span class="o">=</span> <span class="n">ivy_mech</span><span class="o">.</span><span class="n">make_coordinates_homogeneous</span><span class="p">(</span><span class="n">ds_pixel_coords</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 3</span>
+    <span class="n">world_coords</span> <span class="o">=</span> <span class="n">ivy_pg</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">ds_pixel_coords</span><span class="p">,</span> <span class="n">inv_full_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 4</span>
+    <span class="k">return</span> <span class="n">ivy_mech</span><span class="o">.</span><span class="n">make_coordinates_homogeneous</span><span class="p">(</span><span class="n">world_coords</span><span class="p">,</span> <span class="n">batch_shape</span> <span class="o">+</span> <span class="n">image_shape</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="depth_to_world_coords"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.depth_to_world_coords">[docs]</a><span class="k">def</span> <span class="nf">depth_to_world_coords</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span> <span class="n">inv_full_mat</span><span class="p">,</span> <span class="n">uniform_pixel_coords</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_dims</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get world-centric homogeneous co-ordinates image :math:`\mathbf{X}_w\in\mathbb{R}^{hxw×4}` from depth image</span>
+<span class="sd">    :math:`\mathbf{X}_d\in\mathbb{R}^{hxw×1}`.\n</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    depth</span>
+<span class="sd">        Depth image: *[batch_shape,h,w,1]*</span>
+<span class="sd">    inv_full_mat</span>
+<span class="sd">        Inverse full projection matrix *[batch_shape,3,4]*</span>
+<span class="sd">    uniform_pixel_coords</span>
+<span class="sd">        Image of homogeneous pixel co-ordinates. Created if None. *[batch_shape,h,w,3]* (Default value = None)</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_dims</span>
+<span class="sd">        Image shape. Inferred from inputs in None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        World-centric homogeneous co-ordinates image *[batch_shape,h,w,4]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">depth</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">image_dims</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_dims</span> <span class="o">=</span> <span class="n">depth</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_dims</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># BS x H x W x 3</span>
+    <span class="n">ds_pixel_coords</span> <span class="o">=</span> <span class="n">depth_to_ds_pixel_coords</span><span class="p">(</span><span class="n">depth</span><span class="p">,</span> <span class="n">uniform_pixel_coords</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># BS x H x W x 4</span>
+    <span class="k">return</span> <span class="n">ds_pixel_to_world_coords</span><span class="p">(</span><span class="n">ds_pixel_coords</span><span class="p">,</span> <span class="n">inv_full_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_dims</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="pixel_coords_to_world_ray_vectors"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.pixel_coords_to_world_ray_vectors">[docs]</a><span class="k">def</span> <span class="nf">pixel_coords_to_world_ray_vectors</span><span class="p">(</span><span class="n">inv_full_mat</span><span class="p">,</span> <span class="n">pixel_coords</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">camera_center</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                                      <span class="n">image_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate world-centric ray vector image :math:`\mathbf{RV}\in\mathbb{R}^{is×3}` from homogeneous pixel co-ordinate</span>
+<span class="sd">    image :math:`\mathbf{X}_p\in\mathbb{R}^{is×3}`. Each ray vector :math:`\mathbf{rv}_{i,j}\in\mathbb{R}^{3}` is</span>
+<span class="sd">    represented as a unit vector from the camera center :math:`\overset{\sim}{\mathbf{C}}\in\mathbb{R}^{3×1}`, in the</span>
+<span class="sd">    world frame. Co-ordinates :math:`\mathbf{x}_{i,j}\in\mathbb{R}^{3}` along the world ray can then be parameterized as</span>
+<span class="sd">    :math:`\mathbf{x}_{i,j}=\overset{\sim}{\mathbf{C}} + λ\mathbf{rv}_{i,j}`, where :math:`λ` is a scalar who&#39;s</span>
+<span class="sd">    magnitude dictates the position of the world co-ordinate along the world ray.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    inv_full_mat</span>
+<span class="sd">        Inverse full projection matrix *[batch_shape,3,4]*</span>
+<span class="sd">    pixel_coords</span>
+<span class="sd">        Homogeneous pixel co-ordinates image, created uniformly if None. *[batch_shape,image_shape,3]* (Default value = None)</span>
+<span class="sd">    camera_center</span>
+<span class="sd">        Camera centers, inferred from inv_full_mat if None *[batch_shape,3,1]* (Default value = None)</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_shape</span>
+<span class="sd">        Image shape. Inferred from inputs in None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        World ray vectors *[batch_shape,image_shape,3]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">inv_full_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">image_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">pixel_coords</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;if pixel_coords is not specified, image_shape must be specified when calling&#39;</span>
+                            <span class="s1">&#39;pixel_coords_to_world_ray_vectors&#39;</span><span class="p">)</span>
+        <span class="n">image_shape</span> <span class="o">=</span> <span class="n">pixel_coords</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">num_batch_dims</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">num_image_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">camera_center</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">camera_center</span> <span class="o">=</span> <span class="n">inv_ext_mat_to_camera_center</span><span class="p">(</span><span class="n">inv_full_mat</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">pixel_coords</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">pixel_coords</span> <span class="o">=</span> <span class="n">create_uniform_pixel_coords_image</span><span class="p">(</span><span class="n">image_shape</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">dev_str</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">dev</span><span class="p">(</span><span class="n">inv_full_mat</span><span class="p">))</span>
+
+    <span class="c1"># BS x [1]xNID x 3</span>
+    <span class="n">camera_centers_reshaped</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">camera_center</span><span class="p">,</span> <span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">num_image_dims</span> <span class="o">+</span> <span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+
+    <span class="c1"># BS x IS x 3</span>
+    <span class="n">vectors</span> <span class="o">=</span> <span class="n">ds_pixel_to_world_coords</span><span class="p">(</span><span class="n">pixel_coords</span><span class="p">,</span> <span class="n">inv_full_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> \
+              <span class="o">-</span> <span class="n">camera_centers_reshaped</span>
+
+    <span class="c1"># BS x H x W x 3</span>
+    <span class="k">return</span> <span class="n">vectors</span> <span class="o">/</span> <span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">vectors</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="n">MIN_DENOMINATOR</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="sphere_coords_to_world_ray_vectors"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.sphere_coords_to_world_ray_vectors">[docs]</a><span class="k">def</span> <span class="nf">sphere_coords_to_world_ray_vectors</span><span class="p">(</span><span class="n">sphere_coords</span><span class="p">,</span> <span class="n">inv_rotation_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Calculate world-centric ray vector image :math:`\mathbf{RV}\in\mathbb{R}^{is×3}` from camera-centric ego-sphere</span>
+<span class="sd">    polar co-ordinates image :math:`\mathbf{S}_c\in\mathbb{R}^{is×3}`. Each ray vector</span>
+<span class="sd">    :math:`\mathbf{rv}_{i,j}\in\mathbb{R}^{3}` is represented as a unit vector from the camera center</span>
+<span class="sd">    :math:`\overset{\sim}{\mathbf{C}}\in\mathbb{R}^{3×1}`, in the world frame. Co-ordinates</span>
+<span class="sd">    :math:`\mathbf{x}_{i,j}\in\mathbb{R}^{3}` along the world ray can then be parameterized as</span>
+<span class="sd">    :math:`\mathbf{x}_{i,j}=\overset{\sim}{\mathbf{C}} + λ\mathbf{rv}_{i,j}`, where :math:`λ` is a scalar who&#39;s</span>
+<span class="sd">    magnitude dictates the position of the world co-ordinate along the world ray.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    sphere_coords</span>
+<span class="sd">        Camera-centric ego-sphere polar co-ordinates image *[batch_shape,image_shape,3]*</span>
+<span class="sd">    inv_rotation_mat</span>
+<span class="sd">        Inverse rotation matrix *[batch_shape,3,3]*</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_shape</span>
+<span class="sd">        Image dimensions. Inferred from inputs in None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        World ray vectors *[batch_shape,image_shape,3]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">inv_rotation_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">image_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_shape</span> <span class="o">=</span> <span class="n">sphere_coords</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">num_batch_dims</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 3</span>
+    <span class="n">cam_coords</span> <span class="o">=</span> <span class="n">sphere_to_cam_coords</span><span class="p">(</span><span class="n">sphere_coords</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="n">batch_shape</span> <span class="o">+</span> <span class="n">image_shape</span><span class="p">)[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+    <span class="n">vectors</span> <span class="o">=</span> <span class="n">ivy_pg</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">cam_coords</span><span class="p">,</span> <span class="n">inv_rotation_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">vectors</span> <span class="o">/</span> <span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">vectors</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">**</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="n">MIN_DENOMINATOR</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="bilinearly_interpolate_image"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.bilinearly_interpolate_image">[docs]</a><span class="k">def</span> <span class="nf">bilinearly_interpolate_image</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">sampling_pixel_coords</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_dims</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Bilinearly interpolate image :math:`\mathbf{X}\in\mathbb{R}^{h×w×d}` at sampling pixel locations</span>
+<span class="sd">    :math:`\mathbf{S}\in\mathbb{R}^{h×w×2}`, to return interpolated image :math:`\mathbf{X}_I\in\mathbb{R}^{h×w×d}`.\n</span>
+<span class="sd">    `[reference] &lt;https://en.wikipedia.org/wiki/Bilinear_interpolation&gt;`_</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    image</span>
+<span class="sd">        Image to be interpolated *[batch_shape,h,w,d]*</span>
+<span class="sd">    sampling_pixel_coords</span>
+<span class="sd">        Pixel co-ordinates to sample the image at *[batch_shape,h,w,2]*</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_dims</span>
+<span class="sd">        Image dimensions. Inferred from inputs in None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Interpolated image *[batch_shape,h,w,d]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">image_dims</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_dims</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_dims</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># batch shape product</span>
+    <span class="n">batch_shape_product</span> <span class="o">=</span> <span class="n">reduce</span><span class="p">(</span><span class="n">mul</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># prod(BS) x H x W x D</span>
+    <span class="n">uniform_values_flat</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="p">[</span><span class="n">batch_shape_product</span><span class="p">]</span> <span class="o">+</span> <span class="n">image_dims</span> <span class="o">+</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+    <span class="c1"># prod(BS) x H x W x 2</span>
+    <span class="n">sampling_pixel_coords_flat</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">sampling_pixel_coords</span><span class="p">,</span> <span class="p">[</span><span class="n">batch_shape_product</span><span class="p">]</span> <span class="o">+</span> <span class="n">image_dims</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+
+    <span class="c1"># prod(BS) x H x W x D</span>
+    <span class="n">interpolation_flat</span> <span class="o">=</span> <span class="n">ivy_img</span><span class="o">.</span><span class="n">bilinear_resample</span><span class="p">(</span><span class="n">uniform_values_flat</span><span class="p">,</span> <span class="n">sampling_pixel_coords_flat</span><span class="p">)</span>
+
+    <span class="c1"># BS x H x W x D</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">interpolation_flat</span><span class="p">,</span> <span class="n">batch_shape</span> <span class="o">+</span> <span class="n">image_dims</span> <span class="o">+</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span></div>
+
+
+<span class="c1"># noinspection PyUnusedLocal</span>
+<div class="viewcode-block" id="inv_ext_mat_to_camera_center"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.inv_ext_mat_to_camera_center">[docs]</a><span class="k">def</span> <span class="nf">inv_ext_mat_to_camera_center</span><span class="p">(</span><span class="n">inv_ext_mat</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute camera center :math:`\overset{\sim}{\mathbf{C}}\in\mathbb{R}^{3×1}` from camera extrinsic matrix</span>
+<span class="sd">    :math:`\mathbf{E}\in\mathbb{R}^{3×4}`.\n</span>
+<span class="sd">    `[reference] &lt;localhost:63342/ivy/docs/source/references/mvg_textbook.pdf#page=174&gt;`_</span>
+<span class="sd">    matrix inverse of page 156, equation 6.6</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    inv_ext_mat</span>
+<span class="sd">        Inverse extrinsic matrix *[batch_shape,3,4]*</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Camera center *[batch_shape,3,1]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># BS x 3 x 1</span>
+    <span class="k">return</span> <span class="n">inv_ext_mat</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">:]</span></div>
+
+
+<div class="viewcode-block" id="calib_and_ext_to_full_mat"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.calib_and_ext_to_full_mat">[docs]</a><span class="k">def</span> <span class="nf">calib_and_ext_to_full_mat</span><span class="p">(</span><span class="n">calib_mat</span><span class="p">,</span> <span class="n">ext_mat</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute full projection matrix :math:`\mathbf{P}\in\mathbb{R}^{3×4}` from calibration</span>
+<span class="sd">    :math:`\mathbf{K}\in\mathbb{R}^{3×3}` and extrinsic matrix :math:`\mathbf{E}\in\mathbb{R}^{3×4}`.\n</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    calib_mat</span>
+<span class="sd">        Calibration matrix *[batch_shape,3,3]*</span>
+<span class="sd">    ext_mat</span>
+<span class="sd">        Extrinsic matrix *[batch_shape,3,4]*</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Full projection matrix *[batch_shape,3,4]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># BS x 3 x 4</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">calib_mat</span><span class="p">,</span> <span class="n">ext_mat</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="cam_to_sphere_coords"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.cam_to_sphere_coords">[docs]</a><span class="k">def</span> <span class="nf">cam_to_sphere_coords</span><span class="p">(</span><span class="n">cam_coords</span><span class="p">,</span> <span class="n">forward_facing_z</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert camera-centric homogeneous cartesian co-ordinates image :math:`\mathbf{X}_c\in\mathbb{R}^{h×w×4}` to</span>
+<span class="sd">    camera-centric ego-sphere polar co-ordinates image :math:`\mathbf{S}_c\in\mathbb{R}^{h×w×3}`.\n</span>
+<span class="sd">    `[reference] &lt;https://en.wikipedia.org/wiki/Spherical_coordinate_system#Cartesian_coordinates&gt;`_</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    cam_coords</span>
+<span class="sd">        Camera-centric homogeneous cartesian co-ordinates image *[batch_shape,h,w,4]*</span>
+<span class="sd">    forward_facing_z</span>
+<span class="sd">        Whether to use reference frame so z is forward facing. Default is False.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Camera-centric ego-sphere polar co-ordinates image *[batch_shape,h,w,3]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># BS x H x W x 3</span>
+    <span class="k">if</span> <span class="n">forward_facing_z</span><span class="p">:</span>
+        <span class="n">cam_coords</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">cam_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">cam_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">],</span> <span class="n">cam_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">cam_coords</span> <span class="o">=</span> <span class="n">cam_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="c1"># BS x H x W x 3</span>
+    <span class="k">return</span> <span class="n">ivy_mech</span><span class="o">.</span><span class="n">cartesian_to_polar_coords</span><span class="p">(</span><span class="n">cam_coords</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="ds_pixel_to_sphere_coords"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.ds_pixel_to_sphere_coords">[docs]</a><span class="k">def</span> <span class="nf">ds_pixel_to_sphere_coords</span><span class="p">(</span><span class="n">ds_pixel_coords</span><span class="p">,</span> <span class="n">inv_calib_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert depth scaled homogeneous pixel co-ordinates image :math:`\mathbf{X}_p\in\mathbb{R}^{is×3}` to</span>
+<span class="sd">    camera-centric ego-sphere polar co-ordinates image :math:`\mathbf{S}_c\in\mathbb{R}^{is×3}`.\n</span>
+<span class="sd">    `[reference] &lt;https://en.wikipedia.org/wiki/Spherical_coordinate_system#Cartesian_coordinates&gt;`_</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ds_pixel_coords</span>
+<span class="sd">        Depth scaled homogeneous pixel co-ordinates image *[batch_shape,image_shape,3]*</span>
+<span class="sd">    inv_calib_mat</span>
+<span class="sd">        Inverse calibration matrix *[batch_shape,3,3]*</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_shape</span>
+<span class="sd">        Image dimensions. Inferred from inputs in None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Camera-centric ego-sphere polar co-ordinates image *[batch_shape,image_shape,3]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">inv_calib_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">image_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_shape</span> <span class="o">=</span> <span class="n">ds_pixel_coords</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">num_batch_dims</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 4</span>
+    <span class="n">cam_coords</span> <span class="o">=</span> <span class="n">ds_pixel_to_cam_coords</span><span class="p">(</span><span class="n">ds_pixel_coords</span><span class="p">,</span> <span class="n">inv_calib_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 3</span>
+    <span class="k">return</span> <span class="n">cam_to_sphere_coords</span><span class="p">(</span><span class="n">cam_coords</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="angular_pixel_to_sphere_coords"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.angular_pixel_to_sphere_coords">[docs]</a><span class="k">def</span> <span class="nf">angular_pixel_to_sphere_coords</span><span class="p">(</span><span class="n">angular_pixel_coords</span><span class="p">,</span> <span class="n">pixels_per_degree</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert angular pixel co-ordinates image :math:`\mathbf{A}_p\in\mathbb{R}^{h×w×3}` to camera-centric ego-sphere</span>
+<span class="sd">    polar co-ordinates image :math:`\mathbf{S}_c\in\mathbb{R}^{h×w×3}`.\n</span>
+<span class="sd">    `[reference] &lt;https://en.wikipedia.org/wiki/Spherical_coordinate_system#Cartesian_coordinates&gt;`_</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    angular_pixel_coords</span>
+<span class="sd">        Angular pixel co-ordinates image *[batch_shape,h,w,3]*</span>
+<span class="sd">    pixels_per_degree</span>
+<span class="sd">        Number of pixels per angular degree</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Camera-centric ego-sphere polar co-ordinates image *[batch_shape,h,w,3]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># BS x H x W x 1</span>
+    <span class="n">sphere_x_coords</span> <span class="o">=</span> <span class="n">angular_pixel_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">sphere_y_coords</span> <span class="o">=</span> <span class="n">angular_pixel_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">radius_values</span> <span class="o">=</span> <span class="n">angular_pixel_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="n">sphere_x_angle_coords_in_degs</span> <span class="o">=</span> <span class="p">(</span><span class="mi">180</span> <span class="o">-</span> <span class="n">sphere_x_coords</span><span class="o">/</span><span class="p">(</span><span class="n">pixels_per_degree</span> <span class="o">+</span> <span class="n">MIN_DENOMINATOR</span><span class="p">)</span> <span class="o">%</span> <span class="mi">360</span><span class="p">)</span>
+    <span class="n">sphere_y_angle_coords_in_degs</span> <span class="o">=</span> <span class="p">(</span><span class="n">sphere_y_coords</span><span class="o">/</span><span class="p">(</span><span class="n">pixels_per_degree</span> <span class="o">+</span> <span class="n">MIN_DENOMINATOR</span><span class="p">)</span> <span class="o">%</span> <span class="mi">180</span><span class="p">)</span>
+
+    <span class="c1"># BS x H x W x 2</span>
+    <span class="n">sphere_angle_coords_in_degs</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">sphere_x_angle_coords_in_degs</span><span class="p">,</span> <span class="n">sphere_y_angle_coords_in_degs</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">sphere_angle_coords</span> <span class="o">=</span> <span class="n">sphere_angle_coords_in_degs</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">180</span>
+
+    <span class="c1"># BS x H x W x 3</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">sphere_angle_coords</span><span class="p">,</span> <span class="n">radius_values</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="sphere_to_cam_coords"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.sphere_to_cam_coords">[docs]</a><span class="k">def</span> <span class="nf">sphere_to_cam_coords</span><span class="p">(</span><span class="n">sphere_coords</span><span class="p">,</span> <span class="n">forward_facing_z</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dev_str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert camera-centric ego-sphere polar co-ordinates image :math:`\mathbf{S}_c\in\mathbb{R}^{bs×3}` to</span>
+<span class="sd">    camera-centric homogeneous cartesian co-ordinates image :math:`\mathbf{X}_c\in\mathbb{R}^{bs×4}`.\n</span>
+<span class="sd">    `[reference] &lt;https://en.wikipedia.org/wiki/Spherical_coordinate_system#Cartesian_coordinates&gt;`_</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    sphere_coords</span>
+<span class="sd">        Camera-centric ego-sphere polar co-ordinates image *[batch_shape,3]*</span>
+<span class="sd">    forward_facing_z</span>
+<span class="sd">        Whether to use reference frame so z is forward facing. Default is False.</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    dev_str</span>
+<span class="sd">        device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc. Same as x if None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Camera-centric homogeneous cartesian co-ordinates image *[batch_shape,4]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">sphere_coords</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">dev_str</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dev_str</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dev</span><span class="p">(</span><span class="n">sphere_coords</span><span class="p">)</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x 3</span>
+    <span class="n">cam_coords</span> <span class="o">=</span> <span class="n">ivy_mech</span><span class="o">.</span><span class="n">polar_to_cartesian_coords</span><span class="p">(</span><span class="n">sphere_coords</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">forward_facing_z</span><span class="p">:</span>
+        <span class="n">cam_coords</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">cam_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">cam_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">],</span> <span class="n">cam_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># BS x 4</span>
+    <span class="k">return</span> <span class="n">ivy_mech</span><span class="o">.</span><span class="n">make_coordinates_homogeneous</span><span class="p">(</span><span class="n">cam_coords</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="sphere_to_ds_pixel_coords"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.sphere_to_ds_pixel_coords">[docs]</a><span class="k">def</span> <span class="nf">sphere_to_ds_pixel_coords</span><span class="p">(</span><span class="n">sphere_coords</span><span class="p">,</span> <span class="n">calib_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert camera-centric ego-sphere polar co-ordinates image :math:`\mathbf{S}_c\in\mathbb{R}^{is×3}` to depth scaled</span>
+<span class="sd">    homogeneous pixel co-ordinates image :math:`\mathbf{X}_p\in\mathbb{R}^{is×3}`.\n</span>
+<span class="sd">    `[reference] &lt;https://en.wikipedia.org/wiki/Spherical_coordinate_system#Cartesian_coordinates&gt;`_</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    sphere_coords</span>
+<span class="sd">        Camera-centric ego-sphere polar co-ordinates image *[batch_shape,image_shape,3]*</span>
+<span class="sd">    calib_mat</span>
+<span class="sd">        Calibration matrix *[batch_shape,3,3]*</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    image_shape</span>
+<span class="sd">        Image dimensions. Inferred from inputs in None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Depth scaled homogeneous pixel co-ordinates image *[batch_shape,image_shape,3]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">calib_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">image_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">image_shape</span> <span class="o">=</span> <span class="n">sphere_coords</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="n">num_batch_dims</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 4</span>
+    <span class="n">cam_coords</span> <span class="o">=</span> <span class="n">sphere_to_cam_coords</span><span class="p">(</span><span class="n">sphere_coords</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="n">batch_shape</span> <span class="o">+</span> <span class="n">image_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x IS x 3</span>
+    <span class="k">return</span> <span class="n">cam_to_ds_pixel_coords</span><span class="p">(</span><span class="n">cam_coords</span><span class="p">,</span> <span class="n">calib_mat</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">image_shape</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="sphere_to_angular_pixel_coords"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.sphere_to_angular_pixel_coords">[docs]</a><span class="k">def</span> <span class="nf">sphere_to_angular_pixel_coords</span><span class="p">(</span><span class="n">sphere_coords</span><span class="p">,</span> <span class="n">pixels_per_degree</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Convert camera-centric ego-sphere polar co-ordinates image :math:`\mathbf{S}_c\in\mathbb{R}^{h×w×3}` to angular</span>
+<span class="sd">    pixel co-ordinates image :math:`\mathbf{A}_p\in\mathbb{R}^{h×w×3}`.\n</span>
+<span class="sd">    `[reference] &lt;https://en.wikipedia.org/wiki/Spherical_coordinate_system#Cartesian_coordinates&gt;`_</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    sphere_coords</span>
+<span class="sd">        Camera-centric ego-sphere polar co-ordinates image *[batch_shape,h,w,3]*</span>
+<span class="sd">    pixels_per_degree</span>
+<span class="sd">        Number of pixels per angular degree</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Angular pixel co-ordinates image *[batch_shape,h,w,3]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># BS x H x W x 1</span>
+    <span class="n">sphere_radius_vals</span> <span class="o">=</span> <span class="n">sphere_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="c1"># BS x H x W x 2</span>
+    <span class="n">sphere_angle_coords</span> <span class="o">=</span> <span class="n">sphere_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="c1"># BS x H x W x 2</span>
+    <span class="n">sphere_angle_coords_in_degs</span> <span class="o">=</span> <span class="n">sphere_angle_coords</span> <span class="o">*</span> <span class="mi">180</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+    <span class="c1"># BS x H x W x 1</span>
+    <span class="n">sphere_x_coords</span> <span class="o">=</span> <span class="p">((</span><span class="mi">180</span> <span class="o">-</span> <span class="n">sphere_angle_coords_in_degs</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span> <span class="o">%</span> <span class="mi">360</span><span class="p">)</span> <span class="o">*</span> <span class="n">pixels_per_degree</span>
+    <span class="n">sphere_y_coords</span> <span class="o">=</span> <span class="p">(</span><span class="n">sphere_angle_coords_in_degs</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">%</span> <span class="mi">180</span><span class="p">)</span> <span class="o">*</span> <span class="n">pixels_per_degree</span>
+
+    <span class="c1"># BS x H x W x 3</span>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">sphere_x_coords</span><span class="p">,</span> <span class="n">sphere_y_coords</span><span class="p">,</span> <span class="n">sphere_radius_vals</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span></div>
+
+
+<span class="c1"># Camera Geometry Object Functions #</span>
+<span class="c1"># ---------------------------------#</span>
+
+
+<div class="viewcode-block" id="persp_angles_and_pp_offsets_to_intrinsics_object"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.persp_angles_and_pp_offsets_to_intrinsics_object">[docs]</a><span class="k">def</span> <span class="nf">persp_angles_and_pp_offsets_to_intrinsics_object</span><span class="p">(</span><span class="n">persp_angles</span><span class="p">,</span> <span class="n">pp_offsets</span><span class="p">,</span> <span class="n">image_dims</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create camera intrinsics object from perspective angles :math:`θ_x, θ_y`, principal-point offsets :math:`p_x, p_y`</span>
+<span class="sd">    and image dimensions [height, width].</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    persp_angles</span>
+<span class="sd">        Perspective angles *[batch_shape,2]*</span>
+<span class="sd">    pp_offsets</span>
+<span class="sd">        Principal-point offsets *[batch_shape,2]*</span>
+<span class="sd">    image_dims</span>
+<span class="sd">        Image dimensions.</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Camera intrinsics object.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">persp_angles</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_dims</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># BS x 2</span>
+    <span class="n">focal_lengths</span> <span class="o">=</span> <span class="n">persp_angles_to_focal_lengths</span><span class="p">(</span><span class="n">persp_angles</span><span class="p">,</span> <span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># BS x 3 x 3</span>
+    <span class="n">calib_mat</span> <span class="o">=</span> <span class="n">focal_lengths_and_pp_offsets_to_calib_mat</span><span class="p">(</span><span class="n">focal_lengths</span><span class="p">,</span> <span class="n">pp_offsets</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x 3 x 3</span>
+    <span class="n">inv_calib_mat</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">calib_mat</span><span class="p">)</span>
+
+    <span class="c1"># intrinsics object</span>
+    <span class="n">intrinsics</span> <span class="o">=</span> <span class="n">Intrinsics</span><span class="p">(</span><span class="n">focal_lengths</span><span class="p">,</span> <span class="n">persp_angles</span><span class="p">,</span> <span class="n">pp_offsets</span><span class="p">,</span> <span class="n">calib_mat</span><span class="p">,</span> <span class="n">inv_calib_mat</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">intrinsics</span></div>
+
+
+<div class="viewcode-block" id="focal_lengths_and_pp_offsets_to_intrinsics_object"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.focal_lengths_and_pp_offsets_to_intrinsics_object">[docs]</a><span class="k">def</span> <span class="nf">focal_lengths_and_pp_offsets_to_intrinsics_object</span><span class="p">(</span><span class="n">focal_lengths</span><span class="p">,</span> <span class="n">pp_offsets</span><span class="p">,</span> <span class="n">image_dims</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create camera intrinsics object from focal lengths :math:`f_x, f_y`, principal-point offsets :math:`p_x, p_y`, and</span>
+<span class="sd">    image dimensions [height, width].</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    focal_lengths</span>
+<span class="sd">        Focal lengths *[batch_shape,2]*</span>
+<span class="sd">    pp_offsets</span>
+<span class="sd">        Principal-point offsets *[batch_shape,2]*</span>
+<span class="sd">    image_dims</span>
+<span class="sd">        Image dimensions. Inferred from inputs in None.</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Camera intrinsics object</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">focal_lengths</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_dims</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># BS x 2</span>
+    <span class="n">persp_angles</span> <span class="o">=</span> <span class="n">focal_lengths_to_persp_angles</span><span class="p">(</span><span class="n">focal_lengths</span><span class="p">,</span> <span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># BS x 3 x 3</span>
+    <span class="n">calib_mat</span> <span class="o">=</span> <span class="n">focal_lengths_and_pp_offsets_to_calib_mat</span><span class="p">(</span><span class="n">focal_lengths</span><span class="p">,</span> <span class="n">pp_offsets</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x 3 x 3</span>
+    <span class="n">inv_calib_mat</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">calib_mat</span><span class="p">)</span>
+
+    <span class="c1"># intrinsics object</span>
+    <span class="n">intrinsics</span> <span class="o">=</span> <span class="n">Intrinsics</span><span class="p">(</span><span class="n">focal_lengths</span><span class="p">,</span> <span class="n">persp_angles</span><span class="p">,</span> <span class="n">pp_offsets</span><span class="p">,</span> <span class="n">calib_mat</span><span class="p">,</span> <span class="n">inv_calib_mat</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">intrinsics</span></div>
+
+
+<div class="viewcode-block" id="calib_mat_to_intrinsics_object"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.calib_mat_to_intrinsics_object">[docs]</a><span class="k">def</span> <span class="nf">calib_mat_to_intrinsics_object</span><span class="p">(</span><span class="n">calib_mat</span><span class="p">,</span> <span class="n">image_dims</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create camera intrinsics object from calibration matrix.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    calib_mat</span>
+<span class="sd">        Calibration matrices *[batch_shape,3,3]*</span>
+<span class="sd">    image_dims</span>
+<span class="sd">        Image dimensions. Inferred from inputs in None.</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Camera intrinsics object</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">calib_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">image_dims</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># BS x 2</span>
+    <span class="n">focal_lengths</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">calib_mat</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">],</span> <span class="n">calib_mat</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># BS x 2</span>
+    <span class="n">persp_angles</span> <span class="o">=</span> <span class="n">focal_lengths_to_persp_angles</span><span class="p">(</span><span class="n">focal_lengths</span><span class="p">,</span> <span class="n">image_dims</span><span class="p">)</span>
+
+    <span class="c1"># BS x 2</span>
+    <span class="n">pp_offsets</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">calib_mat</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">:],</span> <span class="n">calib_mat</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">:]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># BS x 3 x 3</span>
+    <span class="n">inv_calib_mat</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">calib_mat</span><span class="p">)</span>
+
+    <span class="c1"># intrinsics object</span>
+    <span class="n">intrinsics</span> <span class="o">=</span> <span class="n">Intrinsics</span><span class="p">(</span><span class="n">focal_lengths</span><span class="p">,</span> <span class="n">persp_angles</span><span class="p">,</span> <span class="n">pp_offsets</span><span class="p">,</span> <span class="n">calib_mat</span><span class="p">,</span> <span class="n">inv_calib_mat</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">intrinsics</span></div>
+
+
+<div class="viewcode-block" id="ext_mat_and_intrinsics_to_cam_geometry_object"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.ext_mat_and_intrinsics_to_cam_geometry_object">[docs]</a><span class="k">def</span> <span class="nf">ext_mat_and_intrinsics_to_cam_geometry_object</span><span class="p">(</span><span class="n">ext_mat</span><span class="p">,</span> <span class="n">intrinsics</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dev_str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create camera geometry object from extrinsic matrix :math:`\mathbf{E}\in\mathbb{R}^{3×4}`, and camera intrinsics</span>
+<span class="sd">    object.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    ext_mat</span>
+<span class="sd">        Extrinsic matrix *[batch_shape,3,4]*</span>
+<span class="sd">    intrinsics</span>
+<span class="sd">        camera intrinsics object</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    dev_str</span>
+<span class="sd">        device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc. Same as x if None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Camera geometry object</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">ext_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">dev_str</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dev_str</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dev</span><span class="p">(</span><span class="n">ext_mat</span><span class="p">)</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="c1"># num batch dims</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x 4 x 4</span>
+    <span class="n">ext_mat_homo</span> <span class="o">=</span> \
+        <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">ext_mat</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">),</span>
+                                             <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">num_batch_dims</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">]),</span>
+                                <span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># BS x 4 x 4</span>
+    <span class="n">inv_ext_mat_homo</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">ext_mat_homo</span><span class="p">)</span>
+
+    <span class="c1"># BS x 3 x 4</span>
+    <span class="n">inv_ext_mat</span> <span class="o">=</span> <span class="n">inv_ext_mat_homo</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span>
+
+    <span class="c1"># BS x 3 x 1</span>
+    <span class="n">cam_center</span> <span class="o">=</span> <span class="n">inv_ext_mat_to_camera_center</span><span class="p">(</span><span class="n">inv_ext_mat</span><span class="p">)</span>
+
+    <span class="c1"># BS x 3 x 3</span>
+    <span class="n">Rs</span> <span class="o">=</span> <span class="n">ext_mat</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="c1"># BS x 3 x 3</span>
+    <span class="n">inv_Rs</span> <span class="o">=</span> <span class="n">inv_ext_mat</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="c1"># extrinsics object</span>
+    <span class="n">extrinsics</span> <span class="o">=</span> <span class="n">Extrinsics</span><span class="p">(</span><span class="n">cam_center</span><span class="p">,</span> <span class="n">Rs</span><span class="p">,</span> <span class="n">inv_Rs</span><span class="p">,</span> <span class="n">ext_mat_homo</span><span class="p">,</span> <span class="n">inv_ext_mat_homo</span><span class="p">)</span>
+
+    <span class="c1"># BS x 3 x 4</span>
+    <span class="n">full_mat</span> <span class="o">=</span> <span class="n">calib_and_ext_to_full_mat</span><span class="p">(</span><span class="n">intrinsics</span><span class="o">.</span><span class="n">calib_mats</span><span class="p">,</span> <span class="n">ext_mat</span><span class="p">)</span>
+
+    <span class="c1"># BS x 4 x 4</span>
+    <span class="n">full_mat_homo</span> <span class="o">=</span> \
+        <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span>
+            <span class="n">full_mat</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">),</span>
+                                             <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">num_batch_dims</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">]),</span>
+                                <span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># BS x 4 x 4</span>
+    <span class="n">inv_full_mat_homo</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">full_mat_homo</span><span class="p">)</span>
+
+    <span class="c1"># camera geometry object</span>
+    <span class="n">cam_geometry</span> <span class="o">=</span> <span class="n">CameraGeometry</span><span class="p">(</span><span class="n">intrinsics</span><span class="p">,</span> <span class="n">extrinsics</span><span class="p">,</span> <span class="n">full_mat_homo</span><span class="p">,</span> <span class="n">inv_full_mat_homo</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">cam_geometry</span></div>
+
+
+<div class="viewcode-block" id="inv_ext_mat_and_intrinsics_to_cam_geometry_object"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.inv_ext_mat_and_intrinsics_to_cam_geometry_object">[docs]</a><span class="k">def</span> <span class="nf">inv_ext_mat_and_intrinsics_to_cam_geometry_object</span><span class="p">(</span><span class="n">inv_ext_mat</span><span class="p">,</span> <span class="n">intrinsics</span><span class="p">,</span> <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dev_str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Create camera geometry object from inverse extrinsic matrix :math:`\mathbf{E}^{-1}\in\mathbb{R}^{3×4}`, and camera</span>
+<span class="sd">    intrinsics object.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    inv_ext_mat</span>
+<span class="sd">        Inverse extrinsic matrix *[batch_shape,3,4]*</span>
+<span class="sd">    intrinsics</span>
+<span class="sd">        camera intrinsics object</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Inferred from inputs if None. (Default value = None)</span>
+<span class="sd">    dev_str</span>
+<span class="sd">        device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc. Same as x if None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Camera geometry object</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">inv_ext_mat</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">dev_str</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dev_str</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dev</span><span class="p">(</span><span class="n">inv_ext_mat</span><span class="p">)</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="c1"># num batch dims</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="c1"># BS x 4 x 4</span>
+    <span class="n">inv_ext_mat_homo</span> <span class="o">=</span> \
+        <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">inv_ext_mat</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span>
+            <span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">),</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">num_batch_dims</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">]),</span>
+            <span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># BS x 4 x 4</span>
+    <span class="n">ext_mat_homo</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">inv_ext_mat_homo</span><span class="p">)</span>
+
+    <span class="c1"># BS x 3 x 4</span>
+    <span class="n">ext_mat</span> <span class="o">=</span> <span class="n">ext_mat_homo</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="p">:]</span>
+
+    <span class="c1"># BS x 3 x 1</span>
+    <span class="n">cam_center</span> <span class="o">=</span> <span class="n">inv_ext_mat_to_camera_center</span><span class="p">(</span><span class="n">inv_ext_mat</span><span class="p">)</span>
+
+    <span class="c1"># BS x 3 x 3</span>
+    <span class="n">Rs</span> <span class="o">=</span> <span class="n">ext_mat</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="c1"># BS x 3 x 3</span>
+    <span class="n">inv_Rs</span> <span class="o">=</span> <span class="n">inv_ext_mat</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+    <span class="c1"># extrinsics object</span>
+    <span class="n">extrinsics</span> <span class="o">=</span> <span class="n">Extrinsics</span><span class="p">(</span><span class="n">cam_center</span><span class="p">,</span> <span class="n">Rs</span><span class="p">,</span> <span class="n">inv_Rs</span><span class="p">,</span> <span class="n">ext_mat_homo</span><span class="p">,</span> <span class="n">inv_ext_mat_homo</span><span class="p">)</span>
+
+    <span class="c1"># BS x 3 x 4</span>
+    <span class="n">full_mat</span> <span class="o">=</span> <span class="n">calib_and_ext_to_full_mat</span><span class="p">(</span><span class="n">intrinsics</span><span class="o">.</span><span class="n">calib_mats</span><span class="p">,</span> <span class="n">ext_mat</span><span class="p">)</span>
+
+    <span class="c1"># BS x 4 x 4</span>
+    <span class="n">full_mat_homo</span> <span class="o">=</span> \
+        <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span>
+            <span class="n">full_mat</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">),</span>
+                                             <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">num_batch_dims</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">]),</span>
+                                <span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># BS x 4 x 4</span>
+    <span class="n">inv_full_mat_homo</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">full_mat_homo</span><span class="p">)</span>
+
+    <span class="c1"># camera geometry object</span>
+    <span class="n">camera_geometry</span> <span class="o">=</span> <span class="n">CameraGeometry</span><span class="p">(</span><span class="n">intrinsics</span><span class="p">,</span> <span class="n">extrinsics</span><span class="p">,</span> <span class="n">full_mat_homo</span><span class="p">,</span> <span class="n">inv_full_mat_homo</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">camera_geometry</span></div>
+</pre></div>
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2020-2023, Ivy Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

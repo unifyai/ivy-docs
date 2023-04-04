@@ -571,7 +571,7 @@ Therefore, we need to construct it using a composition of existing TensorFlow op
 Instead, we allow these backends to be bound to the single shared namespace ivy.
 The backend can then be changed by calling <code class="code docutils literal notranslate"><span class="pre">ivy.set_backend(‘torch’)</span></code> for example.</p>
 <p><code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy.functional.ivy</span></code> is the submodule where all the doc strings and argument typing reside for the functional Ivy API.
-For example, The function <code class="xref py py-func docutils literal notranslate"><span class="pre">prod()</span></code>  is shown below:</p>
+For example, the function <code class="xref py py-func docutils literal notranslate"><span class="pre">prod()</span></code>  is shown below:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ivy/functional/ivy/elementwise.py:</span>
  <span class="nd">@to_native_arrays_and_back</span>
  <span class="nd">@handle_out_argument</span>

@@ -577,7 +577,7 @@ There are two ways to do this: using the terminal or using your IDE.</p>
 /bin/bash -e ./run_tests_CLI/test_array_api.sh jax test_linalg
 </pre></div>
 </div>
-<p>You can change the argument with any of our supported frameworks - tensorflow, numpy, torch or jax - and the individual test function categories in <code class="code docutils literal notranslate"><span class="pre">ivy/ivy_tests/test_array_api/array_api_tests</span></code>, e.g. <em>test_set_functions</em>, <em>test_signatures</em> etc.</p>
+<p>You can change the argument with any of our supported frameworks - tensorflow, numpy, torch or jax - and the individual test function categories in <code class="code docutils literal notranslate"><span class="pre">ivy/ivy_tests/array_api_testing/test_array_api/array_api_tests</span></code>, e.g. <em>test_set_functions</em>, <em>test_signatures</em> etc.</p>
 <p>You can also run a specific test, as often running <em>all</em> tests in a file is excessive.
 To make this work, you should set the backend explicitly in the <cite>_array_module.py</cite> file, which you can find in the <cite>array_api_tests</cite> submodule.
 At the beginning of the file, you will see the following line of code <code class="code docutils literal notranslate"><span class="pre">array_module</span> <span class="pre">=</span> <span class="pre">None</span></code>.
@@ -588,10 +588,10 @@ array_module.set_backend(&quot;jax&quot;) # or numpy, tensorflow, torch
 </div>
 <p>You should now be able to run the following commands via terminal:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># run all tests in a file
-pytest -vv ivy_tests/test_array_api/array_api_tests/test_manipulation_functions.py
+pytest -vv ivy_tests/array_api_testing/test_array_api/array_api_tests/test_manipulation_functions.py
 
 # run a single test
-pytest -vv ivy_tests/test_array_api/array_api_tests/test_manipulation_functions.py -k &quot;test_concat&quot;
+pytest -vv ivy_tests/array_api_testing/test_array_api/array_api_tests/test_manipulation_functions.py -k &quot;test_concat&quot;
 </pre></div>
 </div>
 </section>
@@ -612,13 +612,13 @@ This means that failed tests cannot be re-run with the <code class="code docutil
 Fortunately, it is possible to regenerate test failures using a unique decorator that appears in the final line of the falsifying example in the error stack trace:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>=================================== FAILURES ===================================
 ______________________ test_remainder[remainder(x1, x2)] _______________________
-ivy_tests/test_array_api/array_api_tests/test_operators_and_elementwise_functions.py:1264: in test_remainder
+ivy_tests/array_api_testing/test_array_api/array_api_tests/test_operators_and_elementwise_functions.py:1264: in test_remainder
     @given(data=st.data())
-ivy_tests/test_array_api/array_api_tests/test_operators_and_elementwise_functions.py:1277: in test_remainder
+ivy_tests/array_api_testing/test_array_api/array_api_tests/test_operators_and_elementwise_functions.py:1277: in test_remainder
     binary_param_assert_against_refimpl(ctx, left, right, res, &quot;%&quot;, operator.mod)
-ivy_tests/test_array_api/array_api_tests/test_operators_and_elementwise_functions.py:620: in binary_param_assert_against_refimpl
+ivy_tests/array_api_testing/test_array_api/array_api_tests/test_operators_and_elementwise_functions.py:620: in binary_param_assert_against_refimpl
     binary_assert_against_refimpl(
-ivy_tests/test_array_api/array_api_tests/test_operators_and_elementwise_functions.py:324: in binary_assert_against_refimpl
+ivy_tests/array_api_testing/test_array_api/array_api_tests/test_operators_and_elementwise_functions.py:324: in binary_assert_against_refimpl
     assert isclose(scalar_o, expected), (
 E   AssertionError: out=-2.0, but should be roughly (x1 % x2)=1.0 [remainder()]
 E     x1=17304064.0, x2=3.0
@@ -684,9 +684,9 @@ The commented-out functions are being skipped <em>only</em> for the backend(s) t
 This is done by identifying any references to a backend in the commented-out line e.g. <code class="code docutils literal notranslate"><span class="pre">#trace</span> <span class="pre">#</span> <span class="pre">failing</span> <span class="pre">for</span> <span class="pre">jax,</span> <span class="pre">numpy</span> <span class="pre">due</span> <span class="pre">to</span> <span class="pre">issues</span> <span class="pre">with</span> <span class="pre">dtypes</span> <span class="pre">in</span> <span class="pre">output</span> <span class="pre">in</span> <span class="pre">test:</span> <span class="pre">https://github.com/data-apis/array-api/issues/202</span></code> will cause <code class="code docutils literal notranslate"><span class="pre">test_trace</span></code> to be skipped on the jax and numpy backends.</p>
 <p>The latter method, on the other hand, skips a test on <em>all</em> backends, even if it is just failing on one.
 The <code class="code docutils literal notranslate"><span class="pre">ivy_tests/skips.txt</span></code> scheme was implemented to skip <em>specific test cases</em>.
-The array-api test suite contains a set of special tests which aim to cover edge-case input and particular data type promotion rules (see <code class="code docutils literal notranslate"><span class="pre">ivy_tests/test_array_api/array_api_tests/test_special_cases.py</span></code>).
+The array-api test suite contains a set of special tests which aim to cover edge-case input and particular data type promotion rules (see <code class="code docutils literal notranslate"><span class="pre">ivy_tests/array_api_testing/test_array_api/array_api_tests/test_special_cases.py</span></code>).
 In <code class="code docutils literal notranslate"><span class="pre">ivy_tests/skips.txt</span></code>, tests are skipped by writing the filepath + conditions on the input of the test e.g.,</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ivy_tests/test_array_api/array_api_tests/test_special_cases.py::test_iop<span class="o">[</span>__ipow__<span class="o">(</span>x1_i<span class="w"> </span>is<span class="w"> </span>-infinity<span class="w"> </span>and<span class="w"> </span>x2_i<span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span><span class="w"> </span>and<span class="w"> </span>not<span class="w"> </span><span class="o">(</span>x2_i.is_integer<span class="o">()</span><span class="w"> </span>and<span class="w"> </span>x2_i<span class="w"> </span>%<span class="w"> </span><span class="nv">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="o">))</span><span class="w"> </span>-&gt;<span class="w"> </span>+infinity<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ivy_tests/array_api_testing/test_array_api/array_api_tests/test_special_cases.py::test_iop<span class="o">[</span>__ipow__<span class="o">(</span>x1_i<span class="w"> </span>is<span class="w"> </span>-infinity<span class="w"> </span>and<span class="w"> </span>x2_i<span class="w"> </span>&gt;<span class="w"> </span><span class="m">0</span><span class="w"> </span>and<span class="w"> </span>not<span class="w"> </span><span class="o">(</span>x2_i.is_integer<span class="o">()</span><span class="w"> </span>and<span class="w"> </span>x2_i<span class="w"> </span>%<span class="w"> </span><span class="nv">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">1</span><span class="o">))</span><span class="w"> </span>-&gt;<span class="w"> </span>+infinity<span class="o">]</span>
 </pre></div>
 </div>
 <p>is skipping the in-place operations test on the <code class="code docutils literal notranslate"><span class="pre">pow</span></code> instance method when x1 is -infinity and x2 is a positive, odd float.

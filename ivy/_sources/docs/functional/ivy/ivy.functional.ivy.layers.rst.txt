@@ -8,6 +8,7 @@ Layers
    :recursive:
 
    ivy.functional.ivy.layers._deconv_length
+   ivy.functional.ivy.layers._get_num_padded_values
    ivy.functional.ivy.layers._get_x_data_format
    ivy.functional.ivy.layers._handle_padding
    ivy.functional.ivy.layers.conv

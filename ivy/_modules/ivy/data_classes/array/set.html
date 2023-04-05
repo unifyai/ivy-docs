@@ -532,6 +532,7 @@ document.write(`
 <span class="sd">                element will be implementation-dependent (e.g., an</span>
 <span class="sd">                implementation could choose to return ``-0`` if ``-0`` occurs</span>
 <span class="sd">                before ``+0``).</span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        x : ivy.Array or ivy.NativeArray</span>
@@ -540,6 +541,7 @@ document.write(`
 <span class="sd">        out : ivy.Array, optional</span>
 <span class="sd">            Optional output array, for writing the result to. It must have a</span>
 <span class="sd">            shape that the inputs broadcast to.</span>
+
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        ivy.Array</span>
@@ -548,10 +550,12 @@ document.write(`
 <span class="sd">            .. note::</span>
 <span class="sd">                The order of unique elements is not specified and may vary</span>
 <span class="sd">                between implementations.</span>
+
 <span class="sd">        Raises</span>
 <span class="sd">        ------</span>
 <span class="sd">        TypeError</span>
 <span class="sd">            If `x` is not an instance of `ivy.Array` or `ivy.NativeArray`.</span>
+
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; import ivy</span>

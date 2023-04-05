@@ -777,6 +777,7 @@ document.write(`
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        ivy.Container instance method variant of ivy.unique_values.</span>
 <span class="sd">        This method simply wraps the function and applies it on the container.</span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        self : ivy.Container</span>
@@ -794,16 +795,19 @@ document.write(`
 <span class="sd">            Default is `False`.</span>
 <span class="sd">        out : ivy.Container, optional</span>
 <span class="sd">            The container to return the results in. Default is `None`.</span>
+
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        ivy.Container</span>
 <span class="sd">            The result container with the unique values for each input key-chain.</span>
+
 <span class="sd">        Raises</span>
 <span class="sd">        ------</span>
 <span class="sd">        TypeError</span>
 <span class="sd">            If the input container is not an instance of ivy.Container.</span>
 <span class="sd">        ValueError</span>
-<span class="sd">        If the key_chains parameter is not None, and it is not a list or a dictionary.</span>
+<span class="sd">            If the key_chains parameter is not None, and it is not a list or a dictionary.</span>
+
 <span class="sd">        Example</span>
 <span class="sd">        -------</span>
 <span class="sd">        1. Get the unique values of a container.</span>

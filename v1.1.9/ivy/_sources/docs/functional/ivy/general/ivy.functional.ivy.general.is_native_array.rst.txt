@@ -1,0 +1,8 @@
+is\_native\_array
+=================
+
+.. autofunction:: ivy.is_native_array
+
+.. autoskippablemethod:: ivy.Array.is_native_array
+
+.. autoskippablemethod:: ivy.Container.is_native_array

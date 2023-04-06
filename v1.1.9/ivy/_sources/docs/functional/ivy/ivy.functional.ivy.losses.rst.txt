@@ -1,0 +1,26 @@
+Losses
+======
+
+.. autosummary::
+   :toctree: losses
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   ivy.functional.ivy.losses._reduce_loss
+   ivy.functional.ivy.losses.binary_cross_entropy
+   ivy.functional.ivy.losses.cross_entropy
+   ivy.functional.ivy.losses.sparse_cross_entropy
+
+
+
+.. automodule:: ivy.functional.ivy.losses
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.losses

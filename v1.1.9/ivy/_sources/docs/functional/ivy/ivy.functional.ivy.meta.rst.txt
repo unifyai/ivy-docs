@@ -1,0 +1,30 @@
+Meta
+====
+
+.. autosummary::
+   :toctree: meta
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   ivy.functional.ivy.meta._compute_cost_and_update_grads
+   ivy.functional.ivy.meta._train_task
+   ivy.functional.ivy.meta._train_tasks
+   ivy.functional.ivy.meta._train_tasks_batched
+   ivy.functional.ivy.meta._train_tasks_with_for_loop
+   ivy.functional.ivy.meta.fomaml_step
+   ivy.functional.ivy.meta.maml_step
+   ivy.functional.ivy.meta.reptile_step
+
+
+
+.. automodule:: ivy.functional.ivy.meta
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.meta

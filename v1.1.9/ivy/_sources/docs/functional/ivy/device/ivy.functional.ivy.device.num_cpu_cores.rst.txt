@@ -1,0 +1,8 @@
+num\_cpu\_cores
+===============
+
+.. autofunction:: ivy.num_cpu_cores
+
+.. autoskippablemethod:: ivy.Array.num_cpu_cores
+
+.. autoskippablemethod:: ivy.Container.num_cpu_cores

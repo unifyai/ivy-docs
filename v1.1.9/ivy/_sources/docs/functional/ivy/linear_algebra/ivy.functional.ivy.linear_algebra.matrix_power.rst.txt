@@ -1,0 +1,8 @@
+matrix\_power
+=============
+
+.. autofunction:: ivy.matrix_power
+
+.. autoskippablemethod:: ivy.Array.matrix_power
+
+.. autoskippablemethod:: ivy.Container.matrix_power

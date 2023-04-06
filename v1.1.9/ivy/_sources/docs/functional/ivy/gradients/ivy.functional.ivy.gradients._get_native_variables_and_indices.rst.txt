@@ -1,0 +1,8 @@
+\_get\_native\_variables\_and\_indices
+======================================
+
+.. autofunction:: ivy._get_native_variables_and_indices
+
+.. autoskippablemethod:: ivy.Array._get_native_variables_and_indices
+
+.. autoskippablemethod:: ivy.Container._get_native_variables_and_indices

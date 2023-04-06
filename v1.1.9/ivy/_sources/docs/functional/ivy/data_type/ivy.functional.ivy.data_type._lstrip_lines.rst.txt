@@ -1,0 +1,8 @@
+\_lstrip\_lines
+===============
+
+.. autofunction:: ivy._lstrip_lines
+
+.. autoskippablemethod:: ivy.Array._lstrip_lines
+
+.. autoskippablemethod:: ivy.Container._lstrip_lines

@@ -1,0 +1,8 @@
+get\_min\_base
+==============
+
+.. autofunction:: ivy.get_min_base
+
+.. autoskippablemethod:: ivy.Array.get_min_base
+
+.. autoskippablemethod:: ivy.Container.get_min_base

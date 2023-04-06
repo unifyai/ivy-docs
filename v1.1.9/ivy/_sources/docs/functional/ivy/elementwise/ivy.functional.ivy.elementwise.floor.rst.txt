@@ -1,0 +1,8 @@
+floor
+=====
+
+.. autofunction:: ivy.floor
+
+.. autoskippablemethod:: ivy.Array.floor
+
+.. autoskippablemethod:: ivy.Container.floor

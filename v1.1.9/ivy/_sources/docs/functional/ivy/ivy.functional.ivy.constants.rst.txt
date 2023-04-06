@@ -1,0 +1,22 @@
+Constants
+=========
+
+.. autosummary::
+   :toctree: constants
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+
+
+
+.. automodule:: ivy.functional.ivy.constants
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.constants

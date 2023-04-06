@@ -1,0 +1,8 @@
+\_handle\_padding
+=================
+
+.. autofunction:: ivy._handle_padding
+
+.. autoskippablemethod:: ivy.Array._handle_padding
+
+.. autoskippablemethod:: ivy.Container._handle_padding

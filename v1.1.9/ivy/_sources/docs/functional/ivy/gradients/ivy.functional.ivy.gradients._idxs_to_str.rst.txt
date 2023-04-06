@@ -1,0 +1,8 @@
+\_idxs\_to\_str
+===============
+
+.. autofunction:: ivy._idxs_to_str
+
+.. autoskippablemethod:: ivy.Array._idxs_to_str
+
+.. autoskippablemethod:: ivy.Container._idxs_to_str

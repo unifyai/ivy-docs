@@ -1,0 +1,8 @@
+\_valid\_attrib\_combinations
+=============================
+
+.. autofunction:: ivy._valid_attrib_combinations
+
+.. autoskippablemethod:: ivy.Array._valid_attrib_combinations
+
+.. autoskippablemethod:: ivy.Container._valid_attrib_combinations

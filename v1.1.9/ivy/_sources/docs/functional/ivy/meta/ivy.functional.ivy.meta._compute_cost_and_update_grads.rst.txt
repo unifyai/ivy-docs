@@ -1,0 +1,8 @@
+\_compute\_cost\_and\_update\_grads
+===================================
+
+.. autofunction:: ivy._compute_cost_and_update_grads
+
+.. autoskippablemethod:: ivy.Array._compute_cost_and_update_grads
+
+.. autoskippablemethod:: ivy.Container._compute_cost_and_update_grads

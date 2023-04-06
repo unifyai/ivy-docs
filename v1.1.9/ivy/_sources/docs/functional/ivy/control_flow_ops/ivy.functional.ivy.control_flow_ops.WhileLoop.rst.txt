@@ -1,0 +1,8 @@
+WhileLoop
+=========
+
+.. autofunction:: ivy.WhileLoop
+
+.. autoskippablemethod:: ivy.Array.WhileLoop
+
+.. autoskippablemethod:: ivy.Container.WhileLoop

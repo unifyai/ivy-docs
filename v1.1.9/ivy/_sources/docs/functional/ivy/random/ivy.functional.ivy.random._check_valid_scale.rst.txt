@@ -1,0 +1,8 @@
+\_check\_valid\_scale
+=====================
+
+.. autofunction:: ivy._check_valid_scale
+
+.. autoskippablemethod:: ivy.Array._check_valid_scale
+
+.. autoskippablemethod:: ivy.Container._check_valid_scale

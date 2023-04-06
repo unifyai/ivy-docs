@@ -1,0 +1,8 @@
+\_train\_tasks\_with\_for\_loop
+===============================
+
+.. autofunction:: ivy._train_tasks_with_for_loop
+
+.. autoskippablemethod:: ivy.Array._train_tasks_with_for_loop
+
+.. autoskippablemethod:: ivy.Container._train_tasks_with_for_loop

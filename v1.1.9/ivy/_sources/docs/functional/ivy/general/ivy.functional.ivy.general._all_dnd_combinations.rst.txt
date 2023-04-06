@@ -1,0 +1,8 @@
+\_all\_dnd\_combinations
+========================
+
+.. autofunction:: ivy._all_dnd_combinations
+
+.. autoskippablemethod:: ivy.Array._all_dnd_combinations
+
+.. autoskippablemethod:: ivy.Container._all_dnd_combinations

@@ -1,0 +1,8 @@
+set\_default\_float\_dtype
+==========================
+
+.. autofunction:: ivy.set_default_float_dtype
+
+.. autoskippablemethod:: ivy.Array.set_default_float_dtype
+
+.. autoskippablemethod:: ivy.Container.set_default_float_dtype

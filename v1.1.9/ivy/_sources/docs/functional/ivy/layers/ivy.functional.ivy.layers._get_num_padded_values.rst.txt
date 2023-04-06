@@ -1,0 +1,8 @@
+\_get\_num\_padded\_values
+==========================
+
+.. autofunction:: ivy._get_num_padded_values
+
+.. autoskippablemethod:: ivy.Array._get_num_padded_values
+
+.. autoskippablemethod:: ivy.Container._get_num_padded_values

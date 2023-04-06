@@ -1,0 +1,8 @@
+randint
+=======
+
+.. autofunction:: ivy.randint
+
+.. autoskippablemethod:: ivy.Array.randint
+
+.. autoskippablemethod:: ivy.Container.randint

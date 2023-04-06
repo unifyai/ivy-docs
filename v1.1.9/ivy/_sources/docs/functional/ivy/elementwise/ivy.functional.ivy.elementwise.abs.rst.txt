@@ -1,0 +1,8 @@
+abs
+===
+
+.. autofunction:: ivy.abs
+
+.. autoskippablemethod:: ivy.Array.abs
+
+.. autoskippablemethod:: ivy.Container.abs

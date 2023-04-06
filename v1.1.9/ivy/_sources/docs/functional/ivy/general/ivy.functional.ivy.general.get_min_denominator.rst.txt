@@ -1,0 +1,8 @@
+get\_min\_denominator
+=====================
+
+.. autofunction:: ivy.get_min_denominator
+
+.. autoskippablemethod:: ivy.Array.get_min_denominator
+
+.. autoskippablemethod:: ivy.Container.get_min_denominator

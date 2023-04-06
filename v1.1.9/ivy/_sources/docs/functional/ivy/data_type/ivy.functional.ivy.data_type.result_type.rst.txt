@@ -1,0 +1,8 @@
+result\_type
+============
+
+.. autofunction:: ivy.result_type
+
+.. autoskippablemethod:: ivy.Array.result_type
+
+.. autoskippablemethod:: ivy.Container.result_type

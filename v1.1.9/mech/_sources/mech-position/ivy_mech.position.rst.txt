@@ -1,0 +1,15 @@
+﻿position
+========
+
+.. This is a placeholder so the include directive removes what's before it
+.. REMOVE_BEFORE_HERE
+.. autosummary::
+   :toctree: position
+   :template: top_level_module.rst
+   :caption: ivy_mech.position
+   :substitute-caption:
+   :hide-table:
+   :fix-directory:
+
+   ivy_mech.position.coordinate_conversions
+   ivy_mech.position.transformations

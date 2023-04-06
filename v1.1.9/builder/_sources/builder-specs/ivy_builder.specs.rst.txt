@@ -1,0 +1,20 @@
+﻿specs
+=====
+
+.. This is a placeholder so the include directive removes what's before it
+.. REMOVE_BEFORE_HERE
+.. autosummary::
+   :toctree: specs
+   :template: top_level_module.rst
+   :caption: ivy_builder.specs
+   :substitute-caption:
+   :hide-table:
+   :fix-directory:
+
+   ivy_builder.specs.data_loader_spec
+   ivy_builder.specs.dataset_dirs
+   ivy_builder.specs.dataset_spec
+   ivy_builder.specs.network_spec
+   ivy_builder.specs.spec
+   ivy_builder.specs.trainer_spec
+   ivy_builder.specs.tuner_spec

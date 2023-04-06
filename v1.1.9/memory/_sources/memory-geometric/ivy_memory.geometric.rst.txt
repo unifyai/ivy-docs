@@ -1,0 +1,15 @@
+﻿geometric
+=========
+
+.. This is a placeholder so the include directive removes what's before it
+.. REMOVE_BEFORE_HERE
+.. autosummary::
+   :toctree: geometric
+   :template: top_level_module.rst
+   :caption: ivy_memory.geometric
+   :substitute-caption:
+   :hide-table:
+   :fix-directory:
+
+   ivy_memory.geometric.containers
+   ivy_memory.geometric.esm

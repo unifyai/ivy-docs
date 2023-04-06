@@ -1,0 +1,15 @@
+Esm
+===
+
+
+
+.. automodule:: ivy_memory.geometric.esm
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy_memory.geometric.esm

@@ -1,0 +1,902 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index &#8212; Ivy Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'genindex';</script>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="index" title="Index" href="#" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo_dark.png?raw=true" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><div></div></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><div></div></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.containers.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.image.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.implicit.html">Implicit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.mesh.html">Mesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.optical_flow.html">Optical flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.padding.html">Padding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.projective_geometry.html">Projective geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.sdf.html">Sdf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.single_view_geometry.html">Single view geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.smoothing.html">Smoothing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.two_view_geometry.html">Two view geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vision/ivy_vision/ivy_vision.voxel_grids.html">Voxel grids</a></li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading">
+            <span class="caption-text">Docs</span>
+        </p>
+        <ul class="nav bd-sidenav">
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/ivy">
+                    Ivy
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/mech">
+                    Ivy mech
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/vision">
+                    Ivy vision
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/robot">
+                    Ivy robot
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/gym">
+                    Ivy gym
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/memory">
+                    Ivy memory
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/builder">
+                    Ivy builder
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/models">
+                    Ivy models
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/ecosystem">
+                    Ivy ecosystem
+                </a>
+            </li>
+            </ul>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+
+<h1 id="index">Index</h1>
+
+<div class="genindex-jumpbox">
+ <a href="#_"><strong>_</strong></a>
+ | <a href="#A"><strong>A</strong></a>
+ | <a href="#B"><strong>B</strong></a>
+ | <a href="#C"><strong>C</strong></a>
+ | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
+ | <a href="#F"><strong>F</strong></a>
+ | <a href="#G"><strong>G</strong></a>
+ | <a href="#I"><strong>I</strong></a>
+ | <a href="#M"><strong>M</strong></a>
+ | <a href="#P"><strong>P</strong></a>
+ | <a href="#Q"><strong>Q</strong></a>
+ | <a href="#R"><strong>R</strong></a>
+ | <a href="#S"><strong>S</strong></a>
+ | <a href="#T"><strong>T</strong></a>
+ | <a href="#U"><strong>U</strong></a>
+ | <a href="#V"><strong>V</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ 
+</div>
+<h2 id="_">_</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.containers.html#ivy_vision.containers.CameraGeometry.__init__">__init__() (ivy_vision.containers.CameraGeometry method)</a>
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.containers.html#ivy_vision.containers.Extrinsics.__init__">(ivy_vision.containers.Extrinsics method)</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.containers.html#ivy_vision.containers.Intrinsics.__init__">(ivy_vision.containers.Intrinsics method)</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.containers.html#ivy_vision.containers.PrimitiveScene.__init__">(ivy_vision.containers.PrimitiveScene method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="A">A</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.two_view_geometry.html#ivy_vision.two_view_geometry.angular_pixel_to_angular_pixel_coords">angular_pixel_to_angular_pixel_coords() (in module ivy_vision.two_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.angular_pixel_to_sphere_coords">angular_pixel_to_sphere_coords() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.containers.html#ivy_vision.containers.CameraGeometry.as_identity">as_identity() (ivy_vision.containers.CameraGeometry static method)</a>
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.containers.html#ivy_vision.containers.Extrinsics.as_identity">(ivy_vision.containers.Extrinsics static method)</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.containers.html#ivy_vision.containers.Intrinsics.as_identity">(ivy_vision.containers.Intrinsics static method)</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.containers.html#ivy_vision.containers.PrimitiveScene.as_identity">(ivy_vision.containers.PrimitiveScene static method)</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="B">B</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.image.html#ivy_vision.image.bilinear_resample">bilinear_resample() (in module ivy_vision.image)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.bilinearly_interpolate_image">bilinearly_interpolate_image() (in module ivy_vision.single_view_geometry)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="C">C</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.calib_and_ext_to_full_mat">calib_and_ext_to_full_mat() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.calib_mat_to_intrinsics_object">calib_mat_to_intrinsics_object() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.cam_coords_to_depth">cam_coords_to_depth() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.two_view_geometry.html#ivy_vision.two_view_geometry.cam_to_cam_coords">cam_to_cam_coords() (in module ivy_vision.two_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.cam_to_ds_pixel_coords">cam_to_ds_pixel_coords() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.cam_to_sphere_coords">cam_to_sphere_coords() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.cam_to_world_coords">cam_to_world_coords() (in module ivy_vision.single_view_geometry)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.containers.html#ivy_vision.containers.CameraGeometry">CameraGeometry (class in ivy_vision.containers)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.two_view_geometry.html#ivy_vision.two_view_geometry.closest_mutual_points_along_two_skew_rays">closest_mutual_points_along_two_skew_rays() (in module ivy_vision.two_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.mesh.html#ivy_vision.mesh.coord_image_to_trimesh">coord_image_to_trimesh() (in module ivy_vision.mesh)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.voxel_grids.html#ivy_vision.voxel_grids.coords_to_voxel_grid">coords_to_voxel_grid() (in module ivy_vision.voxel_grids)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.implicit.html#ivy_vision.implicit.create_sampled_pixel_coords_image">create_sampled_pixel_coords_image() (in module ivy_vision.implicit)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.mesh.html#ivy_vision.mesh.create_trimesh_indices_for_image">create_trimesh_indices_for_image() (in module ivy_vision.mesh)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.create_uniform_pixel_coords_image">create_uniform_pixel_coords_image() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.sdf.html#ivy_vision.sdf.cuboid_signed_distances">cuboid_signed_distances() (in module ivy_vision.sdf)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="D">D</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.optical_flow.html#ivy_vision.optical_flow.depth_from_flow_and_cam_mats">depth_from_flow_and_cam_mats() (in module ivy_vision.optical_flow)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.depth_to_cam_coords">depth_to_cam_coords() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.depth_to_ds_pixel_coords">depth_to_ds_pixel_coords() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.depth_to_radial_depth">depth_to_radial_depth() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.depth_to_world_coords">depth_to_world_coords() (in module ivy_vision.single_view_geometry)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.implicit.html#ivy_vision.implicit.downsampled_image_dims_from_desired_num_pixels">downsampled_image_dims_from_desired_num_pixels() (in module ivy_vision.implicit)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.ds_pixel_coords_to_radial_depth">ds_pixel_coords_to_radial_depth() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.ds_pixel_to_cam_coords">ds_pixel_to_cam_coords() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.two_view_geometry.html#ivy_vision.two_view_geometry.ds_pixel_to_ds_pixel_coords">ds_pixel_to_ds_pixel_coords() (in module ivy_vision.two_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.ds_pixel_to_sphere_coords">ds_pixel_to_sphere_coords() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.ds_pixel_to_world_coords">ds_pixel_to_world_coords() (in module ivy_vision.single_view_geometry)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.ext_mat_and_intrinsics_to_cam_geometry_object">ext_mat_and_intrinsics_to_cam_geometry_object() (in module ivy_vision.single_view_geometry)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.containers.html#ivy_vision.containers.Extrinsics">Extrinsics (class in ivy_vision.containers)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="F">F</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.image.html#ivy_vision.image.float_img_to_uint8_img">float_img_to_uint8_img() (in module ivy_vision.image)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.optical_flow.html#ivy_vision.optical_flow.flow_from_cam_coords_id_image_and_object_trans">flow_from_cam_coords_id_image_and_object_trans() (in module ivy_vision.optical_flow)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.optical_flow.html#ivy_vision.optical_flow.flow_from_depth_and_cam_mats">flow_from_depth_and_cam_mats() (in module ivy_vision.optical_flow)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.focal_lengths_and_pp_offsets_to_calib_mat">focal_lengths_and_pp_offsets_to_calib_mat() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.focal_lengths_and_pp_offsets_to_intrinsics_object">focal_lengths_and_pp_offsets_to_intrinsics_object() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.focal_lengths_to_persp_angles">focal_lengths_to_persp_angles() (in module ivy_vision.single_view_geometry)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="G">G</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.two_view_geometry.html#ivy_vision.two_view_geometry.get_fundamental_matrix">get_fundamental_matrix() (in module ivy_vision.two_view_geometry)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.image.html#ivy_vision.image.gradient_image">gradient_image() (in module ivy_vision.image)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="I">I</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.containers.html#ivy_vision.containers.Intrinsics">Intrinsics (class in ivy_vision.containers)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.inv_ext_mat_and_intrinsics_to_cam_geometry_object">inv_ext_mat_and_intrinsics_to_cam_geometry_object() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.inv_ext_mat_to_camera_center">inv_ext_mat_to_camera_center() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li>
+    ivy_vision.containers
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.containers.html#module-ivy_vision.containers">module</a>
+</li>
+      </ul></li>
+      <li>
+    ivy_vision.image
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.image.html#module-ivy_vision.image">module</a>
+</li>
+      </ul></li>
+      <li>
+    ivy_vision.implicit
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.implicit.html#module-ivy_vision.implicit">module</a>
+</li>
+      </ul></li>
+      <li>
+    ivy_vision.mesh
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.mesh.html#module-ivy_vision.mesh">module</a>
+</li>
+      </ul></li>
+      <li>
+    ivy_vision.optical_flow
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.optical_flow.html#module-ivy_vision.optical_flow">module</a>
+</li>
+      </ul></li>
+      <li>
+    ivy_vision.padding
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.padding.html#module-ivy_vision.padding">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    ivy_vision.projective_geometry
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.projective_geometry.html#module-ivy_vision.projective_geometry">module</a>
+</li>
+      </ul></li>
+      <li>
+    ivy_vision.quantization
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.quantization.html#module-ivy_vision.quantization">module</a>
+</li>
+      </ul></li>
+      <li>
+    ivy_vision.sdf
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.sdf.html#module-ivy_vision.sdf">module</a>
+</li>
+      </ul></li>
+      <li>
+    ivy_vision.single_view_geometry
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#module-ivy_vision.single_view_geometry">module</a>
+</li>
+      </ul></li>
+      <li>
+    ivy_vision.smoothing
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.smoothing.html#module-ivy_vision.smoothing">module</a>
+</li>
+      </ul></li>
+      <li>
+    ivy_vision.two_view_geometry
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.two_view_geometry.html#module-ivy_vision.two_view_geometry">module</a>
+</li>
+      </ul></li>
+      <li>
+    ivy_vision.voxel_grids
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.voxel_grids.html#module-ivy_vision.voxel_grids">module</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="M">M</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li>
+    module
+
+      <ul>
+        <li><a href="vision/ivy_vision/ivy_vision.containers.html#module-ivy_vision.containers">ivy_vision.containers</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.image.html#module-ivy_vision.image">ivy_vision.image</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.implicit.html#module-ivy_vision.implicit">ivy_vision.implicit</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.mesh.html#module-ivy_vision.mesh">ivy_vision.mesh</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.optical_flow.html#module-ivy_vision.optical_flow">ivy_vision.optical_flow</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.padding.html#module-ivy_vision.padding">ivy_vision.padding</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.projective_geometry.html#module-ivy_vision.projective_geometry">ivy_vision.projective_geometry</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.quantization.html#module-ivy_vision.quantization">ivy_vision.quantization</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.sdf.html#module-ivy_vision.sdf">ivy_vision.sdf</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#module-ivy_vision.single_view_geometry">ivy_vision.single_view_geometry</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.smoothing.html#module-ivy_vision.smoothing">ivy_vision.smoothing</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.two_view_geometry.html#module-ivy_vision.two_view_geometry">ivy_vision.two_view_geometry</a>
+</li>
+        <li><a href="vision/ivy_vision/ivy_vision.voxel_grids.html#module-ivy_vision.voxel_grids">ivy_vision.voxel_grids</a>
+</li>
+      </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="P">P</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.padding.html#ivy_vision.padding.pad_omni_image">pad_omni_image() (in module ivy_vision.padding)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.persp_angles_and_pp_offsets_to_intrinsics_object">persp_angles_and_pp_offsets_to_intrinsics_object() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.persp_angles_to_focal_lengths">persp_angles_to_focal_lengths() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.pixel_coords_to_world_ray_vectors">pixel_coords_to_world_ray_vectors() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.optical_flow.html#ivy_vision.optical_flow.pixel_cost_volume">pixel_cost_volume() (in module ivy_vision.optical_flow)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.containers.html#ivy_vision.containers.PrimitiveScene">PrimitiveScene (class in ivy_vision.containers)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.optical_flow.html#ivy_vision.optical_flow.project_cam_coords_with_object_transformations">project_cam_coords_with_object_transformations() (in module ivy_vision.optical_flow)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.optical_flow.html#ivy_vision.optical_flow.project_flow_to_epipolar_line">project_flow_to_epipolar_line() (in module ivy_vision.optical_flow)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.projective_geometry.html#ivy_vision.projective_geometry.projection_matrix_inverse">projection_matrix_inverse() (in module ivy_vision.projective_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.projective_geometry.html#ivy_vision.projective_geometry.projection_matrix_pseudo_inverse">projection_matrix_pseudo_inverse() (in module ivy_vision.projective_geometry)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Q">Q</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.quantization.html#ivy_vision.quantization.quantize_to_image">quantize_to_image() (in module ivy_vision.quantization)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="R">R</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.image.html#ivy_vision.image.random_crop">random_crop() (in module ivy_vision.image)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.mesh.html#ivy_vision.mesh.rasterize_triangles">rasterize_triangles() (in module ivy_vision.mesh)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.implicit.html#ivy_vision.implicit.ray_termination_probabilities">ray_termination_probabilities() (in module ivy_vision.implicit)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.implicit.html#ivy_vision.implicit.render_implicit_features_and_depth">render_implicit_features_and_depth() (in module ivy_vision.implicit)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.implicit.html#ivy_vision.implicit.render_rays_via_termination_probabilities">render_rays_via_termination_probabilities() (in module ivy_vision.implicit)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.rot_mat_and_cam_center_to_ext_mat">rot_mat_and_cam_center_to_ext_mat() (in module ivy_vision.single_view_geometry)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="S">S</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.implicit.html#ivy_vision.implicit.sample_images">sample_images() (in module ivy_vision.implicit)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.implicit.html#ivy_vision.implicit.sampled_volume_density_to_occupancy_probability">sampled_volume_density_to_occupancy_probability() (in module ivy_vision.implicit)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.containers.html#ivy_vision.containers.PrimitiveScene.sdf">sdf() (ivy_vision.containers.PrimitiveScene method)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.smoothing.html#ivy_vision.smoothing.smooth_image_fom_var_image">smooth_image_fom_var_image() (in module ivy_vision.smoothing)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.projective_geometry.html#ivy_vision.projective_geometry.solve_homogeneous_dlt">solve_homogeneous_dlt() (in module ivy_vision.projective_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.sphere_coords_to_world_ray_vectors">sphere_coords_to_world_ray_vectors() (in module ivy_vision.single_view_geometry)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.sdf.html#ivy_vision.sdf.sphere_signed_distances">sphere_signed_distances() (in module ivy_vision.sdf)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.sphere_to_angular_pixel_coords">sphere_to_angular_pixel_coords() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.sphere_to_cam_coords">sphere_to_cam_coords() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.sphere_to_ds_pixel_coords">sphere_to_ds_pixel_coords() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.two_view_geometry.html#ivy_vision.two_view_geometry.sphere_to_sphere_coords">sphere_to_sphere_coords() (in module ivy_vision.two_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.image.html#ivy_vision.image.stack_images">stack_images() (in module ivy_vision.image)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.implicit.html#ivy_vision.implicit.stratified_sample">stratified_sample() (in module ivy_vision.implicit)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="T">T</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.projective_geometry.html#ivy_vision.projective_geometry.transform">transform() (in module ivy_vision.projective_geometry)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.two_view_geometry.html#ivy_vision.two_view_geometry.triangulate_depth">triangulate_depth() (in module ivy_vision.two_view_geometry)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="U">U</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.image.html#ivy_vision.image.uint8_img_to_float_img">uint8_img_to_float_img() (in module ivy_vision.image)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="V">V</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.optical_flow.html#ivy_vision.optical_flow.velocity_from_cam_coords_id_image_and_object_trans">velocity_from_cam_coords_id_image_and_object_trans() (in module ivy_vision.optical_flow)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.optical_flow.html#ivy_vision.optical_flow.velocity_from_flow_cam_coords_and_cam_mats">velocity_from_flow_cam_coords_and_cam_mats() (in module ivy_vision.optical_flow)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.smoothing.html#ivy_vision.smoothing.weighted_image_smooth">weighted_image_smooth() (in module ivy_vision.smoothing)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.world_coords_to_depth">world_coords_to_depth() (in module ivy_vision.single_view_geometry)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.world_to_cam_coords">world_to_cam_coords() (in module ivy_vision.single_view_geometry)</a>
+</li>
+      <li><a href="vision/ivy_vision/ivy_vision.single_view_geometry.html#ivy_vision.single_view_geometry.world_to_ds_pixel_coords">world_to_ds_pixel_coords() (in module ivy_vision.single_view_geometry)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2020-2023, Ivy Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

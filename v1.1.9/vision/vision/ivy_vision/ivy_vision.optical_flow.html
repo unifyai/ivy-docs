@@ -1,0 +1,739 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Optical flow &#8212; Ivy Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'vision/ivy_vision/ivy_vision.optical_flow';</script>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Padding" href="ivy_vision.padding.html" />
+    <link rel="prev" title="Mesh" href="ivy_vision.mesh.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo_dark.png?raw=true" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><div></div></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><div></div></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vision</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="ivy_vision.containers.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ivy_vision.image.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ivy_vision.implicit.html">Implicit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ivy_vision.mesh.html">Mesh</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Optical flow</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+
+
+
+
+
+
+
+
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ivy_vision.padding.html">Padding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ivy_vision.projective_geometry.html">Projective geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ivy_vision.quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ivy_vision.sdf.html">Sdf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ivy_vision.single_view_geometry.html">Single view geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ivy_vision.smoothing.html">Smoothing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ivy_vision.two_view_geometry.html">Two view geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ivy_vision.voxel_grids.html">Voxel grids</a></li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading">
+            <span class="caption-text">Docs</span>
+        </p>
+        <ul class="nav bd-sidenav">
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/ivy">
+                    Ivy
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/mech">
+                    Ivy mech
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/vision">
+                    Ivy vision
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/robot">
+                    Ivy robot
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/gym">
+                    Ivy gym
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/memory">
+                    Ivy memory
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/builder">
+                    Ivy builder
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/models">
+                    Ivy models
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/ecosystem">
+                    Ivy ecosystem
+                </a>
+            </li>
+            </ul>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Optical flow</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="module-ivy_vision.optical_flow">
+<span id="optical-flow"></span><h1>Optical flow<a class="headerlink" href="#module-ivy_vision.optical_flow" title="Permalink to this heading">#</a></h1>
+<p>Collection of Optical Flow Functions</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="ivy_vision.optical_flow.depth_from_flow_and_cam_mats">
+<span class="sig-prename descclassname"><span class="pre">ivy_vision.optical_flow.</span></span><span class="sig-name descname"><span class="pre">depth_from_flow_and_cam_mats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_mats</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inv_full_mats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">camera_centers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uniform_pixel_coords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">triangulation_method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'cmp'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dev_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy_vision/optical_flow.html#depth_from_flow_and_cam_mats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_vision.optical_flow.depth_from_flow_and_cam_mats" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute depth map <span class="math notranslate nohighlight">\(\mathbf{X}\in\mathbb{R}^{h×w×1}\)</span> in frame 1 using
+optical flow <span class="math notranslate nohighlight">\(\mathbf{U}_{1→2}\in\mathbb{R}^{h×w×2}\)</span> from frame 1 to 2,
+and the camera geometry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flow</strong> – Optical flow from frame 1 to 2 <em>[batch_shape,h,w,2]</em></p></li>
+<li><p><strong>full_mats</strong> – Full projection matrices <em>[batch_shape,2,3,4]</em></p></li>
+<li><p><strong>inv_full_mats</strong> – Inverse full projection matrices, inferred from full_mats if None and
+‘cmp’ triangulation method <em>[batch_shape,2,3,4]</em> (Default value = None)</p></li>
+<li><p><strong>camera_centers</strong> – Camera centers, inferred from inv_full_mats if None and
+‘cmp’ triangulation method <em>[batch_shape,2,3,1]</em> (Default value = None)</p></li>
+<li><p><strong>uniform_pixel_coords</strong> – Homogeneous uniform (integer) pixel co-ordinate images,
+inferred from image_dims if None <em>[batch_shape,h,w,3]</em> (Default value = None)</p></li>
+<li><p><strong>triangulation_method</strong> – Triangulation method, one of [cmp|dlt], for closest mutual points or
+homogeneous dlt approach, closest_mutual_points by default</p></li>
+<li><p><strong>batch_shape</strong> – Shape of batch. Inferred from inputs if None. (Default value = None)</p></li>
+<li><p><strong>image_dims</strong> – Image dimensions. Inferred from inputs in None. (Default value = None)</p></li>
+<li><p><strong>dev_str</strong> – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc.
+Same as x if None. (Default value = None)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ret</em> – Depth map in frame 1 <em>[batch_shape,h,w,1]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ivy_vision.optical_flow.flow_from_cam_coords_id_image_and_object_trans">
+<span class="sig-prename descclassname"><span class="pre">ivy_vision.optical_flow.</span></span><span class="sig-name descname"><span class="pre">flow_from_cam_coords_id_image_and_object_trans</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_coords_f1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_trans</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calib_mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam_1_to_2_ext_mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy_vision/optical_flow.html#flow_from_cam_coords_id_image_and_object_trans"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_vision.optical_flow.flow_from_cam_coords_id_image_and_object_trans" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute optical flow from co-ordinate image, id image, and object
+transformations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cam_coords_f1</strong> – Camera-centric homogeneous co-ordinates image in frame t
+<em>[batch_shape,image_shape,4]</em></p></li>
+<li><p><strong>id_image</strong> – Image containing per-pixel object ids <em>[batch_shape,image_shape,1]</em></p></li>
+<li><p><strong>obj_ids</strong> – Object ids <em>[batch_shape,num_obj,1]</em></p></li>
+<li><p><strong>obj_trans</strong> – Object transformations for this frame over time <em>[batch_shape,num_obj,3,4]</em></p></li>
+<li><p><strong>calib_mat</strong> – Calibration matrix <em>[batch_shape,3,3]</em></p></li>
+<li><p><strong>cam_1_to_2_ext_mat</strong> – Camera 1 to camera 2 extrinsic projection matrix <em>[batch_shape,3,4]</em></p></li>
+<li><p><strong>batch_shape</strong> – Shape of batch. Inferred from inputs if None. (Default value = None)</p></li>
+<li><p><strong>image_shape</strong> – Image dimensions. Inferred from inputs in None. (Default value = None)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ret</em> – Relative velocity image <em>[batch_shape,image_shape,3]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ivy_vision.optical_flow.flow_from_depth_and_cam_mats">
+<span class="sig-prename descclassname"><span class="pre">ivy_vision.optical_flow.</span></span><span class="sig-name descname"><span class="pre">flow_from_depth_and_cam_mats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pixel_coords1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam1to2_full_mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy_vision/optical_flow.html#flow_from_depth_and_cam_mats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_vision.optical_flow.flow_from_depth_and_cam_mats" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute optical flow <span class="math notranslate nohighlight">\(\mathbf{U}_{1→2}\in\mathbb{R}^{is×2}\)</span> from frame 1 to 2, using depth map
+<span class="math notranslate nohighlight">\(\mathbf{X}\in\mathbb{R}^{is×1}\)</span> in frame 1, and the camera geometry.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pixel_coords1</strong> – Depth scaled homogeneous pixel co-ordinates image in frame 1
+<em>[batch_shape,image_shape,3]</em></p></li>
+<li><p><strong>cam1to2_full_mat</strong> – Camera1-to-camera2 full projection matrix <em>[batch_shape,3,4]</em></p></li>
+<li><p><strong>batch_shape</strong> – Shape of batch. Inferred from inputs if None. (Default value = None)</p></li>
+<li><p><strong>image_shape</strong> – Image dimensions. Inferred from inputs in None. (Default value = None)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ret</em> – Optical flow from frame 1 to 2 <em>[batch_shape,image_shape,2]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ivy_vision.optical_flow.pixel_cost_volume">
+<span class="sig-prename descclassname"><span class="pre">ivy_vision.optical_flow.</span></span><span class="sig-name descname"><span class="pre">pixel_cost_volume</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">search_range</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy_vision/optical_flow.html#pixel_cost_volume"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_vision.optical_flow.pixel_cost_volume" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>Compute cost volume from image feature patch comparisons between first image</dt><dd><p><span class="math notranslate nohighlight">\(\mathbf{X}_1\in\mathbb{R}^{h×w×d}\)</span> and second image <span class="math notranslate nohighlight">\(\mathbf{
+X}_2\in\mathbb{R}^{h×w×d}\)</span>, as used in FlowNet paper.</p>
+</dd>
+<dt><a href="#id1"><span class="problematic" id="id2">`</span></a>[reference]</dt><dd><p>&lt;<a class="reference external" href="https://www.cv-foundation.org/openaccess/content_iccv_2015/papers">https://www.cv-foundation.org/openaccess/content_iccv_2015/papers</a>
+/Dosovitskiy_FlowNet_Learning_Optical_ICCV_2015_paper.pdf&gt;`_</p>
+<dl class="simple">
+<dt>image1</dt><dd><p>Image 1 <em>[batch_shape,h,w,D]</em></p>
+</dd>
+<dt>image2</dt><dd><p>Image 2 <em>[batch_shape,h,w,D]</em></p>
+</dd>
+<dt>search_range</dt><dd><p>Search range for patch comparisons.</p>
+</dd>
+<dt>batch_shape</dt><dd><p>Shape of batch. Inferred from inputs if None. (Default value = None)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>ret</dt><dd><p>Cost volume between the images <em>[batch_shape,h,w,(search_range*2+1)^2]</em></p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ivy_vision.optical_flow.project_cam_coords_with_object_transformations">
+<span class="sig-prename descclassname"><span class="pre">ivy_vision.optical_flow.</span></span><span class="sig-name descname"><span class="pre">project_cam_coords_with_object_transformations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_coords_1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_trans</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam_1_to_2_ext_mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy_vision/optical_flow.html#project_cam_coords_with_object_transformations"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_vision.optical_flow.project_cam_coords_with_object_transformations" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute velocity image from co-ordinate image, id image, and object
+transformations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cam_coords_1</strong> – Camera-centric homogeneous co-ordinates image in frame t
+<em>[batch_shape,image_shape,4]</em></p></li>
+<li><p><strong>id_image</strong> – Image containing per-pixel object ids <em>[batch_shape,h,w,1]</em></p></li>
+<li><p><strong>obj_ids</strong> – Object ids <em>[batch_shape,num_obj,1]</em></p></li>
+<li><p><strong>obj_trans</strong> – Object transformations for this frame over time <em>[batch_shape,num_obj,3,4]</em></p></li>
+<li><p><strong>cam_1_to_2_ext_mat</strong> – Camera 1 to camera 2 extrinsic projection matrix <em>[batch_shape,3,4]</em></p></li>
+<li><p><strong>batch_shape</strong> – Shape of batch. Inferred from inputs if None. (Default value = None)</p></li>
+<li><p><strong>image_shape</strong> – Image dimensions. Inferred from inputs in None. (Default value = None)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ret</em> – Relative velocity image <em>[batch_shape,image_shape,3]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ivy_vision.optical_flow.project_flow_to_epipolar_line">
+<span class="sig-prename descclassname"><span class="pre">ivy_vision.optical_flow.</span></span><span class="sig-name descname"><span class="pre">project_flow_to_epipolar_line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flow</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fund_mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uniform_pixel_coords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dev_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy_vision/optical_flow.html#project_flow_to_epipolar_line"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_vision.optical_flow.project_flow_to_epipolar_line" title="Permalink to this definition">#</a></dt>
+<dd><dl>
+<dt>Project optical flow <span class="math notranslate nohighlight">\(\mathbf{U}_{1→2}\in\mathbb{R}^{h×w×2}\)</span> to epipolar</dt><dd><p>line in frame 1.</p>
+</dd>
+<dt><a href="#id3"><span class="problematic" id="id4">`</span></a>[reference]</dt><dd><p>&lt;<a class="reference external" href="https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line">https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line</a>
+#Line_defined_by_an_equation&gt;`_</p>
+<dl class="simple">
+<dt>flow</dt><dd><p>Optical flow from frame 1 to 2 <em>[batch_shape,h,w,2]</em></p>
+</dd>
+<dt>fund_mat</dt><dd><p>Fundamental matrix connecting frames 1 and 2 <em>[batch_shape,3,3]</em></p>
+</dd>
+<dt>uniform_pixel_coords</dt><dd><p>Homogeneous uniform (integer) pixel co-ordinate images,
+inferred from image_dims if None <em>[batch_shape,h,w,3]</em> (Default value = None)</p>
+</dd>
+<dt>batch_shape</dt><dd><p>Shape of batch. Inferred from inputs if None. (Default value = None)</p>
+</dd>
+<dt>image_dims</dt><dd><p>Image dimensions. Inferred from inputs in None. (Default value = None)</p>
+</dd>
+<dt>dev_str</dt><dd><p>device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc.
+Same as x if None. (Default value = None)</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>ret</dt><dd><p>Optical flow from frame 1 to 2, projected to frame 1 epipolar line
+<em>[batch_shape,h,w,2]</em></p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ivy_vision.optical_flow.velocity_from_cam_coords_id_image_and_object_trans">
+<span class="sig-prename descclassname"><span class="pre">ivy_vision.optical_flow.</span></span><span class="sig-name descname"><span class="pre">velocity_from_cam_coords_id_image_and_object_trans</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam_coords_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id_image</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">obj_trans</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dev_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy_vision/optical_flow.html#velocity_from_cam_coords_id_image_and_object_trans"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_vision.optical_flow.velocity_from_cam_coords_id_image_and_object_trans" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute velocity image from co-ordinate image, id image, and object
+transformations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cam_coords_t</strong> – Camera-centric homogeneous co-ordinates image in frame t
+<em>[batch_shape,image_shape,4]</em></p></li>
+<li><p><strong>id_image</strong> – Image containing per-pixel object ids <em>[batch_shape,image_shape,1]</em></p></li>
+<li><p><strong>obj_ids</strong> – Object ids <em>[batch_shape,num_obj,1]</em></p></li>
+<li><p><strong>obj_trans</strong> – Object transformations for this frame over time <em>[batch_shape,num_obj,3,4]</em></p></li>
+<li><p><strong>delta_t</strong> – Time difference between frame at timestep t-1 and t <em>[batch_shape,1]</em></p></li>
+<li><p><strong>batch_shape</strong> – Shape of batch. Inferred from inputs if None. (Default value = None)</p></li>
+<li><p><strong>image_shape</strong> – Image dimensions. Inferred from inputs in None. (Default value = None)</p></li>
+<li><p><strong>dev_str</strong> – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc.
+Same as x if None. (Default value = None)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ret</em> – Relative velocity image <em>[batch_shape,image_shape,3]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ivy_vision.optical_flow.velocity_from_flow_cam_coords_and_cam_mats">
+<span class="sig-prename descclassname"><span class="pre">ivy_vision.optical_flow.</span></span><span class="sig-name descname"><span class="pre">velocity_from_flow_cam_coords_and_cam_mats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flow_t_to_tm1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam_coords_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam_coords_tm1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam_tm1_to_t_ext_mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta_t</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">uniform_pixel_coords</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">batch_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_dims</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dev_str</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy_vision/optical_flow.html#velocity_from_flow_cam_coords_and_cam_mats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_vision.optical_flow.velocity_from_flow_cam_coords_and_cam_mats" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute relative cartesian velocity from optical flow, camera co-ordinates, and
+camera extrinsics.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>flow_t_to_tm1</strong> – Optical flow from frame t to t-1 <em>[batch_shape,h,w,2]</em></p></li>
+<li><p><strong>cam_coords_t</strong> – Camera-centric homogeneous co-ordinates image in frame t <em>[batch_shape,h,w,4]</em></p></li>
+<li><p><strong>cam_coords_tm1</strong> – Camera-centric homogeneous co-ordinates image in frame t-1 <em>[batch_shape,h,w,4]</em></p></li>
+<li><p><strong>cam_tm1_to_t_ext_mat</strong> – Camera t-1 to camera t extrinsic projection matrix <em>[batch_shape,3,4]</em></p></li>
+<li><p><strong>delta_t</strong> – Time difference between frame at timestep t-1 and t <em>[batch_shape,1]</em></p></li>
+<li><p><strong>uniform_pixel_coords</strong> – Homogeneous uniform (integer) pixel co-ordinate images,
+inferred from image_dims if None <em>[batch_shape,h,w,3]</em> (Default value = None)</p></li>
+<li><p><strong>batch_shape</strong> – Shape of batch. Inferred from inputs if None. (Default value = None)</p></li>
+<li><p><strong>image_dims</strong> – Image dimensions. Inferred from inputs in None. (Default value = None)</p></li>
+<li><p><strong>dev_str</strong> – device on which to create the array ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc.
+Same as x if None. (Default value = None)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ret</em> – Cartesian velocity measurements relative to the camera <em>[batch_shape,h,w,3]</em></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="ivy_vision.mesh.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Mesh</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ivy_vision.padding.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Padding</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy_vision.optical_flow.depth_from_flow_and_cam_mats"><code class="docutils literal notranslate"><span class="pre">depth_from_flow_and_cam_mats()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy_vision.optical_flow.flow_from_cam_coords_id_image_and_object_trans"><code class="docutils literal notranslate"><span class="pre">flow_from_cam_coords_id_image_and_object_trans()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy_vision.optical_flow.flow_from_depth_and_cam_mats"><code class="docutils literal notranslate"><span class="pre">flow_from_depth_and_cam_mats()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy_vision.optical_flow.pixel_cost_volume"><code class="docutils literal notranslate"><span class="pre">pixel_cost_volume()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy_vision.optical_flow.project_cam_coords_with_object_transformations"><code class="docutils literal notranslate"><span class="pre">project_cam_coords_with_object_transformations()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy_vision.optical_flow.project_flow_to_epipolar_line"><code class="docutils literal notranslate"><span class="pre">project_flow_to_epipolar_line()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy_vision.optical_flow.velocity_from_cam_coords_id_image_and_object_trans"><code class="docutils literal notranslate"><span class="pre">velocity_from_cam_coords_id_image_and_object_trans()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy_vision.optical_flow.velocity_from_flow_cam_coords_and_cam_mats"><code class="docutils literal notranslate"><span class="pre">velocity_from_flow_cam_coords_and_cam_mats()</span></code></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2020-2023, Ivy Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

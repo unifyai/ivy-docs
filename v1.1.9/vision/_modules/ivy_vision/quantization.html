@@ -1,0 +1,782 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ivy_vision.quantization &#8212; Ivy Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ivy_vision/quantization';</script>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo.png?raw=true" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/logo_dark.png?raw=true" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><div></div></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><div></div></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
+            <label class="sr-only">Twitter</label></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Vision</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.containers.html">Containers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.image.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.implicit.html">Implicit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.mesh.html">Mesh</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.optical_flow.html">Optical flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.padding.html">Padding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.projective_geometry.html">Projective geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.quantization.html">Quantization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.sdf.html">Sdf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.single_view_geometry.html">Single view geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.smoothing.html">Smoothing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.two_view_geometry.html">Two view geometry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vision/ivy_vision/ivy_vision.voxel_grids.html">Voxel grids</a></li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading">
+            <span class="caption-text">Docs</span>
+        </p>
+        <ul class="nav bd-sidenav">
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/ivy">
+                    Ivy
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/mech">
+                    Ivy mech
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/vision">
+                    Ivy vision
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/robot">
+                    Ivy robot
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/gym">
+                    Ivy gym
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/memory">
+                    Ivy memory
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/builder">
+                    Ivy builder
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/models">
+                    Ivy models
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/ecosystem">
+                    Ivy ecosystem
+                </a>
+            </li>
+            </ul>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">ivy_vision.quantization</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for ivy_vision.quantization</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Collection of Quantization Functions&quot;&quot;&quot;</span>
+
+<span class="c1"># global</span>
+<span class="kn">import</span> <span class="nn">ivy</span> 
+
+<span class="c1"># local</span>
+<span class="kn">from</span> <span class="nn">ivy_vision</span> <span class="kn">import</span> <span class="n">single_view_geometry</span> <span class="k">as</span> <span class="n">ivy_svg</span>
+
+<span class="n">MIN_DENOMINATOR</span> <span class="o">=</span> <span class="mf">1e-12</span>
+<span class="n">MIN_DEPTH_DIFF</span> <span class="o">=</span> <span class="mf">1e-2</span>
+
+
+<div class="viewcode-block" id="quantize_to_image"><a class="viewcode-back" href="../../vision/ivy_vision/ivy_vision.quantization.html#ivy_vision.quantization.quantize_to_image">[docs]</a><span class="k">def</span> <span class="nf">quantize_to_image</span><span class="p">(</span><span class="n">pixel_coords</span><span class="p">,</span> <span class="n">final_image_dims</span><span class="p">,</span> <span class="n">feat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">feat_prior</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">with_db</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                      <span class="n">pixel_coords_var</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">feat_var</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">pixel_coords_prior_var</span><span class="o">=</span><span class="mf">1e12</span><span class="p">,</span>
+                      <span class="n">feat_prior_var</span><span class="o">=</span><span class="mf">1e12</span><span class="p">,</span> <span class="n">var_threshold</span><span class="o">=</span><span class="p">(</span><span class="mf">1e-3</span><span class="p">,</span> <span class="mf">1e12</span><span class="p">),</span> <span class="n">uniform_pixel_coords</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+                      <span class="n">batch_shape</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">dev_str</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Quantize pixel co-ordinates with d feature channels (for depth, rgb, normals</span>
+<span class="sd">    etc.), from images :math:`\mathbf{X}\in\mathbb{R}^{input\_images\_shape×(2+d)}`,</span>
+<span class="sd">    which may have been reprojected from a host of different cameras (leading to</span>
+<span class="sd">    non-integer pixel values), to a new quantized pixel co-ordinate image with the</span>
+<span class="sd">    same feature channels :math:`\mathbf{X}\in\mathbb{R}^{h×w×(2+d)}`, and with</span>
+<span class="sd">    integer pixel co-ordinates. Duplicates during the quantization are either</span>
+<span class="sd">    probabilistically fused based on variance, or the minimum depth is chosen when</span>
+<span class="sd">    using depth buffer mode.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    pixel_coords</span>
+<span class="sd">        Pixel co-ordinates *[batch_shape,input_size,2]*</span>
+<span class="sd">    final_image_dims</span>
+<span class="sd">        Image dimensions of the final image.</span>
+<span class="sd">    feat</span>
+<span class="sd">        Features (i.e. depth, rgb, encoded), default is None. *[batch_shape,input_size,d]*</span>
+<span class="sd">    feat_prior</span>
+<span class="sd">        Prior feature image mean, default is None. *[batch_shape,input_size,d]*</span>
+<span class="sd">    with_db</span>
+<span class="sd">        Whether or not to use depth buffer in rendering, default is false</span>
+<span class="sd">    pixel_coords_var</span>
+<span class="sd">        Pixel coords variance *[batch_shape,input_size,2]* (Default value = 1e-3)</span>
+<span class="sd">    feat_var</span>
+<span class="sd">        Feature variance *[batch_shape,input_size,d]* (Default value = 1e-3)</span>
+<span class="sd">    pixel_coords_prior_var</span>
+<span class="sd">        Pixel coords prior variance *[batch_shape,h,w,2]* (Default value = 1e12)</span>
+<span class="sd">    feat_prior_var</span>
+<span class="sd">        Features prior variance *[batch_shape,h,w,3]* (Default value = 1e12)</span>
+<span class="sd">    var_threshold</span>
+<span class="sd">        Variance threshold, for projecting valid coords and clipping</span>
+<span class="sd">        *[batch_shape,2+d,2]* (Default value = (1e-3)</span>
+<span class="sd">    uniform_pixel_coords</span>
+<span class="sd">        Homogeneous uniform (integer) pixel co-ordinate images,</span>
+<span class="sd">        inferred from final_image_dims</span>
+<span class="sd">        if None *[batch_shape,h,w,3]* (Default value = None)</span>
+<span class="sd">    batch_shape</span>
+<span class="sd">        Shape of batch. Assumed no batches if None. (Default value = None)</span>
+<span class="sd">    dev_str</span>
+<span class="sd">        device on which to create the array &#39;cuda:0&#39;, &#39;cuda:1&#39;, &#39;cpu&#39; etc.</span>
+<span class="sd">        Same as x if None. (Default value = None)</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        Quantized pixel co-ordinates image with d feature channels</span>
+<span class="sd">        (for depth, rgb, normals etc.) *[batch_shape,h,w,2+d]*,</span>
+<span class="sd">        maybe the quantized variance, *[batch_shape,h,w,2+d]*, and scatter counter image</span>
+<span class="sd">        *[batch_shape,h,w,1]*</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># ToDo: make variance fully optional. If not specified,</span>
+    <span class="c1">#  then do not compute and scatter during function call for better efficiency.</span>
+    <span class="c1"># config</span>
+    <span class="k">if</span> <span class="n">batch_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">batch_shape</span> <span class="o">=</span> <span class="n">pixel_coords</span><span class="o">.</span><span class="n">shape</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">dev_str</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">dev_str</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dev</span><span class="p">(</span><span class="n">pixel_coords</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">feat</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">d</span> <span class="o">=</span> <span class="n">feat</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">min_depth_diff</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">MIN_DEPTH_DIFF</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">)</span>
+    <span class="n">red</span> <span class="o">=</span> <span class="s1">&#39;min&#39;</span> <span class="k">if</span> <span class="n">with_db</span> <span class="k">else</span> <span class="s1">&#39;sum&#39;</span>
+
+    <span class="c1"># shapes as list</span>
+    <span class="n">batch_shape</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+    <span class="n">final_image_dims</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">final_image_dims</span><span class="p">)</span>
+    <span class="n">num_batch_dims</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">batch_shape</span><span class="p">)</span>
+
+    <span class="c1"># variance threshold</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_threshold</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">var_threshold</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+        <span class="n">ones</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">var_threshold</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">ones</span> <span class="o">*</span> <span class="n">var_threshold</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">ones</span> <span class="o">*</span> <span class="n">var_threshold</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">var_threshold</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">var_threshold</span><span class="p">,</span> <span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">d</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+    <span class="c1"># uniform pixel coords</span>
+    <span class="k">if</span> <span class="n">uniform_pixel_coords</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">uniform_pixel_coords</span> <span class="o">=</span>\
+            <span class="n">ivy_svg</span><span class="o">.</span><span class="n">create_uniform_pixel_coords_image</span><span class="p">(</span><span class="n">final_image_dims</span><span class="p">,</span> <span class="n">batch_shape</span><span class="p">,</span> <span class="n">dev_str</span><span class="o">=</span><span class="n">dev_str</span><span class="p">)</span>
+    <span class="n">uniform_pixel_coords</span> <span class="o">=</span> <span class="n">uniform_pixel_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="c1"># Extract Values #</span>
+
+    <span class="n">feat_prior</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span> <span class="o">*</span> <span class="n">feat_prior</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">feat_prior</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">else</span> <span class="n">feat_prior</span>
+    <span class="n">pixel_coords_var</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">pixel_coords</span><span class="p">)</span> <span class="o">*</span> <span class="n">pixel_coords_var</span>\
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pixel_coords_var</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">else</span> <span class="n">pixel_coords_var</span>
+    <span class="n">feat_var</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">feat</span><span class="p">)</span> <span class="o">*</span> <span class="n">feat_var</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">feat_var</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">else</span> <span class="n">feat_var</span>
+    <span class="n">pixel_coords_prior_var</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">batch_shape</span> <span class="o">+</span> <span class="n">final_image_dims</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">])</span> <span class="o">*</span> <span class="n">pixel_coords_prior_var</span>\
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pixel_coords_prior_var</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">else</span> <span class="n">pixel_coords_prior_var</span>
+    <span class="n">feat_prior_var</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">batch_shape</span> <span class="o">+</span> <span class="n">final_image_dims</span> <span class="o">+</span> <span class="p">[</span><span class="n">d</span><span class="p">])</span> <span class="o">*</span> <span class="n">feat_prior_var</span>\
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">feat_prior_var</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">else</span> <span class="n">feat_prior_var</span>
+
+    <span class="c1"># Quantize #</span>
+
+    <span class="c1"># BS x N x 2</span>
+    <span class="n">quantized_pixel_coords</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">pixel_coords</span><span class="p">),</span> <span class="s1">&#39;int32&#39;</span><span class="p">),</span> <span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+    <span class="c1"># Combine #</span>
+
+    <span class="c1"># BS x N x (2+D)</span>
+    <span class="n">pc_n_feat</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">pixel_coords</span><span class="p">,</span> <span class="n">feat</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">+</span><span class="n">d</span><span class="p">])</span>
+    <span class="n">pc_n_feat_var</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">pixel_coords_var</span><span class="p">,</span> <span class="n">feat_var</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> <span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="o">+</span><span class="n">d</span><span class="p">])</span>
+
+    <span class="c1"># BS x H x W x (2+D)</span>
+    <span class="n">prior</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">uniform_pixel_coords</span><span class="p">,</span> <span class="n">feat_prior</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">prior_var</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">pixel_coords_prior_var</span><span class="p">,</span> <span class="n">feat_prior_var</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Validity Mask #</span>
+
+    <span class="c1"># BS x N x 1</span>
+    <span class="n">var_validity_mask</span> <span class="o">=</span> \
+        <span class="n">ivy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">pc_n_feat_var</span> <span class="o">&lt;</span> <span class="n">var_threshold</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;int32&#39;</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="o">+</span><span class="n">d</span>
+    <span class="n">bounds_validity_mask</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span>
+        <span class="n">ivy</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">quantized_pixel_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">quantized_pixel_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="n">ivy</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">quantized_pixel_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">final_image_dims</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span>
+                         <span class="n">quantized_pixel_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">final_image_dims</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="n">validity_mask</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">logical_and</span><span class="p">(</span><span class="n">var_validity_mask</span><span class="p">,</span> <span class="n">bounds_validity_mask</span><span class="p">)</span>
+
+    <span class="c1"># num_valid_indices x len(BS)+2</span>
+    <span class="n">validity_indices</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">argwhere</span><span class="p">(</span><span class="n">validity_mask</span><span class="p">),</span> <span class="s1">&#39;int32&#39;</span><span class="p">),</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_batch_dims</span> <span class="o">+</span> <span class="mi">2</span><span class="p">])</span>
+    <span class="n">num_valid_indices</span> <span class="o">=</span> <span class="n">validity_indices</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="n">num_valid_indices</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">uniform_pixel_coords</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">feat_prior</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span> \
+               <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">pixel_coords_prior_var</span><span class="p">,</span> <span class="n">feat_prior_var</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">),</span>\
+               <span class="n">ivy</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">feat</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">)</span>
+
+    <span class="c1"># Depth Based Scaling #</span>
+
+    <span class="n">mean_depth_min</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">mean_depth_range</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">pc_n_feat_wo_depth_range</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">pc_n_feat_wo_depth_min</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">var_vals_range</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">var_vals_min</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="n">with_db</span><span class="p">:</span>
+
+        <span class="c1"># BS x N x 1</span>
+        <span class="n">mean_depth</span> <span class="o">=</span> <span class="n">pc_n_feat</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+        <span class="c1"># BS x 1 x 1</span>
+        <span class="n">mean_depth_min</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">mean_depth</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">mean_depth_max</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">mean_depth</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">mean_depth_range</span> <span class="o">=</span> <span class="n">mean_depth_max</span> <span class="o">-</span> <span class="n">mean_depth_min</span>
+
+        <span class="c1"># BS x N x 1</span>
+        <span class="n">scaled_depth</span> <span class="o">=</span> <span class="p">(</span><span class="n">mean_depth</span> <span class="o">-</span> <span class="n">mean_depth_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">mean_depth_range</span> <span class="o">*</span> <span class="n">min_depth_diff</span> <span class="o">+</span> <span class="n">MIN_DENOMINATOR</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">d</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+
+            <span class="c1"># BS x 1 x 1+D</span>
+            <span class="n">pc_n_feat_wo_depth_min</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">)</span>
+            <span class="n">pc_n_feat_wo_depth_range</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">batch_shape</span> <span class="o">+</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">)</span>
+
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># feat without depth</span>
+
+            <span class="c1"># BS x N x 1+D</span>
+            <span class="n">pc_n_feat_wo_depth</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">pc_n_feat</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">pc_n_feat</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">3</span><span class="p">:]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+            <span class="c1"># find the min and max of each value</span>
+
+            <span class="c1"># BS x 1 x 1+D</span>
+            <span class="n">pc_n_feat_wo_depth_max</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">pc_n_feat_wo_depth</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+            <span class="n">pc_n_feat_wo_depth_min</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">pc_n_feat_wo_depth</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+            <span class="n">pc_n_feat_wo_depth_range</span> <span class="o">=</span> <span class="n">pc_n_feat_wo_depth_max</span> <span class="o">-</span> <span class="n">pc_n_feat_wo_depth_min</span>
+
+            <span class="c1"># BS x N x 1+D</span>
+            <span class="n">normed_pc_n_feat_wo_depth</span> <span class="o">=</span> <span class="p">(</span><span class="n">pc_n_feat_wo_depth</span> <span class="o">-</span> <span class="n">pc_n_feat_wo_depth_min</span><span class="p">)</span> <span class="o">/</span> \
+                                        <span class="p">(</span><span class="n">pc_n_feat_wo_depth_range</span> <span class="o">+</span> <span class="n">MIN_DENOMINATOR</span><span class="p">)</span>
+
+            <span class="c1"># combine with scaled depth</span>
+
+            <span class="c1"># BS x N x 1+D</span>
+            <span class="n">pc_n_feat_wo_depth_scaled</span> <span class="o">=</span> <span class="n">normed_pc_n_feat_wo_depth</span> <span class="o">+</span> <span class="n">scaled_depth</span>
+
+            <span class="c1"># BS x N x (2+D)</span>
+            <span class="n">pc_n_feat</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">pc_n_feat_wo_depth_scaled</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">mean_depth</span><span class="p">,</span>
+                                          <span class="n">pc_n_feat_wo_depth_scaled</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span><span class="p">:]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># scale variance</span>
+
+        <span class="c1"># BS x 1 x (2+D)</span>
+        <span class="n">var_vals_max</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">pc_n_feat_var</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+        <span class="n">var_vals_min</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">pc_n_feat_var</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+        <span class="n">var_vals_range</span> <span class="o">=</span> <span class="n">var_vals_max</span> <span class="o">-</span> <span class="n">var_vals_min</span>
+
+        <span class="c1"># BS x N x (2+D)</span>
+        <span class="n">normed_var_vals</span> <span class="o">=</span> <span class="p">(</span><span class="n">pc_n_feat_var</span> <span class="o">-</span> <span class="n">var_vals_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">var_vals_range</span> <span class="o">+</span> <span class="n">MIN_DENOMINATOR</span><span class="p">)</span>
+        <span class="n">pc_n_feat_var</span> <span class="o">=</span> <span class="n">normed_var_vals</span> <span class="o">+</span> <span class="n">scaled_depth</span>
+
+        <span class="c1"># ready for later reversal with full image dimensions</span>
+
+        <span class="c1"># BS x 1 x 1 x D</span>
+        <span class="n">var_vals_min</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">var_vals_min</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">var_vals_range</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">var_vals_range</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="c1"># Validity Pruning #</span>
+
+    <span class="c1"># num_valid_indices x (2+D)</span>
+    <span class="n">pc_n_feat</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">gather_nd</span><span class="p">(</span><span class="n">pc_n_feat</span><span class="p">,</span> <span class="n">validity_indices</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">num_batch_dims</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+    <span class="n">pc_n_feat_var</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">gather_nd</span><span class="p">(</span><span class="n">pc_n_feat_var</span><span class="p">,</span> <span class="n">validity_indices</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">num_batch_dims</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="c1"># num_valid_indices x 2</span>
+    <span class="n">quantized_pixel_coords</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">gather_nd</span><span class="p">(</span><span class="n">quantized_pixel_coords</span><span class="p">,</span> <span class="n">validity_indices</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="n">num_batch_dims</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">if</span> <span class="n">with_db</span><span class="p">:</span>
+        <span class="n">means_to_scatter</span> <span class="o">=</span> <span class="n">pc_n_feat</span>
+        <span class="n">vars_to_scatter</span> <span class="o">=</span> <span class="n">pc_n_feat_var</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># num_valid_indices x (2+D)</span>
+        <span class="n">vars_to_scatter</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">pc_n_feat_var</span> <span class="o">+</span> <span class="n">MIN_DENOMINATOR</span><span class="p">)</span>
+        <span class="n">means_to_scatter</span> <span class="o">=</span> <span class="n">pc_n_feat</span> <span class="o">*</span> <span class="n">vars_to_scatter</span>
+
+    <span class="c1"># Scatter #</span>
+
+    <span class="c1"># num_valid_indices x 1</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">pc_n_feat</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">],</span> <span class="n">device</span><span class="o">=</span><span class="n">dev_str</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">with_db</span><span class="p">:</span>
+        <span class="n">counter</span> <span class="o">*=</span> <span class="o">-</span><span class="mi">1</span>
+
+    <span class="c1"># num_valid_indices x 2(2+D)+1</span>
+    <span class="n">values_to_scatter</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">means_to_scatter</span><span class="p">,</span> <span class="n">vars_to_scatter</span><span class="p">,</span> <span class="n">counter</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># num_valid_indices x (num_batch_dims + 2)</span>
+    <span class="n">all_indices</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">flip</span><span class="p">(</span><span class="n">quantized_pixel_coords</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">num_batch_dims</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">all_indices</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">validity_indices</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">all_indices</span><span class="p">),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># BS x H x W x (2(2+D) + 1)</span>
+    <span class="n">quantized_img</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">scatter_nd</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">all_indices</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">num_batch_dims</span> <span class="o">+</span> <span class="mi">2</span><span class="p">]),</span>
+                                    <span class="n">ivy</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">values_to_scatter</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]),</span>
+                                    <span class="n">shape</span><span class="o">=</span><span class="n">batch_shape</span> <span class="o">+</span> <span class="n">final_image_dims</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">],</span>
+                                    <span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span> <span class="k">if</span> <span class="n">ivy</span><span class="o">.</span><span class="n">backend</span> <span class="o">==</span> <span class="s1">&#39;mxnet&#39;</span> <span class="k">else</span> <span class="n">red</span><span class="p">)</span>
+
+    <span class="c1"># BS x H x W x 1</span>
+    <span class="n">quantized_counter</span> <span class="o">=</span> <span class="n">quantized_img</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">:]</span>
+    <span class="k">if</span> <span class="n">with_db</span><span class="p">:</span>
+        <span class="n">invalidity_mask</span> <span class="o">=</span> <span class="n">quantized_counter</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">invalidity_mask</span> <span class="o">=</span> <span class="n">quantized_counter</span> <span class="o">==</span> <span class="mi">0</span>
+
+    <span class="k">if</span> <span class="n">with_db</span><span class="p">:</span>
+        <span class="c1"># BS x H x W x (2+D)</span>
+        <span class="n">quantized_mean_scaled</span> <span class="o">=</span> <span class="n">quantized_img</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span> <span class="o">+</span> <span class="n">d</span><span class="p">]</span>
+        <span class="n">quantized_var_scaled</span> <span class="o">=</span> <span class="n">quantized_img</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">d</span><span class="p">:</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="n">d</span><span class="p">)]</span>
+
+        <span class="c1"># BS x H x W x 1</span>
+        <span class="n">quantized_depth_mean</span> <span class="o">=</span> <span class="n">quantized_mean_scaled</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+
+        <span class="c1"># BS x 1 x 1 x 1</span>
+        <span class="n">mean_depth_min</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">mean_depth_min</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">mean_depth_range</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">mean_depth_range</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="c1"># BS x 1 x 1 x (1+D)</span>
+        <span class="n">pc_n_feat_wo_depth_min</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">pc_n_feat_wo_depth_min</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">pc_n_feat_wo_depth_range</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">pc_n_feat_wo_depth_range</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">)</span>
+
+        <span class="c1"># BS x 1 x 1 x (2+D) x 2</span>
+        <span class="n">var_threshold</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">var_threshold</span><span class="p">,</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">3</span><span class="p">)</span>
+
+        <span class="c1"># BS x H x W x (1+D)</span>
+        <span class="n">quantized_mean_wo_depth_scaled</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">quantized_mean_scaled</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span>
+                                                           <span class="n">quantized_mean_scaled</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">3</span><span class="p">:]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">quantized_mean_wo_depth_normed</span> <span class="o">=</span> <span class="n">quantized_mean_wo_depth_scaled</span> <span class="o">-</span> <span class="p">(</span><span class="n">quantized_depth_mean</span> <span class="o">-</span> <span class="n">mean_depth_min</span><span class="p">)</span> <span class="o">/</span> \
+                                         <span class="p">(</span><span class="n">mean_depth_range</span> <span class="o">*</span> <span class="n">min_depth_diff</span> <span class="o">+</span> <span class="n">MIN_DENOMINATOR</span><span class="p">)</span>
+        <span class="n">quantized_mean_wo_depth</span> <span class="o">=</span> <span class="n">quantized_mean_wo_depth_normed</span> <span class="o">*</span> <span class="n">pc_n_feat_wo_depth_range</span> <span class="o">+</span> <span class="n">pc_n_feat_wo_depth_min</span>
+        <span class="n">prior_wo_depth</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">prior</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">prior</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">3</span><span class="p">:]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">quantized_mean_wo_depth</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">invalidity_mask</span><span class="p">,</span> <span class="n">prior_wo_depth</span><span class="p">,</span> <span class="n">quantized_mean_wo_depth</span><span class="p">)</span>
+
+        <span class="c1"># BS x H x W x (2+D)</span>
+        <span class="n">quantized_mean</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat</span><span class="p">((</span><span class="n">quantized_mean_wo_depth</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span> <span class="n">quantized_depth_mean</span><span class="p">,</span>
+                                           <span class="n">quantized_mean_wo_depth</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span><span class="p">:]),</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># BS x H x W x (2+D)</span>
+        <span class="n">quantized_var_normed</span> <span class="o">=</span> <span class="n">quantized_var_scaled</span> <span class="o">-</span> <span class="p">(</span><span class="n">quantized_depth_mean</span> <span class="o">-</span> <span class="n">mean_depth_min</span><span class="p">)</span> <span class="o">/</span> \
+                               <span class="p">(</span><span class="n">mean_depth_range</span> <span class="o">*</span> <span class="n">min_depth_diff</span> <span class="o">+</span> <span class="n">MIN_DENOMINATOR</span><span class="p">)</span>
+        <span class="n">quantized_var</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">quantized_var_normed</span> <span class="o">*</span> <span class="n">var_vals_range</span> <span class="o">+</span> <span class="n">var_vals_min</span><span class="p">,</span> <span class="n">var_threshold</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+        <span class="n">quantized_var</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">invalidity_mask</span><span class="p">,</span> <span class="n">prior_var</span><span class="p">,</span> <span class="n">quantized_var</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># BS x H x W x (2+D)</span>
+        <span class="n">quantized_sum_mean_x_recip_var</span> <span class="o">=</span> <span class="n">quantized_img</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">:</span><span class="mi">2</span> <span class="o">+</span> <span class="n">d</span><span class="p">]</span>
+        <span class="n">quantized_var_wo_increase</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">invalidity_mask</span><span class="p">,</span> <span class="n">prior_var</span><span class="p">,</span>
+                                               <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="n">quantized_img</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">d</span><span class="p">:</span><span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="n">d</span><span class="p">)]</span> <span class="o">+</span> <span class="n">MIN_DENOMINATOR</span><span class="p">)))</span>
+        <span class="n">quantized_var</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="n">quantized_var_wo_increase</span> <span class="o">*</span> <span class="n">quantized_counter</span><span class="p">,</span>
+                                     <span class="n">ivy</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">var_threshold</span><span class="p">[</span><span class="o">...</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">axis</span><span class="o">=-</span><span class="mi">2</span><span class="p">))</span>
+        <span class="n">quantized_var</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">invalidity_mask</span><span class="p">,</span> <span class="n">prior_var</span><span class="p">,</span> <span class="n">quantized_var</span><span class="p">)</span>
+        <span class="n">quantized_mean</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">invalidity_mask</span><span class="p">,</span> <span class="n">prior</span><span class="p">,</span> <span class="n">quantized_var_wo_increase</span> <span class="o">*</span> <span class="n">quantized_sum_mean_x_recip_var</span><span class="p">)</span>
+
+    <span class="c1"># BS x H x W x (2+D)    BS x H x W x (2+D)     BS x H x W x 1</span>
+    <span class="k">return</span> <span class="n">quantized_mean</span><span class="p">,</span> <span class="n">quantized_var</span><span class="p">,</span> <span class="n">quantized_counter</span></div>
+</pre></div>
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner"></div>
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2020-2023, Ivy Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

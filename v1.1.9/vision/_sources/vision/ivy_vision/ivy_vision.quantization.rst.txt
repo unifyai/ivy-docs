@@ -1,0 +1,15 @@
+Quantization
+============
+
+
+
+.. automodule:: ivy_vision.quantization
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy_vision.quantization

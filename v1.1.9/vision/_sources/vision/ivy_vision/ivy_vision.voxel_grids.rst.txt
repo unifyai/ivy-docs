@@ -1,0 +1,15 @@
+Voxel grids
+===========
+
+
+
+.. automodule:: ivy_vision.voxel_grids
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy_vision.voxel_grids

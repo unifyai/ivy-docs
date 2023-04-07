@@ -480,15 +480,34 @@ document.write(`
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.utils.profiler.</span></span><span class="sig-name descname"><span class="pre">Profiler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/utils/profiler.html#Profiler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.profiler.Profiler" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Profile</span></code></p>
 <p>A Profiler class that allows code profiling.</p>
-<dl>
-<dt>Attributes:</dt><dd><p>print_stats (bool, optional): prints profiling statistics.
-viz (bool, optional): visualizes the results using <cite>snakeviz</cite>.</p>
-<p>Bonus args and kwargs are passed to cProfile.Profile __init__</p>
-</dd>
-<dt>Example:</dt><dd><dl class="simple">
-<dt>with Profiler(print_stats=False, viz=True):</dt><dd><p>fn(x, y)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ivy.utils.profiler.Profiler.print_stats">
+<span class="sig-name descname"><span class="pre">print_stats</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optional</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ivy.utils.profiler.Profiler.print_stats" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>prints profiling statistics.</p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="ivy.utils.profiler.Profiler.viz">
+<span class="sig-name descname"><span class="pre">viz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optional</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ivy.utils.profiler.Profiler.viz" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>visualizes the results using <cite>snakeviz</cite>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Bonus</span> <span class="pre">args</span> <span class="pre">and</span> <span class="pre">kwargs</span> <span class="pre">are</span> <span class="pre">passed</span> <span class="pre">to</span> <span class="pre">cProfile.Profile</span> <span class="pre">__init__</span></span></dt>
+<dd></dd></dl>
+
+<p class="rubric">Example</p>
+<dl class="simple">
+<dt>with Profiler(print_stats=False, viz=True):</dt><dd><p>fn(x, y)</p>
 </dd>
 </dl>
 <dl class="py method">
@@ -542,6 +561,8 @@ viz (bool, optional): visualizes the results using <cite>snakeviz</cite>.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.utils.profiler.Profiler"><code class="docutils literal notranslate"><span class="pre">Profiler</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.utils.profiler.Profiler.print_stats"><code class="docutils literal notranslate"><span class="pre">Profiler.print_stats</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.utils.profiler.Profiler.viz"><code class="docutils literal notranslate"><span class="pre">Profiler.viz</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.utils.profiler.Profiler.__init__"><code class="docutils literal notranslate"><span class="pre">Profiler.__init__()</span></code></a></li>
 </ul>
 </li>

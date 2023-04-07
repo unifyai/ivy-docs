@@ -16,4 +16,5 @@
    ivy.utils.dynamic_import
    ivy.utils.exceptions
    ivy.utils.inspection
+   ivy.utils.profiler
    ivy.utils.verbosity

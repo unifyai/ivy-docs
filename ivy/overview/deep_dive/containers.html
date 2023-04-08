@@ -767,7 +767,7 @@ One such example is the <a class="reference internal" href="../../docs/functiona
 But we should try to avoid this, in order to make the flow of computation as intuitive to the user as possible.</p>
 <p>When compiling the code, the computation graph is <strong>identical</strong> in either case, and there will be no implications on performance whatsoever.
 The implicit nestable solution may be slightly less efficient in eager mode, as the leaves of the container are traversed multiple times rather than once, but if performance is of concern then the code should always be compiled in any case.
-The distinction is only really relevant when stepping through and debugging with eager mode execution, and for the reasons outlined above, the preference is to keep compositional implicitly nestable where possible.</p>
+The distinction is only really relevant when stepping through and debugging with eager mode execution, and for the reasons outlined above, the preference is to keep compositional functions implicitly nestable where possible.</p>
 <p><strong>Shared Nested Structure</strong></p>
 <p>When the nested structures of the multiple containers are <em>shared</em> but not <em>identical</em>, then the behaviour of the nestable function is a bit different.
 Containers have <em>shared</em> nested structures if all unique leaves in any of the containers are children of a nested structure which is shared by all other containers.</p>

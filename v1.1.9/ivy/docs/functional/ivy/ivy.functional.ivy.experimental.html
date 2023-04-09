@@ -434,6 +434,7 @@ document.write(`
 
 
 
+
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ivy.functional.ivy.general.html">General</a></li>
@@ -2762,6 +2763,55 @@ It must have a shape that the inputs broadcast to.</p></li>
 <span class="go">(ivy.array([0.5, 0.5, 0.75]), ivy.array([1, 2, 2]))</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ivy.functional.ivy.experimental.frombuffer">
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">frombuffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype=&lt;class</span> <span class="pre">'float'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count=-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset=0</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/functional/ivy/experimental/creation.html#frombuffer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.experimental.frombuffer" title="Permalink to this definition">#</a></dt>
+<dd><p>Interpret a buffer as a 1-dimensional array.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that either of the following must be true:
+1. count is a positive non-zero number, and the total number of bytes
+in the buffer is equal or greater than offset plus count times the size
+(in bytes) of dtype.
+2. count is negative, and the length (number of bytes) of the buffer
+subtracted by the offset is a multiple of the size (in bytes) of dtype.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>buffer</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code>) – An object that exposes the buffer interface.</p></li>
+<li><p><strong>dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]]) – Data-type of the returned array; default: float. (default: <code class="docutils literal notranslate"><span class="pre">&lt;class</span> <span class="pre">'float'&gt;</span></code>)</p></li>
+<li><p><strong>count</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Number of items to read. -1 means all data in the buffer. (default: <code class="docutils literal notranslate"><span class="pre">-1</span></code>)</p></li>
+<li><p><strong>offset</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – Start reading the buffer from this offset (in bytes); default: 0. (default: <code class="docutils literal notranslate"><span class="pre">0</span></code>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../../data_classes/ivy.data_classes.array.html#ivy.data_classes.array.array.Array" title="ivy.data_classes.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>out</em> – 1-dimensional array.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> inputs:</p>
+<pre class="doctest literal-block">&gt;&gt;&gt; x = b'ð?&#64;'
+&gt;&gt;&gt; y = ivy.frombuffer(x)
+&gt;&gt;&gt; print(y)
+(ivy.array([1., 2.]))
+</pre>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">frombuffer</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int8&#39;</span><span class="p">,</span> <span class="n">count</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="go">(ivy.array([2, 3, 4]))</span>
+</pre></div>
+</div>
+<pre class="doctest literal-block">&gt;&gt;&gt; x = b'&lt;&#64;BDE'
+&gt;&gt;&gt; y = ivy.frombuffer(x, dtype='float16', count=4, offset=2)
+&gt;&gt;&gt; print(y)
+(ivy.array([2., 3., 4., 5.]))
+</pre>
 </dd></dl>
 
 <dl class="py function">
@@ -5744,6 +5794,7 @@ input arrays’ values.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.fmax"><code class="docutils literal notranslate"><span class="pre">fmax()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.fmin"><code class="docutils literal notranslate"><span class="pre">fmin()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.frexp"><code class="docutils literal notranslate"><span class="pre">frexp()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.frombuffer"><code class="docutils literal notranslate"><span class="pre">frombuffer()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.gamma"><code class="docutils literal notranslate"><span class="pre">gamma()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.gcd"><code class="docutils literal notranslate"><span class="pre">gcd()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.gradient"><code class="docutils literal notranslate"><span class="pre">gradient()</span></code></a></li>

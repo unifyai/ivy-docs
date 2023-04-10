@@ -30,6 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -41,6 +42,7 @@
     <script src="../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
+    <script src="../../../../_static/design-tabs.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ivy_tests/test_ivy/helpers/globals';</script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
@@ -504,9 +506,9 @@ document.write(`
 
 <span class="c1"># This is used to make sure the variable is not being overriden</span>
 <span class="n">_Notsetval</span> <span class="o">=</span> <span class="nb">object</span><span class="p">()</span>
-<span class="n">CURRENT_GROUND_TRUTH_BACKEND</span><span class="p">:</span> <span class="n">callable</span> <span class="o">=</span> <span class="n">_Notsetval</span>
-<span class="n">CURRENT_BACKEND</span><span class="p">:</span> <span class="n">callable</span> <span class="o">=</span> <span class="n">_Notsetval</span>
-<span class="n">CURRENT_FRONTEND</span><span class="p">:</span> <span class="n">callable</span> <span class="o">=</span> <span class="n">_Notsetval</span>
+<span class="n">CURRENT_GROUND_TRUTH_BACKEND</span><span class="p">:</span> <span class="nb">callable</span> <span class="o">=</span> <span class="n">_Notsetval</span>
+<span class="n">CURRENT_BACKEND</span><span class="p">:</span> <span class="nb">callable</span> <span class="o">=</span> <span class="n">_Notsetval</span>
+<span class="n">CURRENT_FRONTEND</span><span class="p">:</span> <span class="nb">callable</span> <span class="o">=</span> <span class="n">_Notsetval</span>
 <span class="n">CURRENT_RUNNING_TEST</span> <span class="o">=</span> <span class="n">_Notsetval</span>
 <span class="n">CURRENT_DEVICE</span> <span class="o">=</span> <span class="n">_Notsetval</span>
 <span class="n">CURRENT_DEVICE_STRIPPED</span> <span class="o">=</span> <span class="n">_Notsetval</span>
@@ -515,7 +517,7 @@ document.write(`
 
 <div class="viewcode-block" id="TestData"><a class="viewcode-back" href="../../../../docs/testing/helpers/ivy_tests.test_ivy.helpers.globals.html#ivy_tests.test_ivy.helpers.globals.TestData">[docs]</a><span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># ToDo use kw_only=True when version is updated</span>
 <span class="k">class</span> <span class="nc">TestData</span><span class="p">:</span>
-    <span class="n">test_fn</span><span class="p">:</span> <span class="n">callable</span>
+    <span class="n">test_fn</span><span class="p">:</span> <span class="nb">callable</span>
     <span class="n">fn_tree</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">fn_name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">supported_device_dtypes</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span>

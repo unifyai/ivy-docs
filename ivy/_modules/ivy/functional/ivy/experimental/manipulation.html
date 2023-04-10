@@ -30,6 +30,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../../../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -41,6 +42,7 @@
     <script src="../../../../../_static/sphinx_highlight.js"></script>
     <script src="../../../../../_static/clipboard.min.js"></script>
     <script src="../../../../../_static/copybutton.js"></script>
+    <script src="../../../../../_static/design-tabs.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ivy/functional/ivy/experimental/manipulation';</script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
@@ -1373,7 +1375,7 @@ document.write(`
     <span class="n">reflect_type</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="n">ivy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">assertions</span><span class="o">.</span><span class="n">check_true</span><span class="p">(</span>
-        <span class="n">callable</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
+        <span class="nb">callable</span><span class="p">(</span><span class="n">mode</span><span class="p">)</span>
         <span class="ow">or</span> <span class="n">mode</span>
         <span class="ow">in</span> <span class="p">[</span>
             <span class="s2">&quot;constant&quot;</span><span class="p">,</span>
@@ -1593,7 +1595,7 @@ document.write(`
     <span class="p">)</span>
     <span class="nb">input</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">input</span><span class="o">.</span><span class="n">dtype</span><span class="p">)</span>
     <span class="n">pad_width</span> <span class="o">=</span> <span class="n">_to_pairs</span><span class="p">(</span><span class="n">pad_width</span><span class="p">,</span> <span class="nb">input</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">callable</span><span class="p">(</span><span class="n">mode</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">callable</span><span class="p">(</span><span class="n">mode</span><span class="p">):</span>
         <span class="n">func</span> <span class="o">=</span> <span class="n">mode</span>
         <span class="n">padded</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">_pad_simple</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">pad_width</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">axis</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">padded</span><span class="o">.</span><span class="n">ndim</span><span class="p">):</span>

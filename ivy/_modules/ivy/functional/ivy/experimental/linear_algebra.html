@@ -480,7 +480,7 @@ document.write(`
     <span class="n">handle_out_argument</span><span class="p">,</span>
     <span class="n">handle_nestable</span><span class="p">,</span>
     <span class="n">handle_array_like_without_promotion</span><span class="p">,</span>
-    <span class="n">handle_array_function</span><span class="p">,</span>
+    <span class="n">handle_array_function</span><span class="p">,</span> <span class="n">inputs_to_ivy_arrays</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">ivy.utils.exceptions</span> <span class="kn">import</span> <span class="n">handle_exceptions</span>
 
@@ -493,7 +493,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="eigh_tridiagonal"><a class="viewcode-back" href="../../../../../docs/functional/ivy/ivy.functional.ivy.experimental.html#ivy.functional.ivy.experimental.eigh_tridiagonal">[docs]</a><span class="nd">@handle_array_function</span>
-<span class="nd">@to_native_arrays_and_back</span>
+<span class="nd">@inputs_to_ivy_arrays</span>
 <span class="nd">@handle_array_like_without_promotion</span>
 <span class="nd">@handle_nestable</span>
 <span class="nd">@handle_exceptions</span>
@@ -607,15 +607,6 @@ document.write(`
 <span class="sd">        b: ivy.array([-0.82842, 2., 4.82842])</span>
 <span class="sd">    }</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">ivy</span><span class="o">.</span><span class="n">current_backend</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">.</span><span class="n">backend</span> <span class="o">==</span> <span class="s2">&quot;tensorflow&quot;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">current_backend</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span><span class="o">.</span><span class="n">eigh_tridiagonal</span><span class="p">(</span>
-            <span class="n">alpha</span><span class="p">,</span>
-            <span class="n">beta</span><span class="p">,</span>
-            <span class="n">eigvals_only</span><span class="o">=</span><span class="n">eigvals_only</span><span class="p">,</span>
-            <span class="n">select</span><span class="o">=</span><span class="n">select</span><span class="p">,</span>
-            <span class="n">select_range</span><span class="o">=</span><span class="n">select_range</span><span class="p">,</span>
-            <span class="n">tol</span><span class="o">=</span><span class="n">tol</span><span class="p">,</span>
-        <span class="p">)</span>
     <span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">alpha</span><span class="p">)</span>
     <span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="n">z</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">beta</span><span class="p">,</span> <span class="n">k</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>

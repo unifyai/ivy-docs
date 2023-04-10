@@ -480,7 +480,6 @@ document.write(`
 
 <span class="c1"># local</span>
 <span class="kn">import</span> <span class="nn">ivy</span>
-<span class="kn">from</span> <span class="nn">ivy.utils.backend</span> <span class="kn">import</span> <span class="n">current_backend</span>
 <span class="kn">from</span> <span class="nn">ivy.func_wrapper</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">handle_array_function</span><span class="p">,</span>
     <span class="n">handle_out_argument</span><span class="p">,</span>
@@ -1468,7 +1467,7 @@ document.write(`
     <span class="k">return</span> <span class="n">current_backend</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span><span class="o">.</span><span class="n">closest_valid_dtype</span><span class="p">(</span><span class="nb">type</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="default_float_dtype"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.default_float_dtype">[docs]</a><span class="nd">@inputs_to_native_arrays</span>
+<div class="viewcode-block" id="default_float_dtype"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.default_float_dtype">[docs]</a><span class="nd">@inputs_to_ivy_arrays</span>
 <span class="nd">@handle_nestable</span>
 <span class="nd">@handle_exceptions</span>
 <span class="k">def</span> <span class="nf">default_float_dtype</span><span class="p">(</span>
@@ -1610,7 +1609,7 @@ document.write(`
     <span class="k">return</span> <span class="n">default_dtype</span></div>
 
 
-<div class="viewcode-block" id="default_dtype"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.default_dtype">[docs]</a><span class="nd">@inputs_to_native_arrays</span>
+<div class="viewcode-block" id="default_dtype"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.default_dtype">[docs]</a><span class="nd">@inputs_to_ivy_arrays</span>
 <span class="nd">@handle_exceptions</span>
 <span class="k">def</span> <span class="nf">default_dtype</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
@@ -1670,7 +1669,7 @@ document.write(`
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">as_ivy_dtype</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="default_int_dtype"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.default_int_dtype">[docs]</a><span class="nd">@inputs_to_native_arrays</span>
+<div class="viewcode-block" id="default_int_dtype"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.default_int_dtype">[docs]</a><span class="nd">@inputs_to_ivy_arrays</span>
 <span class="nd">@handle_exceptions</span>
 <span class="k">def</span> <span class="nf">default_int_dtype</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
@@ -1779,7 +1778,7 @@ document.write(`
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">IntDtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">as_ivy_dtype</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span></div>
 
 
-<div class="viewcode-block" id="default_uint_dtype"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.default_uint_dtype">[docs]</a><span class="nd">@inputs_to_native_arrays</span>
+<div class="viewcode-block" id="default_uint_dtype"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.default_uint_dtype">[docs]</a><span class="nd">@inputs_to_ivy_arrays</span>
 <span class="nd">@handle_exceptions</span>
 <span class="k">def</span> <span class="nf">default_uint_dtype</span><span class="p">(</span>
     <span class="o">*</span><span class="p">,</span>
@@ -1875,7 +1874,7 @@ document.write(`
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">UintDtype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">as_ivy_dtype</span><span class="p">(</span><span class="n">ret</span><span class="p">))</span></div>
 
 
-<div class="viewcode-block" id="default_complex_dtype"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.default_complex_dtype">[docs]</a><span class="nd">@inputs_to_native_arrays</span>
+<div class="viewcode-block" id="default_complex_dtype"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.default_complex_dtype">[docs]</a><span class="nd">@inputs_to_ivy_arrays</span>
 <span class="nd">@handle_nestable</span>
 <span class="nd">@handle_exceptions</span>
 <span class="k">def</span> <span class="nf">default_complex_dtype</span><span class="p">(</span>
@@ -2378,7 +2377,7 @@ document.write(`
     <span class="k">return</span> <span class="s2">&quot;uint&quot;</span> <span class="ow">in</span> <span class="n">as_ivy_dtype</span><span class="p">(</span><span class="n">dtype_in</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="is_complex_dtype"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.is_complex_dtype">[docs]</a><span class="nd">@inputs_to_native_arrays</span>
+<div class="viewcode-block" id="is_complex_dtype"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.is_complex_dtype">[docs]</a><span class="nd">@inputs_to_ivy_arrays</span>
 <span class="nd">@handle_nestable</span>
 <span class="nd">@handle_exceptions</span>
 <span class="k">def</span> <span class="nf">is_complex_dtype</span><span class="p">(</span>
@@ -2423,7 +2422,8 @@ document.write(`
     <span class="k">return</span> <span class="s2">&quot;complex&quot;</span> <span class="ow">in</span> <span class="n">as_ivy_dtype</span><span class="p">(</span><span class="n">dtype_in</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="promote_types"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.promote_types">[docs]</a><span class="nd">@handle_exceptions</span>
+<div class="viewcode-block" id="promote_types"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.promote_types">[docs]</a><span class="nd">@inputs_to_ivy_arrays</span>
+<span class="nd">@handle_exceptions</span>
 <span class="k">def</span> <span class="nf">promote_types</span><span class="p">(</span>
     <span class="n">type1</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDtype</span><span class="p">],</span>
     <span class="n">type2</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDtype</span><span class="p">],</span>
@@ -2607,7 +2607,8 @@ document.write(`
     <span class="n">default_complex_dtype_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">complex_dtype</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="type_promote_arrays"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.type_promote_arrays">[docs]</a><span class="nd">@handle_exceptions</span>
+<div class="viewcode-block" id="type_promote_arrays"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.type_promote_arrays">[docs]</a><span class="nd">@inputs_to_ivy_arrays</span>
+<span class="nd">@handle_exceptions</span>
 <span class="k">def</span> <span class="nf">type_promote_arrays</span><span class="p">(</span>
     <span class="n">x1</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
     <span class="n">x2</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
@@ -2774,7 +2775,8 @@ document.write(`
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">as_ivy_dtype</span><span class="p">(</span><span class="n">dtype_in</span><span class="p">)</span> <span class="ow">in</span> <span class="n">ivy</span><span class="o">.</span><span class="n">valid_dtypes</span></div>
 
 
-<div class="viewcode-block" id="promote_types_of_inputs"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.promote_types_of_inputs">[docs]</a><span class="nd">@handle_exceptions</span>
+<div class="viewcode-block" id="promote_types_of_inputs"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.data_type.html#ivy.promote_types_of_inputs">[docs]</a><span class="nd">@inputs_to_ivy_arrays</span>
+<span class="nd">@handle_exceptions</span>
 <span class="k">def</span> <span class="nf">promote_types_of_inputs</span><span class="p">(</span>
     <span class="n">x1</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">Number</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Number</span><span class="p">]],</span>
     <span class="n">x2</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">Number</span><span class="p">,</span> <span class="n">Iterable</span><span class="p">[</span><span class="n">Number</span><span class="p">]],</span>

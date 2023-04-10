@@ -480,7 +480,7 @@ document.write(`
     <span class="n">to_native_arrays_and_back</span><span class="p">,</span>
     <span class="n">handle_out_argument</span><span class="p">,</span>
     <span class="n">handle_nestable</span><span class="p">,</span>
-    <span class="n">handle_array_like_without_promotion</span><span class="p">,</span>
+    <span class="n">handle_array_like_without_promotion</span><span class="p">,</span> <span class="n">inputs_to_ivy_arrays</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">ivy.utils.exceptions</span> <span class="kn">import</span> <span class="n">handle_exceptions</span>
 
@@ -2608,7 +2608,7 @@ document.write(`
 
 
 <div class="viewcode-block" id="tensorsolve"><a class="viewcode-back" href="../../../../docs/functional/ivy/linear_algebra/ivy.functional.ivy.linear_algebra.tensorsolve.html#ivy.functional.ivy.linear_algebra.tensorsolve">[docs]</a><span class="nd">@handle_array_function</span>
-<span class="nd">@to_native_arrays_and_back</span>
+<span class="nd">@inputs_to_ivy_arrays</span>
 <span class="nd">@handle_out_argument</span>
 <span class="nd">@handle_nestable</span>
 <span class="nd">@handle_exceptions</span>

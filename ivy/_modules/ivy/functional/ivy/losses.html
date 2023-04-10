@@ -477,7 +477,7 @@ document.write(`
 <span class="kn">from</span> <span class="nn">ivy.func_wrapper</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">handle_array_function</span><span class="p">,</span>
     <span class="n">handle_nestable</span><span class="p">,</span>
-    <span class="n">handle_array_like_without_promotion</span><span class="p">,</span>
+    <span class="n">handle_array_like_without_promotion</span><span class="p">,</span> <span class="n">inputs_to_ivy_arrays</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">ivy.utils.exceptions</span> <span class="kn">import</span> <span class="n">handle_exceptions</span>
 
@@ -498,7 +498,8 @@ document.write(`
 <span class="c1"># ------#</span>
 
 
-<div class="viewcode-block" id="cross_entropy"><a class="viewcode-back" href="../../../../docs/functional/ivy/losses/ivy.functional.ivy.losses.cross_entropy.html#ivy.functional.ivy.losses.cross_entropy">[docs]</a><span class="nd">@handle_array_function</span>
+<div class="viewcode-block" id="cross_entropy"><a class="viewcode-back" href="../../../../docs/functional/ivy/losses/ivy.functional.ivy.losses.cross_entropy.html#ivy.functional.ivy.losses.cross_entropy">[docs]</a><span class="nd">@inputs_to_ivy_arrays</span>
+<span class="nd">@handle_array_function</span>
 <span class="nd">@handle_array_like_without_promotion</span>
 <span class="nd">@handle_nestable</span>
 <span class="nd">@handle_exceptions</span>
@@ -553,7 +554,8 @@ document.write(`
     <span class="k">return</span> <span class="n">_reduce_loss</span><span class="p">(</span><span class="n">reduction</span><span class="p">,</span> <span class="n">log_pred</span> <span class="o">*</span> <span class="n">true</span><span class="p">,</span> <span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="binary_cross_entropy"><a class="viewcode-back" href="../../../../docs/functional/ivy/losses/ivy.functional.ivy.losses.binary_cross_entropy.html#ivy.functional.ivy.losses.binary_cross_entropy">[docs]</a><span class="nd">@handle_array_function</span>
+<div class="viewcode-block" id="binary_cross_entropy"><a class="viewcode-back" href="../../../../docs/functional/ivy/losses/ivy.functional.ivy.losses.binary_cross_entropy.html#ivy.functional.ivy.losses.binary_cross_entropy">[docs]</a><span class="nd">@inputs_to_ivy_arrays</span>
+<span class="nd">@handle_array_function</span>
 <span class="nd">@handle_array_like_without_promotion</span>
 <span class="nd">@handle_nestable</span>
 <span class="nd">@handle_exceptions</span>
@@ -660,7 +662,8 @@ document.write(`
     <span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="sparse_cross_entropy"><a class="viewcode-back" href="../../../../docs/functional/ivy/losses/ivy.functional.ivy.losses.sparse_cross_entropy.html#ivy.functional.ivy.losses.sparse_cross_entropy">[docs]</a><span class="nd">@handle_array_function</span>
+<div class="viewcode-block" id="sparse_cross_entropy"><a class="viewcode-back" href="../../../../docs/functional/ivy/losses/ivy.functional.ivy.losses.sparse_cross_entropy.html#ivy.functional.ivy.losses.sparse_cross_entropy">[docs]</a><span class="nd">@inputs_to_ivy_arrays</span>
+<span class="nd">@handle_array_function</span>
 <span class="nd">@handle_array_like_without_promotion</span>
 <span class="nd">@handle_nestable</span>
 <span class="nd">@handle_exceptions</span>

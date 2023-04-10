@@ -505,7 +505,7 @@ document.write(`
     <span class="n">handle_out_argument</span><span class="p">,</span>
     <span class="n">to_native_arrays_and_back</span><span class="p">,</span>
     <span class="n">handle_nestable</span><span class="p">,</span>
-    <span class="n">handle_array_like_without_promotion</span><span class="p">,</span>
+    <span class="n">handle_array_like_without_promotion</span><span class="p">,</span> <span class="n">inputs_to_ivy_arrays</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="kn">from</span> <span class="nn">ivy.utils.exceptions</span> <span class="kn">import</span> <span class="n">handle_exceptions</span>
 
@@ -1155,7 +1155,8 @@ document.write(`
 <span class="c1"># Default Device #</span>
 
 <span class="c1"># noinspection PyShadowingNames</span>
-<div class="viewcode-block" id="default_device"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.device.html#ivy.default_device">[docs]</a><span class="nd">@handle_exceptions</span>
+<div class="viewcode-block" id="default_device"><a class="viewcode-back" href="../../../../docs/functional/ivy/ivy.functional.ivy.device.html#ivy.default_device">[docs]</a><span class="nd">@inputs_to_ivy_arrays</span>
+<span class="nd">@handle_exceptions</span>
 <span class="k">def</span> <span class="nf">default_device</span><span class="p">(</span>
     <span class="n">device</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Device</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDevice</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="o">/</span><span class="p">,</span>

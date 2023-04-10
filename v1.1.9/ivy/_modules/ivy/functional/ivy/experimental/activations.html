@@ -481,7 +481,7 @@ document.write(`
     <span class="n">handle_nestable</span><span class="p">,</span>
     <span class="n">to_native_arrays_and_back</span><span class="p">,</span>
     <span class="n">handle_array_like_without_promotion</span><span class="p">,</span>
-    <span class="n">handle_out_argument</span><span class="p">,</span>
+    <span class="n">handle_out_argument</span><span class="p">,</span> <span class="n">inputs_to_ivy_arrays</span><span class="p">,</span>
 <span class="p">)</span>
 
 
@@ -532,7 +532,7 @@ document.write(`
     <span class="k">return</span> <span class="n">current_backend</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">logit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="n">eps</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="prelu"><a class="viewcode-back" href="../../../../../docs/functional/ivy/ivy.functional.ivy.experimental.html#ivy.functional.ivy.experimental.prelu">[docs]</a><span class="nd">@to_native_arrays_and_back</span>
+<div class="viewcode-block" id="prelu"><a class="viewcode-back" href="../../../../../docs/functional/ivy/ivy.functional.ivy.experimental.html#ivy.functional.ivy.experimental.prelu">[docs]</a><span class="nd">@inputs_to_ivy_arrays</span>
 <span class="nd">@handle_out_argument</span>
 <span class="nd">@handle_array_like_without_promotion</span>
 <span class="nd">@handle_nestable</span>

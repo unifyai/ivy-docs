@@ -735,7 +735,7 @@ document.write(`
     <span class="k">return</span> <span class="n">new_fn</span></div>
 
 
-<span class="k">def</span> <span class="nf">inputs_to_ivy_arrays</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+<div class="viewcode-block" id="inputs_to_ivy_arrays"><a class="viewcode-back" href="../../docs/functional/ivy/ivy.functional.ivy.experimental.html#ivy.functional.ivy.experimental.inputs_to_ivy_arrays">[docs]</a><span class="k">def</span> <span class="nf">inputs_to_ivy_arrays</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
     <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">fn</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">new_fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -768,7 +768,7 @@ document.write(`
         <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">ivy_args</span><span class="p">,</span> <span class="o">**</span><span class="n">ivy_kwargs</span><span class="p">)</span>
 
     <span class="n">new_fn</span><span class="o">.</span><span class="n">inputs_to_ivy_arrays</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="k">return</span> <span class="n">new_fn</span>
+    <span class="k">return</span> <span class="n">new_fn</span></div>
 
 
 <div class="viewcode-block" id="outputs_to_ivy_arrays"><a class="viewcode-back" href="../../docs/functional/ivy/ivy.functional.ivy.experimental.html#ivy.functional.ivy.experimental.outputs_to_ivy_arrays">[docs]</a><span class="k">def</span> <span class="nf">outputs_to_ivy_arrays</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>

@@ -652,7 +652,7 @@ Ivy provides the <code class="xref py py-func docutils literal notranslate"><spa
 <h3>Our policy on gradients<a class="headerlink" href="#our-policy-on-gradients" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The gradient API is fully-functional in ivy.</p></li>
-<li><p>There is no explicit Variable class or any public-facing function for adding gradient support to an ivy.Array.</p></li>
+<li><p>There is no explicit variable class or any public-facing function for adding gradient support to an ivy.Array.</p></li>
 <li><p>The gradient functions in ivy implicitly convert all arrays to support gradient computation before computing gradients and detach all arrays after computing gradients.</p></li>
 <li><p>We don’t retain any previously tracked computations in arrays by frameworks like torch for e.g.</p></li>
 <li><p>This makes our gradient API disambiguous, flexible and easy to debug.</p></li>

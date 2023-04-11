@@ -4588,7 +4588,55 @@ document.write(`
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">static_isin</span><span class="p">(</span>
             <span class="bp">self</span><span class="p">,</span> <span class="n">test_elements</span><span class="p">,</span> <span class="n">assume_unique</span><span class="o">=</span><span class="n">assume_unique</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="n">invert</span>
-        <span class="p">)</span></div></div>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ContainerWithGeneral.static_itemsize"><a class="viewcode-back" href="../../../../docs/data_classes/container/ivy.data_classes.container.general.html#ivy.data_classes.container.general._ContainerWithGeneral.static_itemsize">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">static_itemsize</span><span class="p">(</span>
+        <span class="n">x</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
+        <span class="o">/</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Container instance method variant of ivy.itemsize. This method simply</span>
+<span class="sd">        wraps the function, and so the docstring for ivy.isin also applies to</span>
+<span class="sd">        this method with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        x</span>
+<span class="sd">           The input container.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            Integers specifying the element size in bytes.</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1,2,3], dtype=ivy.float64),\</span>
+<span class="sd">                                b=ivy.array([1,2,3], dtype=ivy.complex128))</span>
+<span class="sd">        &gt;&gt;&gt; ivy.itemsize(x)</span>
+<span class="sd">        ivy.Container(a=8, b=16)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ContainerBase</span><span class="o">.</span><span class="n">cont_multi_map_in_function</span><span class="p">(</span><span class="s2">&quot;itemsize&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ContainerWithGeneral.itemsize"><a class="viewcode-back" href="../../../../docs/data_classes/container/ivy.data_classes.container.general.html#ivy.data_classes.container.general._ContainerWithGeneral.itemsize">[docs]</a>    <span class="k">def</span> <span class="nf">itemsize</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
+        <span class="o">/</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Container instance method variant of ivy.itemsize. This method simply</span>
+<span class="sd">        wraps the function, and so the docstring for ivy.isin also applies to</span>
+<span class="sd">        this method with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">           The input container.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            Integers specifying the element size in bytes.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">static_itemsize</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
 </pre></div>
 
                 </article>

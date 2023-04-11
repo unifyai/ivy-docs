@@ -683,6 +683,133 @@ document.write(`
             <span class="n">devices</span><span class="o">=</span><span class="n">devices</span><span class="p">,</span>
             <span class="o">**</span><span class="n">i_kwargs</span><span class="p">,</span>
         <span class="p">)</span></div>
+    
+<div class="viewcode-block" id="ModuleConverters.from_flax_module"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.converters.html#ivy.stateful.converters.ModuleConverters.from_flax_module">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">from_flax_module</span><span class="p">(</span>
+        <span class="n">native_module</span><span class="p">,</span>
+        <span class="n">params_fx</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">rng_seed</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">constructor_args</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">constructor_kwargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">instance_args</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">instance_kwargs</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">devices</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Converts a Flax module instance to an Ivy module instance.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        native_module</span>
+<span class="sd">            The module in the native framework to convert(class or instance).</span>
+<span class="sd">        params_fx</span>
+<span class="sd">            Flax parameters to pass to the constructor of the native module.</span>
+<span class="sd">            Default is ``None``.</span>
+<span class="sd">        rng_seed</span>
+<span class="sd">            Seed used to initialize flax parameters is initializing from a class.</span>
+<span class="sd">            Default is ``0``.</span>
+<span class="sd">        constructor_args</span>
+<span class="sd">            Positional arguments to pass to the constructor of the native module.</span>
+<span class="sd">            Default is ``None``.</span>
+<span class="sd">        constructor_kwargs</span>
+<span class="sd">            Key-word arguments to pass to the constructor of the native module.</span>
+<span class="sd">             Default is ``None``.</span>
+<span class="sd">        instance_args</span>
+<span class="sd">            Positional arguments to pass to the forward pass of the native module.</span>
+<span class="sd">            Default is ``None``.</span>
+<span class="sd">        instance_kwargs</span>
+<span class="sd">            Key-word arguments to pass to the forward pass of the native module.</span>
+<span class="sd">             Default is ``None``.</span>
+<span class="sd">        device</span>
+<span class="sd">            The device on which to create module variables. Default is ``None``.</span>
+<span class="sd">        devices</span>
+<span class="sd">            The devices on which to create module variables. Default is ``None``.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            The new trainable ivy.Module instance.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">flax_spec</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s2">&quot;flax&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">flax_spec</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">flax</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">flax</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">module_from_spec</span><span class="p">(</span><span class="n">flax_spec</span><span class="p">)</span>
+            <span class="n">flax_spec</span><span class="o">.</span><span class="n">loader</span><span class="o">.</span><span class="n">exec_module</span><span class="p">(</span><span class="n">flax</span><span class="p">)</span>
+
+        <span class="n">jax_spec</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">find_spec</span><span class="p">(</span><span class="s2">&quot;jax&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">jax_spec</span><span class="p">:</span>
+            <span class="kn">import</span> <span class="nn">jax</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">jax</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">module_from_spec</span><span class="p">(</span><span class="n">jax_spec</span><span class="p">)</span>
+            <span class="n">jax_spec</span><span class="o">.</span><span class="n">loader</span><span class="o">.</span><span class="n">exec_module</span><span class="p">(</span><span class="n">jax</span><span class="p">)</span>
+
+        <span class="k">class</span> <span class="nc">FlaxIvyModule</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+            <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+                <span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">params_fx</span><span class="p">,</span> <span class="n">native_module</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">devices</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+            <span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_native_module</span> <span class="o">=</span> <span class="n">native_module</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_args</span> <span class="o">=</span> <span class="n">args</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_kwargs</span> <span class="o">=</span> <span class="n">kwargs</span>
+                <span class="n">ivy</span><span class="o">.</span><span class="n">Module</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="p">,</span>
+                    <span class="n">params_fx</span><span class="p">,</span>
+                    <span class="o">*</span><span class="n">args</span><span class="p">,</span>
+                    <span class="n">build_mode</span><span class="o">=</span><span class="s2">&quot;on_init&quot;</span><span class="p">,</span>
+                    <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+                    <span class="n">devices</span><span class="o">=</span><span class="n">devices</span><span class="p">,</span>
+                    <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+                <span class="p">)</span>
+
+            <span class="k">def</span> <span class="nf">_create_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">device</span><span class="p">,</span> <span class="n">dtype</span><span class="p">):</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fx_params</span>
+
+            <span class="k">def</span> <span class="nf">_build</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">params_fx</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+                <span class="n">args</span><span class="p">,</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">args_to_native</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+                <span class="c1"># noinspection PyUnresolvedReferences</span>
+                <span class="n">params_dict</span> <span class="o">=</span> <span class="n">flax</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">unfreeze</span><span class="p">(</span><span class="n">params_fx</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_fx_params</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">params_dict</span><span class="p">,</span> <span class="n">dynamic_backend</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                <span class="n">param_iterator</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fx_params</span><span class="o">.</span><span class="n">cont_to_iterator</span><span class="p">()</span>
+                <span class="n">_</span><span class="p">,</span> <span class="n">param0</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">param_iterator</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_dev</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">as_ivy_dev</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">dev</span><span class="p">(</span><span class="n">param0</span><span class="p">))</span>
+
+            <span class="k">def</span> <span class="nf">_forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+                <span class="n">a</span><span class="p">,</span> <span class="n">kw</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">args_to_native</span><span class="p">(</span><span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+                <span class="n">params_fx</span> <span class="o">=</span> <span class="n">flax</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">freeze</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">cont_to_dict</span><span class="p">())</span>
+                <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_native_module</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">params_fx</span><span class="p">,</span> <span class="o">*</span><span class="n">a</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">args_to_native</span><span class="p">(</span><span class="o">*</span><span class="n">ret</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">to_native</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+
+        <span class="n">c_args</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">constructor_args</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">c_kwargs</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">constructor_kwargs</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">i_args</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">instance_args</span><span class="p">,</span> <span class="p">[])</span>
+        <span class="n">i_kwargs</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">instance_kwargs</span><span class="p">,</span> <span class="p">{})</span>
+        <span class="n">i_args</span><span class="p">,</span> <span class="n">i_kwargs</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">args_to_native</span><span class="p">(</span><span class="o">*</span><span class="n">i_args</span><span class="p">,</span> <span class="o">**</span><span class="n">i_kwargs</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rng_seed</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">rng_seed</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">PRNGKey</span><span class="p">(</span><span class="n">rng_seed</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">inspect</span><span class="o">.</span><span class="n">isclass</span><span class="p">(</span><span class="n">native_module</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">i_args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">i_kwargs</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">ivy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">IvyException</span><span class="p">(</span>
+                    <span class="s2">&quot;both instance_args and instance_kwargs cannot be none&quot;</span>
+                    <span class="s2">&quot; when passing a native class&quot;</span>
+                <span class="p">)</span>
+
+            <span class="n">native_module</span> <span class="o">=</span> <span class="n">native_module</span><span class="p">(</span><span class="o">*</span><span class="n">c_args</span><span class="p">,</span> <span class="o">**</span><span class="n">c_kwargs</span><span class="p">)</span>
+            <span class="n">params_fx</span> <span class="o">=</span> <span class="n">native_module</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">rng_seed</span><span class="p">,</span> <span class="o">*</span><span class="n">i_args</span><span class="p">,</span> <span class="o">**</span><span class="n">i_kwargs</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">FlaxIvyModule</span><span class="p">(</span>
+            <span class="o">*</span><span class="n">i_args</span><span class="p">,</span>
+            <span class="n">params_fx</span><span class="o">=</span><span class="n">params_fx</span><span class="p">,</span>
+            <span class="n">native_module</span><span class="o">=</span><span class="n">native_module</span><span class="p">,</span>
+            <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">,</span>
+            <span class="n">devices</span><span class="o">=</span><span class="n">devices</span><span class="p">,</span>
+            <span class="o">**</span><span class="n">i_kwargs</span><span class="p">,</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="ModuleConverters.from_keras_module"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.converters.html#ivy.stateful.converters.ModuleConverters.from_keras_module">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">from_keras_module</span><span class="p">(</span>

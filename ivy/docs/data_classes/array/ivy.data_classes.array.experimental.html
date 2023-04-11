@@ -1609,24 +1609,22 @@ The default is None.</p></li>
 <span class="sig-name descname"><span class="pre">lerp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/data_classes/array/experimental/elementwise.html#_ArrayWithElementWiseExperimental.lerp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.elementwise._ArrayWithElementWiseExperimental.lerp" title="Permalink to this definition">#</a></dt>
 <dd><p>ivy.Array instance method variant of ivy.lerp. This method simply wraps
 the function, and so the docstring for ivy.lerp also applies to this
-method with minimal changes.
-:type self: <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>
-:param self: Array of starting points
-:type end: <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>
-:param end: Array of ending points
-:type weight: <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]
-:param weight: Weight for the interpolation formula  , array or scalar.
-:type out: <code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]
-:param out: Alternate output array in which to place the result. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
-<blockquote>
-<div><p>The default is None.</p>
-</div></blockquote>
+method with minimal changes.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>) – Array of starting points</p></li>
+<li><p><strong>end</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>) – Array of ending points</p></li>
+<li><p><strong>weight</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) – Weight for the interpolation formula  , array or scalar.</p></li>
+<li><p><strong>out</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – Alternate output array in which to place the result. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+The default is None.</p></li>
+</ul>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>ret</em> – The linear interpolation between array self and array end based on
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – The linear interpolation between array self and array end based on
 scalar or array weight
 self + ((end - self) * weight)</p>
 </dd>
@@ -3559,25 +3557,23 @@ to this method with minimal changes.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.experimental.norms._ArrayWithNormsExperimental.batch_norm">
 <span class="sig-name descname"><span class="pre">batch_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mean</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variance</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">training</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">momentum</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/data_classes/array/experimental/norms.html#_ArrayWithNormsExperimental.batch_norm"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.norms._ArrayWithNormsExperimental.batch_norm" title="Permalink to this definition">#</a></dt>
-<dd><blockquote>
-<div><p>ivy.Array instance method variant of ivy.batch_norm. This method
+<dd><p>ivy.Array instance method variant of ivy.batch_norm. This method
 simply wraps the function, and so the docstring for ivy.batch_norm
 also applies to this method with minimal changes.</p>
-</div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> – <p>Input array of shape (N, <a href="#id3"><span class="problematic" id="id4">*</span></a>S, C), where N is the batch dimension,
+<li><p><strong>self</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – <p>Input array of shape (N, <a href="#id3"><span class="problematic" id="id4">*</span></a>S, C), where N is the batch dimension,
 <a href="#id5"><span class="problematic" id="id6">*</span></a>S corresponds to any number of spatial dimensions and</p>
 <blockquote>
 <div><p>C corresponds to the channel dimension.</p>
 </div></blockquote>
 </p></li>
-<li><p><strong>mean</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – Mean array used for input’s normalization. If <code class="docutils literal notranslate"><span class="pre">training=True</span></code>
+<li><p><strong>mean</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – Array used for input’s normalization. If <code class="docutils literal notranslate"><span class="pre">training=True</span></code>
 then it must be one dimensional with size equal to the size of
 channel dimension C. If <code class="docutils literal notranslate"><span class="pre">training=False</span></code> then it can be of any
 shape broadcastble to the input shape.</p></li>
-<li><p><strong>variance</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – Variance array for the input’s normalization. If <code class="docutils literal notranslate"><span class="pre">training=True</span></code>
+<li><p><strong>variance</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – Array for the input’s normalization. If <code class="docutils literal notranslate"><span class="pre">training=True</span></code>
 then it must be one dimensional with size equal to the size of
 channel dimension C. If <code class="docutils literal notranslate"><span class="pre">training=False</span></code> then it can be of any shape
 broadcastble to the input shape.</p></li>
@@ -3598,19 +3594,16 @@ the value used for the running_mean and running_var computation.</p>
 <div><p>Default value is 0.1.</p>
 </div></blockquote>
 </p></li>
-<li><p><strong>out</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]]) – <p>optional output array, for writing the result to. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
-Parameters</p>
-<dl class="field-list simple">
-<dt class="field-odd">returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p><em>ret</em> – Tuple of arrays containing the
-normalized input, running mean, and running variance.</p>
-</dd>
-</dl>
-</p></li>
+<li><p><strong>out</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]]) – optional output array, for writing the result to. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+Parameters</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – Tuple of arrays containing the
+normalized input, running mean, and running variance.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -3624,7 +3617,7 @@ also applies to this method with minimal changes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>x</strong> – <p>Input array of shape (N, <a href="#id7"><span class="problematic" id="id8">*</span></a>S, C), where N is the batch dimension,
+<li><p><strong>self</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – <p>Input array of shape (N, <a href="#id7"><span class="problematic" id="id8">*</span></a>S, C), where N is the batch dimension,
 <a href="#id9"><span class="problematic" id="id10">*</span></a>S corresponds to any number of spatial dimensions and</p>
 <blockquote>
 <div><p>C corresponds to the channel dimension.</p>
@@ -3657,16 +3650,18 @@ the value used for the running_mean and running_var computation.</p>
 </p></li>
 <li><p><strong>out</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]]) – optional output array, for writing the result to. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
 Parameters</p></li>
-<li><p><strong>-------</strong> – </p></li>
-<li><p><strong>ret</strong> – <dl class="simple">
-<dt>Tuple of array containing</dt><dd><p>the normalized input, running mean, and running variance.</p>
-</dd>
-</dl>
-</p></li>
 </ul>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><p><em>ret</em> –</p>
+<dl class="simple">
+<dt>Tuple of array containing</dt><dd><p>the normalized input, running mean, and running variance.</p>
+</dd>
+</dl>
+</p>
 </dd>
 </dl>
 </dd></dl>

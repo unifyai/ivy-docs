@@ -524,22 +524,23 @@ document.write(`
         <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Tuple</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">            ivy.Array instance method variant of ivy.batch_norm. This method</span>
-<span class="sd">            simply wraps the function, and so the docstring for ivy.batch_norm</span>
-<span class="sd">            also applies to this method with minimal changes.</span>
+<span class="sd">        ivy.Array instance method variant of ivy.batch_norm. This method</span>
+<span class="sd">        simply wraps the function, and so the docstring for ivy.batch_norm</span>
+<span class="sd">        also applies to this method with minimal changes.</span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">        x</span>
+<span class="sd">        self</span>
 <span class="sd">            Input array of shape (N, *S, C), where N is the batch dimension,</span>
 <span class="sd">            *S corresponds to any number of spatial dimensions and</span>
 <span class="sd">             C corresponds to the channel dimension.</span>
 <span class="sd">        mean</span>
-<span class="sd">            Mean array used for input&#39;s normalization. If ``training=True``</span>
+<span class="sd">            Array used for input&#39;s normalization. If ``training=True``</span>
 <span class="sd">            then it must be one dimensional with size equal to the size of</span>
 <span class="sd">            channel dimension C. If ``training=False`` then it can be of any</span>
 <span class="sd">            shape broadcastble to the input shape.</span>
 <span class="sd">        variance</span>
-<span class="sd">            Variance array for the input&#39;s normalization. If ``training=True``</span>
+<span class="sd">            Array for the input&#39;s normalization. If ``training=True``</span>
 <span class="sd">            then it must be one dimensional with size equal to the size of</span>
 <span class="sd">            channel dimension C. If ``training=False`` then it can be of any shape</span>
 <span class="sd">            broadcastble to the input shape.</span>
@@ -565,11 +566,11 @@ document.write(`
 <span class="sd">            optional output array, for writing the result to.</span>
 <span class="sd">            Parameters</span>
 
-<span class="sd">            Returns</span>
-<span class="sd">            -------</span>
-<span class="sd">            ret</span>
-<span class="sd">                 Tuple of arrays containing the</span>
-<span class="sd">                 normalized input, running mean, and running variance.</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">             Tuple of arrays containing the</span>
+<span class="sd">             normalized input, running mean, and running variance.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">batch_norm</span><span class="p">(</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span>
@@ -603,7 +604,7 @@ document.write(`
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">        x</span>
+<span class="sd">        self</span>
 <span class="sd">            Input array of shape (N, *S, C), where N is the batch dimension,</span>
 <span class="sd">            *S corresponds to any number of spatial dimensions and</span>
 <span class="sd">             C corresponds to the channel dimension.</span>
@@ -639,6 +640,7 @@ document.write(`
 <span class="sd">            optional output array, for writing the result to.</span>
 <span class="sd">            Parameters</span>
 
+<span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        ret</span>
 <span class="sd">             Tuple of array containing</span>

@@ -438,6 +438,7 @@ document.write(`
 
 
 
+
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ivy.functional.ivy.general.html">General</a></li>
@@ -3764,6 +3765,79 @@ It must have a shape that the inputs broadcast to.</p></li>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="ivy.functional.ivy.experimental.lerp">
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">lerp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/functional/ivy/experimental/elementwise.html#lerp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.experimental.lerp" title="Permalink to this definition">#</a></dt>
+<dd><p>Returns a linear interpolation of two arrays start (given by input) and end
+based on a scalar or array weight.</p>
+<blockquote>
+<div><p>input + weight * (end - input),  element-wise.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>input</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/ivy.data_classes.array.html#ivy.data_classes.array.array.Array" title="ivy.data_classes.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – array of starting points</p></li>
+<li><p><strong>end</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/ivy.data_classes.array.html#ivy.data_classes.array.array.Array" title="ivy.data_classes.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – array of ending points</p></li>
+<li><p><strong>weight</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/ivy.data_classes.array.html#ivy.data_classes.array.array.Array" title="ivy.data_classes.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]) – the weight for the interpolation formula. Scalar or Array.</p></li>
+<li><p><strong>out</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<a class="reference internal" href="../../data_classes/ivy.data_classes.array.html#ivy.data_classes.array.array.Array" title="ivy.data_classes.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>]) – optional output array, for writing the result to. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+It must have a shape that the inputs broadcast to.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../../data_classes/ivy.data_classes.array.html#ivy.data_classes.array.array.Array" title="ivy.data_classes.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – The result of  input + ((end - input) * weight)</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> inputs:
+&gt;&gt;&gt; input = ivy.array([1, 2, 3])
+&gt;&gt;&gt; end = ivy.array([10, 10, 10])
+&gt;&gt;&gt; weight = 0.5
+&gt;&gt;&gt; ivy.lerp(input, end, weight)
+ivy.array([5.5, 6. , 6.5])
+&gt;&gt;&gt; input = ivy.array([1.1, 1.2, 1.3])
+&gt;&gt;&gt; end = ivy.array([20])
+&gt;&gt;&gt; weight = ivy.array([0.4, 0.5, 0.6])
+&gt;&gt;&gt; y = ivy.zeros(3)
+&gt;&gt;&gt; ivy.lerp(input, end, weight, out=y)
+ivy.array([ 8.65999985, 10.59999943, 12.52000141])
+&gt;&gt;&gt; input = ivy.array([[4, 5, 6],[4.1, 4.2, 4.3]])
+&gt;&gt;&gt; end = ivy.array([10])
+&gt;&gt;&gt; weight = ivy.array([0.5])
+&gt;&gt;&gt; ivy.lerp(input, end, weight, out=input)
+ivy.array([[7.        , 7.5       , 8.        ],
+…       [7.05000019, 7.0999999 , 7.1500001 ]])
+With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> input:
+&gt;&gt;&gt; input = ivy.Container(a=ivy.array([0., 1., 2.]), b=ivy.array([3., 4., 5.]))
+&gt;&gt;&gt; end = ivy.array([10.])
+&gt;&gt;&gt; weight = 1.1
+&gt;&gt;&gt; y = input.lerp(end, weight)
+&gt;&gt;&gt; print(y)
+{</p>
+<blockquote>
+<div><p>a: ivy.array([11., 10.90000057, 10.80000019]),
+b: ivy.array([10.70000076, 10.60000038, 10.5])</p>
+</div></blockquote>
+<p>}
+&gt;&gt;&gt; input = ivy.Container(a=ivy.array([10.1, 11.1]), b=ivy.array([10, 11]))
+&gt;&gt;&gt; end = ivy.Container(a=ivy.array([5]), b=ivy.array([0]))
+&gt;&gt;&gt; weight = ivy.Container(a=0.5)
+&gt;&gt;&gt; y = input.lerp(end, weight)
+&gt;&gt;&gt; print(y)
+{</p>
+<blockquote>
+<div><p>a: ivy.array([7.55000019, 8.05000019]),
+b: {</p>
+<blockquote>
+<div><p>a: ivy.array([5., 5.5])</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>}</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="ivy.functional.ivy.experimental.lexsort">
 <span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">lexsort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/functional/ivy/experimental/sorting.html#lexsort"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.experimental.lexsort" title="Permalink to this definition">#</a></dt>
 <dd><p>Perform an indirect stable sort with an array of keys in ascending order,
@@ -5890,6 +5964,7 @@ input arrays’ values.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.l2_normalize"><code class="docutils literal notranslate"><span class="pre">l2_normalize()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.lcm"><code class="docutils literal notranslate"><span class="pre">lcm()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.ldexp"><code class="docutils literal notranslate"><span class="pre">ldexp()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.lerp"><code class="docutils literal notranslate"><span class="pre">lerp()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.lexsort"><code class="docutils literal notranslate"><span class="pre">lexsort()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.logaddexp2"><code class="docutils literal notranslate"><span class="pre">logaddexp2()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.logit"><code class="docutils literal notranslate"><span class="pre">logit()</span></code></a></li>

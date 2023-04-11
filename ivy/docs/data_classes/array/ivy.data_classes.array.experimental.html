@@ -1605,6 +1605,43 @@ The default is None.</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="ivy.data_classes.array.experimental.elementwise._ArrayWithElementWiseExperimental.lerp">
+<span class="sig-name descname"><span class="pre">lerp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/data_classes/array/experimental/elementwise.html#_ArrayWithElementWiseExperimental.lerp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.elementwise._ArrayWithElementWiseExperimental.lerp" title="Permalink to this definition">#</a></dt>
+<dd><p>ivy.Array instance method variant of ivy.lerp. This method simply wraps
+the function, and so the docstring for ivy.lerp also applies to this
+method with minimal changes.
+:type self: <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>
+:param self: Array of starting points
+:type end: <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>
+:param end: Array of ending points
+:type weight: <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>]
+:param weight: Weight for the interpolation formula  , array or scalar.
+:type out: <code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]
+:param out: Alternate output array in which to place the result. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<blockquote>
+<div><p>The default is None.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ret</em> – The linear interpolation between array self and array end based on
+scalar or array weight
+self + ((end - self) * weight)</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">,</span> <span class="mf">4.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">end</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">weight</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">lerp</span><span class="p">(</span><span class="n">end</span><span class="p">,</span> <span class="n">weight</span><span class="p">)</span>
+<span class="go">ivy.array([5.5, 6. , 6.5, 7. ])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.experimental.elementwise._ArrayWithElementWiseExperimental.logaddexp2">
 <span class="sig-name descname"><span class="pre">logaddexp2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/data_classes/array/experimental/elementwise.html#_ArrayWithElementWiseExperimental.logaddexp2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.elementwise._ArrayWithElementWiseExperimental.logaddexp2" title="Permalink to this definition">#</a></dt>
 <dd><p>ivy.Array instance method variant of ivy.logaddexp2. This method
@@ -4381,6 +4418,7 @@ quantiles for different values of q.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.elementwise._ArrayWithElementWiseExperimental.isclose"><code class="docutils literal notranslate"><span class="pre">_ArrayWithElementWiseExperimental.isclose()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.elementwise._ArrayWithElementWiseExperimental.lcm"><code class="docutils literal notranslate"><span class="pre">_ArrayWithElementWiseExperimental.lcm()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.elementwise._ArrayWithElementWiseExperimental.ldexp"><code class="docutils literal notranslate"><span class="pre">_ArrayWithElementWiseExperimental.ldexp()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.elementwise._ArrayWithElementWiseExperimental.lerp"><code class="docutils literal notranslate"><span class="pre">_ArrayWithElementWiseExperimental.lerp()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.elementwise._ArrayWithElementWiseExperimental.logaddexp2"><code class="docutils literal notranslate"><span class="pre">_ArrayWithElementWiseExperimental.logaddexp2()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.elementwise._ArrayWithElementWiseExperimental.nan_to_num"><code class="docutils literal notranslate"><span class="pre">_ArrayWithElementWiseExperimental.nan_to_num()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.elementwise._ArrayWithElementWiseExperimental.nansum"><code class="docutils literal notranslate"><span class="pre">_ArrayWithElementWiseExperimental.nansum()</span></code></a></li>

@@ -2599,6 +2599,42 @@ b: ivy.array([2, 160, 10240])</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.lerp">
+<span class="sig-name descname"><span class="pre">lerp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/data_classes/container/experimental/elementwise.html#_ContainerWithElementWiseExperimental.lerp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.lerp" title="Permalink to this definition">#</a></dt>
+<dd><p>ivy.Container instance method variant of ivy.lerp. This method simply
+wraps the function, and so the docstring for ivy.lerp also applies to this
+method with minimal changes.
+:type self: <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>
+:param self: The container whose arrays should be used as parameter: input
+:type end: <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]
+:param end: The container whose arrays should be used as parameter: end
+:type weight: <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]
+:param weight: The container whose arrays or scalar should be used as parameter: weight
+:type out: <code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]
+:param out: optional output container, for writing the result to. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ret</em> – container including  input + ((end - input) * weight)</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>With one <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> input:
+&gt;&gt;&gt; input = ivy.Container(a=ivy.array([1, 2, 3]), b=ivy.array([1, 5, 10]))
+&gt;&gt;&gt; end = ivy.Container(a=ivy.array([10, 10, 10]), b=ivy.array([20, 20, 20]))
+&gt;&gt;&gt; weight = ivy.Container(a=ivy.array(0.5), b=ivy.array([0.4, 0.5, 0.6]))
+&gt;&gt;&gt; input.lerp(end, weight)
+{</p>
+<blockquote>
+<div><p>a: ivy.array([5.5, 6., 6.5]),
+b: ivy.array([8.60000038, 12.5, 16.])</p>
+</div></blockquote>
+<p>}</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.logaddexp2">
 <span class="sig-name descname"><span class="pre">logaddexp2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/data_classes/container/experimental/elementwise.html#_ContainerWithElementWiseExperimental.logaddexp2"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.logaddexp2" title="Permalink to this definition">#</a></dt>
 <dd><p>ivy.Container instance method variant of ivy.logaddexp2. This method simply
@@ -3714,6 +3750,72 @@ Default is <code class="docutils literal notranslate"><span class="pre">False</s
 <blockquote>
 <div><p>a: ivy.array([2, 8, 24]),
 b: ivy.array([2, 160, 10240])</p>
+</div></blockquote>
+<p>}</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.static_lerp">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">static_lerp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_chains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_apply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prune_unapplied</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_sequences</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/data_classes/container/experimental/elementwise.html#_ContainerWithElementWiseExperimental.static_lerp"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.static_lerp" title="Permalink to this definition">#</a></dt>
+<dd><p>ivy.Container static method variant of ivy.lerp. This method simply
+wraps the function, and so the docstring for ivy.lerp also applies to this
+method with minimal changes.
+:type input: <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]
+:param input: The container whose arrays should be used as parameter: input
+:type end: <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]
+:param end: The container whose arrays should be used as parameter: end
+:type weight: <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]
+:param weight: The container whose arrays or scalar should be used as parameter: weight
+:type key_chains: <code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]]
+:param key_chains: The key-chains to apply or not apply the method to. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+:type to_apply: <code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>
+:param to_apply: If True, the method will be applied to key_chains, otherwise key_chains (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)</p>
+<blockquote>
+<div><p>will be skipped. Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>prune_unapplied</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to prune key_chains for which the function was not applied. (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)
+Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>map_sequences</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to also map method to sequences (lists, tuples). (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)
+Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>out</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]) – optional output container, for writing the result to. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – container including  input + ((end - input) * weight)</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>With one <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> input:
+&gt;&gt;&gt; input = ivy.Container(a=ivy.array([0., 1., 2.]), b=ivy.array([3., 4., 5.]))
+&gt;&gt;&gt; end = ivy.array([10.])
+&gt;&gt;&gt; weight = 1.1
+&gt;&gt;&gt; y = ivy.Container.static_lerp(input, end, weight)
+&gt;&gt;&gt; print(y)
+{</p>
+<blockquote>
+<div><p>a: ivy.array([11., 10.90000057, 10.80000019]),
+b: ivy.array([10.70000076, 10.60000038, 10.5])</p>
+</div></blockquote>
+<p>}
+&gt;&gt;&gt; input = ivy.Container(a=ivy.array([10.1, 11.1]), b=ivy.array([10, 11]))
+&gt;&gt;&gt; end = ivy.Container(a=ivy.array([5]))
+&gt;&gt;&gt; weight = ivy.Container(a=0.5)
+&gt;&gt;&gt; y = ivy.Container.static_lerp(input, end, weight)
+&gt;&gt;&gt; print(y)
+{</p>
+<blockquote>
+<div><p>a: ivy.array([7.55000019, 8.05000019]),
+b: {</p>
+<blockquote>
+<div><p>a: ivy.array([7.5, 8.])</p>
+</div></blockquote>
+<p>}</p>
 </div></blockquote>
 <p>}</p>
 </dd></dl>
@@ -9319,6 +9421,7 @@ first rank(q) dimensions index quantiles for different values of q.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.isclose"><code class="docutils literal notranslate"><span class="pre">_ContainerWithElementWiseExperimental.isclose()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.lcm"><code class="docutils literal notranslate"><span class="pre">_ContainerWithElementWiseExperimental.lcm()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.ldexp"><code class="docutils literal notranslate"><span class="pre">_ContainerWithElementWiseExperimental.ldexp()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.lerp"><code class="docutils literal notranslate"><span class="pre">_ContainerWithElementWiseExperimental.lerp()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.logaddexp2"><code class="docutils literal notranslate"><span class="pre">_ContainerWithElementWiseExperimental.logaddexp2()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.nan_to_num"><code class="docutils literal notranslate"><span class="pre">_ContainerWithElementWiseExperimental.nan_to_num()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.nansum"><code class="docutils literal notranslate"><span class="pre">_ContainerWithElementWiseExperimental.nansum()</span></code></a></li>
@@ -9347,6 +9450,7 @@ first rank(q) dimensions index quantiles for different values of q.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.static_isclose"><code class="docutils literal notranslate"><span class="pre">_ContainerWithElementWiseExperimental.static_isclose()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.static_lcm"><code class="docutils literal notranslate"><span class="pre">_ContainerWithElementWiseExperimental.static_lcm()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.static_ldexp"><code class="docutils literal notranslate"><span class="pre">_ContainerWithElementWiseExperimental.static_ldexp()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.static_lerp"><code class="docutils literal notranslate"><span class="pre">_ContainerWithElementWiseExperimental.static_lerp()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.static_logaddexp2"><code class="docutils literal notranslate"><span class="pre">_ContainerWithElementWiseExperimental.static_logaddexp2()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.static_nan_to_num"><code class="docutils literal notranslate"><span class="pre">_ContainerWithElementWiseExperimental.static_nan_to_num()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.static_nansum"><code class="docutils literal notranslate"><span class="pre">_ContainerWithElementWiseExperimental.static_nansum()</span></code></a></li>

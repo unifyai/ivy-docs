@@ -1893,6 +1893,118 @@ document.write(`
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">current_backend</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">)</span><span class="o">.</span><span class="n">ldexp</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="lerp"><a class="viewcode-back" href="../../../../../docs/functional/ivy/ivy.functional.ivy.experimental.html#ivy.functional.ivy.experimental.lerp">[docs]</a><span class="nd">@to_native_arrays_and_back</span>
+<span class="nd">@handle_out_argument</span>
+<span class="nd">@handle_array_like_without_promotion</span>
+<span class="nd">@handle_nestable</span>
+<span class="nd">@handle_exceptions</span>
+<span class="k">def</span> <span class="nf">lerp</span><span class="p">(</span>
+    <span class="nb">input</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
+    <span class="n">end</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
+    <span class="n">weight</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="nb">float</span><span class="p">],</span>
+    <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Returns a linear interpolation of two arrays start (given by input) and end</span>
+<span class="sd">    based on a scalar or array weight.</span>
+<span class="sd">        input + weight * (end - input),  element-wise.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    input</span>
+<span class="sd">        array of starting points</span>
+<span class="sd">    end</span>
+<span class="sd">        array of ending points</span>
+<span class="sd">    weight</span>
+<span class="sd">        the weight for the interpolation formula. Scalar or Array.</span>
+<span class="sd">    out</span>
+<span class="sd">        optional output array, for writing the result to.</span>
+<span class="sd">        It must have a shape that the inputs broadcast to.</span>
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ret</span>
+<span class="sd">        The result of  input + ((end - input) * weight)</span>
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+<span class="sd">    With :class:`ivy.Array` inputs:</span>
+<span class="sd">    &gt;&gt;&gt; input = ivy.array([1, 2, 3])</span>
+<span class="sd">    &gt;&gt;&gt; end = ivy.array([10, 10, 10])</span>
+<span class="sd">    &gt;&gt;&gt; weight = 0.5</span>
+<span class="sd">    &gt;&gt;&gt; ivy.lerp(input, end, weight)</span>
+<span class="sd">    ivy.array([5.5, 6. , 6.5])</span>
+<span class="sd">    &gt;&gt;&gt; input = ivy.array([1.1, 1.2, 1.3])</span>
+<span class="sd">    &gt;&gt;&gt; end = ivy.array([20])</span>
+<span class="sd">    &gt;&gt;&gt; weight = ivy.array([0.4, 0.5, 0.6])</span>
+<span class="sd">    &gt;&gt;&gt; y = ivy.zeros(3)</span>
+<span class="sd">    &gt;&gt;&gt; ivy.lerp(input, end, weight, out=y)</span>
+<span class="sd">    ivy.array([ 8.65999985, 10.59999943, 12.52000141])</span>
+<span class="sd">    &gt;&gt;&gt; input = ivy.array([[4, 5, 6],[4.1, 4.2, 4.3]])</span>
+<span class="sd">    &gt;&gt;&gt; end = ivy.array([10])</span>
+<span class="sd">    &gt;&gt;&gt; weight = ivy.array([0.5])</span>
+<span class="sd">    &gt;&gt;&gt; ivy.lerp(input, end, weight, out=input)</span>
+<span class="sd">    ivy.array([[7.        , 7.5       , 8.        ],</span>
+<span class="sd">    ...       [7.05000019, 7.0999999 , 7.1500001 ]])</span>
+<span class="sd">    With :class:`ivy.Container` input:</span>
+<span class="sd">    &gt;&gt;&gt; input = ivy.Container(a=ivy.array([0., 1., 2.]), b=ivy.array([3., 4., 5.]))</span>
+<span class="sd">    &gt;&gt;&gt; end = ivy.array([10.])</span>
+<span class="sd">    &gt;&gt;&gt; weight = 1.1</span>
+<span class="sd">    &gt;&gt;&gt; y = input.lerp(end, weight)</span>
+<span class="sd">    &gt;&gt;&gt; print(y)</span>
+<span class="sd">    {</span>
+<span class="sd">        a: ivy.array([11., 10.90000057, 10.80000019]),</span>
+<span class="sd">        b: ivy.array([10.70000076, 10.60000038, 10.5])</span>
+<span class="sd">    }</span>
+<span class="sd">    &gt;&gt;&gt; input = ivy.Container(a=ivy.array([10.1, 11.1]), b=ivy.array([10, 11]))</span>
+<span class="sd">    &gt;&gt;&gt; end = ivy.Container(a=ivy.array([5]), b=ivy.array([0]))</span>
+<span class="sd">    &gt;&gt;&gt; weight = ivy.Container(a=0.5)</span>
+<span class="sd">    &gt;&gt;&gt; y = input.lerp(end, weight)</span>
+<span class="sd">    &gt;&gt;&gt; print(y)</span>
+<span class="sd">    {</span>
+<span class="sd">        a: ivy.array([7.55000019, 8.05000019]),</span>
+<span class="sd">        b: {</span>
+<span class="sd">            a: ivy.array([5., 5.5])</span>
+<span class="sd">        }</span>
+<span class="sd">    }</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">input_end_allowed_types</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;int8&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;int16&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;int32&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;int64&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;float16&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bfloat16&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;float32&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;float64&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;complex&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">weight_allowed_types</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;float16&quot;</span><span class="p">,</span> <span class="s2">&quot;bfloat16&quot;</span><span class="p">,</span> <span class="s2">&quot;float32&quot;</span><span class="p">,</span> <span class="s2">&quot;float64&quot;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_array</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+        <span class="nb">input</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">input</span><span class="p">])</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_array</span><span class="p">(</span><span class="n">end</span><span class="p">):</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">end</span><span class="p">])</span>
+    <span class="k">if</span> <span class="p">(</span>
+        <span class="n">ivy</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="nb">input</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">input_end_allowed_types</span>
+        <span class="ow">or</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">end</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">input_end_allowed_types</span>
+    <span class="p">):</span>
+        <span class="nb">input</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="s2">&quot;float64&quot;</span><span class="p">)</span>
+        <span class="n">end</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">end</span><span class="p">,</span> <span class="s2">&quot;float64&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_array</span><span class="p">(</span><span class="n">weight</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="n">weight</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">weight_allowed_types</span><span class="p">:</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="s2">&quot;float64&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="nb">float</span><span class="p">):</span>
+            <span class="n">weight</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">weight</span><span class="p">]),</span> <span class="s2">&quot;float64&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="nb">input</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">subtract</span><span class="p">(</span><span class="n">end</span><span class="p">,</span> <span class="nb">input</span><span class="p">)),</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+
+
+<span class="n">lerp</span><span class="o">.</span><span class="n">mixed_function</span> <span class="o">=</span> <span class="kc">True</span>
+
+
 <div class="viewcode-block" id="frexp"><a class="viewcode-back" href="../../../../../docs/functional/ivy/ivy.functional.ivy.experimental.html#ivy.functional.ivy.experimental.frexp">[docs]</a><span class="nd">@to_native_arrays_and_back</span>
 <span class="nd">@handle_out_argument</span>
 <span class="nd">@handle_array_like_without_promotion</span>

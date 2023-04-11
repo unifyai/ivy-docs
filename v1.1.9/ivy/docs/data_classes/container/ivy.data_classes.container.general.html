@@ -2843,6 +2843,25 @@ elements in test_elements and False otherwise.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="ivy.data_classes.container.general._ContainerWithGeneral.itemsize">
+<span class="sig-name descname"><span class="pre">itemsize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/data_classes/container/general.html#_ContainerWithGeneral.itemsize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.container.general._ContainerWithGeneral.itemsize" title="Permalink to this definition">#</a></dt>
+<dd><p>Container instance method variant of ivy.itemsize. This method simply
+wraps the function, and so the docstring for ivy.isin also applies to
+this method with minimal changes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>self</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>) – The input container.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – Integers specifying the element size in bytes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.container.general._ContainerWithGeneral.scatter_flat">
 <span class="sig-name descname"><span class="pre">scatter_flat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">updates</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reduction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'sum'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_chains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_apply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prune_unapplied</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_sequences</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/data_classes/container/general.html#_ContainerWithGeneral.scatter_flat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.container.general._ContainerWithGeneral.scatter_flat" title="Permalink to this definition">#</a></dt>
 <dd><p>ivy.Container instance method variant of ivy.scatter_flat.
@@ -3088,6 +3107,31 @@ elements in test_elements and False otherwise.</p>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="o">.</span><span class="n">static_isin</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">ivy.Container(a=[[ True,  True,  True], [False, False, False]],                      b=[False,  True, False])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ivy.data_classes.container.general._ContainerWithGeneral.static_itemsize">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">static_itemsize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/data_classes/container/general.html#_ContainerWithGeneral.static_itemsize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.container.general._ContainerWithGeneral.static_itemsize" title="Permalink to this definition">#</a></dt>
+<dd><p>Container instance method variant of ivy.itemsize. This method simply
+wraps the function, and so the docstring for ivy.isin also applies to
+this method with minimal changes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>) – The input container.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – Integers specifying the element size in bytes.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">float64</span><span class="p">),</span>                                <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">complex128</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">itemsize</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">ivy.Container(a=8, b=16)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -3430,11 +3474,13 @@ Default is <code class="docutils literal notranslate"><span class="pre">False</s
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.general._ContainerWithGeneral.is_ivy_array"><code class="docutils literal notranslate"><span class="pre">_ContainerWithGeneral.is_ivy_array()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.general._ContainerWithGeneral.is_native_array"><code class="docutils literal notranslate"><span class="pre">_ContainerWithGeneral.is_native_array()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.general._ContainerWithGeneral.isin"><code class="docutils literal notranslate"><span class="pre">_ContainerWithGeneral.isin()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.general._ContainerWithGeneral.itemsize"><code class="docutils literal notranslate"><span class="pre">_ContainerWithGeneral.itemsize()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.general._ContainerWithGeneral.scatter_flat"><code class="docutils literal notranslate"><span class="pre">_ContainerWithGeneral.scatter_flat()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.general._ContainerWithGeneral.scatter_nd"><code class="docutils literal notranslate"><span class="pre">_ContainerWithGeneral.scatter_nd()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.general._ContainerWithGeneral.stable_divide"><code class="docutils literal notranslate"><span class="pre">_ContainerWithGeneral.stable_divide()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.general._ContainerWithGeneral.stable_pow"><code class="docutils literal notranslate"><span class="pre">_ContainerWithGeneral.stable_pow()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.general._ContainerWithGeneral.static_isin"><code class="docutils literal notranslate"><span class="pre">_ContainerWithGeneral.static_isin()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.general._ContainerWithGeneral.static_itemsize"><code class="docutils literal notranslate"><span class="pre">_ContainerWithGeneral.static_itemsize()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.general._ContainerWithGeneral.supports_inplace_updates"><code class="docutils literal notranslate"><span class="pre">_ContainerWithGeneral.supports_inplace_updates()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.general._ContainerWithGeneral.to_list"><code class="docutils literal notranslate"><span class="pre">_ContainerWithGeneral.to_list()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.general._ContainerWithGeneral.to_numpy"><code class="docutils literal notranslate"><span class="pre">_ContainerWithGeneral.to_numpy()</span></code></a></li>

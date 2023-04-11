@@ -1673,6 +1673,7 @@ document.write(`
 <span class="sd">        ivy.Array instance method variant of ivy.lerp. This method simply wraps</span>
 <span class="sd">        the function, and so the docstring for ivy.lerp also applies to this</span>
 <span class="sd">        method with minimal changes.</span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        self</span>
@@ -1684,12 +1685,14 @@ document.write(`
 <span class="sd">        out</span>
 <span class="sd">            Alternate output array in which to place the result.</span>
 <span class="sd">            The default is None.</span>
+
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        ret</span>
 <span class="sd">            The linear interpolation between array self and array end based on</span>
 <span class="sd">            scalar or array weight</span>
 <span class="sd">            self + ((end - self) * weight)</span>
+
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
 <span class="sd">        &gt;&gt;&gt; x = ivy.array([1.0, 2.0, 3.0, 4.0])</span>

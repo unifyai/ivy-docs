@@ -483,7 +483,7 @@ document.write(`
         <span class="n">normalized_shape</span><span class="p">,</span>
         <span class="o">/</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
-        <span class="n">epsilon</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">_MIN_BASE</span><span class="p">,</span>
+        <span class="n">eps</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1e-05</span><span class="p">,</span>
         <span class="n">elementwise_affine</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">new_std</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
         <span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
@@ -512,7 +512,7 @@ document.write(`
 <span class="sd">            constructed internally by default.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_normalized_idxs</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">normalized_shape</span><span class="p">))]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">_epsilon</span> <span class="o">=</span> <span class="n">epsilon</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_epsilon</span> <span class="o">=</span> <span class="n">eps</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_elementwise_affine</span> <span class="o">=</span> <span class="n">elementwise_affine</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_new_std</span> <span class="o">=</span> <span class="n">new_std</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_weight_shape</span> <span class="o">=</span> <span class="n">normalized_shape</span>
@@ -551,9 +551,9 @@ document.write(`
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">layer_norm</span><span class="p">(</span>
             <span class="n">inputs</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_normalized_idxs</span><span class="p">,</span>
-            <span class="n">epsilon</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_epsilon</span><span class="p">,</span>
+            <span class="n">eps</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_epsilon</span><span class="p">,</span>
             <span class="n">scale</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">weight</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_elementwise_affine</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
-            <span class="n">b</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">bias</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_elementwise_affine</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">offset</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">bias</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_elementwise_affine</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
             <span class="n">new_std</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_new_std</span><span class="p">,</span>
         <span class="p">)</span></div>
 </pre></div>

@@ -906,33 +906,32 @@ document.write(`
         <span class="p">)</span>
 
     <span class="c1"># update the global dict with the new backend</span>
-    <span class="n">ivy</span><span class="o">.</span><span class="n">locks</span><span class="p">[</span><span class="s2">&quot;backend_setter&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">acquire</span><span class="p">()</span>
-    <span class="k">global</span> <span class="n">ivy_original_dict</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">backend_stack</span><span class="p">:</span>
-        <span class="n">ivy_original_dict</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+    <span class="k">with</span> <span class="n">ivy</span><span class="o">.</span><span class="n">locks</span><span class="p">[</span><span class="s2">&quot;backend_setter&quot;</span><span class="p">]:</span>
+        <span class="k">global</span> <span class="n">ivy_original_dict</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">backend_stack</span><span class="p">:</span>
+            <span class="n">ivy_original_dict</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
-    <span class="n">_clear_current_sub_backends</span><span class="p">()</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
-        <span class="n">temp_stack</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
-        <span class="k">while</span> <span class="n">backend_stack</span><span class="p">:</span>
-            <span class="n">temp_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">previous_backend</span><span class="p">())</span>
-        <span class="n">backend</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">_backend_dict</span><span class="p">[</span><span class="n">backend</span><span class="p">])</span>
-        <span class="k">for</span> <span class="n">fw</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">temp_stack</span><span class="p">):</span>
-            <span class="n">backend_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fw</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">backend</span><span class="o">.</span><span class="n">current_backend_str</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;numpy&quot;</span><span class="p">:</span>
-        <span class="n">ivy</span><span class="o">.</span><span class="n">set_default_device</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
-    <span class="k">elif</span> <span class="n">backend</span><span class="o">.</span><span class="n">current_backend_str</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;jax&quot;</span><span class="p">:</span>
-        <span class="n">ivy</span><span class="o">.</span><span class="n">set_global_attr</span><span class="p">(</span><span class="s2">&quot;RNG&quot;</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RNG</span><span class="p">)</span>
-    <span class="n">backend_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
-    <span class="n">set_backend_to_specific_version</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
-    <span class="n">_set_backend_as_ivy</span><span class="p">(</span><span class="n">ivy_original_dict</span><span class="p">,</span> <span class="n">ivy</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
+        <span class="n">_clear_current_sub_backends</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">backend</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">temp_stack</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span>
+            <span class="k">while</span> <span class="n">backend_stack</span><span class="p">:</span>
+                <span class="n">temp_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">previous_backend</span><span class="p">())</span>
+            <span class="n">backend</span> <span class="o">=</span> <span class="n">importlib</span><span class="o">.</span><span class="n">import_module</span><span class="p">(</span><span class="n">_backend_dict</span><span class="p">[</span><span class="n">backend</span><span class="p">])</span>
+            <span class="k">for</span> <span class="n">fw</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">temp_stack</span><span class="p">):</span>
+                <span class="n">backend_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fw</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">backend</span><span class="o">.</span><span class="n">current_backend_str</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;numpy&quot;</span><span class="p">:</span>
+            <span class="n">ivy</span><span class="o">.</span><span class="n">set_default_device</span><span class="p">(</span><span class="s2">&quot;cpu&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">backend</span><span class="o">.</span><span class="n">current_backend_str</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;jax&quot;</span><span class="p">:</span>
+            <span class="n">ivy</span><span class="o">.</span><span class="n">set_global_attr</span><span class="p">(</span><span class="s2">&quot;RNG&quot;</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">functional</span><span class="o">.</span><span class="n">backends</span><span class="o">.</span><span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RNG</span><span class="p">)</span>
+        <span class="n">backend_stack</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
+        <span class="n">set_backend_to_specific_version</span><span class="p">(</span><span class="n">backend</span><span class="p">)</span>
+        <span class="n">_set_backend_as_ivy</span><span class="p">(</span><span class="n">ivy_original_dict</span><span class="p">,</span> <span class="n">ivy</span><span class="p">,</span> <span class="n">backend</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">dynamic</span><span class="p">:</span>
-        <span class="n">convert_from_numpy_to_target_backend</span><span class="p">(</span><span class="n">variable_ids</span><span class="p">,</span> <span class="n">numpy_objs</span><span class="p">,</span> <span class="n">devices</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">dynamic</span><span class="p">:</span>
+            <span class="n">convert_from_numpy_to_target_backend</span><span class="p">(</span><span class="n">variable_ids</span><span class="p">,</span> <span class="n">numpy_objs</span><span class="p">,</span> <span class="n">devices</span><span class="p">)</span>
 
-    <span class="k">if</span> <span class="n">verbosity</span><span class="o">.</span><span class="n">level</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">verbosity</span><span class="o">.</span><span class="n">cprint</span><span class="p">(</span><span class="s2">&quot;backend stack: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">backend_stack</span><span class="p">))</span>
-    <span class="n">ivy</span><span class="o">.</span><span class="n">locks</span><span class="p">[</span><span class="s2">&quot;backend_setter&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">verbosity</span><span class="o">.</span><span class="n">level</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">verbosity</span><span class="o">.</span><span class="n">cprint</span><span class="p">(</span><span class="s2">&quot;backend stack: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">backend_stack</span><span class="p">))</span>
 
 
 <span class="k">def</span> <span class="nf">set_numpy_backend</span><span class="p">():</span>

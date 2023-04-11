@@ -683,7 +683,7 @@ document.write(`
             <span class="n">devices</span><span class="o">=</span><span class="n">devices</span><span class="p">,</span>
             <span class="o">**</span><span class="n">i_kwargs</span><span class="p">,</span>
         <span class="p">)</span></div>
-    
+
 <div class="viewcode-block" id="ModuleConverters.from_flax_module"><a class="viewcode-back" href="../../../docs/framework/stateful/ivy.stateful.converters.html#ivy.stateful.converters.ModuleConverters.from_flax_module">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">from_flax_module</span><span class="p">(</span>
         <span class="n">native_module</span><span class="p">,</span>
@@ -788,7 +788,7 @@ document.write(`
         <span class="n">i_args</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">instance_args</span><span class="p">,</span> <span class="p">[])</span>
         <span class="n">i_kwargs</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">instance_kwargs</span><span class="p">,</span> <span class="p">{})</span>
         <span class="n">i_args</span><span class="p">,</span> <span class="n">i_kwargs</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">args_to_native</span><span class="p">(</span><span class="o">*</span><span class="n">i_args</span><span class="p">,</span> <span class="o">**</span><span class="n">i_kwargs</span><span class="p">)</span>
-        
+
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rng_seed</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
             <span class="n">rng_seed</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">PRNGKey</span><span class="p">(</span><span class="n">rng_seed</span><span class="p">)</span>
 

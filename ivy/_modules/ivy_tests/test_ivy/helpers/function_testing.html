@@ -522,10 +522,6 @@ document.write(`
 <span class="kn">from</span> <span class="nn">ivy.functional.ivy.data_type</span> <span class="kn">import</span> <span class="n">_get_function_list</span><span class="p">,</span> <span class="n">_get_functions_from_string</span>
 <span class="kn">from</span> <span class="nn">ivy_tests.test_ivy.test_frontends</span> <span class="kn">import</span> <span class="n">NativeClass</span>
 <span class="kn">from</span> <span class="nn">ivy_tests.test_ivy.helpers.structs</span> <span class="kn">import</span> <span class="n">FrontendMethodData</span>
-<span class="kn">from</span> <span class="nn">ivy.functional.frontends.torch.tensor</span> <span class="kn">import</span> <span class="n">Tensor</span> <span class="k">as</span> <span class="n">torch_tensor</span>
-<span class="kn">from</span> <span class="nn">ivy.functional.frontends.tensorflow.tensor</span> <span class="kn">import</span> <span class="n">EagerTensor</span> <span class="k">as</span> <span class="n">tf_tensor</span>
-<span class="kn">from</span> <span class="nn">ivy.functional.frontends.jax.devicearray</span> <span class="kn">import</span> <span class="n">DeviceArray</span>
-<span class="kn">from</span> <span class="nn">ivy.functional.frontends.numpy.ndarray.ndarray</span> <span class="kn">import</span> <span class="n">ndarray</span>
 <span class="kn">from</span> <span class="nn">.assertions</span> <span class="kn">import</span> <span class="p">(</span>
     <span class="n">value_test</span><span class="p">,</span>
     <span class="n">check_unsupported_dtype</span><span class="p">,</span>
@@ -1376,7 +1372,10 @@ document.write(`
 
     <span class="c1"># assuming value test will be handled manually in the test function</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">test_values</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">ret</span><span class="p">,</span> <span class="n">frontend_ret</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="n">ivy</span><span class="o">.</span><span class="n">nested_map</span><span class="p">(</span><span class="n">ret</span><span class="p">,</span> <span class="n">_frontend_array_to_ivy</span><span class="p">,</span> <span class="n">include_derived</span><span class="o">=</span><span class="p">{</span><span class="nb">tuple</span><span class="p">:</span> <span class="kc">True</span><span class="p">}),</span>
+            <span class="n">frontend_ret</span><span class="p">,</span>
+        <span class="p">)</span>
 
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rtol</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
         <span class="n">rtol</span> <span class="o">=</span> <span class="n">_get_framework_rtol</span><span class="p">(</span><span class="n">rtol</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">backend</span><span class="p">)</span>
@@ -2522,12 +2521,7 @@ document.write(`
 
 
 <span class="k">def</span> <span class="nf">_is_frontend_array</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span>
-        <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">ndarray</span><span class="p">)</span>
-        <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">torch_tensor</span><span class="p">)</span>
-        <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">tf_tensor</span><span class="p">)</span>
-        <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">DeviceArray</span><span class="p">)</span>
-    <span class="p">)</span>
+    <span class="k">return</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;ivy_array&quot;</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">_frontend_array_to_ivy</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>

@@ -1,8 +1,0 @@
-\_get\_devices
-==============
-
-.. autofunction:: ivy._get_devices
-
-.. autoskippablemethod:: ivy.Array._get_devices
-
-.. autoskippablemethod:: ivy.Container._get_devices

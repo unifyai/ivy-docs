@@ -1,8 +1,0 @@
-\_is\_variable
-==============
-
-.. autofunction:: ivy._is_variable
-
-.. autoskippablemethod:: ivy.Array._is_variable
-
-.. autoskippablemethod:: ivy.Container._is_variable

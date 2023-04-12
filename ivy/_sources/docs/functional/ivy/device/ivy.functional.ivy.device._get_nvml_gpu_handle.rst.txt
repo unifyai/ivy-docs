@@ -1,8 +1,0 @@
-\_get\_nvml\_gpu\_handle
-========================
-
-.. autofunction:: ivy._get_nvml_gpu_handle
-
-.. autoskippablemethod:: ivy.Array._get_nvml_gpu_handle
-
-.. autoskippablemethod:: ivy.Container._get_nvml_gpu_handle

@@ -7,16 +7,27 @@ Utility
    :hide-table:
    :recursive:
 
+   
    ivy.functional.ivy.utility.all
+   
+   
    ivy.functional.ivy.utility.any
+   
 
 
 
 .. automodule:: ivy.functional.ivy.utility
-    :members:
-    :special-members: __init__
-    :undoc-members:
-    :show-inheritance:
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.all
+
+.. autofunction:: ivy.any
+
+
 
 
 

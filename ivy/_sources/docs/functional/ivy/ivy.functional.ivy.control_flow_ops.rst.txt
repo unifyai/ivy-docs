@@ -7,18 +7,37 @@ Control flow ops
    :hide-table:
    :recursive:
 
+   
    ivy.functional.ivy.control_flow_ops.IfElse
+   
+   
    ivy.functional.ivy.control_flow_ops.WhileLoop
+   
+   
    ivy.functional.ivy.control_flow_ops.if_else
+   
+   
    ivy.functional.ivy.control_flow_ops.while_loop
+   
 
 
 
 .. automodule:: ivy.functional.ivy.control_flow_ops
-    :members:
-    :special-members: __init__
-    :undoc-members:
-    :show-inheritance:
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.IfElse
+
+.. autofunction:: ivy.WhileLoop
+
+.. autofunction:: ivy.if_else
+
+.. autofunction:: ivy.while_loop
+
+
 
 
 

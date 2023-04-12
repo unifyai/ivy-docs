@@ -7,17 +7,32 @@ Sorting
    :hide-table:
    :recursive:
 
+   
    ivy.functional.ivy.sorting.argsort
+   
+   
    ivy.functional.ivy.sorting.searchsorted
+   
+   
    ivy.functional.ivy.sorting.sort
+   
 
 
 
 .. automodule:: ivy.functional.ivy.sorting
-    :members:
-    :special-members: __init__
-    :undoc-members:
-    :show-inheritance:
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.argsort
+
+.. autofunction:: ivy.searchsorted
+
+.. autofunction:: ivy.sort
+
+
 
 
 

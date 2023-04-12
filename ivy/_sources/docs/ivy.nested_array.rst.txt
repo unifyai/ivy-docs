@@ -1,0 +1,11 @@
+﻿Nested array
+============
+
+.. autosummary::
+    :toctree: nested_array
+    :template: top_level_module_recursive.rst
+    :recursive:
+
+
+    ivy.nested_array.nested_array
+

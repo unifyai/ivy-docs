@@ -1,8 +1,0 @@
-\_stop\_grad\_and\_index
-========================
-
-.. autofunction:: ivy._stop_grad_and_index
-
-.. autoskippablemethod:: ivy.Array._stop_grad_and_index
-
-.. autoskippablemethod:: ivy.Container._stop_grad_and_index

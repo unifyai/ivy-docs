@@ -1,8 +1,0 @@
-\_train\_tasks\_batched
-=======================
-
-.. autofunction:: ivy._train_tasks_batched
-
-.. autoskippablemethod:: ivy.Array._train_tasks_batched
-
-.. autoskippablemethod:: ivy.Container._train_tasks_batched

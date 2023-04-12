@@ -1,8 +1,0 @@
-\_to\_ivy
-=========
-
-.. autofunction:: ivy._to_ivy
-
-.. autoskippablemethod:: ivy.Array._to_ivy
-
-.. autoskippablemethod:: ivy.Container._to_ivy

@@ -1,8 +1,0 @@
-\_reduce\_loss
-==============
-
-.. autofunction:: ivy._reduce_loss
-
-.. autoskippablemethod:: ivy.Array._reduce_loss
-
-.. autoskippablemethod:: ivy.Container._reduce_loss

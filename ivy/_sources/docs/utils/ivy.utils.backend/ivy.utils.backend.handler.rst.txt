@@ -1,0 +1,15 @@
+Handler
+=======
+
+
+
+.. automodule:: ivy.utils.backend.handler
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.utils.backend.handler

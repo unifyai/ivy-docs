@@ -7,18 +7,37 @@ Set
    :hide-table:
    :recursive:
 
+   
    ivy.functional.ivy.set.unique_all
+   
+   
    ivy.functional.ivy.set.unique_counts
+   
+   
    ivy.functional.ivy.set.unique_inverse
+   
+   
    ivy.functional.ivy.set.unique_values
+   
 
 
 
 .. automodule:: ivy.functional.ivy.set
-    :members:
-    :special-members: __init__
-    :undoc-members:
-    :show-inheritance:
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.unique_all
+
+.. autofunction:: ivy.unique_counts
+
+.. autofunction:: ivy.unique_inverse
+
+.. autofunction:: ivy.unique_values
+
+
 
 
 

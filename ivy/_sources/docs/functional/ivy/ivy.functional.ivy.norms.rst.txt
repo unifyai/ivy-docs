@@ -7,15 +7,22 @@ Norms
    :hide-table:
    :recursive:
 
+   
    ivy.functional.ivy.norms.layer_norm
+   
 
 
 
 .. automodule:: ivy.functional.ivy.norms
-    :members:
-    :special-members: __init__
-    :undoc-members:
-    :show-inheritance:
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.layer_norm
+
+
 
 
 

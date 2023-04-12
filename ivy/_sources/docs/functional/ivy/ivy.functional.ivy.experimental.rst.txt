@@ -11,10 +11,13 @@ Experimental
 
 
 .. automodule:: ivy.functional.ivy.experimental
-    :members:
-    :special-members: __init__
-    :undoc-members:
-    :show-inheritance:
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+
 
 
 

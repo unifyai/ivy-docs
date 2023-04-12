@@ -1,15 +1,12 @@
-﻿transformers
+﻿Transformers
 ============
 
-.. This is a placeholder so the include directive removes what's before it
-.. REMOVE_BEFORE_HERE
 .. autosummary::
-   :toctree: transformers
-   :template: top_level_module.rst
-   :caption: ivy_models.transformers
-   :substitute-caption:
-   :hide-table:
-   :fix-directory:
+    :toctree: transformers
+    :template: top_level_module.rst
+    :recursive:
 
-   ivy_models.transformers.helpers
-   ivy_models.transformers.perceiver_io
+
+    ivy_models.transformers.helpers
+    ivy_models.transformers.perceiver_io
+

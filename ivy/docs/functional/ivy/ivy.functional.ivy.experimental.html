@@ -439,6 +439,7 @@ document.write(`
 
 
 
+
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="ivy.functional.ivy.general.html">General</a></li>
@@ -848,6 +849,36 @@ deg is True, then angle is calculated in degrees.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">deg</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="go">ivy.array([135., 135., -45.])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ivy.functional.ivy.experimental.as_strided">
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">as_strided</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/functional/ivy/experimental/manipulation.html#as_strided"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.functional.ivy.experimental.as_strided" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a copy of the input array with the given shape and strides.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../data_classes/ivy.data_classes.array.html#ivy.data_classes.array.array.Array" title="ivy.data_classes.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – Input Array.</p></li>
+<li><p><strong>shape</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Shape</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeShape</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]) – The shape of the new array.</p></li>
+<li><p><strong>strides</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – The strides of the new array (specified in bytes).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../../data_classes/ivy.data_classes.array.html#ivy.data_classes.array.array.Array" title="ivy.data_classes.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – Output Array</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">as_strided</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="go">ivy.array([[1, 2, 3],</span>
+<span class="go">   [2, 3, 4],</span>
+<span class="go">   [3, 4, 5],</span>
+<span class="go">   [4, 5, 6]])</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -5884,6 +5915,7 @@ input arrays’ values.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.adjoint"><code class="docutils literal notranslate"><span class="pre">adjoint()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.allclose"><code class="docutils literal notranslate"><span class="pre">allclose()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.angle"><code class="docutils literal notranslate"><span class="pre">angle()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.as_strided"><code class="docutils literal notranslate"><span class="pre">as_strided()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.atleast_1d"><code class="docutils literal notranslate"><span class="pre">atleast_1d()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.atleast_2d"><code class="docutils literal notranslate"><span class="pre">atleast_2d()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.functional.ivy.experimental.atleast_3d"><code class="docutils literal notranslate"><span class="pre">atleast_3d()</span></code></a></li>

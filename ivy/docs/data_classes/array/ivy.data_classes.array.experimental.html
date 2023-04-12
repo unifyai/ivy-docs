@@ -2865,6 +2865,27 @@ ivy.multi_dot also applies to this method with minimal changes.</p>
 <dd></dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.as_strided">
+<span class="sig-name descname"><span class="pre">as_strided</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/data_classes/array/experimental/manipulation.html#_ArrayWithManipulationExperimental.as_strided"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.as_strided" title="Permalink to this definition">#</a></dt>
+<dd><p>Create a copy of the input array with the given shape and strides.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>) – Input Array.</p></li>
+<li><p><strong>shape</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Shape</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeShape</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]]) – The shape of the new array.</p></li>
+<li><p><strong>strides</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Sequence</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – The strides of the new array (specified in bytes).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – Output Array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.atleast_1d">
 <span class="sig-name descname"><span class="pre">atleast_1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">arys</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/ivy/data_classes/array/experimental/manipulation.html#_ArrayWithManipulationExperimental.atleast_1d"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.atleast_1d" title="Permalink to this definition">#</a></dt>
 <dd><p>ivy.Array instance method variant of ivy.atleast_1d. This method simply
@@ -4476,6 +4497,7 @@ quantiles for different values of q.</p>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental"><code class="docutils literal notranslate"><span class="pre">_ArrayWithManipulationExperimental</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental._abc_impl"><code class="docutils literal notranslate"><span class="pre">_ArrayWithManipulationExperimental._abc_impl</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.as_strided"><code class="docutils literal notranslate"><span class="pre">_ArrayWithManipulationExperimental.as_strided()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.atleast_1d"><code class="docutils literal notranslate"><span class="pre">_ArrayWithManipulationExperimental.atleast_1d()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.atleast_2d"><code class="docutils literal notranslate"><span class="pre">_ArrayWithManipulationExperimental.atleast_2d()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.atleast_3d"><code class="docutils literal notranslate"><span class="pre">_ArrayWithManipulationExperimental.atleast_3d()</span></code></a></li>

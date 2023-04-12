@@ -1,0 +1,16 @@
+Mountain car
+============
+
+.. automodule:: ivy_gym.mountain_car
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+.. toctree::
+   :maxdepth: -1
+   :caption: Mountain car
+
+   mountain_car/MountainCar.rst
+

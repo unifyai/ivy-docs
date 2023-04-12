@@ -1,0 +1,17 @@
+Perceiver io
+============
+
+.. automodule:: ivy_models.transformers.perceiver_io
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+.. toctree::
+   :maxdepth: -1
+   :caption: Perceiver io
+
+   perceiver_io/PerceiverIOSpec.rst
+   perceiver_io/PerceiverIO.rst
+

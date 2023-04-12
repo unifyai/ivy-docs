@@ -1,0 +1,16 @@
+Reacher
+=======
+
+.. automodule:: ivy_gym.reacher
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+.. toctree::
+   :maxdepth: -1
+   :caption: Reacher
+
+   reacher/Reacher.rst
+

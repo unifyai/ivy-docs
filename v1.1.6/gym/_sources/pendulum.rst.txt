@@ -1,0 +1,16 @@
+Pendulum
+========
+
+.. automodule:: ivy_gym.pendulum
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+.. toctree::
+   :maxdepth: -1
+   :caption: Pendulum
+
+   pendulum/Pendulum.rst
+

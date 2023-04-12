@@ -1,0 +1,16 @@
+Cartpole
+========
+
+.. automodule:: ivy_gym.cartpole
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+.. toctree::
+   :maxdepth: -1
+   :caption: Cartpole
+
+   cartpole/CartPole.rst
+

@@ -1,0 +1,16 @@
+Swimmer
+=======
+
+.. automodule:: ivy_gym.swimmer
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+.. toctree::
+   :maxdepth: -1
+   :caption: Swimmer
+
+   swimmer/Swimmer.rst
+

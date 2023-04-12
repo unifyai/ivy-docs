@@ -1,16 +1,13 @@
-﻿ivy_robot
+﻿Ivy robot
 =========
 
-.. This is a placeholder so the include directive removes what's before it
-.. REMOVE_BEFORE_HERE
 .. autosummary::
-   :toctree: ivy_robot
-   :template: top_level_module.rst
-   :caption: ivy_robot
-   :substitute-caption:
-   :hide-table:
-   :fix-directory:
+    :toctree: ivy_robot
+    :template: top_level_module.rst
+    :recursive:
 
-   ivy_robot.manipulator
-   ivy_robot.planning
-   ivy_robot.rigid_mobile
+
+    ivy_robot.manipulator
+    ivy_robot.planning
+    ivy_robot.rigid_mobile
+

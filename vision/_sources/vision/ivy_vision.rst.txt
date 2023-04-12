@@ -1,26 +1,23 @@
-﻿ivy_vision
+﻿Ivy vision
 ==========
 
-.. This is a placeholder so the include directive removes what's before it
-.. REMOVE_BEFORE_HERE
 .. autosummary::
-   :toctree: ivy_vision
-   :template: top_level_module.rst
-   :caption: ivy_vision
-   :substitute-caption:
-   :hide-table:
-   :fix-directory:
+    :toctree: ivy_vision
+    :template: top_level_module.rst
+    :recursive:
 
-   ivy_vision.containers
-   ivy_vision.image
-   ivy_vision.implicit
-   ivy_vision.mesh
-   ivy_vision.optical_flow
-   ivy_vision.padding
-   ivy_vision.projective_geometry
-   ivy_vision.quantization
-   ivy_vision.sdf
-   ivy_vision.single_view_geometry
-   ivy_vision.smoothing
-   ivy_vision.two_view_geometry
-   ivy_vision.voxel_grids
+
+    ivy_vision.containers
+    ivy_vision.image
+    ivy_vision.implicit
+    ivy_vision.mesh
+    ivy_vision.optical_flow
+    ivy_vision.padding
+    ivy_vision.projective_geometry
+    ivy_vision.quantization
+    ivy_vision.sdf
+    ivy_vision.single_view_geometry
+    ivy_vision.smoothing
+    ivy_vision.two_view_geometry
+    ivy_vision.voxel_grids
+

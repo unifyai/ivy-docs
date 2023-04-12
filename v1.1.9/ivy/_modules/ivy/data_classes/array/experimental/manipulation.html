@@ -497,6 +497,7 @@ document.write(`
         <span class="n">destination</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span>
         <span class="o">/</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
+        <span class="n">copy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;ivy.Array instance method variant of ivy.moveaxis. This method simply</span>
@@ -528,7 +529,7 @@ document.write(`
 <span class="sd">        &gt;&gt;&gt; x.moveaxis(-1, 0).shape</span>
 <span class="sd">        (5, 3, 4)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">moveaxis</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">moveaxis</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">source</span><span class="p">,</span> <span class="n">destination</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="_ArrayWithManipulationExperimental.heaviside"><a class="viewcode-back" href="../../../../../docs/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.heaviside">[docs]</a>    <span class="k">def</span> <span class="nf">heaviside</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
@@ -575,6 +576,7 @@ document.write(`
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
         <span class="o">/</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
+        <span class="n">copy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;ivy.Array instance method variant of ivy.flipud. This method simply</span>
@@ -602,7 +604,7 @@ document.write(`
 <span class="sd">            [ 0.,  2.,  0.],</span>
 <span class="sd">            [ 1.,  0.,  0.]])</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">flipud</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">flipud</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="_ArrayWithManipulationExperimental.vstack"><a class="viewcode-back" href="../../../../../docs/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.vstack">[docs]</a>    <span class="k">def</span> <span class="nf">vstack</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
@@ -672,6 +674,7 @@ document.write(`
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
         <span class="o">/</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
+        <span class="n">copy</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">k</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
         <span class="n">axes</span><span class="p">:</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
         <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -721,7 +724,7 @@ document.write(`
 <span class="sd">                [5, 4]]])</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">rot90</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="p">,</span> <span class="n">axes</span><span class="o">=</span><span class="n">axes</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="_ArrayWithManipulationExperimental.top_k"><a class="viewcode-back" href="../../../../../docs/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.top_k">[docs]</a>    <span class="k">def</span> <span class="nf">top_k</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
@@ -771,6 +774,7 @@ document.write(`
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
         <span class="o">/</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
+        <span class="n">copy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;ivy.Array instance method variant of ivy.fliplr. This method simply</span>
@@ -798,7 +802,7 @@ document.write(`
 <span class="sd">               [0, 2, 0],</span>
 <span class="sd">               [3, 0, 0]])</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">fliplr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">fliplr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="_ArrayWithManipulationExperimental.i0"><a class="viewcode-back" href="../../../../../docs/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.i0">[docs]</a>    <span class="k">def</span> <span class="nf">i0</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
@@ -835,6 +839,7 @@ document.write(`
     <span class="k">def</span> <span class="nf">flatten</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
+        <span class="n">copy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">start_dim</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
         <span class="n">end_dim</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
         <span class="n">order</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;C&quot;</span><span class="p">,</span>
@@ -931,7 +936,9 @@ document.write(`
 <span class="sd">            [ 4, 19, 16, 17],</span>
 <span class="sd">            [ 2, 12,  8, 14]]]))</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">start_dim</span><span class="o">=</span><span class="n">start_dim</span><span class="p">,</span> <span class="n">end_dim</span><span class="o">=</span><span class="n">end_dim</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">flatten</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">start_dim</span><span class="o">=</span><span class="n">start_dim</span><span class="p">,</span> <span class="n">end_dim</span><span class="o">=</span><span class="n">end_dim</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span>
+        <span class="p">)</span></div>
 
 <div class="viewcode-block" id="_ArrayWithManipulationExperimental.pad"><a class="viewcode-back" href="../../../../../docs/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.pad">[docs]</a>    <span class="k">def</span> <span class="nf">pad</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
@@ -983,6 +990,8 @@ document.write(`
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
         <span class="n">indices_or_sections</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]],</span>
         <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">copy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        ivy.Array instance method variant of ivy.vsplit. This method simply</span>
@@ -1015,13 +1024,15 @@ document.write(`
 <span class="sd">        &gt;&gt;&gt; ary.vsplit(2)</span>
 <span class="sd">        [ivy.array([[[0., 1.], [2., 3.]]]), ivy.array([[[4., 5.], [6., 7.]]])])</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">vsplit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">indices_or_sections</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">vsplit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">indices_or_sections</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="_ArrayWithManipulationExperimental.dsplit"><a class="viewcode-back" href="../../../../../docs/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.dsplit">[docs]</a>    <span class="nd">@handle_view</span>
     <span class="k">def</span> <span class="nf">dsplit</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
         <span class="n">indices_or_sections</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]],</span>
         <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">copy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        ivy.Array instance method variant of ivy.dsplit. This method simply</span>
@@ -1055,11 +1066,13 @@ document.write(`
 <span class="sd">        [ivy.array([[[ 0.,  1.], [ 4.,  5.]], [[ 8.,  9.], [12., 13.]]]),</span>
 <span class="sd">        ivy.array([[[ 2.,  3.], [ 6.,  7.]], [[10., 11.], [14., 15.]]])]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dsplit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">indices_or_sections</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dsplit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">indices_or_sections</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="_ArrayWithManipulationExperimental.atleast_1d"><a class="viewcode-back" href="../../../../../docs/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.atleast_1d">[docs]</a>    <span class="nd">@handle_view</span>
     <span class="k">def</span> <span class="nf">atleast_1d</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">*</span><span class="n">arys</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">Number</span><span class="p">]</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">arys</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">Number</span><span class="p">],</span>
+        <span class="n">copy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        ivy.Array instance method variant of ivy.atleast_1d. This method simply</span>
@@ -1086,10 +1099,9 @@ document.write(`
 <span class="sd">        &gt;&gt;&gt; a1.atleast_1d(a2,5,6)</span>
 <span class="sd">        [ivy.array([[1, 2, 3]]), ivy.array([4]), ivy.array([5]), ivy.array([6])]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="o">*</span><span class="n">arys</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">atleast_1d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="o">*</span><span class="n">arys</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="_ArrayWithManipulationExperimental.dstack"><a class="viewcode-back" href="../../../../../docs/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.dstack">[docs]</a>    <span class="nd">@handle_view</span>
-    <span class="k">def</span> <span class="nf">dstack</span><span class="p">(</span>
+<div class="viewcode-block" id="_ArrayWithManipulationExperimental.dstack"><a class="viewcode-back" href="../../../../../docs/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.dstack">[docs]</a>    <span class="k">def</span> <span class="nf">dstack</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
         <span class="n">arrays</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
             <span class="n">Tuple</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">]],</span>
@@ -1122,7 +1134,11 @@ document.write(`
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dstack</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="_ArrayWithManipulationExperimental.atleast_2d"><a class="viewcode-back" href="../../../../../docs/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.atleast_2d">[docs]</a>    <span class="nd">@handle_view</span>
-    <span class="k">def</span> <span class="nf">atleast_2d</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">*</span><span class="n">arys</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]:</span>
+    <span class="k">def</span> <span class="nf">atleast_2d</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">arys</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+        <span class="n">copy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        ivy.Array instance method variant of ivy.atleast_2d. This method simply</span>
 <span class="sd">        wraps the function, and so the docstring for ivy.atleast_2d also applies</span>
@@ -1148,11 +1164,13 @@ document.write(`
 <span class="sd">        &gt;&gt;&gt; a1.atleast_2d(a2,5,6)</span>
 <span class="sd">        [ivy.array([[1, 2, 3]]), ivy.array([[4]]), ivy.array([[5]]), ivy.array([[6]])]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="o">*</span><span class="n">arys</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">atleast_2d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="o">*</span><span class="n">arys</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="_ArrayWithManipulationExperimental.atleast_3d"><a class="viewcode-back" href="../../../../../docs/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.atleast_3d">[docs]</a>    <span class="nd">@handle_view</span>
     <span class="k">def</span> <span class="nf">atleast_3d</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="o">*</span><span class="n">arys</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">Number</span><span class="p">]</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+        <span class="o">*</span><span class="n">arys</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">Number</span><span class="p">],</span>
+        <span class="n">copy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        ivy.Array instance method variant of ivy.atleast_3d. This method simply</span>
@@ -1184,7 +1202,7 @@ document.write(`
 <span class="sd">                [3]]]), ivy.array([[[4],</span>
 <span class="sd">                [8]]]), ivy.array([[[5]]]), ivy.array([[[6]]])]</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">atleast_3d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="o">*</span><span class="n">arys</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">atleast_3d</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="o">*</span><span class="n">arys</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="_ArrayWithManipulationExperimental.take_along_axis"><a class="viewcode-back" href="../../../../../docs/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.take_along_axis">[docs]</a>    <span class="k">def</span> <span class="nf">take_along_axis</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
@@ -1234,6 +1252,8 @@ document.write(`
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
         <span class="n">indices_or_sections</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="o">...</span><span class="p">]],</span>
         <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">copy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        ivy.Array instance method variant of ivy.hsplit. This method simply</span>
@@ -1273,7 +1293,7 @@ document.write(`
 <span class="sd">                    [10., 11.],</span>
 <span class="sd">                    [14., 15.]]))</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">hsplit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">indices_or_sections</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">hsplit</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">indices_or_sections</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="_ArrayWithManipulationExperimental.expand"><a class="viewcode-back" href="../../../../../docs/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.expand">[docs]</a>    <span class="nd">@handle_view</span>
     <span class="k">def</span> <span class="nf">expand</span><span class="p">(</span>
@@ -1281,6 +1301,7 @@ document.write(`
         <span class="n">shape</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Shape</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeShape</span><span class="p">],</span>
         <span class="o">/</span><span class="p">,</span>
         <span class="o">*</span><span class="p">,</span>
+        <span class="n">copy</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
@@ -1302,7 +1323,7 @@ document.write(`
 <span class="sd">        ret</span>
 <span class="sd">            Output Array</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">copy</span><span class="o">=</span><span class="n">copy</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">)</span></div></div>
 </pre></div>
 
                 </article>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>ivy_gym &#8212; Ivy Documentation</title>
+    <title>Ivy gym &#8212; Ivy Documentation</title>
   
   
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -35,8 +35,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -48,6 +48,8 @@
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Cartpole" href="ivy_gym/ivy_gym.cartpole.html" />
+    <link rel="prev" title="Contents" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -272,13 +274,16 @@ document.write(`
         <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
   aria-label="Section Navigation">
     <div class="bd-toc-item navbar-nav">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Environments</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="ivy_gym/ivy_gym.cartpole.html">Cartpole</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ivy_gym/ivy_gym.mountain_car.html">Mountain car</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ivy_gym/ivy_gym.pendulum.html">Pendulum</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ivy_gym/ivy_gym.reacher.html">Reacher</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ivy_gym/ivy_gym.swimmer.html">Swimmer</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Ivy gym</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="ivy_gym/ivy_gym.cartpole.html">Cartpole</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivy_gym/ivy_gym.mountain_car.html">Mountain car</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivy_gym/ivy_gym.pendulum.html">Pendulum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivy_gym/ivy_gym.reacher.html">Reacher</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ivy_gym/ivy_gym.swimmer.html">Swimmer</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -373,7 +378,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">ivy_gym</li>
+    <li class="breadcrumb-item active" aria-current="page">Ivy gym</li>
   </ul>
 </nav>
 </div>
@@ -391,7 +396,26 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="ivy-gym">
-<h1>ivy_gym<a class="headerlink" href="#ivy-gym" title="Permalink to this heading">#</a></h1>
+<h1>Ivy gym<a class="headerlink" href="#ivy-gym" title="Permalink to this heading">#</a></h1>
+<table class="autosummary longtable table autosummary">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="ivy_gym/ivy_gym.cartpole.html#module-ivy_gym.cartpole" title="ivy_gym.cartpole"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ivy_gym.cartpole</span></code></a></p></td>
+<td><p>Cart-pole task adapted from: <a class="github reference external" href="https://github.com/openai/gym/blob/master/gym/envs/classic_control/cartpole.py">openai/gym</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ivy_gym/ivy_gym.mountain_car.html#module-ivy_gym.mountain_car" title="ivy_gym.mountain_car"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ivy_gym.mountain_car</span></code></a></p></td>
+<td><p>Mountain-car task adapted from: <a class="github reference external" href="https://github.com/openai/gym/blob/master/gym/envs/classic_control/mountain_car.py">openai/gym</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ivy_gym/ivy_gym.pendulum.html#module-ivy_gym.pendulum" title="ivy_gym.pendulum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ivy_gym.pendulum</span></code></a></p></td>
+<td><p>Pendulum task adapted from: <a class="github reference external" href="https://github.com/openai/gym/blob/master/gym/envs/classic_control/pendulum.py">openai/gym</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="ivy_gym/ivy_gym.reacher.html#module-ivy_gym.reacher" title="ivy_gym.reacher"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ivy_gym.reacher</span></code></a></p></td>
+<td><p>Reacher task.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="ivy_gym/ivy_gym.swimmer.html#module-ivy_gym.swimmer" title="ivy_gym.swimmer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ivy_gym.swimmer</span></code></a></p></td>
+<td><p>Path finding task.</p></td>
+</tr>
+</tbody>
+</table>
 </section>
 
 
@@ -400,9 +424,33 @@ document.write(`
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Contents</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="ivy_gym/ivy_gym.cartpole.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cartpole</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -412,7 +460,7 @@ document.write(`
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner"></div>
+            
           </footer>
         
       </main>
@@ -420,8 +468,8 @@ document.write(`
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
 <div class="bd-footer__inner bd-page-width">
@@ -439,7 +487,7 @@ document.write(`
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://sphinx-doc.org/">Sphinx</a> 6.1.3.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.1.3.
     <br/>
   </p>
 </div>
@@ -450,7 +498,7 @@ document.write(`
     <div class="footer-items__end">
       
         <div class="footer-item"><p class="theme-version">
-  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.0.
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
 </p></div>
       
     </div>

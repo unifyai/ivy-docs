@@ -1450,6 +1450,7 @@ document.write(`
         <span class="o">*</span><span class="p">,</span>
         <span class="n">data_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;NWC&quot;</span><span class="p">,</span>
         <span class="n">count_include_pad</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">ceil_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -1476,6 +1477,8 @@ document.write(`
 <span class="sd">            NWC&quot; or &quot;NCW&quot;. Defaults to &quot;NWC&quot;.</span>
 <span class="sd">        count_include_pad</span>
 <span class="sd">            Whether to include padding in the averaging calculation.</span>
+<span class="sd">        ceil_mode</span>
+<span class="sd">            Whether to use ceil or floor for creating the output shape.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output array, for writing the result to.</span>
 
@@ -1505,6 +1508,7 @@ document.write(`
             <span class="n">padding</span><span class="p">,</span>
             <span class="n">data_format</span><span class="o">=</span><span class="n">data_format</span><span class="p">,</span>
             <span class="n">count_include_pad</span><span class="o">=</span><span class="n">count_include_pad</span><span class="p">,</span>
+            <span class="n">ceil_mode</span><span class="o">=</span><span class="n">ceil_mode</span><span class="p">,</span>
             <span class="n">key_chains</span><span class="o">=</span><span class="n">key_chains</span><span class="p">,</span>
             <span class="n">to_apply</span><span class="o">=</span><span class="n">to_apply</span><span class="p">,</span>
             <span class="n">prune_unapplied</span><span class="o">=</span><span class="n">prune_unapplied</span><span class="p">,</span>
@@ -1521,6 +1525,7 @@ document.write(`
         <span class="o">*</span><span class="p">,</span>
         <span class="n">data_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;NWC&quot;</span><span class="p">,</span>
         <span class="n">count_include_pad</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">ceil_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
         <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
@@ -1547,6 +1552,8 @@ document.write(`
 <span class="sd">            NWC&quot; or &quot;NCW&quot;. Defaults to &quot;NWC&quot;.</span>
 <span class="sd">        count_include_pad</span>
 <span class="sd">            Whether to include padding in the averaging calculation.</span>
+<span class="sd">        ceil_mode</span>
+<span class="sd">            Whether to use ceil or floor for creating the output shape.</span>
 <span class="sd">        out</span>
 <span class="sd">            optional output array, for writing the result to.</span>
 
@@ -1575,6 +1582,7 @@ document.write(`
             <span class="n">padding</span><span class="p">,</span>
             <span class="n">data_format</span><span class="o">=</span><span class="n">data_format</span><span class="p">,</span>
             <span class="n">count_include_pad</span><span class="o">=</span><span class="n">count_include_pad</span><span class="p">,</span>
+            <span class="n">ceil_mode</span><span class="o">=</span><span class="n">ceil_mode</span><span class="p">,</span>
             <span class="n">key_chains</span><span class="o">=</span><span class="n">key_chains</span><span class="p">,</span>
             <span class="n">to_apply</span><span class="o">=</span><span class="n">to_apply</span><span class="p">,</span>
             <span class="n">prune_unapplied</span><span class="o">=</span><span class="n">prune_unapplied</span><span class="p">,</span>

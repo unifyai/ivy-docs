@@ -1407,8 +1407,8 @@ In the case one of those functions is used with a Pytorch backend, additional lo
 <li><p>Manipulation stack (<code class="code docutils literal notranslate"><span class="pre">._manipulation_stack</span></code>): store of operations that were done on the original to get to the current shape (manipulation or indexing)</p></li>
 <li><p>Reference stack <code class="code docutils literal notranslate"><span class="pre">._view_refs</span></code>: Weak references to the arrays that reference the original as view, only populated for base arrays.</p></li>
 <li><p>PyTorch Base (<code class="code docutils literal notranslate"><span class="pre">._torch_base</span></code>): Keeps track of functional view (array created from the listed functions above) that made it, otherwise stores original array</p></li>
-<li><p>PyTorch reference stack:code:<cite>._torch_view_refs</cite>: Functional views referencing this array in <code class="code docutils literal notranslate"><span class="pre">._torch_base</span></code>, only populated for original arrays or functional views.</p></li>
-<li><p>PyTorch manipulation cache:code:<cite>._torch_manipulation</cite>: Tuple storing array or view and function which made the functional view, only populated for functional views</p></li>
+<li><p>PyTorch reference stack (<code class="code docutils literal notranslate"><span class="pre">._torch_view_refs</span></code>): Functional views referencing this array in its PyTorch base, only populated for original arrays or functional views.</p></li>
+<li><p>PyTorch manipulation cache (<code class="code docutils literal notranslate"><span class="pre">._torch_manipulation</span></code>): Tuple storing array or view and function which made the functional view, only populated for functional views</p></li>
 </ol>
 <p>Here’s a brief description of how the <code class="code docutils literal notranslate"><span class="pre">&#64;handle_view</span></code> wrapper populates these attributes:</p>
 <ol class="arabic simple">

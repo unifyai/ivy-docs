@@ -1125,6 +1125,9 @@ document.write(`
 
 <div class="viewcode-block" id="_ArrayWithSet.unique_all"><a class="viewcode-back" href="../../../../docs/data_classes/data_classes/array/ivy.data_classes.array.set.html#ivy.data_classes.array.set._ArrayWithSet.unique_all">[docs]</a>    <span class="k">def</span> <span class="nf">unique_all</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+        <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">axis</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        ivy.Array instance method variant of ivy.unique_all. This method simply</span>
@@ -1134,9 +1137,11 @@ document.write(`
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        self</span>
-<span class="sd">            input array. If ``self`` has more than one dimension, the function</span>
-<span class="sd">            must flatten ``self`` and return the unique elements of the</span>
-<span class="sd">            flattened array.</span>
+<span class="sd">            input array.</span>
+
+<span class="sd">        axis</span>
+<span class="sd">            the axis to apply unique on. If None, the unique elements of the flattened</span>
+<span class="sd">            ``x`` are returned.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1145,8 +1150,7 @@ document.write(`
 <span class="sd">            The details can be found in the docstring for ivy.unique_all.</span>
 
 <span class="sd">            .. note::</span>
-<span class="sd">               The order of unique elements is not specified and may vary between</span>
-<span class="sd">               implementations.</span>
+<span class="sd">               The returned unique elements are ordered by value.</span>
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
@@ -1159,7 +1163,7 @@ document.write(`
 <span class="sd">               counts=ivy.array([1, 1, 1, 1]))</span>
 
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">unique_all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">)</span></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">unique_all</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="_ArrayWithSet.unique_inverse"><a class="viewcode-back" href="../../../../docs/data_classes/data_classes/array/ivy.data_classes.array.set.html#ivy.data_classes.array.set._ArrayWithSet.unique_inverse">[docs]</a>    <span class="k">def</span> <span class="nf">unique_inverse</span><span class="p">(</span><span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>

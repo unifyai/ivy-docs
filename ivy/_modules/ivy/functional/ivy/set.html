@@ -1048,6 +1048,8 @@ document.write(`
 <span class="k">def</span> <span class="nf">unique_all</span><span class="p">(</span>
     <span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
     <span class="o">/</span><span class="p">,</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">axis</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span>
     <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
     <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">],</span>
@@ -1089,8 +1091,11 @@ document.write(`
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    x</span>
-<span class="sd">        input array. If ``x`` has more than one dimension, the function must flatten</span>
-<span class="sd">        ``x`` and return the unique elements of the flattened array.</span>
+<span class="sd">        input array.</span>
+
+<span class="sd">    axis</span>
+<span class="sd">        the axis to apply unique on. If None, the unique elements of the flattened ``x``</span>
+<span class="sd">        are returned.</span>
 
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
@@ -1101,20 +1106,19 @@ document.write(`
 <span class="sd">          type as ``x``.</span>
 <span class="sd">        - second element must have the field name ``indices`` and must be an array</span>
 <span class="sd">          containing the indices (first occurrences) of ``x`` that result in ``values``.</span>
-<span class="sd">          The array must have the same shape as ``values`` and must have the default</span>
+<span class="sd">          The array must have the same length as ``values`` and must have the default</span>
 <span class="sd">          array index data type.</span>
 <span class="sd">        - third element must have the field name ``inverse_indices`` and must be an</span>
 <span class="sd">          array containing the indices of ``values`` that reconstruct ``x``. The array</span>
-<span class="sd">          must have the same shape as ``x`` and must have the default array index data</span>
-<span class="sd">          type.</span>
+<span class="sd">          must have the same length as the ``axis`` dimension of ``x`` and must have the</span>
+<span class="sd">          default array index data type.</span>
 <span class="sd">        - fourth element must have the field name ``counts`` and must be an array</span>
 <span class="sd">          containing the number of times each unique element occurs in ``x``. The</span>
-<span class="sd">          returned array must have same shape as ``values`` and must have the default</span>
-<span class="sd">          array index data type.</span>
+<span class="sd">          returned array must have the same length as ``values`` and must have the</span>
+<span class="sd">          default array index data type.</span>
 
 <span class="sd">        .. note::</span>
-<span class="sd">           The order of unique elements is not specified and may vary between</span>
-<span class="sd">           implementations.</span>
+<span class="sd">           The returned unique elements are ordered by value.</span>
 
 
 <span class="sd">    This function conforms to the `Array API Standard</span>
@@ -1157,7 +1161,7 @@ document.write(`
 <span class="sd">       counts=ivy.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">current_backend</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">unique_all</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">current_backend</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">unique_all</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="unique_inverse"><a class="viewcode-back" href="../../../../docs/functional/ivy/set/ivy.functional.ivy.set.unique_inverse.html#ivy.unique_inverse">[docs]</a><span class="nd">@handle_array_function</span>

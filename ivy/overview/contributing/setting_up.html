@@ -1034,7 +1034,7 @@ document.write(`
 <section id="forking-and-cloning-the-repo">
 <h2>Forking and cloning the repo<a class="headerlink" href="#forking-and-cloning-the-repo" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>You first need to fork the Ivy repository from the repository page here <a class="reference external" href="https://github.com/unifyai/ivy">repo</a> by using the fork button on the top right. This creates a copy of Ivy repository in your GitHub account.</p></li>
+<li><p>You will first need to fork the Ivy repository from the repository page here <a class="reference external" href="https://github.com/unifyai/ivy">repo</a> by using the fork button on the top right. This creates a copy of Ivy repository in your GitHub account.</p></li>
 <li><p>Clone your forked repo to your local machine.</p></li>
 </ol>
 <p>Depending on your preferred mode of cloning, any of the below should work:</p>
@@ -1083,36 +1083,53 @@ This makes it very easy to keep track of installed packages and their versions.<
 <li><p>Install <a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a></p></li>
 <li><p>Open conda terminal</p></li>
 <li><p>Create the environment by running the command (<code class="code docutils literal notranslate"><span class="pre">ivy_dev</span></code> is the name of the environment)</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda create --name ivy_dev python=3.8.10
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda create --name ivy_dev python=3.8.10
 </pre></div>
 </div>
-</div></blockquote>
 </li>
 <li><p>Activate the environment by:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate ivy_dev
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda activate ivy_dev
 </pre></div>
 </div>
-</div></blockquote>
 </li>
 <li><p>Now install ivy package from GitHub by running:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install git+https://github.com/unifyai/ivy.git
 </pre></div>
 </div>
 </li>
-<li><p>Setup the interpreter from your environment in Pycharm by:</p>
+<li><p>Setup the interpreter by:</p>
+<ol class="arabic simple">
+<li><p>Pycharm</p>
 <ol class="loweralpha simple">
 <li><p>Going to settings -&gt; project -&gt; Python Interpreter</p></li>
 <li><p>Clicking add interpreter (currently by clicking the ⚙ icon by the right side) which should open a new window.</p></li>
-<li><p>Choosing “conda environment” from the left panel.</p></li>
+<li><p>Choosing “conda environment” from the left panel. Choose existing environment and select the drop down and you should find the path python in the environment.</p></li>
 </ol>
-<blockquote>
-<div><p>Choose existing environment and select the drop down and you should find the path python in the environment.</p>
-</div></blockquote>
+</li>
+<li><p>VSCode</p>
+<ol class="loweralpha simple">
+<li><p>Go to the command palette (Ctrl+Shift+P) or (⌘+shift+p) for Mac and type “Python: Select Interpreter” and select the environment you created.</p></li>
+</ol>
 </li>
 </ol>
 <p>If you don’t find path to you created python environment, you can run <code class="code docutils literal notranslate"><span class="pre">where</span> <span class="pre">python</span></code> in conda command line while the environment is activate and it should give the path which can be added manually.</p>
+</li>
+<li><p>Installing the development dependencies.</p>
+<ol class="loweralpha">
+<li><p>On Linux Or Windows, you will need to use the optional_ubuntu.txt requirements file. To install dependencies.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install -r requirements/requirements.txt
+</pre></div>
+</div>
+</li>
+<li><p>On M1 Mac, you will need to use the optional_m1_1 and optional_m1_2 requirements files. To install dependencies.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install -r requirements/optional_m1_1.txt
+pip install -r requirements/optional_m1_2.txt
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+</ol>
 </section>
 <section id="using-venv">
 <h3>Using venv<a class="headerlink" href="#using-venv" title="Permalink to this heading">#</a></h3>
@@ -1121,16 +1138,13 @@ This makes it very easy to keep track of installed packages and their versions.<
 <li><p>Open your terminal/cmd in the directory where you would like to have the folder with the environment files.</p></li>
 <li><p>Create the environment by running the command below with a new environment name.
 We named it <code class="code docutils literal notranslate"><span class="pre">ivy_dev</span></code> like above.</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m venv ivy_dev
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m venv ivy_dev
 </pre></div>
 </div>
 <p>Try <code class="code docutils literal notranslate"><span class="pre">python3</span></code> if <code class="code docutils literal notranslate"><span class="pre">python</span></code> doesn’t work.</p>
-</div></blockquote>
 </li>
 <li><p>Activate the created environment by running (in the same working directory as the environment folder):</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ivy_dev\Scripts\activate.bat
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ivy_dev\Scripts\activate.bat
 </pre></div>
 </div>
 <p>(on Windows)</p>
@@ -1139,36 +1153,54 @@ We named it <code class="code docutils literal notranslate"><span class="pre">iv
 </pre></div>
 </div>
 <p>(on Mac/Linux)</p>
-</div></blockquote>
 </li>
 <li><p>Now install ivy package from GitHub by running:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install git+https://github.com/unifyai/ivy.git
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install git+https://github.com/unifyai/ivy.git
 </pre></div>
 </div>
-</div></blockquote>
 </li>
-<li><p>Setup the interpreter from you environment in Pycharm by:</p>
+<li><p>Setup the interpreter by:</p>
+<ol class="arabic">
+<li><p>Pycharm</p>
 <ol class="loweralpha simple">
 <li><p>Going to settings -&gt; project -&gt; Python Interpreter</p></li>
 <li><p>Clicking add interpreter (currently by clicking the ⚙ icon by the right side) which should open a new window.</p></li>
-<li><p>Choosing “virtualenv environment” from the left panel</p></li>
+<li><p>Choosing “virtualenv environment” from the left panel. Choose existing environment and add the path to python. The path to python can be found by <code class="code docutils literal notranslate"><span class="pre">where</span> <span class="pre">python</span></code> on Windows and <code class="code docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> in Linux/Mac OS.</p></li>
 </ol>
-<blockquote>
-<div><p>Choose existing environment and add the path to python.</p>
-</div></blockquote>
+<p>Note: You may tick “Make available to all projects” so you will be able to find the interpreter from the conda/venv environment in any future projects.</p>
+</li>
+<li><p>VSCode</p>
+<ol class="loweralpha simple">
+<li><p>Go to the command palette (Ctrl+Shift+P) or (⌘+shift+p) for Mac and type <cite>Python: Select Interpreter</cite> and select the environment you created.</p></li>
+</ol>
 </li>
 </ol>
-<p>The path to python can be found by <code class="code docutils literal notranslate"><span class="pre">where</span> <span class="pre">python</span></code> on Windows and <code class="code docutils literal notranslate"><span class="pre">which</span> <span class="pre">python</span></code> in Linux/Mac OS.</p>
-<p>Note: You may tick “Make available to all projects” so you will be able to find the interpreter from the conda/venv environment in any future projects.</p>
-<p>To make sure you have all the packages for running tests available change the directory to <code class="code docutils literal notranslate"><span class="pre">ivy/ivy_tests/array_api_testing/test_array_api</span></code> in your cloned fork using the <code class="code docutils literal notranslate"><span class="pre">cd</span></code> command and run the command below (while your <code class="code docutils literal notranslate"><span class="pre">ivy_dev</span></code> environment is active):</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install -r requirements.txt
+</li>
+<li><p>Installing the development dependencies.</p>
+<ol class="loweralpha">
+<li><p>On Linux Or Windows, you will need to use the optional_ubuntu.txt requirements file. To install dependencies.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install -r requirements/requirements.txt
 </pre></div>
 </div>
-</div></blockquote>
+</li>
+<li><p>On M1 Mac, you will need to use the optional_m1_1 and optional_m1_2 requirements files. To install dependencies.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install -r requirements/optional_m1_1.txt
+pip install -r requirements/optional_m1_2.txt
+</pre></div>
+</div>
+</li>
+</ol>
+</li>
+<li><p>Installing array API testing dependencies.</p>
+<p>To make sure you have all the packages for running tests available change the directory to <code class="code docutils literal notranslate"><span class="pre">ivy/ivy_tests/array_api_testing/test_array_api</span></code> in your cloned fork using the <code class="code docutils literal notranslate"><span class="pre">cd</span></code> command and run the command below (while your <code class="code docutils literal notranslate"><span class="pre">ivy_dev</span></code> environment is active):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install -r requirements.txt
+</pre></div>
+</div>
 <p>This will install packages required for running the tests in Array API suite.</p>
-<p>Here are the visual guides for setting up a <a class="reference external" href="https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html#0">virtualenv environment</a> OR <a class="reference external" href="https://www.jetbrains.com/help/pycharm/conda-support-creating-conda-virtual-environment.html">conda environment</a> in pycharm from JetBrains.</p>
+</li>
+</ol>
+<p>Here are the visual guides for setting up a <a class="reference external" href="https://www.jetbrains.com/help/pycharm/creating-virtual-environment.html#0">virtualenv environment</a> OR <a class="reference external" href="https://www.jetbrains.com/help/pycharm/conda-support-creating-conda-virtual-environment.html">conda environment</a> in pycharm from JetBrains.
+For VSCode, you can follow the instructions <a class="reference external" href="https://code.visualstudio.com/docs/python/environments#_creating-environments">virtual environments</a>.</p>
 </section>
 </section>
 <section id="docker-interpreter-with-pycharm">

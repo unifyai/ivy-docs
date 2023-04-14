@@ -1036,7 +1036,7 @@ This enables much more control over the memory-efficiency of the program, preven
 We also explain the rational for why each implementation is the way it is, and the important differences.</p>
 <p>This is one particular area of the Ivy code where, technically speaking, the function <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.general.html#ivy.inplace_update" title="ivy.inplace_update"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.inplace_update()</span></code></a> will result in subtly different behaviour for each backend, unless the <code class="code docutils literal notranslate"><span class="pre">ensure_in_backend</span></code> flag is set to <code class="code docutils literal notranslate"><span class="pre">True</span></code>.</p>
 <p>While <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances will always be inplace updated consistently, in some cases it is simply not possible to also inplace update the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> which <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> wraps, due to design choices made by each backend.</p>
-<p><strong>NOTE:</strong> Native inplace updates do not modify the dtype of the array being updated, as such the <code class="code docutils literal notranslate"><span class="pre">keep_input_dtype</span></code> flag should normally be set to True such that inplace updating behavior is consistent between backends.</p>
+<p><strong>NOTE:</strong> Native inplace updates do not modify the dtype of the array being updated, as such the <code class="code docutils literal notranslate"><span class="pre">keep_input_dtype</span></code> flag should normally be set to <code class="code docutils literal notranslate"><span class="pre">True</span></code> such that inplace updating behavior is consistent between backends.</p>
 <p><strong>JAX</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">inplace_update</span><span class="p">(</span>
     <span class="n">x</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">JaxArray</span><span class="p">],</span>
@@ -1401,34 +1401,35 @@ These attributes are then used in the <a class="reference internal" href="../../
 Of course these are normally only used with a JAX and TensorFlow backend since NumPy and PyTorch natively update their views and Ivy does not need to do any extra handling except for a few functions where PyTorch fails to return views when NumPy does.
 The functions currently implemented in the Ivy API where PyTorch fails to return views at the time of writing are <a class="reference internal" href="../../docs/functional/ivy/manipulation/ivy.functional.ivy.manipulation.flip.html#ivy.flip" title="ivy.flip"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.flip()</span></code></a>, <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.rot90()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.flipud()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.fliplr()</span></code>.
 In the case one of those functions is used with a Pytorch backend, additional logic has been added to make the returns of those functions behave as views of the original that made them.</p>
-<p>Here’s a brief description of the additional attributes added to <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> and their usage:
-#. Base (<code class="code docutils literal notranslate"><span class="pre">._base</span></code>): the original array being referenced (array all views stem from)
-#. Manipulation stack (<code class="code docutils literal notranslate"><span class="pre">._manipulation_stack</span></code>): store of operations that were done on the original to get to the current shape (manipulation or indexing)
-#. Reference stack <code class="code docutils literal notranslate"><span class="pre">._view_refs</span></code>: Weak references to the arrays that reference the original as view, only populated for base arrays.
-#. PyTorch Base (<code class="code docutils literal notranslate"><span class="pre">._torch_base</span></code>): Keeps track of functional view (array created from the listed functions above) that made it, otherwise stores original array
-#. PyTorch reference stack:code:<cite>._torch_view_refs</cite>: Functional views referencing this array in <code class="code docutils literal notranslate"><span class="pre">._torch_base</span></code>, only populated for original arrays or functional views.
-#. PyTorch manipulation cache:code:<cite>._torch_manipulation</cite>: Tuple storing array or view and function which made the functional view, only populated for functional views</p>
-<p>Here’s a brief description of how the <code class="code docutils literal notranslate"><span class="pre">&#64;handle_view</span></code> wrapper populates these attributes:
-#. When an array is made using a function decorated by this wrapper its base becomes the array that made it, or if the array that made it is also a view, its base.
-#. The view is then added to the reference stack of the base array (weakly), the operation that created the array is also added to the manipulation stack of the array.
-#. The way the PyTorch specific attributes are updated should be adequately explained above.</p>
-<p>Here’s a brief description of what happens during an inplace operation with a JAX and TensorFlow backend:
-#. If the base is inplace updated, then it goes through all the arrays in the reference stack, and through their manipulation, then inplace updates every array respectively.
-#. If a view gets inplace updated, an index array is created of the shape of the base array, which then is passed through the manipulation stack of the updated array.
-#. The updated array and the index array are then flattened and they then update the original array by performing a scatter update on a flattened version of the original array, which then gets reshaped into the correct shape.
-#. Then the all views stemming from the original are updated as described in the first point.</p>
-<p>Here’s a brief description of what happens during an inplace operation with a PyTorch backend:
-#. The array being updated checks if it has a populated reference stack, if it does it inplace updates each functional view in the stack with the output of the stored function called with the array that made it.</p>
-<blockquote>
-<div><p>It then checks if the functional view has a reference stack and continues recursively until it reaches a point where it exhausts all reference stacks.</p>
-</div></blockquote>
+<p>Here’s a brief description of the additional attributes added to <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> and their usage:</p>
 <ol class="arabic simple">
-<li><dl class="simple">
-<dt>If the reference stack is empty or exhausted it checks if it has a manipulation stack.</dt><dd><p>If populated it performs the reverse functional operation with itself as the input and inplace updates the view that made it (reverses the operation that made it).
-If the manipulation stack is empty or already exhausted it goes to the array’s PyTorch base and repeats the recursively until everything is exhausted and the base is None.</p>
-</dd>
-</dl>
-</li>
+<li><p>Base (<code class="code docutils literal notranslate"><span class="pre">._base</span></code>): the original array being referenced (array all views stem from)</p></li>
+<li><p>Manipulation stack (<code class="code docutils literal notranslate"><span class="pre">._manipulation_stack</span></code>): store of operations that were done on the original to get to the current shape (manipulation or indexing)</p></li>
+<li><p>Reference stack <code class="code docutils literal notranslate"><span class="pre">._view_refs</span></code>: Weak references to the arrays that reference the original as view, only populated for base arrays.</p></li>
+<li><p>PyTorch Base (<code class="code docutils literal notranslate"><span class="pre">._torch_base</span></code>): Keeps track of functional view (array created from the listed functions above) that made it, otherwise stores original array</p></li>
+<li><p>PyTorch reference stack:code:<cite>._torch_view_refs</cite>: Functional views referencing this array in <code class="code docutils literal notranslate"><span class="pre">._torch_base</span></code>, only populated for original arrays or functional views.</p></li>
+<li><p>PyTorch manipulation cache:code:<cite>._torch_manipulation</cite>: Tuple storing array or view and function which made the functional view, only populated for functional views</p></li>
+</ol>
+<p>Here’s a brief description of how the <code class="code docutils literal notranslate"><span class="pre">&#64;handle_view</span></code> wrapper populates these attributes:</p>
+<ol class="arabic simple">
+<li><p>When an array is made using a function decorated by this wrapper its base becomes the array that made it, or if the array that made it is also a view, its base.</p></li>
+<li><p>The view is then added to the reference stack of the base array (weakly), the operation that created the array is also added to the manipulation stack of the array.</p></li>
+<li><p>The way the PyTorch specific attributes are updated should be adequately explained above.</p></li>
+</ol>
+<p>Here’s a brief description of what happens during an inplace operation with a JAX and TensorFlow backend:</p>
+<ol class="arabic simple">
+<li><p>If the base is inplace updated, then it goes through all the arrays in the reference stack, and through their manipulation, then inplace updates every array respectively.</p></li>
+<li><p>If a view gets inplace updated, an index array is created of the shape of the base array, which then is passed through the manipulation stack of the updated array.</p></li>
+<li><p>The updated array and the index array are then flattened and they then update the original array by performing a scatter update on a flattened version of the original array, which then gets reshaped into the correct shape.</p></li>
+<li><p>Then the all views stemming from the original are updated as described in the first point.</p></li>
+</ol>
+<p>Here’s a brief description of what happens during an inplace operation with a PyTorch backend:</p>
+<ol class="arabic simple">
+<li><p>The array being updated checks if it has a populated reference stack, if it does it inplace updates each functional view in the stack with the output of the stored function called with the array that made it.
+It then checks if the functional view has a reference stack and continues recursively until it reaches a point where it exhausts all reference stacks.</p></li>
+<li><p>If the reference stack is empty or exhausted it checks if it has a manipulation stack.
+If populated it performs the reverse functional operation with itself as the input and inplace updates the view that made it (reverses the operation that made it).
+If the manipulation stack is empty or already exhausted it goes to the array’s PyTorch base and repeats the recursively until everything is exhausted and the base is None.</p></li>
 <li><p>All other views are expected to be updated automatically through PyTorch’s native view handling.</p></li>
 </ol>
 </section>

@@ -3170,6 +3170,71 @@ ivy.cond also applies to this method with minimal changes.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.cov">
+<span class="sig-name descname"><span class="pre">cov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rowVar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ddof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fweights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aweights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/ivy/data_classes/array/experimental/linear_algebra.html#_ArrayWithLinearAlgebraExperimental.cov"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.cov" title="Permalink to this definition">#</a></dt>
+<dd><p>ivy.Array instance method variant of ivy.cov. This method simply wraps the
+function, and so the docstring for ivy.cov also applies to this method
+with minimal changes.
+:type self: <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>
+:param self: a 1D or 2D input array, with a numeric data type.
+:type x2: <code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]]
+:param x2: optional second 1D or 2D input array, with a numeric data type. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<blockquote>
+<div><p>Must have the same shape as <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rowVar</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – optional variable where each row of input is interpreted as a variable (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)
+(default = True). If set to False, each column is instead interpreted as a
+variable.</p></li>
+<li><p><strong>bias</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – optional variable for normalizing input (default = False) by (N - 1) where (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)
+N is the number of given observations. If set to True, then normalization
+is instead by N. Can be overridden by keyword <code class="docutils literal notranslate"><span class="pre">ddof</span></code>.</p></li>
+<li><p><strong>ddof</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – optional variable to override <code class="docutils literal notranslate"><span class="pre">bias</span></code> (default = None). ddof=1 will return (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+the unbiased estimate, even with fweights and aweights given. ddof=0 will
+return the simple average.</p></li>
+<li><p><strong>fweights</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – optional 1D array of integer frequency weights; the number of times each (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+observation vector should be repeated.</p></li>
+<li><p><strong>aweights</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – optional 1D array of observation vector weights. These relative weights are (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+typically large for observations considered “important” and smaller for
+observations considered less “important”. If ddof=0 is specified, the array
+of weights can be used to assign probabilities to observation vectors.</p></li>
+<li><p><strong>dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">type</span></code>]) – optional variable to set data-type of the result. By default, data-type (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+will have at least <code class="docutils literal notranslate"><span class="pre">float64</span></code> precision.</p></li>
+<li><p><strong>out</strong> – optional output array, for writing the result to. It must have a shape that
+the inputs broadcast to.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – an array containing the covariance matrix of an input matrix, or the
+covariance matrix of two variables. The returned array must have a
+floating-point data type determined by Type Promotion Rules and must be
+a square matrix of shape (N, N), where N is the number of variables in the
+input(s).</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span>
+<span class="gp">... </span>               <span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="go">ivy.array([[ 1.,  1.  ],</span>
+<span class="gp">... </span>       <span class="p">[</span> <span class="mf">1.</span><span class="p">,</span>  <span class="mf">1.</span>  <span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="go">ivy.array([[ 1.,  1.  ],</span>
+<span class="gp">... </span>       <span class="p">[</span> <span class="mf">1.</span><span class="p">,</span>  <span class="mf">1.</span>  <span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.diagflat">
 <span class="sig-name descname"><span class="pre">diagflat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'RIGHT_LEFT'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/ivy/data_classes/array/experimental/linear_algebra.html#_ArrayWithLinearAlgebraExperimental.diagflat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.diagflat" title="Permalink to this definition">#</a></dt>
 <dd><p>ivy.Array instance method variant of ivy.diagflat.
@@ -4996,6 +5061,7 @@ quantiles for different values of q.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental._abc_impl"><code class="docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebraExperimental._abc_impl</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.adjoint"><code class="docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebraExperimental.adjoint()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.cond"><code class="docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebraExperimental.cond()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.cov"><code class="docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebraExperimental.cov()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.diagflat"><code class="docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebraExperimental.diagflat()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.eig"><code class="docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebraExperimental.eig()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.eigh_tridiagonal"><code class="docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebraExperimental.eigh_tridiagonal()</span></code></a></li>

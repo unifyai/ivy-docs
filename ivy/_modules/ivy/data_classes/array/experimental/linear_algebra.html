@@ -1280,7 +1280,90 @@ document.write(`
 <span class="sd">        &gt;&gt;&gt; x.cond(p=ivy.inf)</span>
 <span class="sd">        ivy.array(21.0)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">cond</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">cond</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">p</span><span class="o">=</span><span class="n">p</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ArrayWithLinearAlgebraExperimental.cov"><a class="viewcode-back" href="../../../../../docs/data_classes/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.cov">[docs]</a>    <span class="k">def</span> <span class="nf">cov</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+        <span class="n">x2</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">rowVar</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">bias</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">ddof</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">fweights</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">aweights</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">dtype</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">type</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Array instance method variant of ivy.cov. This method simply wraps the</span>
+<span class="sd">        function, and so the docstring for ivy.cov also applies to this method</span>
+<span class="sd">        with minimal changes.</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            a 1D or 2D input array, with a numeric data type.</span>
+<span class="sd">        x2</span>
+<span class="sd">            optional second 1D or 2D input array, with a numeric data type.</span>
+<span class="sd">            Must have the same shape as ``self``.</span>
+<span class="sd">        rowVar</span>
+<span class="sd">            optional variable where each row of input is interpreted as a variable</span>
+<span class="sd">            (default = True). If set to False, each column is instead interpreted as a</span>
+<span class="sd">            variable.</span>
+<span class="sd">        bias</span>
+<span class="sd">            optional variable for normalizing input (default = False) by (N - 1) where</span>
+<span class="sd">            N is the number of given observations. If set to True, then normalization</span>
+<span class="sd">            is instead by N. Can be overridden by keyword ``ddof``.</span>
+<span class="sd">        ddof</span>
+<span class="sd">            optional variable to override ``bias`` (default = None). ddof=1 will return</span>
+<span class="sd">            the unbiased estimate, even with fweights and aweights given. ddof=0 will</span>
+<span class="sd">            return the simple average.</span>
+<span class="sd">        fweights</span>
+<span class="sd">            optional 1D array of integer frequency weights; the number of times each</span>
+<span class="sd">            observation vector should be repeated.</span>
+<span class="sd">        aweights</span>
+<span class="sd">            optional 1D array of observation vector weights. These relative weights are</span>
+<span class="sd">            typically large for observations considered &quot;important&quot; and smaller for</span>
+<span class="sd">            observations considered less &quot;important&quot;. If ddof=0 is specified, the array</span>
+<span class="sd">            of weights can be used to assign probabilities to observation vectors.</span>
+<span class="sd">        dtype</span>
+<span class="sd">            optional variable to set data-type of the result. By default, data-type</span>
+<span class="sd">            will have at least ``float64`` precision.</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output array, for writing the result to. It must have a shape that</span>
+<span class="sd">            the inputs broadcast to.</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            an array containing the covariance matrix of an input matrix, or the</span>
+<span class="sd">            covariance matrix of two variables. The returned array must have a</span>
+<span class="sd">            floating-point data type determined by Type Promotion Rules and must be</span>
+<span class="sd">            a square matrix of shape (N, N), where N is the number of variables in the</span>
+<span class="sd">            input(s).</span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([[1,2,3],</span>
+<span class="sd">        ...                [4,5,6]])</span>
+<span class="sd">        &gt;&gt;&gt; y = x.cov()</span>
+<span class="sd">        &gt;&gt;&gt; print(y)</span>
+<span class="sd">        ivy.array([[ 1.,  1.  ],</span>
+<span class="sd">        ...        [ 1.,  1.  ],</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([1,2,3])</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.array([4,5,6])</span>
+<span class="sd">        &gt;&gt;&gt; z = x.cov(y)</span>
+<span class="sd">        &gt;&gt;&gt; print(z)</span>
+<span class="sd">        ivy.array([[ 1.,  1.  ],</span>
+<span class="sd">        ...        [ 1.,  1.  ])</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span>
+            <span class="n">x2</span><span class="p">,</span>
+            <span class="n">rowVar</span><span class="o">=</span><span class="n">rowVar</span><span class="p">,</span>
+            <span class="n">bias</span><span class="o">=</span><span class="n">bias</span><span class="p">,</span>
+            <span class="n">ddof</span><span class="o">=</span><span class="n">ddof</span><span class="p">,</span>
+            <span class="n">fweights</span><span class="o">=</span><span class="n">fweights</span><span class="p">,</span>
+            <span class="n">aweights</span><span class="o">=</span><span class="n">aweights</span><span class="p">,</span>
+            <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+        <span class="p">)</span></div></div>
 </pre></div>
 
                 </article>

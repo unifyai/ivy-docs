@@ -1907,6 +1907,220 @@ document.write(`
             <span class="n">to_apply</span><span class="o">=</span><span class="n">to_apply</span><span class="p">,</span>
             <span class="n">prune_unapplied</span><span class="o">=</span><span class="n">prune_unapplied</span><span class="p">,</span>
             <span class="n">map_sequences</span><span class="o">=</span><span class="n">map_sequences</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ContainerWithLinearAlgebraExperimental.static_cov"><a class="viewcode-back" href="../../../../../docs/data_classes/data_classes/container/ivy.data_classes.container.experimental.html#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.static_cov">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">static_cov</span><span class="p">(</span>
+        <span class="n">x1</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">],</span>
+        <span class="n">x2</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">rowVar</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">bias</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">ddof</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">fweights</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">aweights</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">dtype</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDtype</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">map_sequences</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Container static method variant of ivy.cov. This method simply wraps the</span>
+<span class="sd">        function, and so the docstring for ivy.cov also applies to this method</span>
+<span class="sd">        with minimal changes.</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        x1</span>
+<span class="sd">            a 1D or 2D input array, nativearray or container, with a numeric data type.</span>
+<span class="sd">        x2</span>
+<span class="sd">            optional second 1D or 2D input array, nativearray, or container, with a</span>
+<span class="sd">            numeric data type. Must have the same shape as x1.</span>
+<span class="sd">        rowVar</span>
+<span class="sd">            optional variable where each row of input is interpreted as a variable</span>
+<span class="sd">            (default = True). If set to False, each column is instead interpreted</span>
+<span class="sd">            as a variable.</span>
+<span class="sd">        bias</span>
+<span class="sd">            optional variable for normalizing input (default = False) by (N - 1) where</span>
+<span class="sd">            N is the number of given observations. If set to True, then normalization</span>
+<span class="sd">            is instead by N. Can be overridden by keyword ``ddof``.</span>
+<span class="sd">        ddof</span>
+<span class="sd">            optional variable to override ``bias`` (default = None). ddof=1 will return</span>
+<span class="sd">            the unbiased estimate, even with fweights and aweights given. ddof=0 will</span>
+<span class="sd">            return the simple average.</span>
+<span class="sd">        fweights</span>
+<span class="sd">            optional 1D array of integer frequency weights; the number of times each</span>
+<span class="sd">            observation vector should be repeated.</span>
+<span class="sd">        aweights</span>
+<span class="sd">            optional 1D array of observation vector weights. These relative weights are</span>
+<span class="sd">            typically large for observations considered &quot;important&quot; and smaller for</span>
+<span class="sd">            observations considered less &quot;important&quot;. If ddof=0 is specified, the array</span>
+<span class="sd">            of weights can be used to assign probabilities to observation vectors.</span>
+<span class="sd">        dtype</span>
+<span class="sd">            optional variable to set data-type of the result. By default, data-type</span>
+<span class="sd">            will have at least ``numpy.float64`` precision.</span>
+<span class="sd">        key_chains</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">        to_apply</span>
+<span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
+<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">        prune_unapplied</span>
+<span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
+<span class="sd">            Default is ``False``.</span>
+<span class="sd">        map_sequences</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
+<span class="sd">            Default is ``False``.</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output container, for writing the result to. It must have a shape</span>
+<span class="sd">            that the inputs broadcast to.</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            a container containing the covariance matrix of an input matrix, or the</span>
+<span class="sd">            covariance matrix of two variables. The returned container must have a</span>
+<span class="sd">            floating-point data type determined by Type Promotion Rules and must be</span>
+<span class="sd">            a square matrix of shape (N, N), where N is the number of rows in the</span>
+<span class="sd">            input(s).</span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        With one :class:`ivy.Container` input:</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.array([1., 2., 3.])</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([3. ,2. ,1.]), b=ivy.array([-1., -2., -3.]))</span>
+<span class="sd">        &gt;&gt;&gt; z = ivy.Container.static_cov(x, y)</span>
+<span class="sd">        &gt;&gt;&gt; print(z)</span>
+<span class="sd">        {</span>
+<span class="sd">            a: ivy.array([ 1., -1.]</span>
+<span class="sd">                         [-1.,  1.]),</span>
+<span class="sd">            b: ivy.array([ 1., -1.]</span>
+<span class="sd">                         [-1.,  1.])</span>
+<span class="sd">        }</span>
+<span class="sd">        With multiple :class:`ivy.Container` inputs:</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1., 2., 3.]), b=ivy.array([1., 2., 3.]))</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([3., 2., 1.]), b=ivy.array([3., 2., 1.]))</span>
+<span class="sd">        &gt;&gt;&gt; z = ivy.Container.static_cov(x, y)</span>
+<span class="sd">        &gt;&gt;&gt; print(z)</span>
+<span class="sd">        {</span>
+<span class="sd">            a: ivy.container([ 1., -1., -1., -1.]</span>
+<span class="sd">                         [ 1.,  1., -1., -1.]),</span>
+<span class="sd">            b: ivy.container([-1., -1.,  1.,  1.]</span>
+<span class="sd">                         [-1.,  1.,  1.,  1.])</span>
+<span class="sd">        }</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">ContainerBase</span><span class="o">.</span><span class="n">cont_multi_map_in_function</span><span class="p">(</span>
+            <span class="s2">&quot;cov&quot;</span><span class="p">,</span>
+            <span class="n">x1</span><span class="p">,</span>
+            <span class="n">x2</span><span class="p">,</span>
+            <span class="n">rowVar</span><span class="o">=</span><span class="n">rowVar</span><span class="p">,</span>
+            <span class="n">bias</span><span class="o">=</span><span class="n">bias</span><span class="p">,</span>
+            <span class="n">ddof</span><span class="o">=</span><span class="n">ddof</span><span class="p">,</span>
+            <span class="n">fweights</span><span class="o">=</span><span class="n">fweights</span><span class="p">,</span>
+            <span class="n">aweights</span><span class="o">=</span><span class="n">aweights</span><span class="p">,</span>
+            <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+            <span class="n">key_chains</span><span class="o">=</span><span class="n">key_chains</span><span class="p">,</span>
+            <span class="n">to_apply</span><span class="o">=</span><span class="n">to_apply</span><span class="p">,</span>
+            <span class="n">prune_unapplied</span><span class="o">=</span><span class="n">prune_unapplied</span><span class="p">,</span>
+            <span class="n">map_sequences</span><span class="o">=</span><span class="n">map_sequences</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ContainerWithLinearAlgebraExperimental.cov"><a class="viewcode-back" href="../../../../../docs/data_classes/data_classes/container/ivy.data_classes.container.experimental.html#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.cov">[docs]</a>    <span class="k">def</span> <span class="nf">cov</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">,</span>
+        <span class="n">x2</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="o">/</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">rowVar</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">bias</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">ddof</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">fweights</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">aweights</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">dtype</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Dtype</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeDtype</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">key_chains</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">to_apply</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="n">prune_unapplied</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">map_sequences</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        ivy.Container instance method variant of ivy.cov. This method simply wraps</span>
+<span class="sd">        the function, and so the docstring for ivy.cov also applies to this method</span>
+<span class="sd">        with minimal changes.</span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            a 1D or 2D input container, with a numeric data type.</span>
+<span class="sd">        x2</span>
+<span class="sd">            optional second 1D or 2D input array, nativearray, or container, with a</span>
+<span class="sd">            numeric data type. Must have the same shape as ``self``.</span>
+<span class="sd">        rowVar</span>
+<span class="sd">            optional variable where each row of input is interpreted as a variable</span>
+<span class="sd">            (default = True). If set to False, each column is instead interpreted</span>
+<span class="sd">            as a variable.</span>
+<span class="sd">        bias</span>
+<span class="sd">            optional variable for normalizing input (default = False) by (N - 1) where</span>
+<span class="sd">            N is the number of given observations. If set to True, then normalization</span>
+<span class="sd">            is instead by N. Can be overridden by keyword ``ddof``.</span>
+<span class="sd">        ddof</span>
+<span class="sd">            optional variable to override ``bias`` (default = None). ddof=1 will return</span>
+<span class="sd">            the unbiased estimate, even with fweights and aweights given. ddof=0 will</span>
+<span class="sd">            return the simple average.</span>
+<span class="sd">        fweights</span>
+<span class="sd">            optional 1D array of integer frequency weights; the number of times each</span>
+<span class="sd">            observation vector should be repeated.</span>
+<span class="sd">        aweights</span>
+<span class="sd">            optional 1D array of observation vector weights. These relative weights are</span>
+<span class="sd">            typically large for observations considered &quot;important&quot; and smaller for</span>
+<span class="sd">            observations considered less &quot;important&quot;. If ddof=0 is specified, the array</span>
+<span class="sd">            of weights can be used to assign probabilities to observation vectors.</span>
+<span class="sd">        dtype</span>
+<span class="sd">            optional variable to set data-type of the result. By default, data-type</span>
+<span class="sd">            will have at least ``numpy.float64`` precision.</span>
+<span class="sd">        key_chains</span>
+<span class="sd">            The key-chains to apply or not apply the method to. Default is ``None``.</span>
+<span class="sd">        to_apply</span>
+<span class="sd">            If True, the method will be applied to key_chains, otherwise key_chains</span>
+<span class="sd">            will be skipped. Default is ``True``.</span>
+<span class="sd">        prune_unapplied</span>
+<span class="sd">            Whether to prune key_chains for which the function was not applied.</span>
+<span class="sd">            Default is ``False``.</span>
+<span class="sd">        map_sequences</span>
+<span class="sd">            Whether to also map method to sequences (lists, tuples).</span>
+<span class="sd">            Default is ``False``.</span>
+<span class="sd">        out</span>
+<span class="sd">            optional output container, for writing the result to. It must have a shape</span>
+<span class="sd">            that the inputs broadcast to.</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            a container containing the covariance matrix of an input matrix, or the</span>
+<span class="sd">            covariance matrix of two variables. The returned container must have a</span>
+<span class="sd">            floating-point data type determined by Type Promotion Rules and must be</span>
+<span class="sd">            a square matrix of shape (N, N), where N is the number of variables in the</span>
+<span class="sd">            input(s).</span>
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; x = ivy.Container(a=ivy.array([1., 2., 3.]), b=ivy.array([1., 2., 3.]))</span>
+<span class="sd">        &gt;&gt;&gt; y = ivy.Container(a=ivy.array([3., 2., 1.]), b=ivy.array([3., 2., 1.]))</span>
+<span class="sd">        &gt;&gt;&gt; z = x.cov(y)</span>
+<span class="sd">        &gt;&gt;&gt; print(z)</span>
+<span class="sd">        {</span>
+<span class="sd">            a: ivy.container([ 1., -1., -1., -1.]</span>
+<span class="sd">                         [ 1.,  1., -1., -1.]),</span>
+<span class="sd">            b: ivy.container([-1., -1.,  1.,  1.]</span>
+<span class="sd">                         [-1.,  1.,  1.,  1.])</span>
+<span class="sd">        }</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">static_cov</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span>
+            <span class="n">x2</span><span class="p">,</span>
+            <span class="n">rowVar</span><span class="o">=</span><span class="n">rowVar</span><span class="p">,</span>
+            <span class="n">bias</span><span class="o">=</span><span class="n">bias</span><span class="p">,</span>
+            <span class="n">ddof</span><span class="o">=</span><span class="n">ddof</span><span class="p">,</span>
+            <span class="n">fweights</span><span class="o">=</span><span class="n">fweights</span><span class="p">,</span>
+            <span class="n">aweights</span><span class="o">=</span><span class="n">aweights</span><span class="p">,</span>
+            <span class="n">dtype</span><span class="o">=</span><span class="n">dtype</span><span class="p">,</span>
+            <span class="n">key_chains</span><span class="o">=</span><span class="n">key_chains</span><span class="p">,</span>
+            <span class="n">to_apply</span><span class="o">=</span><span class="n">to_apply</span><span class="p">,</span>
+            <span class="n">prune_unapplied</span><span class="o">=</span><span class="n">prune_unapplied</span><span class="p">,</span>
+            <span class="n">map_sequences</span><span class="o">=</span><span class="n">map_sequences</span><span class="p">,</span>
         <span class="p">)</span></div></div>
 </pre></div>
 

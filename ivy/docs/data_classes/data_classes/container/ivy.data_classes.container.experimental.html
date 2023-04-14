@@ -5913,6 +5913,76 @@ to condition number of input array</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.cov">
+<span class="sig-name descname"><span class="pre">cov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rowVar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ddof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fweights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aweights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_chains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_apply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prune_unapplied</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_sequences</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/ivy/data_classes/container/experimental/linear_algebra.html#_ContainerWithLinearAlgebraExperimental.cov"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.cov" title="Permalink to this definition">#</a></dt>
+<dd><p>ivy.Container instance method variant of ivy.cov. This method simply wraps
+the function, and so the docstring for ivy.cov also applies to this method
+with minimal changes.
+:type self: <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>
+:param self: a 1D or 2D input container, with a numeric data type.
+:type x2: <code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]
+:param x2: optional second 1D or 2D input array, nativearray, or container, with a (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<blockquote>
+<div><p>numeric data type. Must have the same shape as <code class="docutils literal notranslate"><span class="pre">self</span></code>.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rowVar</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – optional variable where each row of input is interpreted as a variable (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)
+(default = True). If set to False, each column is instead interpreted
+as a variable.</p></li>
+<li><p><strong>bias</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – optional variable for normalizing input (default = False) by (N - 1) where (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)
+N is the number of given observations. If set to True, then normalization
+is instead by N. Can be overridden by keyword <code class="docutils literal notranslate"><span class="pre">ddof</span></code>.</p></li>
+<li><p><strong>ddof</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – optional variable to override <code class="docutils literal notranslate"><span class="pre">bias</span></code> (default = None). ddof=1 will return (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+the unbiased estimate, even with fweights and aweights given. ddof=0 will
+return the simple average.</p></li>
+<li><p><strong>fweights</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – optional 1D array of integer frequency weights; the number of times each (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+observation vector should be repeated.</p></li>
+<li><p><strong>aweights</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – optional 1D array of observation vector weights. These relative weights are (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+typically large for observations considered “important” and smaller for
+observations considered less “important”. If ddof=0 is specified, the array
+of weights can be used to assign probabilities to observation vectors.</p></li>
+<li><p><strong>dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]]) – optional variable to set data-type of the result. By default, data-type (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+will have at least <code class="docutils literal notranslate"><span class="pre">numpy.float64</span></code> precision.</p></li>
+<li><p><strong>key_chains</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]]) – The key-chains to apply or not apply the method to. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p><strong>to_apply</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If True, the method will be applied to key_chains, otherwise key_chains (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)
+will be skipped. Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>prune_unapplied</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to prune key_chains for which the function was not applied. (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)
+Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>map_sequences</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to also map method to sequences (lists, tuples). (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)
+Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>out</strong> – optional output container, for writing the result to. It must have a shape
+that the inputs broadcast to.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – a container containing the covariance matrix of an input matrix, or the
+covariance matrix of two variables. The returned container must have a
+floating-point data type determined by Type Promotion Rules and must be
+a square matrix of shape (N, N), where N is the number of variables in the
+input(s).</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">]),</span> <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]),</span> <span class="n">b</span><span class="o">=</span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">cov</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="go">{</span>
+<span class="go">    a: ivy.container([ 1., -1., -1., -1.]</span>
+<span class="go">                 [ 1.,  1., -1., -1.]),</span>
+<span class="go">    b: ivy.container([-1., -1.,  1.,  1.]</span>
+<span class="go">                 [-1.,  1.,  1.,  1.])</span>
+<span class="go">}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.diagflat">
 <span class="sig-name descname"><span class="pre">diagflat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">align</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'RIGHT_LEFT'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_rows</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cols</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_chains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_apply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prune_unapplied</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_sequences</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/ivy/data_classes/container/experimental/linear_algebra.html#_ContainerWithLinearAlgebraExperimental.diagflat"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.diagflat" title="Permalink to this definition">#</a></dt>
 <dd><p>ivy.Container instance method variant of ivy.diagflat.
@@ -6206,6 +6276,94 @@ to condition number of input array</p>
 <span class="go">ivy.array(14.933034)</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.static_cov">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">static_cov</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rowVar</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ddof</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fweights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">aweights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key_chains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_apply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prune_unapplied</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">map_sequences</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/ivy/data_classes/container/experimental/linear_algebra.html#_ContainerWithLinearAlgebraExperimental.static_cov"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.static_cov" title="Permalink to this definition">#</a></dt>
+<dd><p>ivy.Container static method variant of ivy.cov. This method simply wraps the
+function, and so the docstring for ivy.cov also applies to this method
+with minimal changes.
+:type x1: <code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]
+:param x1: a 1D or 2D input array, nativearray or container, with a numeric data type.
+:type x2: <code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]]
+:param x2: optional second 1D or 2D input array, nativearray, or container, with a (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p>
+<blockquote>
+<div><p>numeric data type. Must have the same shape as x1.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rowVar</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – optional variable where each row of input is interpreted as a variable (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)
+(default = True). If set to False, each column is instead interpreted
+as a variable.</p></li>
+<li><p><strong>bias</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – optional variable for normalizing input (default = False) by (N - 1) where (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)
+N is the number of given observations. If set to True, then normalization
+is instead by N. Can be overridden by keyword <code class="docutils literal notranslate"><span class="pre">ddof</span></code>.</p></li>
+<li><p><strong>ddof</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – optional variable to override <code class="docutils literal notranslate"><span class="pre">bias</span></code> (default = None). ddof=1 will return (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+the unbiased estimate, even with fweights and aweights given. ddof=0 will
+return the simple average.</p></li>
+<li><p><strong>fweights</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – optional 1D array of integer frequency weights; the number of times each (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+observation vector should be repeated.</p></li>
+<li><p><strong>aweights</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – optional 1D array of observation vector weights. These relative weights are (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+typically large for observations considered “important” and smaller for
+observations considered less “important”. If ddof=0 is specified, the array
+of weights can be used to assign probabilities to observation vectors.</p></li>
+<li><p><strong>dtype</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeDtype</span></code>]]) – optional variable to set data-type of the result. By default, data-type (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+will have at least <code class="docutils literal notranslate"><span class="pre">numpy.float64</span></code> precision.</p></li>
+<li><p><strong>key_chains</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>], <code class="xref py py-class docutils literal notranslate"><span class="pre">Dict</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]]]) – The key-chains to apply or not apply the method to. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p><strong>to_apply</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – If True, the method will be applied to key_chains, otherwise key_chains (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)
+will be skipped. Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>prune_unapplied</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to prune key_chains for which the function was not applied. (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)
+Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>map_sequences</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to also map method to sequences (lists, tuples). (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>)
+Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>out</strong> – optional output container, for writing the result to. It must have a shape
+that the inputs broadcast to.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – a container containing the covariance matrix of an input matrix, or the
+covariance matrix of two variables. The returned container must have a
+floating-point data type determined by Type Promotion Rules and must be
+a square matrix of shape (N, N), where N is the number of rows in the
+input(s).</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>With one <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> input:
+&gt;&gt;&gt; x = ivy.array([1., 2., 3.])
+&gt;&gt;&gt; y = ivy.Container(a=ivy.array([3. ,2. ,1.]), b=ivy.array([-1., -2., -3.]))
+&gt;&gt;&gt; z = ivy.Container.static_cov(x, y)
+&gt;&gt;&gt; print(z)
+{</p>
+<blockquote>
+<div><dl class="simple">
+<dt>a: ivy.array([ 1., -1.]</dt><dd><p>[-1.,  1.]),</p>
+</dd>
+<dt>b: ivy.array([ 1., -1.]</dt><dd><p>[-1.,  1.])</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>}
+With multiple <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> inputs:
+&gt;&gt;&gt; x = ivy.Container(a=ivy.array([1., 2., 3.]), b=ivy.array([1., 2., 3.]))
+&gt;&gt;&gt; y = ivy.Container(a=ivy.array([3., 2., 1.]), b=ivy.array([3., 2., 1.]))
+&gt;&gt;&gt; z = ivy.Container.static_cov(x, y)
+&gt;&gt;&gt; print(z)
+{</p>
+<blockquote>
+<div><dl class="simple">
+<dt>a: ivy.container([ 1., -1., -1., -1.]</dt><dd><p>[ 1.,  1., -1., -1.]),</p>
+</dd>
+<dt>b: ivy.container([-1., -1.,  1.,  1.]</dt><dd><p>[-1.,  1.,  1.,  1.])</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>}</p>
 </dd></dl>
 
 <dl class="py method">
@@ -10078,6 +10236,7 @@ first rank(q) dimensions index quantiles for different values of q.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental._abc_impl"><code class="docutils literal notranslate"><span class="pre">_ContainerWithLinearAlgebraExperimental._abc_impl</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.adjoint"><code class="docutils literal notranslate"><span class="pre">_ContainerWithLinearAlgebraExperimental.adjoint()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.cond"><code class="docutils literal notranslate"><span class="pre">_ContainerWithLinearAlgebraExperimental.cond()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.cov"><code class="docutils literal notranslate"><span class="pre">_ContainerWithLinearAlgebraExperimental.cov()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.diagflat"><code class="docutils literal notranslate"><span class="pre">_ContainerWithLinearAlgebraExperimental.diagflat()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.eig"><code class="docutils literal notranslate"><span class="pre">_ContainerWithLinearAlgebraExperimental.eig()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.eigh_tridiagonal"><code class="docutils literal notranslate"><span class="pre">_ContainerWithLinearAlgebraExperimental.eigh_tridiagonal()</span></code></a></li>
@@ -10087,6 +10246,7 @@ first rank(q) dimensions index quantiles for different values of q.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.multi_dot"><code class="docutils literal notranslate"><span class="pre">_ContainerWithLinearAlgebraExperimental.multi_dot()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.static_adjoint"><code class="docutils literal notranslate"><span class="pre">_ContainerWithLinearAlgebraExperimental.static_adjoint()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.static_cond"><code class="docutils literal notranslate"><span class="pre">_ContainerWithLinearAlgebraExperimental.static_cond()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.static_cov"><code class="docutils literal notranslate"><span class="pre">_ContainerWithLinearAlgebraExperimental.static_cov()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.static_diagflat"><code class="docutils literal notranslate"><span class="pre">_ContainerWithLinearAlgebraExperimental.static_diagflat()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.static_eig"><code class="docutils literal notranslate"><span class="pre">_ContainerWithLinearAlgebraExperimental.static_eig()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.container.experimental.linear_algebra._ContainerWithLinearAlgebraExperimental.static_eigh_tridiagonal"><code class="docutils literal notranslate"><span class="pre">_ContainerWithLinearAlgebraExperimental.static_eigh_tridiagonal()</span></code></a></li>

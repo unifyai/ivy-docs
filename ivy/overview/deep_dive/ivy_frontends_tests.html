@@ -1387,7 +1387,7 @@ This is used to specify the data type of the output array.</p></li>
 <ul class="simple">
 <li><p>We use <code class="xref py py-func docutils literal notranslate"><span class="pre">helpers.get_dtypes()</span></code> to generate <code class="code docutils literal notranslate"><span class="pre">dtype</span></code>, these are valid numeric data types specifically for this function.</p></li>
 <li><p>Tensorflow’s version of <code class="xref py py-func docutils literal notranslate"><span class="pre">full()</span></code> is named <code class="xref py py-func docutils literal notranslate"><span class="pre">Fill()</span></code> therefore we specify the <code class="code docutils literal notranslate"><span class="pre">fn_tree</span></code> argument to be <code class="code docutils literal notranslate"><span class="pre">&quot;Fill&quot;</span></code></p></li>
-<li><p>When running the test there where some small discrepancies between the values so we can use <code class="code docutils literal notranslate"><span class="pre">rtol</span></code> to specify the relative tolerance. We specify the <cite>out</cite> flag explicitely.</p></li>
+<li><p>When running the test there were some small discrepancies between the values so we can use <code class="code docutils literal notranslate"><span class="pre">rtol</span></code> to specify the relative tolerance. We specify the <cite>out</cite> flag explicitely.</p></li>
 </ul>
 <p><strong>PyTorch</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ivy_tests/test_ivy/test_frontends/test_torch/test_creation_ops.py</span>

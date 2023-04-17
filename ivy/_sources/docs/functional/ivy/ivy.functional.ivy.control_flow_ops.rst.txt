@@ -1,6 +1,7 @@
 Control flow ops
 ================
 
+
 .. autosummary::
    :toctree: control_flow_ops
    :template: functional_module.rst
@@ -22,6 +23,7 @@ Control flow ops
 
 
 
+
 .. automodule:: ivy.functional.ivy.control_flow_ops
    :special-members: __init__
    :show-inheritance:
@@ -36,6 +38,7 @@ Control flow ops
 .. autofunction:: ivy.if_else
 
 .. autofunction:: ivy.while_loop
+
 
 
 

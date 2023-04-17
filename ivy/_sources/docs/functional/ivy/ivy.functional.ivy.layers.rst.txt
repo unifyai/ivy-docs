@@ -1,6 +1,7 @@
 Layers
 ======
 
+
 .. autosummary::
    :toctree: layers
    :template: functional_module.rst
@@ -59,6 +60,7 @@ Layers
 
 
 
+
 .. automodule:: ivy.functional.ivy.layers
    :special-members: __init__
    :show-inheritance:
@@ -103,6 +105,7 @@ Layers
 .. autofunction:: ivy.multi_head_attention
 
 .. autofunction:: ivy.scaled_dot_product_attention
+
 
 
 

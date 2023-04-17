@@ -1,0 +1,8 @@
+unravel\_index
+==============
+
+.. autofunction:: ivy.unravel_index
+
+.. autoskippablemethod:: ivy.Array.unravel_index
+
+.. autoskippablemethod:: ivy.Container.unravel_index

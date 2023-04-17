@@ -1,0 +1,8 @@
+expand
+======
+
+.. autofunction:: ivy.expand
+
+.. autoskippablemethod:: ivy.Array.expand
+
+.. autoskippablemethod:: ivy.Container.expand

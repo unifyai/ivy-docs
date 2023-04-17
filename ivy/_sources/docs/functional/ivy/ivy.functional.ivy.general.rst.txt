@@ -1,6 +1,7 @@
 General
 =======
 
+
 .. autosummary::
    :toctree: general
    :template: functional_module.rst
@@ -255,6 +256,7 @@ General
 
 
 
+
 .. automodule:: ivy.functional.ivy.general
    :special-members: __init__
    :show-inheritance:
@@ -438,6 +440,7 @@ General
 
 
 .. autoclass:: ivy.ArrayMode
+
 
 
 

@@ -1,11 +1,6 @@
 Constants
 =========
 
-.. autosummary::
-   :toctree: constants
-   :template: functional_module.rst
-   :hide-table:
-   :recursive:
 
 
 
@@ -28,6 +23,7 @@ Constants
 .. autoivydata:: ivy.functional.ivy.constants.inf
 
 .. autoivydata:: ivy.functional.ivy.constants.newaxis
+
 
 
 

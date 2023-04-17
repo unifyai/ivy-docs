@@ -1,6 +1,7 @@
 Data type
 =========
 
+
 .. autosummary::
    :toctree: data_type
    :template: functional_module.rst
@@ -145,6 +146,7 @@ Data type
 
 
 
+
 .. automodule:: ivy.functional.ivy.data_type
    :special-members: __init__
    :show-inheritance:
@@ -264,6 +266,7 @@ Data type
 .. autoclass:: ivy.DefaultIntDtype
 
 .. autoclass:: ivy.DefaultUintDtype
+
 
 
 

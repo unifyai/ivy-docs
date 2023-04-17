@@ -1,6 +1,7 @@
 Activations
 ===========
 
+
 .. autosummary::
    :toctree: activations
    :template: functional_module.rst
@@ -40,6 +41,7 @@ Activations
 
 
 
+
 .. automodule:: ivy.functional.ivy.activations
    :special-members: __init__
    :show-inheritance:
@@ -66,6 +68,7 @@ Activations
 .. autofunction:: ivy.softmax
 
 .. autofunction:: ivy.softplus
+
 
 
 

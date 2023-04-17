@@ -1,6 +1,7 @@
 Manipulation
 ============
 
+
 .. autosummary::
    :toctree: manipulation
    :template: functional_module.rst
@@ -59,6 +60,7 @@ Manipulation
 
 
 
+
 .. automodule:: ivy.functional.ivy.manipulation
    :special-members: __init__
    :show-inheritance:
@@ -99,6 +101,7 @@ Manipulation
 .. autofunction:: ivy.unstack
 
 .. autofunction:: ivy.zero_pad
+
 
 
 

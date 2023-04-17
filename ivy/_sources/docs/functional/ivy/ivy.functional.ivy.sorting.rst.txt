@@ -1,6 +1,7 @@
 Sorting
 =======
 
+
 .. autosummary::
    :toctree: sorting
    :template: functional_module.rst
@@ -19,6 +20,7 @@ Sorting
 
 
 
+
 .. automodule:: ivy.functional.ivy.sorting
    :special-members: __init__
    :show-inheritance:
@@ -31,6 +33,7 @@ Sorting
 .. autofunction:: ivy.searchsorted
 
 .. autofunction:: ivy.sort
+
 
 
 

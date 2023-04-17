@@ -1,6 +1,7 @@
 Utility
 =======
 
+
 .. autosummary::
    :toctree: utility
    :template: functional_module.rst
@@ -16,6 +17,7 @@ Utility
 
 
 
+
 .. automodule:: ivy.functional.ivy.utility
    :special-members: __init__
    :show-inheritance:
@@ -26,6 +28,7 @@ Utility
 .. autofunction:: ivy.all
 
 .. autofunction:: ivy.any
+
 
 
 

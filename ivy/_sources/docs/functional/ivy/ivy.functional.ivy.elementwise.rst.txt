@@ -1,6 +1,7 @@
 Elementwise
 ===========
 
+
 .. autosummary::
    :toctree: elementwise
    :template: functional_module.rst
@@ -205,6 +206,7 @@ Elementwise
 
 
 
+
 .. automodule:: ivy.functional.ivy.elementwise
    :special-members: __init__
    :show-inheritance:
@@ -341,6 +343,7 @@ Elementwise
 .. autofunction:: ivy.trunc
 
 .. autofunction:: ivy.trunc_divide
+
 
 
 

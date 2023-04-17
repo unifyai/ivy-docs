@@ -1,0 +1,73 @@
+Creation
+========
+
+
+.. autosummary::
+   :toctree: creation
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.experimental.creation.eye_like
+   
+   
+   ivy.functional.ivy.experimental.creation.frombuffer
+   
+   
+   ivy.functional.ivy.experimental.creation.hamming_window
+   
+   
+   ivy.functional.ivy.experimental.creation.hann_window
+   
+   
+   ivy.functional.ivy.experimental.creation.kaiser_bessel_derived_window
+   
+   
+   ivy.functional.ivy.experimental.creation.kaiser_window
+   
+   
+   ivy.functional.ivy.experimental.creation.tril_indices
+   
+   
+   ivy.functional.ivy.experimental.creation.triu_indices
+   
+   
+   ivy.functional.ivy.experimental.creation.vorbis_window
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.creation
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.eye_like
+
+.. autofunction:: ivy.frombuffer
+
+.. autofunction:: ivy.hamming_window
+
+.. autofunction:: ivy.hann_window
+
+.. autofunction:: ivy.kaiser_bessel_derived_window
+
+.. autofunction:: ivy.kaiser_window
+
+.. autofunction:: ivy.tril_indices
+
+.. autofunction:: ivy.triu_indices
+
+.. autofunction:: ivy.vorbis_window
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.creation

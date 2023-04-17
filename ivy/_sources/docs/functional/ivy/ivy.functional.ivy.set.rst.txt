@@ -1,6 +1,7 @@
 Set
 ===
 
+
 .. autosummary::
    :toctree: set
    :template: functional_module.rst
@@ -22,6 +23,7 @@ Set
 
 
 
+
 .. automodule:: ivy.functional.ivy.set
    :special-members: __init__
    :show-inheritance:
@@ -36,6 +38,7 @@ Set
 .. autofunction:: ivy.unique_inverse
 
 .. autofunction:: ivy.unique_values
+
 
 
 

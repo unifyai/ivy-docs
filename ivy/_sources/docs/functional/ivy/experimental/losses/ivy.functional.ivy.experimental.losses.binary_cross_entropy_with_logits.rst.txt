@@ -1,0 +1,8 @@
+binary\_cross\_entropy\_with\_logits
+====================================
+
+.. autofunction:: ivy.binary_cross_entropy_with_logits
+
+.. autoskippablemethod:: ivy.Array.binary_cross_entropy_with_logits
+
+.. autoskippablemethod:: ivy.Container.binary_cross_entropy_with_logits

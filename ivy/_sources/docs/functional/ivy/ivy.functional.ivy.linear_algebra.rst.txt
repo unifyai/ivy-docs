@@ -1,6 +1,7 @@
 Linear algebra
 ==============
 
+
 .. autosummary::
    :toctree: linear_algebra
    :template: functional_module.rst
@@ -100,6 +101,7 @@ Linear algebra
 
 
 
+
 .. automodule:: ivy.functional.ivy.linear_algebra
    :special-members: __init__
    :show-inheritance:
@@ -166,6 +168,7 @@ Linear algebra
 .. autofunction:: ivy.vector_norm
 
 .. autofunction:: ivy.vector_to_skew_symmetric_matrix
+
 
 
 

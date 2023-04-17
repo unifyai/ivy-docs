@@ -1,6 +1,7 @@
 Gradients
 =========
 
+
 .. autosummary::
    :toctree: gradients
    :template: functional_module.rst
@@ -66,6 +67,7 @@ Gradients
    
    ivy.functional.ivy.gradients.with_grads
    
+
 
 
 
@@ -140,6 +142,7 @@ Gradients
 
 
 .. autoclass:: ivy.GradientTracking
+
 
 
 

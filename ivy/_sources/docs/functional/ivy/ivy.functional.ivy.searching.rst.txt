@@ -1,6 +1,7 @@
 Searching
 =========
 
+
 .. autosummary::
    :toctree: searching
    :template: functional_module.rst
@@ -25,6 +26,7 @@ Searching
 
 
 
+
 .. automodule:: ivy.functional.ivy.searching
    :special-members: __init__
    :show-inheritance:
@@ -41,6 +43,7 @@ Searching
 .. autofunction:: ivy.nonzero
 
 .. autofunction:: ivy.where
+
 
 
 

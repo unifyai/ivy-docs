@@ -1,6 +1,7 @@
 Creation
 ========
 
+
 .. autosummary::
    :toctree: creation
    :template: functional_module.rst
@@ -83,6 +84,7 @@ Creation
 
 
 
+
 .. automodule:: ivy.functional.ivy.creation
    :special-members: __init__
    :show-inheritance:
@@ -142,6 +144,7 @@ Creation
 
 
 .. autoclass:: ivy.NestedSequence
+
 
 
 

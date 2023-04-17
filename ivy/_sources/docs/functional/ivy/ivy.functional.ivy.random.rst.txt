@@ -1,6 +1,7 @@
 Random
 ======
 
+
 .. autosummary::
    :toctree: random
    :template: functional_module.rst
@@ -32,6 +33,7 @@ Random
 
 
 
+
 .. automodule:: ivy.functional.ivy.random
    :special-members: __init__
    :show-inheritance:
@@ -58,6 +60,7 @@ Random
 .. autofunction:: ivy.seed
 
 .. autofunction:: ivy.shuffle
+
 
 
 

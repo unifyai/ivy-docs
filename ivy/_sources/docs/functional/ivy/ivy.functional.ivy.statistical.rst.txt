@@ -1,6 +1,7 @@
 Statistical
 ===========
 
+
 .. autosummary::
    :toctree: statistical
    :template: functional_module.rst
@@ -41,6 +42,7 @@ Statistical
 
 
 
+
 .. automodule:: ivy.functional.ivy.statistical
    :special-members: __init__
    :show-inheritance:
@@ -69,6 +71,7 @@ Statistical
 .. autofunction:: ivy.sum
 
 .. autofunction:: ivy.var
+
 
 
 

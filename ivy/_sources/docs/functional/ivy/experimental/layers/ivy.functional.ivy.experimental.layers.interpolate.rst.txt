@@ -1,0 +1,8 @@
+interpolate
+===========
+
+.. autofunction:: ivy.interpolate
+
+.. autoskippablemethod:: ivy.Array.interpolate
+
+.. autoskippablemethod:: ivy.Container.interpolate

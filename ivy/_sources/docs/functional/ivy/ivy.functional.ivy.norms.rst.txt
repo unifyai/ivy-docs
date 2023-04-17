@@ -1,6 +1,7 @@
 Norms
 =====
 
+
 .. autosummary::
    :toctree: norms
    :template: functional_module.rst
@@ -13,6 +14,7 @@ Norms
 
 
 
+
 .. automodule:: ivy.functional.ivy.norms
    :special-members: __init__
    :show-inheritance:
@@ -21,6 +23,7 @@ Norms
 
 
 .. autofunction:: ivy.layer_norm
+
 
 
 

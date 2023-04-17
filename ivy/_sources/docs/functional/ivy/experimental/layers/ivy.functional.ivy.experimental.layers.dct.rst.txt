@@ -1,0 +1,8 @@
+dct
+===
+
+.. autofunction:: ivy.dct
+
+.. autoskippablemethod:: ivy.Array.dct
+
+.. autoskippablemethod:: ivy.Container.dct

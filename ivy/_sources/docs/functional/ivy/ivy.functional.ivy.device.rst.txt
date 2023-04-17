@@ -1,6 +1,7 @@
 Device
 ======
 
+
 .. autosummary::
    :toctree: device
    :template: functional_module.rst
@@ -85,6 +86,7 @@ Device
 
 
 
+
 .. automodule:: ivy.functional.ivy.device
    :special-members: __init__
    :show-inheritance:
@@ -150,6 +152,7 @@ Device
 .. autoclass:: ivy.DefaultDevice
 
 .. autoclass:: ivy.Profiler
+
 
 
 

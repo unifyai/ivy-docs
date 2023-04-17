@@ -1,0 +1,8 @@
+fmax
+====
+
+.. autofunction:: ivy.fmax
+
+.. autoskippablemethod:: ivy.Array.fmax
+
+.. autoskippablemethod:: ivy.Container.fmax

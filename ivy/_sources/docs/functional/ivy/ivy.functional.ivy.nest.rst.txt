@@ -1,6 +1,7 @@
 Nest
 ====
 
+
 .. autosummary::
    :toctree: nest
    :template: functional_module.rst
@@ -67,6 +68,7 @@ Nest
 
 
 
+
 .. automodule:: ivy.functional.ivy.nest
    :special-members: __init__
    :show-inheritance:
@@ -111,6 +113,7 @@ Nest
 .. autofunction:: ivy.set_nest_at_index
 
 .. autofunction:: ivy.set_nest_at_indices
+
 
 
 

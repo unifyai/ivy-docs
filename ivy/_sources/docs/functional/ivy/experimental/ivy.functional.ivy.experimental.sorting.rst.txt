@@ -1,0 +1,38 @@
+Sorting
+=======
+
+
+.. autosummary::
+   :toctree: sorting
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.experimental.sorting.lexsort
+   
+   
+   ivy.functional.ivy.experimental.sorting.msort
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.sorting
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.lexsort
+
+.. autofunction:: ivy.msort
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.sorting

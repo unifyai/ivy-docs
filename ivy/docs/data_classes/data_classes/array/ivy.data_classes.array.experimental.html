@@ -2621,22 +2621,16 @@ the inputs broadcast to.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">avg_pool1d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;SAME&#39;</span><span class="p">))</span>
 <span class="go">ivy.array([[[ 2.,  3.,  4.,  5.],</span>
 <span class="go">        [ 8.,  9., 10., 11.]],</span>
+<span class="go">       [[14., 15., 16., 17.],</span>
+<span class="go">        [20., 21., 22., 23.]]])</span>
 </pre></div>
 </div>
-<blockquote>
-<div><dl class="simple">
-<dt>[[14., 15., 16., 17.],</dt><dd><p>[20., 21., 22., 23.]]])</p>
-</dd>
-</dl>
-</div></blockquote>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">24.</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">avg_pool1d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;VALID&#39;</span><span class="p">))</span>
 <span class="go">ivy.array([[[ 2.,  3.,  4.,  5.]],</span>
+<span class="go">       [[14., 15., 16., 17.]]])</span>
 </pre></div>
 </div>
-<blockquote>
-<div><p>[[14., 15., 16., 17.]]])</p>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -2717,24 +2711,14 @@ a shape that the inputs broadcast to.</p></li>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">48.</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">avg_pool3d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;VALID&#39;</span><span class="p">))</span>
 <span class="go">ivy.array([[[[[ 7.,  8.]]]],</span>
-</pre></div>
-</div>
-<blockquote>
-<div><p>[[[[31., 32.]]]]])</p>
-</div></blockquote>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">avg_pool3d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;SAME&#39;</span><span class="p">))</span>
+<span class="go">       [[[[31., 32.]]]]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">avg_pool3d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;SAME&#39;</span><span class="p">))</span>
 <span class="go">ivy.array([[[[[ 7.,  8.]]],</span>
+<span class="go">        [[[19., 20.]]]],</span>
+<span class="go">       [[[[31., 32.]]],</span>
+<span class="go">        [[[43., 44.]]]]])</span>
 </pre></div>
 </div>
-<blockquote>
-<div><blockquote>
-<div><p>[[[19., 20.]]]],</p>
-</div></blockquote>
-<p>[[[[31., 32.]]],</p>
-<blockquote>
-<div><p>[[[43., 44.]]]]])</p>
-</div></blockquote>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -2992,22 +2976,14 @@ the inputs broadcast to.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">max_pool1d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;SAME&#39;</span><span class="p">))</span>
 <span class="go">ivy.array([[[ 4.,  5.,  6.,  7.],</span>
 <span class="go">        [ 8.,  9., 10., 11.]],</span>
-</pre></div>
-</div>
-<blockquote>
-<div><dl class="simple">
-<dt>[[16., 17., 18., 19.],</dt><dd><p>[20., 21., 22., 23.]]])</p>
-</dd>
-</dl>
-</div></blockquote>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">24.</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="go">       [[16., 17., 18., 19.],</span>
+<span class="go">        [20., 21., 22., 23.]]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">24.</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">max_pool1d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;VALID&#39;</span><span class="p">))</span>
 <span class="go">ivy.array([[[ 4.,  5.,  6.,  7.]],</span>
+<span class="go">   [[16., 17., 18., 19.]]])</span>
 </pre></div>
 </div>
-<blockquote>
-<div><p>[[16., 17., 18., 19.]]])</p>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -3042,29 +3018,19 @@ the inputs broadcast to.</p></li>
 <span class="go">ivy.array([[[[ 2,  3],</span>
 <span class="go">         [ 4,  5],</span>
 <span class="go">         [ 4,  5]]],</span>
+<span class="go">       [[[ 8,  9],</span>
+<span class="go">         [10, 11],</span>
+<span class="go">         [10, 11]]]])</span>
 </pre></div>
 </div>
-<blockquote>
-<div><dl class="simple">
-<dt>[[[ 8,  9],</dt><dd><p>[10, 11],
-[10, 11]]]])</p>
-</dd>
-</dl>
-</div></blockquote>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">48.</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">max_pool2d</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;VALID&#39;</span><span class="p">))</span>
 <span class="go">ivy.array([[[[16, 17]],</span>
+<span class="go">        [[22, 23]]],</span>
+<span class="go">       [[[40, 41]],</span>
+<span class="go">        [[46, 47]]]])</span>
 </pre></div>
 </div>
-<blockquote>
-<div><blockquote>
-<div><p>[[22, 23]]],</p>
-</div></blockquote>
-<p>[[[40, 41]],</p>
-<blockquote>
-<div><p>[[46, 47]]]])</p>
-</div></blockquote>
-</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -3095,24 +3061,14 @@ a shape that the inputs broadcast to.</p></li>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">48.</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">max_pool3d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;VALID&#39;</span><span class="p">))</span>
 <span class="go">ivy.array([[[[[14., 15.]]]],</span>
-</pre></div>
-</div>
-<blockquote>
-<div><p>[[[[38., 39.]]]]])</p>
-</div></blockquote>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">max_pool3d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;SAME&#39;</span><span class="p">))</span>
+<span class="go">   [[[[38., 39.]]]]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">max_pool3d</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;SAME&#39;</span><span class="p">))</span>
 <span class="go">ivy.array([[[[[14., 15.]]],</span>
+<span class="go">    [[[22., 23.]]]],</span>
+<span class="go">   [[[[38., 39.]]],</span>
+<span class="go">    [[[46., 47.]]]]])</span>
 </pre></div>
 </div>
-<blockquote>
-<div><blockquote>
-<div><p>[[[22., 23.]]]],</p>
-</div></blockquote>
-<p>[[[[38., 39.]]],</p>
-<blockquote>
-<div><p>[[[46., 47.]]]]])</p>
-</div></blockquote>
-</div></blockquote>
 </dd></dl>
 
 </dd></dl>

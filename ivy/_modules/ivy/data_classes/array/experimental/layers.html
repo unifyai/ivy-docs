@@ -1073,13 +1073,11 @@ document.write(`
 <span class="sd">        &gt;&gt;&gt; print(x.max_pool1d(2, 2, &#39;SAME&#39;))</span>
 <span class="sd">        ivy.array([[[ 4.,  5.,  6.,  7.],</span>
 <span class="sd">                [ 8.,  9., 10., 11.]],</span>
-
 <span class="sd">               [[16., 17., 18., 19.],</span>
 <span class="sd">                [20., 21., 22., 23.]]])</span>
 <span class="sd">        &gt;&gt;&gt; x = ivy.arange(0, 24.).reshape((2, 3, 4))</span>
 <span class="sd">        &gt;&gt;&gt; print(x.max_pool1d(2, 2, &#39;VALID&#39;))</span>
 <span class="sd">        ivy.array([[[ 4.,  5.,  6.,  7.]],</span>
-
 <span class="sd">           [[16., 17., 18., 19.]]])</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">max_pool1d</span><span class="p">(</span>
@@ -1137,8 +1135,6 @@ document.write(`
 <span class="sd">        ivy.array([[[[ 2,  3],</span>
 <span class="sd">                 [ 4,  5],</span>
 <span class="sd">                 [ 4,  5]]],</span>
-
-
 <span class="sd">               [[[ 8,  9],</span>
 <span class="sd">                 [10, 11],</span>
 <span class="sd">                 [10, 11]]]])</span>
@@ -1146,12 +1142,8 @@ document.write(`
 <span class="sd">        &gt;&gt;&gt; x = ivy.arange(48.).reshape((2, 4, 3, 2))</span>
 <span class="sd">        &gt;&gt;&gt; print(x.max_pool2d(3, 1, &#39;VALID&#39;))</span>
 <span class="sd">        ivy.array([[[[16, 17]],</span>
-
 <span class="sd">                [[22, 23]]],</span>
-
-
 <span class="sd">               [[[40, 41]],</span>
-
 <span class="sd">                [[46, 47]]]])</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">max_pool2d</span><span class="p">(</span>
@@ -1205,21 +1197,11 @@ document.write(`
 <span class="sd">        &gt;&gt;&gt; x = ivy.arange(48.).reshape((2, 3, 2, 2, 2))</span>
 <span class="sd">        &gt;&gt;&gt; print(x.max_pool3d(2, 2, &#39;VALID&#39;))</span>
 <span class="sd">        ivy.array([[[[[14., 15.]]]],</span>
-
-
-
 <span class="sd">           [[[[38., 39.]]]]])</span>
 <span class="sd">        &gt;&gt;&gt; print(x.max_pool3d(2, 2, &#39;SAME&#39;))</span>
 <span class="sd">        ivy.array([[[[[14., 15.]]],</span>
-
-
 <span class="sd">            [[[22., 23.]]]],</span>
-
-
-
 <span class="sd">           [[[[38., 39.]]],</span>
-
-
 <span class="sd">            [[[46., 47.]]]]])</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">max_pool3d</span><span class="p">(</span>
@@ -1280,14 +1262,12 @@ document.write(`
 <span class="sd">        &gt;&gt;&gt; print(x.avg_pool1d(2, 2, &#39;SAME&#39;))</span>
 <span class="sd">        ivy.array([[[ 2.,  3.,  4.,  5.],</span>
 <span class="sd">                [ 8.,  9., 10., 11.]],</span>
-
 <span class="sd">               [[14., 15., 16., 17.],</span>
 <span class="sd">                [20., 21., 22., 23.]]])</span>
 
 <span class="sd">        &gt;&gt;&gt; x = ivy.arange(0, 24.).reshape((2, 3, 4))</span>
 <span class="sd">        &gt;&gt;&gt; print(x.avg_pool1d(2, 2, &#39;VALID&#39;))</span>
 <span class="sd">        ivy.array([[[ 2.,  3.,  4.,  5.]],</span>
-
 <span class="sd">               [[14., 15., 16., 17.]]])</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">avg_pool1d</span><span class="p">(</span>
@@ -1416,21 +1396,11 @@ document.write(`
 <span class="sd">        &gt;&gt;&gt; x = ivy.arange(48.).reshape((2, 3, 2, 2, 2))</span>
 <span class="sd">        &gt;&gt;&gt; print(x.avg_pool3d(2, 2, &#39;VALID&#39;))</span>
 <span class="sd">        ivy.array([[[[[ 7.,  8.]]]],</span>
-
-
-
 <span class="sd">               [[[[31., 32.]]]]])</span>
 <span class="sd">        &gt;&gt;&gt; print(x.avg_pool3d(2, 2, &#39;SAME&#39;))</span>
 <span class="sd">        ivy.array([[[[[ 7.,  8.]]],</span>
-
-
 <span class="sd">                [[[19., 20.]]]],</span>
-
-
-
 <span class="sd">               [[[[31., 32.]]],</span>
-
-
 <span class="sd">                [[[43., 44.]]]]])</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">avg_pool3d</span><span class="p">(</span>

@@ -1286,114 +1286,97 @@ If you want to try out your local version of ivy, with all of the local changes 
 <h3>With Docker<a class="headerlink" href="#with-docker" title="Permalink to this heading">#</a></h3>
 <ol class="arabic">
 <li><dl>
-<dt>With PyCharm (With or without docker):</dt><dd><ol class="arabic">
-<li><p>PyCharm enables users to run pytest using the green button present near every function declaration inside the <code class="code docutils literal notranslate"><span class="pre">ivy_tests</span></code> folder.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/contributing/the_basics/pytest_with_pycharm/pytest_button_pycharm.png?raw=true"><img alt="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/contributing/the_basics/pytest_with_pycharm/pytest_button_pycharm.png?raw=true" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/contributing/the_basics/pytest_with_pycharm/pytest_button_pycharm.png?raw=true" style="width: 420px;" /></a>
-</div></blockquote>
-</li>
-<li><p>Testing can be done for the entire project, individual submodules, individual files and individual tests.
-This can be done by selecting the appropriate configuration from the top pane in PyCharm.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/contributing/the_basics/pytest_with_pycharm/pytest_with_pycharm.png?raw=true"><img alt="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/contributing/the_basics/pytest_with_pycharm/pytest_with_pycharm.png?raw=true" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/contributing/the_basics/pytest_with_pycharm/pytest_with_pycharm.png?raw=true" style="width: 420px;" /></a>
-</div></blockquote>
-</li>
+<dt>With PyCharm (With or without docker):</dt><dd><ol class="arabic simple">
+<li><p>PyCharm enables users to run pytest using the green button present near every function declaration inside the <code class="code docutils literal notranslate"><span class="pre">ivy_tests</span></code> folder.</p></li>
 </ol>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/contributing/the_basics/pytest_with_pycharm/pytest_button_pycharm.png?raw=true"><img alt="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/contributing/the_basics/pytest_with_pycharm/pytest_button_pycharm.png?raw=true" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/contributing/the_basics/pytest_with_pycharm/pytest_button_pycharm.png?raw=true" style="width: 420px;" /></a>
+<ol class="arabic simple">
+<li><p>Testing can be done for the entire project, individual submodules, individual files and individual tests.
+This can be done by selecting the appropriate configuration from the top pane in PyCharm.</p></li>
+</ol>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/contributing/the_basics/pytest_with_pycharm/pytest_with_pycharm.png?raw=true"><img alt="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/contributing/the_basics/pytest_with_pycharm/pytest_with_pycharm.png?raw=true" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/master/img/externally_linked/contributing/the_basics/pytest_with_pycharm/pytest_with_pycharm.png?raw=true" style="width: 420px;" /></a>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt>Through the command line (With docker):</dt><dd><ol class="arabic">
-<li><p>We need to replace the folder inside the container with the current local ivy directory to run tests on the current local code.</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker exec &lt;container-name&gt; rm -rf ivy
+<dt>Through the command line (With docker):</dt><dd><ol class="arabic simple">
+<li><p>We need to replace the folder inside the container with the current local ivy directory to run tests on the current local code.</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker exec &lt;container-name&gt; rm -rf ivy
 docker cp ivy &lt;container-name&gt;:/
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p>We need to then enter inside the docker container and change into the <code class="code docutils literal notranslate"><span class="pre">ivy</span></code> directory using the following command.</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker exec -it ivy_container bash
+<ol class="arabic simple">
+<li><p>We need to then enter inside the docker container and change into the <code class="code docutils literal notranslate"><span class="pre">ivy</span></code> directory using the following command.</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>docker exec -it ivy_container bash
 cd ivy
 </pre></div>
 </div>
-</div></blockquote>
-</li>
-<li><p>Run the test using the pytest command.</p>
-<blockquote>
-<div><ol class="arabic">
-<li><p>Ivy Tests:</p>
-<blockquote>
-<div><ol class="arabic">
-<li><p>For a single function:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pytest ivy_tests/test_ivy/test_functional/test_core/test_image.py::test_random_crop --no-header --no-summary -q
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>For a single file:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pytest ivy_tests/test_ivy/test_functional/test_core/test_image.py --no-header --no-summary -q
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>For all tests:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pytest ivy_tests/test_ivy/ --no-header --no-summary -q
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-</div></blockquote>
-</li>
-<li><p>Array API Tests:</p>
 <ol class="arabic">
-<li><p>For a single function:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pytest ivy_tests/array_api_testing/test_array_api/array_api_tests/test_creation_functions.py::test_arange --no-header --no-summary -q
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>For a single file:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pytest ivy_tests/array_api_testing/test_array_api/array_api_tests/test_creation_functions.py --no-header --no-summary -q
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>For all tests:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pytest ivy_tests/array_api_testing/test_array_api/ --no-header --no-summary -q
-</pre></div>
-</div>
-</div></blockquote>
-</li>
+<li><dl>
+<dt>Run the test using the pytest command.</dt><dd><ol class="arabic">
+<li><dl>
+<dt>Ivy Tests:</dt><dd><ol class="arabic simple">
+<li><p>For a single function:</p></li>
 </ol>
-</li>
-<li><p>For the entire project:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pytest ivy_tests/ --no-header --no-summary -q
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pytest ivy_tests/test_ivy/test_functional/test_core/test_image.py::test_random_crop --no-header --no-summary -q
 </pre></div>
 </div>
-</div></blockquote>
-</li>
+<ol class="arabic simple">
+<li><p>For a single file:</p></li>
 </ol>
-</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pytest ivy_tests/test_ivy/test_functional/test_core/test_image.py --no-header --no-summary -q
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>For all tests:</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pytest ivy_tests/test_ivy/ --no-header --no-summary -q
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Array API Tests:</dt><dd><ol class="arabic simple">
+<li><p>For a single function:</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pytest ivy_tests/array_api_testing/test_array_api/array_api_tests/test_creation_functions.py::test_arange --no-header --no-summary -q
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>For a single file:</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pytest ivy_tests/array_api_testing/test_array_api/array_api_tests/test_creation_functions.py --no-header --no-summary -q
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>For all tests:</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pytest ivy_tests/array_api_testing/test_array_api/ --no-header --no-summary -q
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p>For the entire project:</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pytest ivy_tests/ --no-header --no-summary -q
+</pre></div>
+</div>
+</dd>
+</dl>
 </li>
 </ol>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt>Through the command line (Without docker):</dt><dd><ol class="arabic">
-<li><p>We need to first enter inside the virtual environment.</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ivy_dev\Scripts\activate.bat
+<dt>Through the command line (Without docker):</dt><dd><ol class="arabic simple">
+<li><p>We need to first enter inside the virtual environment.</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ivy_dev\Scripts\activate.bat
 </pre></div>
 </div>
 <p>(on Windows)</p>
@@ -1402,72 +1385,56 @@ cd ivy
 </pre></div>
 </div>
 <p>(on Mac/Linux)</p>
-</div></blockquote>
-</li>
-<li><p>Run the test using the pytest command.</p>
-<blockquote>
-<div><ol class="arabic">
-<li><p>Ivy Tests:</p>
-<blockquote>
-<div><ol class="arabic">
-<li><p>For a single function:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pytest ivy_tests/test_ivy/test_functional/test_core/test_image.py::test_random_crop --no-header --no-summary -q
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>For a single file:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pytest ivy_tests/test_ivy/test_functional/test_core/test_image.py --no-header --no-summary -q
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>For all tests:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pytest ivy_tests/test_ivy/ --no-header --no-summary -q
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ol>
-</div></blockquote>
-</li>
-<li><p>Array API Tests</p>
 <ol class="arabic">
-<li><p>For a single function:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pytest ivy_tests/array_api_testing/test_array_api/array_api_tests/test_creation_functions.py::test_arange --no-header --no-summary -q
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>For a single file:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pytest ivy_tests/array_api_testing/test_array_api/array_api_tests/test_creation_functions.py --no-header --no-summary -q
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>For all tests:</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pytest ivy_tests/array_api_testing/test_array_api/ --no-header --no-summary -q
-</pre></div>
-</div>
-</div></blockquote>
-</li>
+<li><dl>
+<dt>Run the test using the pytest command.</dt><dd><ol class="arabic">
+<li><dl>
+<dt>Ivy Tests:</dt><dd><ol class="arabic simple">
+<li><p>For a single function:</p></li>
 </ol>
-</li>
-<li><p>For the entire project</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pytest ivy_tests/ --no-header --no-summary -q
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pytest ivy_tests/test_ivy/test_functional/test_core/test_image.py::test_random_crop --no-header --no-summary -q
 </pre></div>
 </div>
-</div></blockquote>
-</li>
+<ol class="arabic simple">
+<li><p>For a single file:</p></li>
 </ol>
-</div></blockquote>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pytest ivy_tests/test_ivy/test_functional/test_core/test_image.py --no-header --no-summary -q
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>For all tests:</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pytest ivy_tests/test_ivy/ --no-header --no-summary -q
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><p>Array API Tests
+#. For a single function:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pytest ivy_tests/array_api_testing/test_array_api/array_api_tests/test_creation_functions.py::test_arange --no-header --no-summary -q
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>For a single file:</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pytest ivy_tests/array_api_testing/test_array_api/array_api_tests/test_creation_functions.py --no-header --no-summary -q
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p>For all tests:</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pytest ivy_tests/array_api_testing/test_array_api/ --no-header --no-summary -q
+</pre></div>
+</div>
+</li>
+<li><p>For the entire project</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>python -m pytest ivy_tests/ --no-header --no-summary -q
+</pre></div>
+</div>
+</dd>
+</dl>
 </li>
 </ol>
 </dd>
@@ -1515,47 +1482,34 @@ cd ivy
 <h3>with PyCharm<a class="headerlink" href="#with-pycharm" title="Permalink to this heading">#</a></h3>
 <ol class="arabic">
 <li><dl>
-<dt>Find a text:</dt><dd><ol class="arabic">
-<li><p><code class="code docutils literal notranslate"><span class="pre">Ctrl+F</span></code> will prompt you to type in the text to be found, if not already selected, and then find all the instances of text within current file.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_file.png?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_file.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_file.png?raw=true" style="width: 50%;" /></a>
-</div></blockquote>
-</li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">Ctrl+Shift+F</span></code> will find all the instances of text within the project.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_project_wide.png?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_project_wide.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_project_wide.png?raw=true" style="width: 50%;" /></a>
-</div></blockquote>
-</li>
+<dt>Find a text:</dt><dd><ol class="arabic simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Ctrl+F</span></code> will prompt you to type in the text to be found, if not already selected, and then find all the instances of text within current file.</p></li>
 </ol>
+<img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_file.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_file.png?raw=true" />
+<ol class="arabic simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Ctrl+Shift+F</span></code> will find all the instances of text within the project.</p></li>
+</ol>
+<img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_project_wide.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_project_wide.png?raw=true" />
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt>Find+Replace a text:</dt><dd><ol class="arabic">
-<li><p><code class="code docutils literal notranslate"><span class="pre">Ctrl+R</span></code> will prompt you to type in the text to be found and the text to be replaced, if not already selected, within current file.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_n_replace_file.png?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_n_replace_file.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_n_replace_file.png?raw=true" style="width: 50%;" /></a>
-</div></blockquote>
-</li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">Ctrl+Shift+R</span></code> will prompt you to type in the text to be found and the text to be replaced, if not already selected, within the whole project.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_and_replace_project_wide.png?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_and_replace_project_wide.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_and_replace_project_wide.png?raw=true" style="width: 50%;" /></a>
-</div></blockquote>
-</li>
+<dt>Find+Replace a text:</dt><dd><ol class="arabic simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Ctrl+R</span></code> will prompt you to type in the text to be found and the text to be replaced, if not already selected, within current file.</p></li>
 </ol>
+<img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_n_replace_file.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_n_replace_file.png?raw=true" />
+<ol class="arabic simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Ctrl+Shift+R</span></code> will prompt you to type in the text to be found and the text to be replaced, if not already selected, within the whole project.</p></li>
+</ol>
+<img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_and_replace_project_wide.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/find_and_replace_project_wide.png?raw=true" />
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt>Find and multiply the cursor:</dt><dd><blockquote>
-<div><ol class="arabic">
-<li><p><code class="code docutils literal notranslate"><span class="pre">Ctrl+Shift+Alt+J</span></code> will find all the instances of selected text and multiply the cursor to all these locations.</p>
-<blockquote>
-<div><a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/multiple_cursor.png?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/multiple_cursor.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/multiple_cursor.png?raw=true" style="width: 50%;" /></a>
-</div></blockquote>
-</li>
+<dt>Find and multiply the cursor:</dt><dd><ol class="arabic simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">Ctrl+Shift+Alt+J</span></code> will find all the instances of selected text and multiply the cursor to all these locations.</p></li>
 </ol>
-</div></blockquote>
+<img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/multiple_cursor.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/multiple_cursor.png?raw=true" />
 <p>You can visit <a class="reference external" href="https://www.jetbrains.com/help/pycharm/finding-and-replacing-text-in-file.html">Pycharm Blog</a> for more details on efficient coding!</p>
 </dd>
 </dl>
@@ -1572,7 +1526,7 @@ cd ivy
 <li><dl>
 <dt>Enter into the debug mode:</dt><dd><p>#. Click on Run icon and Select <strong>Debug test</strong> or press <code class="code docutils literal notranslate"><span class="pre">Shift+F9</span></code>.
 This will open up a Debug Window Toolbar:</p>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/open_in_debug_mode.png?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/open_in_debug_mode.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/open_in_debug_mode.png?raw=true" style="width: 50%;" /></a>
+<img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/open_in_debug_mode.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/open_in_debug_mode.png?raw=true" />
 </dd>
 </dl>
 </li>
@@ -1583,7 +1537,7 @@ This will open up a Debug Window Toolbar:</p>
 <ol class="arabic simple">
 <li><p>Click the Step Over button or press <code class="code docutils literal notranslate"><span class="pre">F8</span></code></p></li>
 </ol>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/step_over.png?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/step_over.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/step_over.png?raw=true" style="width: 50%;" /></a>
+<img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/step_over.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/step_over.png?raw=true" />
 </dd>
 </dl>
 </li>
@@ -1599,7 +1553,7 @@ This feature allows you to select the method call you are interested in.</p>
 <li><p>Press <code class="code docutils literal notranslate"><span class="pre">Shift+F7</span></code>.
 This will prompt you to select the method you want to step into:</p></li>
 </ol>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/smart_step_into.png?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/smart_step_into.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/smart_step_into.png?raw=true" style="width: 50%;" /></a>
+<img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/smart_step_into.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/smart_step_into.png?raw=true" />
 <ol class="arabic simple">
 <li><p>Click the desired method.</p></li>
 </ol>
@@ -1638,7 +1592,7 @@ You can print outputs and debug the code further on.</p>
 <li><p>PyChram is great at pointing the lines of code which are causing tests to fail.
 Navigating to that line, you can add Try-Except block with breakpoints to get in depth understanding of the errors.</p></li>
 </ol>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/try_except.png?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/try_except.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/try_except.png?raw=true" style="width: 50%;" /></a>
+<img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/try_except.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/try_except.png?raw=true" />
 </dd>
 </dl>
 </li>
@@ -1647,7 +1601,7 @@ Navigating to that line, you can add Try-Except block with breakpoints to get in
 <li><p>Create a separate dummy <code class="code docutils literal notranslate"><span class="pre">test.py</span></code> file wherein you can evaluate a particular test failure.
 Make sure you don’t add or commit this dummy file while pushing your changes.</p></li>
 </ol>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/dummy_test.png?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/dummy_test.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/dummy_test.png?raw=true" style="width: 50%;" /></a>
+<img alt="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/dummy_test.png?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/contributing/the_basics/getting_most_out_of_IDE/dummy_test.png?raw=true" />
 </dd>
 </dl>
 </li>

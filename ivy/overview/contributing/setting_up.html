@@ -1288,8 +1288,7 @@ src="https://www.youtube.com/embed/5BxizBIC-GQ" class="video" allowfullscreen="t
 <ol class="arabic">
 <li><p>Install Docker by running the commands below one by one in the Linux terminal.
 You may visit <a class="reference external" href="https://docs.docker.com/engine/install/ubuntu/">Docker Ubuntu Installation Page</a> for the details.</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt-get update
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt-get install \
@@ -1316,7 +1315,6 @@ $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
 </pre></div>
 </div>
-</div></blockquote>
 </li>
 <li><p>Get the latest Docker Image for Ivy by:</p>
 <ol class="loweralpha simple">
@@ -1341,14 +1339,12 @@ Type python3 (with the number) in python interpreter path and press ok.</p></li>
 </ol>
 <p><strong>Docker Connection not Successfull</strong></p>
 <p>This is a common error which you might face. If you are not successfully able to connect docker with Pycharm(point 4a) and your docker is also running, the issue is that you are not able to use your docker socket. So, executing the below two commands should solve this.</p>
-<blockquote>
-<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo chmod a+rwx /var/run/docker.sock
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo chmod a+rwx /var/run/docker.sock
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo chmod a+rwx /var/run/docker.pid
 </pre></div>
 </div>
-</div></blockquote>
 <p>For questions, please reach out on <a class="reference external" href="https://discord.gg/sXyFF8tDtm">discord</a> in the <a class="reference external" href="https://discord.com/channels/799879767196958751/942114744691740772">docker channel</a>!</p>
 <p><strong>Video</strong></p>
 <iframe width="420" height="315"

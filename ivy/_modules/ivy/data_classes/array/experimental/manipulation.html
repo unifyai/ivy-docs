@@ -1900,7 +1900,60 @@ document.write(`
 <span class="sd">        ret</span>
 <span class="sd">            Output Array</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">as_strided</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">strides</span><span class="p">)</span></div></div>
+        <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">as_strided</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,</span> <span class="n">shape</span><span class="p">,</span> <span class="n">strides</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="_ArrayWithManipulationExperimental.concat_from_sequence"><a class="viewcode-back" href="../../../../../docs/data_classes/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.concat_from_sequence">[docs]</a>    <span class="nd">@handle_view</span>
+    <span class="k">def</span> <span class="nf">concat_from_sequence</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span>
+        <span class="o">/</span><span class="p">,</span>
+        <span class="n">input_sequence</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span>
+            <span class="n">Tuple</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">]],</span>
+            <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">NativeArray</span><span class="p">]],</span>
+        <span class="p">],</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">new_axis</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">axis</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        This method simply wraps the function, and so the docstring for</span>
+<span class="sd">        ivy.concat_from_sequence also applies to this method with minimal changes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        self</span>
+<span class="sd">            Array input.</span>
+<span class="sd">        input_sequence</span>
+<span class="sd">            A sequence of arrays.</span>
+<span class="sd">        new_axis</span>
+<span class="sd">            Insert and concatenate on a new axis or not,</span>
+<span class="sd">            default 0 means do not insert new axis.</span>
+<span class="sd">            new_axis = 0: concatenate</span>
+<span class="sd">            new_axis = 1: stack</span>
+<span class="sd">        axis</span>
+<span class="sd">            The axis along which the arrays will be concatenated.</span>
+<span class="sd">        out</span>
+<span class="sd">            Optional output array, for writing the result to.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        ret</span>
+<span class="sd">            Output Array</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">new_axis</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat_from_sequence</span><span class="p">(</span>
+                <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">]</span> <span class="o">+</span> <span class="n">input_sequence</span><span class="p">,</span> <span class="n">new_axis</span><span class="o">=</span><span class="n">new_axis</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">new_axis</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_sequence</span><span class="p">,</span> <span class="p">(</span><span class="nb">tuple</span><span class="p">,</span> <span class="nb">list</span><span class="p">)):</span>
+                <span class="n">input_sequence</span> <span class="o">=</span> <span class="p">[</span><span class="n">input_sequence</span><span class="p">]</span>
+            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">input_sequence</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
+                <span class="n">input_sequence</span> <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">,)</span> <span class="o">+</span> <span class="n">input_sequence</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">input_sequence</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_data</span><span class="p">]</span> <span class="o">+</span> <span class="n">input_sequence</span>
+            <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">concat_from_sequence</span><span class="p">(</span>
+                <span class="n">input_sequence</span><span class="p">,</span> <span class="n">new_axis</span><span class="o">=</span><span class="n">new_axis</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="n">axis</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span>
+            <span class="p">)</span></div></div>
 </pre></div>
 
                 </article>

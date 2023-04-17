@@ -3556,6 +3556,33 @@ of shape (M, N) becomes a view of shape (M, N, 1).</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.concat_from_sequence">
+<span class="sig-name descname"><span class="pre">concat_from_sequence</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_sequence</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/ivy/data_classes/array/experimental/manipulation.html#_ArrayWithManipulationExperimental.concat_from_sequence"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.concat_from_sequence" title="Permalink to this definition">#</a></dt>
+<dd><p>This method simply wraps the function, and so the docstring for
+ivy.concat_from_sequence also applies to this method with minimal changes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>) – Array input.</p></li>
+<li><p><strong>input_sequence</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Tuple</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]], <code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]]]) – A sequence of arrays.</p></li>
+<li><p><strong>new_axis</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Insert and concatenate on a new axis or not, (default: <code class="docutils literal notranslate"><span class="pre">0</span></code>)
+default 0 means do not insert new axis.
+new_axis = 0: concatenate
+new_axis = 1: stack</p></li>
+<li><p><strong>axis</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – The axis along which the arrays will be concatenated. (default: <code class="docutils literal notranslate"><span class="pre">0</span></code>)</p></li>
+<li><p><strong>out</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – Optional output array, for writing the result to. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – Output Array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.dsplit">
 <span class="sig-name descname"><span class="pre">dsplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indices_or_sections</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../../_modules/ivy/data_classes/array/experimental/manipulation.html#_ArrayWithManipulationExperimental.dsplit"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.dsplit" title="Permalink to this definition">#</a></dt>
 <dd><p>ivy.Array instance method variant of ivy.dsplit. This method simply
@@ -5083,6 +5110,7 @@ quantiles for different values of q.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.atleast_1d"><code class="docutils literal notranslate"><span class="pre">_ArrayWithManipulationExperimental.atleast_1d()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.atleast_2d"><code class="docutils literal notranslate"><span class="pre">_ArrayWithManipulationExperimental.atleast_2d()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.atleast_3d"><code class="docutils literal notranslate"><span class="pre">_ArrayWithManipulationExperimental.atleast_3d()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.concat_from_sequence"><code class="docutils literal notranslate"><span class="pre">_ArrayWithManipulationExperimental.concat_from_sequence()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.dsplit"><code class="docutils literal notranslate"><span class="pre">_ArrayWithManipulationExperimental.dsplit()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.dstack"><code class="docutils literal notranslate"><span class="pre">_ArrayWithManipulationExperimental.dstack()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental.expand"><code class="docutils literal notranslate"><span class="pre">_ArrayWithManipulationExperimental.expand()</span></code></a></li>

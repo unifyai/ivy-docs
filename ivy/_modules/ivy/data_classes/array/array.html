@@ -1364,7 +1364,7 @@ document.write(`
     <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="n">sig_fig</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array_significant_figures</span><span class="p">()</span>
         <span class="n">dec_vals</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array_decimal_values</span><span class="p">()</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">backend</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">backend</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="ow">or</span> <span class="n">ivy</span><span class="o">.</span><span class="n">is_local</span><span class="p">():</span>
             <span class="c1"># If the array was constructed using implicit backend</span>
             <span class="n">backend</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">current_backend</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>

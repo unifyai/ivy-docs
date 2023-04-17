@@ -1231,7 +1231,7 @@ See the ‘Where to place a frontend function’ sub-section of the frontend API
 <section id="ivy-full">
 <h3>ivy.full()<a class="headerlink" href="#ivy-full" title="Permalink to this heading">#</a></h3>
 <p>Here we are going to look at an example of a function that does not consume an <code class="code docutils literal notranslate"><span class="pre">array</span></code>.
-This is the creation function <code class="xref py py-func docutils literal notranslate"><span class="pre">full()</span></code>, which takes an array shape as an argument to create an array and filled with elements of a given value.
+This is the creation function <code class="xref py py-func docutils literal notranslate"><span class="pre">full()</span></code>, which takes an array shape as an argument to create an array filled with elements of a given value.
 This function requires us to create extra functions for generating <code class="code docutils literal notranslate"><span class="pre">shape</span></code> and <code class="code docutils literal notranslate"><span class="pre">fill</span> <span class="pre">value</span></code>, these use the <code class="code docutils literal notranslate"><span class="pre">shared</span></code> hypothesis strategy.</p>
 <p><strong>Jax</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ivy_tests/test_ivy/test_frontends/test_jax/test_jax_lax_operators.py</span>
@@ -1443,7 +1443,7 @@ This is used to specify the data type of the output array.</p></li>
 <h3>Testing Without Using Tests Values<a class="headerlink" href="#testing-without-using-tests-values" title="Permalink to this heading">#</a></h3>
 <p>While even using hypothesis, there are some cases in which we set <code class="code docutils literal notranslate"><span class="pre">test_values=False</span></code> for example, we have a
 function add_noise() and we call it on x and we try to assert (we interally use assert np.all_close) that the result
-from torch backend matches tensorflow the test will always fail, because the function add_noise() depends on a random
+from torch backend matches tensorflow and the test will always fail, because the function add_noise() depends on a random
 seed internally that we have no control over, what we change is only how we test for equality, in which in that case
 we can not and we have to reconstruct the output as shown in the example below.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ivy_tests/test_ivy/test_frontends/test_torch/test_linalg.py</span>
@@ -1563,7 +1563,7 @@ Taking an example of <code class="xref py py-func docutils literal notranslate">
 <h2>Frontend Instance Method Tests<a class="headerlink" href="#frontend-instance-method-tests" title="Permalink to this heading">#</a></h2>
 <p>The frontend instance method tests are similar to the frontend function test, but instead of testing the function directly we test the instance method of the frontend class.
 major difference is that we have more flags to pass now, most initialization functions take an array as an input. also some methods may take an array as input,
-for example, <code class="code docutils literal notranslate"><span class="pre">ndarray.__add__</span></code> would expect an array as input, despite the <code class="code docutils literal notranslate"><span class="pre">self.array</span></code>. and to make our test is <strong>complete</strong> we need to generate seperate flags for each.</p>
+for example, <code class="code docutils literal notranslate"><span class="pre">ndarray.__add__</span></code> would expect an array as input, despite the <code class="code docutils literal notranslate"><span class="pre">self.array</span></code>. and to make our test <strong>complete</strong> we need to generate seperate flags for each.</p>
 <p><strong>Important Helper Functions</strong></p>
 <dl class="simple">
 <dt><code class="xref py py-func docutils literal notranslate"><span class="pre">&#64;handle_frontend_method()</span></code> requires 3 keyword only parameters:</dt><dd><ul class="simple">

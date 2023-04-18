@@ -1244,16 +1244,24 @@ This file will be imported with the default <code class="docutils literal notran
 <section id="options">
 <h4>Options<a class="headerlink" href="#options" title="Permalink to this heading">#</a></h4>
 <dl class="option-list">
-<dt><kbd><span class="option">--no-cleanup</span></kbd></dt>
+<dt><kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></dt>
+<dd><p>Show this help</p>
+</dd>
+<dt><kbd><span class="option">-C</span>, <span class="option">--no-cleanup</span></kbd></dt>
 <dd><p>Disable the backup/cleanup procedure</p>
 </dd>
-<dt><kbd><span class="option">--git-add</span></kbd></dt>
-<dd><p>Stage changed files before generating the docs, this is
-useful if you want know which files changed by you when
-used with <code class="docutils literal notranslate"><span class="pre">--no-cleanup</span></code></p>
+<dt><kbd><span class="option">-g</span>, <span class="option">--git-add</span></kbd></dt>
+<dd><p>Stage changed files before generating the docs</p>
 </dd>
-<dt><kbd><span class="option">--skip-dependencies-install</span></kbd></dt>
-<dd><p>Skip installing python dependencies</p>
+<dt><kbd><span class="option">-s</span>, <span class="option">--skip-dependencies-install</span></kbd></dt>
+<dd><p>Skip installing dependencies using pip</p>
+</dd>
+<dt><kbd><span class="option">-j</span>, <span class="option">--jobs <var>N</var></span></kbd></dt>
+<dd><p>Build in parallel with N processes where possible
+(special value <code class="docutils literal notranslate"><span class="pre">auto</span></code> will set N to cpu-count)</p>
+</dd>
+<dt><kbd><span class="option">-D <var>setting</var></span></kbd></dt>
+<dd><p>Override a setting in <code class="docutils literal notranslate"><span class="pre">conf.py</span></code></p>
 </dd>
 </dl>
 </section>
@@ -1262,12 +1270,16 @@ used with <code class="docutils literal notranslate"><span class="pre">--no-clea
 <h3>The Docker image<a class="headerlink" href="#the-docker-image" title="Permalink to this heading">#</a></h3>
 <p>The Docker image <a class="reference external" href="https://hub.docker.com/r/unifyai/doc-builder">unifyai/doc-builder</a>
 works as a wrapper around the <code class="docutils literal notranslate"><span class="pre">make_docs_without_docker.sh</span></code> script. It runs the script
-on the <code class="docutils literal notranslate"><span class="pre">/project</span></code> directory, located in the container <a class="reference external" href="https://github.com/unifyai/doc-builder/blob/master/Dockerfile#L20">as shown here</a>:</p>
+on the <code class="docutils literal notranslate"><span class="pre">/project</span></code> directory, located in the container <a class="reference external" href="https://github.com/unifyai/doc-builder/blob/master/Dockerfile#L21">as shown here</a>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./make_docs_without_docker.sh<span class="w"> </span>/project
 </pre></div>
 </div>
 <p>To build the docs through docker you use this command:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span>/path/to/project:/project<span class="w"> </span>unifyai/doc-builder
+</pre></div>
+</div>
+<p>You can as well add options described in the <a class="reference internal" href="#the-convenience-script"><span class="std std-ref">The convenience script</span></a> section.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span>/path/to/project:/project<span class="w"> </span>unifyai/doc-builder<span class="w"> </span>--no-cleanup
 </pre></div>
 </div>
 </section>

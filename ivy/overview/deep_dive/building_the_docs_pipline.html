@@ -1312,9 +1312,10 @@ in a browser.</p>
 
 <span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
     <span class="nc">:toctree:</span> docs/functional
-    <span class="nc">:template:</span> top_level_toc.rst
+    <span class="nc">:template:</span> top_functional_toc.rst
+    <span class="nc">:caption:</span> API Reference
     <span class="nc">:recursive:</span>
-    <span class="nc">:include:</span>
+    <span class="nc">:hide-table:</span>
 
     ivy.functional.ivy
 </pre></div>
@@ -1376,9 +1377,9 @@ before building the docs.</p>
 <p>As of writing this documentation, Ivy’s doc-builder is using 4 custom extensions:</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">custom_autosummary</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">custom_builder</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">discussion_linker</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">skippable_function</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ivy_data</span></code></p></li>
 </ol>
 <section id="custom-autosummary">
 <h3><code class="docutils literal notranslate"><span class="pre">custom_autosummary</span></code><a class="headerlink" href="#custom-autosummary" title="Permalink to this heading">#</a></h3>
@@ -1388,8 +1389,7 @@ generating “stub” rst files for each module listed in the <code class="docut
 you can add a template for these stub files using the <code class="docutils literal notranslate"><span class="pre">:template:</span></code> option. Which can
 inturn include the <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive again, recursing on the whole module.</p>
 <p>Unfortunately, the original <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> extension is very limited, forcing you to
-have a table of contents for each modules, and the customized stub file can’t be
-included, which we needed to discover the modules automatically.</p>
+have a table of contents for each modules.</p>
 <p>We’ll go through each option or configuration value added to the original <code class="docutils literal notranslate"><span class="pre">autosummary</span></code></p>
 <section id="hide-table">
 <h4><code class="docutils literal notranslate"><span class="pre">:hide-table:</span></code><a class="headerlink" href="#hide-table" title="Permalink to this heading">#</a></h4>
@@ -1398,147 +1398,6 @@ of contents for each module. And it generate stub files only if <code class="doc
 specified. As we only need the <code class="docutils literal notranslate"><span class="pre">toctree</span></code> this option hides the table of contents, but
 it require the <code class="docutils literal notranslate"><span class="pre">:toctree:</span></code> option to be specified.</p>
 </section>
-<section id="include">
-<h4><code class="docutils literal notranslate"><span class="pre">:include:</span></code><a class="headerlink" href="#include" title="Permalink to this heading">#</a></h4>
-<p>This option is to include generated stub files in the current page, instead of linking
-it in the <code class="docutils literal notranslate"><span class="pre">toctree</span></code>. To demonstrate why we need that look at this example:</p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
-    <span class="nc">:toctree:</span> docs/functional
-    <span class="nc">:template:</span> top_level_toc.rst
-    <span class="nc">:recursive:</span>
-    <span class="nc">:include:</span>
-
-    ivy.functional.ivy
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">top_level_toc.rst</span></code> has this in it:</p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span>{{name | underline}}
-
-<span class="cp">.. This is a placeholder so the include directive removes what&#39;s before it</span>
-<span class="cp">.. REMOVE_BEFORE_HERE</span>
-<span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
-    <span class="nc">:toctree:</span> {{name}}
-    <span class="nc">:template:</span> top_level_module.rst
-    <span class="nc">:caption:</span> {{fullname}}
-    <span class="nc">:substitute-caption:</span>
-    <span class="nc">:hide-table:</span>
-    <span class="nc">:fix-directory:</span>
-{% for submodule in modules %}
-{{ submodule }}
-{%- endfor %}
-</pre></div>
-</div>
-<p>So, the stub file generated from the <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive should be another
-<code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive, which will discover the modules in the <code class="docutils literal notranslate"><span class="pre">ivy.functional.ivy</span></code>
-module.</p>
-<p>So what we do is including that generated stub file into the <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> file, which
-will discover all modules under <code class="docutils literal notranslate"><span class="pre">ivy.functional.ivy</span></code> for us instead of writing it by
-hand.</p>
-<blockquote>
-<div><p>ℹ <strong>Note:</strong> The <code class="docutils literal notranslate"><span class="pre">:include:</span></code> option is only available if the <code class="docutils literal notranslate"><span class="pre">:toctree:</span></code> option
-is specified.</p>
-</div></blockquote>
-<blockquote>
-<div><p>ℹ <strong>Note:</strong> If you use <code class="docutils literal notranslate"><span class="pre">:include:</span></code> option, the template you use should have the
-<code class="docutils literal notranslate"><span class="pre">REMOVE_BEFORE_HERE</span></code> comment, which is used to remove the content before it.</p>
-<p>This is used because each file should have a title, which we don’t include, so you
-can see that the <code class="docutils literal notranslate"><span class="pre">REMOVE_BEFORE_HERE</span></code> comment is written after the title.</p>
-</div></blockquote>
-</section>
-<section id="fix-directory">
-<h4><code class="docutils literal notranslate"><span class="pre">:fix-directory:</span></code><a class="headerlink" href="#fix-directory" title="Permalink to this heading">#</a></h4>
-<p>Because of the nature of the <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive, it generates stub files relative
-to the current file. If we used include, and there is an <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive in
-the stub file, this directive will become invalid, because sphinx include the stub file
-by substitution.</p>
-<p>Let’s assume you have a file called <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> which has this in it:</p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
-    <span class="nc">:toctree:</span> toctree
-    <span class="nc">:template:</span> top_level_toc.rst
-    <span class="nc">:recursive:</span>
-    <span class="nc">:include:</span>
-
-    module
-</pre></div>
-</div>
-<p>Let’s assume that <code class="docutils literal notranslate"><span class="pre">module</span></code> have 2 submodules <code class="docutils literal notranslate"><span class="pre">foo</span></code>, and <code class="docutils literal notranslate"><span class="pre">bar</span></code>, then the generated
-stub file will be:</p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">module</span>
-<span class="gh">======</span>
-
-<span class="cp">.. This is a placeholder so the include directive removes what&#39;s before it</span>
-<span class="cp">.. REMOVE_BEFORE_HERE</span>
-<span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
-    <span class="nc">:toctree:</span> module
-    <span class="nc">:template:</span> top_level_module.rst
-    <span class="nc">:caption:</span> module
-    <span class="nc">:substitute-caption:</span>
-    <span class="nc">:hide-table:</span>
-    <span class="nc">:fix-directory:</span>
-
-    foo
-    bar
-</pre></div>
-</div>
-<p>and the file structure of the generated docs will be:</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>index.rst
-toctree/
-    module.rst
-    module/
-        foo.rst
-        bar.rst
-</pre></div>
-</div>
-<p>The problem resides that now we include <code class="docutils literal notranslate"><span class="pre">module.rst</span></code> in <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>. So if we wanted
-to visualize what the <code class="docutils literal notranslate"><span class="pre">index.rst</span></code> will look like, we will have this:</p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">autosummary</span><span class="p">::</span>
-    <span class="nc">:toctree:</span> module
-    <span class="nc">:template:</span> top_level_module.rst
-    <span class="nc">:caption:</span> module
-    <span class="nc">:substitute-caption:</span>
-    <span class="nc">:hide-table:</span>
-    <span class="nc">:fix-directory:</span>
-
-    foo
-    bar
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">:toctree:</span></code> option is now invalid, because it’s now pointing to the
-<code class="docutils literal notranslate"><span class="pre">module</span></code> directory, which doesn’t exist in the root folder.</p>
-<p>So, the <code class="docutils literal notranslate"><span class="pre">:fix-directory:</span></code> option is used to fix this problem, by changing the
-<code class="docutils literal notranslate"><span class="pre">:toctree:</span></code> option to point to the correct directory. This is done by finding
-the directory that has been skipped by the <code class="docutils literal notranslate"><span class="pre">include</span></code> directive.</p>
-<blockquote>
-<div><p>⚠️ <strong>Warning:</strong> Avoid giving <code class="docutils literal notranslate"><span class="pre">:toctree:</span></code> a name that is the same as the name of
-the module, because of the way the <code class="docutils literal notranslate"><span class="pre">:fix-directory:</span></code> option works, it get confused
-with multiple directories with the same name.</p>
-<p>If you get <code class="docutils literal notranslate"><span class="pre">Could</span> <span class="pre">not</span> <span class="pre">find</span> <span class="pre">a</span> <span class="pre">single</span> <span class="pre">candidate</span> <span class="pre">for</span> <span class="pre">&lt;&gt;</span> <span class="pre">while</span> <span class="pre">fixing</span> <span class="pre">toctree</span> <span class="pre">path.</span></code>
-warning, this is probably its cause.</p>
-</div></blockquote>
-</section>
-<section id="substitute-caption">
-<h4><code class="docutils literal notranslate"><span class="pre">:substitute-caption:</span></code><a class="headerlink" href="#substitute-caption" title="Permalink to this heading">#</a></h4>
-<p>This option looks into the caption of the <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive, and replace the
-values found in <code class="docutils literal notranslate"><span class="pre">ivy_toctree_caption_map</span></code>. This useful because in the
-<code class="docutils literal notranslate"><span class="pre">top_level_module.rst</span></code> we put the name of the module as a caption, because we can’t
-infer the caption directly within sphinx.</p>
-<p>An example of <code class="docutils literal notranslate"><span class="pre">ivy_toctree_caption_map</span></code> can be found in the <code class="docutils literal notranslate"><span class="pre">partial_conf.py</span></code> file:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ivy_toctree_caption_map</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;ivy.functional.ivy&quot;</span><span class="p">:</span> <span class="s2">&quot;Functions&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;ivy.stateful&quot;</span><span class="p">:</span> <span class="s2">&quot;Framework classes&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;ivy.nested_array&quot;</span><span class="p">:</span> <span class="s2">&quot;Nested array&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;ivy.utils&quot;</span><span class="p">:</span> <span class="s2">&quot;Utils&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;ivy_tests.test_ivy.helpers&quot;</span><span class="p">:</span> <span class="s2">&quot;Testing&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-</section>
-</section>
-<section id="custom-builder">
-<h3><code class="docutils literal notranslate"><span class="pre">custom_builder</span></code><a class="headerlink" href="#custom-builder" title="Permalink to this heading">#</a></h3>
-<p>The custom builder now is a simple layer that executes while building the HTML files,
-it’s currently searching for <code class="docutils literal notranslate"><span class="pre">ivy.functional.ivy</span></code> and replacing it with <code class="docutils literal notranslate"><span class="pre">ivy.</span></code>.</p>
-<p>It can be expanded in the future to do more postprocessing.</p>
 </section>
 <section id="discussion-linker">
 <h3><code class="docutils literal notranslate"><span class="pre">discussion_linker</span></code><a class="headerlink" href="#discussion-linker" title="Permalink to this heading">#</a></h3>
@@ -1649,6 +1508,18 @@ functions that match values in <code class="docutils literal notranslate"><span 
 <p>This will remove any function that has <code class="docutils literal notranslate"><span class="pre">__qualname__</span></code> attribute equal to
 <code class="docutils literal notranslate"><span class="pre">_wrap_function.&lt;locals&gt;.new_function</span></code>.</p>
 </section>
+<section id="ivy-data">
+<h3><code class="docutils literal notranslate"><span class="pre">ivy_data</span></code><a class="headerlink" href="#ivy-data" title="Permalink to this heading">#</a></h3>
+<p>This is a custom documenter for <code class="docutils literal notranslate"><span class="pre">autodoc</span></code> that document Ivy data attributes that live
+in <code class="docutils literal notranslate"><span class="pre">ivy.functional.ivy</span></code>, it will replace the module to <code class="docutils literal notranslate"><span class="pre">ivy.</span></code> instead of
+<code class="docutils literal notranslate"><span class="pre">ivy.functional.ivy.&lt;submodule&gt;</span></code>.</p>
+<p>It’s used instead of simply using <code class="docutils literal notranslate"><span class="pre">ivy.&lt;data</span> <span class="pre">atribute&gt;</span></code> because data attributes have
+no <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> atribute, instead docs are discovered by parsing the source code itself.
+So for Sphinx to find the required docs, it need to be supplied the full module name,
+then using <code class="docutils literal notranslate"><span class="pre">autoivydata</span></code> directive will replace the module name to <code class="docutils literal notranslate"><span class="pre">ivy.</span></code>.</p>
+<p>Please refer to the <a class="reference external" href="https://www.sphinx-doc.org/en/master/development/tutorials/autodoc_ext.html">auto documenter guide in sphinx documentation</a> for more
+info.</p>
+</section>
 </section>
 </section>
 
@@ -1716,14 +1587,11 @@ functions that match values in <code class="docutils literal notranslate"><span 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-extensions">Custom Extensions</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-autosummary"><code class="docutils literal notranslate"><span class="pre">custom_autosummary</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#hide-table"><code class="docutils literal notranslate"><span class="pre">:hide-table:</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#include"><code class="docutils literal notranslate"><span class="pre">:include:</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#fix-directory"><code class="docutils literal notranslate"><span class="pre">:fix-directory:</span></code></a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#substitute-caption"><code class="docutils literal notranslate"><span class="pre">:substitute-caption:</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-builder"><code class="docutils literal notranslate"><span class="pre">custom_builder</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discussion-linker"><code class="docutils literal notranslate"><span class="pre">discussion_linker</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skippable-function"><code class="docutils literal notranslate"><span class="pre">skippable_function</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy-data"><code class="docutils literal notranslate"><span class="pre">ivy_data</span></code></a></li>
 </ul>
 </li>
 </ul>

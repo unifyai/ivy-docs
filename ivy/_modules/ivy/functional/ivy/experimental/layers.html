@@ -1597,6 +1597,7 @@ document.write(`
     <span class="o">*</span><span class="p">,</span>
     <span class="n">data_format</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;NDHWC&quot;</span><span class="p">,</span>
     <span class="n">count_include_pad</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="n">ceil_mode</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="n">out</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Array</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Computes a 3-D avg pool given 5-D input x.</span>
@@ -1616,6 +1617,8 @@ document.write(`
 <span class="sd">        NDHWC&quot; or &quot;NCDHW&quot;. Defaults to &quot;NDHWC&quot;.</span>
 <span class="sd">    count_include_pad</span>
 <span class="sd">        Whether to include padding in the averaging calculation.</span>
+<span class="sd">    ceil_mode</span>
+<span class="sd">        Whether to use ceil or floor for creating the output shape.</span>
 <span class="sd">    out</span>
 <span class="sd">        optional output array, for writing the result to. It must have a shape that the</span>
 <span class="sd">        inputs broadcast to.</span>
@@ -1660,6 +1663,7 @@ document.write(`
         <span class="n">padding</span><span class="p">,</span>
         <span class="n">data_format</span><span class="o">=</span><span class="n">data_format</span><span class="p">,</span>
         <span class="n">count_include_pad</span><span class="o">=</span><span class="n">count_include_pad</span><span class="p">,</span>
+        <span class="n">ceil_mode</span><span class="o">=</span><span class="n">ceil_mode</span><span class="p">,</span>
         <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span>
     <span class="p">)</span></div>
 
@@ -2509,7 +2513,8 @@ document.write(`
         <span class="s2">&quot;area&quot;</span><span class="p">,</span>
         <span class="s2">&quot;nearest_exact&quot;</span><span class="p">,</span>
         <span class="s2">&quot;tf_area&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;bicubic_tensorflow&quot;</span> <span class="s2">&quot;bicubic&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bicubic_tensorflow&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bicubic&quot;</span><span class="p">,</span>
         <span class="s2">&quot;mitchellcubic&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lanczos3&quot;</span><span class="p">,</span>
         <span class="s2">&quot;lanczos5&quot;</span><span class="p">,</span>

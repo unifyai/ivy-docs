@@ -20,6 +20,7 @@ Manipulation
    
    
    
+   
    ivy.functional.ivy.experimental.manipulation.as_strided
    
    
@@ -114,6 +115,8 @@ Manipulation
 .. autofunction:: ivy._get_linear_ramps
 
 .. autofunction:: ivy._get_stats
+
+.. autofunction:: ivy._iter_product
 
 .. autofunction:: ivy._pad_simple
 

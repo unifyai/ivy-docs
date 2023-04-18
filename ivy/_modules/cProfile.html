@@ -7,9 +7,8 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-
-    <title>Deep Dive &#8212; Ivy Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cProfile &#8212; Ivy Documentation</title>
   
   
   
@@ -44,12 +43,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/design-tabs.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'overview/deep_dive';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/cProfile';</script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Navigating the Code" href="deep_dive/navigating_the_code.html" />
-    <link rel="prev" title="Helpful Resources" href="contributing/helpful_resources.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -275,79 +272,79 @@ document.write(`
   aria-label="Section Navigation">
     <div class="bd-toc-item navbar-nav">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="background.html">Background</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="background/ml_explosion.html">ML Explosion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="background/why_unify.html">Why Unify?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="background/standardization.html">Standardization</a></li>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../overview/background.html">Background</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/background/ml_explosion.html">ML Explosion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/background/why_unify.html">Why Unify?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/background/standardization.html">Standardization</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="design.html">Design</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="design/building_blocks.html">Building Blocks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="design/ivy_as_a_transpiler.html">Ivy as a Transpiler</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="design/ivy_as_a_framework.html">Ivy as a Framework</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="design/ivy_as_a_framework/ivy_container.html">Ivy Container</a></li>
-<li class="toctree-l3"><a class="reference internal" href="design/ivy_as_a_framework/ivy_stateful_api.html">Ivy Stateful API</a></li>
-<li class="toctree-l3"><a class="reference internal" href="design/ivy_as_a_framework/ivy_array.html">Ivy Array</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../overview/design.html">Design</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/design/building_blocks.html">Building Blocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/design/ivy_as_a_transpiler.html">Ivy as a Transpiler</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../overview/design/ivy_as_a_framework.html">Ivy as a Framework</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../overview/design/ivy_as_a_framework/ivy_container.html">Ivy Container</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/design/ivy_as_a_framework/ivy_stateful_api.html">Ivy Stateful API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../overview/design/ivy_as_a_framework/ivy_array.html">Ivy Array</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="related_work.html">Related Work</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="related_work/api_standards.html">API Standards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_work/wrapper_frameworks.html">Wrapper Frameworks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_work/frameworks.html">Frameworks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_work/graph_tracers.html">Graph Tracers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_work/exchange_formats.html">Exchange Formats</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_work/compiler_infrastructure.html">Compiler Infrastructure</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_work/multi_vendor_compiler_frameworks.html">Multi-Vendor Compiler Frameworks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_work/vendor_specific_apis.html">Vendor-Specific APIs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_work/vendor_specific_compilers.html">Vendor-Specific Compilers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_work/ml_unifying_companies.html">ML-Unifying Companies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="related_work/what_does_ivy_add.html">What does Ivy Add?</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../overview/related_work.html">Related Work</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/related_work/api_standards.html">API Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/related_work/wrapper_frameworks.html">Wrapper Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/related_work/frameworks.html">Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/related_work/graph_tracers.html">Graph Tracers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/related_work/exchange_formats.html">Exchange Formats</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/related_work/compiler_infrastructure.html">Compiler Infrastructure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/related_work/multi_vendor_compiler_frameworks.html">Multi-Vendor Compiler Frameworks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/related_work/vendor_specific_apis.html">Vendor-Specific APIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/related_work/vendor_specific_compilers.html">Vendor-Specific Compilers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/related_work/ml_unifying_companies.html">ML-Unifying Companies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/related_work/what_does_ivy_add.html">What does Ivy Add?</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="extensions.html">Extensions</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="extensions/applied_libraries.html">Applied Libraries</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../overview/extensions.html">Extensions</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/extensions/applied_libraries.html">Applied Libraries</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="contributing.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="contributing/setting_up.html">Setting Up</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing/the_basics.html">The Basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing/building_the_docs.html">Building the Docs</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../overview/contributing.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/contributing/setting_up.html">Setting Up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/contributing/the_basics.html">The Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/contributing/building_the_docs.html">Building the Docs</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://lets-unify.ai/docs/ivy/overview/deep_dive.html">Deep Dive</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing/open_tasks.html">Open Tasks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing/applied_libraries.html">Applied Libraries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing/helpful_resources.html">Helpful Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/contributing/open_tasks.html">Open Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/contributing/applied_libraries.html">Applied Libraries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/contributing/helpful_resources.html">Helpful Resources</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Deep Dive</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/navigating_the_code.html">Navigating the Code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/function_types.html">Function Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/superset_behaviour.html">Superset Behaviour</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/backend_setting.html">Backend Setting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/arrays.html">Arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/containers.html">Containers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/data_types.html">Data Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/devices.html">Devices</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/inplace_updates.html">Inplace Updates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/function_wrapping.html">Function Wrapping</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/formatting.html">Formatting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/function_arguments.html">Function Arguments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/docstrings.html">Docstrings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/docstring_examples.html">Docstring Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/array_api_tests.html">Array API Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/ivy_tests.html">Ivy Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/ivy_frontends.html">Ivy Frontends</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/ivy_frontends_tests.html">Ivy Frontend Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/exception_handling.html">Exception Handling</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/continuous_integration.html">Continuous Integration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/gradients.html">Gradients</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/building_the_docs_pipline.html">Building the Docs Pipeline</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../overview/deep_dive.html">Deep Dive</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/navigating_the_code.html">Navigating the Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/function_types.html">Function Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/superset_behaviour.html">Superset Behaviour</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/backend_setting.html">Backend Setting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/arrays.html">Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/containers.html">Containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/data_types.html">Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/devices.html">Devices</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/inplace_updates.html">Inplace Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/function_wrapping.html">Function Wrapping</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/formatting.html">Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/function_arguments.html">Function Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/docstrings.html">Docstrings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/docstring_examples.html">Docstring Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/array_api_tests.html">Array API Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/ivy_tests.html">Ivy Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/ivy_frontends.html">Ivy Frontends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/ivy_frontends_tests.html">Ivy Frontend Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/exception_handling.html">Exception Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/continuous_integration.html">Continuous Integration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/gradients.html">Gradients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../overview/deep_dive/building_the_docs_pipline.html">Building the Docs Pipeline</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/faq.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/glossary.html">Glossary</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Compiling and Transpiling</span></p>
 <ul class="nav bd-sidenav">
@@ -1177,7 +1174,10 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Deep Dive</li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">cProfile</li>
   </ul>
 </nav>
 </div>
@@ -1194,84 +1194,214 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="deep-dive">
-<h1>Deep Dive<a class="headerlink" href="#deep-dive" title="Permalink to this heading">#</a></h1>
-<p>For general users of the framework, who are mainly concerned with learning how to <em>use</em> Ivy, then the <a class="reference internal" href="design.html#design"><span class="std std-ref">Design</span></a> section is the best place to start 🙂</p>
-<p>This <em>deep dive</em> section is more targeted at people who would like to dive deeper into how Ivy actually works under the hood 🔧</p>
-<p>Going through the sections outlined below will get you right into the weeds of the framework 🌱, and hopefully give you a better understanding of what is actually going on behind the scenes 🎬</p>
-<p>It’s best to go through the sub-sections from start to finish, but you can also dive in at any stage!
-We’re excited for you to get involved! 🦾</p>
-<div class="line-block">
-<div class="line">(a) <a class="reference internal" href="deep_dive/navigating_the_code.html#navigating-the-code"><span class="std std-ref">Navigating the Code</span></a> 🧭</div>
-<div class="line">A quick tour through the codebase</div>
-<div class="line"><br /></div>
-<div class="line">(b) <a class="reference internal" href="deep_dive/function_types.html#function-types"><span class="std std-ref">Function Types</span></a> 🧮</div>
-<div class="line">Primary, compositional, mixed and nestable functions</div>
-<div class="line"><br /></div>
-<div class="line">(c) <a class="reference internal" href="deep_dive/superset_behaviour.html#superset-behaviour"><span class="std std-ref">Superset Behaviour</span></a> ⊃</div>
-<div class="line">Ivy goes for the superset when unifying the backend functions</div>
-<div class="line"><br /></div>
-<div class="line">(d) <a class="reference internal" href="deep_dive/backend_setting.html#backend-setting"><span class="std std-ref">Backend Setting</span></a> ⚙</div>
-<div class="line">How the backend is set, and what this means for each function type️</div>
-<div class="line"><br /></div>
-<div class="line">(e) <a class="reference internal" href="deep_dive/arrays.html#arrays"><span class="std std-ref">Arrays</span></a> 🔢</div>
-<div class="line">Different types of arrays, and how they’re handled</div>
-<div class="line"><br /></div>
-<div class="line">(f) <a class="reference internal" href="deep_dive/containers.html#containers"><span class="std std-ref">Containers</span></a> 🗂</div>
-<div class="line">What the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> does</div>
-<div class="line"><br /></div>
-<div class="line">(g) <a class="reference internal" href="deep_dive/data_types.html#data-types"><span class="std std-ref">Data Types</span></a> 💾</div>
-<div class="line">How functions infer the correct data type</div>
-<div class="line"><br /></div>
-<div class="line">(h) <a class="reference internal" href="deep_dive/devices.html#devices"><span class="std std-ref">Devices</span></a> 📱</div>
-<div class="line">How functions infer the correct device</div>
-<div class="line"><br /></div>
-<div class="line">(i) <a class="reference internal" href="deep_dive/inplace_updates.html#inplace-updates"><span class="std std-ref">Inplace Updates</span></a> 🎯</div>
-<div class="line">How the <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument is used to specify the output target</div>
-<div class="line"><br /></div>
-<div class="line">(j) <a class="reference internal" href="deep_dive/function_wrapping.html#function-wrapping"><span class="std std-ref">Function Wrapping</span></a> 🎁</div>
-<div class="line">How functions are dynamically wrapped at runtime</div>
-<div class="line"><br /></div>
-<div class="line">(k) <a class="reference internal" href="deep_dive/formatting.html#formatting"><span class="std std-ref">Formatting</span></a> 📋</div>
-<div class="line">How the code is automatically formatted</div>
-<div class="line"><br /></div>
-<div class="line">(l) <a class="reference internal" href="deep_dive/function_arguments.html#function-arguments"><span class="std std-ref">Function Arguments</span></a> 📑</div>
-<div class="line">How to add the correct function arguments</div>
-<div class="line"><br /></div>
-<div class="line">(m) <a class="reference internal" href="deep_dive/docstrings.html#docstrings"><span class="std std-ref">Docstrings</span></a> 📄</div>
-<div class="line">How to properly write docstrings</div>
-<div class="line"><br /></div>
-<div class="line">(n) <a class="reference internal" href="deep_dive/docstring_examples.html#docstring-examples"><span class="std std-ref">Docstring Examples</span></a> 💯</div>
-<div class="line">How to add useful examples to the docstrings</div>
-<div class="line"><br /></div>
-<div class="line">(o) <a class="reference internal" href="deep_dive/continuous_integration.html#array-api-tests"><span class="std std-ref">Array API Tests</span></a> 🤝</div>
-<div class="line">How we’re borrowing the test suite from the Array API Standard</div>
-<div class="line"><br /></div>
-<div class="line">(p) <a class="reference internal" href="deep_dive/ivy_tests.html#ivy-tests"><span class="std std-ref">Ivy Tests</span></a> 🧪</div>
-<div class="line">How to add new tests for each Ivy function</div>
-<div class="line"><br /></div>
-<div class="line">(q) <a class="reference internal" href="deep_dive/ivy_frontends.html#ivy-frontends"><span class="std std-ref">Ivy Frontends</span></a> ➡</div>
-<div class="line">How to implement frontend functions</div>
-<div class="line"><br /></div>
-<div class="line">(r) <a class="reference internal" href="deep_dive/ivy_frontends_tests.html#ivy-frontend-tests"><span class="std std-ref">Ivy Frontend Tests</span></a> 🧪</div>
-<div class="line">How to add new tests for each frontend function</div>
-<div class="line"><br /></div>
-<div class="line">(s) <a class="reference internal" href="deep_dive/exception_handling.html#exception-handling"><span class="std std-ref">Exception Handling</span></a> ⚠</div>
-<div class="line">How to handle exceptions and assertions in a function</div>
-<div class="line"><br /></div>
-<div class="line">(t) <a class="reference internal" href="deep_dive/continuous_integration.html#continuous-integration"><span class="std std-ref">Continuous Integration</span></a> 🔁</div>
-<div class="line">Ivy Tests running on the Repository</div>
-<div class="line"><br /></div>
-<div class="line">(u) <a class="reference internal" href="../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.gradients.html#gradients"><span class="std std-ref">Gradients</span></a> 🔁</div>
-<div class="line">Everything about our Gradients API</div>
-<div class="line"><br /></div>
-<div class="line">(v) <a class="reference internal" href="deep_dive/building_the_docs_pipline.html#building-the-docs-pipeline"><span class="std std-ref">Building the Docs Pipeline</span></a> 📚</div>
-<div class="line">How are we building our docs</div>
-</div>
-<div class="toctree-wrapper compound">
-</div>
-</section>
+  <h1>Source code for cProfile</h1><div class="highlight"><pre>
+<span></span><span class="ch">#! /usr/bin/python3.8</span>
 
+<span class="sd">&quot;&quot;&quot;Python interface for the &#39;lsprof&#39; profiler.</span>
+<span class="sd">   Compatible with the &#39;profile&#39; module.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;run&quot;</span><span class="p">,</span> <span class="s2">&quot;runctx&quot;</span><span class="p">,</span> <span class="s2">&quot;Profile&quot;</span><span class="p">]</span>
+
+<span class="kn">import</span> <span class="nn">_lsprof</span>
+<span class="kn">import</span> <span class="nn">profile</span> <span class="k">as</span> <span class="nn">_pyprofile</span>
+
+<span class="c1"># ____________________________________________________________</span>
+<span class="c1"># Simple interface</span>
+
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sort</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">_pyprofile</span><span class="o">.</span><span class="n">_Utils</span><span class="p">(</span><span class="n">Profile</span><span class="p">)</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">sort</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">runctx</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">sort</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">_pyprofile</span><span class="o">.</span><span class="n">_Utils</span><span class="p">(</span><span class="n">Profile</span><span class="p">)</span><span class="o">.</span><span class="n">runctx</span><span class="p">(</span><span class="n">statement</span><span class="p">,</span> <span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="p">,</span>
+                                             <span class="n">filename</span><span class="p">,</span> <span class="n">sort</span><span class="p">)</span>
+
+<span class="n">run</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">_pyprofile</span><span class="o">.</span><span class="n">run</span><span class="o">.</span><span class="vm">__doc__</span>
+<span class="n">runctx</span><span class="o">.</span><span class="vm">__doc__</span> <span class="o">=</span> <span class="n">_pyprofile</span><span class="o">.</span><span class="n">runctx</span><span class="o">.</span><span class="vm">__doc__</span>
+
+<span class="c1"># ____________________________________________________________</span>
+
+<span class="k">class</span> <span class="nc">Profile</span><span class="p">(</span><span class="n">_lsprof</span><span class="o">.</span><span class="n">Profiler</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Profile(timer=None, timeunit=None, subcalls=True, builtins=True)</span>
+
+<span class="sd">    Builds a profiler object using the specified timer function.</span>
+<span class="sd">    The default timer is a fast built-in one based on real time.</span>
+<span class="sd">    For custom timer functions returning integers, timeunit can</span>
+<span class="sd">    be a float specifying a scale (i.e. how long each integer unit</span>
+<span class="sd">    is, in seconds).</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Most of the functionality is in the base class.</span>
+    <span class="c1"># This subclass only adds convenient and backward-compatible methods.</span>
+
+    <span class="k">def</span> <span class="nf">print_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sort</span><span class="o">=-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">pstats</span>
+        <span class="n">pstats</span><span class="o">.</span><span class="n">Stats</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">strip_dirs</span><span class="p">()</span><span class="o">.</span><span class="n">sort_stats</span><span class="p">(</span><span class="n">sort</span><span class="p">)</span><span class="o">.</span><span class="n">print_stats</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">dump_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">file</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">marshal</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">create_stats</span><span class="p">()</span>
+            <span class="n">marshal</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">create_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">snapshot_stats</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">snapshot_stats</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">entries</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getstats</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stats</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">callersdicts</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="c1"># call information</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">:</span>
+            <span class="n">func</span> <span class="o">=</span> <span class="n">label</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">code</span><span class="p">)</span>
+            <span class="n">nc</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">callcount</span>         <span class="c1"># ncalls column of pstats (before &#39;/&#39;)</span>
+            <span class="n">cc</span> <span class="o">=</span> <span class="n">nc</span> <span class="o">-</span> <span class="n">entry</span><span class="o">.</span><span class="n">reccallcount</span> <span class="c1"># ncalls column of pstats (after &#39;/&#39;)</span>
+            <span class="n">tt</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">inlinetime</span>        <span class="c1"># tottime column of pstats</span>
+            <span class="n">ct</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="n">totaltime</span>         <span class="c1"># cumtime column of pstats</span>
+            <span class="n">callers</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="n">callersdicts</span><span class="p">[</span><span class="nb">id</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">code</span><span class="p">)]</span> <span class="o">=</span> <span class="n">callers</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stats</span><span class="p">[</span><span class="n">func</span><span class="p">]</span> <span class="o">=</span> <span class="n">cc</span><span class="p">,</span> <span class="n">nc</span><span class="p">,</span> <span class="n">tt</span><span class="p">,</span> <span class="n">ct</span><span class="p">,</span> <span class="n">callers</span>
+        <span class="c1"># subcall information</span>
+        <span class="k">for</span> <span class="n">entry</span> <span class="ow">in</span> <span class="n">entries</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">entry</span><span class="o">.</span><span class="n">calls</span><span class="p">:</span>
+                <span class="n">func</span> <span class="o">=</span> <span class="n">label</span><span class="p">(</span><span class="n">entry</span><span class="o">.</span><span class="n">code</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">subentry</span> <span class="ow">in</span> <span class="n">entry</span><span class="o">.</span><span class="n">calls</span><span class="p">:</span>
+                    <span class="k">try</span><span class="p">:</span>
+                        <span class="n">callers</span> <span class="o">=</span> <span class="n">callersdicts</span><span class="p">[</span><span class="nb">id</span><span class="p">(</span><span class="n">subentry</span><span class="o">.</span><span class="n">code</span><span class="p">)]</span>
+                    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+                        <span class="k">continue</span>
+                    <span class="n">nc</span> <span class="o">=</span> <span class="n">subentry</span><span class="o">.</span><span class="n">callcount</span>
+                    <span class="n">cc</span> <span class="o">=</span> <span class="n">nc</span> <span class="o">-</span> <span class="n">subentry</span><span class="o">.</span><span class="n">reccallcount</span>
+                    <span class="n">tt</span> <span class="o">=</span> <span class="n">subentry</span><span class="o">.</span><span class="n">inlinetime</span>
+                    <span class="n">ct</span> <span class="o">=</span> <span class="n">subentry</span><span class="o">.</span><span class="n">totaltime</span>
+                    <span class="k">if</span> <span class="n">func</span> <span class="ow">in</span> <span class="n">callers</span><span class="p">:</span>
+                        <span class="n">prev</span> <span class="o">=</span> <span class="n">callers</span><span class="p">[</span><span class="n">func</span><span class="p">]</span>
+                        <span class="n">nc</span> <span class="o">+=</span> <span class="n">prev</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                        <span class="n">cc</span> <span class="o">+=</span> <span class="n">prev</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+                        <span class="n">tt</span> <span class="o">+=</span> <span class="n">prev</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+                        <span class="n">ct</span> <span class="o">+=</span> <span class="n">prev</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+                    <span class="n">callers</span><span class="p">[</span><span class="n">func</span><span class="p">]</span> <span class="o">=</span> <span class="n">nc</span><span class="p">,</span> <span class="n">cc</span><span class="p">,</span> <span class="n">tt</span><span class="p">,</span> <span class="n">ct</span>
+
+    <span class="c1"># The following two methods can be called by clients to use</span>
+    <span class="c1"># a profiler to profile a statement, given as a string.</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmd</span><span class="p">):</span>
+        <span class="kn">import</span> <span class="nn">__main__</span>
+        <span class="nb">dict</span> <span class="o">=</span> <span class="n">__main__</span><span class="o">.</span><span class="vm">__dict__</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">runctx</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="nb">dict</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">runctx</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cmd</span><span class="p">,</span> <span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">enable</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">exec</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span> <span class="nb">globals</span><span class="p">,</span> <span class="nb">locals</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="c1"># This method is more useful to profile a single function call.</span>
+    <span class="k">def</span> <span class="nf">runcall</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+        <span class="k">elif</span> <span class="ow">not</span> <span class="n">args</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;descriptor &#39;runcall&#39; of &#39;Profile&#39; object &quot;</span>
+                            <span class="s2">&quot;needs an argument&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="s1">&#39;func&#39;</span> <span class="ow">in</span> <span class="n">kw</span><span class="p">:</span>
+            <span class="n">func</span> <span class="o">=</span> <span class="n">kw</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;func&#39;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span> <span class="o">=</span> <span class="n">args</span>
+            <span class="kn">import</span> <span class="nn">warnings</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Passing &#39;func&#39; as keyword argument is deprecated&quot;</span><span class="p">,</span>
+                          <span class="ne">DeprecationWarning</span><span class="p">,</span> <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;runcall expected at least 1 positional argument, &#39;</span>
+                            <span class="s1">&#39;got </span><span class="si">%d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">enable</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+        <span class="k">finally</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
+    <span class="n">runcall</span><span class="o">.</span><span class="n">__text_signature__</span> <span class="o">=</span> <span class="s1">&#39;($self, func, /, *args, **kw)&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">enable</span><span class="p">()</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">exc_info</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">disable</span><span class="p">()</span>
+
+<span class="c1"># ____________________________________________________________</span>
+
+<span class="k">def</span> <span class="nf">label</span><span class="p">(</span><span class="n">code</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">code</span><span class="p">)</span>    <span class="c1"># built-in functions (&#39;~&#39; sorts at the end)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">code</span><span class="o">.</span><span class="n">co_filename</span><span class="p">,</span> <span class="n">code</span><span class="o">.</span><span class="n">co_firstlineno</span><span class="p">,</span> <span class="n">code</span><span class="o">.</span><span class="n">co_name</span><span class="p">)</span>
+
+<span class="c1"># ____________________________________________________________</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">os</span>
+    <span class="kn">import</span> <span class="nn">sys</span>
+    <span class="kn">import</span> <span class="nn">runpy</span>
+    <span class="kn">import</span> <span class="nn">pstats</span>
+    <span class="kn">from</span> <span class="nn">optparse</span> <span class="kn">import</span> <span class="n">OptionParser</span>
+    <span class="n">usage</span> <span class="o">=</span> <span class="s2">&quot;cProfile.py [-o output_file_path] [-s sort] [-m module | scriptfile] [arg] ...&quot;</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">OptionParser</span><span class="p">(</span><span class="n">usage</span><span class="o">=</span><span class="n">usage</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">allow_interspersed_args</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s1">&#39;-o&#39;</span><span class="p">,</span> <span class="s1">&#39;--outfile&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;outfile&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Save stats to &lt;outfile&gt;&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s1">&#39;-s&#39;</span><span class="p">,</span> <span class="s1">&#39;--sort&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;sort&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Sort order when printing to stdout, based on pstats.Stats class&quot;</span><span class="p">,</span>
+        <span class="n">default</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">choices</span><span class="o">=</span><span class="nb">sorted</span><span class="p">(</span><span class="n">pstats</span><span class="o">.</span><span class="n">Stats</span><span class="o">.</span><span class="n">sort_arg_dict_default</span><span class="p">))</span>
+    <span class="n">parser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s1">&#39;-m&#39;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;module&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+        <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Profile a library module&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">print_usage</span><span class="p">()</span>
+        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="p">(</span><span class="n">options</span><span class="p">,</span> <span class="n">args</span><span class="p">)</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">args</span>
+
+    <span class="c1"># The script that we&#39;re profiling may chdir, so capture the absolute path</span>
+    <span class="c1"># to the output file at startup.</span>
+    <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">outfile</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">options</span><span class="o">.</span><span class="n">outfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">options</span><span class="o">.</span><span class="n">outfile</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">module</span><span class="p">:</span>
+            <span class="n">code</span> <span class="o">=</span> <span class="s2">&quot;run_module(modname, run_name=&#39;__main__&#39;)&quot;</span>
+            <span class="n">globs</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;run_module&#39;</span><span class="p">:</span> <span class="n">runpy</span><span class="o">.</span><span class="n">run_module</span><span class="p">,</span>
+                <span class="s1">&#39;modname&#39;</span><span class="p">:</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="p">}</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">progname</span> <span class="o">=</span> <span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">progname</span><span class="p">))</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">progname</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+                <span class="n">code</span> <span class="o">=</span> <span class="nb">compile</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">read</span><span class="p">(),</span> <span class="n">progname</span><span class="p">,</span> <span class="s1">&#39;exec&#39;</span><span class="p">)</span>
+            <span class="n">globs</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s1">&#39;__file__&#39;</span><span class="p">:</span> <span class="n">progname</span><span class="p">,</span>
+                <span class="s1">&#39;__name__&#39;</span><span class="p">:</span> <span class="s1">&#39;__main__&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;__package__&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+                <span class="s1">&#39;__cached__&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="p">}</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">runctx</span><span class="p">(</span><span class="n">code</span><span class="p">,</span> <span class="n">globs</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">outfile</span><span class="p">,</span> <span class="n">options</span><span class="o">.</span><span class="n">sort</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">BrokenPipeError</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="c1"># Prevent &quot;Exception ignored&quot; during interpreter shutdown.</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span> <span class="o">=</span> <span class="kc">None</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="n">exc</span><span class="o">.</span><span class="n">errno</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">parser</span><span class="o">.</span><span class="n">print_usage</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">parser</span>
+
+<span class="c1"># When invoked as main program, invoke the profiler on a script</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
 
                 </article>
               
@@ -1283,24 +1413,6 @@ We’re excited for you to get involved! 🦾</p>
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="contributing/helpful_resources.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Helpful Resources</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="deep_dive/navigating_the_code.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Navigating the Code</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>

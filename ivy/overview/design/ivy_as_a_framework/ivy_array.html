@@ -1343,7 +1343,7 @@ then the <code class="xref py py-meth docutils literal notranslate"><span class=
 </pre></div>
 </div>
 <p>We can implement inplace updates in the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> class without requiring inplace updates in the backend array classes.
-If the backend does not support inplace updates, then we can use the <a class="reference internal" href="../../../docs/functional/ivy/ivy.functional.ivy.general.html#ivy.scatter_nd" title="ivy.scatter_nd"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.scatter_nd()</span></code></a> method to return a new array and store this in the <code class="code docutils literal notranslate"><span class="pre">self._data</span></code> attribute.</p>
+If the backend does not support inplace updates, then we can use the <a class="reference internal" href="../../../docs/functional/ivy/general/ivy.functional.ivy.general.scatter_nd.html#ivy.scatter_nd" title="ivy.scatter_nd"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.scatter_nd()</span></code></a> method to return a new array and store this in the <code class="code docutils literal notranslate"><span class="pre">self._data</span></code> attribute.</p>
 <p>Now, with <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances, our code will run without error, regardless of which backend is selected.
 We can genuinely say our code is fully framework-agnostic.</p>
 <p>The same logic applies to all python operators.

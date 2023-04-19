@@ -1222,6 +1222,7 @@ document.write(`
     <span class="s2">&quot;signed_integer&quot;</span><span class="p">,</span>
     <span class="s2">&quot;complex&quot;</span><span class="p">,</span>
     <span class="s2">&quot;real_and_complex&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;float_and_integer&quot;</span><span class="p">,</span>
     <span class="s2">&quot;float_and_complex&quot;</span><span class="p">,</span>
     <span class="s2">&quot;bool&quot;</span><span class="p">,</span>
 <span class="p">}</span>
@@ -1257,6 +1258,10 @@ document.write(`
     <span class="k">elif</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;float_and_complex&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span>
             <span class="nb">set</span><span class="p">(</span><span class="n">framework</span><span class="o">.</span><span class="n">valid_float_dtypes</span><span class="p">)</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">framework</span><span class="o">.</span><span class="n">valid_complex_dtypes</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;float_and_integer&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span>
+            <span class="nb">set</span><span class="p">(</span><span class="n">framework</span><span class="o">.</span><span class="n">valid_float_dtypes</span><span class="p">)</span><span class="o">.</span><span class="n">union</span><span class="p">(</span><span class="n">framework</span><span class="o">.</span><span class="n">valid_int_dtypes</span><span class="p">)</span>
         <span class="p">)</span>
     <span class="k">elif</span> <span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;bool&quot;</span><span class="p">:</span>
         <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span>

@@ -1,0 +1,8 @@
+nan\_to\_num
+============
+
+.. autofunction:: ivy.nan_to_num
+
+.. autoskippablemethod:: ivy.Array.nan_to_num
+
+.. autoskippablemethod:: ivy.Container.nan_to_num

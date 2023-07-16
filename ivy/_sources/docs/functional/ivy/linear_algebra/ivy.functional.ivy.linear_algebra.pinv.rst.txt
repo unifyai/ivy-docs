@@ -1,0 +1,8 @@
+pinv
+====
+
+.. autofunction:: ivy.pinv
+
+.. autoskippablemethod:: ivy.Array.pinv
+
+.. autoskippablemethod:: ivy.Container.pinv

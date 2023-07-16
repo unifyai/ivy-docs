@@ -1,0 +1,8 @@
+total\_mem\_on\_dev
+===================
+
+.. autofunction:: ivy.total_mem_on_dev
+
+.. autoskippablemethod:: ivy.Array.total_mem_on_dev
+
+.. autoskippablemethod:: ivy.Container.total_mem_on_dev

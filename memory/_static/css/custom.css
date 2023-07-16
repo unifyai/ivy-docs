@@ -1,0 +1,285 @@
+/* Main background color modification */
+.btn-info,
+.wy-menu-vertical a:active,
+.wy-side-nav-search,
+.wy-side-nav-search img,
+.wy-nav .wy-menu-vertical a:hover,
+.wy-nav-top img,
+.wy-tray-item-info,
+.wy-side-nav-search,
+.wy-dropdown-menu > dd > a:hover,
+.wy-dropdown-menu a:hover,
+.wy-nav-top {
+  background-color: #009600 !important;
+}
+
+.wy-menu-vertical header,
+.wy-menu-vertical p.caption {
+  color: #009600;
+}
+
+a {
+  color: #009600;
+}
+
+a:visited {
+  color: #009600;
+}
+
+.wy-menu-vertical a:visited {
+  color: #d9d9d9;
+}
+
+.wy-side-nav-search > a:visited,
+.wy-side-nav-search .wy-dropdown > a:visited {
+  color: #fcfcfc;
+}
+
+.rst-content code.literal,
+.rst-content tt.literal,
+.rst-content span.literal {
+  color: #009600;
+}
+
+html.writer-html4 .rst-content dl:not(.docutils) > dt,
+html.writer-html5
+.rst-content
+dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(.simple)
+> dt {
+  background: #ebffe1;
+  color: #006400;
+  border-top: solid 3px #009600;
+}
+
+.rst-content .note,
+.rst-content .seealso,
+.rst-content .wy-alert-info.admonition,
+.rst-content .wy-alert-info.admonition-todo,
+.rst-content .wy-alert-info.attention,
+.rst-content .wy-alert-info.caution,
+.rst-content .wy-alert-info.danger,
+.rst-content .wy-alert-info.error,
+.rst-content .wy-alert-info.hint,
+.rst-content .wy-alert-info.important,
+.rst-content .wy-alert-info.tip,
+.rst-content .wy-alert-info.warning,
+.wy-alert.wy-alert-info {
+  background: #ebffe1;
+}
+
+.rst-content .note .admonition-title,
+.rst-content .note .wy-alert-title,
+.rst-content .seealso .admonition-title,
+.rst-content .seealso .wy-alert-title,
+.rst-content .wy-alert-info.admonition-todo .admonition-title,
+.rst-content .wy-alert-info.admonition-todo .wy-alert-title,
+.rst-content .wy-alert-info.admonition .admonition-title,
+.rst-content .wy-alert-info.admonition .wy-alert-title,
+.rst-content .wy-alert-info.attention .admonition-title,
+.rst-content .wy-alert-info.attention .wy-alert-title,
+.rst-content .wy-alert-info.caution .admonition-title,
+.rst-content .wy-alert-info.caution .wy-alert-title,
+.rst-content .wy-alert-info.danger .admonition-title,
+.rst-content .wy-alert-info.danger .wy-alert-title,
+.rst-content .wy-alert-info.error .admonition-title,
+.rst-content .wy-alert-info.error .wy-alert-title,
+.rst-content .wy-alert-info.hint .admonition-title,
+.rst-content .wy-alert-info.hint .wy-alert-title,
+.rst-content .wy-alert-info.important .admonition-title,
+.rst-content .wy-alert-info.important .wy-alert-title,
+.rst-content .wy-alert-info.tip .admonition-title,
+.rst-content .wy-alert-info.tip .wy-alert-title,
+.rst-content .wy-alert-info.warning .admonition-title,
+.rst-content .wy-alert-info.warning .wy-alert-title,
+.rst-content .wy-alert.wy-alert-info .admonition-title,
+.wy-alert.wy-alert-info .rst-content .admonition-title,
+.wy-alert.wy-alert-info .wy-alert-title {
+  background-color: #009600 !important;
+  color: #fff;
+}
+
+.highlight .gp{
+  color: #006400;
+}
+
+@media only screen and (min-width: 500px) {
+  .logo{
+    padding: 0.8em;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .logo{
+    padding: 0.5em;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .logo{
+    padding: 0.2em;
+  }
+}
+
+.supported_frameworks{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.video{
+  width: 100%;
+}
+
+.navbar > div {
+  padding: 26px 56px 16px;
+}
+
+@media only screen and (min-width: 900px) {
+  .video{
+    width: 80%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .video{
+    width: 60%;
+  }
+}
+
+html {
+  --pst-sidebar-font-size: 1.0em;
+  --pst-sidebar-header-font-size: 1.0em;
+  --pst-sidebar-secondary-font-size: 0.9em;
+  --pst-header-height: 86px;
+  --pst-font-family-base: 'Inter', var(--pst-font-family-base-system);
+  --pst-font-family-heading: 'Inter', var(--pst-font-family-base-system);
+  --pst-font-weight-heading: 700;
+  --pst-font-color-heading: #0A0C13;
+}
+
+.navbar-item,
+.navbar-brand {
+  height: calc(var(--pst-header-height) - 16px - 26px) !important;
+  max-height: calc(var(--pst-header-height) - 16px - 26px) !important;
+}
+
+html[data-theme="light"] {
+  --pst-color-primary: #35A835;
+}
+
+html[data-theme="dark"] {
+  --pst-font-color-heading: #E9E9EA;
+  --pst-color-primary: #35A835;
+}
+
+a.current.reference.internal {
+  background: rgba(53, 168, 53, 0.1);
+  padding-left: 10px;
+  margin-left: -10px;
+  border-radius: 8px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--pst-font-color-heading);
+}
+
+nav.bd-docs-nav {
+  padding-right: 24px;
+}
+
+.navbar-header-items__center {
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav-menu {
+    float: right;
+    position: relative;
+}
+
+.menu-link-holder,
+.menu-holder {
+    grid-column-gap: 56px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 960px) {
+  .menu-link-holder {
+    flex-wrap: wrap;
+  }
+  .menu-link-holder > a {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .navbar-item:has(.menu-holder) {
+    height: unset !important;
+    max-height: unset !important;
+  }
+}
+
+html[data-theme="dark"] .w-nav-link {
+  color: #FFFFFF !important;
+}
+
+.nav-link-header {
+    flex: 0 auto;
+    padding: 0 !important;
+    line-height: 24px;
+    transition: all .25s ease-out;
+}
+
+.w-nav-link {
+    vertical-align: top;
+    color: #222 !important;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.dropdown-menu.show {
+  overflow: auto;
+  max-height: 75vh;
+}
+
+i.fa-chevron-down {
+  transition: ease-in-out, transform 0.5s;
+  color: #606264;
+}
+
+label.toctree-toggle:hover {
+  background: unset !important;
+}
+
+html[data-theme="dark"] .highlight button.copybtn:hover {
+  background-color: rgba(158, 158, 158, 0.377);
+}
+
+.autosummary.table {
+  margin-top: 2.5em;
+}
+
+.mantine-Modal-inner figure,
+#kapa-widget-container figure {
+  padding: 0 !important;
+}
+
+#kapa-widget-container button {
+  background-color: #f5f5f5 !important;
+  color: var(--pst-color-text-base);
+}
+
+html[data-theme="dark"] #kapa-widget-container button {
+  background-color: #212121 !important;
+}
+

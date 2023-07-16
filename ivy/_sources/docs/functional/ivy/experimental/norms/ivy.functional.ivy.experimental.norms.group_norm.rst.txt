@@ -1,0 +1,8 @@
+group\_norm
+===========
+
+.. autofunction:: ivy.group_norm
+
+.. autoskippablemethod:: ivy.Array.group_norm
+
+.. autoskippablemethod:: ivy.Container.group_norm

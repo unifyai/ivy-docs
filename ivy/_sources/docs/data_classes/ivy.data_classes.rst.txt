@@ -1,0 +1,22 @@
+﻿Data classes
+============
+
+.. autosummary::
+    :toctree: data_classes
+    :template: top_data_module.rst
+    :recursive:
+    :hide-table:
+
+
+    ivy.data_classes.array
+    ivy.data_classes.container
+    ivy.data_classes.nested_array
+
+
+.. autosummary::
+
+
+    ivy.data_classes.array.array
+    ivy.data_classes.container.container
+    ivy.data_classes.nested_array.nested_array
+

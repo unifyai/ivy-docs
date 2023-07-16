@@ -1,0 +1,76 @@
+Linear algebra
+==============
+
+
+.. autosummary::
+   :toctree: linear_algebra
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   
+   ivy.functional.ivy.experimental.linear_algebra.adjoint
+   
+   
+   ivy.functional.ivy.experimental.linear_algebra.cond
+   
+   
+   ivy.functional.ivy.experimental.linear_algebra.diagflat
+   
+   
+   ivy.functional.ivy.experimental.linear_algebra.eig
+   
+   
+   ivy.functional.ivy.experimental.linear_algebra.eigh_tridiagonal
+   
+   
+   ivy.functional.ivy.experimental.linear_algebra.eigvals
+   
+   
+   ivy.functional.ivy.experimental.linear_algebra.kron
+   
+   
+   ivy.functional.ivy.experimental.linear_algebra.matrix_exp
+   
+   
+   ivy.functional.ivy.experimental.linear_algebra.multi_dot
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.linear_algebra
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy._check_valid_dimension_size
+
+.. autofunction:: ivy.adjoint
+
+.. autofunction:: ivy.cond
+
+.. autofunction:: ivy.diagflat
+
+.. autofunction:: ivy.eig
+
+.. autofunction:: ivy.eigh_tridiagonal
+
+.. autofunction:: ivy.eigvals
+
+.. autofunction:: ivy.kron
+
+.. autofunction:: ivy.matrix_exp
+
+.. autofunction:: ivy.multi_dot
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.linear_algebra

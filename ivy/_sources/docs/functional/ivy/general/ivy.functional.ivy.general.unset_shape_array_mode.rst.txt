@@ -1,0 +1,8 @@
+unset\_shape\_array\_mode
+=========================
+
+.. autofunction:: ivy.unset_shape_array_mode
+
+.. autoskippablemethod:: ivy.Array.unset_shape_array_mode
+
+.. autoskippablemethod:: ivy.Container.unset_shape_array_mode

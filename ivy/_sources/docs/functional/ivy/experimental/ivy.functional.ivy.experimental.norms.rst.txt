@@ -1,0 +1,58 @@
+Norms
+=====
+
+
+.. autosummary::
+   :toctree: norms
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.experimental.norms.batch_norm
+   
+   
+   ivy.functional.ivy.experimental.norms.group_norm
+   
+   
+   ivy.functional.ivy.experimental.norms.instance_norm
+   
+   
+   ivy.functional.ivy.experimental.norms.l1_normalize
+   
+   
+   ivy.functional.ivy.experimental.norms.l2_normalize
+   
+   
+   ivy.functional.ivy.experimental.norms.lp_normalize
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.norms
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.batch_norm
+
+.. autofunction:: ivy.group_norm
+
+.. autofunction:: ivy.instance_norm
+
+.. autofunction:: ivy.l1_normalize
+
+.. autofunction:: ivy.l2_normalize
+
+.. autofunction:: ivy.lp_normalize
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.norms

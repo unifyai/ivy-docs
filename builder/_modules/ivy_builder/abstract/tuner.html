@@ -1,0 +1,1082 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ivy_builder.abstract.tuner &#8212; Ivy Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/sphinx_highlight.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/ivy_builder/abstract/tuner';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://lets-unify.ai/docs/versions/builder.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        </script>
+    <script src="../../../_static/js/kapa.ai.js"></script>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+   
+
+<a class="navbar-brand logo" href="https://unify.ai">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_new.svg?raw=true" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_new_dark.svg?raw=true" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item"><nav role="navigation" class="nav-menu">
+    <div class="menu-holder">
+        <div class="menu-link-holder">
+            <a href="https://github.com/unifyai/ivy" target="_blank" class="nav-link-header w-nav-link">Github</a>
+            <a href="https://unify.ai/docs/ivy/" target="_blank" class="nav-link-header w-nav-link">Docs</a>
+            <a href="https://discord.com/invite/sXyFF8tDtm" target="_blank" class="nav-link-header w-nav-link">Discord</a>
+        </div>
+    </div>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
+      dev  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+    <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item"><nav role="navigation" class="nav-menu">
+    <div class="menu-holder">
+        <div class="menu-link-holder">
+            <a href="https://github.com/unifyai/ivy" target="_blank" class="nav-link-header w-nav-link">Github</a>
+            <a href="https://unify.ai/docs/ivy/" target="_blank" class="nav-link-header w-nav-link">Docs</a>
+            <a href="https://discord.com/invite/sXyFF8tDtm" target="_blank" class="nav-link-header w-nav-link">Discord</a>
+        </div>
+    </div>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
+      dev  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+    <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../builder-abstract/ivy_builder.abstract.html">Abstract</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/abstract/ivy_builder.abstract.data_loader.html">Data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/abstract/ivy_builder.abstract.network.html">Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/abstract/ivy_builder.abstract.network_group.html">Network group</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/abstract/ivy_builder.abstract.trainer.html">Trainer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/abstract/ivy_builder.abstract.tuner.html">Tuner</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../builder-abstract/ivy_builder.data_loaders.html">Data loaders</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/data_loaders/ivy_builder.data_loaders.seq_data_loader.html">Seq data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/data_loaders/ivy_builder.data_loaders.specs.html">Specs</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../builder-abstract/ivy_builder.empty.html">Empty</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/empty/ivy_builder.empty.data_loader.html">Data loader</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/empty/ivy_builder.empty.network.html">Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/empty/ivy_builder.empty.trainer.html">Trainer</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../builder-abstract/ivy_builder.specs.html">Specs</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/specs/ivy_builder.specs.data_loader_spec.html">Data loader spec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/specs/ivy_builder.specs.dataset_dirs.html">Dataset dirs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/specs/ivy_builder.specs.dataset_spec.html">Dataset spec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/specs/ivy_builder.specs.network_spec.html">Network spec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/specs/ivy_builder.specs.spec.html">Spec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/specs/ivy_builder.specs.trainer_spec.html">Trainer spec</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../builder-abstract/specs/ivy_builder.specs.tuner_spec.html">Tuner spec</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading">
+            <span class="caption-text">Docs</span>
+        </p>
+        <ul class="nav bd-sidenav">
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/ivy">
+                    Ivy
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/mech">
+                    Ivy mech
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/vision">
+                    Ivy vision
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/robot">
+                    Ivy robot
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/gym">
+                    Ivy gym
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/memory">
+                    Ivy memory
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/builder">
+                    Ivy builder
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/models">
+                    Ivy models
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/ecosystem">
+                    Ivy ecosystem
+                </a>
+            </li>
+            </ul>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">ivy_builder.abstract.tuner</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1>Source code for ivy_builder.abstract.tuner</h1><div class="highlight"><pre>
+<span></span><span class="c1"># global</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">ivy</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">multiprocessing</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">ray</span>
+    <span class="kn">from</span> <span class="nn">ray</span> <span class="kn">import</span> <span class="n">tune</span>
+    <span class="kn">from</span> <span class="nn">ray.tune</span> <span class="kn">import</span> <span class="n">CLIReporter</span>
+    <span class="kn">from</span> <span class="nn">ray.tune.schedulers.async_hyperband</span> <span class="kn">import</span> <span class="n">AsyncHyperBandScheduler</span>
+<span class="k">except</span> <span class="ne">ModuleNotFoundError</span><span class="p">:</span>
+    <span class="n">ray</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">tune</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="c1"># local</span>
+<span class="kn">from</span> <span class="nn">ivy_builder</span> <span class="kn">import</span> <span class="n">builder</span> <span class="k">as</span> <span class="n">builder_module</span>
+<span class="kn">from</span> <span class="nn">ivy_builder.specs.dataset_dirs</span> <span class="kn">import</span> <span class="n">DatasetDirs</span>
+<span class="kn">from</span> <span class="nn">ivy_builder.specs.dataset_spec</span> <span class="kn">import</span> <span class="n">DatasetSpec</span>
+<span class="kn">from</span> <span class="nn">ivy_builder.specs.data_loader_spec</span> <span class="kn">import</span> <span class="n">DataLoaderSpec</span>
+<span class="kn">from</span> <span class="nn">ivy_builder.specs.network_spec</span> <span class="kn">import</span> <span class="n">NetworkSpec</span>
+<span class="kn">from</span> <span class="nn">ivy_builder.specs.trainer_spec</span> <span class="kn">import</span> <span class="n">TrainerSpec</span>
+<span class="kn">from</span> <span class="nn">ivy_builder.specs.tuner_spec</span> <span class="kn">import</span> <span class="n">TunerSpec</span>
+
+<span class="n">SPEC_KEYS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;dataset_dirs&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dataset_spec&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_loader_spec&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;network_spec&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;trainer_spec&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+<span class="n">SHORT_SPEC_KEYS_DICT</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;dataset_dirs&quot;</span><span class="p">:</span> <span class="s2">&quot;dd&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;dataset_spec&quot;</span><span class="p">:</span> <span class="s2">&quot;ds&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;data_loader_spec&quot;</span><span class="p">:</span> <span class="s2">&quot;ls&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;network_spec&quot;</span><span class="p">:</span> <span class="s2">&quot;ns&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;trainer_spec&quot;</span><span class="p">:</span> <span class="s2">&quot;ts&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">FIXED_CONFIG_KEYS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;train_steps_per_tune_step&quot;</span><span class="p">,</span> <span class="s2">&quot;framework&quot;</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">_is_numeric_leaf</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">val</span><span class="o">.</span><span class="n">cont_if_exists</span><span class="p">(</span><span class="s2">&quot;min&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">val</span><span class="o">.</span><span class="n">cont_if_exists</span><span class="p">(</span><span class="s2">&quot;max&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+
+<span class="k">def</span> <span class="nf">_is_config_leaf</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    <span class="k">if</span> <span class="n">val</span><span class="o">.</span><span class="n">cont_if_exists</span><span class="p">(</span><span class="s2">&quot;configs&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">return</span> <span class="kc">False</span>
+
+
+<span class="k">def</span> <span class="nf">_is_leaf</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">_is_numeric_leaf</span><span class="p">(</span><span class="n">val</span><span class="p">)</span> <span class="ow">or</span> <span class="n">_is_config_leaf</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">_convert_numeric_leaf</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="n">min_val</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="s2">&quot;min&quot;</span><span class="p">]</span>
+    <span class="n">max_val</span> <span class="o">=</span> <span class="n">val</span><span class="p">[</span><span class="s2">&quot;max&quot;</span><span class="p">]</span>
+    <span class="n">mean_val</span> <span class="o">=</span> <span class="p">(</span><span class="n">max_val</span> <span class="o">+</span> <span class="n">min_val</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+    <span class="n">sd_val</span> <span class="o">=</span> <span class="n">max_val</span> <span class="o">-</span> <span class="n">mean_val</span>
+    <span class="n">gaussian</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">cont_if_exists</span><span class="p">(</span><span class="s2">&quot;gaussian&quot;</span><span class="p">)</span>
+    <span class="n">grid</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">cont_if_exists</span><span class="p">(</span><span class="s2">&quot;grid&quot;</span><span class="p">)</span>
+    <span class="n">uniform</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">cont_if_exists</span><span class="p">(</span><span class="s2">&quot;uniform&quot;</span><span class="p">)</span>
+    <span class="n">selections</span> <span class="o">=</span> <span class="p">[</span><span class="nb">bool</span><span class="p">(</span><span class="n">gaussian</span><span class="p">),</span> <span class="nb">bool</span><span class="p">(</span><span class="n">grid</span><span class="p">),</span> <span class="nb">bool</span><span class="p">(</span><span class="n">uniform</span><span class="p">)]</span>
+    <span class="n">num_selected</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">selections</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">num_selected</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+            <span class="s2">&quot;only one of [ gaussian | grid | uniform ] can be selected,&quot;</span>
+            <span class="s2">&quot;but </span><span class="si">{}</span><span class="s2"> are selected, with the following options set: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">num_selected</span><span class="p">,</span> <span class="n">selections</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">if</span> <span class="n">num_selected</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">uniform</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">if</span> <span class="n">val</span><span class="o">.</span><span class="n">cont_if_exists</span><span class="p">(</span><span class="s2">&quot;exponent&quot;</span><span class="p">):</span>
+        <span class="n">exponential</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="n">exponent</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">exponent</span>
+        <span class="n">log_exponent</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">exponent</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">exponential</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">as_int</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">cont_if_exists</span><span class="p">(</span><span class="s2">&quot;as_int&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">gaussian</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">exponential</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">as_int</span><span class="p">:</span>
+                <span class="n">sample_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">spec</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">mean_val</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">sd_val</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span>
+                        <span class="n">exponent</span>
+                        <span class="o">**</span> <span class="p">(</span>
+                            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span>
+                                <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">/</span> <span class="n">log_exponent</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">/</span> <span class="n">log_exponent</span>
+                            <span class="p">)</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sample_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">spec</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">mean_val</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">sd_val</span><span class="p">:</span> <span class="n">exponent</span> <span class="o">**</span> <span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="o">/</span> <span class="n">log_exponent</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">/</span> <span class="n">log_exponent</span><span class="p">)</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">as_int</span><span class="p">:</span>
+                <span class="n">sample_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">spec</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">mean_val</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">sd_val</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="p">))</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sample_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">spec</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="n">mean_val</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="n">sd_val</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+        <span class="n">numeric_leaf</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">sample_from</span><span class="p">(</span><span class="n">sample_func</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">uniform</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">exponential</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">as_int</span><span class="p">:</span>
+                <span class="n">sample_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">spec</span><span class="p">,</span> <span class="n">mi</span><span class="o">=</span><span class="n">min_val</span><span class="p">,</span> <span class="n">ma</span><span class="o">=</span><span class="n">max_val</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span>
+                        <span class="n">exponent</span>
+                        <span class="o">**</span> <span class="p">(</span>
+                            <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span>
+                                <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">mi</span><span class="p">)</span> <span class="o">/</span> <span class="n">log_exponent</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">ma</span><span class="p">)</span> <span class="o">/</span> <span class="n">log_exponent</span>
+                            <span class="p">)</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sample_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">spec</span><span class="p">,</span> <span class="n">mi</span><span class="o">=</span><span class="n">min_val</span><span class="p">,</span> <span class="n">ma</span><span class="o">=</span><span class="n">max_val</span><span class="p">:</span> <span class="n">exponent</span> <span class="o">**</span> <span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">mi</span><span class="p">)</span> <span class="o">/</span> <span class="n">log_exponent</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">ma</span><span class="p">)</span> <span class="o">/</span> <span class="n">log_exponent</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">as_int</span><span class="p">:</span>
+                <span class="n">sample_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">spec</span><span class="p">,</span> <span class="n">mi</span><span class="o">=</span><span class="n">min_val</span><span class="p">,</span> <span class="n">ma</span><span class="o">=</span><span class="n">max_val</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">mi</span><span class="p">,</span> <span class="n">ma</span><span class="p">))</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">sample_func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">spec</span><span class="p">,</span> <span class="n">mi</span><span class="o">=</span><span class="n">min_val</span><span class="p">,</span> <span class="n">ma</span><span class="o">=</span><span class="n">max_val</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span>
+                    <span class="n">mi</span><span class="p">,</span> <span class="n">ma</span>
+                <span class="p">)</span>
+        <span class="n">numeric_leaf</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">sample_from</span><span class="p">(</span><span class="n">sample_func</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>  <span class="c1"># grid</span>
+        <span class="n">num_grid_samples</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">num_grid_samples</span>
+        <span class="k">if</span> <span class="n">exponential</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">as_int</span><span class="p">:</span>
+                <span class="c1"># noinspection PyUnboundLocalVariable</span>
+                <span class="n">grid_vals</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span>
+                        <span class="n">exponent</span>
+                        <span class="o">**</span> <span class="p">(</span>
+                            <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span>
+                                <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">min_val</span><span class="p">)</span> <span class="o">/</span> <span class="n">log_exponent</span><span class="p">,</span>
+                                <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">max_val</span><span class="p">)</span> <span class="o">/</span> <span class="n">log_exponent</span><span class="p">,</span>
+                                <span class="n">num_grid_samples</span><span class="p">,</span>
+                            <span class="p">)</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                    <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># noinspection PyUnboundLocalVariable</span>
+                <span class="n">grid_vals</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">exponent</span>
+                    <span class="o">**</span> <span class="p">(</span>
+                        <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span>
+                            <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">min_val</span><span class="p">)</span> <span class="o">/</span> <span class="n">log_exponent</span><span class="p">,</span>
+                            <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">max_val</span><span class="p">)</span> <span class="o">/</span> <span class="n">log_exponent</span><span class="p">,</span>
+                            <span class="n">num_grid_samples</span><span class="p">,</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">as_int</span><span class="p">:</span>
+                <span class="n">grid_vals</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">,</span> <span class="n">num_grid_samples</span><span class="p">))</span>
+                    <span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span>
+                    <span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+                <span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">grid_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">min_val</span><span class="p">,</span> <span class="n">max_val</span><span class="p">,</span> <span class="n">num_grid_samples</span><span class="p">)</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="n">numeric_leaf</span> <span class="o">=</span> <span class="n">tune</span><span class="o">.</span><span class="n">grid_search</span><span class="p">(</span><span class="n">grid_vals</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">numeric_leaf</span>
+
+
+<span class="k">def</span> <span class="nf">_convert_config_leaf</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">val</span><span class="o">.</span><span class="n">cont_if_exists</span><span class="p">(</span><span class="s2">&quot;grid&quot;</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">tune</span><span class="o">.</span><span class="n">grid_search</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">configs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">tune</span><span class="o">.</span><span class="n">sample_from</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">val</span><span class="o">.</span><span class="n">configs</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">_convert_multi_config_leaf</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">val</span><span class="p">):</span>
+    <span class="n">new_config</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">()</span>
+    <span class="n">new_config</span><span class="o">.</span><span class="n">grid</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">cont_if_exists</span><span class="p">(</span><span class="s2">&quot;grid&quot;</span><span class="p">)</span>
+    <span class="n">new_config</span><span class="o">.</span><span class="n">configs</span> <span class="o">=</span> <span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">val</span><span class="o">.</span><span class="n">configs</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">_convert_config_leaf</span><span class="p">(</span><span class="n">new_config</span><span class="p">)</span>
+
+
+<span class="c1"># noinspection PyUnboundLocalVariable</span>
+<span class="k">def</span> <span class="nf">_convert_tuner_spec</span><span class="p">(</span><span class="n">spec</span><span class="p">,</span> <span class="n">key_chain</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+    <span class="n">new_spec</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">spec</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+        <span class="n">key_chain</span> <span class="o">=</span> <span class="p">(</span><span class="n">key_chain</span> <span class="o">+</span> <span class="s2">&quot;/&quot;</span> <span class="o">+</span> <span class="n">key</span><span class="p">)</span> <span class="k">if</span> <span class="n">key_chain</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span> <span class="k">else</span> <span class="n">key</span>
+        <span class="n">spec_key</span> <span class="o">=</span> <span class="p">[</span><span class="n">sk</span> <span class="k">for</span> <span class="n">sk</span> <span class="ow">in</span> <span class="n">SPEC_KEYS</span> <span class="k">if</span> <span class="n">sk</span> <span class="ow">in</span> <span class="n">key_chain</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">spec_key</span><span class="p">:</span>
+            <span class="n">new_spec</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">_is_leaf</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">):</span>
+                <span class="n">new_spec</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">val</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_spec</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">_convert_tuner_spec</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">key_chain</span><span class="p">)</span>
+            <span class="k">continue</span>
+        <span class="k">if</span> <span class="n">_is_numeric_leaf</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+            <span class="n">new_spec</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">_convert_numeric_leaf</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">_is_config_leaf</span><span class="p">(</span><span class="n">val</span><span class="p">):</span>
+            <span class="n">keys</span> <span class="o">=</span> <span class="n">key</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;_AND_&quot;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">keys</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="n">new_spec</span><span class="p">[</span><span class="n">keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">_convert_config_leaf</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">new_spec</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">_convert_multi_config_leaf</span><span class="p">(</span><span class="n">keys</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;invalid leaf&quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">new_spec</span>
+
+
+<div class="viewcode-block" id="Tuner"><a class="viewcode-back" href="../../../builder-abstract/abstract/ivy_builder.abstract.tuner.html#ivy_builder.abstract.tuner.Tuner">[docs]</a><span class="k">class</span> <span class="nc">Tuner</span><span class="p">:</span>
+<div class="viewcode-block" id="Tuner.__init__"><a class="viewcode-back" href="../../../builder-abstract/abstract/ivy_builder.abstract.tuner.html#ivy_builder.abstract.tuner.Tuner.__init__">[docs]</a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">data_loader_class</span><span class="p">,</span>
+        <span class="n">network_class</span><span class="p">,</span>
+        <span class="n">trainer_class</span><span class="p">,</span>
+        <span class="n">dataset_dirs_args</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">dataset_dirs_class</span><span class="p">:</span> <span class="n">DatasetDirs</span><span class="o">.</span><span class="n">__base__</span> <span class="o">=</span> <span class="n">DatasetDirs</span><span class="p">,</span>
+        <span class="n">dataset_dirs</span><span class="p">:</span> <span class="n">DatasetDirs</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">dataset_spec_args</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">dataset_spec_class</span><span class="p">:</span> <span class="n">DatasetSpec</span><span class="o">.</span><span class="n">__base__</span> <span class="o">=</span> <span class="n">DatasetSpec</span><span class="p">,</span>
+        <span class="n">dataset_spec</span><span class="p">:</span> <span class="n">DatasetSpec</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">data_loader_spec_args</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">data_loader_spec_class</span><span class="p">:</span> <span class="n">DataLoaderSpec</span><span class="o">.</span><span class="n">__base__</span> <span class="o">=</span> <span class="n">DataLoaderSpec</span><span class="p">,</span>
+        <span class="n">data_loader_spec</span><span class="p">:</span> <span class="n">DataLoaderSpec</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">data_loader</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">network_spec_args</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">network_spec_class</span><span class="p">:</span> <span class="n">NetworkSpec</span><span class="o">.</span><span class="n">__base__</span> <span class="o">=</span> <span class="n">NetworkSpec</span><span class="p">,</span>
+        <span class="n">network_spec</span><span class="p">:</span> <span class="n">NetworkSpec</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">network</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">trainer_spec_args</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">trainer_spec_class</span><span class="p">:</span> <span class="n">TrainerSpec</span><span class="o">.</span><span class="n">__base__</span> <span class="o">=</span> <span class="n">TrainerSpec</span><span class="p">,</span>
+        <span class="n">trainer_spec</span><span class="p">:</span> <span class="n">TrainerSpec</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">trainer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">tuner_spec_args</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">tuner_spec_class</span><span class="p">:</span> <span class="n">TunerSpec</span><span class="o">.</span><span class="n">__base__</span> <span class="o">=</span> <span class="n">TunerSpec</span><span class="p">,</span>
+        <span class="n">tuner_spec</span><span class="p">:</span> <span class="n">TunerSpec</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">json_spec_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">spec_cont</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        base class for any tune trainers</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">ivy</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">tune</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+                <span class="s2">&quot;ray[tune] is needed in order to use the Tuner class, but it is not installed.&quot;</span>
+                <span class="s2">&quot;Please install via pip install ray[tune]&quot;</span>
+            <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data_loader_class</span> <span class="o">=</span> <span class="n">data_loader_class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_network_class</span> <span class="o">=</span> <span class="n">network_class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_class</span> <span class="o">=</span> <span class="n">trainer_class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_dirs_args</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">dataset_dirs_args</span><span class="p">,</span> <span class="nb">dict</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_dirs_class</span> <span class="o">=</span> <span class="n">dataset_dirs_class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_dirs</span> <span class="o">=</span> <span class="n">dataset_dirs</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_spec_args</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">dataset_spec_args</span><span class="p">,</span> <span class="nb">dict</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_spec_class</span> <span class="o">=</span> <span class="n">dataset_spec_class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_spec</span> <span class="o">=</span> <span class="n">dataset_spec</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data_loader_spec_args</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">data_loader_spec_args</span><span class="p">,</span> <span class="nb">dict</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data_loader_spec_class</span> <span class="o">=</span> <span class="n">data_loader_spec_class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data_loader_spec</span> <span class="o">=</span> <span class="n">data_loader_spec</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_data_loader</span> <span class="o">=</span> <span class="n">data_loader</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_network_spec_args</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">network_spec_args</span><span class="p">,</span> <span class="nb">dict</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_network_spec_class</span> <span class="o">=</span> <span class="n">network_spec_class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_network_spec</span> <span class="o">=</span> <span class="n">network_spec</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_network</span> <span class="o">=</span> <span class="n">network</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_spec_args</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">trainer_spec_args</span><span class="p">,</span> <span class="nb">dict</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_spec_class</span> <span class="o">=</span> <span class="n">trainer_spec_class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_spec</span> <span class="o">=</span> <span class="n">trainer_spec</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span> <span class="o">=</span> <span class="n">trainer</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tuner_spec_args</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">tuner_spec_args</span><span class="p">,</span> <span class="nb">dict</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tuner_spec_class</span> <span class="o">=</span> <span class="n">tuner_spec_class</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_tuner_spec</span> <span class="o">=</span> <span class="n">tuner_spec</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_json_spec_path</span> <span class="o">=</span> <span class="n">json_spec_path</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_spec_cont</span> <span class="o">=</span> <span class="n">spec_cont</span>
+
+        <span class="c1"># initialized on _setup</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span> <span class="o">=</span> <span class="kc">None</span>
+
+        <span class="c1"># builder</span>
+        <span class="k">while</span> <span class="nb">len</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">backend_stack</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span>
+                <span class="s2">&quot;unsetting framework </span><span class="si">{}</span><span class="s2">, framework stack must be empty when&quot;</span>
+                <span class="s2">&quot;initializing tuner class.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">backend_stack</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+            <span class="p">)</span>
+            <span class="n">ivy</span><span class="o">.</span><span class="n">previous_backend</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_builder</span> <span class="o">=</span> <span class="n">builder_module</span>
+
+        <span class="c1"># tuner spec</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_spec</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_builder</span><span class="o">.</span><span class="n">build_tuner_spec</span><span class="p">(</span>
+            <span class="n">data_loader_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_data_loader_class</span><span class="p">,</span>
+            <span class="n">network_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_network_class</span><span class="p">,</span>
+            <span class="n">trainer_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_trainer_class</span><span class="p">,</span>
+            <span class="n">dataset_dirs_args</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dataset_dirs_args</span><span class="p">,</span>
+            <span class="n">dataset_dirs_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dataset_dirs_class</span><span class="p">,</span>
+            <span class="n">dataset_dirs</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dataset_dirs</span><span class="p">,</span>
+            <span class="n">dataset_spec_args</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dataset_spec_args</span><span class="p">,</span>
+            <span class="n">dataset_spec_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dataset_spec_class</span><span class="p">,</span>
+            <span class="n">dataset_spec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_dataset_spec</span><span class="p">,</span>
+            <span class="n">data_loader_spec_args</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_data_loader_spec_args</span><span class="p">,</span>
+            <span class="n">data_loader_spec_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_data_loader_spec_class</span><span class="p">,</span>
+            <span class="n">data_loader_spec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_data_loader_spec</span><span class="p">,</span>
+            <span class="n">data_loader</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_data_loader</span><span class="p">,</span>
+            <span class="n">network_spec_args</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_network_spec_args</span><span class="p">,</span>
+            <span class="n">network_spec_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_network_spec_class</span><span class="p">,</span>
+            <span class="n">network_spec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_network_spec</span><span class="p">,</span>
+            <span class="n">network</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_network</span><span class="p">,</span>
+            <span class="n">trainer_spec_args</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_trainer_spec_args</span><span class="p">,</span>
+            <span class="n">trainer_spec_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_trainer_spec_class</span><span class="p">,</span>
+            <span class="n">trainer_spec</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_trainer_spec</span><span class="p">,</span>
+            <span class="n">trainer</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="p">,</span>
+            <span class="n">tuner_spec_args</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_tuner_spec_args</span><span class="p">,</span>
+            <span class="n">tuner_spec_class</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_tuner_spec_class</span><span class="p">,</span>
+            <span class="n">json_spec_path</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_json_spec_path</span><span class="p">,</span>
+            <span class="n">spec_cont</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_spec_cont</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_spec</span> <span class="o">=</span> <span class="n">_convert_tuner_spec</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Tuner.tune"><a class="viewcode-back" href="../../../builder-abstract/abstract/ivy_builder.abstract.tuner.html#ivy_builder.abstract.tuner.Tuner.tune">[docs]</a>    <span class="k">def</span> <span class="nf">tune</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># Create Trainable class #</span>
+        <span class="c1"># -----------------------#</span>
+
+        <span class="c1"># builder for TuneTrainable</span>
+        <span class="n">builder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_builder</span>
+
+        <span class="c1"># classes and args for TuneTrainable</span>
+        <span class="n">data_loader_class</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_loader_class</span>
+        <span class="n">network_class</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_network_class</span>
+        <span class="n">trainer_class</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_class</span>
+        <span class="n">dataset_dirs_args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_dirs_args</span>
+        <span class="n">dataset_dirs_class</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_dirs_class</span>
+        <span class="n">dataset_dirs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_dirs</span>
+        <span class="n">dataset_spec_args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_spec_args</span>
+        <span class="n">dataset_spec_class</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_spec_class</span>
+        <span class="n">dataset_spec</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataset_spec</span>
+        <span class="n">data_loader_spec_args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_loader_spec_args</span>
+        <span class="n">data_loader_spec_class</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_loader_spec_class</span>
+        <span class="n">data_loader_spec</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_loader_spec</span>
+        <span class="n">data_loader</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_data_loader</span>
+        <span class="n">network_spec_args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_network_spec_args</span>
+        <span class="n">network_spec_class</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_network_spec_class</span>
+        <span class="n">network_spec</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_network_spec</span>
+        <span class="n">network</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_network</span>
+        <span class="n">trainer_spec_args</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_spec_args</span>
+        <span class="n">trainer_spec_class</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_spec_class</span>
+        <span class="n">trainer_spec</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_spec</span>
+        <span class="n">json_spec_path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_json_spec_path</span>
+        <span class="n">spec_cont</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spec_cont</span>
+        <span class="n">orig_log_dir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">log_dir</span>
+
+        <span class="c1"># noinspection PyAttributeOutsideInit</span>
+        <span class="k">class</span> <span class="nc">TuneTrainable</span><span class="p">(</span><span class="n">tune</span><span class="o">.</span><span class="n">Trainable</span><span class="p">):</span>
+            <span class="k">def</span> <span class="nf">setup</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
+                <span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">&quot;framework&quot;</span><span class="p">])</span>  <span class="c1"># to check!</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_train_steps_per_tune_step</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span>
+                    <span class="s2">&quot;train_steps_per_tune_step&quot;</span>
+                <span class="p">]</span>
+                <span class="n">config_cont</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_config_str</span> <span class="o">=</span> <span class="s2">&quot;_&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                    <span class="p">[</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">SHORT_SPEC_KEYS_DICT</span><span class="p">[</span><span class="n">kc</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]])</span>
+                        <span class="o">+</span> <span class="s2">&quot;_&quot;</span>
+                        <span class="o">+</span> <span class="n">kc</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+                        <span class="o">+</span> <span class="s2">&quot;_&quot;</span>
+                        <span class="o">+</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">%.2g</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">val</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">val</span><span class="p">))</span>
+                        <span class="k">for</span> <span class="n">kc</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">config_cont</span><span class="o">.</span><span class="n">cont_to_iterator</span><span class="p">()</span>
+                        <span class="k">if</span> <span class="p">(</span>
+                            <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="kc">None</span><span class="p">)))</span>
+                            <span class="ow">and</span> <span class="n">kc</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">FIXED_CONFIG_KEYS</span>
+                        <span class="p">)</span>
+                    <span class="p">]</span>
+                <span class="p">)</span>
+                <span class="n">trainer_spec_args</span><span class="p">[</span><span class="s2">&quot;log_dir&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                    <span class="n">orig_log_dir</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_config_str</span>
+                <span class="p">)</span>
+                <span class="n">new_args</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
+                <span class="k">for</span> <span class="n">class_key</span><span class="p">,</span> <span class="n">args</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+                    <span class="n">SPEC_KEYS</span><span class="p">,</span>
+                    <span class="p">[</span>
+                        <span class="n">dataset_dirs_args</span><span class="p">,</span>
+                        <span class="n">dataset_spec_args</span><span class="p">,</span>
+                        <span class="n">data_loader_spec_args</span><span class="p">,</span>
+                        <span class="n">network_spec_args</span><span class="p">,</span>
+                        <span class="n">trainer_spec_args</span><span class="p">,</span>
+                    <span class="p">],</span>
+                <span class="p">):</span>
+                    <span class="n">new_args</span><span class="p">[</span><span class="n">class_key</span><span class="p">]</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">Container</span><span class="p">(</span>
+                        <span class="p">{</span>
+                            <span class="o">**</span><span class="n">args</span><span class="p">,</span>
+                            <span class="o">**</span><span class="p">(</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="n">class_key</span><span class="p">]</span>
+                                <span class="k">if</span> <span class="n">class_key</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">config</span>
+                                <span class="k">else</span> <span class="p">{}</span>
+                            <span class="p">),</span>
+                        <span class="p">}</span>
+                    <span class="p">)</span><span class="o">.</span><span class="n">cont_prune_key_from_key_chains</span><span class="p">(</span><span class="n">containing</span><span class="o">=</span><span class="s2">&quot;_AND_&quot;</span><span class="p">)</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="n">build_trainer</span><span class="p">(</span>
+                    <span class="n">data_loader_class</span><span class="o">=</span><span class="n">data_loader_class</span><span class="p">,</span>
+                    <span class="n">network_class</span><span class="o">=</span><span class="n">network_class</span><span class="p">,</span>
+                    <span class="n">trainer_class</span><span class="o">=</span><span class="n">trainer_class</span><span class="p">,</span>
+                    <span class="n">dataset_dirs_args</span><span class="o">=</span><span class="n">new_args</span><span class="p">[</span><span class="s2">&quot;dataset_dirs&quot;</span><span class="p">],</span>
+                    <span class="n">dataset_dirs_class</span><span class="o">=</span><span class="n">dataset_dirs_class</span><span class="p">,</span>
+                    <span class="n">dataset_dirs</span><span class="o">=</span><span class="n">dataset_dirs</span><span class="p">,</span>
+                    <span class="n">dataset_spec_args</span><span class="o">=</span><span class="n">new_args</span><span class="p">[</span><span class="s2">&quot;dataset_spec&quot;</span><span class="p">],</span>
+                    <span class="n">dataset_spec_class</span><span class="o">=</span><span class="n">dataset_spec_class</span><span class="p">,</span>
+                    <span class="n">dataset_spec</span><span class="o">=</span><span class="n">dataset_spec</span><span class="p">,</span>
+                    <span class="n">data_loader_spec_args</span><span class="o">=</span><span class="n">new_args</span><span class="p">[</span><span class="s2">&quot;data_loader_spec&quot;</span><span class="p">],</span>
+                    <span class="n">data_loader_spec_class</span><span class="o">=</span><span class="n">data_loader_spec_class</span><span class="p">,</span>
+                    <span class="n">data_loader_spec</span><span class="o">=</span><span class="n">data_loader_spec</span><span class="p">,</span>
+                    <span class="n">data_loader</span><span class="o">=</span><span class="n">data_loader</span><span class="p">,</span>
+                    <span class="n">network_spec_args</span><span class="o">=</span><span class="n">new_args</span><span class="p">[</span><span class="s2">&quot;network_spec&quot;</span><span class="p">],</span>
+                    <span class="n">network_spec_class</span><span class="o">=</span><span class="n">network_spec_class</span><span class="p">,</span>
+                    <span class="n">network_spec</span><span class="o">=</span><span class="n">network_spec</span><span class="p">,</span>
+                    <span class="n">network</span><span class="o">=</span><span class="n">network</span><span class="p">,</span>
+                    <span class="n">trainer_spec_args</span><span class="o">=</span><span class="n">new_args</span><span class="p">[</span><span class="s2">&quot;trainer_spec&quot;</span><span class="p">],</span>
+                    <span class="n">trainer_spec_class</span><span class="o">=</span><span class="n">trainer_spec_class</span><span class="p">,</span>
+                    <span class="n">trainer_spec</span><span class="o">=</span><span class="n">trainer_spec</span><span class="p">,</span>
+                    <span class="n">json_spec_path</span><span class="o">=</span><span class="n">json_spec_path</span><span class="p">,</span>
+                    <span class="n">spec_cont</span><span class="o">=</span><span class="n">spec_cont</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="c1"># unset at_end configs</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_save_at_end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">save_at_end</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">save_at_end</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_log_at_end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">log_at_end</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">log_at_end</span> <span class="o">=</span> <span class="kc">False</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_vis_at_end</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">vis_at_end</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">vis_at_end</span> <span class="o">=</span> <span class="kc">False</span>
+
+                <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">setup</span><span class="p">()</span>
+                <span class="c1"># noinspection PyProtectedMember</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_global_step</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">_starting_iteration</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_total_iterations</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">total_iterations</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">timestep</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
+                    <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_global_step</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_train_steps_per_tune_step</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+
+            <span class="c1"># noinspection PyProtectedMember</span>
+            <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="n">total_iterations</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_global_step</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_train_steps_per_tune_step</span><span class="p">,</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_total_iterations</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_global_step</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">train</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_global_step</span><span class="p">,</span> <span class="n">total_iterations</span>
+                <span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">timestep</span> <span class="o">+=</span> <span class="mi">1</span>
+                <span class="n">ret_dict</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s2">&quot;timestep&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">timestep</span><span class="p">,</span>
+                    <span class="s2">&quot;cost&quot;</span><span class="p">:</span> <span class="n">ivy</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">moving_average_loss</span><span class="p">),</span>
+                <span class="p">}</span>
+                <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_global_step</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_total_iterations</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_save_at_end</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">_save</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_log_at_end</span> <span class="ow">and</span> <span class="n">ivy</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">_training_batch</span><span class="p">):</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">_log_scalars</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_vis_at_end</span><span class="p">:</span>
+                        <span class="n">dl</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">data_loader</span>
+                        <span class="n">net</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">network</span>
+                        <span class="n">tb</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">_training_batch</span>
+                        <span class="n">gs</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">_global_step</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">_write_image_summaries</span><span class="p">(</span><span class="n">dl</span><span class="p">,</span> <span class="n">net</span><span class="p">,</span> <span class="n">tb</span><span class="p">,</span> <span class="n">gs</span><span class="p">)</span>
+                    <span class="n">ret_dict</span><span class="p">[</span><span class="n">tune</span><span class="o">.</span><span class="n">result</span><span class="o">.</span><span class="n">DONE</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">return</span> <span class="n">ret_dict</span>
+
+            <span class="k">def</span> <span class="nf">save_checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">checkpoint_dir</span><span class="p">):</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">checkpoint_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">save_name</span> <span class="o">=</span> <span class="s2">&quot;step_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">timestep</span><span class="p">)</span>
+                <span class="n">save_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">checkpoint_dir</span><span class="p">,</span> <span class="n">save_name</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">save_path</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;saved checkpoint to path: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">save_path</span><span class="p">))</span>
+                <span class="k">return</span> <span class="n">save_path</span>
+
+            <span class="k">def</span> <span class="nf">load_checkpoint</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">checkpoint_path</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">restore</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_trainer_global_step</span><span class="p">)</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loaded checkpoint from </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">checkpoint_path</span><span class="p">))</span>
+
+            <span class="k">def</span> <span class="nf">cleanup</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_trainer</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+                <span class="n">ivy</span><span class="o">.</span><span class="n">previous_backend</span><span class="p">()</span>
+
+        <span class="c1"># Run this trainable class #</span>
+        <span class="c1"># -------------------------#</span>
+
+        <span class="n">max_t</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span>
+            <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">total_iterations</span>
+                <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">train_steps_per_tune_step</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">ahb</span> <span class="o">=</span> <span class="n">AsyncHyperBandScheduler</span><span class="p">(</span>
+            <span class="n">time_attr</span><span class="o">=</span><span class="s2">&quot;timestep&quot;</span><span class="p">,</span>
+            <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;cost&quot;</span><span class="p">,</span>
+            <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;min&quot;</span><span class="p">,</span>
+            <span class="n">grace_period</span><span class="o">=</span><span class="n">max_t</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">grace_period</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span>
+            <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">grace_period</span><span class="p">,</span>
+            <span class="n">max_t</span><span class="o">=</span><span class="n">max_t</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="n">num_cpus</span> <span class="o">=</span> <span class="n">multiprocessing</span><span class="o">.</span><span class="n">cpu_count</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="n">num_cpus</span> <span class="o">&gt;</span> <span class="mi">0</span>
+        <span class="n">num_gpus</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">num_gpus</span><span class="p">()</span>
+        <span class="n">cpus_per_trial</span> <span class="o">=</span> <span class="n">num_cpus</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">parallel_trials</span>
+        <span class="n">gpus_per_trial</span> <span class="o">=</span> <span class="n">num_gpus</span> <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">parallel_trials</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">device_priority</span> <span class="o">==</span> <span class="s2">&quot;cpu&quot;</span> <span class="ow">or</span> <span class="n">num_gpus</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">cpus_per_trial</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">cpus_per_trial</span><span class="p">))</span> <span class="k">if</span> <span class="n">cpus_per_trial</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">cpus_per_trial</span>
+            <span class="p">)</span>
+            <span class="n">parallel_trials</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">num_cpus</span> <span class="o">/</span> <span class="n">cpus_per_trial</span><span class="p">)</span>
+            <span class="n">gpus_per_trial</span> <span class="o">=</span> <span class="n">num_gpus</span> <span class="o">/</span> <span class="n">parallel_trials</span>
+            <span class="n">gpus_per_trial</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">gpus_per_trial</span><span class="p">)</span> <span class="k">if</span> <span class="n">gpus_per_trial</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">gpus_per_trial</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">device_priority</span> <span class="o">==</span> <span class="s2">&quot;gpu&quot;</span><span class="p">:</span>
+            <span class="n">gpus_per_trial</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">gpus_per_trial</span><span class="p">))</span> <span class="k">if</span> <span class="n">gpus_per_trial</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">gpus_per_trial</span>
+            <span class="p">)</span>
+            <span class="n">parallel_trials</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">num_gpus</span> <span class="o">/</span> <span class="n">gpus_per_trial</span><span class="p">)</span>
+            <span class="n">cpus_per_trial</span> <span class="o">=</span> <span class="n">num_cpus</span> <span class="o">/</span> <span class="n">parallel_trials</span>
+            <span class="n">cpus_per_trial</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">cpus_per_trial</span><span class="p">)</span> <span class="k">if</span> <span class="n">cpus_per_trial</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">cpus_per_trial</span>
+            <span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span>
+                <span class="s2">&quot;device_priority must be one of [ cpu | gpu ], but found </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                    <span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">device_priority</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+        <span class="n">ivy</span><span class="o">.</span><span class="n">previous_backend</span><span class="p">()</span>
+
+        <span class="n">reporter</span> <span class="o">=</span> <span class="n">CLIReporter</span><span class="p">(</span><span class="n">parameter_columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cost&quot;</span><span class="p">])</span>
+
+        <span class="c1"># initialize ray with custom temp_dir</span>
+        <span class="n">ray</span><span class="o">.</span><span class="n">init</span><span class="p">(</span>
+            <span class="n">_temp_dir</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+                <span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">log_dir</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span> <span class="s2">&quot;ray&quot;</span>
+            <span class="p">),</span>
+            <span class="n">ignore_reinit_error</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">tune</span><span class="o">.</span><span class="n">run</span><span class="p">(</span>
+            <span class="n">TuneTrainable</span><span class="p">,</span>
+            <span class="n">progress_reporter</span><span class="o">=</span><span class="n">reporter</span><span class="p">,</span>
+            <span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+            <span class="n">scheduler</span><span class="o">=</span><span class="n">ahb</span><span class="p">,</span>
+            <span class="n">stop</span><span class="o">=</span><span class="p">{</span>
+                <span class="s2">&quot;timestep&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span>
+                    <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">total_iterations</span>
+                        <span class="o">/</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">train_steps_per_tune_step</span>
+                    <span class="p">)</span>
+                <span class="p">)</span>
+            <span class="p">},</span>
+            <span class="n">num_samples</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">num_samples</span><span class="p">,</span>
+            <span class="n">resources_per_trial</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;cpu&quot;</span><span class="p">:</span> <span class="n">cpus_per_trial</span><span class="p">,</span> <span class="s2">&quot;gpu&quot;</span><span class="p">:</span> <span class="n">gpus_per_trial</span><span class="p">},</span>
+            <span class="n">config</span><span class="o">=</span><span class="p">{</span>
+                <span class="n">key</span><span class="p">:</span> <span class="n">val</span>
+                <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+                <span class="k">if</span> <span class="p">(</span>
+                    <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="nb">dict</span><span class="p">)</span>
+                    <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">tune</span><span class="o">.</span><span class="n">search</span><span class="o">.</span><span class="n">sample</span><span class="o">.</span><span class="n">Function</span><span class="p">)</span>
+                    <span class="ow">or</span> <span class="n">key</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;framework&quot;</span><span class="p">,</span> <span class="s2">&quot;train_steps_per_tune_step&quot;</span><span class="p">]</span>
+                <span class="p">)</span>
+            <span class="p">},</span>
+            <span class="n">local_dir</span><span class="o">=</span><span class="s2">&quot;/&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">trainer</span><span class="o">.</span><span class="n">spec</span><span class="o">.</span><span class="n">log_dir</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]),</span>
+            <span class="n">checkpoint_freq</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_spec</span><span class="o">.</span><span class="n">checkpoint_freq</span><span class="p">,</span>
+            <span class="n">checkpoint_at_end</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+<div class="viewcode-block" id="Tuner.close"><a class="viewcode-back" href="../../../builder-abstract/abstract/ivy_builder.abstract.tuner.html#ivy_builder.abstract.tuner.Tuner.close">[docs]</a>    <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Close this tuner, and destroy all child objects or processes which may not be garbage collected.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">pass</span></div></div>
+</pre></div>
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2020-2023, Ivy Team.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

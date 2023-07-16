@@ -1,0 +1,24 @@
+Nested array
+============
+
+.. autosummary::
+   :toctree: nested_array
+   :template: data_module.rst
+   :hide-table:
+   :recursive:
+
+   ivy.data_classes.nested_array.base
+
+   ivy.data_classes.nested_array.elementwise
+
+
+.. automodule:: ivy.data_classes.nested_array.nested_array
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.data_classes.nested_array.nested_array

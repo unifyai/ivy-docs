@@ -1,0 +1,17 @@
+﻿Specs
+=====
+
+.. autosummary::
+    :toctree: specs
+    :template: top_level_module.rst
+    :recursive:
+
+
+    ivy_builder.specs.data_loader_spec
+    ivy_builder.specs.dataset_dirs
+    ivy_builder.specs.dataset_spec
+    ivy_builder.specs.network_spec
+    ivy_builder.specs.spec
+    ivy_builder.specs.trainer_spec
+    ivy_builder.specs.tuner_spec
+

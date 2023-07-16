@@ -1,0 +1,8 @@
+bitwise\_right\_shift
+=====================
+
+.. autofunction:: ivy.bitwise_right_shift
+
+.. autoskippablemethod:: ivy.Array.bitwise_right_shift
+
+.. autoskippablemethod:: ivy.Container.bitwise_right_shift

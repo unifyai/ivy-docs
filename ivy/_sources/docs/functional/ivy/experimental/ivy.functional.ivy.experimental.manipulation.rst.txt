@@ -1,0 +1,214 @@
+Manipulation
+============
+
+
+.. autosummary::
+   :toctree: manipulation
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   ivy.functional.ivy.experimental.manipulation.as_strided
+   
+   
+   ivy.functional.ivy.experimental.manipulation.associative_scan
+   
+   
+   ivy.functional.ivy.experimental.manipulation.atleast_1d
+   
+   
+   ivy.functional.ivy.experimental.manipulation.atleast_2d
+   
+   
+   ivy.functional.ivy.experimental.manipulation.atleast_3d
+   
+   
+   ivy.functional.ivy.experimental.manipulation.broadcast_shapes
+   
+   
+   ivy.functional.ivy.experimental.manipulation.concat_from_sequence
+   
+   
+   ivy.functional.ivy.experimental.manipulation.dsplit
+   
+   
+   ivy.functional.ivy.experimental.manipulation.dstack
+   
+   
+   ivy.functional.ivy.experimental.manipulation.expand
+   
+   
+   ivy.functional.ivy.experimental.manipulation.fill_diagonal
+   
+   
+   ivy.functional.ivy.experimental.manipulation.flatten
+   
+   
+   ivy.functional.ivy.experimental.manipulation.fliplr
+   
+   
+   ivy.functional.ivy.experimental.manipulation.flipud
+   
+   
+   ivy.functional.ivy.experimental.manipulation.heaviside
+   
+   
+   ivy.functional.ivy.experimental.manipulation.hsplit
+   
+   
+   ivy.functional.ivy.experimental.manipulation.hstack
+   
+   
+   ivy.functional.ivy.experimental.manipulation.i0
+   
+   
+   ivy.functional.ivy.experimental.manipulation.moveaxis
+   
+   
+   ivy.functional.ivy.experimental.manipulation.pad
+   
+   
+   ivy.functional.ivy.experimental.manipulation.put_along_axis
+   
+   
+   ivy.functional.ivy.experimental.manipulation.rot90
+   
+   
+   ivy.functional.ivy.experimental.manipulation.take_along_axis
+   
+   
+   ivy.functional.ivy.experimental.manipulation.top_k
+   
+   
+   ivy.functional.ivy.experimental.manipulation.unique_consecutive
+   
+   
+   ivy.functional.ivy.experimental.manipulation.vsplit
+   
+   
+   ivy.functional.ivy.experimental.manipulation.vstack
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.manipulation
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy._check_arguments
+
+.. autofunction:: ivy._check_bounds
+
+.. autofunction:: ivy._check_tuple_arg
+
+.. autofunction:: ivy._get_edges
+
+.. autofunction:: ivy._get_linear_ramps
+
+.. autofunction:: ivy._get_stats
+
+.. autofunction:: ivy._interior_pad
+
+.. autofunction:: ivy._interleave
+
+.. autofunction:: ivy._pad_simple
+
+.. autofunction:: ivy._set_pad_area
+
+.. autofunction:: ivy._set_reflect_both
+
+.. autofunction:: ivy._set_wrap_both
+
+.. autofunction:: ivy._slice
+
+.. autofunction:: ivy._slice_along_axis
+
+.. autofunction:: ivy._slice_at_axis
+
+.. autofunction:: ivy._to_dilated
+
+.. autofunction:: ivy._to_pairs
+
+.. autofunction:: ivy.as_strided
+
+.. autofunction:: ivy.associative_scan
+
+.. autofunction:: ivy.atleast_1d
+
+.. autofunction:: ivy.atleast_2d
+
+.. autofunction:: ivy.atleast_3d
+
+.. autofunction:: ivy.broadcast_shapes
+
+.. autofunction:: ivy.concat_from_sequence
+
+.. autofunction:: ivy.dsplit
+
+.. autofunction:: ivy.dstack
+
+.. autofunction:: ivy.expand
+
+.. autofunction:: ivy.fill_diagonal
+
+.. autofunction:: ivy.flatten
+
+.. autofunction:: ivy.fliplr
+
+.. autofunction:: ivy.flipud
+
+.. autofunction:: ivy.heaviside
+
+.. autofunction:: ivy.hsplit
+
+.. autofunction:: ivy.hstack
+
+.. autofunction:: ivy.i0
+
+.. autofunction:: ivy.moveaxis
+
+.. autofunction:: ivy.pad
+
+.. autofunction:: ivy.put_along_axis
+
+.. autofunction:: ivy.rot90
+
+.. autofunction:: ivy.take_along_axis
+
+.. autofunction:: ivy.top_k
+
+.. autofunction:: ivy.unique_consecutive
+
+.. autofunction:: ivy.vsplit
+
+.. autofunction:: ivy.vstack
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.manipulation

@@ -1,0 +1,8 @@
+function\_unsupported\_dtypes
+=============================
+
+.. autofunction:: ivy.function_unsupported_dtypes
+
+.. autoskippablemethod:: ivy.Array.function_unsupported_dtypes
+
+.. autoskippablemethod:: ivy.Container.function_unsupported_dtypes

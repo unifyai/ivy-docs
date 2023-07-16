@@ -1,0 +1,8 @@
+eigh
+====
+
+.. autofunction:: ivy.eigh
+
+.. autoskippablemethod:: ivy.Array.eigh
+
+.. autoskippablemethod:: ivy.Container.eigh

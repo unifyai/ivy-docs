@@ -1,0 +1,8 @@
+set\_queue\_timeout
+===================
+
+.. autofunction:: ivy.set_queue_timeout
+
+.. autoskippablemethod:: ivy.Array.set_queue_timeout
+
+.. autoskippablemethod:: ivy.Container.set_queue_timeout

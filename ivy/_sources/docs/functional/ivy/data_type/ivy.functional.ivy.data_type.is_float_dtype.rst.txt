@@ -1,0 +1,8 @@
+is\_float\_dtype
+================
+
+.. autofunction:: ivy.is_float_dtype
+
+.. autoskippablemethod:: ivy.Array.is_float_dtype
+
+.. autoskippablemethod:: ivy.Container.is_float_dtype

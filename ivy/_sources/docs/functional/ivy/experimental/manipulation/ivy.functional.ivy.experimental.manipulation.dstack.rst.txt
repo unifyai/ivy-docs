@@ -1,0 +1,8 @@
+dstack
+======
+
+.. autofunction:: ivy.dstack
+
+.. autoskippablemethod:: ivy.Array.dstack
+
+.. autoskippablemethod:: ivy.Container.dstack

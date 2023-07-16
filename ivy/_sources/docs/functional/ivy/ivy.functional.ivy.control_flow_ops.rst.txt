@@ -1,0 +1,59 @@
+Control flow ops
+================
+
+
+.. autosummary::
+   :toctree: control_flow_ops
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   
+   
+   ivy.functional.ivy.control_flow_ops.cmp_is
+   
+   
+   ivy.functional.ivy.control_flow_ops.cmp_isnot
+   
+   
+   ivy.functional.ivy.control_flow_ops.for_loop
+   
+   
+   ivy.functional.ivy.control_flow_ops.if_else
+   
+   
+   ivy.functional.ivy.control_flow_ops.while_loop
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.control_flow_ops
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy._dict_to_tuple
+
+.. autofunction:: ivy._tuple_to_dict
+
+.. autofunction:: ivy.cmp_is
+
+.. autofunction:: ivy.cmp_isnot
+
+.. autofunction:: ivy.for_loop
+
+.. autofunction:: ivy.if_else
+
+.. autofunction:: ivy.while_loop
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.control_flow_ops

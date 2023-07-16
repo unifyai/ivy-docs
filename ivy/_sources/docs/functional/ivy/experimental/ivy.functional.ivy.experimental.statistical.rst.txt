@@ -1,0 +1,88 @@
+Statistical
+===========
+
+
+.. autosummary::
+   :toctree: statistical
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.experimental.statistical.bincount
+   
+   
+   ivy.functional.ivy.experimental.statistical.corrcoef
+   
+   
+   ivy.functional.ivy.experimental.statistical.cov
+   
+   
+   ivy.functional.ivy.experimental.statistical.cummax
+   
+   
+   ivy.functional.ivy.experimental.statistical.cummin
+   
+   
+   ivy.functional.ivy.experimental.statistical.histogram
+   
+   
+   ivy.functional.ivy.experimental.statistical.igamma
+   
+   
+   ivy.functional.ivy.experimental.statistical.median
+   
+   
+   ivy.functional.ivy.experimental.statistical.nanmean
+   
+   
+   ivy.functional.ivy.experimental.statistical.nanmedian
+   
+   
+   ivy.functional.ivy.experimental.statistical.nanquantile
+   
+   
+   ivy.functional.ivy.experimental.statistical.quantile
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.statistical
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.bincount
+
+.. autofunction:: ivy.corrcoef
+
+.. autofunction:: ivy.cov
+
+.. autofunction:: ivy.cummax
+
+.. autofunction:: ivy.cummin
+
+.. autofunction:: ivy.histogram
+
+.. autofunction:: ivy.igamma
+
+.. autofunction:: ivy.median
+
+.. autofunction:: ivy.nanmean
+
+.. autofunction:: ivy.nanmedian
+
+.. autofunction:: ivy.nanquantile
+
+.. autofunction:: ivy.quantile
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.statistical

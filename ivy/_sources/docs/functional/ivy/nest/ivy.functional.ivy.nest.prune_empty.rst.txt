@@ -1,0 +1,8 @@
+prune\_empty
+============
+
+.. autofunction:: ivy.prune_empty
+
+.. autoskippablemethod:: ivy.Array.prune_empty
+
+.. autoskippablemethod:: ivy.Container.prune_empty

@@ -1,0 +1,15 @@
+Rotation matrix
+===============
+
+
+
+.. automodule:: ivy_mech.orientation.rotation_matrix
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy_mech.orientation.rotation_matrix

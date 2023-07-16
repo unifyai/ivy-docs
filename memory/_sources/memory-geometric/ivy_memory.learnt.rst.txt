@@ -1,0 +1,11 @@
+﻿Learnt
+======
+
+.. autosummary::
+    :toctree: learnt
+    :template: top_level_module.rst
+    :recursive:
+
+
+    ivy_memory.learnt.ntm
+

@@ -36,7 +36,6 @@ Layers
    
    
    
-   
    ivy.functional.ivy.experimental.layers.adaptive_avg_pool1d
    
    
@@ -150,8 +149,6 @@ Layers
 .. autofunction:: ivy._get_identity
 
 .. autofunction:: ivy._get_size
-
-.. autofunction:: ivy._int_arg_to_tuple
 
 .. autofunction:: ivy._interpolate_with_kernel
 

@@ -108,6 +108,9 @@ Layers
    ivy.functional.ivy.experimental.layers.max_pool3d
    
    
+   ivy.functional.ivy.experimental.layers.max_unpool1d
+   
+   
    ivy.functional.ivy.experimental.layers.nearest_interpolate
    
    
@@ -231,6 +234,8 @@ Layers
 .. autofunction:: ivy.max_pool2d
 
 .. autofunction:: ivy.max_pool3d
+
+.. autofunction:: ivy.max_unpool1d
 
 .. autofunction:: ivy.nearest_interpolate
 

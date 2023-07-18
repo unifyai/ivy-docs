@@ -54,7 +54,7 @@
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="nearest_interpolate" href="ivy.functional.ivy.experimental.layers.nearest_interpolate.html" />
+    <link rel="next" title="max_unpool1d" href="ivy.functional.ivy.experimental.layers.max_unpool1d.html" />
     <link rel="prev" title="max_pool2d" href="ivy.functional.ivy.experimental.layers.max_pool2d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -660,6 +660,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.layers.max_pool1d.html">max_pool1d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.layers.max_pool2d.html">max_pool2d</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">max_pool3d</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.layers.max_unpool1d.html">max_unpool1d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.layers.nearest_interpolate.html">nearest_interpolate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.layers.pool.html">pool</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.layers.reduce_window.html">reduce_window</a></li>
@@ -1254,7 +1255,7 @@ document.write(`
 <h1>max_pool3d<a class="headerlink" href="#max-pool3d" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.max_pool3d">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">max_pool3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NDHWC'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/experimental/layers.py#L174-L242"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.max_pool3d" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">max_pool3d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strides</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">padding</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_format</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'NDHWC'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/experimental/layers.py#L244-L312"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.max_pool3d" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute a 3-D max pool given 5-D input x.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1410,11 +1411,11 @@ have a shape that the inputs broadcast to.</p></li>
       </div>
     </a>
     <a class="right-next"
-       href="ivy.functional.ivy.experimental.layers.nearest_interpolate.html"
+       href="ivy.functional.ivy.experimental.layers.max_unpool1d.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">nearest_interpolate</p>
+        <p class="prev-next-title">max_unpool1d</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

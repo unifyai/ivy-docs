@@ -1312,14 +1312,15 @@ The default is None.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.Container.modf">
-<span class="sig-prename descclassname"><span class="pre">Container.</span></span><span class="sig-name descname"><span class="pre">modf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/data_classes/container/experimental/elementwise.py#L2939-L2972"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.Container.modf" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Container.</span></span><span class="sig-name descname"><span class="pre">modf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/data_classes/container/experimental/elementwise.py#L2943-L2980"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.Container.modf" title="Permalink to this definition">#</a></dt>
 <dd><p>ivy.Container instance method variant of ivy.modf. This method simply wraps the
 function, and so the docstring for ivy.modf also applies to this method with
 minimal changes.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>self</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>) – The container whose arrays should be split into the fractional and integral parts.</p></li>
+<li><p><strong>self</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>) – The container whose arrays should be split into the fractional and integral
+parts.</p></li>
 <li><p><strong>out</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]) – optional output container, for writing the result to. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
 </ul>
 </dd>
@@ -1332,14 +1333,21 @@ minimal changes.</p>
 </dl>
 <p class="rubric">Examples</p>
 <p>With one <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> input:
-&gt;&gt;&gt; x = ivy.Container(a=ivy.array([1.2, 2.7, 3.9]), b=ivy.array([-1.5, 5.3, -10.7]))
-&gt;&gt;&gt; x.modf()
-{</p>
+&gt;&gt;&gt; x = ivy.Container(</p>
 <blockquote>
-<div><p>a: (ivy.array([0.2, 0.7, 0.9]), ivy.array([1.0, 2.0, 3.0])),
-b: (ivy.array([-0.5, 0.3, -0.7]), ivy.array([-1.0, 5.0, -10.0]))</p>
+<div><blockquote>
+<div><p>a=ivy.array([1.2, 2.7, 3.9]),
+b=ivy.array([-1.5, 5.3, -10.7])</p>
 </div></blockquote>
-<p>}</p>
+<p>)</p>
+</div></blockquote>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">modf</span><span class="p">()</span>
+<span class="go">{</span>
+<span class="go">    a: (ivy.array([0.2, 0.7, 0.9]), ivy.array([1.0, 2.0, 3.0])),</span>
+<span class="go">    b: (ivy.array([-0.5, 0.3, -0.7]), ivy.array([-1.0, 5.0, -10.0]))</span>
+<span class="go">}</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>

@@ -33,6 +33,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -107,9 +108,9 @@
   <div class="navbar-header-items__start">
     
       <div class="navbar-item">
-  
+   
 
-<a class="navbar-brand logo" href="../../index.html">
+<a class="navbar-brand logo" href="https://unify.ai">
   
   
   
@@ -119,8 +120,8 @@
       
     
     
-    <img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_new.png?raw=true" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_new_dark.png?raw=true" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_new.svg?raw=true" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_new_dark.svg?raw=true" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
@@ -132,7 +133,15 @@
     
     <div class="me-auto navbar-header-items__center">
       
-        <div class="navbar-item"><div></div></div>
+        <div class="navbar-item"><nav role="navigation" class="nav-menu">
+    <div class="menu-holder">
+        <div class="menu-link-holder">
+            <a href="https://github.com/unifyai/ivy" target="_blank" class="nav-link-header w-nav-link">Github</a>
+            <a href="https://unify.ai/docs/ivy/" target="_blank" class="nav-link-header w-nav-link">Docs</a>
+            <a href="https://discord.com/invite/sXyFF8tDtm" target="_blank" class="nav-link-header w-nav-link">Discord</a>
+        </div>
+    </div>
+</nav></div>
       
     </div>
     
@@ -177,34 +186,6 @@ document.write(`
 `);
 </script></div>
       
-        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
-    aria-label="Icon Links">
-        <li class="nav-item">
-          
-          
-          
-          
-          
-          
-          
-          
-          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
-        </li>
-        <li class="nav-item">
-          
-          
-          
-          
-          
-          
-          
-          
-          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
-        </li>
-</ul></div>
-      
     </div>
     
   </div>
@@ -242,7 +223,15 @@ document.write(`
     
       <div class="sidebar-header-items__center">
         
-          <div class="navbar-item"><div></div></div>
+          <div class="navbar-item"><nav role="navigation" class="nav-menu">
+    <div class="menu-holder">
+        <div class="menu-link-holder">
+            <a href="https://github.com/unifyai/ivy" target="_blank" class="nav-link-header w-nav-link">Github</a>
+            <a href="https://unify.ai/docs/ivy/" target="_blank" class="nav-link-header w-nav-link">Docs</a>
+            <a href="https://discord.com/invite/sXyFF8tDtm" target="_blank" class="nav-link-header w-nav-link">Discord</a>
+        </div>
+    </div>
+</nav></div>
         
       </div>
     
@@ -275,34 +264,6 @@ document.write(`
   </button>
 `);
 </script></div>
-        
-          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
-    aria-label="Icon Links">
-        <li class="nav-item">
-          
-          
-          
-          
-          
-          
-          
-          
-          <a href="https://github.com/unifyai/ivy" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github"></i></span>
-            <label class="sr-only">GitHub</label></a>
-        </li>
-        <li class="nav-item">
-          
-          
-          
-          
-          
-          
-          
-          
-          <a href="https://twitter.com/letsunifyai" title="Twitter" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-twitter"></i></span>
-            <label class="sr-only">Twitter</label></a>
-        </li>
-</ul></div>
         
       </div>
     
@@ -437,31 +398,37 @@ document.write(`
 <span id="perceiver-io"></span><h1>Perceiver io<a class="headerlink" href="#module-ivy_models.transformers.perceiver_io" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="ivy_models.transformers.perceiver_io.PerceiverIO">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy_models.transformers.perceiver_io.</span></span><span class="sig-name descname"><span class="pre">PerceiverIO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy_models/transformers/perceiver_io.html#PerceiverIO"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_models.transformers.perceiver_io.PerceiverIO" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy_models.transformers.perceiver_io.</span></span><span class="sig-name descname"><span class="pre">PerceiverIO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/models/blob/master/ivy_models/transformers/perceiver_io.py#L88-L305"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_models.transformers.perceiver_io.PerceiverIO" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy_models.transformers.perceiver_io.PerceiverIO.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy_models/transformers/perceiver_io.html#PerceiverIO.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_models.transformers.perceiver_io.PerceiverIO.__init__" title="Permalink to this definition">#</a></dt>
-<dd><p>Initialze Ivy layer, which is a stateful object consisting of trainable variables.</p>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/models/blob/master/ivy_models/transformers/perceiver_io.py#L89-L91"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_models.transformers.perceiver_io.PerceiverIO.__init__" title="Permalink to this definition">#</a></dt>
+<dd><p>Initialize Ivy layer, which is a stateful object consisting of trainable
+variables.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dev_str</strong> (<em>str</em><em>, </em><em>optional</em>) – device on which to create the module’s variables ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc.</p></li>
-<li><p><strong>v</strong> (<em>ivy container</em><em>, </em><em>optional</em>) – Ivy container of trainable variables. Created internally by default. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
-<li><p><strong>build_mode</strong> (<em>str</em><em>, </em><em>optional</em>) – How the Module is built, either on initialization (now), explicitly by the user by calling
-build(), or the first time the __call__ method is run. Default is on initialization.</p></li>
-<li><p><strong>compile_on_next_step</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to compile the network on the next forward pass. Default is False.</p></li>
-<li><p><strong>store_vars</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether or not to store the variables created. Default is True.</p></li>
-<li><p><strong>stateful</strong> (<em>seq</em><em> of </em><em>any</em><em>, </em><em>optional</em>) – The constant id stateful items to track as part of the forward pass.
-Used when graph compiling, default is None.</p></li>
-<li><p><strong>arg_stateful_idxs</strong> (<em>seq</em><em> of </em><em>any</em><em>, </em><em>optional</em>) – The nested argument indices of stateful items to track as part of the forward pass.
-Used when graph compiling, default is None.</p></li>
-<li><p><strong>kwarg_stateful_idxs</strong> (<em>seq</em><em> of </em><em>any</em><em>, </em><em>optional</em>) – The nested keyword argument indices of stateful items to track as part of the
-forward pass. Used when graph compiling, default is None.</p></li>
-<li><p><strong>fallback_to_non_compiled</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to fall back to non-compiled forward call in the case that an error is
-raised during the compiled forward pass. Default is True.</p></li>
-<li><p><strong>with_partial_v</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to allow partial specification of variables. Default is False.</p></li>
-<li><p><strong>dev_strs</strong> (<em>sequence</em><em> of </em><em>str</em><em>, </em><em>optional</em>) – devices on which to distribute the module’s variables ‘cuda:0’, ‘cuda:1’, ‘cpu’ etc.</p></li>
+<li><p><strong>device</strong> – device on which to create the module’s variables ‘cuda:0’, ‘cuda:1’, ‘cpu’
+etc. (Default value = None)</p></li>
+<li><p><strong>v</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]) – Ivy container of trainable variables. Created internally by default. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+<li><p><strong>build_mode</strong> – How the Module is built, either on initialization (now),
+explicitly by the user by calling build(), or the first
+time the __call__ method is run. Default is on initialization.</p></li>
+<li><p><strong>compile_on_next_step</strong> – Whether to compile the network on the next forward pass.
+Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>store_vars</strong> – Whether or not to store the variables created. Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>stateful</strong> – The constant id stateful items to track as part of the forward pass.
+Used when graph compiling, default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>arg_stateful_idxs</strong> – The nested argument indices of stateful items to track as part of
+the forward pass.
+Used when graph compiling, default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>kwarg_stateful_idxs</strong> – The nested keyword argument indices of stateful items to track as part of
+the forward pass. Used when graph compiling, default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>fallback_to_non_compiled</strong> – Whether to fall back to non-compiled forward call in the case that an error
+is raised during the compiled forward pass. Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>with_partial_v</strong> – Whether to allow partial specification of variables. Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
+<li><p><strong>devices</strong> – devices on which to distribute the module’s variables
+‘cuda:0’, ‘cuda:1’, ‘cpu’ etc. (Default value = None)</p></li>
 </ul>
 </dd>
 </dl>
@@ -471,45 +438,55 @@ raised during the compiled forward pass. Default is True.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="ivy_models.transformers.perceiver_io.PerceiverIOSpec">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy_models.transformers.perceiver_io.</span></span><span class="sig-name descname"><span class="pre">PerceiverIOSpec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_input_axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queries_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_latents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cross_att_heads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_self_att_heads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_head_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">261</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent_head_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_tie_layers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learn_query</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_lat_att_per_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_attend_in_every_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_decoder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_final_head</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fourier_encode_input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_fourier_freq_bands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_fourier_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy_models/transformers/perceiver_io.html#PerceiverIOSpec"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_models.transformers.perceiver_io.PerceiverIOSpec" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy_models.transformers.perceiver_io.</span></span><span class="sig-name descname"><span class="pre">PerceiverIOSpec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_input_axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queries_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_latents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cross_att_heads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_self_att_heads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_head_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">261</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent_head_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_tie_layers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learn_query</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_lat_att_per_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_attend_in_every_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_decoder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_final_head</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fourier_encode_input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_fourier_freq_bands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_fourier_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/models/blob/master/ivy_models/transformers/perceiver_io.py#L19-L81"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_models.transformers.perceiver_io.PerceiverIOSpec" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy_models.transformers.perceiver_io.PerceiverIOSpec.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_input_axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queries_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_latents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cross_att_heads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_self_att_heads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_head_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">261</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent_head_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_tie_layers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learn_query</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_lat_att_per_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_attend_in_every_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_decoder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_final_head</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fourier_encode_input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_fourier_freq_bands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_fourier_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../_modules/ivy_models/transformers/perceiver_io.html#PerceiverIOSpec.__init__"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_models.transformers.perceiver_io.PerceiverIOSpec.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_input_axes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dim</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">queries_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_latents</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_cross_att_heads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_self_att_heads</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_head_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">261</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">latent_head_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">128</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight_tie_layers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learn_query</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_shape</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attn_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fc_dropout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_lat_att_per_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cross_attend_in_every_layer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_decoder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_final_head</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fourier_encode_input</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_fourier_freq_bands</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_fourier_freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/models/blob/master/ivy_models/transformers/perceiver_io.py#L20-L81"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_models.transformers.perceiver_io.PerceiverIOSpec.__init__" title="Permalink to this definition">#</a></dt>
 <dd><p>Initialize container object from input dict representation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dict_in</strong> (<em>dict</em><em>, </em><em>optional</em>) – the dictionary the container should wrap around. Default is None.</p></li>
-<li><p><strong>queues</strong> (<em>sequence</em><em> of </em><em>multiprocessing queues</em><em>, </em><em>optional</em>) – Sequence of multiprocessing queues, each of which returns containers.
-This enables the current container to be passed around asynchronously while waiting for data.
-Default is None.</p></li>
-<li><p><strong>queue_load_sizes</strong> (<em>sequence</em><em> of </em><em>ints</em><em>, </em><em>optional</em>) – Size of leading dimension of the containers returned by each queue. Default is None.</p></li>
-<li><p><strong>container_combine_method</strong> (<em>str</em><em>, </em><em>optional</em>) – The method to use for combining containers arriving from different queues.
-Default is ivy.Container.list_join</p></li>
-<li><p><strong>queue_timeout</strong> (<em>float</em><em>, </em><em>optional</em>) – The timeout when waiting for containers to arrive from the queues. Default is global.</p></li>
-<li><p><strong>print_limit</strong> (<em>int</em><em>, </em><em>optional</em>) – The total array size limit when printing the container. Default is 10.</p></li>
-<li><p><strong>key_length_limit</strong> (<em>int</em><em>, </em><em>optional</em>) – The maximum key length when printing the container. Default is None.</p></li>
-<li><p><strong>print_indent</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of whitespaces to use for indenting when printing the container. Default is 4.</p></li>
-<li><p><strong>print_line_spacing</strong> (<em>int</em><em>, </em><em>optional</em>) – The number of extra newlines to use between keys when printing the container.
-Default is 0.</p></li>
-<li><p><strong>ivyh</strong> (<em>handle to ivy module</em><em>, </em><em>optional</em>) – Handle to ivy module to use for the calculations. Default is None, which results in the global ivy.</p></li>
-<li><p><strong>default_key_color</strong> (<em>str</em><em>, </em><em>optional</em>) – The default key color for printing the container to the terminal. Default is ‘green’.</p></li>
-<li><p><strong>keyword_color_dict</strong> (<em>dict</em><em>, </em><em>optional</em>) – A dict mapping keywords to their termcolor color codes for printing the container.</p></li>
-<li><p><strong>rebuild_child_containers</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to rebuild container found in dict_in with these constructor params.
-Default is False, in which case the original container are kept as are.</p></li>
-<li><p><strong>types_to_iteratively_nest</strong> (<em>seq</em><em> of </em><em>iterable types</em>) – The data types to nest iteratively in the dict structure, each type must be
-iterable. Default is None.</p></li>
-<li><p><strong>alphabetical_keys</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether to sort the container keys alphabetically, or preserve the dict order.
-Default is True.</p></li>
-<li><p><strong>logging_retrieval_times</strong> (<em>bool</em><em>, </em><em>optional</em>) – Whether retrieval times should be logged. Default is False.</p></li>
-<li><p><strong>kwargs</strong> (<em>keyword arguments.</em>) – keyword arguments for dict creation. Default is None.</p></li>
+<li><p><strong>dict_in</strong> – the dictionary the container should wrap around. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>queues</strong> – Sequence of multiprocessing queues, each of which returns containers.
+This enables the current container to be passed around asynchronously while
+waiting for data. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>queue_load_sizes</strong> – Size of leading dimension of the containers returned by each queue.
+Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>container_combine_method</strong> – The method to use for combining containers arriving from different queues.
+Default is ivy.Container.cont_list_join</p></li>
+<li><p><strong>queue_timeout</strong> – The timeout when waiting for containers to arrive from the queues.
+Default is global.</p></li>
+<li><p><strong>print_limit</strong> – The total array size limit when printing the container. Default is 10.</p></li>
+<li><p><strong>key_length_limit</strong> – The maximum key length when printing the container. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>print_indent</strong> – The number of whitespaces to use for indenting when printing the container.
+Default is 4.</p></li>
+<li><p><strong>print_line_spacing</strong> – The number of extra newlines to use between keys when printing the
+container. Default is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p></li>
+<li><p><strong>ivyh</strong> – Handle to ivy module to use for the calculations. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, which
+results in the global ivy.</p></li>
+<li><p><strong>default_key_color</strong> – The default key color for printing the container to the terminal.
+Default is ‘green’.</p></li>
+<li><p><strong>keyword_color_dict</strong> – A dict mapping keywords to their termcolor color codes for printing the
+container. (Default value = None)</p></li>
+<li><p><strong>rebuild_child_containers</strong> – Whether to rebuild container found in dict_in with these constructor params.
+Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>, in which case the original container are kept as are.</p></li>
+<li><p><strong>types_to_iteratively_nest</strong> – The data types to nest iteratively in the dict structure, each type must be
+iterable. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>alphabetical_keys</strong> – Whether to sort the container keys alphabetically, or preserve the dict
+order. Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
+<li><p><strong>kwargs</strong> – keyword arguments for dict creation. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 </ul>
 </dd>
 </dl>
 </dd></dl>
 
 </dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ivy_models.transformers.perceiver_io.perceiver_io_img_classification">
+<span class="sig-prename descclassname"><span class="pre">ivy_models.transformers.perceiver_io.</span></span><span class="sig-name descname"><span class="pre">perceiver_io_img_classification</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">spec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pretrained</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/models/blob/master/ivy_models/transformers/perceiver_io.py#L308-L322"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy_models.transformers.perceiver_io.perceiver_io_img_classification" title="Permalink to this definition">#</a></dt>
+<dd></dd></dl>
 
 </section>
 
@@ -559,6 +536,7 @@ Default is True.</p></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy_models.transformers.perceiver_io.PerceiverIOSpec.__init__"><code class="docutils literal notranslate"><span class="pre">PerceiverIOSpec.__init__()</span></code></a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy_models.transformers.perceiver_io.perceiver_io_img_classification"><code class="docutils literal notranslate"><span class="pre">perceiver_io_img_classification()</span></code></a></li>
 </ul>
   </nav></div>
 

@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
     <link rel="next" title="nansum" href="ivy.functional.ivy.experimental.elementwise.nansum.html" />
-    <link rel="prev" title="lerp" href="ivy.functional.ivy.experimental.elementwise.lerp.html" />
+    <link rel="prev" title="lgamma" href="ivy.functional.ivy.experimental.elementwise.lgamma.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -618,6 +618,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.elementwise.isclose.html">isclose</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.elementwise.ldexp.html">ldexp</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.elementwise.lerp.html">lerp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.elementwise.lgamma.html">lgamma</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">modf</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.elementwise.nansum.html">nansum</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.elementwise.nextafter.html">nextafter</a></li>
@@ -1255,7 +1256,7 @@ document.write(`
 <h1>modf<a class="headerlink" href="#modf" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.modf">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">modf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/experimental/elementwise.py#L1186-L1219"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.modf" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">modf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/experimental/elementwise.py#L1240-L1273"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.modf" title="Permalink to this definition">#</a></dt>
 <dd><p>Decompose the elements of x into fractional and integral parts.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1282,7 +1283,7 @@ It must have a shape that the inputs broadcast to.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.Array.modf">
-<span class="sig-prename descclassname"><span class="pre">Array.</span></span><span class="sig-name descname"><span class="pre">modf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/data_classes/array/experimental/elementwise.py#L923-L950"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.Array.modf" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Array.</span></span><span class="sig-name descname"><span class="pre">modf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/data_classes/array/experimental/elementwise.py#L958-L985"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.Array.modf" title="Permalink to this definition">#</a></dt>
 <dd><p>ivy.Array instance method variant of ivy.modf. This method simply wraps the
 function, and so the docstring for ivy.modf also applies to this method with
 minimal changes.</p>
@@ -1311,7 +1312,7 @@ The default is None.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.Container.modf">
-<span class="sig-prename descclassname"><span class="pre">Container.</span></span><span class="sig-name descname"><span class="pre">modf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/data_classes/container/experimental/elementwise.py#L2808-L2841"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.Container.modf" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Container.</span></span><span class="sig-name descname"><span class="pre">modf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/data_classes/container/experimental/elementwise.py#L2939-L2972"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.Container.modf" title="Permalink to this definition">#</a></dt>
 <dd><p>ivy.Container instance method variant of ivy.modf. This method simply wraps the
 function, and so the docstring for ivy.modf also applies to this method with
 minimal changes.</p>
@@ -1355,12 +1356,12 @@ b: (ivy.array([-0.5, 0.3, -0.7]), ivy.array([-1.0, 5.0, -10.0]))</p>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="ivy.functional.ivy.experimental.elementwise.lerp.html"
+       href="ivy.functional.ivy.experimental.elementwise.lgamma.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">lerp</p>
+        <p class="prev-next-title">lgamma</p>
       </div>
     </a>
     <a class="right-next"

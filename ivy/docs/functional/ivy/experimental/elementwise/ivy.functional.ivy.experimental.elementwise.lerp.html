@@ -54,7 +54,7 @@
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/master/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
-    <link rel="next" title="modf" href="ivy.functional.ivy.experimental.elementwise.modf.html" />
+    <link rel="next" title="lgamma" href="ivy.functional.ivy.experimental.elementwise.lgamma.html" />
     <link rel="prev" title="ldexp" href="ivy.functional.ivy.experimental.elementwise.ldexp.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -618,6 +618,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.elementwise.isclose.html">isclose</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.elementwise.ldexp.html">ldexp</a></li>
 <li class="toctree-l4 current active"><a class="current reference internal" href="#">lerp</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.elementwise.lgamma.html">lgamma</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.elementwise.modf.html">modf</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.elementwise.nansum.html">nansum</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ivy.functional.ivy.experimental.elementwise.nextafter.html">nextafter</a></li>
@@ -1255,7 +1256,7 @@ document.write(`
 <h1>lerp<a class="headerlink" href="#lerp" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.lerp">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">lerp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/experimental/elementwise.py#L1025-L1136"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.lerp" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">lerp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/experimental/elementwise.py#L1079-L1190"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.lerp" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a linear interpolation of two arrays start (given by input) and end.</p>
 <dl class="simple">
 <dt>based on a scalar or array weight.</dt><dd><p>input + weight * (end - input),  element-wise.</p>
@@ -1328,7 +1329,7 @@ b: {</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.Array.lerp">
-<span class="sig-prename descclassname"><span class="pre">Array.</span></span><span class="sig-name descname"><span class="pre">lerp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/data_classes/array/experimental/elementwise.py#L816-L856"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.Array.lerp" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Array.</span></span><span class="sig-name descname"><span class="pre">lerp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/data_classes/array/experimental/elementwise.py#L851-L891"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.Array.lerp" title="Permalink to this definition">#</a></dt>
 <dd><p>ivy.Array instance method variant of ivy.lerp. This method simply wraps the
 function, and so the docstring for ivy.lerp also applies to this method with
 minimal changes.</p>
@@ -1363,7 +1364,7 @@ self + ((end - self) * weight)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.Container.lerp">
-<span class="sig-prename descclassname"><span class="pre">Container.</span></span><span class="sig-name descname"><span class="pre">lerp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/data_classes/container/experimental/elementwise.py#L2612-L2653"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.Container.lerp" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Container.</span></span><span class="sig-name descname"><span class="pre">lerp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/data_classes/container/experimental/elementwise.py#L2743-L2784"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.Container.lerp" title="Permalink to this definition">#</a></dt>
 <dd><p>ivy.Container instance method variant of ivy.lerp. This method simply wraps the
 function, and so the docstring for ivy.lerp also applies to this method with
 minimal changes.</p>
@@ -1420,11 +1421,11 @@ b: ivy.array([8.60000038, 12.5, 16.])</p>
       </div>
     </a>
     <a class="right-next"
-       href="ivy.functional.ivy.experimental.elementwise.modf.html"
+       href="ivy.functional.ivy.experimental.elementwise.lgamma.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">modf</p>
+        <p class="prev-next-title">lgamma</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -54,6 +54,9 @@ Elementwise
    ivy.functional.ivy.experimental.elementwise.lerp
    
    
+   ivy.functional.ivy.experimental.elementwise.lgamma
+   
+   
    ivy.functional.ivy.experimental.elementwise.modf
    
    
@@ -114,6 +117,8 @@ Elementwise
 .. autofunction:: ivy.ldexp
 
 .. autofunction:: ivy.lerp
+
+.. autofunction:: ivy.lgamma
 
 .. autofunction:: ivy.modf
 

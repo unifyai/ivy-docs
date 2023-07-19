@@ -1250,7 +1250,7 @@ document.write(`
 <h1>array<a class="headerlink" href="#array" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.array">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/creation.py#L382-L474"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.array" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/creation.py#L382-L469"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.array" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert the input to an array.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1287,28 +1287,21 @@ ivy.array([[1.39999998, 5.5999999 , 5.5       ],</p>
 </div></blockquote>
 <p>With ndarray as input:
 &gt;&gt;&gt; x = ivy.np.ndarray(shape=(2,2), order=’C’)
-&gt;&gt;&gt; x
-array([[6.90786433e-310, 6.90786433e-310],</p>
+&gt;&gt;&gt; ivy.asarray(x)
+ivy.array([[6.90786433e-310, 6.90786433e-310],</p>
 <blockquote>
 <div><p>[6.90786433e-310, 6.90786433e-310]])</p>
 </div></blockquote>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="go">ivy.array([[6.90786433e-310, 6.90786433e-310],</span>
-<span class="go">       [6.90786433e-310, 6.90786433e-310]])</span>
-</pre></div>
-</div>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> as input:
 &gt;&gt;&gt; x = ivy.Container(a = [(1,2),(3,4),(5,6)], b = ((1,2,3),(4,5,6)))
 &gt;&gt;&gt; ivy.asarray(x)
 {</p>
 <blockquote>
-<div><dl class="simple">
-<dt>a: ivy.array([[1, 2],</dt><dd><p>[3, 4],
-[5, 6]]),</p>
-</dd>
-<dt>b: ivy.array([[1, 2, 3],</dt><dd><p>[4, 5, 6]])</p>
-</dd>
-</dl>
+<div><p>a: ivy.array([[1, 2],[3, 4], [5, 6]]),
+b: ivy.array([[1, 2, 3],</p>
+<blockquote>
+<div><p>[4, 5, 6]])</p>
+</div></blockquote>
 </div></blockquote>
 <p>}</p>
 <p>This function conforms to the <a class="reference external" href="https://data-apis.org/array-api/latest/">Array API Standard</a>. This docstring is an extension of the

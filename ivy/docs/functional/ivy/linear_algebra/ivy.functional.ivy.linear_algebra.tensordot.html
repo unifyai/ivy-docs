@@ -1251,8 +1251,15 @@ document.write(`
 <h1>tensordot<a class="headerlink" href="#tensordot" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.tensordot">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">tensordot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/linear_algebra.py#L2130-L2210"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.tensordot" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">tensordot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/linear_algebra.py#L2162-L2248"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.tensordot" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a tensor contraction of x1 and x2 over specific axes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If either <code class="docutils literal notranslate"><span class="pre">x1</span></code> or <code class="docutils literal notranslate"><span class="pre">x2</span></code> has a complex floating-point data type, neither
+argument must be complex-conjugated or transposed. If conjugation and/or
+transposition is desired, these operations should explicitly performed
+prior to computing the generalized matrix product.</p>
+</div>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">

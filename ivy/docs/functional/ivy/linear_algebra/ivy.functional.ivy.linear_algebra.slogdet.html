@@ -1251,7 +1251,7 @@ document.write(`
 <h1>slogdet<a class="headerlink" href="#slogdet" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.slogdet">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">slogdet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/linear_algebra.py#L1727-L1819"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.slogdet" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">slogdet</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/linear_algebra.py#L1738-L1846"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.slogdet" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the sign and the natural logarithm of the absolute value of the determinant
 of a square matrix (or a stack of square matrices) <code class="docutils literal notranslate"><span class="pre">x</span></code>.
 .. note:</p>
@@ -1260,6 +1260,17 @@ when the determinant is either very small or very large, as calling ``det`` may
 overflow or underflow.
 </pre></div>
 </div>
+<p><strong>Special cases</strong></p>
+<p>For real-valued floating-point operands,</p>
+<ul class="simple">
+<li><p>If the determinant is zero, the <code class="docutils literal notranslate"><span class="pre">sign</span></code> should be <code class="docutils literal notranslate"><span class="pre">0``and</span> <span class="pre">``logabsdet</span></code></p></li>
+</ul>
+<p>should be <code class="docutils literal notranslate"><span class="pre">infinity</span></code>.</p>
+<p>For complex floating-point operands,</p>
+<ul class="simple">
+<li><p>If the detereminant is <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">+</span> <span class="pre">0j</span></code>, the <code class="docutils literal notranslate"><span class="pre">sign</span></code> should be <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">+</span> <span class="pre">0j</span></code></p></li>
+</ul>
+<p>and <code class="docutils literal notranslate"><span class="pre">logabsdet</span></code> should be <code class="docutils literal notranslate"><span class="pre">infinity</span> <span class="pre">+</span> <span class="pre">0j</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>x</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<a class="reference internal" href="../../../data_classes/data_classes/ivy.data_classes.array.html#ivy.data_classes.array.array.Array" title="ivy.data_classes.array.array.Array"><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – input array having shape <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">M,</span> <span class="pre">M)</span></code> and whose innermost two dimensions
@@ -1279,7 +1290,10 @@ containing the determinant for each square matrix.
 For a real matrix, the sign of the determinant must be
 either <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code>, or <code class="docutils literal notranslate"><span class="pre">-1</span></code>.
 Each returned array must have shape <code class="docutils literal notranslate"><span class="pre">shape(x)[:-2]</span></code> and a real-valued
-floating-point data type determined by <span class="xref std std-ref">type-promotion</span>.
+floating-point data type determined by <span class="xref std std-ref">type-promotion</span>. If <code class="docutils literal notranslate"><span class="pre">x</span></code>
+is complex, the returned array must have a real-valued floating-point data
+type having the same precision as <code class="docutils literal notranslate"><span class="pre">x</span></code> (1.g., if <code class="docutils literal notranslate"><span class="pre">x</span></code> is <code class="docutils literal notranslate"><span class="pre">complex64</span></code>,
+<code class="docutils literal notranslate"><span class="pre">logabsdet</span></code> must have a <code class="docutils literal notranslate"><span class="pre">float32</span></code> data type)
 .. note:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>If a determinant is zero, then the corresponding ``sign`` should be ``0``
 and ``logabsdet`` should be ``-infinity``; however, depending on the

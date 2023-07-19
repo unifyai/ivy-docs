@@ -1251,7 +1251,7 @@ document.write(`
 <h1>svdvals<a class="headerlink" href="#svdvals" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.svdvals">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">svdvals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/linear_algebra.py#L2004-L2127"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.svdvals" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">svdvals</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/linear_algebra.py#L2034-L2159"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.svdvals" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the singular values of a matrix (or a stack of matrices) <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1268,7 +1268,9 @@ inputs broadcast to.</p></li>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><em>ret</em> – array with shape <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">K)</span></code> that contains the vector(s) of singular values of
 length <code class="docutils literal notranslate"><span class="pre">K</span></code>, where K = min(M, N). The values are sorted in descending order by
-magnitude.</p>
+magnitude. The returned array must have a real-valued floating-point data type
+having the same precision as <code class="docutils literal notranslate"><span class="pre">x</span></code> (e.g., if <code class="docutils literal notranslate"><span class="pre">x</span></code> is <code class="docutils literal notranslate"><span class="pre">complex64</span></code>,
+the returned array must have a <code class="docutils literal notranslate"><span class="pre">float32</span></code> data type).</p>
 </dd>
 </dl>
 <p>This function conforms to the <a class="reference external" href="https://data-apis.org/array-api/latest/">Array API Standard</a>. This docstring is an extension of the

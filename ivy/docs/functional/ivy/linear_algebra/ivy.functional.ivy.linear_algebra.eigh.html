@@ -45,6 +45,7 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/design-tabs.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/functional/ivy/linear_algebra/ivy.functional.ivy.linear_algebra.eigh';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
@@ -1251,7 +1252,7 @@ document.write(`
 <h1>eigh<a class="headerlink" href="#eigh" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.eigh">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">eigh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UPLO</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'L'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/linear_algebra.py#L575-L639"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.eigh" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">eigh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">UPLO</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'L'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/master/ivy/functional/ivy/linear_algebra.py#L574-L641"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.eigh" title="Permalink to this definition">#</a></dt>
 <dd><p>Return an eigendecomposition x = QLQᵀ of a symmetric matrix (or a stack of
 symmetric matrices) <code class="docutils literal notranslate"><span class="pre">x</span></code>, where <code class="docutils literal notranslate"><span class="pre">Q</span></code> is an orthogonal matrix (or a stack of
 matrices) and <code class="docutils literal notranslate"><span class="pre">L</span></code> is a vector (or a stack of vectors).</p>
@@ -1279,8 +1280,11 @@ square matrices. Must have a floating-point data type.</p>
 <li><p><em>ret</em> – a namedtuple (<code class="docutils literal notranslate"><span class="pre">eigenvalues</span></code>, <code class="docutils literal notranslate"><span class="pre">eigenvectors</span></code>) whose</p>
 <ul>
 <li><p>first element must have the field name <code class="docutils literal notranslate"><span class="pre">eigenvalues</span></code> (corresponding to
-<code class="docutils literal notranslate"><span class="pre">L</span></code> above) and must be an array consisting of computed eigenvalues. The
-array containing the eigenvalues must have shape <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">M)</span></code>.</p></li>
+<span class="math notranslate nohighlight">\(\operatorname{diag}\Lambda\)</span> above) and must be an array consisting
+of computed eigenvalues. The array containing the eigenvalues must
+have shape <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">M)</span></code> and must have a real-valued floating-point
+data type whose precision matches the precision of <code class="docutils literal notranslate"><span class="pre">x</span></code> (e.g., if <code class="docutils literal notranslate"><span class="pre">x</span></code>
+is <code class="docutils literal notranslate"><span class="pre">complex128</span></code>, then the <code class="docutils literal notranslate"><span class="pre">eigenvalues</span></code> must be <code class="docutils literal notranslate"><span class="pre">float64</span></code>).</p></li>
 <li><p>second element have have the field name <code class="docutils literal notranslate"><span class="pre">eigenvectors</span></code> (corresponding to
 <code class="docutils literal notranslate"><span class="pre">Q</span></code> above) and must be an array where the columns of the inner most
 matrices contain the computed eigenvectors. These matrices must be

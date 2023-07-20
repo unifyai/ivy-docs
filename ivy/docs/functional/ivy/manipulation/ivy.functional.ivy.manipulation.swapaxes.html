@@ -1403,9 +1403,9 @@ with minimal changes.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>self</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>) – Input container.</p></li>
-<li><p><strong>axis0</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – First axis to be swapped.</p></li>
-<li><p><strong>axis1</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>) – Second axis to be swapped.</p></li>
-<li><p><strong>copy</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>]) – boolean indicating whether or not to copy the input array. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+<li><p><strong>axis0</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]) – First axis to be swapped.</p></li>
+<li><p><strong>axis1</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]) – Second axis to be swapped.</p></li>
+<li><p><strong>copy</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]]) – boolean indicating whether or not to copy the input array. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
 If True, the function must always copy.
 If False, the function must never copy and must
 raise a ValueError in case a copy would be necessary.

@@ -1424,14 +1424,14 @@ with minimal changes.</p>
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>self</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>) – input array or container. Should have a numeric data type.</p></li>
-<li><p><strong>as_tuple</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>) – if True, the output is returned as a tuple of indices, one for each (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)
+<li><p><strong>as_tuple</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]) – if True, the output is returned as a tuple of indices, one for each (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>)
 dimension of the input, containing the indices of the true elements in that
 dimension. If False, the coordinates are returned in a (N, ndim) array,
 where N is the number of true elements. Default = True.</p></li>
-<li><p><strong>size</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]) – if specified, the function will return an array of shape (size, ndim). (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
+<li><p><strong>size</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]]) – if specified, the function will return an array of shape (size, ndim). (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)
 If the number of non-zero elements is fewer than size, the remaining
 elements will be filled with fill_value. Default = None.</p></li>
-<li><p><strong>fill_value</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Number</span></code>) – when size is specified and there are fewer than size number of elements, (default: <code class="docutils literal notranslate"><span class="pre">0</span></code>)
+<li><p><strong>fill_value</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Number</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Container</span></code>]) – when size is specified and there are fewer than size number of elements, (default: <code class="docutils literal notranslate"><span class="pre">0</span></code>)
 the remaining elements in the output array will be filled with fill_value.
 Default = 0.</p></li>
 </ul>

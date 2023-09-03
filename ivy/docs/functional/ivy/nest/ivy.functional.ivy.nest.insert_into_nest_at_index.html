@@ -1282,12 +1282,34 @@ document.write(`
 <h1>insert_into_nest_at_index<a class="headerlink" href="#insert-into-nest-at-index" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.insert_into_nest_at_index">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">insert_into_nest_at_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/nest.py#L219-L228"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.insert_into_nest_at_index" title="Permalink to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">insert_into_nest_at_index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nest</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/nest.py#L219-L256"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.insert_into_nest_at_index" title="Permalink to this definition">#</a></dt>
+<dd><p>Recursively inserts a value into a nested data structure at a specified index.</p>
+<p>This function traverses a nested data structure and inserts the provided <cite>value</cite>
+at the specified <cite>index</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nest</strong> (<em>Iterable</em>) – The nested data structure.</p></li>
+<li><p><strong>index</strong> (<em>Tuple</em>) – The index specifying the location where the <cite>value</cite> should be inserted.</p></li>
+<li><p><strong>value</strong> (<em>object</em>) – The value to be inserted.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">None</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>None</em></p>
 </dd>
 </dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">nest</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">index</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">value</span> <span class="o">=</span> <span class="mi">99</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">insert_into_nest_at_index</span><span class="p">(</span><span class="n">nest</span><span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">nest</span><span class="p">)</span>
+<span class="go">[[1, 2], [3, 99, 4]]</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>

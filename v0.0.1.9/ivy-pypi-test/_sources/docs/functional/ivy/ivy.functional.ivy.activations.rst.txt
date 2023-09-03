@@ -1,0 +1,73 @@
+Activations
+===========
+
+
+.. autosummary::
+   :toctree: activations
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.activations.gelu
+   
+   
+   ivy.functional.ivy.activations.hardswish
+   
+   
+   ivy.functional.ivy.activations.leaky_relu
+   
+   
+   ivy.functional.ivy.activations.log_softmax
+   
+   
+   ivy.functional.ivy.activations.mish
+   
+   
+   ivy.functional.ivy.activations.relu
+   
+   
+   ivy.functional.ivy.activations.sigmoid
+   
+   
+   ivy.functional.ivy.activations.softmax
+   
+   
+   ivy.functional.ivy.activations.softplus
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.activations
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.gelu
+
+.. autofunction:: ivy.hardswish
+
+.. autofunction:: ivy.leaky_relu
+
+.. autofunction:: ivy.log_softmax
+
+.. autofunction:: ivy.mish
+
+.. autofunction:: ivy.relu
+
+.. autofunction:: ivy.sigmoid
+
+.. autofunction:: ivy.softmax
+
+.. autofunction:: ivy.softplus
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.activations

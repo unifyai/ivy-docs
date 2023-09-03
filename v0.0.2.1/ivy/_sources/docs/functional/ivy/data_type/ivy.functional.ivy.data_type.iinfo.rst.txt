@@ -1,0 +1,8 @@
+iinfo
+=====
+
+.. autofunction:: ivy.iinfo
+
+.. autoskippablemethod:: ivy.Array.iinfo
+
+.. autoskippablemethod:: ivy.Container.iinfo

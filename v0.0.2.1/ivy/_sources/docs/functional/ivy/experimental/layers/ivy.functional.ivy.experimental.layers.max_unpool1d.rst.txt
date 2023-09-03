@@ -1,0 +1,8 @@
+max\_unpool1d
+=============
+
+.. autofunction:: ivy.max_unpool1d
+
+.. autoskippablemethod:: ivy.Array.max_unpool1d
+
+.. autoskippablemethod:: ivy.Container.max_unpool1d

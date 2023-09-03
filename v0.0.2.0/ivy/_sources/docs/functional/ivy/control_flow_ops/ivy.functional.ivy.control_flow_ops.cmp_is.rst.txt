@@ -1,0 +1,8 @@
+cmp\_is
+=======
+
+.. autofunction:: ivy.cmp_is
+
+.. autoskippablemethod:: ivy.Array.cmp_is
+
+.. autoskippablemethod:: ivy.Container.cmp_is

@@ -1,0 +1,8 @@
+native\_sparse\_array
+=====================
+
+.. autofunction:: ivy.native_sparse_array
+
+.. autoskippablemethod:: ivy.Array.native_sparse_array
+
+.. autoskippablemethod:: ivy.Container.native_sparse_array

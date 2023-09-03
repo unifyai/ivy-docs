@@ -1,0 +1,8 @@
+rfftn
+=====
+
+.. autofunction:: ivy.rfftn
+
+.. autoskippablemethod:: ivy.Array.rfftn
+
+.. autoskippablemethod:: ivy.Container.rfftn

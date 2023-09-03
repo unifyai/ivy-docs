@@ -1,0 +1,8 @@
+dropout3d
+=========
+
+.. autofunction:: ivy.dropout3d
+
+.. autoskippablemethod:: ivy.Array.dropout3d
+
+.. autoskippablemethod:: ivy.Container.dropout3d

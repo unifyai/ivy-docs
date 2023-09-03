@@ -1,0 +1,15 @@
+﻿Ivy gym
+=======
+
+.. autosummary::
+    :toctree: ivy_gym
+    :template: top_level_module.rst
+    :recursive:
+
+
+    ivy_gym.cartpole
+    ivy_gym.mountain_car
+    ivy_gym.pendulum
+    ivy_gym.reacher
+    ivy_gym.swimmer
+

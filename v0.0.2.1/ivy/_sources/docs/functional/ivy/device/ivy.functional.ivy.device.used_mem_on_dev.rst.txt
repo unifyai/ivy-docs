@@ -1,0 +1,8 @@
+used\_mem\_on\_dev
+==================
+
+.. autofunction:: ivy.used_mem_on_dev
+
+.. autoskippablemethod:: ivy.Array.used_mem_on_dev
+
+.. autoskippablemethod:: ivy.Container.used_mem_on_dev

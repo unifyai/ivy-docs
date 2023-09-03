@@ -1,0 +1,8 @@
+sequence\_length
+================
+
+.. autofunction:: ivy.sequence_length
+
+.. autoskippablemethod:: ivy.Array.sequence_length
+
+.. autoskippablemethod:: ivy.Container.sequence_length

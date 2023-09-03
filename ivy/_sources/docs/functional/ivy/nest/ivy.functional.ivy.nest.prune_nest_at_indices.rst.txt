@@ -1,0 +1,8 @@
+prune\_nest\_at\_indices
+========================
+
+.. autofunction:: ivy.prune_nest_at_indices
+
+.. autoskippablemethod:: ivy.Array.prune_nest_at_indices
+
+.. autoskippablemethod:: ivy.Container.prune_nest_at_indices

@@ -1,0 +1,8 @@
+reshape
+=======
+
+.. autofunction:: ivy.reshape
+
+.. autoskippablemethod:: ivy.Array.reshape
+
+.. autoskippablemethod:: ivy.Container.reshape

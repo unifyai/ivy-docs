@@ -1,0 +1,8 @@
+logical\_not
+============
+
+.. autofunction:: ivy.logical_not
+
+.. autoskippablemethod:: ivy.Array.logical_not
+
+.. autoskippablemethod:: ivy.Container.logical_not

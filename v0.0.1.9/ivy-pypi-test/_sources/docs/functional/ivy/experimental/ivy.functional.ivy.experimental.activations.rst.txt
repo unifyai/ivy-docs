@@ -1,0 +1,68 @@
+Activations
+===========
+
+
+.. autosummary::
+   :toctree: activations
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.experimental.activations.elu
+   
+   
+   ivy.functional.ivy.experimental.activations.logit
+   
+   
+   ivy.functional.ivy.experimental.activations.logsigmoid
+   
+   
+   ivy.functional.ivy.experimental.activations.prelu
+   
+   
+   ivy.functional.ivy.experimental.activations.relu6
+   
+   
+   ivy.functional.ivy.experimental.activations.selu
+   
+   
+   ivy.functional.ivy.experimental.activations.silu
+   
+   
+   ivy.functional.ivy.experimental.activations.thresholded_relu
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.activations
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.elu
+
+.. autofunction:: ivy.logit
+
+.. autofunction:: ivy.logsigmoid
+
+.. autofunction:: ivy.prelu
+
+.. autofunction:: ivy.relu6
+
+.. autofunction:: ivy.selu
+
+.. autofunction:: ivy.silu
+
+.. autofunction:: ivy.thresholded_relu
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.activations

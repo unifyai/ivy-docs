@@ -1,0 +1,8 @@
+empty\_like
+===========
+
+.. autofunction:: ivy.empty_like
+
+.. autoskippablemethod:: ivy.Array.empty_like
+
+.. autoskippablemethod:: ivy.Container.empty_like

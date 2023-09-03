@@ -1,0 +1,8 @@
+sin
+===
+
+.. autofunction:: ivy.sin
+
+.. autoskippablemethod:: ivy.Array.sin
+
+.. autoskippablemethod:: ivy.Container.sin

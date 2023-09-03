@@ -1,0 +1,8 @@
+sparse\_cross\_entropy
+======================
+
+.. autofunction:: ivy.sparse_cross_entropy
+
+.. autoskippablemethod:: ivy.Array.sparse_cross_entropy
+
+.. autoskippablemethod:: ivy.Container.sparse_cross_entropy

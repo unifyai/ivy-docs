@@ -1,0 +1,8 @@
+stack
+=====
+
+.. autofunction:: ivy.stack
+
+.. autoskippablemethod:: ivy.Array.stack
+
+.. autoskippablemethod:: ivy.Container.stack

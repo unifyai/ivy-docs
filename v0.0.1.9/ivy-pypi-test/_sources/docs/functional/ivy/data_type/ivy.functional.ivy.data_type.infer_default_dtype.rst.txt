@@ -1,0 +1,8 @@
+infer\_default\_dtype
+=====================
+
+.. autofunction:: ivy.infer_default_dtype
+
+.. autoskippablemethod:: ivy.Array.infer_default_dtype
+
+.. autoskippablemethod:: ivy.Container.infer_default_dtype

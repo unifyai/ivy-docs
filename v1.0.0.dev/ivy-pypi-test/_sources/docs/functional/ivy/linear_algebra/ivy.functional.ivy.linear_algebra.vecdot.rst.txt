@@ -1,0 +1,8 @@
+vecdot
+======
+
+.. autofunction:: ivy.vecdot
+
+.. autoskippablemethod:: ivy.Array.vecdot
+
+.. autoskippablemethod:: ivy.Container.vecdot

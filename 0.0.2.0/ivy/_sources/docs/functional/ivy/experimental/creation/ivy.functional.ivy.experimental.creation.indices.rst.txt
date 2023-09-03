@@ -1,0 +1,8 @@
+indices
+=======
+
+.. autofunction:: ivy.indices
+
+.. autoskippablemethod:: ivy.Array.indices
+
+.. autoskippablemethod:: ivy.Container.indices

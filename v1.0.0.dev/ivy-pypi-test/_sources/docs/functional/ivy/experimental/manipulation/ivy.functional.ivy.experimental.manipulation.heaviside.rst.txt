@@ -1,0 +1,8 @@
+heaviside
+=========
+
+.. autofunction:: ivy.heaviside
+
+.. autoskippablemethod:: ivy.Array.heaviside
+
+.. autoskippablemethod:: ivy.Container.heaviside

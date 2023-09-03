@@ -1,0 +1,8 @@
+lexsort
+=======
+
+.. autofunction:: ivy.lexsort
+
+.. autoskippablemethod:: ivy.Array.lexsort
+
+.. autoskippablemethod:: ivy.Container.lexsort

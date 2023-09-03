@@ -1,0 +1,8 @@
+inplace\_update
+===============
+
+.. autofunction:: ivy.inplace_update
+
+.. autoskippablemethod:: ivy.Array.inplace_update
+
+.. autoskippablemethod:: ivy.Container.inplace_update

@@ -1,0 +1,81 @@
+Statistical
+===========
+
+
+.. autosummary::
+   :toctree: statistical
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   
+   ivy.functional.ivy.statistical.cumprod
+   
+   
+   ivy.functional.ivy.statistical.cumsum
+   
+   
+   ivy.functional.ivy.statistical.einsum
+   
+   
+   ivy.functional.ivy.statistical.max
+   
+   
+   ivy.functional.ivy.statistical.mean
+   
+   
+   ivy.functional.ivy.statistical.min
+   
+   
+   ivy.functional.ivy.statistical.prod
+   
+   
+   ivy.functional.ivy.statistical.std
+   
+   
+   ivy.functional.ivy.statistical.sum
+   
+   
+   ivy.functional.ivy.statistical.var
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.statistical
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy._get_promoted_type_of_operands
+
+.. autofunction:: ivy.cumprod
+
+.. autofunction:: ivy.cumsum
+
+.. autofunction:: ivy.einsum
+
+.. autofunction:: ivy.max
+
+.. autofunction:: ivy.mean
+
+.. autofunction:: ivy.min
+
+.. autofunction:: ivy.prod
+
+.. autofunction:: ivy.std
+
+.. autofunction:: ivy.sum
+
+.. autofunction:: ivy.var
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.statistical

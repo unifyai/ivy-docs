@@ -1,0 +1,8 @@
+set\_min\_denominator
+=====================
+
+.. autofunction:: ivy.set_min_denominator
+
+.. autoskippablemethod:: ivy.Array.set_min_denominator
+
+.. autoskippablemethod:: ivy.Container.set_min_denominator

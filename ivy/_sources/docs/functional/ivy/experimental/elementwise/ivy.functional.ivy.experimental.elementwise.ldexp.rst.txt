@@ -1,0 +1,8 @@
+ldexp
+=====
+
+.. autofunction:: ivy.ldexp
+
+.. autoskippablemethod:: ivy.Array.ldexp
+
+.. autoskippablemethod:: ivy.Container.ldexp

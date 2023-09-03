@@ -1,0 +1,8 @@
+imag
+====
+
+.. autofunction:: ivy.imag
+
+.. autoskippablemethod:: ivy.Array.imag
+
+.. autoskippablemethod:: ivy.Container.imag

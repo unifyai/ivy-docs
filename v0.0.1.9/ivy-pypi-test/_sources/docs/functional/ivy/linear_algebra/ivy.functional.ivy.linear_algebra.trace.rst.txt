@@ -1,0 +1,8 @@
+trace
+=====
+
+.. autofunction:: ivy.trace
+
+.. autoskippablemethod:: ivy.Array.trace
+
+.. autoskippablemethod:: ivy.Container.trace

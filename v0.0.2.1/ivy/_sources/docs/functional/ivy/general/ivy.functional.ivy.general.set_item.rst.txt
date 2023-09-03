@@ -1,0 +1,8 @@
+set\_item
+=========
+
+.. autofunction:: ivy.set_item
+
+.. autoskippablemethod:: ivy.Array.set_item
+
+.. autoskippablemethod:: ivy.Container.set_item

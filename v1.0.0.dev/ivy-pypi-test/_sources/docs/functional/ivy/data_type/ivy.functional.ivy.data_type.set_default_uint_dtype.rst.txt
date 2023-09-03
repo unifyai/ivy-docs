@@ -1,0 +1,8 @@
+set\_default\_uint\_dtype
+=========================
+
+.. autofunction:: ivy.set_default_uint_dtype
+
+.. autoskippablemethod:: ivy.Array.set_default_uint_dtype
+
+.. autoskippablemethod:: ivy.Container.set_default_uint_dtype

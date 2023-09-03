@@ -1,0 +1,17 @@
+Base
+====
+
+
+
+.. automodule:: ivy.data_classes.nested_array.base
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+    :private-members:
+
+
+
+
+
+.. discussion-links:: ivy.data_classes.nested_array.base

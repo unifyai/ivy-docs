@@ -1,0 +1,8 @@
+elu
+===
+
+.. autofunction:: ivy.elu
+
+.. autoskippablemethod:: ivy.Array.elu
+
+.. autoskippablemethod:: ivy.Container.elu

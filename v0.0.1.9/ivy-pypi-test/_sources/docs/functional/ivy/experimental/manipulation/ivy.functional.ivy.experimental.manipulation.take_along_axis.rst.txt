@@ -1,0 +1,8 @@
+take\_along\_axis
+=================
+
+.. autofunction:: ivy.take_along_axis
+
+.. autoskippablemethod:: ivy.Array.take_along_axis
+
+.. autoskippablemethod:: ivy.Container.take_along_axis

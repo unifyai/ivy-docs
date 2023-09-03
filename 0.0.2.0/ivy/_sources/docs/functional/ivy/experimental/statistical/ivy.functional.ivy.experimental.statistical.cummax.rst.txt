@@ -1,0 +1,8 @@
+cummax
+======
+
+.. autofunction:: ivy.cummax
+
+.. autoskippablemethod:: ivy.Array.cummax
+
+.. autoskippablemethod:: ivy.Container.cummax

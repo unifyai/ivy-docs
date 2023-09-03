@@ -1,0 +1,8 @@
+eigh\_tridiagonal
+=================
+
+.. autofunction:: ivy.eigh_tridiagonal
+
+.. autoskippablemethod:: ivy.Array.eigh_tridiagonal
+
+.. autoskippablemethod:: ivy.Container.eigh_tridiagonal

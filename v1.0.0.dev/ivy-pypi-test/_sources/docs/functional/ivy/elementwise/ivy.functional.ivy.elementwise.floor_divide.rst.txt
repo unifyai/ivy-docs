@@ -1,0 +1,8 @@
+floor\_divide
+=============
+
+.. autofunction:: ivy.floor_divide
+
+.. autoskippablemethod:: ivy.Array.floor_divide
+
+.. autoskippablemethod:: ivy.Container.floor_divide

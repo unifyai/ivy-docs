@@ -1,0 +1,8 @@
+unsorted\_segment\_min
+======================
+
+.. autofunction:: ivy.unsorted_segment_min
+
+.. autoskippablemethod:: ivy.Array.unsorted_segment_min
+
+.. autoskippablemethod:: ivy.Container.unsorted_segment_min

@@ -1,0 +1,8 @@
+l1\_normalize
+=============
+
+.. autofunction:: ivy.l1_normalize
+
+.. autoskippablemethod:: ivy.Array.l1_normalize
+
+.. autoskippablemethod:: ivy.Container.l1_normalize

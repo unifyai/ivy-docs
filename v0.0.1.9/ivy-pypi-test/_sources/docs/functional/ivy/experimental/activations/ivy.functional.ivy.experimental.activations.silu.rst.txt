@@ -1,0 +1,8 @@
+silu
+====
+
+.. autofunction:: ivy.silu
+
+.. autoskippablemethod:: ivy.Array.silu
+
+.. autoskippablemethod:: ivy.Container.silu

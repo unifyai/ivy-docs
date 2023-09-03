@@ -1,0 +1,118 @@
+Layers
+======
+
+
+.. autosummary::
+   :toctree: layers
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   
+   
+   
+   
+   
+   ivy.functional.ivy.layers.conv
+   
+   
+   ivy.functional.ivy.layers.conv1d
+   
+   
+   ivy.functional.ivy.layers.conv1d_transpose
+   
+   
+   ivy.functional.ivy.layers.conv2d
+   
+   
+   ivy.functional.ivy.layers.conv2d_transpose
+   
+   
+   ivy.functional.ivy.layers.conv3d
+   
+   
+   ivy.functional.ivy.layers.conv3d_transpose
+   
+   
+   ivy.functional.ivy.layers.conv_general_dilated
+   
+   
+   ivy.functional.ivy.layers.conv_general_transpose
+   
+   
+   ivy.functional.ivy.layers.depthwise_conv2d
+   
+   
+   ivy.functional.ivy.layers.dropout
+   
+   
+   ivy.functional.ivy.layers.linear
+   
+   
+   ivy.functional.ivy.layers.lstm_update
+   
+   
+   ivy.functional.ivy.layers.multi_head_attention
+   
+   
+   ivy.functional.ivy.layers.scaled_dot_product_attention
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.layers
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy._deconv_length
+
+.. autofunction:: ivy._get_num_padded_values
+
+.. autofunction:: ivy._get_x_data_format
+
+.. autofunction:: ivy._handle_padding
+
+.. autofunction:: ivy._in_projection
+
+.. autofunction:: ivy.conv
+
+.. autofunction:: ivy.conv1d
+
+.. autofunction:: ivy.conv1d_transpose
+
+.. autofunction:: ivy.conv2d
+
+.. autofunction:: ivy.conv2d_transpose
+
+.. autofunction:: ivy.conv3d
+
+.. autofunction:: ivy.conv3d_transpose
+
+.. autofunction:: ivy.conv_general_dilated
+
+.. autofunction:: ivy.conv_general_transpose
+
+.. autofunction:: ivy.depthwise_conv2d
+
+.. autofunction:: ivy.dropout
+
+.. autofunction:: ivy.linear
+
+.. autofunction:: ivy.lstm_update
+
+.. autofunction:: ivy.multi_head_attention
+
+.. autofunction:: ivy.scaled_dot_product_attention
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.layers

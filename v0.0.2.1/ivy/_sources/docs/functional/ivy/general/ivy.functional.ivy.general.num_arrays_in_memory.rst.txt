@@ -1,0 +1,8 @@
+num\_arrays\_in\_memory
+=======================
+
+.. autofunction:: ivy.num_arrays_in_memory
+
+.. autoskippablemethod:: ivy.Array.num_arrays_in_memory
+
+.. autoskippablemethod:: ivy.Container.num_arrays_in_memory

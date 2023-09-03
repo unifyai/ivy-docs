@@ -1,0 +1,8 @@
+as\_ivy\_dev
+============
+
+.. autofunction:: ivy.as_ivy_dev
+
+.. autoskippablemethod:: ivy.Array.as_ivy_dev
+
+.. autoskippablemethod:: ivy.Container.as_ivy_dev

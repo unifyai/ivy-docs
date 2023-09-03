@@ -1,0 +1,8 @@
+inplace\_variables\_supported
+=============================
+
+.. autofunction:: ivy.inplace_variables_supported
+
+.. autoskippablemethod:: ivy.Array.inplace_variables_supported
+
+.. autoskippablemethod:: ivy.Container.inplace_variables_supported

@@ -1,0 +1,8 @@
+diff
+====
+
+.. autofunction:: ivy.diff
+
+.. autoskippablemethod:: ivy.Array.diff
+
+.. autoskippablemethod:: ivy.Container.diff

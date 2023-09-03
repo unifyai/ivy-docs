@@ -1,0 +1,8 @@
+repeat
+======
+
+.. autofunction:: ivy.repeat
+
+.. autoskippablemethod:: ivy.Array.repeat
+
+.. autoskippablemethod:: ivy.Container.repeat

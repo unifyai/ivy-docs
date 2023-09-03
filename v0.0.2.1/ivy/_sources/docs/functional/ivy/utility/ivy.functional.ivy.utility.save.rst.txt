@@ -1,0 +1,8 @@
+save
+====
+
+.. autofunction:: ivy.save
+
+.. autoskippablemethod:: ivy.Array.save
+
+.. autoskippablemethod:: ivy.Container.save

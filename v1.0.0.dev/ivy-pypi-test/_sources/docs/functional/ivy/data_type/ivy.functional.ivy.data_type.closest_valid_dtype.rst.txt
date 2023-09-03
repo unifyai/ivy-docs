@@ -1,0 +1,8 @@
+closest\_valid\_dtype
+=====================
+
+.. autofunction:: ivy.closest_valid_dtype
+
+.. autoskippablemethod:: ivy.Array.closest_valid_dtype
+
+.. autoskippablemethod:: ivy.Container.closest_valid_dtype

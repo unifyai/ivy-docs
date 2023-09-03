@@ -1,0 +1,8 @@
+num\_gpus
+=========
+
+.. autofunction:: ivy.num_gpus
+
+.. autoskippablemethod:: ivy.Array.num_gpus
+
+.. autoskippablemethod:: ivy.Container.num_gpus

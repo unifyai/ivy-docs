@@ -1,0 +1,8 @@
+percent\_used\_mem\_on\_dev
+===========================
+
+.. autofunction:: ivy.percent_used_mem_on_dev
+
+.. autoskippablemethod:: ivy.Array.percent_used_mem_on_dev
+
+.. autoskippablemethod:: ivy.Container.percent_used_mem_on_dev

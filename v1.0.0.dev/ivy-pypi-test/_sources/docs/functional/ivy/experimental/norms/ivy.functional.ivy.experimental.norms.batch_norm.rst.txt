@@ -1,0 +1,8 @@
+batch\_norm
+===========
+
+.. autofunction:: ivy.batch_norm
+
+.. autoskippablemethod:: ivy.Array.batch_norm
+
+.. autoskippablemethod:: ivy.Container.batch_norm

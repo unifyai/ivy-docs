@@ -1,0 +1,8 @@
+vstack
+======
+
+.. autofunction:: ivy.vstack
+
+.. autoskippablemethod:: ivy.Array.vstack
+
+.. autoskippablemethod:: ivy.Container.vstack

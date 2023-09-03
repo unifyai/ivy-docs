@@ -1,0 +1,8 @@
+current\_backend\_str
+=====================
+
+.. autofunction:: ivy.current_backend_str
+
+.. autoskippablemethod:: ivy.Array.current_backend_str
+
+.. autoskippablemethod:: ivy.Container.current_backend_str

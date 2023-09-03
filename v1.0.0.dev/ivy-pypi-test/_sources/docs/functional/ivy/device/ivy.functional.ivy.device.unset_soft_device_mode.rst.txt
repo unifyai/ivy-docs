@@ -1,0 +1,8 @@
+unset\_soft\_device\_mode
+=========================
+
+.. autofunction:: ivy.unset_soft_device_mode
+
+.. autoskippablemethod:: ivy.Array.unset_soft_device_mode
+
+.. autoskippablemethod:: ivy.Container.unset_soft_device_mode

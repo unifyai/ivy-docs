@@ -1,0 +1,8 @@
+invert\_permutation
+===================
+
+.. autofunction:: ivy.invert_permutation
+
+.. autoskippablemethod:: ivy.Array.invert_permutation
+
+.. autoskippablemethod:: ivy.Container.invert_permutation

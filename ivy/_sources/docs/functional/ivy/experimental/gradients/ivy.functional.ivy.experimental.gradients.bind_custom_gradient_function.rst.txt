@@ -1,0 +1,8 @@
+bind\_custom\_gradient\_function
+================================
+
+.. autofunction:: ivy.bind_custom_gradient_function
+
+.. autoskippablemethod:: ivy.Array.bind_custom_gradient_function
+
+.. autoskippablemethod:: ivy.Container.bind_custom_gradient_function

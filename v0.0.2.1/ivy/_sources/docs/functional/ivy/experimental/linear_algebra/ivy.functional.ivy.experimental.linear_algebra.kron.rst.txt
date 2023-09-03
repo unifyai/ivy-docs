@@ -1,0 +1,8 @@
+kron
+====
+
+.. autofunction:: ivy.kron
+
+.. autoskippablemethod:: ivy.Array.kron
+
+.. autoskippablemethod:: ivy.Container.kron

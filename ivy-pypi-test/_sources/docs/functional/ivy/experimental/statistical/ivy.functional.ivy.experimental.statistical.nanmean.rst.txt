@@ -1,0 +1,8 @@
+nanmean
+=======
+
+.. autofunction:: ivy.nanmean
+
+.. autoskippablemethod:: ivy.Array.nanmean
+
+.. autoskippablemethod:: ivy.Container.nanmean

@@ -1,0 +1,123 @@
+Nest
+====
+
+
+.. autosummary::
+   :toctree: nest
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.nest.all_nested_indices
+   
+   
+   ivy.functional.ivy.nest.copy_nest
+   
+   
+   ivy.functional.ivy.nest.duplicate_array_index_chains
+   
+   
+   ivy.functional.ivy.nest.index_nest
+   
+   
+   ivy.functional.ivy.nest.insert_into_nest_at_index
+   
+   
+   ivy.functional.ivy.nest.insert_into_nest_at_indices
+   
+   
+   ivy.functional.ivy.nest.map
+   
+   
+   ivy.functional.ivy.nest.map_nest_at_index
+   
+   
+   ivy.functional.ivy.nest.map_nest_at_indices
+   
+   
+   ivy.functional.ivy.nest.multi_index_nest
+   
+   
+   ivy.functional.ivy.nest.nested_any
+   
+   
+   ivy.functional.ivy.nest.nested_argwhere
+   
+   
+   ivy.functional.ivy.nest.nested_map
+   
+   
+   ivy.functional.ivy.nest.nested_multi_map
+   
+   
+   ivy.functional.ivy.nest.prune_empty
+   
+   
+   ivy.functional.ivy.nest.prune_nest_at_index
+   
+   
+   ivy.functional.ivy.nest.prune_nest_at_indices
+   
+   
+   ivy.functional.ivy.nest.set_nest_at_index
+   
+   
+   ivy.functional.ivy.nest.set_nest_at_indices
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.nest
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.all_nested_indices
+
+.. autofunction:: ivy.copy_nest
+
+.. autofunction:: ivy.duplicate_array_index_chains
+
+.. autofunction:: ivy.index_nest
+
+.. autofunction:: ivy.insert_into_nest_at_index
+
+.. autofunction:: ivy.insert_into_nest_at_indices
+
+.. autofunction:: ivy.map
+
+.. autofunction:: ivy.map_nest_at_index
+
+.. autofunction:: ivy.map_nest_at_indices
+
+.. autofunction:: ivy.multi_index_nest
+
+.. autofunction:: ivy.nested_any
+
+.. autofunction:: ivy.nested_argwhere
+
+.. autofunction:: ivy.nested_map
+
+.. autofunction:: ivy.nested_multi_map
+
+.. autofunction:: ivy.prune_empty
+
+.. autofunction:: ivy.prune_nest_at_index
+
+.. autofunction:: ivy.prune_nest_at_indices
+
+.. autofunction:: ivy.set_nest_at_index
+
+.. autofunction:: ivy.set_nest_at_indices
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.nest

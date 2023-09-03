@@ -1,0 +1,8 @@
+tensorsolve
+===========
+
+.. autofunction:: ivy.tensorsolve
+
+.. autoskippablemethod:: ivy.Array.tensorsolve
+
+.. autoskippablemethod:: ivy.Container.tensorsolve

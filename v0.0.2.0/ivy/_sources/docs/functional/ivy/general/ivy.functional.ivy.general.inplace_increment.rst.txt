@@ -1,0 +1,8 @@
+inplace\_increment
+==================
+
+.. autofunction:: ivy.inplace_increment
+
+.. autoskippablemethod:: ivy.Array.inplace_increment
+
+.. autoskippablemethod:: ivy.Container.inplace_increment

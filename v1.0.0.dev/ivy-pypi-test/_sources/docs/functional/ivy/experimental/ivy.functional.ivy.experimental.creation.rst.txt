@@ -1,0 +1,86 @@
+Creation
+========
+
+
+.. autosummary::
+   :toctree: creation
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   
+   ivy.functional.ivy.experimental.creation.eye_like
+   
+   
+   ivy.functional.ivy.experimental.creation.hamming_window
+   
+   
+   ivy.functional.ivy.experimental.creation.hann_window
+   
+   
+   ivy.functional.ivy.experimental.creation.indices
+   
+   
+   ivy.functional.ivy.experimental.creation.kaiser_bessel_derived_window
+   
+   
+   ivy.functional.ivy.experimental.creation.kaiser_window
+   
+   
+   ivy.functional.ivy.experimental.creation.ndenumerate
+   
+   
+   ivy.functional.ivy.experimental.creation.ndindex
+   
+   
+   ivy.functional.ivy.experimental.creation.tril_indices
+   
+   
+   ivy.functional.ivy.experimental.creation.unsorted_segment_min
+   
+   
+   ivy.functional.ivy.experimental.creation.vorbis_window
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.creation
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy._iter_product
+
+.. autofunction:: ivy.eye_like
+
+.. autofunction:: ivy.hamming_window
+
+.. autofunction:: ivy.hann_window
+
+.. autofunction:: ivy.indices
+
+.. autofunction:: ivy.kaiser_bessel_derived_window
+
+.. autofunction:: ivy.kaiser_window
+
+.. autofunction:: ivy.ndenumerate
+
+.. autofunction:: ivy.ndindex
+
+.. autofunction:: ivy.tril_indices
+
+.. autofunction:: ivy.unsorted_segment_min
+
+.. autofunction:: ivy.vorbis_window
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.creation

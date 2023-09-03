@@ -1,0 +1,8 @@
+copy\_nest
+==========
+
+.. autofunction:: ivy.copy_nest
+
+.. autoskippablemethod:: ivy.Array.copy_nest
+
+.. autoskippablemethod:: ivy.Container.copy_nest

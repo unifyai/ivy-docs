@@ -1,0 +1,8 @@
+eye\_like
+=========
+
+.. autofunction:: ivy.eye_like
+
+.. autoskippablemethod:: ivy.Array.eye_like
+
+.. autoskippablemethod:: ivy.Container.eye_like

@@ -1,0 +1,8 @@
+cross\_entropy
+==============
+
+.. autofunction:: ivy.cross_entropy
+
+.. autoskippablemethod:: ivy.Array.cross_entropy
+
+.. autoskippablemethod:: ivy.Container.cross_entropy

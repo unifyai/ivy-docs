@@ -1,0 +1,8 @@
+gamma
+=====
+
+.. autofunction:: ivy.gamma
+
+.. autoskippablemethod:: ivy.Array.gamma
+
+.. autoskippablemethod:: ivy.Container.gamma

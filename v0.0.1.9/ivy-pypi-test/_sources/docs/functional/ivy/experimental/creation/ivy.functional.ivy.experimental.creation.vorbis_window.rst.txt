@@ -1,0 +1,8 @@
+vorbis\_window
+==============
+
+.. autofunction:: ivy.vorbis_window
+
+.. autoskippablemethod:: ivy.Array.vorbis_window
+
+.. autoskippablemethod:: ivy.Container.vorbis_window

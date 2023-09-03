@@ -1,0 +1,8 @@
+ndindex
+=======
+
+.. autofunction:: ivy.ndindex
+
+.. autoskippablemethod:: ivy.Array.ndindex
+
+.. autoskippablemethod:: ivy.Container.ndindex

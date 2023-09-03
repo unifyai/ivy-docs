@@ -1,0 +1,8 @@
+trunc
+=====
+
+.. autofunction:: ivy.trunc
+
+.. autoskippablemethod:: ivy.Array.trunc
+
+.. autoskippablemethod:: ivy.Container.trunc

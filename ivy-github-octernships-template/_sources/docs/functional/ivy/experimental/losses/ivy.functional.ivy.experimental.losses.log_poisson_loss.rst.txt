@@ -1,0 +1,8 @@
+log\_poisson\_loss
+==================
+
+.. autofunction:: ivy.log_poisson_loss
+
+.. autoskippablemethod:: ivy.Array.log_poisson_loss
+
+.. autoskippablemethod:: ivy.Container.log_poisson_loss

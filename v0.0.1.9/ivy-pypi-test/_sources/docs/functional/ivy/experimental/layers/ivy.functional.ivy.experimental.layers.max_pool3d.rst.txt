@@ -1,0 +1,8 @@
+max\_pool3d
+===========
+
+.. autofunction:: ivy.max_pool3d
+
+.. autoskippablemethod:: ivy.Array.max_pool3d
+
+.. autoskippablemethod:: ivy.Container.max_pool3d

@@ -1,0 +1,8 @@
+swapaxes
+========
+
+.. autofunction:: ivy.swapaxes
+
+.. autoskippablemethod:: ivy.Array.swapaxes
+
+.. autoskippablemethod:: ivy.Container.swapaxes

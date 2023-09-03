@@ -1,0 +1,176 @@
+Device
+======
+
+
+.. autosummary::
+   :toctree: device
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   
+   
+   
+   ivy.functional.ivy.device.as_ivy_dev
+   
+   
+   ivy.functional.ivy.device.as_native_dev
+   
+   
+   ivy.functional.ivy.device.clear_cached_mem_on_dev
+   
+   
+   ivy.functional.ivy.device.default_device
+   
+   
+   ivy.functional.ivy.device.dev
+   
+   
+   ivy.functional.ivy.device.dev_util
+   
+   
+   ivy.functional.ivy.device.function_supported_devices
+   
+   
+   ivy.functional.ivy.device.function_unsupported_devices
+   
+   
+   ivy.functional.ivy.device.get_all_ivy_arrays_on_dev
+   
+   
+   ivy.functional.ivy.device.gpu_is_available
+   
+   
+   ivy.functional.ivy.device.handle_soft_device_variable
+   
+   
+   ivy.functional.ivy.device.num_cpu_cores
+   
+   
+   ivy.functional.ivy.device.num_gpus
+   
+   
+   ivy.functional.ivy.device.num_ivy_arrays_on_dev
+   
+   
+   ivy.functional.ivy.device.percent_used_mem_on_dev
+   
+   
+   ivy.functional.ivy.device.print_all_ivy_arrays_on_dev
+   
+   
+   ivy.functional.ivy.device.set_default_device
+   
+   
+   ivy.functional.ivy.device.set_soft_device_mode
+   
+   
+   ivy.functional.ivy.device.set_split_factor
+   
+   
+   ivy.functional.ivy.device.split_factor
+   
+   
+   ivy.functional.ivy.device.split_func_call
+   
+   
+   ivy.functional.ivy.device.to_device
+   
+   
+   ivy.functional.ivy.device.total_mem_on_dev
+   
+   
+   ivy.functional.ivy.device.tpu_is_available
+   
+   
+   ivy.functional.ivy.device.unset_default_device
+   
+   
+   ivy.functional.ivy.device.unset_soft_device_mode
+   
+   
+   ivy.functional.ivy.device.used_mem_on_dev
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.device
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy._get_devices
+
+.. autofunction:: ivy._get_nvml_gpu_handle
+
+.. autofunction:: ivy._is_valid_devices_attributes
+
+.. autofunction:: ivy.as_ivy_dev
+
+.. autofunction:: ivy.as_native_dev
+
+.. autofunction:: ivy.clear_cached_mem_on_dev
+
+.. autofunction:: ivy.default_device
+
+.. autofunction:: ivy.dev
+
+.. autofunction:: ivy.dev_util
+
+.. autofunction:: ivy.function_supported_devices
+
+.. autofunction:: ivy.function_unsupported_devices
+
+.. autofunction:: ivy.get_all_ivy_arrays_on_dev
+
+.. autofunction:: ivy.gpu_is_available
+
+.. autofunction:: ivy.handle_soft_device_variable
+
+.. autofunction:: ivy.num_cpu_cores
+
+.. autofunction:: ivy.num_gpus
+
+.. autofunction:: ivy.num_ivy_arrays_on_dev
+
+.. autofunction:: ivy.percent_used_mem_on_dev
+
+.. autofunction:: ivy.print_all_ivy_arrays_on_dev
+
+.. autofunction:: ivy.set_default_device
+
+.. autofunction:: ivy.set_soft_device_mode
+
+.. autofunction:: ivy.set_split_factor
+
+.. autofunction:: ivy.split_factor
+
+.. autofunction:: ivy.split_func_call
+
+.. autofunction:: ivy.to_device
+
+.. autofunction:: ivy.total_mem_on_dev
+
+.. autofunction:: ivy.tpu_is_available
+
+.. autofunction:: ivy.unset_default_device
+
+.. autofunction:: ivy.unset_soft_device_mode
+
+.. autofunction:: ivy.used_mem_on_dev
+
+
+.. autoclass:: ivy.DefaultDevice
+
+.. autoclass:: ivy.Profiler
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.device

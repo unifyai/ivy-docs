@@ -1,0 +1,8 @@
+diagflat
+========
+
+.. autofunction:: ivy.diagflat
+
+.. autoskippablemethod:: ivy.Array.diagflat
+
+.. autoskippablemethod:: ivy.Container.diagflat

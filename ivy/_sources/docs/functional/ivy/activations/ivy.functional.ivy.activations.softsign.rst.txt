@@ -1,0 +1,8 @@
+softsign
+========
+
+.. autofunction:: ivy.softsign
+
+.. autoskippablemethod:: ivy.Array.softsign
+
+.. autoskippablemethod:: ivy.Container.softsign

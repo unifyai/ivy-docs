@@ -1,0 +1,15 @@
+Sub backend handler
+===================
+
+
+
+.. automodule:: ivy.utils.backend.sub_backend_handler
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.utils.backend.sub_backend_handler

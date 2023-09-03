@@ -1,0 +1,8 @@
+if\_else
+========
+
+.. autofunction:: ivy.if_else
+
+.. autoskippablemethod:: ivy.Array.if_else
+
+.. autoskippablemethod:: ivy.Container.if_else

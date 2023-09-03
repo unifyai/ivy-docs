@@ -1,0 +1,8 @@
+area\_interpolate
+=================
+
+.. autofunction:: ivy.area_interpolate
+
+.. autoskippablemethod:: ivy.Array.area_interpolate
+
+.. autoskippablemethod:: ivy.Container.area_interpolate

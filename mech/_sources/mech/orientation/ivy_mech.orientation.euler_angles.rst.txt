@@ -1,0 +1,15 @@
+Euler angles
+============
+
+
+
+.. automodule:: ivy_mech.orientation.euler_angles
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy_mech.orientation.euler_angles

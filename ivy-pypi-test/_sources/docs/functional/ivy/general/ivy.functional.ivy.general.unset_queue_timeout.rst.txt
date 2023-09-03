@@ -1,0 +1,8 @@
+unset\_queue\_timeout
+=====================
+
+.. autofunction:: ivy.unset_queue_timeout
+
+.. autoskippablemethod:: ivy.Array.unset_queue_timeout
+
+.. autoskippablemethod:: ivy.Container.unset_queue_timeout

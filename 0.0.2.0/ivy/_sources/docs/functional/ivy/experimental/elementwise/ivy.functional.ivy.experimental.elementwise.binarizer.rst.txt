@@ -1,0 +1,8 @@
+binarizer
+=========
+
+.. autofunction:: ivy.binarizer
+
+.. autoskippablemethod:: ivy.Array.binarizer
+
+.. autoskippablemethod:: ivy.Container.binarizer

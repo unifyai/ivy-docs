@@ -1,0 +1,8 @@
+eigvals
+=======
+
+.. autofunction:: ivy.eigvals
+
+.. autoskippablemethod:: ivy.Array.eigvals
+
+.. autoskippablemethod:: ivy.Container.eigvals

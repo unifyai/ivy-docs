@@ -1,0 +1,8 @@
+nanmedian
+=========
+
+.. autofunction:: ivy.nanmedian
+
+.. autoskippablemethod:: ivy.Array.nanmedian
+
+.. autoskippablemethod:: ivy.Container.nanmedian

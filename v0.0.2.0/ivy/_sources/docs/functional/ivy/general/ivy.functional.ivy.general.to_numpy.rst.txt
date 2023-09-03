@@ -1,0 +1,8 @@
+to\_numpy
+=========
+
+.. autofunction:: ivy.to_numpy
+
+.. autoskippablemethod:: ivy.Array.to_numpy
+
+.. autoskippablemethod:: ivy.Container.to_numpy

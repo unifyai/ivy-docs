@@ -1,0 +1,8 @@
+positive
+========
+
+.. autofunction:: ivy.positive
+
+.. autoskippablemethod:: ivy.Array.positive
+
+.. autoskippablemethod:: ivy.Container.positive

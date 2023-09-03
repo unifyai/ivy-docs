@@ -1,0 +1,8 @@
+atleast\_3d
+===========
+
+.. autofunction:: ivy.atleast_3d
+
+.. autoskippablemethod:: ivy.Array.atleast_3d
+
+.. autoskippablemethod:: ivy.Container.atleast_3d

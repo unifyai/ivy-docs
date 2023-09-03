@@ -1,0 +1,8 @@
+is\_native\_dtype
+=================
+
+.. autofunction:: ivy.is_native_dtype
+
+.. autoskippablemethod:: ivy.Array.is_native_dtype
+
+.. autoskippablemethod:: ivy.Container.is_native_dtype

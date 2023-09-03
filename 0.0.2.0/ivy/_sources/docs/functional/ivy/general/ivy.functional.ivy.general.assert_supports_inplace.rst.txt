@@ -1,0 +1,8 @@
+assert\_supports\_inplace
+=========================
+
+.. autofunction:: ivy.assert_supports_inplace
+
+.. autoskippablemethod:: ivy.Array.assert_supports_inplace
+
+.. autoskippablemethod:: ivy.Container.assert_supports_inplace

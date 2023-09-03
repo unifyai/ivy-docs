@@ -1,0 +1,143 @@
+Elementwise
+===========
+
+
+.. autosummary::
+   :toctree: elementwise
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.experimental.elementwise.allclose
+   
+   
+   ivy.functional.ivy.experimental.elementwise.binarizer
+   
+   
+   ivy.functional.ivy.experimental.elementwise.conj
+   
+   
+   ivy.functional.ivy.experimental.elementwise.copysign
+   
+   
+   ivy.functional.ivy.experimental.elementwise.count_nonzero
+   
+   
+   ivy.functional.ivy.experimental.elementwise.diff
+   
+   
+   ivy.functional.ivy.experimental.elementwise.fix
+   
+   
+   ivy.functional.ivy.experimental.elementwise.float_power
+   
+   
+   ivy.functional.ivy.experimental.elementwise.fmax
+   
+   
+   ivy.functional.ivy.experimental.elementwise.frexp
+   
+   
+   ivy.functional.ivy.experimental.elementwise.gradient
+   
+   
+   ivy.functional.ivy.experimental.elementwise.hypot
+   
+   
+   ivy.functional.ivy.experimental.elementwise.isclose
+   
+   
+   ivy.functional.ivy.experimental.elementwise.ldexp
+   
+   
+   ivy.functional.ivy.experimental.elementwise.lerp
+   
+   
+   ivy.functional.ivy.experimental.elementwise.lgamma
+   
+   
+   ivy.functional.ivy.experimental.elementwise.modf
+   
+   
+   ivy.functional.ivy.experimental.elementwise.nansum
+   
+   
+   ivy.functional.ivy.experimental.elementwise.nextafter
+   
+   
+   ivy.functional.ivy.experimental.elementwise.signbit
+   
+   
+   ivy.functional.ivy.experimental.elementwise.sinc
+   
+   
+   ivy.functional.ivy.experimental.elementwise.xlogy
+   
+   
+   ivy.functional.ivy.experimental.elementwise.zeta
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.elementwise
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.allclose
+
+.. autofunction:: ivy.binarizer
+
+.. autofunction:: ivy.conj
+
+.. autofunction:: ivy.copysign
+
+.. autofunction:: ivy.count_nonzero
+
+.. autofunction:: ivy.diff
+
+.. autofunction:: ivy.fix
+
+.. autofunction:: ivy.float_power
+
+.. autofunction:: ivy.fmax
+
+.. autofunction:: ivy.frexp
+
+.. autofunction:: ivy.gradient
+
+.. autofunction:: ivy.hypot
+
+.. autofunction:: ivy.isclose
+
+.. autofunction:: ivy.ldexp
+
+.. autofunction:: ivy.lerp
+
+.. autofunction:: ivy.lgamma
+
+.. autofunction:: ivy.modf
+
+.. autofunction:: ivy.nansum
+
+.. autofunction:: ivy.nextafter
+
+.. autofunction:: ivy.signbit
+
+.. autofunction:: ivy.sinc
+
+.. autofunction:: ivy.xlogy
+
+.. autofunction:: ivy.zeta
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.elementwise

@@ -1,0 +1,8 @@
+asarray\_infer\_dtype
+=====================
+
+.. autofunction:: ivy.asarray_infer_dtype
+
+.. autoskippablemethod:: ivy.Array.asarray_infer_dtype
+
+.. autoskippablemethod:: ivy.Container.asarray_infer_dtype

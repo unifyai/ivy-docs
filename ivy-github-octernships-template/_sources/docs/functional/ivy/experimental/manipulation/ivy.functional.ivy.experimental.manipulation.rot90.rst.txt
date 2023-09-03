@@ -1,0 +1,8 @@
+rot90
+=====
+
+.. autofunction:: ivy.rot90
+
+.. autoskippablemethod:: ivy.Array.rot90
+
+.. autoskippablemethod:: ivy.Container.rot90

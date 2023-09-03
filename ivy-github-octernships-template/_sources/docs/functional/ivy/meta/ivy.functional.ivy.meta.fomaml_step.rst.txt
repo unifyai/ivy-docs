@@ -1,0 +1,8 @@
+fomaml\_step
+============
+
+.. autofunction:: ivy.fomaml_step
+
+.. autoskippablemethod:: ivy.Array.fomaml_step
+
+.. autoskippablemethod:: ivy.Container.fomaml_step

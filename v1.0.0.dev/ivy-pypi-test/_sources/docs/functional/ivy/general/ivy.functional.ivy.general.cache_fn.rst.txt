@@ -1,0 +1,8 @@
+cache\_fn
+=========
+
+.. autofunction:: ivy.cache_fn
+
+.. autoskippablemethod:: ivy.Array.cache_fn
+
+.. autoskippablemethod:: ivy.Container.cache_fn

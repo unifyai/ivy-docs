@@ -1,0 +1,8 @@
+can\_cast
+=========
+
+.. autofunction:: ivy.can_cast
+
+.. autoskippablemethod:: ivy.Array.can_cast
+
+.. autoskippablemethod:: ivy.Container.can_cast

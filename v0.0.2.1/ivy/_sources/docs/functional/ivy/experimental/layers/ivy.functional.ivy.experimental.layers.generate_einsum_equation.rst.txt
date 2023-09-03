@@ -1,0 +1,8 @@
+generate\_einsum\_equation
+==========================
+
+.. autofunction:: ivy.generate_einsum_equation
+
+.. autoskippablemethod:: ivy.Array.generate_einsum_equation
+
+.. autoskippablemethod:: ivy.Container.generate_einsum_equation

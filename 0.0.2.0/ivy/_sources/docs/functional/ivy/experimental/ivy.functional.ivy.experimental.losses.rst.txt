@@ -1,0 +1,33 @@
+Losses
+======
+
+
+.. autosummary::
+   :toctree: losses
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.experimental.losses.log_poisson_loss
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.losses
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.log_poisson_loss
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.losses

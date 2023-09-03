@@ -1,0 +1,16 @@
+Losses
+======
+
+
+
+
+.. automodule:: ivy.stateful.losses
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.stateful.losses

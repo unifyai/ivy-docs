@@ -1,0 +1,8 @@
+ceil
+====
+
+.. autofunction:: ivy.ceil
+
+.. autoskippablemethod:: ivy.Array.ceil
+
+.. autoskippablemethod:: ivy.Container.ceil

@@ -1,0 +1,30 @@
+name: Squash git worktree
+
+on:
+  schedule:
+    - cron: "0 0 * * 0"
+  workflow_dispatch:
+
+jobs:
+  squash:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository 🛎️
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.IVY_BRANCH_TOKEN }}
+          ref: main
+          fetch-depth: 0
+
+      - name: Setup Git user 👤
+        run: |
+          git config --local user.email "ivy.branch@unify.ai"
+          git config --local user.name "ivy-branch"
+
+      - name: Squash commits
+        run: |
+          git reset $(git commit-tree HEAD^{tree} -m "🚀 Weekly squash commit")
+                
+      - name: Force push single commit
+        run: git push -f origin main
+

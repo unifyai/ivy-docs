@@ -1,0 +1,8 @@
+einsum
+======
+
+.. autofunction:: ivy.einsum
+
+.. autoskippablemethod:: ivy.Array.einsum
+
+.. autoskippablemethod:: ivy.Container.einsum

@@ -1,0 +1,8 @@
+eye
+===
+
+.. autofunction:: ivy.eye
+
+.. autoskippablemethod:: ivy.Array.eye
+
+.. autoskippablemethod:: ivy.Container.eye

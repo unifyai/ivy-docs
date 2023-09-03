@@ -1,0 +1,8 @@
+squeeze
+=======
+
+.. autofunction:: ivy.squeeze
+
+.. autoskippablemethod:: ivy.Array.squeeze
+
+.. autoskippablemethod:: ivy.Container.squeeze

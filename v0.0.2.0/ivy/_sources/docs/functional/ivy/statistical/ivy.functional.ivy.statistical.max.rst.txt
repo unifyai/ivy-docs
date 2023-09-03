@@ -1,0 +1,8 @@
+max
+===
+
+.. autofunction:: ivy.max
+
+.. autoskippablemethod:: ivy.Array.max
+
+.. autoskippablemethod:: ivy.Container.max

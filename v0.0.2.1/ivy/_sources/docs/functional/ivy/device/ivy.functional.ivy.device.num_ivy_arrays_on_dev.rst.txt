@@ -1,0 +1,8 @@
+num\_ivy\_arrays\_on\_dev
+=========================
+
+.. autofunction:: ivy.num_ivy_arrays_on_dev
+
+.. autoskippablemethod:: ivy.Array.num_ivy_arrays_on_dev
+
+.. autoskippablemethod:: ivy.Container.num_ivy_arrays_on_dev

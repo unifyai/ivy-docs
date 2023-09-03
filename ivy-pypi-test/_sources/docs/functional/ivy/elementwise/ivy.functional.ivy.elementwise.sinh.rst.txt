@@ -1,0 +1,8 @@
+sinh
+====
+
+.. autofunction:: ivy.sinh
+
+.. autoskippablemethod:: ivy.Array.sinh
+
+.. autoskippablemethod:: ivy.Container.sinh

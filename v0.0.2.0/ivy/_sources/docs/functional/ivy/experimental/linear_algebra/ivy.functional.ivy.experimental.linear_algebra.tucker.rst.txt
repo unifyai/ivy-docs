@@ -1,0 +1,8 @@
+tucker
+======
+
+.. autofunction:: ivy.tucker
+
+.. autoskippablemethod:: ivy.Array.tucker
+
+.. autoskippablemethod:: ivy.Container.tucker

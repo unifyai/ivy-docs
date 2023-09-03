@@ -1,0 +1,8 @@
+map\_nest\_at\_indices
+======================
+
+.. autofunction:: ivy.map_nest_at_indices
+
+.. autoskippablemethod:: ivy.Array.map_nest_at_indices
+
+.. autoskippablemethod:: ivy.Container.map_nest_at_indices

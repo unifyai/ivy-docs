@@ -1,0 +1,8 @@
+partial\_unfold
+===============
+
+.. autofunction:: ivy.partial_unfold
+
+.. autoskippablemethod:: ivy.Array.partial_unfold
+
+.. autoskippablemethod:: ivy.Container.partial_unfold

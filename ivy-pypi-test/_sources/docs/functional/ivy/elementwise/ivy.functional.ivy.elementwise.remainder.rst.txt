@@ -1,0 +1,8 @@
+remainder
+=========
+
+.. autofunction:: ivy.remainder
+
+.. autoskippablemethod:: ivy.Array.remainder
+
+.. autoskippablemethod:: ivy.Container.remainder

@@ -1,0 +1,8 @@
+svd
+===
+
+.. autofunction:: ivy.svd
+
+.. autoskippablemethod:: ivy.Array.svd
+
+.. autoskippablemethod:: ivy.Container.svd

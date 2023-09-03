@@ -1,0 +1,8 @@
+acos
+====
+
+.. autofunction:: ivy.acos
+
+.. autoskippablemethod:: ivy.Array.acos
+
+.. autoskippablemethod:: ivy.Container.acos

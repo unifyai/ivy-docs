@@ -1,0 +1,8 @@
+insert\_into\_nest\_at\_index
+=============================
+
+.. autofunction:: ivy.insert_into_nest_at_index
+
+.. autoskippablemethod:: ivy.Array.insert_into_nest_at_index
+
+.. autoskippablemethod:: ivy.Container.insert_into_nest_at_index

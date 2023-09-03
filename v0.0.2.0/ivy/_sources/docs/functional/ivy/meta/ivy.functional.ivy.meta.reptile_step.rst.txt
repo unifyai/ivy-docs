@@ -1,0 +1,8 @@
+reptile\_step
+=============
+
+.. autofunction:: ivy.reptile_step
+
+.. autoskippablemethod:: ivy.Array.reptile_step
+
+.. autoskippablemethod:: ivy.Container.reptile_step

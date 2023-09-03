@@ -1,0 +1,8 @@
+promote\_types\_of\_inputs
+==========================
+
+.. autofunction:: ivy.promote_types_of_inputs
+
+.. autoskippablemethod:: ivy.Array.promote_types_of_inputs
+
+.. autoskippablemethod:: ivy.Container.promote_types_of_inputs

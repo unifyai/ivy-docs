@@ -1,0 +1,13 @@
+﻿Ivy robot
+=========
+
+.. autosummary::
+    :toctree: ivy_robot
+    :template: top_level_module.rst
+    :recursive:
+
+
+    ivy_robot.manipulator
+    ivy_robot.planning
+    ivy_robot.rigid_mobile
+

@@ -1,0 +1,8 @@
+ifft
+====
+
+.. autofunction:: ivy.ifft
+
+.. autoskippablemethod:: ivy.Array.ifft
+
+.. autoskippablemethod:: ivy.Container.ifft

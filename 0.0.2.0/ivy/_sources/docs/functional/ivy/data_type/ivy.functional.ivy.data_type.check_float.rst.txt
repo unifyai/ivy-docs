@@ -1,0 +1,8 @@
+check\_float
+============
+
+.. autofunction:: ivy.check_float
+
+.. autoskippablemethod:: ivy.Array.check_float
+
+.. autoskippablemethod:: ivy.Container.check_float

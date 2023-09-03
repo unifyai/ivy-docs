@@ -1,0 +1,254 @@
+Layers
+======
+
+
+.. autosummary::
+   :toctree: layers
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   ivy.functional.ivy.experimental.layers.adaptive_avg_pool1d
+   
+   
+   ivy.functional.ivy.experimental.layers.adaptive_avg_pool2d
+   
+   
+   ivy.functional.ivy.experimental.layers.area_interpolate
+   
+   
+   ivy.functional.ivy.experimental.layers.avg_pool1d
+   
+   
+   ivy.functional.ivy.experimental.layers.avg_pool2d
+   
+   
+   ivy.functional.ivy.experimental.layers.avg_pool3d
+   
+   
+   ivy.functional.ivy.experimental.layers.dct
+   
+   
+   ivy.functional.ivy.experimental.layers.dft
+   
+   
+   ivy.functional.ivy.experimental.layers.dropout1d
+   
+   
+   ivy.functional.ivy.experimental.layers.dropout2d
+   
+   
+   ivy.functional.ivy.experimental.layers.dropout3d
+   
+   
+   ivy.functional.ivy.experimental.layers.embedding
+   
+   
+   ivy.functional.ivy.experimental.layers.fft
+   
+   
+   ivy.functional.ivy.experimental.layers.fft2
+   
+   
+   ivy.functional.ivy.experimental.layers.generate_einsum_equation
+   
+   
+   ivy.functional.ivy.experimental.layers.get_interpolate_kernel
+   
+   
+   ivy.functional.ivy.experimental.layers.idct
+   
+   
+   ivy.functional.ivy.experimental.layers.ifft
+   
+   
+   ivy.functional.ivy.experimental.layers.ifftn
+   
+   
+   ivy.functional.ivy.experimental.layers.interp
+   
+   
+   ivy.functional.ivy.experimental.layers.interpolate
+   
+   
+   ivy.functional.ivy.experimental.layers.max_pool1d
+   
+   
+   ivy.functional.ivy.experimental.layers.max_pool2d
+   
+   
+   ivy.functional.ivy.experimental.layers.max_pool3d
+   
+   
+   ivy.functional.ivy.experimental.layers.max_unpool1d
+   
+   
+   ivy.functional.ivy.experimental.layers.nearest_interpolate
+   
+   
+   ivy.functional.ivy.experimental.layers.pool
+   
+   
+   ivy.functional.ivy.experimental.layers.reduce_window
+   
+   
+   ivy.functional.ivy.experimental.layers.rfftn
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.layers
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy._cast_init
+
+.. autofunction:: ivy._compute_idx
+
+.. autofunction:: ivy._compute_weight_mat
+
+.. autofunction:: ivy._conv_view
+
+.. autofunction:: ivy._cubic_kernel
+
+.. autofunction:: ivy._dilate
+
+.. autofunction:: ivy._dim_scale_factor
+
+.. autofunction:: ivy._expand_to_dim
+
+.. autofunction:: ivy._get_identity
+
+.. autofunction:: ivy._get_size
+
+.. autofunction:: ivy._interpolate_with_kernel
+
+.. autofunction:: ivy._lanczos_kernel
+
+.. autofunction:: ivy._mask
+
+.. autofunction:: ivy._mitchellcubic_kernel
+
+.. autofunction:: ivy._output_ceil_shape
+
+.. autofunction:: ivy._padding_ceil_mode
+
+.. autofunction:: ivy._padtype_to_pads
+
+.. autofunction:: ivy._sum_tensors
+
+.. autofunction:: ivy._tf_area_dim_scale
+
+.. autofunction:: ivy._tf_area_indices
+
+.. autofunction:: ivy._tf_area_interpolate
+
+.. autofunction:: ivy._triangle_kernel
+
+.. autofunction:: ivy._upsample_bicubic2d_default
+
+.. autofunction:: ivy._upsample_cubic_convolution1
+
+.. autofunction:: ivy._upsample_cubic_convolution2
+
+.. autofunction:: ivy._upsample_cubic_interp1d
+
+.. autofunction:: ivy._upsample_get_cubic_coefficients
+
+.. autofunction:: ivy.adaptive_avg_pool1d
+
+.. autofunction:: ivy.adaptive_avg_pool2d
+
+.. autofunction:: ivy.area_interpolate
+
+.. autofunction:: ivy.avg_pool1d
+
+.. autofunction:: ivy.avg_pool2d
+
+.. autofunction:: ivy.avg_pool3d
+
+.. autofunction:: ivy.dct
+
+.. autofunction:: ivy.dft
+
+.. autofunction:: ivy.dropout1d
+
+.. autofunction:: ivy.dropout2d
+
+.. autofunction:: ivy.dropout3d
+
+.. autofunction:: ivy.embedding
+
+.. autofunction:: ivy.fft
+
+.. autofunction:: ivy.fft2
+
+.. autofunction:: ivy.generate_einsum_equation
+
+.. autofunction:: ivy.get_interpolate_kernel
+
+.. autofunction:: ivy.idct
+
+.. autofunction:: ivy.ifft
+
+.. autofunction:: ivy.ifftn
+
+.. autofunction:: ivy.interp
+
+.. autofunction:: ivy.interpolate
+
+.. autofunction:: ivy.max_pool1d
+
+.. autofunction:: ivy.max_pool2d
+
+.. autofunction:: ivy.max_pool3d
+
+.. autofunction:: ivy.max_unpool1d
+
+.. autofunction:: ivy.nearest_interpolate
+
+.. autofunction:: ivy.pool
+
+.. autofunction:: ivy.reduce_window
+
+.. autofunction:: ivy.rfftn
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.layers

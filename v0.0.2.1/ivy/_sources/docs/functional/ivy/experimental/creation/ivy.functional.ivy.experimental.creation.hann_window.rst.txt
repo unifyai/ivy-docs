@@ -1,0 +1,8 @@
+hann\_window
+============
+
+.. autofunction:: ivy.hann_window
+
+.. autoskippablemethod:: ivy.Array.hann_window
+
+.. autoskippablemethod:: ivy.Container.hann_window

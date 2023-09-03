@@ -1,0 +1,8 @@
+vector\_norm
+============
+
+.. autofunction:: ivy.vector_norm
+
+.. autoskippablemethod:: ivy.Array.vector_norm
+
+.. autoskippablemethod:: ivy.Container.vector_norm

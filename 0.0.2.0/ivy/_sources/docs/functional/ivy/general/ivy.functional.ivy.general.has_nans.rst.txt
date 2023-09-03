@@ -1,0 +1,8 @@
+has\_nans
+=========
+
+.. autofunction:: ivy.has_nans
+
+.. autoskippablemethod:: ivy.Array.has_nans
+
+.. autoskippablemethod:: ivy.Container.has_nans

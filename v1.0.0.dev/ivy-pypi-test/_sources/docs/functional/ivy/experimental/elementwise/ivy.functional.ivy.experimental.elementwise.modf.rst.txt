@@ -1,0 +1,8 @@
+modf
+====
+
+.. autofunction:: ivy.modf
+
+.. autoskippablemethod:: ivy.Array.modf
+
+.. autoskippablemethod:: ivy.Container.modf

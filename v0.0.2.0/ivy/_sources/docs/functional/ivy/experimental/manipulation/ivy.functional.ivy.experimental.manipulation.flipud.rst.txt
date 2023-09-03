@@ -1,0 +1,8 @@
+flipud
+======
+
+.. autofunction:: ivy.flipud
+
+.. autoskippablemethod:: ivy.Array.flipud
+
+.. autoskippablemethod:: ivy.Container.flipud

@@ -1,0 +1,403 @@
+Elementwise
+===========
+
+
+.. autosummary::
+   :toctree: elementwise
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.elementwise.abs
+   
+   
+   ivy.functional.ivy.elementwise.acos
+   
+   
+   ivy.functional.ivy.elementwise.acosh
+   
+   
+   ivy.functional.ivy.elementwise.add
+   
+   
+   ivy.functional.ivy.elementwise.angle
+   
+   
+   ivy.functional.ivy.elementwise.asin
+   
+   
+   ivy.functional.ivy.elementwise.asinh
+   
+   
+   ivy.functional.ivy.elementwise.atan
+   
+   
+   ivy.functional.ivy.elementwise.atan2
+   
+   
+   ivy.functional.ivy.elementwise.atanh
+   
+   
+   ivy.functional.ivy.elementwise.bitwise_and
+   
+   
+   ivy.functional.ivy.elementwise.bitwise_invert
+   
+   
+   ivy.functional.ivy.elementwise.bitwise_left_shift
+   
+   
+   ivy.functional.ivy.elementwise.bitwise_or
+   
+   
+   ivy.functional.ivy.elementwise.bitwise_right_shift
+   
+   
+   ivy.functional.ivy.elementwise.bitwise_xor
+   
+   
+   ivy.functional.ivy.elementwise.ceil
+   
+   
+   ivy.functional.ivy.elementwise.cos
+   
+   
+   ivy.functional.ivy.elementwise.cosh
+   
+   
+   ivy.functional.ivy.elementwise.deg2rad
+   
+   
+   ivy.functional.ivy.elementwise.divide
+   
+   
+   ivy.functional.ivy.elementwise.equal
+   
+   
+   ivy.functional.ivy.elementwise.erf
+   
+   
+   ivy.functional.ivy.elementwise.exp
+   
+   
+   ivy.functional.ivy.elementwise.exp2
+   
+   
+   ivy.functional.ivy.elementwise.expm1
+   
+   
+   ivy.functional.ivy.elementwise.floor
+   
+   
+   ivy.functional.ivy.elementwise.floor_divide
+   
+   
+   ivy.functional.ivy.elementwise.fmin
+   
+   
+   ivy.functional.ivy.elementwise.fmod
+   
+   
+   ivy.functional.ivy.elementwise.gcd
+   
+   
+   ivy.functional.ivy.elementwise.greater
+   
+   
+   ivy.functional.ivy.elementwise.greater_equal
+   
+   
+   ivy.functional.ivy.elementwise.imag
+   
+   
+   ivy.functional.ivy.elementwise.isfinite
+   
+   
+   ivy.functional.ivy.elementwise.isinf
+   
+   
+   ivy.functional.ivy.elementwise.isnan
+   
+   
+   ivy.functional.ivy.elementwise.isreal
+   
+   
+   ivy.functional.ivy.elementwise.lcm
+   
+   
+   ivy.functional.ivy.elementwise.less
+   
+   
+   ivy.functional.ivy.elementwise.less_equal
+   
+   
+   ivy.functional.ivy.elementwise.log
+   
+   
+   ivy.functional.ivy.elementwise.log10
+   
+   
+   ivy.functional.ivy.elementwise.log1p
+   
+   
+   ivy.functional.ivy.elementwise.log2
+   
+   
+   ivy.functional.ivy.elementwise.logaddexp
+   
+   
+   ivy.functional.ivy.elementwise.logaddexp2
+   
+   
+   ivy.functional.ivy.elementwise.logical_and
+   
+   
+   ivy.functional.ivy.elementwise.logical_not
+   
+   
+   ivy.functional.ivy.elementwise.logical_or
+   
+   
+   ivy.functional.ivy.elementwise.logical_xor
+   
+   
+   ivy.functional.ivy.elementwise.maximum
+   
+   
+   ivy.functional.ivy.elementwise.minimum
+   
+   
+   ivy.functional.ivy.elementwise.multiply
+   
+   
+   ivy.functional.ivy.elementwise.nan_to_num
+   
+   
+   ivy.functional.ivy.elementwise.negative
+   
+   
+   ivy.functional.ivy.elementwise.not_equal
+   
+   
+   ivy.functional.ivy.elementwise.positive
+   
+   
+   ivy.functional.ivy.elementwise.pow
+   
+   
+   ivy.functional.ivy.elementwise.rad2deg
+   
+   
+   ivy.functional.ivy.elementwise.real
+   
+   
+   ivy.functional.ivy.elementwise.reciprocal
+   
+   
+   ivy.functional.ivy.elementwise.remainder
+   
+   
+   ivy.functional.ivy.elementwise.round
+   
+   
+   ivy.functional.ivy.elementwise.sign
+   
+   
+   ivy.functional.ivy.elementwise.sin
+   
+   
+   ivy.functional.ivy.elementwise.sinh
+   
+   
+   ivy.functional.ivy.elementwise.sqrt
+   
+   
+   ivy.functional.ivy.elementwise.square
+   
+   
+   ivy.functional.ivy.elementwise.subtract
+   
+   
+   ivy.functional.ivy.elementwise.tan
+   
+   
+   ivy.functional.ivy.elementwise.tanh
+   
+   
+   ivy.functional.ivy.elementwise.trapz
+   
+   
+   ivy.functional.ivy.elementwise.trunc
+   
+   
+   ivy.functional.ivy.elementwise.trunc_divide
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.elementwise
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.abs
+
+.. autofunction:: ivy.acos
+
+.. autofunction:: ivy.acosh
+
+.. autofunction:: ivy.add
+
+.. autofunction:: ivy.angle
+
+.. autofunction:: ivy.asin
+
+.. autofunction:: ivy.asinh
+
+.. autofunction:: ivy.atan
+
+.. autofunction:: ivy.atan2
+
+.. autofunction:: ivy.atanh
+
+.. autofunction:: ivy.bitwise_and
+
+.. autofunction:: ivy.bitwise_invert
+
+.. autofunction:: ivy.bitwise_left_shift
+
+.. autofunction:: ivy.bitwise_or
+
+.. autofunction:: ivy.bitwise_right_shift
+
+.. autofunction:: ivy.bitwise_xor
+
+.. autofunction:: ivy.ceil
+
+.. autofunction:: ivy.cos
+
+.. autofunction:: ivy.cosh
+
+.. autofunction:: ivy.deg2rad
+
+.. autofunction:: ivy.divide
+
+.. autofunction:: ivy.equal
+
+.. autofunction:: ivy.erf
+
+.. autofunction:: ivy.exp
+
+.. autofunction:: ivy.exp2
+
+.. autofunction:: ivy.expm1
+
+.. autofunction:: ivy.floor
+
+.. autofunction:: ivy.floor_divide
+
+.. autofunction:: ivy.fmin
+
+.. autofunction:: ivy.fmod
+
+.. autofunction:: ivy.gcd
+
+.. autofunction:: ivy.greater
+
+.. autofunction:: ivy.greater_equal
+
+.. autofunction:: ivy.imag
+
+.. autofunction:: ivy.isfinite
+
+.. autofunction:: ivy.isinf
+
+.. autofunction:: ivy.isnan
+
+.. autofunction:: ivy.isreal
+
+.. autofunction:: ivy.lcm
+
+.. autofunction:: ivy.less
+
+.. autofunction:: ivy.less_equal
+
+.. autofunction:: ivy.log
+
+.. autofunction:: ivy.log10
+
+.. autofunction:: ivy.log1p
+
+.. autofunction:: ivy.log2
+
+.. autofunction:: ivy.logaddexp
+
+.. autofunction:: ivy.logaddexp2
+
+.. autofunction:: ivy.logical_and
+
+.. autofunction:: ivy.logical_not
+
+.. autofunction:: ivy.logical_or
+
+.. autofunction:: ivy.logical_xor
+
+.. autofunction:: ivy.maximum
+
+.. autofunction:: ivy.minimum
+
+.. autofunction:: ivy.multiply
+
+.. autofunction:: ivy.nan_to_num
+
+.. autofunction:: ivy.negative
+
+.. autofunction:: ivy.not_equal
+
+.. autofunction:: ivy.positive
+
+.. autofunction:: ivy.pow
+
+.. autofunction:: ivy.rad2deg
+
+.. autofunction:: ivy.real
+
+.. autofunction:: ivy.reciprocal
+
+.. autofunction:: ivy.remainder
+
+.. autofunction:: ivy.round
+
+.. autofunction:: ivy.sign
+
+.. autofunction:: ivy.sin
+
+.. autofunction:: ivy.sinh
+
+.. autofunction:: ivy.sqrt
+
+.. autofunction:: ivy.square
+
+.. autofunction:: ivy.subtract
+
+.. autofunction:: ivy.tan
+
+.. autofunction:: ivy.tanh
+
+.. autofunction:: ivy.trapz
+
+.. autofunction:: ivy.trunc
+
+.. autofunction:: ivy.trunc_divide
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.elementwise

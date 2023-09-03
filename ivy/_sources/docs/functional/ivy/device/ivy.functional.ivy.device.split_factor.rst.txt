@@ -1,0 +1,8 @@
+split\_factor
+=============
+
+.. autofunction:: ivy.split_factor
+
+.. autoskippablemethod:: ivy.Array.split_factor
+
+.. autoskippablemethod:: ivy.Container.split_factor

@@ -1,0 +1,8 @@
+lerp
+====
+
+.. autofunction:: ivy.lerp
+
+.. autoskippablemethod:: ivy.Array.lerp
+
+.. autoskippablemethod:: ivy.Container.lerp

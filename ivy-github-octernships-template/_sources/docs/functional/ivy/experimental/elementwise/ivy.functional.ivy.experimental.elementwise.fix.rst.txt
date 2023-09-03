@@ -1,0 +1,8 @@
+fix
+===
+
+.. autofunction:: ivy.fix
+
+.. autoskippablemethod:: ivy.Array.fix
+
+.. autoskippablemethod:: ivy.Container.fix

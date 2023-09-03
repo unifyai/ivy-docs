@@ -1,0 +1,8 @@
+square
+======
+
+.. autofunction:: ivy.square
+
+.. autoskippablemethod:: ivy.Array.square
+
+.. autoskippablemethod:: ivy.Container.square

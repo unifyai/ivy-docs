@@ -1,0 +1,19 @@
+﻿Framework classes
+=================
+
+.. autosummary::
+    :toctree: stateful
+    :template: top_level_module_recursive.rst
+    :recursive:
+
+
+    ivy.stateful.activations
+    ivy.stateful.converters
+    ivy.stateful.helpers
+    ivy.stateful.initializers
+    ivy.stateful.layers
+    ivy.stateful.module
+    ivy.stateful.norms
+    ivy.stateful.optimizers
+    ivy.stateful.sequential
+

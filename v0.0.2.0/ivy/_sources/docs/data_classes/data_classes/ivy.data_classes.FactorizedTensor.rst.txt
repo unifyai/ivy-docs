@@ -1,0 +1,26 @@
+Factorizedtensor
+================
+
+.. autosummary::
+   :toctree: FactorizedTensor
+   :template: data_module.rst
+   :hide-table:
+   :recursive:
+
+   ivy.data_classes.FactorizedTensor.base
+
+   ivy.data_classes.FactorizedTensor.cp_tensor
+
+   ivy.data_classes.FactorizedTensor.tucker_tensor
+
+
+.. automodule:: ivy.data_classes.FactorizedTensor.FactorizedTensor
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.data_classes.FactorizedTensor.FactorizedTensor

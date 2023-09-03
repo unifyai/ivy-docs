@@ -1,0 +1,8 @@
+eigvalsh
+========
+
+.. autofunction:: ivy.eigvalsh
+
+.. autoskippablemethod:: ivy.Array.eigvalsh
+
+.. autoskippablemethod:: ivy.Container.eigvalsh

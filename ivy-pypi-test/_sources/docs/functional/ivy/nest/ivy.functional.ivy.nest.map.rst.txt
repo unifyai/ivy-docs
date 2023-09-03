@@ -1,0 +1,8 @@
+map
+===
+
+.. autofunction:: ivy.map
+
+.. autoskippablemethod:: ivy.Array.map
+
+.. autoskippablemethod:: ivy.Container.map

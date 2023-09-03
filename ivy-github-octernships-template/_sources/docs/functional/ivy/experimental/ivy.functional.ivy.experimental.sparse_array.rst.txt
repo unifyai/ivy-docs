@@ -1,0 +1,79 @@
+Sparse array
+============
+
+
+.. autosummary::
+   :toctree: sparse_array
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   ivy.functional.ivy.experimental.sparse_array.is_ivy_sparse_array
+   
+   
+   ivy.functional.ivy.experimental.sparse_array.is_native_sparse_array
+   
+   
+   ivy.functional.ivy.experimental.sparse_array.native_sparse_array
+   
+   
+   ivy.functional.ivy.experimental.sparse_array.native_sparse_array_to_indices_values_and_shape
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.sparse_array
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy._is_data_not_indices_values_and_shape
+
+.. autofunction:: ivy._is_valid_format
+
+.. autofunction:: ivy._verify_bsc_components
+
+.. autofunction:: ivy._verify_bsr_components
+
+.. autofunction:: ivy._verify_common_column_format_components
+
+.. autofunction:: ivy._verify_common_row_format_components
+
+.. autofunction:: ivy._verify_coo_components
+
+.. autofunction:: ivy._verify_csc_components
+
+.. autofunction:: ivy._verify_csr_components
+
+.. autofunction:: ivy.is_ivy_sparse_array
+
+.. autofunction:: ivy.is_native_sparse_array
+
+.. autofunction:: ivy.native_sparse_array
+
+.. autofunction:: ivy.native_sparse_array_to_indices_values_and_shape
+
+
+.. autoclass:: ivy.NativeSparseArray
+
+.. autoclass:: ivy.SparseArray
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.sparse_array

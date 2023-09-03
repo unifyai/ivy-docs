@@ -1,0 +1,8 @@
+to\_list
+========
+
+.. autofunction:: ivy.to_list
+
+.. autoskippablemethod:: ivy.Array.to_list
+
+.. autoskippablemethod:: ivy.Container.to_list

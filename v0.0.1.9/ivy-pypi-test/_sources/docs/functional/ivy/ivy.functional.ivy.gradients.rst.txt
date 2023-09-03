@@ -1,0 +1,134 @@
+Gradients
+=========
+
+
+.. autosummary::
+   :toctree: gradients
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   ivy.functional.ivy.gradients.adam_step
+   
+   
+   ivy.functional.ivy.gradients.adam_update
+   
+   
+   ivy.functional.ivy.gradients.execute_with_gradients
+   
+   
+   ivy.functional.ivy.gradients.grad
+   
+   
+   ivy.functional.ivy.gradients.gradient_descent_update
+   
+   
+   ivy.functional.ivy.gradients.jac
+   
+   
+   ivy.functional.ivy.gradients.lamb_update
+   
+   
+   ivy.functional.ivy.gradients.lars_update
+   
+   
+   ivy.functional.ivy.gradients.optimizer_update
+   
+   
+   ivy.functional.ivy.gradients.stop_gradient
+   
+   
+   ivy.functional.ivy.gradients.value_and_grad
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.gradients
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy._arrays_to_float_variables
+
+.. autofunction:: ivy._check_if_empty
+
+.. autofunction:: ivy._get_duplicate_index_chains
+
+.. autofunction:: ivy._get_native_variables_and_indices
+
+.. autofunction:: ivy._get_native_y
+
+.. autofunction:: ivy._get_required_float_variables
+
+.. autofunction:: ivy._get_required_native_variables
+
+.. autofunction:: ivy._get_y_and_ret_idxs
+
+.. autofunction:: ivy._idxs_to_str
+
+.. autofunction:: ivy._is_variable
+
+.. autofunction:: ivy._non_finite_to_zero
+
+.. autofunction:: ivy._process_func_ret_and_grads
+
+.. autofunction:: ivy._set_duplicates
+
+.. autofunction:: ivy._stop_grad_and_index
+
+.. autofunction:: ivy._to_ivy
+
+.. autofunction:: ivy._variable
+
+.. autofunction:: ivy._variable_data
+
+.. autofunction:: ivy.adam_step
+
+.. autofunction:: ivy.adam_update
+
+.. autofunction:: ivy.execute_with_gradients
+
+.. autofunction:: ivy.grad
+
+.. autofunction:: ivy.gradient_descent_update
+
+.. autofunction:: ivy.jac
+
+.. autofunction:: ivy.lamb_update
+
+.. autofunction:: ivy.lars_update
+
+.. autofunction:: ivy.optimizer_update
+
+.. autofunction:: ivy.stop_gradient
+
+.. autofunction:: ivy.value_and_grad
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.gradients

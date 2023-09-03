@@ -1,0 +1,8 @@
+get\_all\_ivy\_arrays\_on\_dev
+==============================
+
+.. autofunction:: ivy.get_all_ivy_arrays_on_dev
+
+.. autoskippablemethod:: ivy.Array.get_all_ivy_arrays_on_dev
+
+.. autoskippablemethod:: ivy.Container.get_all_ivy_arrays_on_dev

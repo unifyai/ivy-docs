@@ -1,0 +1,8 @@
+reciprocal
+==========
+
+.. autofunction:: ivy.reciprocal
+
+.. autoskippablemethod:: ivy.Array.reciprocal
+
+.. autoskippablemethod:: ivy.Container.reciprocal

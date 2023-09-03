@@ -1,0 +1,8 @@
+cosh
+====
+
+.. autofunction:: ivy.cosh
+
+.. autoskippablemethod:: ivy.Array.cosh
+
+.. autoskippablemethod:: ivy.Container.cosh

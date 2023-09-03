@@ -1,0 +1,8 @@
+searchsorted
+============
+
+.. autofunction:: ivy.searchsorted
+
+.. autoskippablemethod:: ivy.Array.searchsorted
+
+.. autoskippablemethod:: ivy.Container.searchsorted

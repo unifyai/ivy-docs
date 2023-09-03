@@ -1,0 +1,8 @@
+triu\_indices
+=============
+
+.. autofunction:: ivy.triu_indices
+
+.. autoskippablemethod:: ivy.Array.triu_indices
+
+.. autoskippablemethod:: ivy.Container.triu_indices

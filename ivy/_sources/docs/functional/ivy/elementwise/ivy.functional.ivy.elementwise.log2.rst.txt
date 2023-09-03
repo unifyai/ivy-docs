@@ -1,0 +1,8 @@
+log2
+====
+
+.. autofunction:: ivy.log2
+
+.. autoskippablemethod:: ivy.Array.log2
+
+.. autoskippablemethod:: ivy.Container.log2

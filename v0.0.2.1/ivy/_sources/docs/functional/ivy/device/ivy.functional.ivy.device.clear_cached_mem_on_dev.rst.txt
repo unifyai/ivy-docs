@@ -1,0 +1,8 @@
+clear\_cached\_mem\_on\_dev
+===========================
+
+.. autofunction:: ivy.clear_cached_mem_on_dev
+
+.. autoskippablemethod:: ivy.Array.clear_cached_mem_on_dev
+
+.. autoskippablemethod:: ivy.Container.clear_cached_mem_on_dev

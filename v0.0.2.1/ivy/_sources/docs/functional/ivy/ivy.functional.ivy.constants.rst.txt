@@ -1,0 +1,31 @@
+Constants
+=========
+
+
+
+
+
+.. automodule:: ivy.functional.ivy.constants
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+
+
+.. autoivydata:: ivy.functional.ivy.constants.e
+
+.. autoivydata:: ivy.functional.ivy.constants.pi
+
+.. autoivydata:: ivy.functional.ivy.constants.nan
+
+.. autoivydata:: ivy.functional.ivy.constants.inf
+
+.. autoivydata:: ivy.functional.ivy.constants.newaxis
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.constants

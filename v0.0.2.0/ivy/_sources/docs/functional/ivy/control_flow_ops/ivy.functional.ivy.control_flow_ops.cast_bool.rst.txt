@@ -1,0 +1,8 @@
+cast\_bool
+==========
+
+.. autofunction:: ivy.cast_bool
+
+.. autoskippablemethod:: ivy.Array.cast_bool
+
+.. autoskippablemethod:: ivy.Container.cast_bool

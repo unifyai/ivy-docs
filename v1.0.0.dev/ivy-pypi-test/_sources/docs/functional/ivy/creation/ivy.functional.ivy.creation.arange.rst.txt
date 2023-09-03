@@ -1,0 +1,8 @@
+arange
+======
+
+.. autofunction:: ivy.arange
+
+.. autoskippablemethod:: ivy.Array.arange
+
+.. autoskippablemethod:: ivy.Container.arange

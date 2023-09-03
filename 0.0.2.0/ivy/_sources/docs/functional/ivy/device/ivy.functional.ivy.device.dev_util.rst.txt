@@ -1,0 +1,8 @@
+dev\_util
+=========
+
+.. autofunction:: ivy.dev_util
+
+.. autoskippablemethod:: ivy.Array.dev_util
+
+.. autoskippablemethod:: ivy.Container.dev_util

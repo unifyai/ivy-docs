@@ -3592,7 +3592,7 @@ used.</p></li>
 
 <span class="target" id="module-ivy.data_classes.array.experimental.linear_algebra"></span><dl class="py class">
 <dt class="sig sig-object py" id="ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.data_classes.array.experimental.linear_algebra.</span></span><span class="sig-name descname"><span class="pre">_ArrayWithLinearAlgebraExperimental</span></span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/experimental/linear_algebra.py#L9-L677"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.data_classes.array.experimental.linear_algebra.</span></span><span class="sig-name descname"><span class="pre">_ArrayWithLinearAlgebraExperimental</span></span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/experimental/linear_algebra.py#L9-L730"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental" title="Permalink to this definition">#</a></dt>
 <dd><dl class="py attribute">
 <dt class="sig sig-object py" id="ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental._abc_impl">
 <span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental._abc_impl" title="Permalink to this definition">#</a></dt>
@@ -3663,6 +3663,52 @@ minimal changes.</p>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
 </dd>
 </dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.dot">
+<span class="sig-name descname"><span class="pre">dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">b</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/experimental/linear_algebra.py#L679-L730"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.dot" title="Permalink to this definition">#</a></dt>
+<dd><p>Compute the dot product between two arrays <cite>a</cite> and <cite>b</cite> using the current
+backend’s implementation. The dot product is defined as the sum of the element-
+wise product of the input arrays.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>self</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – First input array.</p></li>
+<li><p><strong>b</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code>]) – Second input array.</p></li>
+<li><p><strong>out</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – Optional output array. If provided, the output array to store the result. (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ret</em> – The dot product of the input arrays.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> inputs:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">ivy.array(32)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">empty_like</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="go">ivy.array([[19, 22],</span>
+<span class="go">    [43, 50]])</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.6</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">4.8</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.2</span><span class="p">],</span> <span class="p">[</span><span class="mf">6.1</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">c</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="go">ivy.array([[-15.28]])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">
@@ -6548,6 +6594,7 @@ quantiles for different values of q.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.adjoint"><code class="docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebraExperimental.adjoint()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.cond"><code class="docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebraExperimental.cond()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.diagflat"><code class="docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebraExperimental.diagflat()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.dot"><code class="docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebraExperimental.dot()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.eig"><code class="docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebraExperimental.eig()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.eigh_tridiagonal"><code class="docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebraExperimental.eigh_tridiagonal()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.eigvals"><code class="docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebraExperimental.eigvals()</span></code></a></li>

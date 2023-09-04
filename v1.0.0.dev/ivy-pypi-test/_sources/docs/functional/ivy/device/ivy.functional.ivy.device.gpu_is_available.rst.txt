@@ -1,8 +1,0 @@
-gpu\_is\_available
-==================
-
-.. autofunction:: ivy.gpu_is_available
-
-.. autoskippablemethod:: ivy.Array.gpu_is_available
-
-.. autoskippablemethod:: ivy.Container.gpu_is_available

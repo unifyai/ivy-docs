@@ -1,8 +1,0 @@
-round
-=====
-
-.. autofunction:: ivy.round
-
-.. autoskippablemethod:: ivy.Array.round
-
-.. autoskippablemethod:: ivy.Container.round

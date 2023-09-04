@@ -1,1 +1,10 @@
-[{"version": "dev", "url": "https://unify.ai/docs/ivy/"}, {"version": "v0.0.2.0", "url": "https://unify.ai/docs/v0.0.2.0/ivy/"}, {"version": "v0.0.2.0", "url": "https://unify.ai/docs/v0.0.2.0/ivy/"}, {"version": "v0.0.2.0", "url": "https://unify.ai/docs/v0.0.2.0/ivy/"}, {"version": "v0.0.2.1", "url": "https://unify.ai/docs/v0.0.2.1/ivy/"}, {"version": "0.0.2.0", "url": "https://unify.ai/docs/0.0.2.0/ivy/"}, {"version": "0.0.3.0", "url": "https://unify.ai/docs/0.0.3.0/ivy/"}]
+[
+    {
+        "version": "0.0.2.0",
+        "url": "https://unify.ai/docs/0.0.2.0/ivy/"
+    },
+    {
+        "version": "0.0.3.0",
+        "url": "https://unify.ai/docs/0.0.3.0/ivy/"
+    }
+]

@@ -1,8 +1,0 @@
-fft
-===
-
-.. autofunction:: ivy.fft
-
-.. autoskippablemethod:: ivy.Array.fft
-
-.. autoskippablemethod:: ivy.Container.fft

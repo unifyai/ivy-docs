@@ -1,8 +1,0 @@
-layer\_norm
-===========
-
-.. autofunction:: ivy.layer_norm
-
-.. autoskippablemethod:: ivy.Array.layer_norm
-
-.. autoskippablemethod:: ivy.Container.layer_norm

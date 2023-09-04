@@ -1,8 +1,0 @@
-shuffle
-=======
-
-.. autofunction:: ivy.shuffle
-
-.. autoskippablemethod:: ivy.Array.shuffle
-
-.. autoskippablemethod:: ivy.Container.shuffle

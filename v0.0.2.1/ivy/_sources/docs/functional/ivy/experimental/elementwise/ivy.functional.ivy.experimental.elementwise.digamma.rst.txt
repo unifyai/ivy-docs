@@ -1,8 +1,0 @@
-digamma
-=======
-
-.. autofunction:: ivy.digamma
-
-.. autoskippablemethod:: ivy.Array.digamma
-
-.. autoskippablemethod:: ivy.Container.digamma

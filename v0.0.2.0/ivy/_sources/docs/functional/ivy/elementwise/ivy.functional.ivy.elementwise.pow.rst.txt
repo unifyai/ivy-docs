@@ -1,8 +1,0 @@
-pow
-===
-
-.. autofunction:: ivy.pow
-
-.. autoskippablemethod:: ivy.Array.pow
-
-.. autoskippablemethod:: ivy.Container.pow

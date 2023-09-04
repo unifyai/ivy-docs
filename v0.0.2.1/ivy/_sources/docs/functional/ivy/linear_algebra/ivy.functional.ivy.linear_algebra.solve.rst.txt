@@ -1,8 +1,0 @@
-solve
-=====
-
-.. autofunction:: ivy.solve
-
-.. autoskippablemethod:: ivy.Array.solve
-
-.. autoskippablemethod:: ivy.Container.solve

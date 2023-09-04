@@ -1,8 +1,0 @@
-expm1
-=====
-
-.. autofunction:: ivy.expm1
-
-.. autoskippablemethod:: ivy.Array.expm1
-
-.. autoskippablemethod:: ivy.Container.expm1

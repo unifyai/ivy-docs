@@ -1,8 +1,0 @@
-cos
-===
-
-.. autofunction:: ivy.cos
-
-.. autoskippablemethod:: ivy.Array.cos
-
-.. autoskippablemethod:: ivy.Container.cos

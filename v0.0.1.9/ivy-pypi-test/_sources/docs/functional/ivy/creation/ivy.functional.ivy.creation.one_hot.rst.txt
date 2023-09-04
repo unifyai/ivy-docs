@@ -1,8 +1,0 @@
-one\_hot
-========
-
-.. autofunction:: ivy.one_hot
-
-.. autoskippablemethod:: ivy.Array.one_hot
-
-.. autoskippablemethod:: ivy.Container.one_hot

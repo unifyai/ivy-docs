@@ -1,8 +1,0 @@
-vsplit
-======
-
-.. autofunction:: ivy.vsplit
-
-.. autoskippablemethod:: ivy.Array.vsplit
-
-.. autoskippablemethod:: ivy.Container.vsplit

@@ -1,8 +1,0 @@
-partial\_tucker
-===============
-
-.. autofunction:: ivy.partial_tucker
-
-.. autoskippablemethod:: ivy.Array.partial_tucker
-
-.. autoskippablemethod:: ivy.Container.partial_tucker

@@ -1,8 +1,0 @@
-logical\_xor
-============
-
-.. autofunction:: ivy.logical_xor
-
-.. autoskippablemethod:: ivy.Array.logical_xor
-
-.. autoskippablemethod:: ivy.Container.logical_xor

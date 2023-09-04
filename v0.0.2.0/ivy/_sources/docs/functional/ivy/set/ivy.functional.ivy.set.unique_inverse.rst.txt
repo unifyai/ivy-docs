@@ -1,8 +1,0 @@
-unique\_inverse
-===============
-
-.. autofunction:: ivy.unique_inverse
-
-.. autoskippablemethod:: ivy.Array.unique_inverse
-
-.. autoskippablemethod:: ivy.Container.unique_inverse

@@ -1,8 +1,0 @@
-ones
-====
-
-.. autofunction:: ivy.ones
-
-.. autoskippablemethod:: ivy.Array.ones
-
-.. autoskippablemethod:: ivy.Container.ones

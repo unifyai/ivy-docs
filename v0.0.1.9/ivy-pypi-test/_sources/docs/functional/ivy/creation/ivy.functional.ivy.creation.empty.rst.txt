@@ -1,8 +1,0 @@
-empty
-=====
-
-.. autofunction:: ivy.empty
-
-.. autoskippablemethod:: ivy.Array.empty
-
-.. autoskippablemethod:: ivy.Container.empty

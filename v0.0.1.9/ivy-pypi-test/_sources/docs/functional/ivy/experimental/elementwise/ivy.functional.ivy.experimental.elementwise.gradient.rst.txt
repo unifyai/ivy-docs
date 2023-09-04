@@ -1,8 +1,0 @@
-gradient
-========
-
-.. autofunction:: ivy.gradient
-
-.. autoskippablemethod:: ivy.Array.gradient
-
-.. autoskippablemethod:: ivy.Container.gradient

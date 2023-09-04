@@ -1,8 +1,0 @@
-stop\_gradient
-==============
-
-.. autofunction:: ivy.stop_gradient
-
-.. autoskippablemethod:: ivy.Array.stop_gradient
-
-.. autoskippablemethod:: ivy.Container.stop_gradient

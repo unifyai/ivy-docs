@@ -1,8 +1,0 @@
-dtype\_bits
-===========
-
-.. autofunction:: ivy.dtype_bits
-
-.. autoskippablemethod:: ivy.Array.dtype_bits
-
-.. autoskippablemethod:: ivy.Container.dtype_bits

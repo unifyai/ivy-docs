@@ -1,8 +1,0 @@
-fliplr
-======
-
-.. autofunction:: ivy.fliplr
-
-.. autoskippablemethod:: ivy.Array.fliplr
-
-.. autoskippablemethod:: ivy.Container.fliplr

@@ -1,8 +1,0 @@
-type\_promote\_arrays
-=====================
-
-.. autofunction:: ivy.type_promote_arrays
-
-.. autoskippablemethod:: ivy.Array.type_promote_arrays
-
-.. autoskippablemethod:: ivy.Container.type_promote_arrays

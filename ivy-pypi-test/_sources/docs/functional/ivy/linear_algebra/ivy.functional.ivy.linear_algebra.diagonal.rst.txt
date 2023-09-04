@@ -1,8 +1,0 @@
-diagonal
-========
-
-.. autofunction:: ivy.diagonal
-
-.. autoskippablemethod:: ivy.Array.diagonal
-
-.. autoskippablemethod:: ivy.Container.diagonal

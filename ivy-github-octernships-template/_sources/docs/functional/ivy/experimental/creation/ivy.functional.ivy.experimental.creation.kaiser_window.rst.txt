@@ -1,8 +1,0 @@
-kaiser\_window
-==============
-
-.. autofunction:: ivy.kaiser_window
-
-.. autoskippablemethod:: ivy.Array.kaiser_window
-
-.. autoskippablemethod:: ivy.Container.kaiser_window

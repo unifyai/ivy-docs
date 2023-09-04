@@ -1,8 +1,0 @@
-unstack
-=======
-
-.. autofunction:: ivy.unstack
-
-.. autoskippablemethod:: ivy.Array.unstack
-
-.. autoskippablemethod:: ivy.Container.unstack

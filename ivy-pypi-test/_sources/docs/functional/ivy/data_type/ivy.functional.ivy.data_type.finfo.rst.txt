@@ -1,8 +1,0 @@
-finfo
-=====
-
-.. autofunction:: ivy.finfo
-
-.. autoskippablemethod:: ivy.Array.finfo
-
-.. autoskippablemethod:: ivy.Container.finfo

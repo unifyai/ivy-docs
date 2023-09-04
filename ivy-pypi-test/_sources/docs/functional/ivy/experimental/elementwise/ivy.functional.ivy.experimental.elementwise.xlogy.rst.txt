@@ -1,8 +1,0 @@
-xlogy
-=====
-
-.. autofunction:: ivy.xlogy
-
-.. autoskippablemethod:: ivy.Array.xlogy
-
-.. autoskippablemethod:: ivy.Container.xlogy

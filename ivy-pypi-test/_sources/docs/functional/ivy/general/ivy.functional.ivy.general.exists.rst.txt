@@ -1,8 +1,0 @@
-exists
-======
-
-.. autofunction:: ivy.exists
-
-.. autoskippablemethod:: ivy.Array.exists
-
-.. autoskippablemethod:: ivy.Container.exists

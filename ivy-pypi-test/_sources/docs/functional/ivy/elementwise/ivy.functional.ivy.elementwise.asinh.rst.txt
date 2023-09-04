@@ -1,8 +1,0 @@
-asinh
-=====
-
-.. autofunction:: ivy.asinh
-
-.. autoskippablemethod:: ivy.Array.asinh
-
-.. autoskippablemethod:: ivy.Container.asinh

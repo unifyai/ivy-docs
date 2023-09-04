@@ -1282,7 +1282,7 @@ document.write(`
 <h1>inner<a class="headerlink" href="#inner" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.inner">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">inner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/linear_algebra.py#L761-L833"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.inner" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">inner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/linear_algebra.py#L761-L836"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.inner" title="Permalink to this definition">#</a></dt>
 <dd><p>Return the inner product of two vectors <code class="docutils literal notranslate"><span class="pre">x1</span></code> and <code class="docutils literal notranslate"><span class="pre">x2</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1315,35 +1315,35 @@ The returned array must have a data type determined by Type Promotion Rules.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>Matrices of identical shapes
-&gt;&gt;&gt; x = ivy.array([[1., 2.], [3., 4.]])
-&gt;&gt;&gt; y = ivy.array([[5., 6.], [7., 8.]])
-&gt;&gt;&gt; d = ivy.inner(x, y)
-&gt;&gt;&gt; print(d)
-ivy.array([[17., 23.], [39., 53.]])</p>
-<p># Matrices of different shapes
-&gt;&gt;&gt; x = ivy.array([[1., 2.], [3., 4.], [5., 6.]])
-&gt;&gt;&gt; y = ivy.array([[5., 6.], [7., 8.]])
-&gt;&gt;&gt; d = ivy.inner(x, y)
-&gt;&gt;&gt; print(d)
-ivy.array([[17., 23.], [39., 53.], [61., 83.]])</p>
-<p># 3D matrices
-&gt;&gt;&gt; x = ivy.array([[[1., 2.], [3., 4.]],
-…                [[5., 6.], [7., 8.]]])
-&gt;&gt;&gt; y = ivy.array([[[9., 10.], [11., 12.]],
-…                [[13., 14.], [15., 16.]]])
-&gt;&gt;&gt; d = ivy.inner(x, y)
-&gt;&gt;&gt; print(d)
-ivy.array([[[[ 29.,  35.], [ 41.,  47.]],</p>
-<blockquote>
-<div><blockquote>
-<div><p>[[ 67.,  81.], [ 95., 109.]]],</p>
-</div></blockquote>
-<dl class="simple">
-<dt>[[[105., 127.], [149., 171.]],</dt><dd><p>[[143., 173.], [203., 233.]]]])</p>
-</dd>
-</dl>
-</div></blockquote>
+<p>Matrices of identical shapes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="go">ivy.array([[17., 23.], [39., 53.]])</span>
+</pre></div>
+</div>
+<p># Matrices of different shapes</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">],</span> <span class="p">[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="go">ivy.array([[17., 23.], [39., 53.], [61., 83.]])</span>
+</pre></div>
+</div>
+<p># 3D matrices</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">],</span> <span class="p">[</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">]],</span>
+<span class="gp">... </span>               <span class="p">[[</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">]]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mf">9.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">],</span> <span class="p">[</span><span class="mf">11.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">]],</span>
+<span class="gp">... </span>               <span class="p">[[</span><span class="mf">13.</span><span class="p">,</span> <span class="mf">14.</span><span class="p">],</span> <span class="p">[</span><span class="mf">15.</span><span class="p">,</span> <span class="mf">16.</span><span class="p">]]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">inner</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="go">ivy.array([[[[ 29.,  35.], [ 41.,  47.]],</span>
+<span class="go">            [[ 67.,  81.], [ 95., 109.]]],</span>
+<span class="go">           [[[105., 127.], [149., 171.]],</span>
+<span class="go">            [[143., 173.], [203., 233.]]]])</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py method">

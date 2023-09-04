@@ -1282,7 +1282,7 @@ document.write(`
 <h1>asarray<a class="headerlink" href="#asarray" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.asarray">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">asarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/creation.py#L384-L472"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.asarray" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">asarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/creation.py#L384-L475"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.asarray" title="Permalink to this definition">#</a></dt>
 <dd><p>Convert the input to an array.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1305,25 +1305,25 @@ inputs broadcast to.</p></li>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>With list of lists as input:
-&gt;&gt;&gt; ivy.asarray([[1,2],[3,4]])
-ivy.array([[1, 2],</p>
-<blockquote>
-<div><p>[3, 4]])</p>
-</div></blockquote>
-<p>With tuple of lists as input:
-&gt;&gt;&gt; ivy.asarray(([1.4,5.6,5.5],[3.1,9.1,7.5]))
-ivy.array([[1.39999998, 5.5999999 , 5.5       ],</p>
-<blockquote>
-<div><p>[3.0999999 , 9.10000038, 7.5       ]])</p>
-</div></blockquote>
-<p>With ndarray as input:
-&gt;&gt;&gt; x = ivy.np.ndarray(shape=(2,2), order=’C’)
-&gt;&gt;&gt; ivy.asarray(x)
-ivy.array([[6.90786433e-310, 6.90786433e-310],</p>
-<blockquote>
-<div><p>[6.90786433e-310, 6.90786433e-310]])</p>
-</div></blockquote>
+<p>With list of lists as input:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">asarray</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="go">ivy.array([[1, 2],</span>
+<span class="go">           [3, 4]])</span>
+</pre></div>
+</div>
+<p>With tuple of lists as input:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(([</span><span class="mf">1.4</span><span class="p">,</span><span class="mf">5.6</span><span class="p">,</span><span class="mf">5.5</span><span class="p">],[</span><span class="mf">3.1</span><span class="p">,</span><span class="mf">9.1</span><span class="p">,</span><span class="mf">7.5</span><span class="p">]))</span>
+<span class="go">ivy.array([[1.39999998, 5.5999999 , 5.5       ],</span>
+<span class="go">           [3.0999999 , 9.10000038, 7.5       ]])</span>
+</pre></div>
+</div>
+<p>With ndarray as input:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">ivy.array([[6.90786433e-310, 6.90786433e-310],</span>
+<span class="go">           [6.90786433e-310, 6.90786433e-310]])</span>
+</pre></div>
+</div>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> as input:
 &gt;&gt;&gt; x = ivy.Container(a = [(1,2),(3,4),(5,6)], b = ((1,2,3),(4,5,6)))
 &gt;&gt;&gt; ivy.asarray(x)
@@ -1346,7 +1346,7 @@ instances in place of any of the arguments.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.Array.asarray">
-<span class="sig-prename descclassname"><span class="pre">Array.</span></span><span class="sig-name descname"><span class="pre">asarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/creation.py#L15-L76"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.Array.asarray" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">Array.</span></span><span class="sig-name descname"><span class="pre">asarray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/creation.py#L15-L79"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.Array.asarray" title="Permalink to this definition">#</a></dt>
 <dd><p>ivy.Array instance method variant of ivy.asarray. This method simply wraps the
 function, and so the docstring for ivy.asarray also applies to this method with
 minimal changes.</p>
@@ -1376,26 +1376,24 @@ the inputs broadcast to.</p></li>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>With list of lists as input:
-&gt;&gt;&gt; ivy.asarray([[1,2],[3,4]])
-ivy.array([[1, 2],</p>
-<blockquote>
-<div><p>[3, 4]])</p>
-</div></blockquote>
-<p>With tuple of lists as input:
-&gt;&gt;&gt; ivy.asarray(([1.4,5.6,5.5],[3.1,9.1,7.5]))
-ivy.array([[1.39999998, 5.5999999 , 5.5       ],</p>
-<blockquote>
-<div><p>[3.0999999 , 9.10000038, 7.5       ]])</p>
-</div></blockquote>
-<p>With ndarray as input:
-&gt;&gt;&gt; x = ivy.np.ndarray(shape=(2,2), order=’C’)
-&gt;&gt;&gt; x
-array([[6.90786433e-310, 6.90786433e-310],</p>
-<blockquote>
-<div><p>[6.90786433e-310, 6.90786433e-310]])</p>
-</div></blockquote>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<p>With list of lists as input:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">asarray</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
+<span class="go">ivy.array([[1, 2],</span>
+<span class="go">       [3, 4]])</span>
+</pre></div>
+</div>
+<p>With tuple of lists as input:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(([</span><span class="mf">1.4</span><span class="p">,</span><span class="mf">5.6</span><span class="p">,</span><span class="mf">5.5</span><span class="p">],[</span><span class="mf">3.1</span><span class="p">,</span><span class="mf">9.1</span><span class="p">,</span><span class="mf">7.5</span><span class="p">]))</span>
+<span class="go">ivy.array([[1.39999998, 5.5999999 , 5.5       ],</span>
+<span class="go">       [3.0999999 , 9.10000038, 7.5       ]])</span>
+</pre></div>
+</div>
+<p>With ndarray as input:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">order</span><span class="o">=</span><span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
+<span class="go">array([[6.90786433e-310, 6.90786433e-310],</span>
+<span class="go">       [6.90786433e-310, 6.90786433e-310]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">ivy.array([[6.90786433e-310, 6.90786433e-310],</span>
 <span class="go">       [6.90786433e-310, 6.90786433e-310]])</span>
 </pre></div>

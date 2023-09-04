@@ -1,0 +1,111 @@
+Manipulation
+============
+
+
+.. autosummary::
+   :toctree: manipulation
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   
+   ivy.functional.ivy.manipulation.clip
+   
+   
+   ivy.functional.ivy.manipulation.concat
+   
+   
+   ivy.functional.ivy.manipulation.constant_pad
+   
+   
+   ivy.functional.ivy.manipulation.expand_dims
+   
+   
+   ivy.functional.ivy.manipulation.flip
+   
+   
+   ivy.functional.ivy.manipulation.permute_dims
+   
+   
+   ivy.functional.ivy.manipulation.repeat
+   
+   
+   ivy.functional.ivy.manipulation.reshape
+   
+   
+   ivy.functional.ivy.manipulation.roll
+   
+   
+   ivy.functional.ivy.manipulation.split
+   
+   
+   ivy.functional.ivy.manipulation.squeeze
+   
+   
+   ivy.functional.ivy.manipulation.stack
+   
+   
+   ivy.functional.ivy.manipulation.swapaxes
+   
+   
+   ivy.functional.ivy.manipulation.tile
+   
+   
+   ivy.functional.ivy.manipulation.unstack
+   
+   
+   ivy.functional.ivy.manipulation.zero_pad
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.manipulation
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy._calculate_out_shape
+
+.. autofunction:: ivy.clip
+
+.. autofunction:: ivy.concat
+
+.. autofunction:: ivy.constant_pad
+
+.. autofunction:: ivy.expand_dims
+
+.. autofunction:: ivy.flip
+
+.. autofunction:: ivy.permute_dims
+
+.. autofunction:: ivy.repeat
+
+.. autofunction:: ivy.reshape
+
+.. autofunction:: ivy.roll
+
+.. autofunction:: ivy.split
+
+.. autofunction:: ivy.squeeze
+
+.. autofunction:: ivy.stack
+
+.. autofunction:: ivy.swapaxes
+
+.. autofunction:: ivy.tile
+
+.. autofunction:: ivy.unstack
+
+.. autofunction:: ivy.zero_pad
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.manipulation

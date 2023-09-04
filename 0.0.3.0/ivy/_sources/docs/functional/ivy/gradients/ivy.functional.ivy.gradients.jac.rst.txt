@@ -1,0 +1,8 @@
+jac
+===
+
+.. autofunction:: ivy.jac
+
+.. autoskippablemethod:: ivy.Array.jac
+
+.. autoskippablemethod:: ivy.Container.jac

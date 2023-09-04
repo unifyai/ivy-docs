@@ -1,0 +1,8 @@
+value\_and\_grad
+================
+
+.. autofunction:: ivy.value_and_grad
+
+.. autoskippablemethod:: ivy.Array.value_and_grad
+
+.. autoskippablemethod:: ivy.Container.value_and_grad

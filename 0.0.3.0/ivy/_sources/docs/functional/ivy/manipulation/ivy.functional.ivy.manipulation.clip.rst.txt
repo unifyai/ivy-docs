@@ -1,0 +1,8 @@
+clip
+====
+
+.. autofunction:: ivy.clip
+
+.. autoskippablemethod:: ivy.Array.clip
+
+.. autoskippablemethod:: ivy.Container.clip

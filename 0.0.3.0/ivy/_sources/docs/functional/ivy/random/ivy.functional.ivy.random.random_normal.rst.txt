@@ -1,0 +1,8 @@
+random\_normal
+==============
+
+.. autofunction:: ivy.random_normal
+
+.. autoskippablemethod:: ivy.Array.random_normal
+
+.. autoskippablemethod:: ivy.Container.random_normal

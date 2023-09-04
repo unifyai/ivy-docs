@@ -1,0 +1,8 @@
+greater\_equal
+==============
+
+.. autofunction:: ivy.greater_equal
+
+.. autoskippablemethod:: ivy.Array.greater_equal
+
+.. autoskippablemethod:: ivy.Container.greater_equal

@@ -1,0 +1,33 @@
+Gradients
+=========
+
+
+.. autosummary::
+   :toctree: gradients
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.experimental.gradients.bind_custom_gradient_function
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.gradients
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.bind_custom_gradient_function
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.gradients

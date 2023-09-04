@@ -1,0 +1,8 @@
+inplace\_arrays\_supported
+==========================
+
+.. autofunction:: ivy.inplace_arrays_supported
+
+.. autoskippablemethod:: ivy.Array.inplace_arrays_supported
+
+.. autoskippablemethod:: ivy.Container.inplace_arrays_supported

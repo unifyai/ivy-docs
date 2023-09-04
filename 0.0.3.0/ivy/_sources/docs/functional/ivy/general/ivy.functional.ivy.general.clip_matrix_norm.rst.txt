@@ -1,0 +1,8 @@
+clip\_matrix\_norm
+==================
+
+.. autofunction:: ivy.clip_matrix_norm
+
+.. autoskippablemethod:: ivy.Array.clip_matrix_norm
+
+.. autoskippablemethod:: ivy.Container.clip_matrix_norm

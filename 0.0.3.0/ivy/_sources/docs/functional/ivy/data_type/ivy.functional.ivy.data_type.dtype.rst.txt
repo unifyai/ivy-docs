@@ -1,0 +1,8 @@
+dtype
+=====
+
+.. autofunction:: ivy.dtype
+
+.. autoskippablemethod:: ivy.Array.dtype
+
+.. autoskippablemethod:: ivy.Container.dtype

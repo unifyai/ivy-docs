@@ -1,0 +1,8 @@
+concat\_from\_sequence
+======================
+
+.. autofunction:: ivy.concat_from_sequence
+
+.. autoskippablemethod:: ivy.Array.concat_from_sequence
+
+.. autoskippablemethod:: ivy.Container.concat_from_sequence

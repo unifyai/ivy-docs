@@ -1,0 +1,8 @@
+adam\_update
+============
+
+.. autofunction:: ivy.adam_update
+
+.. autoskippablemethod:: ivy.Array.adam_update
+
+.. autoskippablemethod:: ivy.Container.adam_update

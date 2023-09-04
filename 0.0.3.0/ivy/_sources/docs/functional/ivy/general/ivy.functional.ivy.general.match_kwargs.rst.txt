@@ -1,0 +1,8 @@
+match\_kwargs
+=============
+
+.. autofunction:: ivy.match_kwargs
+
+.. autoskippablemethod:: ivy.Array.match_kwargs
+
+.. autoskippablemethod:: ivy.Container.match_kwargs

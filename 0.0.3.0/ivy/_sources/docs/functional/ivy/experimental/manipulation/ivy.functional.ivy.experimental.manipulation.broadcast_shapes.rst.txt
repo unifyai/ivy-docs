@@ -1,0 +1,8 @@
+broadcast\_shapes
+=================
+
+.. autofunction:: ivy.broadcast_shapes
+
+.. autoskippablemethod:: ivy.Array.broadcast_shapes
+
+.. autoskippablemethod:: ivy.Container.broadcast_shapes

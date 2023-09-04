@@ -1,0 +1,182 @@
+Creation
+========
+
+
+.. autosummary::
+   :toctree: creation
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   
+   
+   
+   
+   ivy.functional.ivy.creation.arange
+   
+   
+   ivy.functional.ivy.creation.array
+   
+   
+   ivy.functional.ivy.creation.asarray
+   
+   
+   ivy.functional.ivy.creation.asarray_handle_nestable
+   
+   
+   ivy.functional.ivy.creation.asarray_infer_device
+   
+   
+   ivy.functional.ivy.creation.asarray_infer_dtype
+   
+   
+   ivy.functional.ivy.creation.asarray_inputs_to_native_shapes
+   
+   
+   ivy.functional.ivy.creation.asarray_to_native_arrays_and_back
+   
+   
+   ivy.functional.ivy.creation.copy_array
+   
+   
+   ivy.functional.ivy.creation.empty
+   
+   
+   ivy.functional.ivy.creation.empty_like
+   
+   
+   ivy.functional.ivy.creation.eye
+   
+   
+   ivy.functional.ivy.creation.from_dlpack
+   
+   
+   ivy.functional.ivy.creation.frombuffer
+   
+   
+   ivy.functional.ivy.creation.full
+   
+   
+   ivy.functional.ivy.creation.full_like
+   
+   
+   ivy.functional.ivy.creation.linspace
+   
+   
+   ivy.functional.ivy.creation.logspace
+   
+   
+   ivy.functional.ivy.creation.meshgrid
+   
+   
+   ivy.functional.ivy.creation.native_array
+   
+   
+   ivy.functional.ivy.creation.one_hot
+   
+   
+   ivy.functional.ivy.creation.ones
+   
+   
+   ivy.functional.ivy.creation.ones_like
+   
+   
+   ivy.functional.ivy.creation.tril
+   
+   
+   ivy.functional.ivy.creation.triu
+   
+   
+   ivy.functional.ivy.creation.triu_indices
+   
+   
+   ivy.functional.ivy.creation.zeros
+   
+   
+   ivy.functional.ivy.creation.zeros_like
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.creation
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy._flatten_nest
+
+.. autofunction:: ivy._ivy_to_native
+
+.. autofunction:: ivy._remove_np_bfloat16
+
+.. autofunction:: ivy._shape_to_native
+
+.. autofunction:: ivy.arange
+
+.. autofunction:: ivy.array
+
+.. autofunction:: ivy.asarray
+
+.. autofunction:: ivy.asarray_handle_nestable
+
+.. autofunction:: ivy.asarray_infer_device
+
+.. autofunction:: ivy.asarray_infer_dtype
+
+.. autofunction:: ivy.asarray_inputs_to_native_shapes
+
+.. autofunction:: ivy.asarray_to_native_arrays_and_back
+
+.. autofunction:: ivy.copy_array
+
+.. autofunction:: ivy.empty
+
+.. autofunction:: ivy.empty_like
+
+.. autofunction:: ivy.eye
+
+.. autofunction:: ivy.from_dlpack
+
+.. autofunction:: ivy.frombuffer
+
+.. autofunction:: ivy.full
+
+.. autofunction:: ivy.full_like
+
+.. autofunction:: ivy.linspace
+
+.. autofunction:: ivy.logspace
+
+.. autofunction:: ivy.meshgrid
+
+.. autofunction:: ivy.native_array
+
+.. autofunction:: ivy.one_hot
+
+.. autofunction:: ivy.ones
+
+.. autofunction:: ivy.ones_like
+
+.. autofunction:: ivy.tril
+
+.. autofunction:: ivy.triu
+
+.. autofunction:: ivy.triu_indices
+
+.. autofunction:: ivy.zeros
+
+.. autofunction:: ivy.zeros_like
+
+
+.. autoclass:: ivy.NestedSequence
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.creation

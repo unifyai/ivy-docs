@@ -1,0 +1,8 @@
+get\_interpolate\_kernel
+========================
+
+.. autofunction:: ivy.get_interpolate_kernel
+
+.. autoskippablemethod:: ivy.Array.get_interpolate_kernel
+
+.. autoskippablemethod:: ivy.Container.get_interpolate_kernel

@@ -1,0 +1,8 @@
+unset\_default\_float\_dtype
+============================
+
+.. autofunction:: ivy.unset_default_float_dtype
+
+.. autoskippablemethod:: ivy.Array.unset_default_float_dtype
+
+.. autoskippablemethod:: ivy.Container.unset_default_float_dtype

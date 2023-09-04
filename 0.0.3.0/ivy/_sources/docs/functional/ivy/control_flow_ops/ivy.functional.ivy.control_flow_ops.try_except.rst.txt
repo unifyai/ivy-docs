@@ -1,0 +1,8 @@
+try\_except
+===========
+
+.. autofunction:: ivy.try_except
+
+.. autoskippablemethod:: ivy.Array.try_except
+
+.. autoskippablemethod:: ivy.Container.try_except

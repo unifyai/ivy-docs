@@ -1,0 +1,8 @@
+add
+===
+
+.. autofunction:: ivy.add
+
+.. autoskippablemethod:: ivy.Array.add
+
+.. autoskippablemethod:: ivy.Container.add

@@ -1304,7 +1304,7 @@ document.write(`
 <dd class="field-odd"><p><em>ret</em> – Tuple with arrays of type int32 that have the same shape as the indices array.</p>
 </dd>
 </dl>
-<p class="rubric">Functional Examples</p>
+<p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">indices</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">22</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">37</span><span class="p">])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unravel_index</span><span class="p">(</span><span class="n">indices</span><span class="p">,</span> <span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="go">(ivy.array([3, 6, 6]), ivy.array([4, 5, 1]))</span>

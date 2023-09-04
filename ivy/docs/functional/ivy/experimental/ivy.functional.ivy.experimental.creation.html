@@ -1282,7 +1282,7 @@ document.write(`
 <h1>Creation<a class="headerlink" href="#creation" title="Permalink to this heading">#</a></h1>
 <span class="target" id="module-ivy.functional.ivy.experimental.creation"></span><dl class="py function">
 <dt class="sig sig-object py" id="ivy.blackman_window">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">blackman_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">periodic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/experimental/creation.py#L690-L734"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.blackman_window" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">blackman_window</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">size</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">periodic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/experimental/creation.py#L689-L734"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.blackman_window" title="Permalink to this definition">#</a></dt>
 <dd><p>Generate a Blackman window. The Blackman window is a taper formed by using the first
 three terms of a summation of cosines. It was designed to have close to the minimal
 leakage possible. It is close to optimal, only slightly worse than a Kaiser window.</p>
@@ -1303,7 +1303,7 @@ If False, return a symmetric window.</p></li>
 <dd class="field-odd"><p><em>ret</em> – The array containing the window.</p>
 </dd>
 </dl>
-<p class="rubric">Functional Examples</p>
+<p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">blackman_window</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">periodic</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="go">ivy.array([-1.38777878e-17,  3.40000000e-01,  1.00000000e+00,  3.40000000e-01])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">blackman_window</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">periodic</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
@@ -1315,7 +1315,7 @@ If False, return a symmetric window.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.eye_like">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">eye_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/experimental/creation.py#L379-L470"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.eye_like" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">eye_like</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">device</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/experimental/creation.py#L379-L469"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.eye_like" title="Permalink to this definition">#</a></dt>
 <dd><p>Return a 2D array filled with ones on the k diagonal and zeros elsewhere. having the
 same <code class="docutils literal notranslate"><span class="pre">shape</span></code> as the first and last dim of input array <code class="docutils literal notranslate"><span class="pre">x</span></code>. input array <code class="docutils literal notranslate"><span class="pre">x</span></code>
 should to be 2D.</p>
@@ -1343,7 +1343,7 @@ diagonal <code class="docutils literal notranslate"><span class="pre">k</span></
 <p>Both the description and the type hints above assumes an array input for simplicity,
 but this function is <em>nestable</em>, and therefore also accepts <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code>
 instances as a replacement to any of the arguments.</p>
-<p class="rubric">Functional Examples</p>
+<p class="rubric">Examples</p>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> input:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x1</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y1</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">eye_like</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
@@ -1430,7 +1430,7 @@ If False, return a symmetric window.</p></li>
 <dd class="field-odd"><p><em>ret</em> – The array containing the window.</p>
 </dd>
 </dl>
-<p class="rubric">Functional Examples</p>
+<p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">hann_window</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">periodic</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="go">ivy.array([0. , 0.5, 1. , 0.5])</span>
 </pre></div>
@@ -1443,7 +1443,7 @@ If False, return a symmetric window.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.indices">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int64'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/experimental/creation.py#L555-L605"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.indices" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">indices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimensions</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'int64'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/experimental/creation.py#L554-L604"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.indices" title="Permalink to this definition">#</a></dt>
 <dd><p>Return an array representing the indices of a grid.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1498,7 +1498,7 @@ beta.</p>
 <dd class="field-odd"><p><em>ret</em> – The array containing the window.</p>
 </dd>
 </dl>
-<p class="rubric">Functional Examples</p>
+<p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">kaiser_bessel_derived_window</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="go">ivy.array([0.00726415, 0.9999736 , 0.9999736 , 0.00726415])</span>
 </pre></div>
@@ -1544,7 +1544,7 @@ If False, returns a symmetric window suitable for use in filter design.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.ndenumerate">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">ndenumerate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/experimental/creation.py#L483-L521"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.ndenumerate" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">ndenumerate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/experimental/creation.py#L482-L520"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.ndenumerate" title="Permalink to this definition">#</a></dt>
 <dd><p>Multidimensional index iterator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1571,7 +1571,7 @@ If False, returns a symmetric window suitable for use in filter design.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.ndindex">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">ndindex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/experimental/creation.py#L524-L552"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.ndindex" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">ndindex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/experimental/creation.py#L523-L551"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.ndindex" title="Permalink to this definition">#</a></dt>
 <dd><p>Multidimensional index iterator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1780,7 +1780,7 @@ the same device as x.</p></li>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.unsorted_segment_min">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">unsorted_segment_min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segment_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_segments</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/experimental/creation.py#L614-L652"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.unsorted_segment_min" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">unsorted_segment_min</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segment_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_segments</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/experimental/creation.py#L613-L651"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.unsorted_segment_min" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the minimum along segments of an array. Segments are defined by an integer
 array of segment IDs.</p>
 <div class="admonition note">
@@ -1811,7 +1811,7 @@ equals to segment ID.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.unsorted_segment_sum">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">unsorted_segment_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segment_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_segments</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/experimental/creation.py#L655-L687"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.unsorted_segment_sum" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">unsorted_segment_sum</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segment_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_segments</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/experimental/creation.py#L654-L686"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.unsorted_segment_sum" title="Permalink to this definition">#</a></dt>
 <dd><p>Compute the sum of elements along segments of an array. Segments are defined by an
 integer array of segment IDs.</p>
 <dl class="field-list simple">

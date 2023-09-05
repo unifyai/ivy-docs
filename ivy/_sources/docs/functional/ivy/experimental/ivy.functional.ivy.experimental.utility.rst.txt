@@ -2,6 +2,16 @@ Utility
 =======
 
 
+.. autosummary::
+   :toctree: utility
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.experimental.utility.optional_get_element
+   
+
 
 
 
@@ -12,10 +22,10 @@ Utility
 
 
 
+.. autofunction:: ivy.optional_get_element
 
 
 
-There are no functions in this module yet. 🚧
 
 
 

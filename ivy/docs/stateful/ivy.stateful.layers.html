@@ -44,7 +44,6 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=4ea706d9"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
-    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/stateful/ivy.stateful.layers';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
@@ -1406,8 +1405,8 @@ otherwise kernel_size will be used. # noqa: E501</p></li>
 <li><p><strong>strides</strong> – The stride of the sliding window for each dimension of input.</p></li>
 <li><p><strong>padding</strong> – SAME” or “VALID” indicating the algorithm, or
 list indicating the per-dimension paddings.</p></li>
-<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354ff040&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
-<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354ff010&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
+<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae453c8580&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
+<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae453c8c40&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
 <li><p><strong>with_bias</strong> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) – Whether or not to include a bias term, default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 <li><p><strong>data_format</strong> (default: <code class="docutils literal notranslate"><span class="pre">'NWC'</span></code>) – NWC” or “NCW”. Defaults to “NWC”.</p></li>
 <li><p><strong>dilations</strong> (default: <code class="docutils literal notranslate"><span class="pre">1</span></code>) – The dilation factor for each dimension of input. (Default value = 1)</p></li>
@@ -1444,8 +1443,8 @@ constructed internally by default.</p></li>
 <li><p><strong>strides</strong> – The stride of the sliding window for each dimension of input.</p></li>
 <li><p><strong>padding</strong> – SAME” or “VALID” indicating the algorithm, or
 list indicating the per-dimension paddings.</p></li>
-<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354fef80&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
-<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354fef50&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
+<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae461c6380&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
+<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae461c6530&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
 <li><p><strong>with_bias</strong> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) – Whether or not to include a bias term, default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 <li><p><strong>output_shape</strong> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – Shape of the output (Default value = None)</p></li>
 <li><p><strong>data_format</strong> (default: <code class="docutils literal notranslate"><span class="pre">'NWC'</span></code>) – NWC” or “NCW”. Defaults to “NWC”.</p></li>
@@ -1483,8 +1482,8 @@ constructed internally by default.</p></li>
 <li><p><strong>strides</strong> – The stride of the sliding window for each dimension of input.</p></li>
 <li><p><strong>padding</strong> – SAME” or “VALID” indicating the algorithm, or
 list indicating the per-dimension paddings.</p></li>
-<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354feec0&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
-<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354fee90&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
+<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae461c40d0&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
+<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae461c4220&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
 <li><p><strong>with_bias</strong> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) – Whether or not to include a bias term, default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 <li><p><strong>data_format</strong> (default: <code class="docutils literal notranslate"><span class="pre">'NHWC'</span></code>) – NHWC” or “NCHW”. Defaults to “NHWC”.</p></li>
 <li><p><strong>dilations</strong> (default: <code class="docutils literal notranslate"><span class="pre">1</span></code>) – The dilation factor for each dimension of input. (Default value = 1)</p></li>
@@ -1521,8 +1520,8 @@ constructed internally by default.</p></li>
 <li><p><strong>strides</strong> – The stride of the sliding window for each dimension of input.</p></li>
 <li><p><strong>padding</strong> – SAME” or “VALID” indicating the algorithm, or
 list indicating the per-dimension paddings.</p></li>
-<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354fee00&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
-<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354fedd0&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
+<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae461c77f0&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
+<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae461c77c0&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
 <li><p><strong>with_bias</strong> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) – Whether or not to include a bias term, default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 <li><p><strong>output_shape</strong> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – Shape of the output (Default value = None)</p></li>
 <li><p><strong>data_format</strong> (default: <code class="docutils literal notranslate"><span class="pre">'NHWC'</span></code>) – NHWC” or “NCHW”. Defaults to “NHWC”.</p></li>
@@ -1560,8 +1559,8 @@ constructed internally by default.</p></li>
 <li><p><strong>strides</strong> – The stride of the sliding window for each dimension of input.</p></li>
 <li><p><strong>padding</strong> – SAME” or “VALID” indicating the algorithm, or
 list indicating the per-dimension paddings.</p></li>
-<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354fec80&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
-<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354fec50&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
+<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae461c6ad0&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
+<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae461c50c0&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
 <li><p><strong>with_bias</strong> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) – Whether or not to include a bias term, default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 <li><p><strong>data_format</strong> (default: <code class="docutils literal notranslate"><span class="pre">'NDHWC'</span></code>) – NDHWC” or “NCDHW”. Defaults to “NDHWC”.</p></li>
 <li><p><strong>dilations</strong> (default: <code class="docutils literal notranslate"><span class="pre">1</span></code>) – The dilation factor for each dimension of input. (Default value = 1)</p></li>
@@ -1598,8 +1597,8 @@ constructed internally by default.</p></li>
 <li><p><strong>strides</strong> – The stride of the sliding window for each dimension of input.</p></li>
 <li><p><strong>padding</strong> – SAME” or “VALID” indicating the algorithm, or
 list indicating the per-dimension paddings.</p></li>
-<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354febc0&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
-<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354feb90&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
+<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae461c4310&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
+<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae461c6b90&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
 <li><p><strong>with_bias</strong> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) – Whether or not to include a bias term, default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 <li><p><strong>output_shape</strong> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – Shape of the output (Default value = None)</p></li>
 <li><p><strong>data_format</strong> (default: <code class="docutils literal notranslate"><span class="pre">'NDHWC'</span></code>) – NDHWC” or “NCDHW”. Defaults to “NDHWC”.</p></li>
@@ -1661,8 +1660,8 @@ then x is truncated, if n is larger then x is zero-padded.</p></li>
 <li><p><strong>strides</strong> – The stride of the sliding window for each dimension of input.</p></li>
 <li><p><strong>padding</strong> – SAME” or “VALID” indicating the algorithm, or
 list indicating the per-dimension paddings.</p></li>
-<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354fed40&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
-<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354fed10&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
+<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae461c7730&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
+<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae461c6b60&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
 <li><p><strong>with_bias</strong> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) – Whether or not to include a bias term, default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 <li><p><strong>data_format</strong> (default: <code class="docutils literal notranslate"><span class="pre">'NHWC'</span></code>) – NHWC” or “NCHW”. Defaults to “NHWC”.</p></li>
 <li><p><strong>dilations</strong> (default: <code class="docutils literal notranslate"><span class="pre">1</span></code>) – The dilation factor for each dimension of input. (Default value = 1)</p></li>
@@ -1789,7 +1788,7 @@ performed. It doesn’t have any learnable parameter.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input_channels</strong> – Number of input channels for the layer</p></li>
 <li><p><strong>output_channels</strong> – Number of output channels for the layer</p></li>
-<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354feb00&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
+<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae461c4ca0&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
 <li><p><strong>num_layers</strong> (default: <code class="docutils literal notranslate"><span class="pre">1</span></code>) – Number of lstm cells in the lstm layer, default is <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p></li>
 <li><p><strong>return_sequence</strong> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) – Whether or not to return the entire output sequence, or
 just the latest timestep.
@@ -1846,8 +1845,8 @@ matrix and addition with the bias vector.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input_channels</strong> – Number of input channels for the layer.</p></li>
 <li><p><strong>output_channels</strong> – Number of output channels for the layer.</p></li>
-<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354ff130&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
-<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fd2354ff0d0&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
+<li><p><strong>weight_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.GlorotUniform</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae453ca770&gt;</span></code>) – Initializer for the weights. Default is GlorotUniform.</p></li>
+<li><p><strong>bias_initializer</strong> (default: <code class="docutils literal notranslate"><span class="pre">&lt;ivy.stateful.initializers.Zeros</span> <span class="pre">object</span> <span class="pre">at</span> <span class="pre">0x7fae453ca6b0&gt;</span></code>) – Initializer for the bias. Default is Zeros.</p></li>
 <li><p><strong>with_bias</strong> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) – Whether or not to include a bias term, default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
 <li><p><strong>device</strong> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – device on which to create the layer’s variables ‘cuda:0’, ‘cuda:1’, ‘cpu’
 etc. Default is cpu.</p></li>

@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Exchange Formats &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/related_work/exchange_formats';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,12 +1276,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="exchange-formats">
-<span id="rworks-exchange-formats"></span><h1>Exchange Formats<a class="headerlink" href="#exchange-formats" title="Permalink to this heading">#</a></h1>
+<span id="rworks-exchange-formats"></span><h1>Exchange Formats<a class="headerlink" href="#exchange-formats" title="Link to this heading">#</a></h1>
 <p>Neural network exchange formats define a standardized file representation specifically for neural networks.
 The idea is that these can be used as an intermediate representation for communicating or “exchanging” neural network architectures between different ML frameworks or between ML frameworks and the target hardware.
 The focus is generally on simplifying the deployment of neural networks, with a typical workflow being: train the model, save in an exchange format, and use this exchange format to communicate with the target compilers and hardware for model inference.</p>
 <section id="onnx-onnx">
-<h2>ONNX <a class="dark-light reference internal" href="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/related_work/exchange_formats/onnx.png"><img alt="onnx" class="dark-light" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/related_work/exchange_formats/onnx.png" style="height: 20pt;" /></a><a class="headerlink" href="#onnx-onnx" title="Permalink to this heading">#</a></h2>
+<h2>ONNX <a class="dark-light reference internal" href="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/related_work/exchange_formats/onnx.png"><img alt="onnx" class="dark-light" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/related_work/exchange_formats/onnx.png" style="height: 20pt;" /></a><a class="headerlink" href="#onnx-onnx" title="Link to this heading">#</a></h2>
 <p>The <a class="reference external" href="https://onnx.ai/">Open Neural Network Exchange (ONNX)</a> is a standardized static file format which fully defines the structure of a neural network and all of its weights.
 Third parties can implement their own bindings to the ONNX standard format, which then enables the model to be saved to disk in the standard ONNX file format, and be deployed on any hardware which supports the ONNX format.
 Some frameworks have also added support to “load in” ONNX models from disk, as well as support for exporting to the format.
@@ -1289,13 +1289,13 @@ This enables some degree of model conversion between frameworks, but generally o
 ONNX focuses on core neural network operations, with limited support for other more general array processing functions such as high order optimization, signal processing, and advanced linear algebra.</p>
 </section>
 <section id="nnef-nnef">
-<h2>NNEF <a class="dark-light reference internal" href="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/related_work/exchange_formats/nnef.png"><img alt="nnef" class="dark-light" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/related_work/exchange_formats/nnef.png" style="height: 15pt;" /></a><a class="headerlink" href="#nnef-nnef" title="Permalink to this heading">#</a></h2>
+<h2>NNEF <a class="dark-light reference internal" href="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/related_work/exchange_formats/nnef.png"><img alt="nnef" class="dark-light" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/related_work/exchange_formats/nnef.png" style="height: 15pt;" /></a><a class="headerlink" href="#nnef-nnef" title="Link to this heading">#</a></h2>
 <p>Similar to <a class="reference external" href="https://onnx.ai/">ONNX</a>, the <a class="reference external" href="https://www.khronos.org/nnef">Neural Network Exchange Format (NNEF)</a> is also a standardized static file format which fully defines the structure of a neural network and all of its weights, with some support also for training tools.
 The format was developed and is maintained by the <a class="reference external" href="https://www.khronos.org/">Khronos Group</a>.
 Overall, NNEF shares a lot of similarities with ONNX, but has not reached the same level of adoption.</p>
 </section>
 <section id="coreml-coreml">
-<h2>CoreML <a class="dark-light reference internal" href="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/related_work/exchange_formats/coreml.png"><img alt="coreml" class="dark-light" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/related_work/exchange_formats/coreml.png" style="height: 20pt;" /></a><a class="headerlink" href="#coreml-coreml" title="Permalink to this heading">#</a></h2>
+<h2>CoreML <a class="dark-light reference internal" href="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/related_work/exchange_formats/coreml.png"><img alt="coreml" class="dark-light" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/related_work/exchange_formats/coreml.png" style="height: 20pt;" /></a><a class="headerlink" href="#coreml-coreml" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://developer.apple.com/documentation/coreml">CoreML</a> itself is not an exchange format, it is a framework which enables models to be trained and deployed on <a class="reference external" href="https://www.apple.com/">Apple</a> devices with a simple zero-code interactive interface.
 However, CoreML is built upon its own Core ML format, and Apple has open sourced <code class="code docutils literal notranslate"><span class="pre">coremltools</span></code>, which provides a set of tools to convert ML models from various frameworks into the Core ML format.
 The Core ML format is itself an exchange format, albeit with the sole purpose of exchanging to Apple’s CoreML framework, rather than enabling exchanges between multiple different parties as is the case for the other exchange formats.</p>
@@ -1387,7 +1387,7 @@ The Core ML format is itself an exchange format, albeit with the sole purpose of
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

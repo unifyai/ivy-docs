@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Devices &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/deep_dive/devices';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,7 +1276,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="devices">
-<h1>Devices<a class="headerlink" href="#devices" title="Permalink to this heading">#</a></h1>
+<h1>Devices<a class="headerlink" href="#devices" title="Link to this heading">#</a></h1>
 <p>The devices currently supported by Ivy are as follows:</p>
 <ul class="simple">
 <li><p>cpu</p></li>
@@ -1287,7 +1287,7 @@ document.write(`
 The <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Device</span></code> class derives from <code class="code docutils literal notranslate"><span class="pre">str</span></code>, and has simple logic in the constructor to verify that the string formatting is correct.
 When a backend is set, the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeDevice</span></code> is replaced with the backend-specific <a class="reference external" href="https://github.com/unifyai/ivy/blob/0b89c7fa050db13ef52b0d2a3e1a5fb801a19fa2/ivy/functional/backends/torch/__init__.py#L13">device class</a>.</p>
 <section id="device-module">
-<h2>Device Module<a class="headerlink" href="#device-module" title="Permalink to this heading">#</a></h2>
+<h2>Device Module<a class="headerlink" href="#device-module" title="Link to this heading">#</a></h2>
 <p>The <a class="reference external" href="https://github.com/unifyai/ivy/blob/08ebc4d6d5e200dcbb8498b213538ffd550767f3/ivy/functional/ivy/device.py">device.py</a> module provides a variety of functions for working with devices.
 A few examples include <a class="reference internal" href="../../docs/functional/ivy/device/ivy.functional.ivy.device.get_all_ivy_arrays_on_dev.html#ivy.get_all_ivy_arrays_on_dev" title="ivy.get_all_ivy_arrays_on_dev"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.get_all_ivy_arrays_on_dev()</span></code></a> which gets all arrays which are currently alive on the specified device, <a class="reference internal" href="../../docs/functional/ivy/device/ivy.functional.ivy.device.dev.html#ivy.dev" title="ivy.dev"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.dev()</span></code></a> which gets the device for input array, and <a class="reference internal" href="../../docs/functional/ivy/device/ivy.functional.ivy.device.num_gpus.html#ivy.num_gpus" title="ivy.num_gpus"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.num_gpus()</span></code></a> which determines the number of available GPUs for use with the backend framework.</p>
 <p>Many functions in the <code class="xref py py-mod docutils literal notranslate"><span class="pre">device.py</span></code> module are <em>convenience</em> functions, which means that they do not directly modify arrays, as explained in the <a class="reference internal" href="function_types.html#function-types"><span class="std std-ref">Function Types</span></a> section.</p>
@@ -1296,7 +1296,7 @@ A few examples include <a class="reference internal" href="../../docs/functional
 Any function in the functional API that receives a <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument will make use of this function, as explained below.</p>
 </section>
 <section id="arguments-in-other-functions">
-<h2>Arguments in other Functions<a class="headerlink" href="#arguments-in-other-functions" title="Permalink to this heading">#</a></h2>
+<h2>Arguments in other Functions<a class="headerlink" href="#arguments-in-other-functions" title="Link to this heading">#</a></h2>
 <p>Like with <code class="code docutils literal notranslate"><span class="pre">dtype</span></code>, all <code class="code docutils literal notranslate"><span class="pre">device</span></code> arguments are also keyword-only.
 All creation functions include the <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument, for specifying the device on which to place the created array.
 Some other functions outside of the <code class="code docutils literal notranslate"><span class="pre">creation.py</span></code> submodule also support the <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument, such as <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.random.html#ivy.random_uniform" title="ivy.random_uniform"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.random_uniform()</span></code></a> which is located in <code class="xref py py-mod docutils literal notranslate"><span class="pre">random.py</span></code>, but this is simply because of dual categorization.
@@ -1369,11 +1369,11 @@ Therefore, whereas the <code class="code docutils literal notranslate"><span cla
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tensor</span><span class="p">:</span>
 </pre></div>
 </div>
-<p>This makes it clear that these backend-specific functions are only enterred into once the correct <code class="code docutils literal notranslate"><span class="pre">device</span></code> has been determined.</p>
+<p>This makes it clear that these backend-specific functions are only entered into once the correct <code class="code docutils literal notranslate"><span class="pre">device</span></code> has been determined.</p>
 <p>However, the <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument for functions without the <code class="code docutils literal notranslate"><span class="pre">&#64;infer_device</span></code> decorator is <strong>not</strong> handled by <a class="reference external" href="https://github.com/unifyai/ivy/blob/1eb841cdf595e2bb269fce084bd50fb79ce01a69/ivy/func_wrapper.py#L286">infer_device</a>, and so these defaults must be handled by the backend-specific implementations themselves, by calling <a class="reference internal" href="../../docs/functional/ivy/device/ivy.functional.ivy.device.default_device.html#ivy.default_device" title="ivy.default_device"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.default_device()</span></code></a> internally.</p>
 </section>
 <section id="device-handling">
-<h2>Device handling<a class="headerlink" href="#device-handling" title="Permalink to this heading">#</a></h2>
+<h2>Device handling<a class="headerlink" href="#device-handling" title="Link to this heading">#</a></h2>
 <p>Different frameworks handle devices differently while performing an operation. For example, torch expects
 all the tensors to be on the same device while performing an operation, or else, it throws a device exception. On the other hand, tensorflow
 doesn’t care about this, it moves all the tensors to the same device before performing an operation.</p>
@@ -1392,7 +1392,7 @@ are moved to <code class="code docutils literal notranslate"><span class="pre">i
 <span class="n">ivy</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The priority of device shifting is following in this mode:</p>
+<p>The priority of device shifting is the following in this mode:</p>
 <ol class="arabic simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">device</span></code> argument.</p></li>
 <li><p>device the arrays are on.</p></li>
@@ -1411,23 +1411,23 @@ are moved to <code class="code docutils literal notranslate"><span class="pre">i
 </pre></div>
 </div>
 <p>This is the exception you will get while running the code above:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>IvyBackendException: torch: add:   File &quot;/content/ivy/ivy/utils/exceptions.py&quot;, line 210, in _handle_exceptions
-    return fn(*args, **kwargs)
-File &quot;/content/ivy/ivy/func_wrapper.py&quot;, line 1013, in _handle_nestable
-    return fn(*args, **kwargs)
-File &quot;/content/ivy/ivy/func_wrapper.py&quot;, line 905, in _handle_out_argument
-    return fn(*args, out=out, **kwargs)
-File &quot;/content/ivy/ivy/func_wrapper.py&quot;, line 441, in _inputs_to_native_arrays
-    return fn(*new_args, **new_kwargs)
-File &quot;/content/ivy/ivy/func_wrapper.py&quot;, line 547, in _outputs_to_ivy_arrays
-    ret = fn(*args, **kwargs)
-File &quot;/content/ivy/ivy/func_wrapper.py&quot;, line 358, in _handle_array_function
-    return fn(*args, **kwargs)
-File &quot;/content/ivy/ivy/func_wrapper.py&quot;, line 863, in _handle_device_shifting
-    raise ivy.utils.exceptions.IvyException(
-During the handling of the above exception, another exception occurred:
-Expected all input arrays to be on the same device, but found atleast two devices - (&#39;cpu&#39;, &#39;gpu:0&#39;),
-set `ivy.set_soft_device_mode(True)` to handle this problem.
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">IvyBackendException</span><span class="p">:</span> <span class="n">torch</span><span class="p">:</span> <span class="n">add</span><span class="p">:</span>   <span class="n">File</span> <span class="s2">&quot;/content/ivy/ivy/utils/exceptions.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">210</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_handle_exceptions</span>
+    <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">File</span> <span class="s2">&quot;/content/ivy/ivy/func_wrapper.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1013</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_handle_nestable</span>
+    <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">File</span> <span class="s2">&quot;/content/ivy/ivy/func_wrapper.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">905</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_handle_out_argument</span>
+    <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="n">out</span><span class="o">=</span><span class="n">out</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">File</span> <span class="s2">&quot;/content/ivy/ivy/func_wrapper.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">441</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_inputs_to_native_arrays</span>
+    <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">new_args</span><span class="p">,</span> <span class="o">**</span><span class="n">new_kwargs</span><span class="p">)</span>
+<span class="n">File</span> <span class="s2">&quot;/content/ivy/ivy/func_wrapper.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">547</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_outputs_to_ivy_arrays</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">File</span> <span class="s2">&quot;/content/ivy/ivy/func_wrapper.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">358</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_handle_array_function</span>
+    <span class="k">return</span> <span class="n">fn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">File</span> <span class="s2">&quot;/content/ivy/ivy/func_wrapper.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">863</span><span class="p">,</span> <span class="ow">in</span> <span class="n">_handle_device_shifting</span>
+    <span class="k">raise</span> <span class="n">ivy</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">IvyException</span><span class="p">(</span>
+<span class="n">During</span> <span class="n">the</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+<span class="n">Expected</span> <span class="nb">all</span> <span class="nb">input</span> <span class="n">arrays</span> <span class="n">to</span> <span class="n">be</span> <span class="n">on</span> <span class="n">the</span> <span class="n">same</span> <span class="n">device</span><span class="p">,</span> <span class="n">but</span> <span class="n">found</span> <span class="n">atleast</span> <span class="n">two</span> <span class="n">devices</span> <span class="o">-</span> <span class="p">(</span><span class="s1">&#39;cpu&#39;</span><span class="p">,</span> <span class="s1">&#39;gpu:0&#39;</span><span class="p">),</span>
+<span class="nb">set</span> <span class="err">`</span><span class="n">ivy</span><span class="o">.</span><span class="n">set_soft_device_mode</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span><span class="err">`</span> <span class="n">to</span> <span class="n">handle</span> <span class="n">this</span> <span class="n">problem</span><span class="o">.</span>
 </pre></div>
 </div>
 <ol class="loweralpha simple" start="2">
@@ -1451,7 +1451,7 @@ all the functions that accept at least one array as input(except mixed and compo
 </ol>
 <p><strong>Soft Device Handling Function</strong></p>
 <p>This is a function which plays a crucial role in the <code class="code docutils literal notranslate"><span class="pre">handle_device_shifting</span></code> decorator. The purpose of this function is to ensure that the function <code class="code docutils literal notranslate"><span class="pre">fn</span></code> passed to it is executed on the device passed in <code class="code docutils literal notranslate"><span class="pre">device_shifting_dev</span></code> argument. If it is passed as <code class="code docutils literal notranslate"><span class="pre">None</span></code>, then the function will be executed on the default device.</p>
-<p>Most of the backend implementations are very similar, first they move all the arrays to the desired device using <code class="code docutils literal notranslate"><span class="pre">ivy.nested_map</span></code> and then execute the function inside the device handling context manager from that native framework. The prupose of executing the function inside the context manager is to handle the functions that do not accept any arrays, the only way in that case to let the native framework know on which device we want the function to be executed on is through the context manager. This approach is used in most backend implementations with the exceptions being tensorflow, where we dont have to move all the tensors to the desired device because just using its context manager is enough, it moves all the tensors itself internally, and numpy, since it only accepts <cite>cpu</cite> as device.</p>
+<p>Most of the backend implementations are very similar, first they move all the arrays to the desired device using <code class="code docutils literal notranslate"><span class="pre">ivy.nested_map</span></code> and then execute the function inside the device handling context manager from that native framework. The purpose of executing the function inside the context manager is to handle the functions that do not accept any arrays, the only way in that case to let the native framework know on which device we want the function to be executed on is through the context manager. This approach is used in most backend implementations with the exception being tensorflow, where we don’t have to move all the tensors to the desired device because just using its context manager is enough, it moves all the tensors itself internally, and numpy, since it only accepts <cite>cpu</cite> as a device.</p>
 <p><strong>Forcing Operations on User Specified Device</strong></p>
 <p>The <a class="reference external" href="https://github.com/unifyai/ivy/blob/afca97b95d7101c45fa647b308fc8c41f97546e3/ivy/functional/ivy/device.py#L52">ivy.DefaultDevice</a> context manager can be used to force the operations to be performed on to a specific device. For example,
 in the code below, both <code class="code docutils literal notranslate"><span class="pre">x</span></code> and <code class="code docutils literal notranslate"><span class="pre">y</span></code> will be moved from ‘gpu:0’ to ‘cpu’ device and <code class="code docutils literal notranslate"><span class="pre">ivy.add</span></code> operation will be performed on ‘cpu’ device:</p>
@@ -1561,7 +1561,7 @@ src="https://www.youtube.com/embed/-Y1Ofk72TLY" class="video">
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

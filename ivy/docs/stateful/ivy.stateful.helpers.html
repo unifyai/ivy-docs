@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Helpers &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/stateful/ivy.stateful.helpers';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,15 +1276,15 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="module-ivy.stateful.helpers">
-<span id="helpers"></span><h1>Helpers<a class="headerlink" href="#module-ivy.stateful.helpers" title="Permalink to this heading">#</a></h1>
+<span id="helpers"></span><h1>Helpers<a class="headerlink" href="#module-ivy.stateful.helpers" title="Link to this heading">#</a></h1>
 <p>Base class for helper module methods.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="ivy.stateful.helpers.ModuleHelpers">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.stateful.helpers.</span></span><span class="sig-name descname"><span class="pre">ModuleHelpers</span></span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L12-L592"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.stateful.helpers.</span></span><span class="sig-name descname"><span class="pre">ModuleHelpers</span></span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L12-L592"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.stateful.helpers.ModuleHelpers.check_submod_rets">
-<span class="sig-name descname"><span class="pre">check_submod_rets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L96-L110"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.check_submod_rets" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">check_submod_rets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L96-L110"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.check_submod_rets" title="Link to this definition">#</a></dt>
 <dd><p>Return True if there is an expected submodule return value set by the user
 during the call.</p>
 <dl class="field-list simple">
@@ -1296,23 +1296,23 @@ during the call.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.stateful.helpers.ModuleHelpers.get_mod_key">
-<span class="sig-name descname"><span class="pre">get_mod_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_mod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L215-L241"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.get_mod_key" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">get_mod_key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">top_mod</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L215-L241"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.get_mod_key" title="Link to this definition">#</a></dt>
 <dd><p>Get the key of current module to be used when checking or tracking the return
 values of a submodule.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>top_mod</strong> – Explicit indicate the top module. None for the top
+<dd class="field-odd"><p><strong>top_mod</strong> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – Explicit indicate the top module. None for the top
 module of current module. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>A string of current module key.</em></p>
+<dd class="field-even"><p>A string of current module key.</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.stateful.helpers.ModuleHelpers.mod_depth">
-<span class="sig-name descname"><span class="pre">mod_depth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L138-L155"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.mod_depth" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">mod_depth</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L138-L155"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.mod_depth" title="Link to this definition">#</a></dt>
 <dd><p>Return the depth of the current module. Return 0 for root module.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1323,7 +1323,7 @@ module of current module. Default is <code class="docutils literal notranslate">
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.stateful.helpers.ModuleHelpers.mod_height">
-<span class="sig-name descname"><span class="pre">mod_height</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L157-L166"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.mod_height" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">mod_height</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L157-L166"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.mod_height" title="Link to this definition">#</a></dt>
 <dd><p>Return the height of the network, with the current level being 0.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1334,17 +1334,17 @@ module of current module. Default is <code class="docutils literal notranslate">
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.stateful.helpers.ModuleHelpers.mod_with_top_mod_key_chain">
-<span class="sig-name descname"><span class="pre">mod_with_top_mod_key_chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten_key_chain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L338-L377"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.mod_with_top_mod_key_chain" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">mod_with_top_mod_key_chain</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten_key_chain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L338-L377"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.mod_with_top_mod_key_chain" title="Link to this definition">#</a></dt>
 <dd><p>Return a list containing the modules of the network starting from the top
 module, and ending with the current module.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>depth</strong> – If specified, will return a list of modules of length starting at
+<li><p><strong>depth</strong> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – If specified, will return a list of modules of length starting at
 the current module and ending at the module at the specified depth.
 0 for the current module. 1 for the iimediate parent module. None for
 the top module. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>flatten_key_chain</strong> – If set True, will return return a flat container,
+<li><p><strong>flatten_key_chain</strong> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – If set True, will return return a flat container,
 with all nested key-chains flattened. Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
 </ul>
 </dd>
@@ -1353,18 +1353,18 @@ with all nested key-chains flattened. Default is <code class="docutils literal n
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.stateful.helpers.ModuleHelpers.show_mod_in_top_mod">
-<span class="sig-name descname"><span class="pre">show_mod_in_top_mod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten_key_chains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L379-L413"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.show_mod_in_top_mod" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">show_mod_in_top_mod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten_key_chains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L379-L413"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.show_mod_in_top_mod" title="Link to this definition">#</a></dt>
 <dd><p>Show lower submodules in the top module. <cite>upper_depth</cite> and <cite>lower_depth</cite> are for
 controlling the coverage of upper and lower modules. Will give prompt if no top
 module found.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>upper_depth</strong> – How many modules it tracks up as upper module. None for current module.
+<li><p><strong>upper_depth</strong> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – How many modules it tracks up as upper module. None for current module.
 Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>. Will be truncated to mod_depth.</p></li>
-<li><p><strong>lower_depth</strong> – How many modules it tracks down. None for current module.
+<li><p><strong>lower_depth</strong> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – How many modules it tracks down. None for current module.
 Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>. Will be truncated to mod_height.</p></li>
-<li><p><strong>flatten_key_chains</strong> – If set True, will return a flat (depth-1) container,
+<li><p><strong>flatten_key_chains</strong> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – If set True, will return a flat (depth-1) container,
 which all nested key-chains flattened. Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
 </ul>
 </dd>
@@ -1373,7 +1373,7 @@ which all nested key-chains flattened. Default is <code class="docutils literal 
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.stateful.helpers.ModuleHelpers.show_structure">
-<span class="sig-name descname"><span class="pre">show_structure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L545-L558"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.show_structure" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">show_structure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L545-L558"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.show_structure" title="Link to this definition">#</a></dt>
 <dd><p>Print the structure of the layer network.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1384,12 +1384,12 @@ which all nested key-chains flattened. Default is <code class="docutils literal 
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.stateful.helpers.ModuleHelpers.show_v_in_top_v">
-<span class="sig-name descname"><span class="pre">show_v_in_top_v</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L288-L306"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.show_v_in_top_v" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">show_v_in_top_v</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L288-L306"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.show_v_in_top_v" title="Link to this definition">#</a></dt>
 <dd><p>Show sub containers from the perspective of the top layer. Will give prompt if
 either of <cite>v</cite> or <cite>top_v</cite> is not initialized.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>depth</strong> – The number of modules we want to step in. None for the value of
+<dd class="field-odd"><p><strong>depth</strong> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – The number of modules we want to step in. None for the value of
 current module. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
@@ -1397,16 +1397,16 @@ current module. Default is <code class="docutils literal notranslate"><span clas
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.stateful.helpers.ModuleHelpers.sub_mods">
-<span class="sig-name descname"><span class="pre">sub_mods</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten_key_chains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L243-L286"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.sub_mods" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">sub_mods</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten_key_chains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L243-L286"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.sub_mods" title="Link to this definition">#</a></dt>
 <dd><p>Return a container comoposed of all submodules.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>show_v</strong> – If set True, will return values of all submodule variables.
+<li><p><strong>show_v</strong> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) – If set True, will return values of all submodule variables.
 Default is <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p></li>
-<li><p><strong>depth</strong> – How many layers we step in before beginning enumerating submodules.
+<li><p><strong>depth</strong> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – How many layers we step in before beginning enumerating submodules.
 None for current layer. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>flatten_key_chains</strong> – If set True, will return a flat (depth-1) container,
+<li><p><strong>flatten_key_chains</strong> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – If set True, will return a flat (depth-1) container,
 in which all nested key-chains flattened. Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
 </ul>
 </dd>
@@ -1418,7 +1418,7 @@ in which all nested key-chains flattened. Default is <code class="docutils liter
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.stateful.helpers.ModuleHelpers.track_submod_call_order">
-<span class="sig-name descname"><span class="pre">track_submod_call_order</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L113-L136"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.track_submod_call_order" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">track_submod_call_order</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L113-L136"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.track_submod_call_order" title="Link to this definition">#</a></dt>
 <dd><p>Tracks the order in which the submodules are called.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -1429,7 +1429,7 @@ in which all nested key-chains flattened. Default is <code class="docutils liter
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.stateful.helpers.ModuleHelpers.track_submod_rets">
-<span class="sig-name descname"><span class="pre">track_submod_rets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L69-L94"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.track_submod_rets" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">track_submod_rets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L69-L94"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.track_submod_rets" title="Link to this definition">#</a></dt>
 <dd><p>Return True if the current module should have its returns tracked as set by the
 user during the call.</p>
 <dl class="field-list simple">
@@ -1442,15 +1442,15 @@ tracked.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.stateful.helpers.ModuleHelpers.v_with_top_v_key_chains">
-<span class="sig-name descname"><span class="pre">v_with_top_v_key_chains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten_key_chains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L308-L336"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.v_with_top_v_key_chains" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">v_with_top_v_key_chains</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flatten_key_chains</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/stateful/helpers.py#L308-L336"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.stateful.helpers.ModuleHelpers.v_with_top_v_key_chains" title="Link to this definition">#</a></dt>
 <dd><p>Show the network’s variables from the perspective of value of top layer. Will
 give prompt if either of <cite>v</cite> and <cite>top_v</cite> is not initialized.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>depth</strong> – The number of modules we want to step in. None for the value of
+<li><p><strong>depth</strong> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – The number of modules we want to step in. None for the value of
 current module. Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
-<li><p><strong>flatten_key_chains</strong> – If set True, will return a flat container,
+<li><p><strong>flatten_key_chains</strong> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – If set True, will return a flat container,
 with all nested key-chains flattened. Default is <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p></li>
 </ul>
 </dd>
@@ -1558,7 +1558,7 @@ with all nested key-chains flattened. Default is <code class="docutils literal n
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

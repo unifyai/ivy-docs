@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Array API Tests &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/deep_dive/array_api_tests';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,7 +1276,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="array-api-tests">
-<h1>Array API Tests<a class="headerlink" href="#array-api-tests" title="Permalink to this heading">#</a></h1>
+<h1>Array API Tests<a class="headerlink" href="#array-api-tests" title="Link to this heading">#</a></h1>
 <p>In conjunction with our own ivy unit tests, we import the array-api <a class="reference external" href="https://github.com/data-apis/array-api-tests">test suite</a>.
 These tests check that all ivy backend libraries behave according to the <a class="reference external" href="https://data-apis.org/array-api/latest/">Array API Standard</a> which was established in May 2020 by a group of maintainers.
 It was intended to bring some consistency and completeness to the various python libraries that have gained popularity in the last 5-10 years.
@@ -1289,11 +1289,11 @@ Instead, the change must be made to the array-api repository directly and then o
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># to initialise local config file and fetch + checkout submodule (not needed everytime)
 git submodule update --init --recursive
 
-# pulls changes from upstream remote repo and merges them
+# pulls changes from the upstream remote repo and merges them
 git submodule update --recursive --remote --merge
 </pre></div>
 </div>
-<p>Sometimes you will face strange behaviour when staging changes from Ivy main repo which includes submodule updates.
+<p>Sometimes you will face strange behaviour when staging changes from Ivy’s main repo which includes submodule updates.
 And this is being caused by your submodule being out of date because we update the submodule iteratively. You can get around this by running the following command:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Updating your submodule to the latest commit
 git submodule update --remote
@@ -1302,7 +1302,7 @@ git submodule update --remote
 <p>and only <em>then</em> can changes to the submodule be pushed to ivy-main, i.e. only when these changes exist in the source array-api repository.
 See the <a class="reference external" href="https://www.git-scm.com/book/en/v2/Git-Tools-Submodules">git website</a> for further information on working with submodules.</p>
 <section id="running-the-tests">
-<h2>Running the Tests<a class="headerlink" href="#running-the-tests" title="Permalink to this heading">#</a></h2>
+<h2>Running the Tests<a class="headerlink" href="#running-the-tests" title="Link to this heading">#</a></h2>
 <p>The entire test suite is run independently <a class="reference external" href="https://github.com/unifyai/ivy/tree/20d07d7887766bb0d1707afdabe6e88df55f27a5/.github/workflows">for each backend</a> on every push to the repo.
 Therefore, every function which exists in the standard is thoroughly tested for adherence to the standard on a continuous basis.</p>
 <p>You will need to make sure the Array API tests are passing for each backend framework if/when making any changes to Ivy functions which are part of the standard.
@@ -1310,13 +1310,13 @@ If a test fails on the CI, you can see details about the failure under <cite>Det
 <p>You can also run the tests locally before making a PR.
 There are two ways to do this: using the terminal or using your IDE.</p>
 <section id="using-terminal">
-<h3>Using Terminal<a class="headerlink" href="#using-terminal" title="Permalink to this heading">#</a></h3>
+<h3>Using Terminal<a class="headerlink" href="#using-terminal" title="Link to this heading">#</a></h3>
 <p>Using the terminal, you can run all array-api tests in a given file for a certain backend using the bash file <a class="reference external" href="https://github.com/unifyai/ivy/blob/d76f0f5ab02d608864eb2c4012af2404da5806c2/test_array_api.sh">test_array_api.sh</a>:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span># /ivy
 /bin/bash -e ./run_tests_CLI/test_array_api.sh jax test_linalg
 </pre></div>
 </div>
-<p>You can change the argument with any of our supported frameworks - tensorflow, numpy, torch or jax - and the individual test function categories in <code class="code docutils literal notranslate"><span class="pre">ivy/ivy_tests/array_api_testing/test_array_api/array_api_tests</span></code>, e.g. <em>test_set_functions</em>, <em>test_signatures</em> etc.</p>
+<p>You can change the argument with any of our supported frameworks - tensorflow, numpy, torch, or jax - and the individual test function categories in <code class="code docutils literal notranslate"><span class="pre">ivy/ivy_tests/array_api_testing/test_array_api/array_api_tests</span></code>, e.g. <em>test_set_functions</em>, <em>test_signatures</em> etc.</p>
 <p>You can also run a specific test, as often running <em>all</em> tests in a file is excessive.
 To make this work, you should set the backend explicitly in the <cite>_array_module.py</cite> file, which you can find in the <cite>array_api_tests</cite> submodule.
 At the beginning of the file, you will see the following line of code <code class="code docutils literal notranslate"><span class="pre">array_module</span> <span class="pre">=</span> <span class="pre">None</span></code>.
@@ -1335,7 +1335,7 @@ pytest -vv ivy_tests/array_api_testing/test_array_api/array_api_tests/test_manip
 </div>
 </section>
 <section id="using-the-ide">
-<h3>Using the IDE<a class="headerlink" href="#using-the-ide" title="Permalink to this heading">#</a></h3>
+<h3>Using the IDE<a class="headerlink" href="#using-the-ide" title="Link to this heading">#</a></h3>
 <p>You can also run a specific test or test file by using your IDE.
 To make this work, you should set the backend explicitly in the <cite>_array_module.py</cite> file as explained in the previous subsection.
 After that, you can run the API test files as you typically would with other tests.
@@ -1344,7 +1344,7 @@ See <a class="reference external" href="https://unify.ai/docs/ivy/overview/contr
 </section>
 </section>
 <section id="regenerating-test-failures">
-<h2>Regenerating Test Failures<a class="headerlink" href="#regenerating-test-failures" title="Permalink to this heading">#</a></h2>
+<h2>Regenerating Test Failures<a class="headerlink" href="#regenerating-test-failures" title="Link to this heading">#</a></h2>
 <p>Array-API tests are written using <a class="reference external" href="https://hypothesis.readthedocs.io/en/latest/">hypothesis</a> to perform property-based testing, just like the <a class="reference external" href="https://unify.ai/docs/ivy/overview/deep_dive/ivy_tests.html">ivy tests</a>.
 However, unlike the ivy tests, the Array-API tests make liberal use of <code class="code docutils literal notranslate"><span class="pre">data.draw</span></code> in the main body of the test function instead of generating the data in the <code class="code docutils literal notranslate"><span class="pre">&#64;given</span></code> decorator that wraps it.
 This means that failed tests cannot be re-run with the <code class="code docutils literal notranslate"><span class="pre">&#64;example</span></code> decorator, as explained in the <a class="reference external" href="https://unify.ai/docs/ivy/overview/deep_dive/ivy_tests.html#re-running-failed-ivy-tests">final section</a> of the ivy tests deep dive.
@@ -1396,10 +1396,10 @@ def test_remainder(ctx, data):
 </div>
 <p>The test should then include the inputs which led to the previous failure and recreate it.
 If you are taking the <code class="code docutils literal notranslate"><span class="pre">&#64;reproduce_failure</span></code> decorator from a CI stack trace and trying to reproduce it locally, you may find that sometimes the local test unexpectedly passes.
-This is usually caused by a discrepancy in your local source code and ivy-main, so try pulling from main to sync the behaviour.</p>
+This is usually caused by a discrepancy in your local source code and ivy-main, so try pulling from the main to sync the behaviour.</p>
 </section>
 <section id="test-skipping">
-<h2>Test Skipping<a class="headerlink" href="#test-skipping" title="Permalink to this heading">#</a></h2>
+<h2>Test Skipping<a class="headerlink" href="#test-skipping" title="Link to this heading">#</a></h2>
 <p>Certain tests may need to be skipped when running the array-api test suite.
 This could be due to a variety of reasons:</p>
 <ol class="arabic simple">
@@ -1530,7 +1530,7 @@ src="https://www.youtube.com/embed/R1XuYwzhxWw" class="video">
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

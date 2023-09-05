@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>What does Ivy Add? &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/related_work/what_does_ivy_add';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,9 +1276,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="what-does-ivy-add">
-<span id="rworks-what-does-ivy-add"></span><h1>What does Ivy Add?<a class="headerlink" href="#what-does-ivy-add" title="Permalink to this heading">#</a></h1>
+<span id="rworks-what-does-ivy-add"></span><h1>What does Ivy Add?<a class="headerlink" href="#what-does-ivy-add" title="Link to this heading">#</a></h1>
 <section id="api-standards">
-<h2>API Standards<a class="headerlink" href="#api-standards" title="Permalink to this heading">#</a></h2>
+<h2>API Standards<a class="headerlink" href="#api-standards" title="Link to this heading">#</a></h2>
 <p>Ivy fully adheres to the <a class="reference external" href="https://data-apis.org/array-api">Array API Standard</a>, and we are strongly aligned with their unification vision.
 Ivy is entirely complimentary to the standard, implementing all of the functions defined by the standard, and populating each of them with implementations supporting a variety of frameworks.</p>
 <p>Further into the future, we have quite lofty ambitions for Ivy to extend beyond the Python realm, and to help build the bedrock of a more general, language-agnostic, purely mathematical standardized Array API.
@@ -1289,7 +1289,7 @@ For example, transpiling from <a class="reference external" href="https://pytorc
 However, for the time being, we are focusing exclusively on Python, in order to mitigate the risk of “biting off more than we can chew”!</p>
 </section>
 <section id="wrapper-frameworks">
-<h2>Wrapper Frameworks<a class="headerlink" href="#wrapper-frameworks" title="Permalink to this heading">#</a></h2>
+<h2>Wrapper Frameworks<a class="headerlink" href="#wrapper-frameworks" title="Link to this heading">#</a></h2>
 <p>Ivy is itself a Python Wrapper Framework.
 The biggest difference between Ivy and all others listed in the <a class="reference internal" href="wrapper_frameworks.html#wrapper-frameworks"><span class="std std-ref">Wrapper Frameworks</span></a> section is that Ivy supports transpilations between frameworks, while all other frameworks only enable the creation of entirely new code which itself is framework-agnostic.
 There are also other more subtle differences.
@@ -1298,12 +1298,12 @@ In contrast, <a class="reference external" href="https://eagerpy.jonasrauber.de/
 Similar to Ivy, <a class="reference external" href="https://keras.io/">Keras</a> did also support both functional and stateful APIs, but since version 2.4 it only supports <a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a> as a backend.</p>
 </section>
 <section id="frameworks">
-<h2>Frameworks<a class="headerlink" href="#frameworks" title="Permalink to this heading">#</a></h2>
+<h2>Frameworks<a class="headerlink" href="#frameworks" title="Link to this heading">#</a></h2>
 <p>Ivy wraps the standalone ML frameworks in Python, and enables transpilations between the various frameworks and framework versions.
 It therefore extends what is possible in any of the specific individual frameworks in isolation.</p>
 </section>
 <section id="graph-tracers">
-<h2>Graph Tracers<a class="headerlink" href="#graph-tracers" title="Permalink to this heading">#</a></h2>
+<h2>Graph Tracers<a class="headerlink" href="#graph-tracers" title="Link to this heading">#</a></h2>
 <p>Ivy’s <a class="reference internal" href="../../compiler/compiler.html#graph-compiler"><span class="std std-ref">Graph Compiler</span></a> exhibits similar properties to many of the framework-specific graph tracers.
 Ivy’s graph compiler employs function tracing for computing the graph, and uses this graph as an intermediate representation during the transpilation process.
 Of all the graph tracers, Ivy’s graph compiler is most similar to <a class="reference external" href="https://pytorch.org/docs/stable/fx.html">torch.fx</a>.
@@ -1311,7 +1311,7 @@ This is because <code class="code docutils literal notranslate"><span class="pre
 The main difference is that Ivy’s graph compiler is fully framework-agnostic; Ivy’s compiler is able to compile graphs from any framework, while framework-specific compilers are of course bound to their particular framework.</p>
 </section>
 <section id="exchange-formats">
-<h2>Exchange Formats<a class="headerlink" href="#exchange-formats" title="Permalink to this heading">#</a></h2>
+<h2>Exchange Formats<a class="headerlink" href="#exchange-formats" title="Link to this heading">#</a></h2>
 <p>The neural network exchange formats have particular relevance to Ivy, given their utility for sharing networks between frameworks.
 For example, models can be exported to the <a class="reference external" href="https://onnx.ai/">ONNX</a> format from <a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a>, and then the ONNX model can be loaded into <a class="reference external" href="https://pytorch.org/">PyTorch</a>.
 This could be seen as a form of transpilation, which is one of the central goals of Ivy.
@@ -1324,7 +1324,7 @@ Finally, Ivy exhaustively supports the full range of array processing functions 
 This makes it much more broadly applicable to a wider range of applications, spanning from cutting edge deep learning to more conventional machine learning, general numerical computing, and data analytics.</p>
 </section>
 <section id="compiler-infrastructure">
-<h2>Compiler Infrastructure<a class="headerlink" href="#compiler-infrastructure" title="Permalink to this heading">#</a></h2>
+<h2>Compiler Infrastructure<a class="headerlink" href="#compiler-infrastructure" title="Link to this heading">#</a></h2>
 <p>Compiler infrastructure is essential in order to enable arbitrary frameworks to support arbitrary hardware targets.
 <a class="reference external" href="https://mlir.llvm.org/">MLIR</a>, for example, has hugely simplified <a class="reference external" href="https://www.tensorflow.org/">TensorFlow</a>’s workflow for supporting various hardware vendors in a scalable manner, with minimal code duplication.
 However, while infrastructure such as MLIR at the compiler level is essential for framework developers, in its current form it cannot easily be used to guide the creation of tools that enable code transpilations between the user facing functions higher up the ML stack.
@@ -1333,25 +1333,25 @@ Transpilation between frameworks requires an IR that sits between the functional
 Ivy’s unification goals are therefore complimentary to the unifying goals of the various compiler infrastructure efforts.</p>
 </section>
 <section id="multi-vendor-compiler-frameworks">
-<h2>Multi-Vendor Compiler Frameworks<a class="headerlink" href="#multi-vendor-compiler-frameworks" title="Permalink to this heading">#</a></h2>
+<h2>Multi-Vendor Compiler Frameworks<a class="headerlink" href="#multi-vendor-compiler-frameworks" title="Link to this heading">#</a></h2>
 <p>Multi-vendor compiler frameworks sit a bit further down the stack still, and can optionally make use of the compiler infrastructure as scaffolding.
 Likewise, these greatly simplify the complex task of enabling models from any framework to be deployed on any hardware, but they do nothing to address the challenge of running code from one framework inside another framework at training time, which is the central problem Ivy addresses.
 Therefore, again these efforts are complimentary to Ivy’s high-level unification goals.</p>
 </section>
 <section id="vendor-specific-apis">
-<h2>Vendor-Specific APIs<a class="headerlink" href="#vendor-specific-apis" title="Permalink to this heading">#</a></h2>
+<h2>Vendor-Specific APIs<a class="headerlink" href="#vendor-specific-apis" title="Link to this heading">#</a></h2>
 <p>Likewise, vendor-specific APIs sit even further down the stack.
 These enable custom operations to be defined for execution on the specified hardware, and they form an essential part of the stack.
 However, again they do nothing to address the challenge of running code from one framework inside another framework at training time, which is the central problem Ivy addresses.</p>
 </section>
 <section id="vendor-specific-compilers">
-<h2>Vendor-Specific Compilers<a class="headerlink" href="#vendor-specific-compilers" title="Permalink to this heading">#</a></h2>
+<h2>Vendor-Specific Compilers<a class="headerlink" href="#vendor-specific-compilers" title="Link to this heading">#</a></h2>
 <p>Finally, vendor-specific compilers sit at the very bottom of the stack as far as our diagram is concerned (ignoring assembly languages, byte code etc.).
 These are essential for converting models into instructions which the specific hardware can actually understand, and they also of course form a critical part of the stack.
 However, again they do nothing to address the challenge of running code from one framework inside another framework at training time, which is the central problem Ivy addresses.</p>
 </section>
 <section id="ml-unifying-companies">
-<h2>ML-Unifying Companies<a class="headerlink" href="#ml-unifying-companies" title="Permalink to this heading">#</a></h2>
+<h2>ML-Unifying Companies<a class="headerlink" href="#ml-unifying-companies" title="Link to this heading">#</a></h2>
 <p>The ML-unifying companies <a class="reference external" href="https://quansight.com/">Quansight</a>, <a class="reference external" href="https://octoml.ai/">OctoML</a> and <a class="reference external" href="https://www.modular.com/">Modular</a> are/were directly involved with the <a class="reference external" href="https://data-apis.org/array-api">Array API Standard</a>, <a class="reference external" href="https://tvm.apache.org/">Apache TVM</a> and <a class="reference external" href="https://mlir.llvm.org/">MLIR</a> respectively, as explained in the <a class="reference internal" href="#ml-unifying-companies"><span class="std std-ref">ML-Unifying Companies</span></a> section.
 For the same reasons that Ivy as a framework is complementary to these three frameworks, Ivy as a company is also complementary to these three companies.
 Firstly, we are adhering to the <a class="reference external" href="https://data-apis.org/array-api">Array API Standard</a> defined by Quansight.
@@ -1456,7 +1456,7 @@ All of these features are entirely complementary, and together would form a powe
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

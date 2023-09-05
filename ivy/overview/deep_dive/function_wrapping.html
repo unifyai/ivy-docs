@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Function Wrapping &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/deep_dive/function_wrapping';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,7 +1276,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="function-wrapping">
-<h1>Function Wrapping<a class="headerlink" href="#function-wrapping" title="Permalink to this heading">#</a></h1>
+<h1>Function Wrapping<a class="headerlink" href="#function-wrapping" title="Link to this heading">#</a></h1>
 <p>When a backend framework is set by calling <code class="code docutils literal notranslate"><span class="pre">ivy.set_backend(backend_name)</span></code>, then all Ivy functions are <a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/utils/backend/handler.py#L259">wrapped</a>.
 This is achieved by calling <a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L965">_wrap_function</a>, which will apply the appropriate wrapping to the given function, based on what decorators it has.
 For example, <a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/functional/ivy/elementwise.py#L28">abs</a> has the decorators <code class="code docutils literal notranslate"><span class="pre">&#64;to_native_arrays_and_back</span></code> and <code class="code docutils literal notranslate"><span class="pre">&#64;handle_out_argument</span></code>, and so the backend implementations will also be wrapped with the <a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L595">to_native_arrays_and_back</a> and <a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L800">handle_out_argument</a> wrappers.</p>
@@ -1285,7 +1285,7 @@ This is the main purpose of the wrapping, to avoid code duplication which would 
 <p>Depending on the function being wrapped, the new function might handle <a class="reference internal" href="arrays.html#arrays"><span class="std std-ref">Arrays</span></a>, <a class="reference internal" href="inplace_updates.html#inplace-updates"><span class="std std-ref">Inplace Updates</span></a>, <a class="reference internal" href="data_types.html#data-types"><span class="std std-ref">Data Types</span></a> and/or <a class="reference internal" href="devices.html#devices"><span class="std std-ref">Devices</span></a>.</p>
 <p>Our test decorators actually transforms to <code class="code docutils literal notranslate"><span class="pre">&#64;given</span></code> decorators at Pytest collecting time, therefore this allows us to use other <strong>Hypothesis</strong> decorators like, <code class="code docutils literal notranslate"><span class="pre">&#64;reproduce_failure</span></code>, <code class="code docutils literal notranslate"><span class="pre">&#64;settings</span></code>, <code class="code docutils literal notranslate"><span class="pre">&#64;seed</span></code>.</p>
 <section id="decorator-order">
-<h2>Decorator order<a class="headerlink" href="#decorator-order" title="Permalink to this heading">#</a></h2>
+<h2>Decorator order<a class="headerlink" href="#decorator-order" title="Link to this heading">#</a></h2>
 <p>The order in which Ivy decorators are applied is important. It is important to follow this order, as the functionality of many functions depends on it. If the decorators are applied in the wrong order, the test may fail or the function may not behave as expected.
 The following is the recommended order to follow :</p>
 <ol class="arabic simple">
@@ -1314,7 +1314,7 @@ The following is the recommended order to follow :</p>
 <p>This recommended order is followed to ensure that tests are efficient and accurate. It is important to follow this order because the decorators depend on each other. For example, the <code class="code docutils literal notranslate"><span class="pre">&#64;infer_device</span></code> decorator needs to be applied before the <code class="code docutils literal notranslate"><span class="pre">&#64;infer_dtype</span></code> decorator, because the <code class="code docutils literal notranslate"><span class="pre">&#64;infer_dtype</span></code> decorator needs to know the device of the function in order to infer the data type.</p>
 </section>
 <section id="conversion-wrappers">
-<h2>Conversion Wrappers<a class="headerlink" href="#conversion-wrappers" title="Permalink to this heading">#</a></h2>
+<h2>Conversion Wrappers<a class="headerlink" href="#conversion-wrappers" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L405">inputs_to_native_arrays</a> : This wrapping function converts all <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances in the arguments to their <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> counterparts, based on the <a class="reference internal" href="backend_setting.html#backend-setting"><span class="std std-ref">Backend Setting</span></a> before calling the function.</p></li>
 <li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L445">inputs_to_ivy_arrays</a> : This wrapping function converts all <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> instances in the arguments to their <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> counterparts, based on the <a class="reference internal" href="backend_setting.html#backend-setting"><span class="std std-ref">Backend Setting</span></a> before calling the function.</p></li>
@@ -1324,17 +1324,17 @@ This wrapping function is heavily used because it enables achieving the objectiv
 </ol>
 </section>
 <section id="inference-wrappers">
-<h2>Inference Wrappers<a class="headerlink" href="#inference-wrappers" title="Permalink to this heading">#</a></h2>
+<h2>Inference Wrappers<a class="headerlink" href="#inference-wrappers" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L725">infer_dtype</a> : This wrapping function infers the <cite>dtype</cite> argument to be passed to a function based on the  array arguments passed to it.
+<li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L725">infer_dtype</a> : This wrapping function infers the <cite>dtype</cite> argument to be passed to a function based on the array arguments passed to it.
 If <code class="code docutils literal notranslate"><span class="pre">dtype</span></code> is explicitly passed to the function, then it is used directly.
 This wrapping function could be found in functions from the <a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/functional/ivy/creation.py">creation submodule</a> such as <a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/functional/ivy/creation.py#L482">zeros</a> where we then allow the user to not enter the <code class="code docutils literal notranslate"><span class="pre">dtype</span></code> argument to such functions.</p></li>
-<li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L763">infer_device</a> : Similar to the <a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L725">infer_dtype</a> wrapping function, the <a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L763">infer_device</a> function wrapping  infers the <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument to be passed to a function based on the first array argument passed to it.
+<li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L763">infer_device</a> : Similar to the <a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L725">infer_dtype</a> wrapping function, the <a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L763">infer_device</a> function wrapping infers the <code class="code docutils literal notranslate"><span class="pre">device</span></code> argument to be passed to a function based on the first array argument passed to it.
 This wrapping function is also used a lot in functions from the <a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/functional/ivy/creation.py">creation submodule</a> such as <a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/functional/ivy/creation.py#L383">asarray</a>, where we want to create the <cite>ivy.Array</cite> on the same device as the input array.</p></li>
 </ol>
 </section>
 <section id="out-argument-support">
-<h2>Out Argument Support<a class="headerlink" href="#out-argument-support" title="Permalink to this heading">#</a></h2>
+<h2>Out Argument Support<a class="headerlink" href="#out-argument-support" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L800">handle_out_argument</a> : This wrapping function is used in nearly all ivy functions.
 It enables appropriate handling of the <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument of functions.
@@ -1343,13 +1343,13 @@ But in cases when it isn’t supported, we support it anyway with <a class="refe
 </ol>
 </section>
 <section id="nestable-support">
-<h2>Nestable Support<a class="headerlink" href="#nestable-support" title="Permalink to this heading">#</a></h2>
+<h2>Nestable Support<a class="headerlink" href="#nestable-support" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L896">handle_nestable</a> : This wrapping function enables the use of <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> arguments in functions and directly calling them through the <code class="code docutils literal notranslate"><span class="pre">ivy</span></code> namespace, just like calling a function with <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> arguments instead. Thus, the function can be called by passing an <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> to any or all of its arguments.</p></li>
 </ol>
 </section>
 <section id="partial-mixed-function-support">
-<h2>Partial Mixed Function Support<a class="headerlink" href="#partial-mixed-function-support" title="Permalink to this heading">#</a></h2>
+<h2>Partial Mixed Function Support<a class="headerlink" href="#partial-mixed-function-support" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L944">handle_partial_mixed_function</a>: This wrapping function enables switching between compositional and primary implementations of <a class="reference internal" href="function_types.html#mixed-functions"><span class="std std-ref">Mixed Functions</span></a> based on some condition on the arguments of the function.</p></li>
 <li><p>The condition is specified through a lambda function which when evaluates to <cite>True</cite> the primary implementation is run and otherwise the compositional implementation is executed.</p></li>
@@ -1358,7 +1358,7 @@ But in cases when it isn’t supported, we support it anyway with <a class="refe
 </ol>
 </section>
 <section id="shape-conversion">
-<h2>Shape Conversion<a class="headerlink" href="#shape-conversion" title="Permalink to this heading">#</a></h2>
+<h2>Shape Conversion<a class="headerlink" href="#shape-conversion" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L488">inputs_to_native_shapes</a> : This wrapping function converts all <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Shape</span></code> instances in the arguments to their <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeShape</span></code> counterparts, based on the <a class="reference internal" href="backend_setting.html#backend-setting"><span class="std std-ref">Backend Setting</span></a> before calling the function.</p></li>
 <li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L501">outputs_to_ivy_shapes</a> : This wrapping function converts all <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeShape</span></code> instances in the outputs to their <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Shape</span></code> counterparts, based on the <a class="reference internal" href="backend_setting.html#backend-setting"><span class="std std-ref">Backend Setting</span></a> before calling the function.</p></li>
@@ -1366,20 +1366,20 @@ But in cases when it isn’t supported, we support it anyway with <a class="refe
 </ol>
 </section>
 <section id="view-handling">
-<h2>View Handling<a class="headerlink" href="#view-handling" title="Permalink to this heading">#</a></h2>
+<h2>View Handling<a class="headerlink" href="#view-handling" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L627">handle_view</a> : This wrapping function performs view handling based on our <a class="reference internal" href="inplace_updates.html#views"><span class="std std-ref">Views</span></a> policy.</p></li>
 <li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L659">handle_view_indexing</a> : This wrapping function is aimed at handling views for indexing.</p></li>
 </ol>
 </section>
 <section id="exception-handling">
-<h2>Exception Handling<a class="headerlink" href="#exception-handling" title="Permalink to this heading">#</a></h2>
+<h2>Exception Handling<a class="headerlink" href="#exception-handling" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/utils/exceptions.py#L189">handle_exceptions</a> : This wrapping function helps in catching native exceptions and unifying them into <cite>IvyException</cite> or the relevant subclasses. More information can be found in the <a class="reference internal" href="#exception-handling"><span class="std std-ref">Exception Handling</span></a> section.</p></li>
 </ol>
 </section>
 <section id="miscellaneous-wrappers">
-<h2>Miscellaneous Wrappers<a class="headerlink" href="#miscellaneous-wrappers" title="Permalink to this heading">#</a></h2>
+<h2>Miscellaneous Wrappers<a class="headerlink" href="#miscellaneous-wrappers" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/5658401b266352d3bf72c95e4af6ae9233115722/ivy/func_wrapper.py#L299">handle_array_function</a> : This wrapping function enables <a class="reference internal" href="arrays.html#integrating-custom-classes-with-ivy"><span class="std std-ref">Integrating custom classes with Ivy</span></a></p></li>
 <li><p><a class="reference external" href="https://github.com/unifyai/ivy/blob/bd9b5b1080d33004e821a48c486b3a879b9d6616/ivy/func_wrapper.py#L1393">handle_complex_input</a> : This wrapping function enables handling of complex numbers. It introduces a keyword argument <code class="code docutils literal notranslate"><span class="pre">complex_mode</span></code>, which is used to choose the function’s behaviour as per the wrapper’s docstring.</p></li>
@@ -1489,7 +1489,7 @@ src="https://www.youtube.com/embed/-RGXxrP849k" class="video">
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

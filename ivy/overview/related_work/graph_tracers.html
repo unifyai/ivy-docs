@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Graph Tracers &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/related_work/graph_tracers';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,20 +1276,20 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="graph-tracers">
-<span id="rworks-graph-tracers"></span><h1>Graph Tracers<a class="headerlink" href="#graph-tracers" title="Permalink to this heading">#</a></h1>
+<span id="rworks-graph-tracers"></span><h1>Graph Tracers<a class="headerlink" href="#graph-tracers" title="Link to this heading">#</a></h1>
 <p>Graph tracers enable acyclic directed computation graphs to be extracted from functions which operate on the tensors, expressed as source code in the framework.
 There is inevitably some overlap with the role of the lower level compilers here, but for the purpose of this discussion, we consider tracers as being any tool which executes the function to be traced and produces a computation graph consisting solely of the lowest level functions defined within the framework itself, without going any lower.
 In this light, the tracer does not need to know about the hardware, the compiler instruction set, or anything else lower level.
 It simply creates an acyclic directed graph which maps the inputs of a function to the outputs of a function, as a composition of the low level functions defined within the framework.
 This is a very useful representation which can then make subsequent compilation simpler, and so this graph representation often sits between the raw source code and the lower level compilers which compile to specific hardware.</p>
 <section id="tf-graph">
-<h2>tf.Graph<a class="headerlink" href="#tf-graph" title="Permalink to this heading">#</a></h2>
+<h2>tf.Graph<a class="headerlink" href="#tf-graph" title="Link to this heading">#</a></h2>
 <p>The <code class="code docutils literal notranslate"><span class="pre">tf.Graph</span></code> class represents an arbitrary <a class="reference external" href="https://tensorflow.org/">TensorFlow</a> computation, represented as a dataflow graph.
 It is used by <code class="code docutils literal notranslate"><span class="pre">tf.function</span></code> to represent the function’s computations.
 Each graph contains a set of <code class="code docutils literal notranslate"><span class="pre">tf.Operation</span></code> instances, which represent units of computation; and <code class="code docutils literal notranslate"><span class="pre">tf.Tensor</span></code> instances, which represent the units of data that flow between operations.</p>
 </section>
 <section id="jaxpr">
-<h2>Jaxpr<a class="headerlink" href="#jaxpr" title="Permalink to this heading">#</a></h2>
+<h2>Jaxpr<a class="headerlink" href="#jaxpr" title="Link to this heading">#</a></h2>
 <p>Conceptually, one can think of <a class="reference external" href="https://jax.readthedocs.io/">JAX</a> transformations as first trace-specializing the Python function to be transformed into a small and well-behaved intermediate form that is then interpreted with transformation-specific interpretation rules.
 It uses the actual Python interpreter to do most of the heavy lifting to distill the essence of the computation into a simple statically-typed expression language with limited higher-order features.
 That language is the jaxpr language.
@@ -1297,7 +1297,7 @@ A <code class="code docutils literal notranslate"><span class="pre">jax.core.Jax
 The results depend only on the input variables; there are no free variables captured from enclosing scopes.</p>
 </section>
 <section id="torch-jit">
-<h2>torch.jit<a class="headerlink" href="#torch-jit" title="Permalink to this heading">#</a></h2>
+<h2>torch.jit<a class="headerlink" href="#torch-jit" title="Link to this heading">#</a></h2>
 <p><code class="code docutils literal notranslate"><span class="pre">torch.jit.trace</span></code> and <code class="code docutils literal notranslate"><span class="pre">torch.jit.trace_module</span></code> enables a module or Python function to be traced in <a class="reference external" href="https://pytorch.org/">PyTorch</a>, and an executable is returned which will be optimized using just-in-time compilation.
 Example inputs must be provided, and then the function is run, with a recording of the operations performed on all the tensors.
 The resulting recording of a standalone function produces a <code class="code docutils literal notranslate"><span class="pre">ScriptFunction</span></code> instance.
@@ -1305,7 +1305,7 @@ The resulting recording of <code class="code docutils literal notranslate"><span
 This module also contains any parameters that the original module had as well.</p>
 </section>
 <section id="torch-fx">
-<h2>torch.fx<a class="headerlink" href="#torch-fx" title="Permalink to this heading">#</a></h2>
+<h2>torch.fx<a class="headerlink" href="#torch-fx" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://pytorch.org/docs/stable/fx.html">FX</a> is a toolkit for developers to use to transform <code class="code docutils literal notranslate"><span class="pre">torch.nn.Module</span></code> instances in <a class="reference external" href="https://pytorch.org/">PyTorch</a>.
 FX consists of three main components: a symbolic tracer, an intermediate representation, and Python code generation.
 The symbolic tracer performs a “symbolic execution” of the Python code.
@@ -1410,7 +1410,7 @@ Code generation can be used for programmatically generating models, for example 
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

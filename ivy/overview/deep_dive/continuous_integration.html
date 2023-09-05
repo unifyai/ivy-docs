@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Continuous Integration &#8212; Ivy Documentation</title>
   
@@ -29,22 +28,22 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -53,7 +52,7 @@
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1059,6 +1058,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1278,7 +1278,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="continuous-integration">
-<h1>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this heading">#</a></h1>
+<h1>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Link to this heading">#</a></h1>
 <p>We follow the practice of Continuous Integration (CI), in order to regularly build and test code at Ivy.
 This makes sure that:</p>
 <ol class="arabic simple">
@@ -1294,7 +1294,7 @@ This makes sure that:</p>
 <img alt="CI Overview" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/deep_dive/continuous_integration/CI.png?raw=true" />
 <p>We use GitHub Actions in order to implement and automate the process of testing. GitHub Actions allow implementing custom workflows that can build the code in the repository and run the tests. All the workflows used by Ivy are defined in the <a class="reference external" href="https://github.com/unifyai/ivy/tree/main/.github/workflows">.github/workflows</a> directory.</p>
 <section id="commit-push-pr-triggered-testing">
-<h2>Commit (Push/PR) Triggered Testing<a class="headerlink" href="#commit-push-pr-triggered-testing" title="Permalink to this heading">#</a></h2>
+<h2>Commit (Push/PR) Triggered Testing<a class="headerlink" href="#commit-push-pr-triggered-testing" title="Link to this heading">#</a></h2>
 <p>A small subset of the following tests are triggered in case of a Commit (Push/PR) made to the Ivy Repository:</p>
 <ol class="arabic simple">
 <li><p>Ivy Tests</p></li>
@@ -1302,11 +1302,11 @@ This makes sure that:</p>
 </ol>
 </section>
 <section id="ivy-tests">
-<h2>Ivy Tests<a class="headerlink" href="#ivy-tests" title="Permalink to this heading">#</a></h2>
+<h2>Ivy Tests<a class="headerlink" href="#ivy-tests" title="Link to this heading">#</a></h2>
 <p>A test is defined as the triplet of (submodule, function, backend). We follow the following notation to identify each test:
 <code class="code docutils literal notranslate"><span class="pre">submodule::function,backend</span></code></p>
 <p>For example, <code class="code docutils literal notranslate"><span class="pre">ivy_tests/test_ivy/test_frontends/test_torch/test_tensor.py::test_torch_instance_arctan_,numpy</span></code></p>
-<p>The Number of such Ivy tests running on the Repository (without taking any Framework/Python Versioning into account) is 12500 (as of writing this documentation), and we are adding tests daily. Therefore, triggering all the tests on each commit is neither desirable (as it will consume a huge lot of Compute Resources, as well take a large amount of time to run) nor feasible (as Each Job in Github Actions has a time Limit of 360 Minutes, and a Memory Limit as well).</p>
+<p>The Number of such Ivy tests running on the Repository (without taking any Framework/Python Versioning into account) is 12500 (as of writing this documentation), and we are adding tests daily. Therefore, triggering all the tests on each commit is neither desirable (as it will consume a huge lot of Compute Resources, as well as take a large amount of time to run) nor feasible (as Each Job in Github Actions has a time Limit of 360 Minutes, and a Memory Limit as well).</p>
 <p>Further, When we consider versioning, for a single Python version, and ~40 frontend and backend versions, the tests would shoot up to 40 * 40 * 12500 = 20,000,000, and we obviously don’t have resources as well as time to run those many tests on each commit.</p>
 <p>Thus, We need to prune the tests that run on each push to the Github Repository. The ideal situation, here, is to trigger only the tests that are impacted by the changes made in a push. The tests that are not impacted by the changes made in a push, are wasteful to trigger, as their results don’t change (keeping the same Hypothesis Configuration). For example, Consider the <a class="reference external" href="https://github.com/unifyai/ivy/commit/29cc90dda9e9a8d64789ed28e6eab0f41257a435">commit</a></p>
 <p>The commit changes the <code class="code docutils literal notranslate"><span class="pre">_reduce_loss</span></code> function and the <code class="code docutils literal notranslate"><span class="pre">binary_cross_entropy</span></code> functions in the ivy/functional/ivy/losses.py file. The only tests that must be triggered (for all 5 backends) are:</p>
@@ -1320,10 +1320,10 @@ This makes sure that:</p>
 <p>How do we (or at least try to) achieve this?</p>
 </section>
 <section id="implementation">
-<h2>Implementation<a class="headerlink" href="#implementation" title="Permalink to this heading">#</a></h2>
+<h2>Implementation<a class="headerlink" href="#implementation" title="Link to this heading">#</a></h2>
 </section>
 <section id="a-top-down-view">
-<h2>A Top-Down View<a class="headerlink" href="#a-top-down-view" title="Permalink to this heading">#</a></h2>
+<h2>A Top-Down View<a class="headerlink" href="#a-top-down-view" title="Link to this heading">#</a></h2>
 <p>In order to implement this, we use the magic of Test Coverage!
 Test Coverage refers to finding statements (lines) in your code that are executed (or could have been executed), on running a particular test.</p>
 <p>We use the Python Coverage Package (<a class="reference external" href="https://coverage.readthedocs.io/en/7.0.0/">https://coverage.readthedocs.io/en/7.0.0/</a>) for determining the Test Coverage of our tests.</p>
@@ -1410,7 +1410,7 @@ Test Coverage refers to finding statements (lines) in your code that are execute
 </ol>
 </section>
 <section id="storing-and-retrieving-the-mapping">
-<h2>Storing (and retrieving) the Mapping<a class="headerlink" href="#storing-and-retrieving-the-mapping" title="Permalink to this heading">#</a></h2>
+<h2>Storing (and retrieving) the Mapping<a class="headerlink" href="#storing-and-retrieving-the-mapping" title="Link to this heading">#</a></h2>
 <p>As we see in the overview section, we compute a mapping of lines to tests, for each commit to the Ivy Repository. This mapping has to be stored somewhere, in order to be used by a future commit to determine the corresponding mapping (and therefore, trigger the required tests). Therefore, we need a mechanism to store and retrieve the Mapping.
 We use the unifyai/Mapping GitHub Repository for this purpose. We use a GitHub Repository for the following reasons:</p>
 <ol class="arabic simple">
@@ -1422,7 +1422,7 @@ We use the unifyai/Mapping GitHub Repository for this purpose. We use a GitHub R
 <p>A GitHub Repository is not the best DB, obviously, with its own set of constraints (ex. 100 MB Space Limit), but works well enough for our requirements.</p>
 </section>
 <section id="cloning-and-pushing-to-the-repository">
-<h2>Cloning and Pushing to the Repository<a class="headerlink" href="#cloning-and-pushing-to-the-repository" title="Permalink to this heading">#</a></h2>
+<h2>Cloning and Pushing to the Repository<a class="headerlink" href="#cloning-and-pushing-to-the-repository" title="Link to this heading">#</a></h2>
 <p>For Push triggered testing (intelligent-tests.yml Workflow), we use the SSH Cloning Method in order to felicitate the clone and push commands to the Repository, as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">source</span> <span class="o">./</span><span class="n">ivy</span><span class="o">/</span><span class="n">clone_mapping</span><span class="o">.</span><span class="n">sh</span> <span class="n">master</span>
 <span class="n">Determine</span> <span class="ow">and</span> <span class="n">Run</span> <span class="n">Tests</span><span class="p">,</span> <span class="ow">and</span> <span class="n">Update</span> <span class="n">the</span> <span class="n">Mapping</span> <span class="o">...</span>
@@ -1455,7 +1455,7 @@ git config --global user.name &quot;$USER_NAME&quot;
 git clone --single-branch --depth 1 --branch &quot;$TARGET_BRANCH&quot; git@github.com:unifyai/Mapping.git
 </pre></div>
 </div>
-<p>In case of, Pull Requests, we do not have access to <code class="code docutils literal notranslate"><span class="pre">SSH_DEPLOY_KEY</span></code> secret (and we don’t even want to give PRs that access), and thus we don’t use the SSH Clone Methodology and instead use the HTTP Clone Method, as follows:</p>
+<p>In the case of, Pull Requests, we do not have access to <code class="code docutils literal notranslate"><span class="pre">SSH_DEPLOY_KEY</span></code> secret (and we don’t even want to give PRs that access), and thus we don’t use the SSH Clone Methodology and instead use the HTTP Clone Method, as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="n">master1</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">unifyai</span><span class="o">/</span><span class="n">Mapping</span><span class="o">.</span><span class="n">git</span> <span class="o">--</span><span class="n">depth</span> <span class="mi">1</span>
 <span class="n">Determine</span> <span class="ow">and</span> <span class="n">Run</span> <span class="n">the</span> <span class="n">Tests</span> <span class="o">...</span>
 </pre></div>
@@ -1463,9 +1463,9 @@ git clone --single-branch --depth 1 --branch &quot;$TARGET_BRANCH&quot; git@gith
 <p>PRs should not update the Mapping on the Repository, and thus no Push is required in case of PRs.</p>
 </section>
 <section id="implementational-nitty-gritties">
-<h2>Implementational Nitty Gritties<a class="headerlink" href="#implementational-nitty-gritties" title="Permalink to this heading">#</a></h2>
+<h2>Implementational Nitty Gritties<a class="headerlink" href="#implementational-nitty-gritties" title="Link to this heading">#</a></h2>
 <section id="storage-space-unifyai-mapping">
-<h3>Storage Space (unifyai/Mapping)<a class="headerlink" href="#storage-space-unifyai-mapping" title="Permalink to this heading">#</a></h3>
+<h3>Storage Space (unifyai/Mapping)<a class="headerlink" href="#storage-space-unifyai-mapping" title="Link to this heading">#</a></h3>
 <p>The GitHub Repository allows only storing 100 MB of files per commit. The current design of the mapping takes a huge space as test names are long strings and are stored repeatedly for each line that is impacted by the tests. In order to reduce the space requirement for storing the Mapping, we restructure the Mapping as follows:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\begin{equation}
@@ -1482,7 +1482,7 @@ git clone --single-branch --depth 1 --branch &quot;$TARGET_BRANCH&quot; git@gith
 <p>We include the <code class="code docutils literal notranslate"><span class="pre">index_mapping</span></code> and the <code class="code docutils literal notranslate"><span class="pre">test_mapping</span></code> fields, which map indices to tests and tests to indices, respectively. This allows us to just store the test index for each line in the Mapping, reducing the storage requirement significantly.</p>
 </section>
 <section id="determine-test-coverage-workflow">
-<h3>Determine Test Coverage Workflow<a class="headerlink" href="#determine-test-coverage-workflow" title="Permalink to this heading">#</a></h3>
+<h3>Determine Test Coverage Workflow<a class="headerlink" href="#determine-test-coverage-workflow" title="Link to this heading">#</a></h3>
 <p>Since each of our Update Mapping routine is not precisely correct, the Mapping would keep aggregating incorrections as commits keep coming to the GitHub Repository. In order to prevent this snowball effect from running completely irrelevant tests on each commit, we need to recalibrate the Mapping periodically. This is done by the Determine Test Coverage Workflow (implemented in det-test-coverage.yml).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span> <span class="n">determine</span><span class="o">-</span><span class="n">test</span><span class="o">-</span><span class="n">coverage</span>
 <span class="n">on</span><span class="p">:</span>
@@ -1495,21 +1495,21 @@ git clone --single-branch --depth 1 --branch &quot;$TARGET_BRANCH&quot; git@gith
 <p>The workflow runs all the Ivy tests, determines their coverage, computes the Mapping, and pushes it to the unifyai/Mapping Repository.</p>
 </section>
 <section id="multiple-runners">
-<h3>Multiple Runners<a class="headerlink" href="#multiple-runners" title="Permalink to this heading">#</a></h3>
+<h3>Multiple Runners<a class="headerlink" href="#multiple-runners" title="Link to this heading">#</a></h3>
 <p>The Determine Test Coverage workflow takes about ~60 hours to complete if run with a single runner. The GitHub Action rules don’t allow running a single Job for more than 6 hours. Further, Determining the Coverage</p>
 <p>Therefore, we need to split the Workflow based on the Tests (into 32 runners). Each runner caters to its own subset of tests, and is responsible for determining the coverage for only those tests, and creates the Mapping based on these tests.</p>
 <p>Therefore, we have 32 branches (master1, master2, …, master32), on the unifyai/Mapping Repository, and also 32 runners on the intelligent-tests and intelligent-tests-pr Workflows.</p>
 <p>Everything sounds good, but Can you think of a potential Race Condition here?</p>
 </section>
 <section id="race-condition">
-<h3>Race Condition<a class="headerlink" href="#race-condition" title="Permalink to this heading">#</a></h3>
+<h3>Race Condition<a class="headerlink" href="#race-condition" title="Link to this heading">#</a></h3>
 <p>The Synchronized Object here is the unifyai/Mapping Repository, and is accessed
 through push (Write) and pull (Read) to the Repository.
 The Determine Test Coverage Workflow and the Intelligent Tests Workflow can run concurrently, while both of them write to the Mapping Repository.
 Consider the following Case for Runner 2:</p>
 <ol class="arabic simple">
 <li><p>The Determine Test Coverage workflow has been running, and is about to complete for Runner 2. Meanwhile, a commit made on the master triggers the intelligent-tests workflow.</p></li>
-<li><p>The runner 2 in the intelligent-tests workflow, pulls the Mapping from the master2 branch of unifyai/Mapping repository, and starts running the determined tests (based on changes made in the commit).</p></li>
+<li><p>The runner 2 in the intelligent-tests workflow, pulls the Mapping from the master2 branch of the unifyai/Mapping repository, and starts running the determined tests (based on changes made in the commit).</p></li>
 <li><p>The det-test-coverage workflow completes for runner2, which makes a push to the corresponding branch in the unifyai/Mapping Repository.</p></li>
 <li><p>The runner 2 in the intelligent-tests workflow also completes, and pushes the updated repository</p></li>
 </ol>
@@ -1523,19 +1523,19 @@ Further, For some other Runner(s), the final push may be done by the Determine T
 </section>
 </section>
 <section id="array-api-tests">
-<h2>Array API Tests<a class="headerlink" href="#array-api-tests" title="Permalink to this heading">#</a></h2>
+<h2>Array API Tests<a class="headerlink" href="#array-api-tests" title="Link to this heading">#</a></h2>
 <p>The <a class="reference external" href="https://github.com/unifyai/ivy/blob/main/.github/workflows/array-api-intelligent-tests.yml">array-api-intelligent-tests.yml (Push)</a> and the <a class="reference external" href="https://github.com/unifyai/ivy/blob/main/.github/workflows/array-api-intelligent-tests-pr.yml">array-api-intelligent-tests-pr.yml (Pull Request)</a> workflows run the Array API Tests. Similar to Ivy Tests, The Array API tests are also determined intelligently and only relevant tests are triggered on each commit.</p>
 <p>More details about the Array API Tests are available <a class="reference external" href="https://unify.ai/docs/ivy/overview/deep_dive/array_api_tests.html">here</a>.</p>
 </section>
 <section id="periodic-testing">
-<h2>Periodic Testing<a class="headerlink" href="#periodic-testing" title="Permalink to this heading">#</a></h2>
+<h2>Periodic Testing<a class="headerlink" href="#periodic-testing" title="Link to this heading">#</a></h2>
 <p>In order to make sure that none of the Ivy Tests are left ignored for a long time, and to decouple the rate of testing to the rate of committing to the repository, we implement periodic testing on the Ivy Repository.
 The <a class="reference external" href="https://github.com/unifyai/ivy/blob/main/.github/workflows/test-ivy-cron.yml">Test Ivy Cron Workflow</a>  is responsible for implementing this behavior by running Ivy tests every hour. In Each Run, It triggers 150 Ivy Tests, cycling through all of the tests.
 This number of 150 is chosen in order to make sure that the Action completes in 1 hour most of the time.
 The Test Results update the corresponding cell on the Dashboards.</p>
 </section>
 <section id="manually-dispatched-workflows">
-<h2>Manually Dispatched Workflows<a class="headerlink" href="#manually-dispatched-workflows" title="Permalink to this heading">#</a></h2>
+<h2>Manually Dispatched Workflows<a class="headerlink" href="#manually-dispatched-workflows" title="Link to this heading">#</a></h2>
 <p>In order to trigger any particular test for any reason (maybe Intelligent Testing missed the Test), you can
 follow the following steps:</p>
 <ol class="arabic simple">
@@ -1554,10 +1554,10 @@ You can also run the Manual Tests Workflow on a Fork Repository (while reviewing
 <p>This might take some time to run as the Fork may have limited runners.</p>
 </section>
 <section id="ci-pipeline">
-<h2>CI Pipeline ➡️<a class="headerlink" href="#ci-pipeline" title="Permalink to this heading">#</a></h2>
+<h2>CI Pipeline ➡️<a class="headerlink" href="#ci-pipeline" title="Link to this heading">#</a></h2>
 <p>The below subsections provide the roadmap for running workflows and interpreting results in case a push or a pull request is made to the repository.</p>
 <section id="push">
-<h3>Push<a class="headerlink" href="#push" title="Permalink to this heading">#</a></h3>
+<h3>Push<a class="headerlink" href="#push" title="Link to this heading">#</a></h3>
 <p>Whenever a push is made to the repository, a variety of workflows are triggered automatically (as described above).
 This can be seen on the GitHub Repository Page, with the commit message followed by a yellow dot, indicating that some workflows have been queued to run following this commit, as shown below:</p>
 <img alt="Push" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/deep_dive/continuous_integration/push.png?raw=true" />
@@ -1584,7 +1584,7 @@ It redirects to the Actions Tab, showing details of the failure, as shown below:
 You can also directly refer to the Dashboard (available at <a class="reference external" href="https://ivy-dynamical-dashboards.onrender.com">https://ivy-dynamical-dashboards.onrender.com</a>), to check the result of your test.</p>
 </section>
 <section id="pull-request">
-<h3>Pull Request<a class="headerlink" href="#pull-request" title="Permalink to this heading">#</a></h3>
+<h3>Pull Request<a class="headerlink" href="#pull-request" title="Link to this heading">#</a></h3>
 <p>In case of a pull request, the test suite is available on the Pull Request Page on Github, as shown below:</p>
 <img alt="PR Test-Suite" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/deep_dive/continuous_integration/pull-request1.png?raw=true" />
 <p>Clicking on the “Details” link redirects to the Action Log.
@@ -1593,9 +1593,9 @@ The rest of the procedure remains the same as given in the Push section above.</
 </section>
 </section>
 <section id="dashboard">
-<h2>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this heading">#</a></h2>
+<h2>Dashboard<a class="headerlink" href="#dashboard" title="Link to this heading">#</a></h2>
 <p>In order to view the status of the tests, at any point in time, we have implemented a dashboard application that shows the results of the latest Workflow that ran each test.
-The Dashboards are available on the link: <a class="reference external" href="https://ivy-dynamical-dashboards.onrender.com">https://ivy-dynamical-dashboards.onrender.com</a>
+The Dashboards are available at the link: <a class="reference external" href="https://ivy-dynamical-dashboards.onrender.com">https://ivy-dynamical-dashboards.onrender.com</a>
 You can filter tests by selecting choices from the various dropdowns. The link can also be saved for redirecting straight to the filtered tests in the future. The status badges are clickable, and will take you directly to the Action log of the latest workflow that ran the corresponding test.</p>
 <p><strong>Round Up</strong></p>
 <p>This should have hopefully given you a good feel for how Continuous Integration works in Ivy.</p>
@@ -1710,7 +1710,7 @@ src="https://www.youtube.com/embed/eO268nc8WH4" class="video">
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

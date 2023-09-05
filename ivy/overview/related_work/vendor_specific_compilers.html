@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Vendor-Specific Compilers &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/related_work/vendor_specific_compilers';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,19 +1276,19 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="vendor-specific-compilers">
-<span id="rworks-vendor-specific-compilers"></span><h1>Vendor-Specific Compilers<a class="headerlink" href="#vendor-specific-compilers" title="Permalink to this heading">#</a></h1>
+<span id="rworks-vendor-specific-compilers"></span><h1>Vendor-Specific Compilers<a class="headerlink" href="#vendor-specific-compilers" title="Link to this heading">#</a></h1>
 <p>Below the vendor-specific APIs are the vendor specific compilers.
 As far as modern machine learning practitioners go, these compilers are very rarely interacted with directly.
 As for our own representation of the ML stack, these compilers are the lowest level building blocks that we consider.
 Of course, we could talk about assembly languages and byte code, but this is outside the scope of what is really relevant for ML practitioners when considering their software stack.</p>
 <section id="id1">
-<h2>ICC<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>ICC<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://www.intel.com/content/www/us/en/develop/documentation/cpp-compiler-developer-guide-and-reference">Intel C++ Compiler Classic (ICC)</a> is the first of <a class="reference external" href="https://www.intel.com/">Intel</a>’s two C, C++, SYCL, and Data Parallel C++ (DPC++) compilers for Intel processor-based systems.
 It is available for Windows, Linux, and macOS operating systems.
 It targets general-purpose Intel x86-64 architecture CPUs.</p>
 </section>
 <section id="icx">
-<h2>ICX<a class="headerlink" href="#icx" title="Permalink to this heading">#</a></h2>
+<h2>ICX<a class="headerlink" href="#icx" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/dpc-compiler.html">Intel oneAPI DPC++/C++ Compiler (ICX)</a> is the second of <a class="reference external" href="https://www.intel.com/">Intel</a>’s two C, C++, SYCL, and Data Parallel C++ (DPC++) compilers for Intel processor-based systems.
 Again, it is available for Windows, Linux, and macOS operating systems.
 Unlike <a class="reference external" href="https://www.intel.com/content/www/us/en/develop/documentation/cpp-compiler-developer-guide-and-reference">ICC</a>, It generates code for both Intel’s general-purpose x86-64 CPUs and also GPUs.
@@ -1298,7 +1298,7 @@ It is designed to allow developers to reuse code across hardware targets (CPUs a
 ICX adopts <a class="reference external" href="https://llvm.org/">LLVM</a> for faster build times, and benefits from supporting the latest C++ standards.</p>
 </section>
 <section id="nvcc">
-<h2>NVCC<a class="headerlink" href="#nvcc" title="Permalink to this heading">#</a></h2>
+<h2>NVCC<a class="headerlink" href="#nvcc" title="Link to this heading">#</a></h2>
 <p>The <a class="reference external" href="https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc">Nvidia CUDA Compiler (NVCC)</a> is a proprietary compiler by <a class="reference external" href="https://www.nvidia.com/">NVIDIA</a> intended for use with <a class="reference external" href="https://developer.nvidia.com/cuda-toolkit">CUDA</a>.
 CUDA code runs on both the CPU and GPU.
 NVCC separates these two parts and sends host code (the part of code which will be run on the CPU) to a C compiler like <a class="reference external" href="https://gcc.gnu.org/">GCC</a> or <a class="reference external" href="https://www.intel.com/content/www/us/en/develop/documentation/cpp-compiler-developer-guide-and-reference">Intel C++ Compiler Classic (ICC)</a> or <a class="reference external" href="https://docs.microsoft.com/en-us/cpp/">Microsoft Visual C++ Compiler</a>, and sends the device code (the part which will run on the GPU) to the GPU.
@@ -1392,7 +1392,7 @@ Like <a class="reference internal" href="#icx">ICX</a>, NVCC is also based on <a
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

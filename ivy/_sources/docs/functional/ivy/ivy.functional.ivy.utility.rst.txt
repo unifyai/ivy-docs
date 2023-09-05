@@ -15,6 +15,9 @@ Utility
    ivy.functional.ivy.utility.any
    
    
+   ivy.functional.ivy.utility.load
+   
+   
    ivy.functional.ivy.utility.save
    
 
@@ -31,6 +34,8 @@ Utility
 .. autofunction:: ivy.all
 
 .. autofunction:: ivy.any
+
+.. autofunction:: ivy.load
 
 .. autofunction:: ivy.save
 

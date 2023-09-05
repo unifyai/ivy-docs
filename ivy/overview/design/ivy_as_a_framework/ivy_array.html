@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Ivy Array &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/sphinx_highlight.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/design/ivy_as_a_framework/ivy_array';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../../_static/js/kapa.ai.js"></script>
+    <script src="../../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1279,11 +1279,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="ivy-array">
-<h1>Ivy Array<a class="headerlink" href="#ivy-array" title="Permalink to this heading">#</a></h1>
+<h1>Ivy Array<a class="headerlink" href="#ivy-array" title="Link to this heading">#</a></h1>
 <p>Here, we explain the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> class, which is the class used to represent all arrays in Ivy.
 Every Ivy method returns <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances for all returned arrays.</p>
 <section id="the-array-class">
-<h2>The Array Class<a class="headerlink" href="#the-array-class" title="Permalink to this heading">#</a></h2>
+<h2>The Array Class<a class="headerlink" href="#the-array-class" title="Link to this heading">#</a></h2>
 <p>Let’s dive straight in and check out what the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> constructor looks like.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ivy/array/array.py</span>
 <span class="k">class</span> <span class="nc">Array</span><span class="p">(</span>
@@ -1374,7 +1374,7 @@ Every Ivy method returns <code class="xref py py-class docutils literal notransl
 Perhaps the most important motivation for having a dedicated <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> class is the unification of array operators, which we discuss next!</p>
 </section>
 <section id="unifying-operators">
-<h2>Unifying Operators<a class="headerlink" href="#unifying-operators" title="Permalink to this heading">#</a></h2>
+<h2>Unifying Operators<a class="headerlink" href="#unifying-operators" title="Link to this heading">#</a></h2>
 <p>Let’s assume that there is no such thing as the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> class,
 and we are just returning native arrays from all Ivy methods.</p>
 <p>Consider the code below:</p>
@@ -1441,13 +1441,13 @@ For example, maybe one framework makes the strange decision to return rounded in
 <p>Therefore, with the design of Ivy, we have made the decision to require all arrays returned from Ivy methods to be instances of the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> class.</p>
 </section>
 <section id="api-monkey-patching">
-<h2>API Monkey Patching<a class="headerlink" href="#api-monkey-patching" title="Permalink to this heading">#</a></h2>
+<h2>API Monkey Patching<a class="headerlink" href="#api-monkey-patching" title="Link to this heading">#</a></h2>
 <p>All ivy functions with array inputs/outputs have been wrapped to return <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instances while accepting both <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> instances.
 This allows for the control required to provide a unified array interface.
 For more details on wrapping, see the <a class="reference external" href="https://unify.ai/docs/ivy/overview/deep_dive/function_wrapping.html">Function Wrapping</a> page in deep dive.</p>
 </section>
 <section id="instance-methods">
-<h2>Instance Methods<a class="headerlink" href="#instance-methods" title="Permalink to this heading">#</a></h2>
+<h2>Instance Methods<a class="headerlink" href="#instance-methods" title="Link to this heading">#</a></h2>
 <p>Taking a look at the class definition, you may wonder why there are so many parent classes!
 The only reason the Array class derives from so many different Array classes is so we can compartmentalize the different array functions into separate classes for better code readability.</p>
 <p>All methods in the Ivy functional API are implemented as public instance methods in the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> class via inheritance.
@@ -1584,7 +1584,7 @@ Some examples are given below.</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

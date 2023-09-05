@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Function Arguments &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/deep_dive/function_arguments';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,15 +1276,15 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="function-arguments">
-<h1>Function Arguments<a class="headerlink" href="#function-arguments" title="Permalink to this heading">#</a></h1>
+<h1>Function Arguments<a class="headerlink" href="#function-arguments" title="Link to this heading">#</a></h1>
 <p>Here, we explain how the function arguments differ between the placeholder implementation at <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy/functional/ivy/category_name.py</span></code>, and the backend-specific implementation at <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy/functional/backends/backend_name/category_name.py</span></code>.</p>
-<p>Many of these points are already adressed in the previous sections: <a class="reference internal" href="arrays.html#arrays"><span class="std std-ref">Arrays</span></a>, <a class="reference internal" href="data_types.html#data-types"><span class="std std-ref">Data Types</span></a>, <a class="reference internal" href="devices.html#devices"><span class="std std-ref">Devices</span></a> and <a class="reference internal" href="inplace_updates.html#inplace-updates"><span class="std std-ref">Inplace Updates</span></a>.
+<p>Many of these points are already addressed in the previous sections: <a class="reference internal" href="arrays.html#arrays"><span class="std std-ref">Arrays</span></a>, <a class="reference internal" href="data_types.html#data-types"><span class="std std-ref">Data Types</span></a>, <a class="reference internal" href="devices.html#devices"><span class="std std-ref">Devices</span></a> and <a class="reference internal" href="inplace_updates.html#inplace-updates"><span class="std std-ref">Inplace Updates</span></a>.
 However, we thought it would be convenient to revisit all of these considerations in a single section, dedicated to function arguments.</p>
 <p>As for type-hints, all functions in the Ivy API at <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy/functional/ivy/category_name.py</span></code> should have full and thorough type-hints.
 Likewise, all backend implementations at <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy/functional/backends/backend_name/category_name.py</span></code> should also have full and thorough type-hints.</p>
 <p>In order to understand the various requirements for function arguments, it’s useful to first look at some examples.</p>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
 <p>For the purposes of explanation, we will use four functions as examples: <a class="reference internal" href="../../docs/functional/ivy/elementwise/ivy.functional.ivy.elementwise.tan.html#ivy.tan" title="ivy.tan"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.tan()</span></code></a>, <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.manipulation.html#ivy.roll" title="ivy.roll"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.roll()</span></code></a>, <a class="reference internal" href="../../docs/functional/ivy/elementwise/ivy.functional.ivy.elementwise.add.html#ivy.add" title="ivy.add"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.add()</span></code></a> and <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.creation.html#ivy.zeros" title="ivy.zeros"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.zeros()</span></code></a>.</p>
 <p>We present both the Ivy API signature and also a backend-specific signature for each function:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ivy</span>
@@ -1393,7 +1393,7 @@ Likewise, all backend implementations at <code class="xref py py-mod docutils li
 </div>
 </section>
 <section id="positional-and-keyword-arguments">
-<h2>Positional and Keyword Arguments<a class="headerlink" href="#positional-and-keyword-arguments" title="Permalink to this heading">#</a></h2>
+<h2>Positional and Keyword Arguments<a class="headerlink" href="#positional-and-keyword-arguments" title="Link to this heading">#</a></h2>
 <p>In both signatures, we follow the <a class="reference external" href="https://data-apis.org/array-api/2021.12/API_specification/array_object.html#api-specification-array-object--page-root">Array API Standard convention</a> about positional and keyword arguments.</p>
 <ul class="simple">
 <li><p>Positional parameters must be positional-only parameters.
@@ -1409,29 +1409,29 @@ The <code class="code docutils literal notranslate"><span class="pre">shape</spa
 Therefore, given that Ivy fully adheres to the Array API Standard, Ivy also adopts these same exceptions to the general rule for the <code class="code docutils literal notranslate"><span class="pre">shape</span></code> and <code class="code docutils literal notranslate"><span class="pre">num</span></code> arguments in these functions.</p>
 </section>
 <section id="input-arrays">
-<h2>Input Arrays<a class="headerlink" href="#input-arrays" title="Permalink to this heading">#</a></h2>
+<h2>Input Arrays<a class="headerlink" href="#input-arrays" title="Link to this heading">#</a></h2>
 <p>In each example, we can see that the input arrays have type <code class="code docutils literal notranslate"><span class="pre">Union[ivy.Array,</span> <span class="pre">ivy.NativeArray]</span></code> whereas the output arrays have type <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code>.
 This is the case for all functions in the Ivy API.
 We always return an <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> instance to ensure that any subsequent Ivy code is fully framework-agnostic, with all operators performed on the returned array now handled by the special methods of the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> class, and not the special methods of the backend array class (<code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code>).
 For example, calling any of (<code class="code docutils literal notranslate"><span class="pre">+</span></code>, <code class="code docutils literal notranslate"><span class="pre">-</span></code>, <code class="code docutils literal notranslate"><span class="pre">*</span></code>, <code class="code docutils literal notranslate"><span class="pre">/</span></code> etc.) on the array will result in (<code class="code docutils literal notranslate"><span class="pre">__add__</span></code>, <code class="code docutils literal notranslate"><span class="pre">__sub__</span></code>, <code class="code docutils literal notranslate"><span class="pre">__mul__</span></code>, <code class="code docutils literal notranslate"><span class="pre">__div__</span></code> etc.) being called on the array class.</p>
 <p><code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> instances are also not permitted for the <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument, which is used in many functions.
-This is because the <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument dicates the array to which the result should be written, and so it effectively serves the same purpose as the function return when no <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument is specified.
+This is because the <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument dictates the array to which the result should be written, and so it effectively serves the same purpose as the function return when no <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument is specified.
 This is all explained in more detail in the <a class="reference internal" href="arrays.html#arrays"><span class="std std-ref">Arrays</span></a> section.</p>
 </section>
 <section id="out-argument">
-<h2>out Argument<a class="headerlink" href="#out-argument" title="Permalink to this heading">#</a></h2>
+<h2>out Argument<a class="headerlink" href="#out-argument" title="Link to this heading">#</a></h2>
 <p>The <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument should always be provided as a keyword-only argument, and it should be added to all functions in the Ivy API and backend API which support inplace updates, with a default value of <code class="code docutils literal notranslate"><span class="pre">None</span></code> in all cases.
 The <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument is explained in more detail in the <a class="reference internal" href="inplace_updates.html#inplace-updates"><span class="std std-ref">Inplace Updates</span></a> section.</p>
 </section>
 <section id="dtype-and-device-arguments">
-<h2>dtype and device arguments<a class="headerlink" href="#dtype-and-device-arguments" title="Permalink to this heading">#</a></h2>
-<p>In the Ivy API at <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy/functional/ivy/category_name.py</span></code>, the <code class="code docutils literal notranslate"><span class="pre">dtype</span></code> and <code class="code docutils literal notranslate"><span class="pre">device</span></code> arguments should both always be provided as keyword-only arguments, with default value of <code class="code docutils literal notranslate"><span class="pre">None</span></code>.
+<h2>dtype and device arguments<a class="headerlink" href="#dtype-and-device-arguments" title="Link to this heading">#</a></h2>
+<p>In the Ivy API at <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy/functional/ivy/category_name.py</span></code>, the <code class="code docutils literal notranslate"><span class="pre">dtype</span></code> and <code class="code docutils literal notranslate"><span class="pre">device</span></code> arguments should both always be provided as keyword-only arguments, with a default value of <code class="code docutils literal notranslate"><span class="pre">None</span></code>.
 In contrast, these arguments should both be added as required arguments in the backend implementation at <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy/functional/backends/backend_name/category_name.py</span></code>.
 In a nutshell, by the time the backend implementation is entered, the correct <code class="code docutils literal notranslate"><span class="pre">dtype</span></code> and <code class="code docutils literal notranslate"><span class="pre">device</span></code> to use have both already been correctly handled by code which is wrapped around the backend implementation.
 This is further explained in the <a class="reference internal" href="data_types.html#data-types"><span class="std std-ref">Data Types</span></a> and <a class="reference internal" href="devices.html#devices"><span class="std std-ref">Devices</span></a> sections respectively.</p>
 </section>
 <section id="numbers-in-operator-functions">
-<h2>Numbers in Operator Functions<a class="headerlink" href="#numbers-in-operator-functions" title="Permalink to this heading">#</a></h2>
+<h2>Numbers in Operator Functions<a class="headerlink" href="#numbers-in-operator-functions" title="Link to this heading">#</a></h2>
 <p>All operator functions (which have a corresponding such as <code class="code docutils literal notranslate"><span class="pre">+</span></code>, <code class="code docutils literal notranslate"><span class="pre">-</span></code>, <code class="code docutils literal notranslate"><span class="pre">*</span></code>, <code class="code docutils literal notranslate"><span class="pre">/</span></code>) must also be fully compatible with numbers (float or <code class="code docutils literal notranslate"><span class="pre">int</span></code>) passed into any of the array inputs, even in the absence of any arrays.
 For example, <code class="code docutils literal notranslate"><span class="pre">ivy.add(1,</span> <span class="pre">2)</span></code>, <code class="code docutils literal notranslate"><span class="pre">ivy.add(1.5,</span> <span class="pre">2)</span></code> and <code class="code docutils literal notranslate"><span class="pre">ivy.add(1.5,</span> <span class="pre">ivy.array([2]))</span></code> should all run without error.
 Therefore, the type hints for <a class="reference internal" href="../../docs/functional/ivy/elementwise/ivy.functional.ivy.elementwise.add.html#ivy.add" title="ivy.add"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.add()</span></code></a> include float as one of the types in the <code class="code docutils literal notranslate"><span class="pre">Union</span></code> for the array inputs, and also as one of the types in the <code class="code docutils literal notranslate"><span class="pre">Union</span></code> for the output.
@@ -1439,7 +1439,7 @@ Therefore, the type hints for <a class="reference internal" href="../../docs/fun
 Therefore, we only include float in the type hints.</p>
 </section>
 <section id="integer-sequences">
-<h2>Integer Sequences<a class="headerlink" href="#integer-sequences" title="Permalink to this heading">#</a></h2>
+<h2>Integer Sequences<a class="headerlink" href="#integer-sequences" title="Link to this heading">#</a></h2>
 <p>For sequences of integers, generally the <a class="reference external" href="https://data-apis.org/array-api/latest/">Array API Standard</a> dictates that these should be of type <code class="code docutils literal notranslate"><span class="pre">Tuple[int]</span></code>, and not <code class="code docutils literal notranslate"><span class="pre">List[int]</span></code>.
 However, in order to make Ivy code less brittle, we accept arbitrary integer sequences <code class="code docutils literal notranslate"><span class="pre">Sequence[int]</span></code> for such arguments (which includes <code class="code docutils literal notranslate"><span class="pre">list</span></code>, <code class="code docutils literal notranslate"><span class="pre">tuple</span></code> etc.).
 This does not break the standard, as the standard is only intended to define a subset of required behaviour.
@@ -1447,7 +1447,7 @@ The standard can be freely extended, as we are doing here.
 Good examples of this are the <code class="code docutils literal notranslate"><span class="pre">axis</span></code> argument of <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.manipulation.html#ivy.roll" title="ivy.roll"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.roll()</span></code></a> and the <code class="code docutils literal notranslate"><span class="pre">shape</span></code> argument of <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.creation.html#ivy.zeros" title="ivy.zeros"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.zeros()</span></code></a>, as shown above.</p>
 </section>
 <section id="nestable-functions">
-<h2>Nestable Functions<a class="headerlink" href="#nestable-functions" title="Permalink to this heading">#</a></h2>
+<h2>Nestable Functions<a class="headerlink" href="#nestable-functions" title="Link to this heading">#</a></h2>
 <p>Most functions in the Ivy API can also consume and return <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> instances in place of the <strong>any</strong> of the function arguments.
 If an <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> is passed, then the function is mapped across all of the leaves of this container.
 Because of this feature, we refer to these functions as <em>nestable</em> functions.
@@ -1553,7 +1553,7 @@ src="https://www.youtube.com/embed/5cAbryXza18" class="video">
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

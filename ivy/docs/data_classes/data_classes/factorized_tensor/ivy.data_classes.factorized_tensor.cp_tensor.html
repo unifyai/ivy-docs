@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Cp tensor &#8212; Ivy Documentation</title>
   
@@ -29,22 +28,22 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
-    <script src="../../../../_static/doctools.js"></script>
-    <script src="../../../../_static/sphinx_highlight.js"></script>
-    <script src="../../../../_static/clipboard.min.js"></script>
-    <script src="../../../../_static/copybutton.js"></script>
-    <script src="../../../../_static/design-tabs.js"></script>
+    <script src="../../../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -53,7 +52,7 @@
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../../../_static/js/kapa.ai.js"></script>
+    <script src="../../../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
@@ -1059,6 +1058,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../../functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1281,29 +1281,29 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="module-ivy.data_classes.factorized_tensor.cp_tensor">
-<span id="cp-tensor"></span><h1>Cp tensor<a class="headerlink" href="#module-ivy.data_classes.factorized_tensor.cp_tensor" title="Permalink to this heading">#</a></h1>
+<span id="cp-tensor"></span><h1>Cp tensor<a class="headerlink" href="#module-ivy.data_classes.factorized_tensor.cp_tensor" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.data_classes.factorized_tensor.cp_tensor.</span></span><span class="sig-name descname"><span class="pre">CPTensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L6-L796"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.data_classes.factorized_tensor.cp_tensor.</span></span><span class="sig-name descname"><span class="pre">CPTensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L6-L796"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="ivy.data_classes.factorized_tensor.base.html#ivy.data_classes.factorized_tensor.base.FactorizedTensor" title="ivy.data_classes.factorized_tensor.base.FactorizedTensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">FactorizedTensor</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L7-L19"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L7-L19"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.__init__" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor._abc_impl">
-<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor._abc_impl" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor._abc_impl" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_copy">
-<span class="sig-name descname"><span class="pre">cp_copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L70-L76"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_copy" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">cp_copy</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L70-L76"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_copy" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_flip_sign">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_flip_sign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L358-L411"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_flip_sign" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_flip_sign</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L358-L411"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_flip_sign" title="Link to this definition">#</a></dt>
 <dd><p>Return cp_tensor with factors flipped to have positive signs. The sign of a
 given column is determined by <cite>func</cite>, which is the mean by default. Any negative
 signs are assigned to the mode indicated by <cite>mode</cite>.</p>
@@ -1319,8 +1319,8 @@ i.e.:</p>
 </div>
 <p>where <cite>R</cite> is fixed while <cite>s_i</cite> can vary with <cite>i</cite></p>
 </p></li>
-<li><p><strong>mode</strong> – mode that should receive negative signs</p></li>
-<li><p><strong>func</strong> – a function that should summarize the sign of a column
+<li><p><strong>mode</strong> (default: <code class="docutils literal notranslate"><span class="pre">0</span></code>) – mode that should receive negative signs</p></li>
+<li><p><strong>func</strong> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – a function that should summarize the sign of a column
 it must be able to take an axis argument</p></li>
 </ul>
 </dd>
@@ -1332,7 +1332,7 @@ it must be able to take an axis argument</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_lstsq_grad">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_lstsq_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_loss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L413-L473"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_lstsq_grad" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_lstsq_grad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_loss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L413-L473"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_lstsq_grad" title="Link to this definition">#</a></dt>
 <dd><p>Compute (for a third-order tensor)</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\nabla 0.5 ||\\mathcal{X} - [\\mathbf{w}; \\mathbf{A}, \\mathbf{B}, \\mathbf{C}]||^2 # noqa\end{split}\]</div>
@@ -1349,10 +1349,10 @@ factors is a list of factor matrices,
 all with the same number of columns
 i.e. for all matrix U in factor_matrices:
 U has shape <code class="docutils literal notranslate"><span class="pre">(s_i,</span> <span class="pre">R)</span></code>, where R is fixed and s_i varies with i</p></li>
-<li><p><strong>mask</strong> – A mask to be applied to the final tensor. It should be
+<li><p><strong>mask</strong> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – A mask to be applied to the final tensor. It should be
 broadcastable to the shape of the final tensor, that is
 <code class="docutils literal notranslate"><span class="pre">(U[1].shape[0],</span> <span class="pre">...</span> <span class="pre">U[-1].shape[0])</span></code>.</p></li>
-<li><p><strong>return_loss</strong> – Optionally return the scalar loss function along with the gradient.</p></li>
+<li><p><strong>return_loss</strong> (default: <code class="docutils literal notranslate"><span class="pre">False</span></code>) – Optionally return the scalar loss function along with the gradient.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1371,7 +1371,7 @@ if return_loss = True.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_mode_dot">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_mode_dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix_or_vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L600-L670"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_mode_dot" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_mode_dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix_or_vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L600-L670"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_mode_dot" title="Link to this definition">#</a></dt>
 <dd><p>N-mode product of a CP tensor and a matrix or vector at the specified mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1406,7 +1406,7 @@ if matrix_or_vector is a vector</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_n_param">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_n_param</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L240-L263"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_n_param" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_n_param</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L240-L263"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_n_param" title="Link to this definition">#</a></dt>
 <dd><p>Return number of parameters of a CP decomposition for a given <cite>rank</cite> and full
 <cite>tensor_shape</cite>.</p>
 <dl class="field-list simple">
@@ -1429,7 +1429,7 @@ if matrix_or_vector is a vector</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_norm">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L672-L708"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_norm" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L672-L708"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_norm" title="Link to this definition">#</a></dt>
 <dd><p>Return the l2 norm of a CP tensor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1447,7 +1447,7 @@ khatria-rao(A, B)^T x khatri-rao(A, B) = A^T x A  * B^T x B</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_normalize">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L309-L356"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_normalize" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L309-L356"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_normalize" title="Link to this definition">#</a></dt>
 <dd><p>Return cp_tensor with factors normalised to unit length.</p>
 <p>Turns <code class="docutils literal notranslate"><span class="pre">factors</span> <span class="pre">=</span> <span class="pre">[|U_1,</span> <span class="pre">...</span> <span class="pre">U_n|]</span></code> into <code class="docutils literal notranslate"><span class="pre">[weights;</span>
 <span class="pre">|V_1,</span> <span class="pre">...</span> <span class="pre">V_n|]</span></code>, where the columns of each <cite>V_k</cite> are
@@ -1477,7 +1477,7 @@ normalized to unit Euclidean length from the columns of
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_to_tensor">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_to_tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L475-L531"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_to_tensor" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_to_tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L475-L531"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_to_tensor" title="Link to this definition">#</a></dt>
 <dd><p>Turn the Khatri-product of matrices into a full tensor.</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">factor_matrices</span> <span class="pre">=</span> <span class="pre">[|U_1,</span> <span class="pre">...</span> <span class="pre">U_n|]</span></code> becomes
@@ -1490,7 +1490,7 @@ a tensor shape <code class="docutils literal notranslate"><span class="pre">(U[1
 all with the same number of columns
 i.e. for all matrix U in factor_matrices:
 U has shape <code class="docutils literal notranslate"><span class="pre">(s_i,</span> <span class="pre">R)</span></code>, where R is fixed and s_i varies with i</p></li>
-<li><p><strong>mask</strong> – mask to be applied to the final tensor. It should be
+<li><p><strong>mask</strong> (default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – mask to be applied to the final tensor. It should be
 broadcastable to the shape of the final tensor, that is
 <code class="docutils literal notranslate"><span class="pre">(U[1].shape[0],</span> <span class="pre">...</span> <span class="pre">U[-1].shape[0])</span></code>.</p></li>
 </ul>
@@ -1508,7 +1508,7 @@ summing over r and updating an outer product of vectors.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_to_unfolded">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_to_unfolded</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L533-L572"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_to_unfolded" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_to_unfolded</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L533-L572"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_to_unfolded" title="Link to this definition">#</a></dt>
 <dd><p>Turn the khatri-product of matrices into an unfolded tensor.</p>
 <blockquote>
 <div><p>turns <code class="docutils literal notranslate"><span class="pre">factors</span> <span class="pre">=</span> <span class="pre">[|U_1,</span> <span class="pre">...</span> <span class="pre">U_n|]</span></code> into a mode-<cite>mode</cite>
@@ -1534,7 +1534,7 @@ u[i] has shape (s_u_i, R), where R is fixed</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_to_vec">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_to_vec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L574-L598"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_to_vec" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cp_to_vec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L574-L598"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.cp_to_vec" title="Link to this definition">#</a></dt>
 <dd><p>Turn the khatri-product of matrices into a vector.</p>
 <blockquote>
 <div><p>(the tensor <code class="docutils literal notranslate"><span class="pre">factors</span> <span class="pre">=</span> <span class="pre">[|U_1,</span> <span class="pre">...</span> <span class="pre">U_n|]</span></code>
@@ -1559,7 +1559,7 @@ i.e.:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.mode_dot">
-<span class="sig-name descname"><span class="pre">mode_dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix_or_vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L78-L107"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.mode_dot" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">mode_dot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">matrix_or_vector</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keep_dim</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L78-L107"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.mode_dot" title="Link to this definition">#</a></dt>
 <dd><p>N-mode product of a CP tensor and a matrix or vector at the specified mode.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1594,12 +1594,12 @@ if matrix_or_vector is a vector</p></li>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.n_param">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_param</span></span><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.n_param" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">n_param</span></span><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.n_param" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.norm">
-<span class="sig-name descname"><span class="pre">norm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L109-L130"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.norm" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">norm</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L109-L130"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.norm" title="Link to this definition">#</a></dt>
 <dd><p>Return the l2 norm of a CP tensor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1617,7 +1617,7 @@ khatria-rao(A, B)^T x khatri-rao(A, B) = A^T x A  * B^T x B</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.normalize">
-<span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L132-L166"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.normalize" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">normalize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">inplace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L132-L166"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.normalize" title="Link to this definition">#</a></dt>
 <dd><p>Normalize the factors to unit length.</p>
 <p>Turns <code class="docutils literal notranslate"><span class="pre">factors</span> <span class="pre">=</span> <span class="pre">[|U_1,</span> <span class="pre">...</span> <span class="pre">U_n|]</span></code> into <code class="docutils literal notranslate"><span class="pre">[weights;</span> <span class="pre">|V_1,</span> <span class="pre">...</span> <span class="pre">V_n|]</span></code>,
 where the columns of each <cite>V_k</cite> are normalized to unit Euclidean length
@@ -1636,7 +1636,7 @@ i.e.:</p>
 </div>
 <p>where <cite>R</cite> is fixed while <cite>s_i</cite> can vary with <cite>i</cite></p>
 </p></li>
-<li><p><strong>inplace</strong> – if False, returns a normalized Copy
+<li><p><strong>inplace</strong> (default: <code class="docutils literal notranslate"><span class="pre">True</span></code>) – if False, returns a normalized Copy
 otherwise the tensor modifies itself and returns itself</p></li>
 </ul>
 </dd>
@@ -1648,22 +1648,22 @@ otherwise the tensor modifies itself and returns itself</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.to_tensor">
-<span class="sig-name descname"><span class="pre">to_tensor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L61-L62"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.to_tensor" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_tensor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L61-L62"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.to_tensor" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.to_unfolded">
-<span class="sig-name descname"><span class="pre">to_unfolded</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L67-L68"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.to_unfolded" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_unfolded</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L67-L68"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.to_unfolded" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.to_vec">
-<span class="sig-name descname"><span class="pre">to_vec</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L64-L65"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.to_vec" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_vec</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L64-L65"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.to_vec" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.unfolding_dot_khatri_rao">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unfolding_dot_khatri_rao</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L765-L796"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.unfolding_dot_khatri_rao" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">unfolding_dot_khatri_rao</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L765-L796"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.unfolding_dot_khatri_rao" title="Link to this definition">#</a></dt>
 <dd><p>Mode-n unfolding times khatri-rao product of factors.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1681,19 +1681,19 @@ otherwise the tensor modifies itself and returns itself</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.validate_cp_rank">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_cp_rank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'same'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rounding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'round'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L265-L307"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.validate_cp_rank" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_cp_rank</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tensor_shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rank</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'same'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rounding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'round'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L265-L307"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.validate_cp_rank" title="Link to this definition">#</a></dt>
 <dd><p>Return the rank of a CP Decomposition.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tensor_shape</strong> – shape of the tensor to decompose</p></li>
-<li><p><strong>rank</strong> – way to determine the rank, by default ‘same’
+<li><p><strong>rank</strong> (default: <code class="docutils literal notranslate"><span class="pre">'same'</span></code>) – way to determine the rank, by default ‘same’
 if ‘same’: rank is computed to keep the number
 of parameters (at most) the same
 if float, computes a rank so as to keep rank
 percent of the original number of parameters
 if int, just returns rank</p></li>
-<li><p><strong>rounding</strong> – {‘round’, ‘floor’, ‘ceil’}</p></li>
+<li><p><strong>rounding</strong> (default: <code class="docutils literal notranslate"><span class="pre">'round'</span></code>) – {‘round’, ‘floor’, ‘ceil’}</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -1704,7 +1704,7 @@ if int, just returns rank</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.validate_cp_tensor">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_cp_tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L180-L238"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.validate_cp_tensor" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">validate_cp_tensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cp_tensor</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/factorized_tensor/cp_tensor.py#L180-L238"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.factorized_tensor.cp_tensor.CPTensor.validate_cp_tensor" title="Link to this definition">#</a></dt>
 <dd><p>Validate a cp_tensor in the form (weights, factors)</p>
 <blockquote>
 <div><p>Return the rank and shape of the validated tensor</p>
@@ -1830,7 +1830,7 @@ if int, just returns rank</p></li>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

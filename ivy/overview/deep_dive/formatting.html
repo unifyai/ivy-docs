@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Formatting &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/deep_dive/formatting';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,15 +1276,15 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="formatting">
-<h1>Formatting<a class="headerlink" href="#formatting" title="Permalink to this heading">#</a></h1>
-<p>Currently Ivy follows <a class="reference external" href="https://black.readthedocs.io/en/stable/index.html">black</a> code style, and <a class="reference external" href="https://flake8.pycqa.org/en/latest/index.html">flake8</a> formatter in order to ensure that our code is consistent,
-readable and bug free. This deep-dive will explain how to use these tools to ensure that your code is formatted
+<h1>Formatting<a class="headerlink" href="#formatting" title="Link to this heading">#</a></h1>
+<p>Currently, Ivy follows the <a class="reference external" href="https://black.readthedocs.io/en/stable/index.html">black</a> code style, and <a class="reference external" href="https://flake8.pycqa.org/en/latest/index.html">flake8</a> formatter in order to ensure that our code is consistent,
+readable, and bug free. This deep-dive will explain how to use these tools to ensure that your code is formatted
 correctly.</p>
 <p>Please ensure to conform to the formatting rules before submitting a pull request. You are encouraged to take a look
 these coding style guides before you start contributing to Ivy.</p>
 <section id="lint-checks">
-<h2>Lint Checks<a class="headerlink" href="#lint-checks" title="Permalink to this heading">#</a></h2>
-<p>In addition to <a class="reference external" href="https://black.readthedocs.io/en/stable/index.html">black</a> and <a class="reference external" href="https://flake8.pycqa.org/en/latest/index.html">flake8</a>, Ivy uses other linters to help automate the formatting process, specially for
+<h2>Lint Checks<a class="headerlink" href="#lint-checks" title="Link to this heading">#</a></h2>
+<p>In addition to <a class="reference external" href="https://black.readthedocs.io/en/stable/index.html">black</a> and <a class="reference external" href="https://flake8.pycqa.org/en/latest/index.html">flake8</a>, Ivy uses other linters to help automate the formatting process, especially for
 issues <a class="reference external" href="https://flake8.pycqa.org/en/latest/index.html">flake8</a> detects but doesn’t fix automatically. In addition to that, we validate docstring as part of our
 linting process. You can learn more about our docstring formatting in the <a class="reference internal" href="docstrings.html#docstrings"><span class="std std-ref">Docstrings</span></a> section.</p>
 <p>We use the following linters:</p>
@@ -1300,9 +1300,9 @@ linting process. You can learn more about our docstring formatting in the <a cla
 file.</p>
 </section>
 <section id="setup-formatting-locally">
-<h2>Setup Formatting Locally<a class="headerlink" href="#setup-formatting-locally" title="Permalink to this heading">#</a></h2>
+<h2>Setup Formatting Locally<a class="headerlink" href="#setup-formatting-locally" title="Link to this heading">#</a></h2>
 <section id="pre-commit">
-<h3>Pre-commit<a class="headerlink" href="#pre-commit" title="Permalink to this heading">#</a></h3>
+<h3>Pre-commit<a class="headerlink" href="#pre-commit" title="Link to this heading">#</a></h3>
 <p>To centralize the formatting process, we use <a class="reference external" href="https://pre-commit.com/">pre-commit</a>. This tool allows us to run all
 the checks written in the <a class="reference external" href="https://github.com/unifyai/ivy/blob/main/.pre-commit-config.yaml">.pre-commit-config.yaml</a>
 file.</p>
@@ -1355,7 +1355,7 @@ pydocstyle...............................................................Passed
 <p>You will notice that some files have changed if you checked <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code>, you’ll need to add them and commit again.</p>
 </section>
 <section id="vs-code">
-<h3>VS Code<a class="headerlink" href="#vs-code" title="Permalink to this heading">#</a></h3>
+<h3>VS Code<a class="headerlink" href="#vs-code" title="Link to this heading">#</a></h3>
 <p>There are some helpful extensions for VS Code that can detect and format your code according to our style guide. Here
 is the list of extensions that we recommend:</p>
 <ul class="simple">
@@ -1364,7 +1364,7 @@ is the list of extensions that we recommend:</p>
 </ul>
 </section>
 <section id="pycharm">
-<h3>PyCharm<a class="headerlink" href="#pycharm" title="Permalink to this heading">#</a></h3>
+<h3>PyCharm<a class="headerlink" href="#pycharm" title="Link to this heading">#</a></h3>
 <p>Unfortunately, PyCharm doesn’t have formatting extensions like VS Code. We don’t have specific instructions for PyCharm
 but you can use the following links to set up the formatting:</p>
 <ul class="simple">
@@ -1373,8 +1373,8 @@ but you can use the following links to set up the formatting:</p>
 </section>
 </section>
 <section id="common-issues-with-pre-commit">
-<h2>Common Issues with Pre-Commit<a class="headerlink" href="#common-issues-with-pre-commit" title="Permalink to this heading">#</a></h2>
-<p>As pre-commit hook runs before each commit, when it fails it provides an error message that’s readable on terminals
+<h2>Common Issues with Pre-Commit<a class="headerlink" href="#common-issues-with-pre-commit" title="Link to this heading">#</a></h2>
+<p>As the pre-commit hook runs before each commit, when it fails it provides an error message that’s readable on terminals
 but not on IDE GUIs. So you might see a cryptic error message like one of the following:</p>
 <img alt="git commit error in VS Code" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/deep_dive/formatting/vscode_error.png?raw=true" />
 <img alt="git commit error in PyCharm" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/deep_dive/formatting/pycharm_error.png?raw=true" />
@@ -1384,24 +1384,24 @@ you can always either click on “Show Command Output” or “Show details in c
 will need to add the changes to your commit and commit again.</p>
 </section>
 <section id="continuous-integration">
-<h2>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permalink to this heading">#</a></h2>
+<h2>Continuous Integration<a class="headerlink" href="#continuous-integration" title="Link to this heading">#</a></h2>
 <p>We have multiple GitHub actions to check and fix the formatting of the code. They can be divided into lint checks and
 lint formatting (or lint-bot).</p>
-<p>All the check we do are made by pre-commit, you don’t need to worry about lint errors arising from the CI checks that
+<p>All the checks we do are made by pre-commit, you don’t need to worry about lint errors arising from the CI checks that
 are not caught by pre-commit.</p>
 <section id="id2">
-<h3>Lint Checks<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<h3>Lint Checks<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <p>We have a GitHub action that runs:</p>
 <ol class="arabic simple">
 <li><p>Every commit</p></li>
 <li><p>Every pull request</p></li>
 </ol>
 <p>The important check is the one that runs on every pull request. You should expect this check to pass if you have
-pre-commit correctly set up. Note that you can also reformat your code directly from GitHub making a comment with
+pre-commit correctly set up. Note that you can also reformat your code directly from GitHub by making a comment with
 <code class="docutils literal notranslate"><span class="pre">ivy-gardener</span></code>, we will go through more details about it in the next section.</p>
 </section>
 <section id="lint-formatting">
-<h3>Lint Formatting<a class="headerlink" href="#lint-formatting" title="Permalink to this heading">#</a></h3>
+<h3>Lint Formatting<a class="headerlink" href="#lint-formatting" title="Link to this heading">#</a></h3>
 <p>We have a GitHub action that runs:</p>
 <ol class="arabic simple">
 <li><p>Every day at 08:00 UTC</p></li>
@@ -1410,7 +1410,7 @@ pre-commit correctly set up. Note that you can also reformat your code directly 
 <p>The first action is to ensure that the code in the whole codebase is always formatted correctly. The second action
 is to reformat the files you changed in your PR directly on GitHub. This is useful in case if you didn’t setup
 pre-commit correctly or if you or one of our maintainers want to reformat your code remotely.</p>
-<p>Under the hood, when <code class="docutils literal notranslate"><span class="pre">ivy-gardener</span></code> is found in a comment, a ivy bot will trigger the same set of lint checks
+<p>Under the hood, when <code class="docutils literal notranslate"><span class="pre">ivy-gardener</span></code> is found in a comment, an ivy bot will trigger the same set of lint checks
 as in the pre-commit process. Then the suggested changes produced in the checks will be applied automatically as
 a new commit if there is any.</p>
 <p>However, it is possible for the linters run in the <code class="docutils literal notranslate"><span class="pre">ivy-gardener</span></code> and the GitHub action every day to face
@@ -1419,7 +1419,7 @@ be thrown by the linters and by the lint checks that runs later, while fixes to 
 be applied by the <code class="docutils literal notranslate"><span class="pre">ivy-gardener</span></code> properly.</p>
 <p>On the other hand, <code class="docutils literal notranslate"><span class="pre">ivy-gardener</span></code> itself can fail if the bot handling it (ivy-branch) can not apply the changes
 suggested by the linters, for example, when it does not have access to edit the target branch. In this case, you
-should try give the maintainer bot the access to your branch (which is an option shown in GitHub UI) and give it
+should try to give the maintainer bot the access to your branch (which is an option shown in GitHub UI) and give it
 another try, or manually resolve the formatting errors by commiting the changes yourself.</p>
 <p><strong>Round Up</strong></p>
 <p>This should have hopefully given you a good feel for what is our coding style and how to format your code to contribute
@@ -1527,7 +1527,7 @@ src="https://www.youtube.com/embed/JXQ8aI8vJ_8" class="video">
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

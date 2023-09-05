@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Handler &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/sphinx_highlight.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/utils/ivy.utils.backend/ivy.utils.backend.handler';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../../_static/js/kapa.ai.js"></script>
+    <script src="../../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1279,36 +1279,36 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="module-ivy.utils.backend.handler">
-<span id="handler"></span><h1>Handler<a class="headerlink" href="#module-ivy.utils.backend.handler" title="Permalink to this heading">#</a></h1>
+<span id="handler"></span><h1>Handler<a class="headerlink" href="#module-ivy.utils.backend.handler" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.ContextManager">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">ContextManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L25-L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.ContextManager" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">ContextManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L25-L33"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.ContextManager" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.ContextManager.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L26-L27"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.ContextManager.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">module</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L26-L27"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.ContextManager.__init__" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.choose_random_backend">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">choose_random_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">excluded</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L600-L620"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.choose_random_backend" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">choose_random_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">excluded</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L600-L620"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.choose_random_backend" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.convert_from_numpy_to_target_backend">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">convert_from_numpy_to_target_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numpy_objs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">devices</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L364-L393"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.convert_from_numpy_to_target_backend" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">convert_from_numpy_to_target_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numpy_objs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">devices</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L364-L393"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.convert_from_numpy_to_target_backend" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.convert_from_source_backend_to_numpy">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">convert_from_source_backend_to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numpy_objs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">devices</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L284-L361"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.convert_from_source_backend_to_numpy" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">convert_from_source_backend_to_numpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">variable_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numpy_objs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">devices</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L284-L361"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.convert_from_source_backend_to_numpy" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.current_backend">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">current_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L193-L243"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.current_backend" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">current_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L193-L243"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.current_backend" title="Link to this definition">#</a></dt>
 <dd><p>Return the current backend. Priorities: global_backend &gt; argument’s backend.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1341,7 +1341,7 @@ passed to current_backend:</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.fn_name_from_version_specific_fn_name">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">fn_name_from_version_specific_fn_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L121-L165"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.fn_name_from_version_specific_fn_name" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">fn_name_from_version_specific_fn_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">version</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L121-L165"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.fn_name_from_version_specific_fn_name" title="Link to this definition">#</a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1352,23 +1352,20 @@ provided, the version is inferred by importing the framework</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><ul class="simple">
-<li><p><em>the name of the original function which will then point to the version</em></p></li>
-<li><p><em>specific function</em></p></li>
-</ul>
-</p>
+<dd class="field-even"><p>the name of the original function which will then point to the version
+specific function</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.prevent_access_locally">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">prevent_access_locally</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L57-L64"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.prevent_access_locally" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">prevent_access_locally</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L57-L64"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.prevent_access_locally" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.previous_backend">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">previous_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L526-L591"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.previous_backend" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">previous_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L526-L591"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.previous_backend" title="Link to this definition">#</a></dt>
 <dd><p>Unset the current global backend, and adjusts the ivy dict such that either a
 previously set global backend is then used as the backend, otherwise we return to
 Ivy’s implementations.</p>
@@ -1402,7 +1399,7 @@ tensorflow implementation:</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.set_backend">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L396-L469"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_backend" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L396-L469"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_backend" title="Link to this definition">#</a></dt>
 <dd><p>Set <cite>backend</cite> to be the global backend.</p>
 <p>Will also convert all Array and Container objects to the new backend if <cite>dynamic</cite> =
 True</p>
@@ -1426,7 +1423,7 @@ will be called from Ivy’s numpy backend:</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.set_backend_to_specific_version">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_backend_to_specific_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L168-L190"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_backend_to_specific_version" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_backend_to_specific_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L168-L190"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_backend_to_specific_version" title="Link to this definition">#</a></dt>
 <dd><p>Update the backend dict to make the original function name point to the version
 specific one.</p>
 <dl class="field-list simple">
@@ -1438,54 +1435,54 @@ specific one.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.set_jax_backend">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_jax_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L481-L487"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_jax_backend" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_jax_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L481-L487"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_jax_backend" title="Link to this definition">#</a></dt>
 <dd><p>Set JAX to be the global backend.</p>
 <p>equivalent to <cite>ivy.set_backend(“jax”)</cite>.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.set_mxnet_backend">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_mxnet_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L517-L523"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_mxnet_backend" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_mxnet_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L517-L523"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_mxnet_backend" title="Link to this definition">#</a></dt>
 <dd><p>Set MXNet to be the global backend.</p>
 <p>equivalent to <cite>ivy.set_backend(“mx”)</cite>.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.set_numpy_backend">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_numpy_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L472-L478"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_numpy_backend" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_numpy_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L472-L478"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_numpy_backend" title="Link to this definition">#</a></dt>
 <dd><p>Set NumPy to be the global backend.</p>
 <p>equivalent to <cite>ivy.set_backend(“numpy”)</cite>.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.set_paddle_backend">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_paddle_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L508-L514"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_paddle_backend" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_paddle_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L508-L514"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_paddle_backend" title="Link to this definition">#</a></dt>
 <dd><p>Set paddle to be the global backend.</p>
 <p>equivalent to <cite>ivy.set_backend(“paddle”)</cite>.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.set_tensorflow_backend">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_tensorflow_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L490-L496"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_tensorflow_backend" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_tensorflow_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L490-L496"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_tensorflow_backend" title="Link to this definition">#</a></dt>
 <dd><p>Set TensorFlow to be the global backend.</p>
 <p>equivalent to <cite>ivy.set_backend(“tensorflow”)</cite>.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.set_torch_backend">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_torch_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L499-L505"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_torch_backend" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">set_torch_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L499-L505"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.set_torch_backend" title="Link to this definition">#</a></dt>
 <dd><p>Set torch to be the global backend.</p>
 <p>equivalent to <cite>ivy.set_backend(“torch”)</cite>.</p>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.unset_backend">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">unset_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L594-L597"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.unset_backend" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">unset_backend</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L594-L597"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.unset_backend" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.utils.backend.handler.with_backend">
-<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">with_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cached</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L624-L661"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.with_backend" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.utils.backend.handler.</span></span><span class="sig-name descname"><span class="pre">with_backend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">backend</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cached</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/utils/backend/handler.py#L624-L661"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.utils.backend.handler.with_backend" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 </section>
@@ -1593,7 +1590,7 @@ specific one.</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

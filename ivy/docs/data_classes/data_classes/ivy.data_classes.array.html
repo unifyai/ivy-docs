@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Array &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/sphinx_highlight.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/design-tabs.js"></script>
+    <script src="../../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/data_classes/data_classes/ivy.data_classes.array';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../../_static/js/kapa.ai.js"></script>
+    <script src="../../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,21 +1276,18 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="array">
-<h1>Array<a class="headerlink" href="#array" title="Permalink to this heading">#</a></h1>
-<span class="target" id="module-ivy.data_classes.array.array"></span><dl class="py class">
+<h1>Array<a class="headerlink" href="#array" title="Link to this heading">#</a></h1>
+<dl class="py class" id="module-ivy.data_classes.array.array">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.data_classes.array.array.</span></span><span class="sig-name descname"><span class="pre">Array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L56-L1215"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.data_classes.array.array.</span></span><span class="sig-name descname"><span class="pre">Array</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L56-L1215"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="array/ivy.data_classes.array.activations.html#ivy.data_classes.array.activations._ArrayWithActivations" title="ivy.data_classes.array.activations._ArrayWithActivations"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithActivations</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.creation.html#ivy.data_classes.array.creation._ArrayWithCreation" title="ivy.data_classes.array.creation._ArrayWithCreation"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithCreation</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.data_type.html#ivy.data_classes.array.data_type._ArrayWithDataTypes" title="ivy.data_classes.array.data_type._ArrayWithDataTypes"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithDataTypes</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.device.html#ivy.data_classes.array.device._ArrayWithDevice" title="ivy.data_classes.array.device._ArrayWithDevice"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithDevice</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.elementwise.html#ivy.data_classes.array.elementwise._ArrayWithElementwise" title="ivy.data_classes.array.elementwise._ArrayWithElementwise"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithElementwise</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.general.html#ivy.data_classes.array.general._ArrayWithGeneral" title="ivy.data_classes.array.general._ArrayWithGeneral"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithGeneral</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.gradients.html#ivy.data_classes.array.gradients._ArrayWithGradients" title="ivy.data_classes.array.gradients._ArrayWithGradients"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithGradients</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.image.html#ivy.data_classes.array.image._ArrayWithImage" title="ivy.data_classes.array.image._ArrayWithImage"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithImage</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.layers.html#ivy.data_classes.array.layers._ArrayWithLayers" title="ivy.data_classes.array.layers._ArrayWithLayers"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithLayers</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.linear_algebra.html#ivy.data_classes.array.linear_algebra._ArrayWithLinearAlgebra" title="ivy.data_classes.array.linear_algebra._ArrayWithLinearAlgebra"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebra</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.losses.html#ivy.data_classes.array.losses._ArrayWithLosses" title="ivy.data_classes.array.losses._ArrayWithLosses"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithLosses</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.manipulation.html#ivy.data_classes.array.manipulation._ArrayWithManipulation" title="ivy.data_classes.array.manipulation._ArrayWithManipulation"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithManipulation</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.norms.html#ivy.data_classes.array.norms._ArrayWithNorms" title="ivy.data_classes.array.norms._ArrayWithNorms"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithNorms</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.random.html#ivy.data_classes.array.random._ArrayWithRandom" title="ivy.data_classes.array.random._ArrayWithRandom"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithRandom</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.searching.html#ivy.data_classes.array.searching._ArrayWithSearching" title="ivy.data_classes.array.searching._ArrayWithSearching"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithSearching</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.set.html#ivy.data_classes.array.set._ArrayWithSet" title="ivy.data_classes.array.set._ArrayWithSet"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithSet</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.sorting.html#ivy.data_classes.array.sorting._ArrayWithSorting" title="ivy.data_classes.array.sorting._ArrayWithSorting"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithSorting</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.statistical.html#ivy.data_classes.array.statistical._ArrayWithStatistical" title="ivy.data_classes.array.statistical._ArrayWithStatistical"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithStatistical</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.utility.html#ivy.data_classes.array.utility._ArrayWithUtility" title="ivy.data_classes.array.utility._ArrayWithUtility"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithUtility</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.activations._ArrayWithActivationsExperimental" title="ivy.data_classes.array.experimental.activations._ArrayWithActivationsExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithActivationsExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.conversions._ArrayWithConversionsExperimental" title="ivy.data_classes.array.experimental.conversions._ArrayWithConversionsExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithConversionsExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental" title="ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithCreationExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.data_type._ArrayWithData_typeExperimental" title="ivy.data_classes.array.experimental.data_type._ArrayWithData_typeExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithData_typeExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.device._ArrayWithDeviceExperimental" title="ivy.data_classes.array.experimental.device._ArrayWithDeviceExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithDeviceExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.elementwise._ArrayWithElementWiseExperimental" title="ivy.data_classes.array.experimental.elementwise._ArrayWithElementWiseExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithElementWiseExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.general._ArrayWithGeneralExperimental" title="ivy.data_classes.array.experimental.general._ArrayWithGeneralExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithGeneralExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.gradients._ArrayWithGradientsExperimental" title="ivy.data_classes.array.experimental.gradients._ArrayWithGradientsExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithGradientsExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.image._ArrayWithImageExperimental" title="ivy.data_classes.array.experimental.image._ArrayWithImageExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithImageExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.layers._ArrayWithLayersExperimental" title="ivy.data_classes.array.experimental.layers._ArrayWithLayersExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithLayersExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental" title="ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithLinearAlgebraExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.losses._ArrayWithLossesExperimental" title="ivy.data_classes.array.experimental.losses._ArrayWithLossesExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithLossesExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental" title="ivy.data_classes.array.experimental.manipulation._ArrayWithManipulationExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithManipulationExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.norms._ArrayWithNormsExperimental" title="ivy.data_classes.array.experimental.norms._ArrayWithNormsExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithNormsExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.random._ArrayWithRandomExperimental" title="ivy.data_classes.array.experimental.random._ArrayWithRandomExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithRandomExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.searching._ArrayWithSearchingExperimental" title="ivy.data_classes.array.experimental.searching._ArrayWithSearchingExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithSearchingExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.set._ArrayWithSetExperimental" title="ivy.data_classes.array.experimental.set._ArrayWithSetExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithSetExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.sorting._ArrayWithSortingExperimental" title="ivy.data_classes.array.experimental.sorting._ArrayWithSortingExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithSortingExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.statistical._ArrayWithStatisticalExperimental" title="ivy.data_classes.array.experimental.statistical._ArrayWithStatisticalExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithStatisticalExperimental</span></code></a>, <a class="reference internal" href="array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.utility._ArrayWithUtilityExperimental" title="ivy.data_classes.array.experimental.utility._ArrayWithUtilityExperimental"><code class="xref py py-class docutils literal notranslate"><span class="pre">_ArrayWithUtilityExperimental</span></code></a></p>
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.T">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">T</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.T" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">T</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.T" title="Link to this definition">#</a></dt>
 <dd><p>Transpose of the array.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>ret</em> – two-dimensional array whose first and last dimensions (axes) are
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – two-dimensional array whose first and last dimensions (axes) are
 permuted in reverse order relative to original array.</p>
 </dd>
 </dl>
@@ -1298,7 +1295,7 @@ permuted in reverse order relative to original array.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__abs__">
-<span class="sig-name descname"><span class="pre">__abs__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L733-L763"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__abs__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__abs__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L733-L763"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__abs__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array special method variant of ivy.abs. This method simply wraps the
 function, and so the docstring for ivy.abs also applies to this method with
 minimal changes.</p>
@@ -1328,7 +1325,7 @@ type as <code class="docutils literal notranslate"><span class="pre">self</span>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__add__">
-<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L527-L555"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__add__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__add__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L527-L555"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__add__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array special method variant of ivy.add. This method simply wraps the
 function, and so the docstring for ivy.add also applies to this method with
 minimal changes.</p>
@@ -1357,7 +1354,7 @@ data type determined by <span class="xref std std-ref">type-promotion</span>.</p
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__eq__">
-<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L864-L900"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__eq__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L864-L900"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__eq__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array special method variant of ivy.equal. This method simply wraps the
 function, and so the docstring for ivy.equal also applies to this method with
 minimal changes.</p>
@@ -1394,7 +1391,7 @@ data type of bool.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__ge__">
-<span class="sig-name descname"><span class="pre">__ge__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L987-L1032"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__ge__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__ge__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L987-L1032"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__ge__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array special method variant of ivy.greater_equal. This method simply wraps
 the function, and so the docstring for ivy.bitwise_xor also applies to this
 method with minimal changes.</p>
@@ -1439,7 +1436,7 @@ data type of bool.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__gt__">
-<span class="sig-name descname"><span class="pre">__gt__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L940-L985"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__gt__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__gt__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L940-L985"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__gt__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array special method variant of ivy.greater. This method simply wraps the
 function, and so the docstring for ivy.greater also applies to this method with
 minimal changes.</p>
@@ -1484,12 +1481,12 @@ data type of bool.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L97-L138"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__init__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dynamic_backend</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L97-L138"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__init__" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__le__">
-<span class="sig-name descname"><span class="pre">__le__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L834-L862"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__le__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__le__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L834-L862"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__le__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array special method variant of ivy.less_equal. This method simply wraps the
 function, and so the docstring for ivy.less_equal also applies to this method
 with minimal changes.</p>
@@ -1518,7 +1515,7 @@ data type of bool.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__lt__">
-<span class="sig-name descname"><span class="pre">__lt__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L804-L832"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__lt__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__lt__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L804-L832"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__lt__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array special method variant of ivy.less. This method simply wraps the
 function, and so the docstring for ivy.less also applies to this method with
 minimal changes.</p>
@@ -1547,7 +1544,7 @@ data type of bool.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__ne__">
-<span class="sig-name descname"><span class="pre">__ne__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L902-L938"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__ne__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__ne__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L902-L938"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__ne__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array special method variant of ivy.not_equal. This method simply wraps the
 function, and so the docstring for ivy.not_equal also applies to this method
 with minimal changes.</p>
@@ -1584,7 +1581,7 @@ data type of bool.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__pow__">
-<span class="sig-name descname"><span class="pre">__pow__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">power</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L485-L519"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__pow__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__pow__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">power</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L485-L519"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__pow__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array special method variant of ivy.pow. This method simply wraps the
 function, and so the docstring for ivy.pow also applies to this method with
 minimal changes.</p>
@@ -1619,7 +1616,7 @@ data type determined by <span class="xref std std-ref">type-promotion</span>.</p
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__radd__">
-<span class="sig-name descname"><span class="pre">__radd__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L557-L585"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__radd__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__radd__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L557-L585"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__radd__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array reverse special method variant of ivy.add. This method simply wraps
 the function, and so the docstring for ivy.add also applies to this method with
 minimal changes.</p>
@@ -1648,7 +1645,7 @@ data type determined by <span class="xref std std-ref">type-promotion</span>.</p
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__rrshift__">
-<span class="sig-name descname"><span class="pre">__rrshift__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L1146-L1175"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__rrshift__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__rrshift__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L1146-L1175"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__rrshift__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array reverse special method variant of ivy.bitwise_right_shift. This method
 simply wraps the function, and so the docstring for ivy.bitwise_right_shift also
 applies to this method with minimal changes.</p>
@@ -1678,7 +1675,7 @@ a data type determined by <span class="xref std std-ref">type-promotion</span>.<
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__rshift__">
-<span class="sig-name descname"><span class="pre">__rshift__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L1113-L1144"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__rshift__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__rshift__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L1113-L1144"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__rshift__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array special method variant of ivy.bitwise_right_shift. This method simply
 wraps the function, and so the docstring for ivy.bitwise_right_shift also
 applies to this method with minimal changes.</p>
@@ -1709,7 +1706,7 @@ a data type determined by <span class="xref std std-ref">type-promotion</span>.<
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__rsub__">
-<span class="sig-name descname"><span class="pre">__rsub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L622-L650"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__rsub__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__rsub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L622-L650"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__rsub__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array reverse special method variant of ivy.subtract. This method simply
 wraps the function, and so the docstring for ivy.subtract also applies to this
 method with minimal changes.</p>
@@ -1738,7 +1735,7 @@ data type determined by <span class="xref std std-ref">type-promotion</span>.</p
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__sub__">
-<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L590-L620"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__sub__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__sub__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L590-L620"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__sub__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array special method variant of ivy.subtract. This method simply wraps the
 function, and so the docstring for ivy.subtract also applies to this method with
 minimal changes.</p>
@@ -1768,7 +1765,7 @@ data type determined by <span class="xref std std-ref">type-promotion</span>.</p
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__truediv__">
-<span class="sig-name descname"><span class="pre">__truediv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L679-L707"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__truediv__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__truediv__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L679-L707"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__truediv__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array reverse special method variant of ivy.divide. This method simply wraps
 the function, and so the docstring for ivy.divide also applies to this method
 with minimal changes.</p>
@@ -1797,7 +1794,7 @@ data type determined by <span class="xref std std-ref">type-promotion</span>.</p
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.__xor__">
-<span class="sig-name descname"><span class="pre">__xor__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L1055-L1096"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__xor__" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">__xor__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L1055-L1096"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.array.Array.__xor__" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array special method variant of ivy.bitwise_xor. This method simply wraps
 the function, and so the docstring for ivy.bitwise_xor also applies to this
 method with minimal changes.</p>
@@ -1837,68 +1834,45 @@ data type determined by <span class="xref std std-ref">type-promotion</span>.</p
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.backend">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backend</span></span><a class="headerlink" href="#ivy.data_classes.array.array.Array.backend" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">backend</span></span><a class="headerlink" href="#ivy.data_classes.array.array.Array.backend" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.base">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">base</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.base" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">base</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.base" title="Link to this definition">#</a></dt>
 <dd><p>Original array referenced by view.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.data">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">NativeArray</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.data" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">data</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">NativeArray</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.data" title="Link to this definition">#</a></dt>
 <dd><p>The native array being wrapped in self.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">NativeArray</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.device">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">device</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Device</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.device" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">device</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Device</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.device" title="Link to this definition">#</a></dt>
 <dd><p>Hardware device the array data resides on.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Device</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.dtype">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dtype</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.dtype" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dtype</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Dtype</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.dtype" title="Link to this definition">#</a></dt>
 <dd><p>Data type of the array elements.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Dtype</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.dynamic_backend">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dynamic_backend</span></span><a class="headerlink" href="#ivy.data_classes.array.array.Array.dynamic_backend" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dynamic_backend</span></span><a class="headerlink" href="#ivy.data_classes.array.array.Array.dynamic_backend" title="Link to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.imag">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">imag</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.imag" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">imag</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.imag" title="Link to this definition">#</a></dt>
 <dd><p>Imaginary part of the array.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>ret</em> – array containing the imaginary part of each element in the array.
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – array containing the imaginary part of each element in the array.
 The returned array must have the same shape and data type as
 the original array.</p>
 </dd>
@@ -1907,25 +1881,17 @@ the original array.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.itemsize">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">itemsize</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.itemsize" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">itemsize</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.itemsize" title="Link to this definition">#</a></dt>
 <dd><p>Size of array elements in bytes.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.mT">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.mT" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mT</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.mT" title="Link to this definition">#</a></dt>
 <dd><p>Transpose of a matrix (or a stack of matrices).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>ret</em> – array whose last two dimensions (axes) are permuted in reverse order
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – array whose last two dimensions (axes) are permuted in reverse order
 relative to original array (i.e., for an array instance having shape
 <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">M,</span> <span class="pre">N)</span></code>, the returned array must have shape <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">N,</span> <span class="pre">M)</span></code>).
 The returned array must have the same data type as the original array.</p>
@@ -1935,25 +1901,17 @@ The returned array must have the same data type as the original array.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.ndim">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ndim</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.ndim" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">ndim</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.ndim" title="Link to this definition">#</a></dt>
 <dd><p>Number of array dimensions (axes).</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.real">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">real</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.real" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">real</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Array</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.real" title="Link to this definition">#</a></dt>
 <dd><p>Real part of the array.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code></p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p><em>ret</em> – array containing the real part of each element in the array.
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><em>ret</em> – array containing the real part of each element in the array.
 The returned array must have the same shape and data type as
 the original array.</p>
 </dd>
@@ -1962,35 +1920,20 @@ the original array.</p>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.shape">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Shape</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.shape" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">shape</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Shape</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.shape" title="Link to this definition">#</a></dt>
 <dd><p>Array dimensions.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">Shape</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.size">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.size" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">size</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.size" title="Link to this definition">#</a></dt>
 <dd><p>Number of elements in the array.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py property">
 <dt class="sig sig-object py" id="ivy.data_classes.array.array.Array.strides">
-<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">strides</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.strides" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">strides</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#ivy.data_classes.array.array.Array.strides" title="Link to this definition">#</a></dt>
 <dd><p>Get strides across each dimension.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>]</p>
-</dd>
-</dl>
 </dd></dl>
 
 </dd></dl>
@@ -2115,7 +2058,7 @@ the original array.</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

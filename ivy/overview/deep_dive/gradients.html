@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Gradients &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/deep_dive/gradients';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,19 +1276,19 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="gradients">
-<h1>Gradients<a class="headerlink" href="#gradients" title="Permalink to this heading">#</a></h1>
+<h1>Gradients<a class="headerlink" href="#gradients" title="Link to this heading">#</a></h1>
 <section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
 <p>Gradients are a crucial aspect of all modern deep learning workflows.
 Different frameworks provide different APIs for gradient computation and there were a few considerations to be made while building a unified gradients API in Ivy.
 There are a number of functions added in ivy to allow gradient computation, but we’ll mainly focus on the most commonly used and the most general function <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.gradients.html#ivy.execute_with_gradients" title="ivy.execute_with_gradients"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.execute_with_gradients()</span></code></a>.
 This is because the other gradient functions such as <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.gradients.html#ivy.value_and_grad" title="ivy.value_and_grad"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.value_and_grad()</span></code></a> and <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.gradients.html#ivy.grad" title="ivy.grad"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.grad()</span></code></a> can be considered as providing a subset of the functionality that <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.gradients.html#ivy.execute_with_gradients" title="ivy.execute_with_gradients"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.execute_with_gradients()</span></code></a> provides.</p>
 </section>
 <section id="example-usage-of-the-gradient-api">
-<h2>Example Usage of the Gradient API<a class="headerlink" href="#example-usage-of-the-gradient-api" title="Permalink to this heading">#</a></h2>
+<h2>Example Usage of the Gradient API<a class="headerlink" href="#example-usage-of-the-gradient-api" title="Link to this heading">#</a></h2>
 <section id="the-ivy-execute-with-gradients-function-signature">
-<h3>The <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.gradients.html#ivy.execute_with_gradients" title="ivy.execute_with_gradients"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.execute_with_gradients()</span></code></a> function signature<a class="headerlink" href="#the-ivy-execute-with-gradients-function-signature" title="Permalink to this heading">#</a></h3>
-<p>Following is pseudo function signature for the <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.gradients.html#ivy.execute_with_gradients" title="ivy.execute_with_gradients"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.execute_with_gradients()</span></code></a> function,</p>
+<h3>The <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.gradients.html#ivy.execute_with_gradients" title="ivy.execute_with_gradients"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.execute_with_gradients()</span></code></a> function signature<a class="headerlink" href="#the-ivy-execute-with-gradients-function-signature" title="Link to this heading">#</a></h3>
+<p>Following is the pseudo function signature for the <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.gradients.html#ivy.execute_with_gradients" title="ivy.execute_with_gradients"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.execute_with_gradients()</span></code></a> function,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">execute_with_gradients</span> <span class="p">(</span>
     <span class="n">func</span> <span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
     <span class="n">xs</span> <span class="p">:</span> <span class="n">Any</span> <span class="n">arbitrary</span> <span class="n">nest</span><span class="p">,</span>
@@ -1300,7 +1300,7 @@ This is because the other gradient functions such as <a class="reference interna
 </div>
 <p>The <code class="code docutils literal notranslate"><span class="pre">func</span></code> in the input can be any user-defined function that returns a single scalar or any arbitrary nest of scalars.
 By scalars, we are referring to zero-dimensional arrays.</p>
-<p>So for example, following are some valid outputs by the <code class="code docutils literal notranslate"><span class="pre">func</span></code>,</p>
+<p>So for example, the following are some valid outputs by the <code class="code docutils literal notranslate"><span class="pre">func</span></code>,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="mf">12.</span><span class="p">)</span>
 
 <span class="c1"># OR</span>
@@ -1324,7 +1324,7 @@ The arrays in <code class="code docutils literal notranslate"><span class="pre">
 <code class="code docutils literal notranslate"><span class="pre">xs_grad_idxs</span></code> accepts the indices of the input arrays to compute gradients for, and <code class="code docutils literal notranslate"><span class="pre">ret_grad_idxs</span></code> accepts the indices of the output arrays to compute gradients with respect to.</p>
 </section>
 <section id="an-example-using-ivy-execute-with-gradients">
-<h3>An example using <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.gradients.html#ivy.execute_with_gradients" title="ivy.execute_with_gradients"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.execute_with_gradients()</span></code></a><a class="headerlink" href="#an-example-using-ivy-execute-with-gradients" title="Permalink to this heading">#</a></h3>
+<h3>An example using <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.gradients.html#ivy.execute_with_gradients" title="ivy.execute_with_gradients"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.execute_with_gradients()</span></code></a><a class="headerlink" href="#an-example-using-ivy-execute-with-gradients" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="p">:</span>
     <span class="k">return</span> <span class="n">ivy</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">xs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">xs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">b</span><span class="p">)</span>
 
@@ -1344,9 +1344,9 @@ The arrays in <code class="code docutils literal notranslate"><span class="pre">
 </div>
 </section>
 <section id="custom-gradient-functions">
-<h3>Custom Gradient Functions<a class="headerlink" href="#custom-gradient-functions" title="Permalink to this heading">#</a></h3>
+<h3>Custom Gradient Functions<a class="headerlink" href="#custom-gradient-functions" title="Link to this heading">#</a></h3>
 <p>There are various scenarios where users may want to define custom gradient computation rules for their functions.
-Some of these are numerical stability, smoothing and clipping of the computed gradients.
+Some of these are numerical stability, smoothing, and clipping of the computed gradients.
 Ivy provides the <a class="reference internal" href="../../docs/functional/ivy/experimental/gradients/ivy.functional.ivy.experimental.gradients.bind_custom_gradient_function.html#ivy.bind_custom_gradient_function" title="ivy.bind_custom_gradient_function"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.bind_custom_gradient_function()</span></code></a> function to allow users to bind custom gradient computation logic to their functions.</p>
 <p>Following is an example of usage of <a class="reference internal" href="../../docs/functional/ivy/experimental/gradients/ivy.functional.ivy.experimental.gradients.bind_custom_gradient_function.html#ivy.bind_custom_gradient_function" title="ivy.bind_custom_gradient_function"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.bind_custom_gradient_function()</span></code></a>,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
@@ -1377,23 +1377,23 @@ Ivy provides the <a class="reference internal" href="../../docs/functional/ivy/e
 </section>
 </section>
 <section id="design-of-the-gradient-api">
-<h2>Design of the Gradient API<a class="headerlink" href="#design-of-the-gradient-api" title="Permalink to this heading">#</a></h2>
+<h2>Design of the Gradient API<a class="headerlink" href="#design-of-the-gradient-api" title="Link to this heading">#</a></h2>
 <section id="our-policy-on-gradients">
-<h3>Our policy on gradients<a class="headerlink" href="#our-policy-on-gradients" title="Permalink to this heading">#</a></h3>
+<h3>Our policy on gradients<a class="headerlink" href="#our-policy-on-gradients" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>The gradient API is fully-functional in ivy.</p></li>
 <li><p>There is no explicit variable class or any public-facing function for adding gradient support to an ivy.Array.</p></li>
 <li><p>The gradient functions in ivy implicitly convert all arrays to support gradient computation before computing gradients and detach all arrays after computing gradients.</p></li>
 <li><p>We don’t retain any previously tracked computations in arrays by frameworks like torch for e.g.</p></li>
-<li><p>This makes our gradient API disambiguous, flexible and easy to debug.</p></li>
+<li><p>This makes our gradient API disambiguous, flexible, and easy to debug.</p></li>
 <li><p>Any framework-specific tracking of computations or variable classes should be handled in the corresponding frontends.</p></li>
 </ul>
 </section>
 <section id="gradient-apis-of-frameworks">
-<h3>Gradient APIs of frameworks<a class="headerlink" href="#gradient-apis-of-frameworks" title="Permalink to this heading">#</a></h3>
+<h3>Gradient APIs of frameworks<a class="headerlink" href="#gradient-apis-of-frameworks" title="Link to this heading">#</a></h3>
 </section>
 <section id="general-structure-of-backend-specific-implementations">
-<h3>General Structure of Backend-specific implementations<a class="headerlink" href="#general-structure-of-backend-specific-implementations" title="Permalink to this heading">#</a></h3>
+<h3>General Structure of Backend-specific implementations<a class="headerlink" href="#general-structure-of-backend-specific-implementations" title="Link to this heading">#</a></h3>
 <p>Here’s a high-level description of the steps followed backend-specific implementation of <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.gradients.html#ivy.execute_with_gradients" title="ivy.execute_with_gradients"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.execute_with_gradients()</span></code></a>:</p>
 <ol class="arabic simple">
 <li><p>Get Duplicate Index Chains : indices of arrays that share the same <code class="code docutils literal notranslate"><span class="pre">id</span></code></p></li>
@@ -1408,7 +1408,7 @@ Ivy provides the <a class="reference internal" href="../../docs/functional/ivy/e
 </ol>
 </section>
 <section id="framework-specific-considerations">
-<h3>Framework-specific Considerations<a class="headerlink" href="#framework-specific-considerations" title="Permalink to this heading">#</a></h3>
+<h3>Framework-specific Considerations<a class="headerlink" href="#framework-specific-considerations" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>JAX treats duplicate arrays as distinct while computing gradients, so we need additional logic to replicate gradients computed w.r.t one array over all its duplicates.</p></li>
 <li><p>Gradients computed for functions with undefined results are inconsistent across backends (NaN, Inf, 0). We handle all these inconsistencies by returning 0 for all backends. So if you’re debugging gradients and find a 0, there’s a possibility that it was NaN or an Inf before computing.</p></li>
@@ -1519,7 +1519,7 @@ src="https://www.youtube.com/embed/riNddnTgDdk" class="video">
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

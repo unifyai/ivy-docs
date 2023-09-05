@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Backend Setting &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/deep_dive/backend_setting';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,7 +1276,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="backend-setting">
-<h1>Backend Setting<a class="headerlink" href="#backend-setting" title="Permalink to this heading">#</a></h1>
+<h1>Backend Setting<a class="headerlink" href="#backend-setting" title="Link to this heading">#</a></h1>
 <p>The backend framework can either be set by calling <code class="code docutils literal notranslate"><span class="pre">ivy.set_backend(backend_name)</span></code> or it can inferred from the arguments.
 For the latter, a global variable <a class="reference external" href="https://github.com/unifyai/ivy/blob/3358b5bbadbe4cbc0509cad4ea8f05f178dfd8b8/ivy/utils/backend/handler.py">implicit_backend</a> is located in the file which is initialized as numpy, and is always used to infer the backend in cases where: (a) no backend has been set using the <code class="code docutils literal notranslate"><span class="pre">set_backend</span></code> function and (b) the backend cannot be inferred from the inputs.
 If the framework can be inferred from the inputs, then this is always used, and the <a class="reference external" href="https://github.com/unifyai/ivy/blob/3358b5bbadbe4cbc0509cad4ea8f05f178dfd8b8/ivy/utils/backend/handler.py">implicit_backend</a> is overwritten with the framework inferred.
@@ -1314,10 +1314,10 @@ This is explained in more detail in the next section: <a class="reference intern
 </div>
 <p>In the last example above, the moment any backend is set, it will be used over the <a class="reference external" href="https://github.com/unifyai/ivy/blob/3358b5bbadbe4cbc0509cad4ea8f05f178dfd8b8/ivy/utils/backend/handler.py">implicit_backend</a>.
 However when the current backend is set to the previous using the <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.previous_backend()</span></code>, the <a class="reference external" href="https://github.com/unifyai/ivy/blob/3358b5bbadbe4cbc0509cad4ea8f05f178dfd8b8/ivy/utils/backend/handler.py">implicit_backend</a> will be used as a fallback, which will assume the backend from the last run.
-While the <a class="reference external" href="https://github.com/unifyai/ivy/blob/3358b5bbadbe4cbc0509cad4ea8f05f178dfd8b8/ivy/utils/backend/handler.py">implicit_backend</a> functionality gives more freedom to the user, the recommended way of doing things would be set the backend explicitly.
+While the <a class="reference external" href="https://github.com/unifyai/ivy/blob/3358b5bbadbe4cbc0509cad4ea8f05f178dfd8b8/ivy/utils/backend/handler.py">implicit_backend</a> functionality gives more freedom to the user, the recommended way of doing things would be to set the backend explicitly.
 In addition, all the previously set backends can be cleared by calling <code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.unset_backend()</span></code>.</p>
 <section id="dynamic-backend-setting">
-<h2>Dynamic Backend Setting<a class="headerlink" href="#dynamic-backend-setting" title="Permalink to this heading">#</a></h2>
+<h2>Dynamic Backend Setting<a class="headerlink" href="#dynamic-backend-setting" title="Link to this heading">#</a></h2>
 <p>Working with different backends in Ivy can be challenging, especially when you need to switch between backends frequently.
 To make this easier, users can make use of the dynamic backend attribute of <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Array</span></code> and <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> classes which allow you to automatically convert ivy arrays to the new backend whenever the backend is changed.
 Essentially, when the user calls <code class="code docutils literal notranslate"><span class="pre">ivy.set_backend(&lt;backend&gt;,</span> <span class="pre">dynamic=True)</span></code>, the following steps are performed:</p>
@@ -1373,7 +1373,7 @@ Here’s an example to illustrate how this works in practice:</p>
 <p>To avoid the above issue, we update the <a class="reference internal" href="../../docs/data_classes/data_classes/ivy.data_classes.array.html#ivy.data_classes.array.array.Array.data" title="ivy.data_classes.array.array.Array.data"><code class="xref py py-attr docutils literal notranslate"><span class="pre">data</span></code></a> attribute to be a native array for the current set backend framework in the setter method for dynamic_backend attribute for <a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/array.py#L186.">ivy.Array</a> and <a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/container/base.py#L4166.">ivy.Container</a> classes. So after the line <code class="code docutils literal notranslate"><span class="pre">arr.dynamic_backend</span> <span class="pre">=</span> <span class="pre">True</span></code> in the example above, then <code class="xref py py-attr docutils literal notranslate"><span class="pre">arr.data</span></code> would be a torch.Tensor and not a tf.Tensor.</p>
 </section>
 <section id="backend-and-frontend-version-support">
-<h2>Backend and Frontend Version Support<a class="headerlink" href="#backend-and-frontend-version-support" title="Permalink to this heading">#</a></h2>
+<h2>Backend and Frontend Version Support<a class="headerlink" href="#backend-and-frontend-version-support" title="Link to this heading">#</a></h2>
 <p>Each time a new ivy backend is set, the backend_handler modifies the <code class="xref py py-attr docutils literal notranslate"><span class="pre">ivy.__dict__</span></code> to support the multiple versions of functions that are not forward compatible.
 For example, <code class="xref py py-func docutils literal notranslate"><span class="pre">torch.ones_like()</span></code> in the latest stable version <code class="code docutils literal notranslate"><span class="pre">1.12</span></code> has many new arguments <code class="code docutils literal notranslate"><span class="pre">dtype=None,</span> <span class="pre">layout=None,</span> <span class="pre">device=None,</span> <span class="pre">requires_grad=False,</span> <span class="pre">memory_format=torch.preserve_format</span></code> compared to the same function at version <code class="code docutils literal notranslate"><span class="pre">0.3.1</span></code>.
 None of these new arguments will cause any forward compatibility issues: they weren’t used in old code, and they can now just be used in new code if desired.
@@ -1480,7 +1480,7 @@ src="https://www.youtube.com/embed/ROt5E8aHgww" class="video">
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

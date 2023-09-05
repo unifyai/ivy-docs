@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Ivy Frontend Tests &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/deep_dive/ivy_frontends_tests';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,16 +1276,16 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="ivy-frontend-tests">
-<h1>Ivy Frontend Tests<a class="headerlink" href="#ivy-frontend-tests" title="Permalink to this heading">#</a></h1>
+<h1>Ivy Frontend Tests<a class="headerlink" href="#ivy-frontend-tests" title="Link to this heading">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
-<p>Just like the backend functional API, our frontend functional API has a collection of Ivy tests located in subfolder <a class="reference external" href="https://github.com/unifyai/ivy/tree/db9a22d96efd3820fb289e9997eb41dda6570868/ivy_tests/test_ivy">test ivy</a>.
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Just like the backend functional API, our frontend functional API has a collection of Ivy tests located in the subfolder <a class="reference external" href="https://github.com/unifyai/ivy/tree/db9a22d96efd3820fb289e9997eb41dda6570868/ivy_tests/test_ivy">test ivy</a>.
 In this section of the deep dive we are going to jump into Ivy Frontend Tests!</p>
 <p><strong>Writing Ivy Frontend Tests</strong></p>
 <p>The Ivy tests in this section make use of hypothesis for performing property based testing which is documented in detail in the Ivy Tests section of the Deep Dive.
 We assume knowledge of hypothesis data generation strategies and how to implement them for testing.</p>
 <p><strong>Ivy Decorators</strong></p>
-<p>Ivy provides test decorators for frontend tests to make it easier and more maintainable, currently there are two:</p>
+<p>Ivy provides test decorators for frontend tests to make them easier and more maintainable, currently there are two:</p>
 <ul class="simple">
 <li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">&#64;handle_frontend_test()</span></code> a decorator which is used to test frontend functions, for example <code class="xref py py-func docutils literal notranslate"><span class="pre">np.zeros()</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">tensorflow.tan()</span></code>.</p></li>
 <li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">&#64;handle_frontend_method()</span></code> a decorator which is used to test frontend methods and special methods, for example <code class="xref py py-func docutils literal notranslate"><span class="pre">torch.Tensor.add()</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.ndarray.__add__()</span></code>.</p></li>
@@ -1311,11 +1311,11 @@ For example <code class="xref py py-func docutils literal notranslate"><span cla
 <p>To get a better understanding for writing frontend tests lets run through some examples!</p>
 </section>
 <section id="frontend-test-examples">
-<h2>Frontend Test Examples<a class="headerlink" href="#frontend-test-examples" title="Permalink to this heading">#</a></h2>
+<h2>Frontend Test Examples<a class="headerlink" href="#frontend-test-examples" title="Link to this heading">#</a></h2>
 <p>Before you begin writing a frontend test, make sure you are placing it in the correct location.
 See the ‘Where to place a frontend function’ sub-section of the frontend APIs <a class="reference external" href="https://unify.ai/docs/ivy/overview/contributing/open_tasks.html">open task</a> for more details.</p>
 <section id="ivy-tan">
-<h3>ivy.tan()<a class="headerlink" href="#ivy-tan" title="Permalink to this heading">#</a></h3>
+<h3>ivy.tan()<a class="headerlink" href="#ivy-tan" title="Link to this heading">#</a></h3>
 <p><strong>Jax</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ivy_tests/test_ivy/test_frontends/test_jax/test_lax/test_operators.py</span>
 <span class="nd">@handle_frontend_test</span><span class="p">(</span>
@@ -1478,7 +1478,7 @@ See the ‘Where to place a frontend function’ sub-section of the frontend API
 </ul>
 </section>
 <section id="ivy-full">
-<h3>ivy.full()<a class="headerlink" href="#ivy-full" title="Permalink to this heading">#</a></h3>
+<h3>ivy.full()<a class="headerlink" href="#ivy-full" title="Link to this heading">#</a></h3>
 <p>Here we are going to look at an example of a function that does not consume an <code class="code docutils literal notranslate"><span class="pre">array</span></code>.
 This is the creation function <code class="xref py py-func docutils literal notranslate"><span class="pre">full()</span></code>, which takes an array shape as an argument to create an array filled with elements of a given value.
 This function requires us to create extra functions for generating <code class="code docutils literal notranslate"><span class="pre">shape</span></code> and <code class="code docutils literal notranslate"><span class="pre">fill</span> <span class="pre">value</span></code>, these use the <code class="code docutils literal notranslate"><span class="pre">shared</span></code> hypothesis strategy.</p>
@@ -1601,7 +1601,7 @@ This is used to specify the data type of the output array.</p></li>
 </div>
 <ul class="simple">
 <li><p>We use <code class="xref py py-func docutils literal notranslate"><span class="pre">helpers.get_dtypes()</span></code> to generate <code class="code docutils literal notranslate"><span class="pre">dtype</span></code>, these are valid numeric data types specifically for NumPy.</p></li>
-<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.full()</span></code> does not have a <code class="code docutils literal notranslate"><span class="pre">where</span></code> argument so we can use <code class="xref py py-func docutils literal notranslate"><span class="pre">helpers.test_frontend_function()</span></code>, we specify the <cite>out</cite> flag explicitely.</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.full()</span></code> does not have a <code class="code docutils literal notranslate"><span class="pre">where</span></code> argument so we can use <code class="xref py py-func docutils literal notranslate"><span class="pre">helpers.test_frontend_function()</span></code>, we specify the <cite>out</cite> flag explicitly.</p></li>
 </ul>
 <p><strong>TensorFlow</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ivy_tests/test_ivy/test_frontends/test_tensorflow/test_raw_ops.py</span>
@@ -1655,7 +1655,7 @@ This is used to specify the data type of the output array.</p></li>
 <ul class="simple">
 <li><p>We use <code class="xref py py-func docutils literal notranslate"><span class="pre">helpers.get_dtypes()</span></code> to generate <code class="code docutils literal notranslate"><span class="pre">dtype</span></code>, these are valid numeric data types specifically for this function.</p></li>
 <li><p>Tensorflow’s version of <code class="xref py py-func docutils literal notranslate"><span class="pre">full()</span></code> is named <code class="xref py py-func docutils literal notranslate"><span class="pre">Fill()</span></code> therefore we specify the <code class="code docutils literal notranslate"><span class="pre">fn_tree</span></code> argument to be <code class="code docutils literal notranslate"><span class="pre">&quot;Fill&quot;</span></code></p></li>
-<li><p>When running the test there were some small discrepancies between the values so we can use <code class="code docutils literal notranslate"><span class="pre">rtol</span></code> to specify the relative tolerance. We specify the <cite>out</cite> flag explicitely.</p></li>
+<li><p>When running the test there were some small discrepancies between the values so we can use <code class="code docutils literal notranslate"><span class="pre">rtol</span></code> to specify the relative tolerance. We specify the <cite>out</cite> flag explicitly.</p></li>
 </ul>
 <p><strong>PyTorch</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ivy_tests/test_ivy/test_frontends/test_torch/test_creation_ops.py</span>
@@ -1718,9 +1718,9 @@ This is used to specify the data type of the output array.</p></li>
 </ul>
 </section>
 <section id="testing-without-using-tests-values">
-<h3>Testing Without Using Tests Values<a class="headerlink" href="#testing-without-using-tests-values" title="Permalink to this heading">#</a></h3>
+<h3>Testing Without Using Tests Values<a class="headerlink" href="#testing-without-using-tests-values" title="Link to this heading">#</a></h3>
 <p>While even using hypothesis, there are some cases in which we set <code class="code docutils literal notranslate"><span class="pre">test_values=False</span></code> for example, we have a
-function add_noise() and we call it on x and we try to assert (we interally use assert np.all_close) that the result
+function add_noise() and we call it on x and we try to assert (we internally use assert np.all_close) that the result
 from torch backend matches tensorflow and the test will always fail, because the function add_noise() depends on a random
 seed internally that we have no control over, what we change is only how we test for equality, in which in that case
 we can not and we have to reconstruct the output as shown in the example below.</p>
@@ -1768,9 +1768,9 @@ we can not and we have to reconstruct the output as shown in the example below.<
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>The parameter <code class="code docutils literal notranslate"><span class="pre">test_values=False</span></code> is explicitly set to “False” as there can be multiple solutions for this and those multiple solutions can all be correct, so we have to test with reconstructing the output.</p></li>
+<li><p>The parameter <code class="code docutils literal notranslate"><span class="pre">test_values=False</span></code> is explicitly set to “False” as there can be multiple solutions for this and those multiple solutions can all be correct, so we have to test by reconstructing the output.</p></li>
 </ul>
-<p>What assert_all_close() actually does is, it checks for values and dtypes, if even one of them is not same it will cause
+<p>What assert_all_close() actually does is, it checks for values and dtypes, if even one of them is not the same it will cause
 an assertion, the examples given below will make it clearer.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
@@ -1781,12 +1781,12 @@ an assertion, the examples given below will make it clearer.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float64&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">helpers</span><span class="o">.</span><span class="n">assert_all_close</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
-<span class="go">AssertionError: the return with a TensorFlow backend produced data type of float32, while the return with a  backend returned a data type of float64.</span>
+<span class="go">AssertionError: the return with a TensorFlow backend produced a data type of float32, while the return with a  backend returned a data type of float64.</span>
 </pre></div>
 </div>
 </section>
 <section id="alias-functions">
-<h3>Alias functions<a class="headerlink" href="#alias-functions" title="Permalink to this heading">#</a></h3>
+<h3>Alias functions<a class="headerlink" href="#alias-functions" title="Link to this heading">#</a></h3>
 <p>Let’s take a quick walkthrough on testing the function alias as we know that such functions have the same behavior as original functions.
 For example <code class="xref py py-func docutils literal notranslate"><span class="pre">torch_frontend.greater()</span></code> has an alias function <code class="xref py py-func docutils literal notranslate"><span class="pre">torch_frontend.gt()</span></code> which we need to make sure that it is working the same as the targeted framework function <code class="xref py py-func docutils literal notranslate"><span class="pre">torch.greater()</span></code> and <code class="xref py py-func docutils literal notranslate"><span class="pre">torch.gt()</span></code>.</p>
 <p>Code example for alias function:</p>
@@ -1844,7 +1844,7 @@ For example <code class="xref py py-func docutils literal notranslate"><span cla
 </section>
 </section>
 <section id="frontend-instance-method-tests">
-<h2>Frontend Instance Method Tests<a class="headerlink" href="#frontend-instance-method-tests" title="Permalink to this heading">#</a></h2>
+<h2>Frontend Instance Method Tests<a class="headerlink" href="#frontend-instance-method-tests" title="Link to this heading">#</a></h2>
 <p>The frontend instance method tests are similar to the frontend function test, but instead of testing the function directly we test the instance method of the frontend class.
 major difference is that we have more flags to pass now, most initialization functions take an array as an input. also some methods may take an array as input,
 for example, <code class="code docutils literal notranslate"><span class="pre">ndarray.__add__</span></code> would expect an array as input, despite the <code class="code docutils literal notranslate"><span class="pre">self.array</span></code>. and to make our test <strong>complete</strong> we need to generate seperate flags for each.</p>
@@ -1859,16 +1859,16 @@ for example, <code class="code docutils literal notranslate"><span class="pre">n
 <dt><code class="xref py py-func docutils literal notranslate"><span class="pre">helpers.test_frontend_method()</span></code> is used to test frontend instance methods. It is used in the same way as <code class="xref py py-func docutils literal notranslate"><span class="pre">helpers.test_frontend_function()</span></code>. A few important arguments for this function are following:</dt><dd><ul class="simple">
 <li><p><code class="code docutils literal notranslate"><span class="pre">init_input_dtypes</span></code> Input dtypes of the arguments on which we are initializing the array on.</p></li>
 <li><p><code class="code docutils literal notranslate"><span class="pre">init_all_as_kwargs_np</span></code> The data to be passed when intializing, this will be a dictionary in which the numpy array which will contain the data will be passed in the <code class="code docutils literal notranslate"><span class="pre">data</span></code> key.</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">method_input_dtypes</span></code> The input dtypes of the arguemnt which are to be passed to the instance method after the intialization of the array.</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">method_all_as_kwargs_np</span></code> All the arguments which are to be passed to instance method.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">method_input_dtypes</span></code> The input dtypes of the argument which are to be passed to the instance method after the intialization of the array.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">method_all_as_kwargs_np</span></code> All the arguments which are to be passed to the instance method.</p></li>
 </ul>
 </dd>
 </dl>
 </section>
 <section id="frontend-instance-method-test-examples">
-<h2>Frontend Instance Method Test Examples<a class="headerlink" href="#frontend-instance-method-test-examples" title="Permalink to this heading">#</a></h2>
+<h2>Frontend Instance Method Test Examples<a class="headerlink" href="#frontend-instance-method-test-examples" title="Link to this heading">#</a></h2>
 <section id="ivy-add">
-<h3>ivy.add()<a class="headerlink" href="#ivy-add" title="Permalink to this heading">#</a></h3>
+<h3>ivy.add()<a class="headerlink" href="#ivy-add" title="Link to this heading">#</a></h3>
 <p><strong>NumPy</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># ivy_tests/test_ivy/test_frontends/test_numpy/test_ndarray.py</span>
 <span class="nd">@handle_frontend_method</span><span class="p">(</span>
@@ -2004,7 +2004,7 @@ for example, <code class="code docutils literal notranslate"><span class="pre">n
 </section>
 </section>
 <section id="hypothesis-helpers">
-<h2>Hypothesis Helpers<a class="headerlink" href="#hypothesis-helpers" title="Permalink to this heading">#</a></h2>
+<h2>Hypothesis Helpers<a class="headerlink" href="#hypothesis-helpers" title="Link to this heading">#</a></h2>
 <p>Naturally, many of the functions in the various frontend APIs are very similar to many of the functions in the Ivy API.
 Therefore, the unit tests will follow very similar structures with regards to the data generated for testing.
 There are many data generation helper functions defined in the Ivy API test files, such as <code class="xref py py-func docutils literal notranslate"><span class="pre">_arrays_idx_n_dtypes()</span></code> defined in <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy/ivy_tests/test_ivy/test_functional/test_core/test_manipulation.py</span></code>.
@@ -2022,7 +2022,7 @@ If a test fails on the CI, you can see details about the failure under <cite>Det
 <p>You can also run the tests locally before making a PR. See the relevant <a class="reference external" href="https://unify.ai/docs/ivy/compiler/setting_up.html#setting-up-testing">setting up</a> section for instructions on how to do so.</p>
 </section>
 <section id="frontend-framework-testing-configuration">
-<h2>Frontend Framework Testing Configuration<a class="headerlink" href="#frontend-framework-testing-configuration" title="Permalink to this heading">#</a></h2>
+<h2>Frontend Framework Testing Configuration<a class="headerlink" href="#frontend-framework-testing-configuration" title="Link to this heading">#</a></h2>
 <p>To effectively test a frontend within our pipeline, it is essential to provide specific information about the framework we’re trying to test.
 This information includes how to create an array, return type checking, supported devices, and data types, etc.</p>
 <p>All the required information for a frontend is stored in a configuration file, which serves as a reference for our testing pipeline.
@@ -2134,7 +2134,7 @@ src="https://www.youtube.com/embed/iS7QFsQa9bI" class="video">
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

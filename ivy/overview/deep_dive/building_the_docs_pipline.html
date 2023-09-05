@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Building the Docs Pipeline &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/deep_dive/building_the_docs_pipline';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,13 +1276,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="building-the-docs-pipeline">
-<h1>Building the Docs Pipeline<a class="headerlink" href="#building-the-docs-pipeline" title="Permalink to this heading">#</a></h1>
+<h1>Building the Docs Pipeline<a class="headerlink" href="#building-the-docs-pipeline" title="Link to this heading">#</a></h1>
 <p>To build our docs, we use <a class="reference external" href="http://sphinx-doc.org/">Sphinx</a>. Sphinx is an extendable documentation generator
 for Python. As our building pipeline is complex, we heavily customize Sphinx using
 custom and third party extensions. As well as having a convenience script to build
 the docs.</p>
 <section id="how-the-doc-builder-is-being-run">
-<h2>How the doc-builder is being run<a class="headerlink" href="#how-the-doc-builder-is-being-run" title="Permalink to this heading">#</a></h2>
+<h2>How the doc-builder is being run<a class="headerlink" href="#how-the-doc-builder-is-being-run" title="Link to this heading">#</a></h2>
 <p>There are 2 ways to build the docs:</p>
 <ol class="arabic simple">
 <li><p>Through a convenience script, which is useful for local development.</p></li>
@@ -1290,7 +1290,7 @@ the docs.</p>
 </ol>
 <p>We will go through how they work in the following sections.</p>
 <section id="the-convenience-script">
-<h3>The convenience script<a class="headerlink" href="#the-convenience-script" title="Permalink to this heading">#</a></h3>
+<h3>The convenience script<a class="headerlink" href="#the-convenience-script" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">make_docs_without_docker.sh</span></code> is a convenience script to build the docs, which can be
 found in the <a class="reference external" href="https://github.com/unifyai/doc-builder">doc-builder repository</a>. It takes one argument, the path to a project to
 document. The project should have the following characteristics:</p>
@@ -1316,7 +1316,7 @@ This file will be imported with the default <code class="docutils literal notran
 <p>will result in the creation of documentation for the project in the directory
 <code class="docutils literal notranslate"><span class="pre">docs/build</span></code>.</p>
 <section id="options">
-<h4>Options<a class="headerlink" href="#options" title="Permalink to this heading">#</a></h4>
+<h4>Options<a class="headerlink" href="#options" title="Link to this heading">#</a></h4>
 <dl class="option-list">
 <dt><kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></dt>
 <dd><p>Show this help</p>
@@ -1341,7 +1341,7 @@ This file will be imported with the default <code class="docutils literal notran
 </section>
 </section>
 <section id="the-docker-image">
-<h3>The Docker image<a class="headerlink" href="#the-docker-image" title="Permalink to this heading">#</a></h3>
+<h3>The Docker image<a class="headerlink" href="#the-docker-image" title="Link to this heading">#</a></h3>
 <p>The Docker image <a class="reference external" href="https://hub.docker.com/r/unifyai/doc-builder">unifyai/doc-builder</a>
 works as a wrapper around the <code class="docutils literal notranslate"><span class="pre">make_docs_without_docker.sh</span></code> script. It runs the script
 on the <code class="docutils literal notranslate"><span class="pre">/project</span></code> directory, located in the container <a class="reference external" href="https://github.com/unifyai/doc-builder/blob/main/Dockerfile#L21">as shown here</a>:</p>
@@ -1352,16 +1352,16 @@ on the <code class="docutils literal notranslate"><span class="pre">/project</sp
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span>/path/to/project:/project<span class="w"> </span>unifyai/doc-builder
 </pre></div>
 </div>
-<p>You can as well add options described in the <a class="reference internal" href="#the-convenience-script"><span class="std std-ref">The convenience script</span></a> section.</p>
+<p>You can also add options described in the <a class="reference internal" href="#the-convenience-script"><span class="std std-ref">The convenience script</span></a> section.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-v<span class="w"> </span>/path/to/project:/project<span class="w"> </span>unifyai/doc-builder<span class="w"> </span>--no-cleanup
 </pre></div>
 </div>
 </section>
 </section>
 <section id="how-ivy-s-docs-is-structured">
-<h2>How Ivy’s docs is structured<a class="headerlink" href="#how-ivy-s-docs-is-structured" title="Permalink to this heading">#</a></h2>
+<h2>How Ivy’s docs is structured<a class="headerlink" href="#how-ivy-s-docs-is-structured" title="Link to this heading">#</a></h2>
 <p>Looking at <a class="reference external" href="https://github.com/unifyai/ivy/tree/main/docs">Ivy docs</a>, we can see
-that it structured like this:</p>
+that it is structured like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docs
 ├──<span class="w"> </span>index.rst
 ├──<span class="w"> </span>partial_conf.py
@@ -1375,7 +1375,7 @@ that it structured like this:</p>
 </div>
 <p>Let’s go through each of these files and folders.</p>
 <section id="index-rst">
-<h3><code class="docutils literal notranslate"><span class="pre">index.rst</span></code><a class="headerlink" href="#index-rst" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">index.rst</span></code><a class="headerlink" href="#index-rst" title="Link to this heading">#</a></h3>
 <p>This is the root of the documentation. It is the first file that Sphinx will read when
 building the docs. It is also the file that will be displayed when you open the docs
 in a browser.</p>
@@ -1408,7 +1408,7 @@ in a browser.</p>
 </div>
 <p>You can see here different reStructuredText directives. The first one is <code class="docutils literal notranslate"><span class="pre">include</span></code>,
 which simply includes the main README file of the project, this is a good place if you
-want to make the rendered docs looks different from the README, or simply include it as
+want to make the rendered docs look different from the README, or simply include it as
 is.</p>
 <p>The second directive is <code class="docutils literal notranslate"><span class="pre">toctree</span></code>, which is used to create a table of contents. The
 <code class="docutils literal notranslate"><span class="pre">:hidden:</span></code> option hides the table of contents from the rendered docs, only keeping it
@@ -1424,14 +1424,14 @@ now on we’ll only explain the directives that are custom to Ivy’s doc-builde
 of contents for a module, as well as the documentation itself automatically by
 discovering the docstrings of the module. This is a custom directive, built on the original
 <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html">autosummary</a>
-extension. We will explain in details how did we change it, in <a class="reference internal" href="#custom-extensions"><span class="std std-ref">Custom Extensions</span></a>.</p>
+extension. We will explain in detail how did we change it, in <a class="reference internal" href="#custom-extensions"><span class="std std-ref">Custom Extensions</span></a>.</p>
 </section>
 <section id="partial-conf-py">
-<h3><code class="docutils literal notranslate"><span class="pre">partial_conf.py</span></code><a class="headerlink" href="#partial-conf-py" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">partial_conf.py</span></code><a class="headerlink" href="#partial-conf-py" title="Link to this heading">#</a></h3>
 <p>This is a partial <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/configuration.html">Sphinx configuration file</a>. Which is being imported in the
 <a class="reference external" href="https://github.com/unifyai/doc-builder/blob/main/docs/conf.py#L150">conf.py</a>,
 it’s used to customize options that are specific to the project being documented.
-While importing common configuration such as the theme, the extensions, etc in the
+While importing common configurations such as the theme, the extensions, etc in the
 original <code class="docutils literal notranslate"><span class="pre">conf.py</span></code>.</p>
 <p>This is a part of <code class="docutils literal notranslate"><span class="pre">partial_conf.py</span></code>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ivy_toctree_caption_map</span> <span class="o">=</span> <span class="p">{</span>
@@ -1450,16 +1450,16 @@ customize the title of the table of contents for each module.
 <a class="reference internal" href="#custom-extensions"><span class="std std-ref">Custom Extensions</span></a>.</p>
 </section>
 <section id="prebuild-sh">
-<h3><code class="docutils literal notranslate"><span class="pre">prebuild.sh</span></code><a class="headerlink" href="#prebuild-sh" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">prebuild.sh</span></code><a class="headerlink" href="#prebuild-sh" title="Link to this heading">#</a></h3>
 <p>This is an optional file, which is executed before the docs are built. This is useful
 if you need to install some dependencies for the docs to build. In Ivy’s case, we
 install <code class="docutils literal notranslate"><span class="pre">torch</span></code> then <code class="docutils literal notranslate"><span class="pre">torch-scatter</span></code> sequentially to avoid a bug in
-<code class="docutils literal notranslate"><span class="pre">torch-scatter</span></code>’s setup. And if we want to do any changes to the docker container
+<code class="docutils literal notranslate"><span class="pre">torch-scatter</span></code>’s setup. And if we want to make any changes to the docker container
 before building the docs.</p>
 </section>
 </section>
 <section id="custom-extensions">
-<h2>Custom Extensions<a class="headerlink" href="#custom-extensions" title="Permalink to this heading">#</a></h2>
+<h2>Custom Extensions<a class="headerlink" href="#custom-extensions" title="Link to this heading">#</a></h2>
 <p>As of writing this documentation, Ivy’s doc-builder is using 4 custom extensions:</p>
 <ol class="arabic simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">custom_autosummary</span></code></p></li>
@@ -1468,32 +1468,32 @@ before building the docs.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">ivy_data</span></code></p></li>
 </ol>
 <section id="custom-autosummary">
-<h3><code class="docutils literal notranslate"><span class="pre">custom_autosummary</span></code><a class="headerlink" href="#custom-autosummary" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">custom_autosummary</span></code><a class="headerlink" href="#custom-autosummary" title="Link to this heading">#</a></h3>
 <p>This extension is a modified version of the original <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html">autosummary</a>, which is used to
 discover and automatically document the docstrings of a module. This is done by
 generating “stub” rst files for each module listed in the <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive,
 you can add a template for these stub files using the <code class="docutils literal notranslate"><span class="pre">:template:</span></code> option. Which can
-inturn include the <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive again, recursing on the whole module.</p>
+in turn include the <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> directive again, recursing on the whole module.</p>
 <p>Unfortunately, the original <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> extension is very limited, forcing you to
 have a table of contents for each modules.</p>
 <p>We’ll go through each option or configuration value added to the original <code class="docutils literal notranslate"><span class="pre">autosummary</span></code></p>
 <section id="hide-table">
-<h4><code class="docutils literal notranslate"><span class="pre">:hide-table:</span></code><a class="headerlink" href="#hide-table" title="Permalink to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">:hide-table:</span></code><a class="headerlink" href="#hide-table" title="Link to this heading">#</a></h4>
 <p>As the name suggests, the original behavior of <code class="docutils literal notranslate"><span class="pre">autosummary</span></code> is to generate a table
-of contents for each module. And it generate stub files only if <code class="docutils literal notranslate"><span class="pre">:toctree:</span></code> option is
+of contents for each module. And it generates stub files only if the <code class="docutils literal notranslate"><span class="pre">:toctree:</span></code> option is
 specified. As we only need the <code class="docutils literal notranslate"><span class="pre">toctree</span></code> this option hides the table of contents, but
-it require the <code class="docutils literal notranslate"><span class="pre">:toctree:</span></code> option to be specified.</p>
+it requires the <code class="docutils literal notranslate"><span class="pre">:toctree:</span></code> option to be specified.</p>
 </section>
 </section>
 <section id="discussion-linker">
-<h3><code class="docutils literal notranslate"><span class="pre">discussion_linker</span></code><a class="headerlink" href="#discussion-linker" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">discussion_linker</span></code><a class="headerlink" href="#discussion-linker" title="Link to this heading">#</a></h3>
 <p>Discussion linker is a simple extension that adds a link to our discord server, as well
 as specific discussion boards for each modules.</p>
 <p>The directive is included like this:</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">discussion-links</span><span class="p">::</span> module.foo
 </pre></div>
 </div>
-<p>First it will look for <code class="docutils literal notranslate"><span class="pre">discussion_channel_map</span></code> configuration, in Ivy it looks like
+<p>First it will look for the <code class="docutils literal notranslate"><span class="pre">discussion_channel_map</span></code> configuration, in Ivy it looks like
 this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">discussion_channel_map</span> <span class="o">=</span> <span class="p">{</span>
     <span class="o">...</span><span class="p">,</span>
@@ -1505,7 +1505,7 @@ this:</p>
 </div>
 <p>The key is the module name, if it’s not found the <code class="docutils literal notranslate"><span class="pre">discussion-link</span></code> directive will
 render an empty node. The first and only value in the list is the channel id of the
-module, it is in a list as we used to have forums as will but they are removed now.</p>
+module, it is in a list as we used to have forums as well but they are removed now.</p>
 <p>The output string is generated by a series of replaces on template strings, which are
 customizable using the config. To understand how it works, let’s look at the default
 configurations and their values:</p>
@@ -1563,7 +1563,7 @@ our <a class="reference external" href="https://discord.gg/ZVQdvbzNQJ">discord</
 to change them to your liking.</p>
 </section>
 <section id="skippable-function">
-<h3><code class="docutils literal notranslate"><span class="pre">skippable_function</span></code><a class="headerlink" href="#skippable-function" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">skippable_function</span></code><a class="headerlink" href="#skippable-function" title="Link to this heading">#</a></h3>
 <p>This extension provides a custom auto documenter <code class="docutils literal notranslate"><span class="pre">autoskippablemethod</span></code> that skip
 functions that match values in <code class="docutils literal notranslate"><span class="pre">skippable_method_attributes</span></code> configuration.</p>
 <p>This is an example of <code class="docutils literal notranslate"><span class="pre">skippable_method_attributes</span></code> configuration in
@@ -1579,14 +1579,14 @@ functions that match values in <code class="docutils literal notranslate"><span 
 <code class="docutils literal notranslate"><span class="pre">_wrap_function.&lt;locals&gt;.new_function</span></code>.</p>
 </section>
 <section id="ivy-data">
-<h3><code class="docutils literal notranslate"><span class="pre">ivy_data</span></code><a class="headerlink" href="#ivy-data" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">ivy_data</span></code><a class="headerlink" href="#ivy-data" title="Link to this heading">#</a></h3>
 <p>This is a custom documenter for <code class="docutils literal notranslate"><span class="pre">autodoc</span></code> that documents Ivy data attributes that live
 in <code class="docutils literal notranslate"><span class="pre">ivy.functional.ivy</span></code>, it will replace the module to <code class="docutils literal notranslate"><span class="pre">ivy.</span></code> instead of
 <code class="docutils literal notranslate"><span class="pre">ivy.functional.ivy.&lt;submodule&gt;</span></code>.</p>
 <p>It’s used instead of simply using <code class="docutils literal notranslate"><span class="pre">ivy.&lt;data</span> <span class="pre">atribute&gt;</span></code> because data attributes have
 no <code class="docutils literal notranslate"><span class="pre">__doc__</span></code> atribute, instead docs are discovered by parsing the source code itself.
-So for Sphinx to find the required docs, it need to be supplied the full module name,
-then using <code class="docutils literal notranslate"><span class="pre">autoivydata</span></code> directive will replace the module name to <code class="docutils literal notranslate"><span class="pre">ivy.</span></code>.</p>
+So for Sphinx to find the required docs, it needs to be supplied the full module name,
+then using the <code class="docutils literal notranslate"><span class="pre">autoivydata</span></code> directive will replace the module name to <code class="docutils literal notranslate"><span class="pre">ivy.</span></code>.</p>
 <p>Please refer to the <a class="reference external" href="https://www.sphinx-doc.org/en/master/development/tutorials/autodoc_ext.html">auto documenter guide in sphinx documentation</a> for more
 info.</p>
 </section>
@@ -1699,7 +1699,7 @@ info.</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

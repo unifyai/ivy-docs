@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Graph Compiler &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'compiler/compiler';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../_static/js/kapa.ai.js"></script>
+    <script src="../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1273,7 +1273,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="graph-compiler">
-<h1>Graph Compiler<a class="headerlink" href="#graph-compiler" title="Permalink to this heading">#</a></h1>
+<h1>Graph Compiler<a class="headerlink" href="#graph-compiler" title="Link to this heading">#</a></h1>
 <blockquote>
 <div><p>⚠️ <strong>Warning</strong>: The compiler and the transpiler are not publicly available yet, so certain parts of this doc won’t work as expected as of now!</p>
 </div></blockquote>
@@ -1292,10 +1292,10 @@ function wrapping, likewise, redundant operations from the original function are
 removed, increasing its overall performance.</p></li>
 </ul>
 <section id="compiler-api">
-<h2>Compiler API<a class="headerlink" href="#compiler-api" title="Permalink to this heading">#</a></h2>
+<h2>Compiler API<a class="headerlink" href="#compiler-api" title="Link to this heading">#</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.compile">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">compile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">objs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stateful</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg_stateful_idxs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwarg_stateful_idxs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_generators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_caching</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_backend_compiled_fn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">static_argnums</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">static_argnames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ivy.compile" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">compile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">objs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stateful</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arg_stateful_idxs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwarg_stateful_idxs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">include_generators</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">array_caching</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_backend_compiled_fn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">static_argnums</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">static_argnames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ivy.compile" title="Link to this definition">#</a></dt>
 <dd><p>Compiles a <code class="docutils literal notranslate"><span class="pre">Callable</span></code> or set of them into an Ivy graph. If <code class="docutils literal notranslate"><span class="pre">args</span></code> or <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> are specified,
 compilation is performed eagerly, otherwise, compilation will happen lazily.</p>
 <dl class="field-list simple">
@@ -1326,7 +1326,7 @@ compilation is performed eagerly, otherwise, compilation will happen lazily.</p>
 
 </section>
 <section id="using-the-compiler">
-<h2>Using the compiler<a class="headerlink" href="#using-the-compiler" title="Permalink to this heading">#</a></h2>
+<h2>Using the compiler<a class="headerlink" href="#using-the-compiler" title="Link to this heading">#</a></h2>
 <p>To use the <code class="docutils literal notranslate"><span class="pre">ivy.compile()</span></code> function, you need to pass a callable object and the corresponding inputs
 to the function.</p>
 <p>Let’s start with a simple function:</p>
@@ -1374,7 +1374,7 @@ datatype of the input array(s).</p></li>
 </pre></div>
 </div>
 <section id="eager-vs-lazy-compilation">
-<h3>Eager vs lazy Compilation<a class="headerlink" href="#eager-vs-lazy-compilation" title="Permalink to this heading">#</a></h3>
+<h3>Eager vs lazy Compilation<a class="headerlink" href="#eager-vs-lazy-compilation" title="Link to this heading">#</a></h3>
 <p>The graph compiler runs the original function under the hood and tracks its computation
 to create the compiled graph. The <strong>eager compilation</strong> method traces the graph in the
 corresponding function call with the specified inputs before we use the compiled
@@ -1404,7 +1404,7 @@ function call.</p>
 compiler.</p>
 </section>
 <section id="array-caching">
-<h3>Array caching<a class="headerlink" href="#array-caching" title="Permalink to this heading">#</a></h3>
+<h3>Array caching<a class="headerlink" href="#array-caching" title="Link to this heading">#</a></h3>
 <p>The compiler is able to cache constant arrays and their operations through the
 <code class="docutils literal notranslate"><span class="pre">array_caching</span></code> flag, reducing computation time after compilation.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
@@ -1431,7 +1431,7 @@ need to be performed.</p>
 <img alt="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/compiler/figure3.png" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/compiler/figure3.png" />
 </section>
 <section id="generators">
-<h3>Generators<a class="headerlink" href="#generators" title="Permalink to this heading">#</a></h3>
+<h3>Generators<a class="headerlink" href="#generators" title="Link to this heading">#</a></h3>
 <p>By using the <code class="docutils literal notranslate"><span class="pre">include_generators</span></code> argument, you can choose whether generator functions
 are included as nodes or “baked” into the graph.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
@@ -1465,7 +1465,7 @@ are included as nodes or “baked” into the graph.</p>
 <img alt="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/compiler/figure5.png" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/compiler/figure5.png" />
 </section>
 <section id="stateful">
-<h3>Stateful<a class="headerlink" href="#stateful" title="Permalink to this heading">#</a></h3>
+<h3>Stateful<a class="headerlink" href="#stateful" title="Link to this heading">#</a></h3>
 <p>Finally, you can also track <code class="docutils literal notranslate"><span class="pre">__setattr__</span></code> and <code class="docutils literal notranslate"><span class="pre">__getattr__</span></code> methods of
 arbitrary classes using the <code class="docutils literal notranslate"><span class="pre">stateful</span></code> parameters.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
@@ -1487,7 +1487,7 @@ arbitrary classes using the <code class="docutils literal notranslate"><span cla
 </section>
 </section>
 <section id="sharp-bits">
-<h2>Sharp bits<a class="headerlink" href="#sharp-bits" title="Permalink to this heading">#</a></h2>
+<h2>Sharp bits<a class="headerlink" href="#sharp-bits" title="Link to this heading">#</a></h2>
 <p>As some parts of the graph compiler are still under development, there are some sharp
 bits to take into account when using it. All of these points are WIP, so they’ll be
 removed soon!</p>
@@ -1513,7 +1513,7 @@ into it!</p></li>
 </ol>
 </section>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
 <p>Below, we compile a ResNet50 model from
 <a class="reference external" href="https://huggingface.co/microsoft/resnet-50">Hugging Face</a> and use it to classify the
 breed of a cat.</p>
@@ -1653,7 +1653,7 @@ breed of a cat.</p>
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

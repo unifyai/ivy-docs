@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 
 
@@ -7,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Exception Handling &#8212; Ivy Documentation</title>
   
@@ -29,29 +28,29 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=bb9da8fc" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/sphinx_highlight.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'overview/deep_dive/exception_handling';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
-    <script src="../../_static/js/kapa.ai.js"></script>
+    <script src="../../_static/js/kapa.ai.js?v=996880f3"></script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -1057,6 +1056,7 @@ document.write(`
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.save.html">save</a></li>
 </ul>
 </li>
@@ -1276,15 +1276,15 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section id="exception-handling">
-<h1>Exception Handling<a class="headerlink" href="#exception-handling" title="Permalink to this heading">#</a></h1>
+<h1>Exception Handling<a class="headerlink" href="#exception-handling" title="Link to this heading">#</a></h1>
 <p>As Ivy is unifying multiple backends, various issues are seen during exception handling:</p>
 <ol class="arabic simple">
-<li><p>each backend throws their own exceptions</p></li>
+<li><p>each backend throws its own exceptions</p></li>
 <li><p>exceptions thrown are backend-specific, therefore inconsistent</p></li>
 </ol>
 <p>To unify the handling of exceptions and assertions, Ivy includes a custom exception class and decorator, which are explained further in the following sub-sections.</p>
 <section id="ivy-exception-class">
-<h2>Ivy Exception Class<a class="headerlink" href="#ivy-exception-class" title="Permalink to this heading">#</a></h2>
+<h2>Ivy Exception Class<a class="headerlink" href="#ivy-exception-class" title="Link to this heading">#</a></h2>
 <p>Firstly, Ivy’s base exception class is <code class="code docutils literal notranslate"><span class="pre">IvyException</span></code> class, which inherits from the Python <code class="code docutils literal notranslate"><span class="pre">Exception</span></code> class.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># in ivy/utils/exceptions.py</span>
 <span class="k">class</span> <span class="nc">IvyException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
@@ -1340,7 +1340,7 @@ Currently there are 5 custom exception classes in ivy.</p>
 <p>The correct type of Exception class should be used for the corresponding type of error across the backends. This will truly unify all the exceptions raised in Ivy.</p>
 </section>
 <section id="configurable-mode-for-stack-trace">
-<h2>Configurable Mode for Stack Trace<a class="headerlink" href="#configurable-mode-for-stack-trace" title="Permalink to this heading">#</a></h2>
+<h2>Configurable Mode for Stack Trace<a class="headerlink" href="#configurable-mode-for-stack-trace" title="Link to this heading">#</a></h2>
 <p>Ivy’s transpilation nature allows users to write code in their preferred frontend
 framework and then execute it with a different backend framework. For example, a
 user who is comfortable with NumPy can use Ivy’s NumPy frontend to run their code
@@ -1350,12 +1350,12 @@ Ivy and JAX functions. In such cases, it may be preferable for the user to avoid
 encountering stack traces that extend through Ivy and JAX functions.</p>
 <p>Therefore, options are made available for the stack traces to either truncate
 at the frontend or ivy level, or in other cases, no truncation at all.</p>
-<p>Let’s look at the 3 different modes with example of <code class="code docutils literal notranslate"><span class="pre">ivy.all</span></code> below!</p>
+<p>Let’s look at the 3 different modes with an example of <code class="code docutils literal notranslate"><span class="pre">ivy.all</span></code> below!</p>
 <ol class="arabic simple">
 <li><p>Full</p></li>
 </ol>
 <p>This is the default mode and keeps the complete stack traces. All <code class="code docutils literal notranslate"><span class="pre">numpy</span></code>
-frontend, ivy specific and native <code class="code docutils literal notranslate"><span class="pre">jax</span></code> stack traces are displayed.
+frontend, ivy specific, and native <code class="code docutils literal notranslate"><span class="pre">jax</span></code> stack traces are displayed.
 The format of the error displayed in this mode is <code class="code docutils literal notranslate"><span class="pre">Ivy</span> <span class="pre">error:</span> <span class="pre">backend</span> <span class="pre">name:</span> <span class="pre">backend</span> <span class="pre">function</span> <span class="pre">name:</span> <span class="pre">native</span> <span class="pre">error:</span> <span class="pre">error</span> <span class="pre">message</span></code></p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; ivy.functional.frontends.numpy.all(ivy.array([1,2,3]), axis=2)
   File &quot;/ivy/ivy/utils/exceptions.py&quot;, line 198, in _handle_exceptions
@@ -1392,7 +1392,7 @@ During the handling of the above exception, another exception occurred:
   File &quot;/ivy/ivy/utils/exceptions.py&quot;, line 217, in _handle_exceptions
     raise ivy.utils.exceptions.IvyIndexError(
 
-IvyIndexError: jax: all: ValueError: axis 2 is out of bounds for array of dimension 1
+IvyIndexError: jax: all: ValueError: axis 2 is out of bounds for an array of dimension 1
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
@@ -1422,7 +1422,7 @@ During the handling of the above exception, another exception occurred:
   File &quot;/ivy/ivy/functional/frontends/numpy/logic/truth_value_testing.py&quot;, line 24, in all
     ret = ivy.all(a, axis=axis, keepdims=keepdims, out=out)
 
-IvyIndexError: jax: all: axis 2 is out of bounds for array of dimension 1
+IvyIndexError: jax: all: axis 2 is out of bounds for an array of dimension 1
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
@@ -1475,12 +1475,12 @@ During the handling of the above exception, another exception occurred:
   File &quot;/ivy/ivy/utils/exceptions.py&quot;, line 217, in _handle_exceptions
     raise ivy.utils.exceptions.IvyIndexError(
 
-IvyIndexError: jax: all: axis 2 is out of bounds for array of dimension 1
+IvyIndexError: jax: all: axis 2 is out of bounds for an array of dimension 1
 </pre></div>
 </div>
 </section>
 <section id="ivy-func-wrapper-pruning">
-<h2>Ivy <code class="code docutils literal notranslate"><span class="pre">func_wrapper</span></code> Pruning<a class="headerlink" href="#ivy-func-wrapper-pruning" title="Permalink to this heading">#</a></h2>
+<h2>Ivy <code class="code docutils literal notranslate"><span class="pre">func_wrapper</span></code> Pruning<a class="headerlink" href="#ivy-func-wrapper-pruning" title="Link to this heading">#</a></h2>
 <p>Due to the wrapping operations in Ivy, a long list of less informative
 <code class="code docutils literal notranslate"><span class="pre">func_wrapper</span></code> traces is often seen in the stack.
 Including all of these wrapper functions in the stack trace can be very
@@ -1514,7 +1514,7 @@ During the handling of the above exception, another exception occurred:
   File &quot;/ivy/ivy/utils/exceptions.py&quot;, line 217, in _handle_exceptions
     raise ivy.utils.exceptions.IvyIndexError(
 
-IvyIndexError: jax: all: ValueError: axis 2 is out of bounds for array of dimension 1
+IvyIndexError: jax: all: ValueError: axis 2 is out of bounds for an array of dimension 1
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
@@ -1537,14 +1537,14 @@ During the handling of the above exception, another exception occurred:
   File &quot;/ivy/ivy/functional/frontends/numpy/logic/truth_value_testing.py&quot;, line 24, in all
     ret = ivy.all(a, axis=axis, keepdims=keepdims, out=out)
 
-IvyIndexError: jax: all: axis 2 is out of bounds for array of dimension 1
+IvyIndexError: jax: all: axis 2 is out of bounds for an array of dimension 1
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>Ivy specific</p></li>
 </ol>
 <p>As the wrappers occur in <code class="code docutils literal notranslate"><span class="pre">ivy</span></code> itself, all backend and frontend wrappers
-remain visible in the ivy-specific mode. By hidding the func wrapper traces,
+remain visible in the ivy-specific mode. By hiding the func wrapper traces,
 the stack becomes cleaner and displays the ivy backend and frontend
 exception messages only.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; ivy.set_exception_trace_mode(&#39;frontend&#39;)
@@ -1568,12 +1568,12 @@ During the handling of the above exception, another exception occurred:
   File &quot;/ivy/ivy/utils/exceptions.py&quot;, line 217, in _handle_exceptions
     raise ivy.utils.exceptions.IvyIndexError(
 
-IvyIndexError: jax: all: axis 2 is out of bounds for array of dimension 1
+IvyIndexError: jax: all: axis 2 is out of bounds for an array of dimension 1
 </pre></div>
 </div>
 </section>
 <section id="handle-exceptions-decorator">
-<h2><code class="code docutils literal notranslate"><span class="pre">&#64;handle_exceptions</span></code> Decorator<a class="headerlink" href="#handle-exceptions-decorator" title="Permalink to this heading">#</a></h2>
+<h2><code class="code docutils literal notranslate"><span class="pre">&#64;handle_exceptions</span></code> Decorator<a class="headerlink" href="#handle-exceptions-decorator" title="Link to this heading">#</a></h2>
 <p>To ensure that all backend exceptions are caught properly, a decorator is used to handle functions in the <code class="code docutils literal notranslate"><span class="pre">try/except</span></code> block.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># in ivy/utils/exceptions.py</span>
 <span class="k">def</span> <span class="nf">handle_exceptions</span><span class="p">(</span><span class="n">fn</span><span class="p">:</span> <span class="n">Callable</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
@@ -1645,7 +1645,7 @@ This ensures that all exceptions are consistent.</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x = ivy.array([0,0,1])
 &gt;&gt;&gt; ivy.all(x, axis=2)
 &lt;error_stack&gt;
-numpy.AxisError: axis 2 is out of bounds for array of dimension 1
+numpy.AxisError: axis 2 is out of bounds for an array of dimension 1
 </pre></div>
 </div>
 <p>In PyTorch,</p>
@@ -1661,7 +1661,7 @@ IndexError: Dimension out of range (expected to be in range of [-1, 0], but got 
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; x = ivy.array([0,0,1])
 &gt;&gt;&gt; ivy.all(x, axis=2)
 &lt;error_stack&gt;
-IvyIndexError: numpy: all: AxisError: axis 2 is out of bounds for array of dimension 1
+IvyIndexError: numpy: all: AxisError: axis 2 is out of bounds for an array of dimension 1
 </pre></div>
 </div>
 <p>In PyTorch,</p>
@@ -1675,9 +1675,9 @@ IvyIndexError: numpy: all: AxisError: axis 2 is out of bounds for array of dimen
 The message string is inherited from the native exception.</p>
 </section>
 <section id="consistency-in-errors">
-<h2>Consistency in Errors<a class="headerlink" href="#consistency-in-errors" title="Permalink to this heading">#</a></h2>
+<h2>Consistency in Errors<a class="headerlink" href="#consistency-in-errors" title="Link to this heading">#</a></h2>
 <p>For consistency, we make sure that the same type of Exception is raised for the same type of error regardless of the backend set.
-Lets take an example of <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html#ivy.all" title="ivy.all"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.all()</span></code></a> again. In Jax, <code class="code docutils literal notranslate"><span class="pre">ValueError</span></code> is raised when the axis is out of bounds,
+Let’s take an example of <a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html#ivy.all" title="ivy.all"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.all()</span></code></a> again. In Jax, <code class="code docutils literal notranslate"><span class="pre">ValueError</span></code> is raised when the axis is out of bounds,
 and for Numpy, <code class="code docutils literal notranslate"><span class="pre">AxisError</span></code> is raised. To unify the behaviour, we raise <code class="code docutils literal notranslate"><span class="pre">IvyIndexError</span></code> for both cases.</p>
 <p>In Numpy,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># in ivy/functional/backends/numpy/utility.py</span>
@@ -1715,7 +1715,7 @@ and for Numpy, <code class="code docutils literal notranslate"><span class="pre"
 <p>In both cases, <code class="code docutils literal notranslate"><span class="pre">IvyIndexError</span></code> is raised, to make sure the same type of Exception is raised for this specific error.</p>
 </section>
 <section id="assertion-function">
-<h2>Assertion Function<a class="headerlink" href="#assertion-function" title="Permalink to this heading">#</a></h2>
+<h2>Assertion Function<a class="headerlink" href="#assertion-function" title="Link to this heading">#</a></h2>
 <p>There are often conditions or limitations needed to ensure that a function is working correctly.</p>
 <p>Inconsistency is observed such as some functions:</p>
 <ol class="arabic simple">
@@ -1855,7 +1855,7 @@ src="https://www.youtube.com/embed/eTc24eG9P_s" class="video">
       
         <div class="footer-item">
   <p class="sphinx-version">
-    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.2.0.
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
     <br/>
   </p>
 </div>

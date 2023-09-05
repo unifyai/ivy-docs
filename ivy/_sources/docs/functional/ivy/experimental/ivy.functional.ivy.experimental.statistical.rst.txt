@@ -39,6 +39,9 @@ Statistical
    ivy.functional.ivy.experimental.statistical.nanmedian
    
    
+   ivy.functional.ivy.experimental.statistical.nanprod
+   
+   
    ivy.functional.ivy.experimental.statistical.quantile
    
 
@@ -71,6 +74,8 @@ Statistical
 .. autofunction:: ivy.nanmean
 
 .. autofunction:: ivy.nanmedian
+
+.. autofunction:: ivy.nanprod
 
 .. autofunction:: ivy.quantile
 

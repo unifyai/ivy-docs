@@ -600,6 +600,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="../../../functional/ivy/experimental/creation/ivy.functional.ivy.experimental.creation.indices.html">indices</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../functional/ivy/experimental/creation/ivy.functional.ivy.experimental.creation.kaiser_bessel_derived_window.html">kaiser_bessel_derived_window</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../functional/ivy/experimental/creation/ivy.functional.ivy.experimental.creation.kaiser_window.html">kaiser_window</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../functional/ivy/experimental/creation/ivy.functional.ivy.experimental.creation.mel_weight_matrix.html">mel_weight_matrix</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../functional/ivy/experimental/creation/ivy.functional.ivy.experimental.creation.ndenumerate.html">ndenumerate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../functional/ivy/experimental/creation/ivy.functional.ivy.experimental.creation.ndindex.html">ndindex</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../functional/ivy/experimental/creation/ivy.functional.ivy.experimental.creation.random_cp.html">random_cp</a></li>
@@ -1570,7 +1571,7 @@ with custom threshold.</p>
 
 <dl class="py class" id="module-ivy.data_classes.array.experimental.creation">
 <dt class="sig sig-object py" id="ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.data_classes.array.experimental.creation.</span></span><span class="sig-name descname"><span class="pre">_ArrayWithCreationExperimental</span></span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/experimental/creation.py#L9-L213"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.data_classes.array.experimental.creation.</span></span><span class="sig-name descname"><span class="pre">_ArrayWithCreationExperimental</span></span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/experimental/creation.py#L9-L266"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental" title="Link to this definition">#</a></dt>
 <dd><dl class="py attribute">
 <dt class="sig sig-object py" id="ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental._abc_impl">
 <span class="sig-name descname"><span class="pre">_abc_impl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;_abc._abc_data</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental._abc_impl" title="Link to this definition">#</a></dt>
@@ -1649,6 +1650,41 @@ in diagonal <code class="docutils literal notranslate"><span class="pre">k</span
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="go">ivy.array([[1., 0., 0.],</span>
 <span class="go">            0., 1., 0.]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental.mel_weight_matrix">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mel_weight_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_mel_bins</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dft_length</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lower_edge_hertz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper_edge_hertz</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3000.0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/experimental/creation.py#L215-L266"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental.mel_weight_matrix" title="Link to this definition">#</a></dt>
+<dd><p>Generate a MelWeightMatrix that can be used to re-weight a Tensor containing a
+linearly sampled frequency spectra (from DFT or STFT) into num_mel_bins
+frequency information based on the [lower_edge_hertz, upper_edge_hertz]</p>
+<p>range on the mel scale. This function defines the mel scale
+in terms of a frequency in hertz according to the following
+formula: mel(f) = 2595 * log10(1 + f/700)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>num_mel_bins</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – The number of bands in the mel spectrum.</p></li>
+<li><p><strong>dft_length</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – The size of the original DFT obtained from (n_fft / 2 + 1).</p></li>
+<li><p><strong>sample_rate</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]) – Samples per second of the input signal.</p></li>
+<li><p><strong>lower_edge_hertz</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]], default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code>) – Lower bound on the frequencies to be included in the mel spectrum.</p></li>
+<li><p><strong>upper_edge_hertz</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-data docutils literal notranslate"><span class="pre">Union</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>]], default: <code class="docutils literal notranslate"><span class="pre">3000.0</span></code>) – The desired top edge of the highest frequency band.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><em>ret</em> – MelWeightMatrix of shape:  [frames, num_mel_bins].</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>               <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="gp">&gt;&gt;&gt; </span>               <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span>  <span class="p">]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">mel_weight_matrix</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8000</span><span class="p">)</span>
+<span class="go">ivy.array([[0.        ,0.        , 0.],</span>
+<span class="go">          [0.        ,0. , 0.75694758],</span>
+<span class="go">          [0.        ,0. , 0.       ]])</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -6555,6 +6591,7 @@ is undefined in this case.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental._abc_impl"><code class="docutils literal notranslate"><span class="pre">_ArrayWithCreationExperimental._abc_impl</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental.blackman_window"><code class="docutils literal notranslate"><span class="pre">_ArrayWithCreationExperimental.blackman_window()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental.eye_like"><code class="docutils literal notranslate"><span class="pre">_ArrayWithCreationExperimental.eye_like()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental.mel_weight_matrix"><code class="docutils literal notranslate"><span class="pre">_ArrayWithCreationExperimental.mel_weight_matrix()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental.trilu"><code class="docutils literal notranslate"><span class="pre">_ArrayWithCreationExperimental.trilu()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental.unsorted_segment_min"><code class="docutils literal notranslate"><span class="pre">_ArrayWithCreationExperimental.unsorted_segment_min()</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.data_classes.array.experimental.creation._ArrayWithCreationExperimental.unsorted_segment_sum"><code class="docutils literal notranslate"><span class="pre">_ArrayWithCreationExperimental.unsorted_segment_sum()</span></code></a></li>

@@ -31,6 +31,9 @@ Creation
    ivy.functional.ivy.experimental.creation.kaiser_window
    
    
+   ivy.functional.ivy.experimental.creation.mel_weight_matrix
+   
+   
    ivy.functional.ivy.experimental.creation.ndenumerate
    
    
@@ -83,6 +86,8 @@ Creation
 .. autofunction:: ivy.kaiser_bessel_derived_window
 
 .. autofunction:: ivy.kaiser_window
+
+.. autofunction:: ivy.mel_weight_matrix
 
 .. autofunction:: ivy.ndenumerate
 

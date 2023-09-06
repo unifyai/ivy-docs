@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Applied Libraries &#8212; Ivy Documentation</title>
+    <title>ivy.transpile / ivy.unify &#8212; Ivy Documentation</title>
   
   
   
@@ -44,7 +44,7 @@
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=4ea706d9"></script>
     <script src="../../_static/design-tabs.js?v=36754332"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'overview/extensions/applied_libraries';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'overview/one_liners/transpile';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/ivy.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
@@ -53,8 +53,8 @@
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Design" href="../design.html" />
-    <link rel="prev" title="Extensions" href="../extensions.html" />
+    <link rel="next" title="Functions" href="../../docs/functional/ivy.functional.ivy.html" />
+    <link rel="prev" title="ivy.compile()" href="compile.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -273,56 +273,59 @@ document.write(`
         <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
   aria-label="Section Navigation">
     <div class="bd-toc-item navbar-nav">
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Home</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">The Basics</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../get_started.html">Get Started</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../demos/index.html">Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../demos/quickstart.html">Quickstart</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../demos/learn_the_basics.html">Learn the basics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../demos/learn_the_basics/01_write_ivy_code.html">Write Ivy code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../demos/learn_the_basics/02_unify_code.html">Unify code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../demos/learn_the_basics/03_compile_code.html">Compile code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../demos/learn_the_basics/04_transpile_code.html">Transpile code</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../demos/learn_the_basics/05_lazy_vs_eager.html">Lazy vs Eager</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../demos/learn_the_basics/06_how_to_use_decorators.html">How to use decorators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../demos/learn_the_basics/07_transpile_any_library.html">Transpile any library</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../demos/learn_the_basics/08_transpile_any_model.html">Transpile any model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/quickstart.html">Quickstart</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../demos/learn_the_basics.html">Learn the basics</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../demos/learn_the_basics/01_write_ivy_code.html">Write Ivy code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../demos/learn_the_basics/02_unify_code.html">Unify code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../demos/learn_the_basics/03_compile_code.html">Compile code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../demos/learn_the_basics/04_transpile_code.html">Transpile code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../demos/learn_the_basics/05_lazy_vs_eager.html">Lazy vs Eager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../demos/learn_the_basics/06_how_to_use_decorators.html">How to use decorators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../demos/learn_the_basics/07_transpile_any_library.html">Transpile any library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../demos/learn_the_basics/08_transpile_any_model.html">Transpile any model</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../demos/guides.html">Guides</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../demos/guides/01_transpiling_a_torch_model.html">Transpiling a PyTorch model to build on top</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../demos/guides/03_transpiling_a_tf_model.html">Transpiling a Tensorflow model to build on top</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../demos/guides.html">Guides</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../demos/guides/01_transpiling_a_torch_model.html">Transpiling a PyTorch model to build on top</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../demos/guides/03_transpiling_a_tf_model.html">Transpiling a Tensorflow model to build on top</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../demos/examples_and_demos.html">Examples and Demos</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../demos/examples_and_demos/resnet_demo.html">Using Ivy ResNet</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../demos/examples_and_demos/torch_to_jax.html">Accelerating PyTorch models with JAX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../demos/examples_and_demos/mmpretrain_to_jax.html">Accelerating MMPreTrain models with JAX</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../demos/examples_and_demos/image_segmentation_with_ivy_unet.html">Image Segmentation with Ivy UNet</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../demos/examples_and_demos.html">Examples and Demos</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../demos/examples_and_demos/resnet_demo.html">Using Ivy ResNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../demos/examples_and_demos/torch_to_jax.html">Accelerating PyTorch models with JAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../demos/examples_and_demos/mmpretrain_to_jax.html">Accelerating MMPreTrain models with JAX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../demos/examples_and_demos/image_segmentation_with_ivy_unet.html">Image Segmentation with Ivy UNet</a></li>
 
 
 
-<li class="toctree-l3"><a class="reference internal" href="../../demos/examples_and_demos/alexnet_demo.html">Ivy AlexNet demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../demos/examples_and_demos/alexnet_demo.html">Ivy AlexNet demo</a></li>
 
 
 
 
 
 
-</ul>
-</li>
 </ul>
 </li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Background</span></p>
-<ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../motivation.html">Motivation</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../motivation.html">Motivation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../motivation/ml_explosion.html">ML Explosion</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../motivation/why_unify.html">Why Unify?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../motivation/standardization.html">Standardization</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../related_work.html">Related Work</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../related_work.html">Related Work</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../related_work/api_standards.html">API Standards</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../related_work/wrapper_frameworks.html">Wrapper Frameworks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../related_work/frameworks.html">Frameworks</a></li>
@@ -336,17 +339,13 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../related_work/what_does_ivy_add.html">What does Ivy Add?</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../extensions.html">Extensions</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Applied Libraries</a></li>
-</ul>
-</li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contributors</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../design.html">Design</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../design.html">Design</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../design/building_blocks.html">Building Blocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../design/ivy_as_a_transpiler.html">Ivy as a Transpiler</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../design/ivy_as_a_framework.html">Ivy as a Framework</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../design/ivy_as_a_framework.html">Ivy as a Framework</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../design/ivy_as_a_framework/ivy_container.html">Ivy Container</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../design/ivy_as_a_framework/ivy_stateful_api.html">Ivy Stateful API</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../design/ivy_as_a_framework/ivy_array.html">Ivy Array</a></li>
@@ -354,7 +353,7 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../contributing.html">Contributing</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/setting_up.html">Setting Up</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/the_basics.html">The Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../contributing/building_the_docs.html">Building the Docs</a></li>
@@ -365,7 +364,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../contributing/error_handling.html">Error Handling</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../deep_dive.html">Deep Dive</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../deep_dive.html">Deep Dive</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../deep_dive/navigating_the_code.html">Navigating the Code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../deep_dive/function_types.html">Function Types</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../deep_dive/superset_behaviour.html">Superset Behaviour</a></li>
@@ -394,16 +393,17 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../faq.html">FAQ</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Compiling and Transpiling</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../compiler/setting_up.html">Setting Up</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../compiler/compiler.html">Graph Compiler</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../compiler/transpiler.html">Transpiler</a></li>
-</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../one_liners.html">One liners</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="compile.html"><code class="docutils literal notranslate"><span class="pre">ivy.compile()</span></code></a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">ivy.transpile</span></code> / <code class="docutils literal notranslate"><span class="pre">ivy.unify</span></code></a></li>
+</ul>
+</li>
+</ul>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../docs/functional/ivy.functional.ivy.html">Functions</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.activations.html">Activations</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../docs/functional/ivy.functional.ivy.html">Functions</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.activations.html">Activations</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/activations/ivy.functional.ivy.activations.gelu.html">gelu</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/activations/ivy.functional.ivy.activations.hardswish.html">hardswish</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/activations/ivy.functional.ivy.activations.leaky_relu.html">leaky_relu</a></li>
@@ -417,7 +417,7 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.constants.html">Constants</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.control_flow_ops.html">Control flow ops</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.control_flow_ops.html">Control flow ops</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/control_flow_ops/ivy.functional.ivy.control_flow_ops.cast_bool.html">cast_bool</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/control_flow_ops/ivy.functional.ivy.control_flow_ops.cmp_is.html">cmp_is</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/control_flow_ops/ivy.functional.ivy.control_flow_ops.cmp_isnot.html">cmp_isnot</a></li>
@@ -427,7 +427,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/control_flow_ops/ivy.functional.ivy.control_flow_ops.while_loop.html">while_loop</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.creation.html">Creation</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.creation.html">Creation</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/creation/ivy.functional.ivy.creation.arange.html">arange</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/creation/ivy.functional.ivy.creation.array.html">array</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/creation/ivy.functional.ivy.creation.asarray.html">asarray</a></li>
@@ -458,7 +458,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/creation/ivy.functional.ivy.creation.zeros_like.html">zeros_like</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.data_type.html">Data type</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.data_type.html">Data type</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/data_type/ivy.functional.ivy.data_type.as_ivy_dtype.html">as_ivy_dtype</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/data_type/ivy.functional.ivy.data_type.as_native_dtype.html">as_native_dtype</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/data_type/ivy.functional.ivy.data_type.astype.html">astype</a></li>
@@ -504,7 +504,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/data_type/ivy.functional.ivy.data_type.valid_dtype.html">valid_dtype</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.device.html">Device</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.device.html">Device</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/device/ivy.functional.ivy.device.as_ivy_dev.html">as_ivy_dev</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/device/ivy.functional.ivy.device.as_native_dev.html">as_native_dev</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/device/ivy.functional.ivy.device.clear_cached_mem_on_dev.html">clear_cached_mem_on_dev</a></li>
@@ -534,7 +534,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/device/ivy.functional.ivy.device.used_mem_on_dev.html">used_mem_on_dev</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.elementwise.html">Elementwise</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.elementwise.html">Elementwise</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-17"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/elementwise/ivy.functional.ivy.elementwise.abs.html">abs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/elementwise/ivy.functional.ivy.elementwise.acos.html">acos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/elementwise/ivy.functional.ivy.elementwise.acosh.html">acosh</a></li>
@@ -612,8 +612,8 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/elementwise/ivy.functional.ivy.elementwise.trunc_divide.html">trunc_divide</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.experimental.html">Experimental</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-19"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.activations.html">Activations</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.experimental.html">Experimental</a><input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-18"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.activations.html">Activations</a><input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-19"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/activations/ivy.functional.ivy.experimental.activations.elu.html">elu</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/activations/ivy.functional.ivy.experimental.activations.logit.html">logit</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/activations/ivy.functional.ivy.experimental.activations.logsigmoid.html">logsigmoid</a></li>
@@ -626,7 +626,7 @@ document.write(`
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.constants.html">Constants</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.creation.html">Creation</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.creation.html">Creation</a><input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-20"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/creation/ivy.functional.ivy.experimental.creation.blackman_window.html">blackman_window</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/creation/ivy.functional.ivy.experimental.creation.eye_like.html">eye_like</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/creation/ivy.functional.ivy.experimental.creation.hamming_window.html">hamming_window</a></li>
@@ -648,7 +648,7 @@ document.write(`
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.data_type.html">Data type</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.device.html">Device</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.elementwise.html">Elementwise</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-22"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.elementwise.html">Elementwise</a><input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-21"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/elementwise/ivy.functional.ivy.experimental.elementwise.allclose.html">allclose</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/elementwise/ivy.functional.ivy.experimental.elementwise.binarizer.html">binarizer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/elementwise/ivy.functional.ivy.experimental.elementwise.conj.html">conj</a></li>
@@ -676,15 +676,15 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/elementwise/ivy.functional.ivy.experimental.elementwise.zeta.html">zeta</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.general.html">General</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-23"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.general.html">General</a><input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-22"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/general/ivy.functional.ivy.experimental.general.reduce.html">reduce</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.gradients.html">Gradients</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-24"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.gradients.html">Gradients</a><input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-23"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/gradients/ivy.functional.ivy.experimental.gradients.bind_custom_gradient_function.html">bind_custom_gradient_function</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.layers.html">Layers</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-25"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.layers.html">Layers</a><input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-24"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/layers/ivy.functional.ivy.experimental.layers.adaptive_avg_pool1d.html">adaptive_avg_pool1d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/layers/ivy.functional.ivy.experimental.layers.adaptive_avg_pool2d.html">adaptive_avg_pool2d</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/layers/ivy.functional.ivy.experimental.layers.adaptive_max_pool2d.html">adaptive_max_pool2d</a></li>
@@ -717,7 +717,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/layers/ivy.functional.ivy.experimental.layers.rfftn.html">rfftn</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.linear_algebra.html">Linear algebra</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-26"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.linear_algebra.html">Linear algebra</a><input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-25"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/linear_algebra/ivy.functional.ivy.experimental.linear_algebra.adjoint.html">adjoint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/linear_algebra/ivy.functional.ivy.experimental.linear_algebra.cond.html">cond</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/linear_algebra/ivy.functional.ivy.experimental.linear_algebra.diagflat.html">diagflat</a></li>
@@ -741,7 +741,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/linear_algebra/ivy.functional.ivy.experimental.linear_algebra.tucker.html">tucker</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.losses.html">Losses</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-27"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.losses.html">Losses</a><input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-26"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/losses/ivy.functional.ivy.experimental.losses.huber_loss.html">huber_loss</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/losses/ivy.functional.ivy.experimental.losses.l1_loss.html">l1_loss</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/losses/ivy.functional.ivy.experimental.losses.log_poisson_loss.html">log_poisson_loss</a></li>
@@ -749,7 +749,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/losses/ivy.functional.ivy.experimental.losses.soft_margin_loss.html">soft_margin_loss</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.manipulation.html">Manipulation</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-28"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.manipulation.html">Manipulation</a><input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-27"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/manipulation/ivy.functional.ivy.experimental.manipulation.as_strided.html">as_strided</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/manipulation/ivy.functional.ivy.experimental.manipulation.associative_scan.html">associative_scan</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/manipulation/ivy.functional.ivy.experimental.manipulation.atleast_1d.html">atleast_1d</a></li>
@@ -790,7 +790,7 @@ document.write(`
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.meta.html">Meta</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.nest.html">Nest</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.norms.html">Norms</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-29"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.norms.html">Norms</a><input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-28"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/norms/ivy.functional.ivy.experimental.norms.batch_norm.html">batch_norm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/norms/ivy.functional.ivy.experimental.norms.group_norm.html">group_norm</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/norms/ivy.functional.ivy.experimental.norms.instance_norm.html">instance_norm</a></li>
@@ -799,7 +799,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/norms/ivy.functional.ivy.experimental.norms.lp_normalize.html">lp_normalize</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.random.html">Random</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-30"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.random.html">Random</a><input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-29"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/random/ivy.functional.ivy.experimental.random.bernoulli.html">bernoulli</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/random/ivy.functional.ivy.experimental.random.beta.html">beta</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/random/ivy.functional.ivy.experimental.random.dirichlet.html">dirichlet</a></li>
@@ -807,24 +807,24 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/random/ivy.functional.ivy.experimental.random.poisson.html">poisson</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.searching.html">Searching</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-31"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.searching.html">Searching</a><input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-30"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/searching/ivy.functional.ivy.experimental.searching.unravel_index.html">unravel_index</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.set.html">Set</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.sorting.html">Sorting</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-32"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.sorting.html">Sorting</a><input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-31"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/sorting/ivy.functional.ivy.experimental.sorting.invert_permutation.html">invert_permutation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/sorting/ivy.functional.ivy.experimental.sorting.lexsort.html">lexsort</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.sparse_array.html">Sparse array</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-33"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.sparse_array.html">Sparse array</a><input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-32"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/sparse_array/ivy.functional.ivy.experimental.sparse_array.is_ivy_sparse_array.html">is_ivy_sparse_array</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/sparse_array/ivy.functional.ivy.experimental.sparse_array.is_native_sparse_array.html">is_native_sparse_array</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/sparse_array/ivy.functional.ivy.experimental.sparse_array.native_sparse_array.html">native_sparse_array</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/sparse_array/ivy.functional.ivy.experimental.sparse_array.native_sparse_array_to_indices_values_and_shape.html">native_sparse_array_to_indices_values_and_shape</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.statistical.html">Statistical</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-34"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.statistical.html">Statistical</a><input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-33"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/statistical/ivy.functional.ivy.experimental.statistical.bincount.html">bincount</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/statistical/ivy.functional.ivy.experimental.statistical.corrcoef.html">corrcoef</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/statistical/ivy.functional.ivy.experimental.statistical.cov.html">cov</a></li>
@@ -839,13 +839,13 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/statistical/ivy.functional.ivy.experimental.statistical.quantile.html">quantile</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-35"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-34"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../docs/functional/ivy/experimental/utility/ivy.functional.ivy.experimental.utility.optional_get_element.html">optional_get_element</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.general.html">General</a><input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-36"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.general.html">General</a><input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-35"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/general/ivy.functional.ivy.general.all_equal.html">all_equal</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/general/ivy.functional.ivy.general.arg_info.html">arg_info</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/general/ivy.functional.ivy.general.arg_names.html">arg_names</a></li>
@@ -928,7 +928,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/general/ivy.functional.ivy.general.vmap.html">vmap</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.gradients.html">Gradients</a><input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-37"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.gradients.html">Gradients</a><input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-36"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/gradients/ivy.functional.ivy.gradients.adam_step.html">adam_step</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/gradients/ivy.functional.ivy.gradients.adam_update.html">adam_update</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/gradients/ivy.functional.ivy.gradients.execute_with_gradients.html">execute_with_gradients</a></li>
@@ -942,7 +942,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/gradients/ivy.functional.ivy.gradients.value_and_grad.html">value_and_grad</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.layers.html">Layers</a><input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-38"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.layers.html">Layers</a><input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-37"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/layers/ivy.functional.ivy.layers.conv.html">conv</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/layers/ivy.functional.ivy.layers.conv1d.html">conv1d</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/layers/ivy.functional.ivy.layers.conv1d_transpose.html">conv1d_transpose</a></li>
@@ -960,7 +960,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/layers/ivy.functional.ivy.layers.scaled_dot_product_attention.html">scaled_dot_product_attention</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.linear_algebra.html">Linear algebra</a><input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-39"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.linear_algebra.html">Linear algebra</a><input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-38"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/linear_algebra/ivy.functional.ivy.linear_algebra.cholesky.html">cholesky</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/linear_algebra/ivy.functional.ivy.linear_algebra.cross.html">cross</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/linear_algebra/ivy.functional.ivy.linear_algebra.det.html">det</a></li>
@@ -993,13 +993,13 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/linear_algebra/ivy.functional.ivy.linear_algebra.vector_to_skew_symmetric_matrix.html">vector_to_skew_symmetric_matrix</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.losses.html">Losses</a><input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-40"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.losses.html">Losses</a><input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-39"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/losses/ivy.functional.ivy.losses.binary_cross_entropy.html">binary_cross_entropy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/losses/ivy.functional.ivy.losses.cross_entropy.html">cross_entropy</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/losses/ivy.functional.ivy.losses.sparse_cross_entropy.html">sparse_cross_entropy</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.manipulation.html">Manipulation</a><input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-41"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.manipulation.html">Manipulation</a><input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-40"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/manipulation/ivy.functional.ivy.manipulation.clip.html">clip</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/manipulation/ivy.functional.ivy.manipulation.concat.html">concat</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/manipulation/ivy.functional.ivy.manipulation.constant_pad.html">constant_pad</a></li>
@@ -1018,13 +1018,13 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/manipulation/ivy.functional.ivy.manipulation.zero_pad.html">zero_pad</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.meta.html">Meta</a><input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-42"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.meta.html">Meta</a><input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-41"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/meta/ivy.functional.ivy.meta.fomaml_step.html">fomaml_step</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/meta/ivy.functional.ivy.meta.maml_step.html">maml_step</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/meta/ivy.functional.ivy.meta.reptile_step.html">reptile_step</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.nest.html">Nest</a><input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-43"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.nest.html">Nest</a><input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-42"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/nest/ivy.functional.ivy.nest.all_nested_indices.html">all_nested_indices</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/nest/ivy.functional.ivy.nest.copy_nest.html">copy_nest</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/nest/ivy.functional.ivy.nest.duplicate_array_index_chains.html">duplicate_array_index_chains</a></li>
@@ -1046,11 +1046,11 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/nest/ivy.functional.ivy.nest.set_nest_at_indices.html">set_nest_at_indices</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.norms.html">Norms</a><input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-44"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.norms.html">Norms</a><input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-43"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/norms/ivy.functional.ivy.norms.layer_norm.html">layer_norm</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.random.html">Random</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.random.html">Random</a><input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-44"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/random/ivy.functional.ivy.random.multinomial.html">multinomial</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/random/ivy.functional.ivy.random.randint.html">randint</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/random/ivy.functional.ivy.random.random_normal.html">random_normal</a></li>
@@ -1059,7 +1059,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/random/ivy.functional.ivy.random.shuffle.html">shuffle</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.searching.html">Searching</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-46"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.searching.html">Searching</a><input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-45"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/searching/ivy.functional.ivy.searching.argmax.html">argmax</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/searching/ivy.functional.ivy.searching.argmin.html">argmin</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/searching/ivy.functional.ivy.searching.argwhere.html">argwhere</a></li>
@@ -1067,21 +1067,21 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/searching/ivy.functional.ivy.searching.where.html">where</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.set.html">Set</a><input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-47"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.set.html">Set</a><input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-46"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/set/ivy.functional.ivy.set.unique_all.html">unique_all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/set/ivy.functional.ivy.set.unique_counts.html">unique_counts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/set/ivy.functional.ivy.set.unique_inverse.html">unique_inverse</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/set/ivy.functional.ivy.set.unique_values.html">unique_values</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.sorting.html">Sorting</a><input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-48"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.sorting.html">Sorting</a><input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-47"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/sorting/ivy.functional.ivy.sorting.argsort.html">argsort</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/sorting/ivy.functional.ivy.sorting.msort.html">msort</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/sorting/ivy.functional.ivy.sorting.searchsorted.html">searchsorted</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/sorting/ivy.functional.ivy.sorting.sort.html">sort</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.statistical.html">Statistical</a><input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-49"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.statistical.html">Statistical</a><input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-48"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/statistical/ivy.functional.ivy.statistical.cumprod.html">cumprod</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/statistical/ivy.functional.ivy.statistical.cumsum.html">cumsum</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/statistical/ivy.functional.ivy.statistical.einsum.html">einsum</a></li>
@@ -1094,7 +1094,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/statistical/ivy.functional.ivy.statistical.var.html">var</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-50"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/functional/ivy/ivy.functional.ivy.utility.html">Utility</a><input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-49"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.all.html">all</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.any.html">any</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/functional/ivy/utility/ivy.functional.ivy.utility.load.html">load</a></li>
@@ -1105,8 +1105,8 @@ document.write(`
 </li>
 </ul>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../docs/data_classes/ivy.data_classes.html">Data classes</a><input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-51"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/data_classes/data_classes/ivy.data_classes.array.html">Array</a><input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-52"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../docs/data_classes/ivy.data_classes.html">Data classes</a><input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-50"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/data_classes/data_classes/ivy.data_classes.array.html">Array</a><input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-51"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/data_classes/data_classes/array/ivy.data_classes.array.activations.html">Activations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/data_classes/data_classes/array/ivy.data_classes.array.conversions.html">Conversions</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/data_classes/data_classes/array/ivy.data_classes.array.creation.html">Creation</a></li>
@@ -1131,7 +1131,7 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/data_classes/data_classes/array/ivy.data_classes.array.wrapping.html">Wrapping</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/data_classes/data_classes/ivy.data_classes.container.html">Container</a><input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-53"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/data_classes/data_classes/ivy.data_classes.container.html">Container</a><input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-52"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/data_classes/data_classes/container/ivy.data_classes.container.activations.html">Activations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/data_classes/data_classes/container/ivy.data_classes.container.base.html">Base</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/data_classes/data_classes/container/ivy.data_classes.container.conversions.html">Conversions</a></li>
@@ -1157,13 +1157,13 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="../../docs/data_classes/data_classes/container/ivy.data_classes.container.wrapping.html">Wrapping</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/data_classes/data_classes/ivy.data_classes.factorized_tensor.html">Factorized tensor</a><input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-54"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/data_classes/data_classes/ivy.data_classes.factorized_tensor.html">Factorized tensor</a><input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-53"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/data_classes/data_classes/factorized_tensor/ivy.data_classes.factorized_tensor.base.html">Base</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/data_classes/data_classes/factorized_tensor/ivy.data_classes.factorized_tensor.cp_tensor.html">Cp tensor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/data_classes/data_classes/factorized_tensor/ivy.data_classes.factorized_tensor.tucker_tensor.html">Tucker tensor</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/data_classes/data_classes/ivy.data_classes.nested_array.html">Nested array</a><input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-55"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/data_classes/data_classes/ivy.data_classes.nested_array.html">Nested array</a><input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-54"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/data_classes/data_classes/nested_array/ivy.data_classes.nested_array.base.html">Base</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/data_classes/data_classes/nested_array/ivy.data_classes.nested_array.elementwise.html">Elementwise</a></li>
 </ul>
@@ -1172,7 +1172,7 @@ document.write(`
 </li>
 </ul>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../docs/ivy.stateful.html">Framework classes</a><input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-56"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../docs/ivy.stateful.html">Framework classes</a><input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-55"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/stateful/ivy.stateful.activations.html">Activations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/stateful/ivy.stateful.converters.html">Converters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/stateful/ivy.stateful.helpers.html">Helpers</a></li>
@@ -1185,9 +1185,9 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../docs/stateful/ivy.stateful.sequential.html">Sequential</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../docs/ivy.utils.html">Utils</a><input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-57"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../docs/ivy.utils.html">Utils</a><input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-56"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../docs/utils/ivy.utils.assertions.html">Assertions</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/utils/ivy.utils.backend.html">Backend</a><input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-58"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../docs/utils/ivy.utils.backend.html">Backend</a><input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-57"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/utils/ivy.utils.backend/ivy.utils.backend.ast_helpers.html">Ast helpers</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/utils/ivy.utils.backend/ivy.utils.backend.handler.html">Handler</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../docs/utils/ivy.utils.backend/ivy.utils.backend.sub_backend_handler.html">Sub backend handler</a></li>
@@ -1297,9 +1297,9 @@ document.write(`
       </a>
     </li>
     
-    <li class="breadcrumb-item"><a href="../extensions.html" class="nav-link">Extensions</a></li>
+    <li class="breadcrumb-item"><a href="../one_liners.html" class="nav-link">One liners</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">Applied Libraries</li>
+    <li class="breadcrumb-item active" aria-current="page"><code class="docutils literal notranslate"><span class="pre">ivy.transpile</span></code> / <code class="docutils literal notranslate"><span class="pre">ivy.unify</span></code></li>
   </ul>
 </nav>
 </div>
@@ -1316,63 +1316,271 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="applied-libraries">
-<h1>Applied Libraries<a class="headerlink" href="#applied-libraries" title="Link to this heading">#</a></h1>
-<p>In other parts of the overview, we have focused on the the Ivy framework itself.
-Here, we explore how Ivy has been used to create a suite of libraries in various fields related to ML.
-Aside from being useful tools for ML developers in any framework, these libraries are a perfect showcase of what is possible using Ivy!</p>
-<p>Currently, there are Ivy libraries for: Mechanics, 3D Vision, Robotics, Gym Environments, and Differentiable Memory.
-We run through some demos from these libraries now, and encourage you to pip install the libraries and run the demos yourself if you like what you see!</p>
-<section id="ivy-mechanics">
-<h2>Ivy Mechanics<a class="headerlink" href="#ivy-mechanics" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://github.com/unifyai/mech">Ivy Mechanics</a> provides functions for conversions of orientation, pose, and positional representations, as well as transformations, and some other more applied functions.
-The orientation module is the largest, with conversions to and from all Euler conventions, quaternions, rotation matrices, rotation vectors, and axis-angle representations.</p>
-<p>For example, this demo shows the use of <code class="code docutils literal notranslate"><span class="pre">ivy_mech.target_facing_rotation_matrix</span></code>:</p>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_mech/demo_a.gif?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_mech/demo_a.gif?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_mech/demo_a.gif?raw=true" style="width: 100%;" /></a>
-<p>This demo shows the use of <code class="code docutils literal notranslate"><span class="pre">ivy_mech.polar_to_cartesian_coords</span></code>:</p>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_mech/demo_b.gif?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_mech/demo_b.gif?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_mech/demo_b.gif?raw=true" style="width: 100%;" /></a>
+  <section id="ivy-transpile-ivy-unify">
+<h1><code class="docutils literal notranslate"><span class="pre">ivy.transpile</span></code> / <code class="docutils literal notranslate"><span class="pre">ivy.unify</span></code><a class="headerlink" href="#ivy-transpile-ivy-unify" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>⚠️ <strong>Warning</strong>: The compiler and the transpiler are not publicly available yet, so certain parts of this doc won’t work as expected as of now!</p>
+</div></blockquote>
+<p>Ivy’s Transpiler converts a function written in any framework into your framework of
+choice, preserving all the logic between frameworks.
+As the output of transpilation is native code in the target framework, it
+can be used as if it was originally developed in that framework,
+allowing you to apply and use framework-specific optimizations or tools.</p>
+<p>This makes all ML-related projects available to you, independently of the framework you
+want to use to research, develop, or deploy systems. So if you want to:</p>
+<ul class="simple">
+<li><p>Use functions and building blocks like neural networks, layers, activations, and
+training pipelines published in other frameworks. Ex: Using Haiku modules in PyTorch to
+get access to the latest model.</p></li>
+<li><p>Integrate code developed in other frameworks into your code. Ex: Use the Kornia
+library in Jax for extra performance.</p></li>
+<li><p>Take advantage of specific features in other frameworks. Ex: Convert Jax code to Tensorflow for deployment.</p></li>
+</ul>
+<p>Ivy’s Transpiler is definitely the tool for the job 🔧</p>
+<p>To convert the code, it traces a computational graph using the Graph Compiler and
+leverages Ivy’s frontends and backends to link one framework to another. After swapping
+each function node in the computational graph with their equivalent Ivy frontend
+functions, the compiler removes all the wrapping in the frontends and replaces them with the native
+functions of the target framework.</p>
+<section id="transpiler-api">
+<h2>Transpiler API<a class="headerlink" href="#transpiler-api" title="Link to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ivy.transpile">
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">transpile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">objs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params_v</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ivy.transpile" title="Link to this definition">#</a></dt>
+<dd><p>Transpiles a <code class="docutils literal notranslate"><span class="pre">Callable</span></code> or set of them from a <code class="docutils literal notranslate"><span class="pre">source</span></code> framework to another framework. If <code class="docutils literal notranslate"><span class="pre">args</span></code> or <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> are specified,
+transpilation is performed eagerly, otherwise, transpilation will happen lazily.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>objs</strong> (<code class="docutils literal notranslate"><span class="pre">Callable</span></code>) – Native callable(s) to transpile.</p></li>
+<li><p><strong>source</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[str]</span></code>) – The framework that <code class="docutils literal notranslate"><span class="pre">obj</span></code> is from. This must be provided unless <code class="docutils literal notranslate"><span class="pre">obj</span></code> is a framework-specific module.</p></li>
+<li><p><strong>to</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[str]</span></code>) – The target framework to transpile <code class="docutils literal notranslate"><span class="pre">obj</span></code> to.</p></li>
+<li><p><strong>debug_mode</strong> (<code class="docutils literal notranslate"><span class="pre">bool</span></code>) – Whether to transpile to ivy first, before the final compilation to
+the target framework. If the target is ivy, then this flag makes no
+difference.</p></li>
+<li><p><strong>args</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[Tuple]</span></code>) – If specified, arguments that will be used to transpile eagerly.</p></li>
+<li><p><strong>kwargs</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[dict]</span></code>) – If specified, keyword arguments that will be used to transpile eagerly.</p></li>
+<li><p><strong>params_v</strong> – Parameters of a haiku model, as when transpiling these, the parameters
+need to be passed explicitly to the function call.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Union[Graph,</span> <span class="pre">LazyGraph,</span> <span class="pre">ModuleType,</span> <span class="pre">ivy.Module,</span> <span class="pre">torch.nn.Module,</span> <span class="pre">tf.keras.Model,</span> <span class="pre">hk.Module]</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A transpiled <code class="docutils literal notranslate"><span class="pre">Graph</span></code> or a non-initialized <code class="docutils literal notranslate"><span class="pre">LazyGraph</span></code>. If the object is a native trainable module, the corresponding module in the target framework will be returned. If the object is a <code class="docutils literal notranslate"><span class="pre">ModuleType</span></code>, the function will return a copy of the module with every method lazily transpiled.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="ivy.unify">
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">unify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">objs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">transpile_kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ivy.unify" title="Link to this definition">#</a></dt>
+<dd><p>Transpiles an object into Ivy code. It’s an alias to
+<code class="docutils literal notranslate"><span class="pre">ivy.transpile(...,</span> <span class="pre">to=&quot;ivy&quot;,</span> <span class="pre">...)</span></code></p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>objs</strong> (<code class="docutils literal notranslate"><span class="pre">Callable</span></code>) – Native callable(s) to transpile.</p></li>
+<li><p><strong>source</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[str]</span></code>) – The framework that <code class="docutils literal notranslate"><span class="pre">obj</span></code> is from. This must be provided unless <code class="docutils literal notranslate"><span class="pre">obj</span></code> is a framework-specific module.</p></li>
+<li><p><strong>args</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[Tuple]</span></code>) – If specified, arguments that will be used to unify eagerly.</p></li>
+<li><p><strong>kwargs</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[dict]</span></code>) – If specified, keyword arguments that will be used to unify eagerly.</p></li>
+<li><p><strong>transpile_kwargs</strong> – Arbitrary keyword arguments that will be passed to <code class="docutils literal notranslate"><span class="pre">ivy.transpile</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Union[Graph,</span> <span class="pre">LazyGraph,</span> <span class="pre">ModuleType,</span> <span class="pre">ivy.Module]</span></code></p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A transpiled <code class="docutils literal notranslate"><span class="pre">Graph</span></code> or a non-initialized <code class="docutils literal notranslate"><span class="pre">LazyGraph</span></code>. If the object is a native trainable module, the corresponding module in the target framework will be returned. If the object is a <code class="docutils literal notranslate"><span class="pre">ModuleType</span></code>, the function will return a copy of the module with every method lazily transpiled.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="ivy-vision">
-<h2>Ivy Vision<a class="headerlink" href="#ivy-vision" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://github.com/unifyai/vision">Ivy Vision</a> focuses predominantly on 3D vision, with functions for image projections, co-ordinate frame transformation, forward warping, inverse warping, optical flow, depth generation, voxel grids, point clouds, and others.</p>
-<p>For example, this demo shows the use of <code class="code docutils literal notranslate"><span class="pre">ivy_vision.coords_to_voxel_grid</span></code>:</p>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_vision/voxel_grid_demo.gif?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_vision/voxel_grid_demo.gif?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_vision/voxel_grid_demo.gif?raw=true" style="width: 100%;" /></a>
-<p>This demo shows the use of <code class="code docutils literal notranslate"><span class="pre">ivy_vision.render_pixel_coords</span></code>:</p>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_vision/point_render_demo.gif?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_vision/point_render_demo.gif?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_vision/point_render_demo.gif?raw=true" style="width: 100%;" /></a>
-<p>This demo shows Neural Radiance Fields (NeRF):</p>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_vision/nerf_demo.gif?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_vision/nerf_demo.gif?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_vision/nerf_demo.gif?raw=true" style="width: 100%;" /></a>
+<section id="using-the-transpiler">
+<h2>Using the transpiler<a class="headerlink" href="#using-the-transpiler" title="Link to this heading">#</a></h2>
+<p>Similar to the <code class="docutils literal notranslate"><span class="pre">ivy.compile</span></code> function, <code class="docutils literal notranslate"><span class="pre">ivy.unify</span></code> and <code class="docutils literal notranslate"><span class="pre">ivy.transpile</span></code> can be used
+eagerly and lazily. If you pass the necessary arguments, the function will be called
+instantly, otherwise, transpilation will happen the first time you invoke the function
+with the proper arguments.</p>
+<p>In both cases, arguments or keyword arguments can be arrays from
+either the <code class="docutils literal notranslate"><span class="pre">source</span></code> framework or the target (<code class="docutils literal notranslate"><span class="pre">to</span></code>) framework.</p>
+<section id="transpiling-functions">
+<h3>Transpiling functions<a class="headerlink" href="#transpiling-functions" title="Link to this heading">#</a></h3>
+<p>First, let’s start transpiling some simple functions. In the snippet below, we transpile
+a small JAX function to Torch both eagerly and lazily.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
+<span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s2">&quot;jax&quot;</span><span class="p">)</span>
+
+<span class="c1"># Simple JAX function to transpile</span>
+<span class="k">def</span> <span class="nf">test_fn</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">jax</span><span class="o">.</span><span class="n">numpy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">])</span>
+
+<span class="c1"># Arguments are available -&gt; transpilation happens eagerly</span>
+<span class="n">eager_graph</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">transpile</span><span class="p">(</span><span class="n">test_fn</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;jax&quot;</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="s2">&quot;torch&quot;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">x1</span><span class="p">,))</span>
+
+<span class="c1"># eager_graph is now torch code and runs efficiently</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">eager_graph</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+
+<span class="c1"># Arguments are not available -&gt; transpilation happens lazily</span>
+<span class="n">lazy_graph</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">transpile</span><span class="p">(</span><span class="n">test_fn</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;jax&quot;</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="s2">&quot;torch&quot;</span><span class="p">)</span>
+
+<span class="c1"># The transpiled graph is initialized, transpilation will happen here</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">lazy_graph</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+
+<span class="c1"># lazy_graph is now torch code and runs efficiently</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">lazy_graph</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
-<section id="ivy-robot">
-<h2>Ivy Robot<a class="headerlink" href="#ivy-robot" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://github.com/unifyai/robot">Ivy Robot</a> provides functions and classes for gradient-based trajectory optimization and motion planning.
-Classes are provided both for mobile robots and robot manipulators.</p>
-<p>For example, this demo shows the use of <code class="code docutils literal notranslate"><span class="pre">ivy_robot.sample_spline_path</span></code> and <code class="code docutils literal notranslate"><span class="pre">ivy_robot.RigidMobile.sample_body</span></code> for gradient-based motion planning of a drone.</p>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_robot/demo_a.gif?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_robot/demo_a.gif?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_robot/demo_a.gif?raw=true" style="width: 100%;" /></a>
-<p>This demo shows the use of <code class="code docutils literal notranslate"><span class="pre">ivy_robot.sample_spline_path</span></code> and <code class="code docutils literal notranslate"><span class="pre">ivy_robot.Manipulator.sample_links</span></code> for gradient-based motion planning of a robot manipulator:</p>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_robot/demo_b.gif?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_robot/demo_b.gif?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_robot/demo_b.gif?raw=true" style="width: 100%;" /></a>
+<section id="transpiling-libraries">
+<h3>Transpiling Libraries<a class="headerlink" href="#transpiling-libraries" title="Link to this heading">#</a></h3>
+<p>Likewise, you can use <code class="docutils literal notranslate"><span class="pre">ivy.transpile</span></code> to convert entire libraries and modules with just one line of
+code!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
+<span class="kn">import</span> <span class="nn">kornia</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">jax.numpy</span> <span class="k">as</span> <span class="nn">jnp</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+
+<span class="c1"># transpile kornia from torch to jax</span>
+<span class="n">jax_kornia</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">transpile</span><span class="p">(</span><span class="n">kornia</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;torch&quot;</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="s2">&quot;jax&quot;</span><span class="p">)</span>
+
+<span class="c1"># get an image</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://images.cocodataset.org/train2017/000000000034.jpg&quot;</span>
+<span class="n">raw_img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">raw</span><span class="p">)</span>
+
+<span class="c1"># convert it to the format expected by kornia</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">jnp</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">raw_img</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">jnp</span><span class="o">.</span><span class="n">expand_dims</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">/</span> <span class="mi">255</span>
+
+<span class="c1"># and use the transpiled version of any function from the library!</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">jax_kornia</span><span class="o">.</span><span class="n">enhance</span><span class="o">.</span><span class="n">sharpness</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
-<section id="ivy-gym">
-<h2>Ivy Gym<a class="headerlink" href="#ivy-gym" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://github.com/unifyai/gym">Ivy Gym</a> provides differentiable implementations of the control environments provided by OpenAI Gym, as well as a new “Swimmer” task which illustrates the simplicity of creating new tasks.
-The differentiable nature of the environments means that the cumulative reward can be directly optimized in a supervised manner, without the need for reinforcement learning.
-Ivy Gym opens the door for intersectional research between supervised learning, trajectory optimization, and reinforcement learning.</p>
-<p>For example, we show demos of each of the environments <code class="code docutils literal notranslate"><span class="pre">cartpole</span></code>, <code class="code docutils literal notranslate"><span class="pre">mountain_car</span></code>, <code class="code docutils literal notranslate"><span class="pre">pendulum</span></code>, <code class="code docutils literal notranslate"><span class="pre">reacher</span></code>, and <code class="code docutils literal notranslate"><span class="pre">swimmer</span></code> solved using direct trajectory optimization below.
-We optimize for a specific starting state of the environment:</p>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_gym/demo_a.gif?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_gym/demo_a.gif?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_gym/demo_a.gif?raw=true" style="width: 100%;" /></a>
-<p>We show demos of each of the environments <code class="code docutils literal notranslate"><span class="pre">cartpole</span></code>, <code class="code docutils literal notranslate"><span class="pre">mountain_car</span></code>, <code class="code docutils literal notranslate"><span class="pre">pendulum</span></code>, <code class="code docutils literal notranslate"><span class="pre">reacher</span></code>, and <code class="code docutils literal notranslate"><span class="pre">swimmer</span></code> solved using supervised learning via a policy network.
-We train a policy which is conditioned on the environment state, and the starting state is then randomized between training steps:</p>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_gym/demo_b.gif?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_gym/demo_b.gif?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_gym/demo_b.gif?raw=true" style="width: 100%;" /></a>
+<section id="transpiling-modules">
+<h3>Transpiling Modules<a class="headerlink" href="#transpiling-modules" title="Link to this heading">#</a></h3>
+<p>Last but not least, Ivy can also transpile trainable modules from one framework to
+another, at the moment we support <code class="docutils literal notranslate"><span class="pre">torch.nn.Module</span></code> when <code class="docutils literal notranslate"><span class="pre">to=&quot;torch&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">tf.keras.Model</span></code> when <code class="docutils literal notranslate"><span class="pre">to=&quot;tensorflow&quot;</span></code>, and haiku models when <code class="docutils literal notranslate"><span class="pre">to=&quot;jax&quot;</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
+<span class="kn">import</span> <span class="nn">timm</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">jax</span>
+<span class="kn">import</span> <span class="nn">haiku</span> <span class="k">as</span> <span class="nn">hk</span>
+
+<span class="c1"># Get a pretrained pytorch model</span>
+<span class="n">mlp_encoder</span> <span class="o">=</span> <span class="n">timm</span><span class="o">.</span><span class="n">create_model</span><span class="p">(</span><span class="s2">&quot;mixer_b16_224&quot;</span><span class="p">,</span> <span class="n">pretrained</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Transpile it into a hk.Module with the corresponding parameters</span>
+<span class="n">noise</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">)</span>
+<span class="n">mlp_encoder</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">transpile</span><span class="p">(</span><span class="n">mlp_encoder</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="s2">&quot;jax&quot;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">noise</span><span class="p">,))</span>
+
+<span class="c1"># Build a classifier using the transpiled encoder</span>
+<span class="k">class</span> <span class="nc">Classifier</span><span class="p">(</span><span class="n">hk</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num_classes</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">Classifier</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">mlp_encoder</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">fc</span> <span class="o">=</span> <span class="n">hk</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">output_size</span><span class="o">=</span><span class="n">num_classes</span><span class="p">,</span> <span class="n">with_bias</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+    <span class="k">def</span> <span class="nf">_forward_classifier</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+        <span class="n">module</span> <span class="o">=</span> <span class="n">Classifier</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">module</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="c1"># Transform the classifier and use it as a standard hk.Module</span>
+<span class="n">rng_key</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">PRNGKey</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">jax</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="n">rng_key</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">jax</span><span class="o">.</span><span class="n">numpy</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+<span class="n">forward_classifier</span> <span class="o">=</span> <span class="n">hk</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">_forward_classifier</span><span class="p">)</span>
+<span class="n">params</span> <span class="o">=</span> <span class="n">forward_classifier</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">rng</span><span class="o">=</span><span class="n">rng_key</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">ret</span> <span class="o">=</span> <span class="n">forward_classifier</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">params</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
-<section id="ivy-memory">
-<h2>Ivy Memory<a class="headerlink" href="#ivy-memory" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://github.com/unifyai/memory">Ivy Memory</a> provides differentiable memory modules, including learnt modules such as Neural Turing Machines (NTM), but also parameter-free modules such as End-to-End Egospheric Spatial Memory (ESM).</p>
-<p>For example, in this demo we learn to copy a sequence using <code class="code docutils literal notranslate"><span class="pre">ivy_memory.NTM</span></code>:</p>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_memory/demo_a.gif?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_memory/demo_a.gif?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_memory/demo_a.gif?raw=true" style="width: 100%;" /></a>
-<p>In this demo we create an egocentric 3D map of a room using <code class="code docutils literal notranslate"><span class="pre">ivy_memory.ESM</span></code>:</p>
-<a class="reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_memory/demo_b.gif?raw=true"><img alt="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_memory/demo_b.gif?raw=true" class="align-center" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_memory/demo_b.gif?raw=true" style="width: 100%;" /></a>
-<p><strong>Round Up</strong></p>
-<p>Hopefully, this has given you an idea of what’s possible using Ivy’s collection of applied libraries, and more importantly, given you inspiration for what’s possible using Ivy 🙂</p>
-<p>Please reach out on <a class="reference external" href="https://discord.gg/sXyFF8tDtm">discord</a> if you have any questions!</p>
+<section id="ivy-unify">
+<h3>Ivy.unify<a class="headerlink" href="#ivy-unify" title="Link to this heading">#</a></h3>
+<p>As mentioned above, <code class="docutils literal notranslate"><span class="pre">ivy.unify</span></code> is an alias for transpilation to Ivy, so you can use it
+exactly in the same way to convert framework specific code to Ivy.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
+<span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s2">&quot;jax&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_fn</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">jax</span><span class="o">.</span><span class="n">numpy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">x1</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">])</span>
+
+<span class="c1"># transpiled_func and unified_func will have the same result</span>
+<span class="n">transpiled_func</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">transpile</span><span class="p">(</span><span class="n">test_fn</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="s2">&quot;ivy&quot;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">x1</span><span class="p">,))</span>
+<span class="n">unified_func</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">unify</span><span class="p">(</span><span class="n">test_fn</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">x1</span><span class="p">,))</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="sharp-bits">
+<h2>Sharp bits<a class="headerlink" href="#sharp-bits" title="Link to this heading">#</a></h2>
+<p>In a similar fashion to the compiler, the transpiler is under development and we are
+still working on some rough edges. These include:</p>
+<ol class="arabic simple">
+<li><p><strong>Keras model subclassing</strong>: If a model is transpiled to keras, the resulting
+<code class="docutils literal notranslate"><span class="pre">tf.keras.Model</span></code> can not be used within a keras sequential model at the moment. If
+you want to use the transpiled model as part of a more complex keras model, you can
+<a class="reference external" href="https://www.tensorflow.org/guide/keras/custom_layers_and_models#the_model_class">create a Model subclass</a>.
+Due to this, any training of a keras model should be done using a TensorFlow training
+pipeline instead of the keras utils.</p></li>
+<li><p><strong>Keras arguments</strong>: Keras models require at least an argument to be passed, so if a
+model from another framework that only takes <code class="docutils literal notranslate"><span class="pre">kwargs</span></code> is transpiled to keras,
+you’ll need to pass a <code class="docutils literal notranslate"><span class="pre">None</span></code> argument to the transpiled model before the
+corresponding <code class="docutils literal notranslate"><span class="pre">kwargs</span></code>.</p></li>
+<li><p><strong>Haiku transform with state</strong>: As of now, we only support the transpilation of
+transformed Haiku modules, this means that <code class="docutils literal notranslate"><span class="pre">transformed_with_state</span></code> objects will
+not be correctly transpiled.</p></li>
+<li><p><strong>Array format between frameworks</strong>: As the compiler outputs a 1-to-1 mapping of the
+compiled function, the format of the tensors is preserved when transpiling from a
+framework to another. As an example, if you transpile a convolutional block from
+PyTorch (which uses <code class="docutils literal notranslate"><span class="pre">N,</span> <span class="pre">C,</span> <span class="pre">H,</span> <span class="pre">W</span></code>) to TensorFlow (which uses <code class="docutils literal notranslate"><span class="pre">N,</span> <span class="pre">H,</span> <span class="pre">W,</span> <span class="pre">C</span></code>) and want
+to use it as part of a bigger (TensorFlow) model, you’ll need to include a permute statement for
+the inference to be correct.</p></li>
+</ol>
+<p>Keep in mind that the transpiler uses the graph compiler under the hood, so the
+<a class="reference external" href="https://unify.ai/docs/ivy/overview/one_liners/compile.html#sharp-bits">sharp bits of the compiler</a>
+apply here as well!</p>
+</section>
+<section id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<p>Here, we are transpiling a HF model from torch to tensorflow and then using the
+resulting model with tensorflow tensors directly:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
+<span class="kn">from</span> <span class="nn">transformers</span> <span class="kn">import</span> <span class="n">AutoImageProcessor</span><span class="p">,</span> <span class="n">ResNetForImageClassification</span>
+<span class="kn">from</span> <span class="nn">datasets</span> <span class="kn">import</span> <span class="n">load_dataset</span>
+
+<span class="c1"># Set backend to torch</span>
+<span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s2">&quot;torch&quot;</span><span class="p">)</span>
+
+<span class="c1"># Download the input image</span>
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;huggingface/cats-image&quot;</span><span class="p">)</span>
+<span class="n">image</span> <span class="o">=</span> <span class="n">dataset</span><span class="p">[</span><span class="s2">&quot;test&quot;</span><span class="p">][</span><span class="s2">&quot;image&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Setting the model</span>
+<span class="n">image_processor</span> <span class="o">=</span> <span class="n">AutoImageProcessor</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;microsoft/resnet-50&quot;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">ResNetForImageClassification</span><span class="o">.</span><span class="n">from_pretrained</span><span class="p">(</span><span class="s2">&quot;microsoft/resnet-50&quot;</span><span class="p">)</span>
+
+<span class="c1"># Transpiling the model to tensorflow</span>
+<span class="n">tf_model</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">transpile</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="s2">&quot;torch&quot;</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="s2">&quot;tensorflow&quot;</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">inputs</span><span class="p">)</span>
+
+<span class="c1"># Using the transpiled model</span>
+<span class="n">tf_inputs</span> <span class="o">=</span> <span class="n">image_processor</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">return_tensors</span><span class="o">=</span><span class="s2">&quot;tf&quot;</span><span class="p">)</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">tf_model</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">tf_inputs</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -1388,20 +1596,20 @@ We train a policy which is conditioned on the environment state, and the startin
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../extensions.html"
+       href="compile.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Extensions</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">ivy.compile()</span></code></p>
       </div>
     </a>
     <a class="right-next"
-       href="../design.html"
+       href="../../docs/functional/ivy.functional.ivy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Design</p>
+        <p class="prev-next-title">Functions</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1423,11 +1631,20 @@ We train a policy which is conditioned on the environment state, and the startin
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy-mechanics">Ivy Mechanics</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy-vision">Ivy Vision</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy-robot">Ivy Robot</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy-gym">Ivy Gym</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy-memory">Ivy Memory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpiler-api">Transpiler API</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.transpile"><code class="docutils literal notranslate"><span class="pre">ivy.transpile()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.unify"><code class="docutils literal notranslate"><span class="pre">ivy.unify()</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-transpiler">Using the transpiler</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transpiling-functions">Transpiling functions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transpiling-libraries">Transpiling Libraries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transpiling-modules">Transpiling Modules</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy-unify">Ivy.unify</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sharp-bits">Sharp bits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">Examples</a></li>
 </ul>
   </nav></div>
 

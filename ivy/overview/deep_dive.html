@@ -383,7 +383,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="deep_dive/continuous_integration.html">Continuous Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deep_dive/gradients.html">Gradients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="deep_dive/operating_modes.html">Operating Modes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="deep_dive/building_the_docs_pipline.html">Building the Docs Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deep_dive/building_the_docs_pipeline.html">Building the Docs Pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
@@ -1311,79 +1311,79 @@ document.write(`
                   
   <section id="deep-dive">
 <h1>Deep Dive<a class="headerlink" href="#deep-dive" title="Link to this heading">#</a></h1>
-<p>For general users of the framework, who are mainly concerned with learning how to <em>use</em> Ivy, then the <a class="reference internal" href="design.html#design"><span class="std std-ref">Design</span></a> section is the best place to start 🙂</p>
+<p>For general users of the framework, who are mainly concerned with learning how to <em>use</em> Ivy, then the <a class="reference internal" href="design.html"><span class="doc">Design</span></a> section is the best place to start 🙂</p>
 <p>This <em>deep dive</em> section is more targeted at people who would like to dive deeper into how Ivy actually works under the hood 🔧</p>
 <p>Going through the sections outlined below will get you right into the weeds of the framework 🌱, and hopefully give you a better understanding of what is actually going on behind the scenes 🎬</p>
 <p>It’s best to go through the sub-sections from start to finish, but you can also dive in at any stage!
 We’re excited for you to get involved! 🦾</p>
 <div class="line-block">
-<div class="line">(a) <a class="reference internal" href="deep_dive/navigating_the_code.html#navigating-the-code"><span class="std std-ref">Navigating the Code</span></a> 🧭</div>
+<div class="line">(a) <a class="reference internal" href="deep_dive/navigating_the_code.html"><span class="doc">Navigating the Code</span></a> 🧭</div>
 <div class="line">A quick tour through the codebase</div>
 <div class="line"><br /></div>
-<div class="line">(b) <a class="reference internal" href="deep_dive/function_types.html#function-types"><span class="std std-ref">Function Types</span></a> 🧮</div>
+<div class="line">(b) <a class="reference internal" href="deep_dive/function_types.html"><span class="doc">Function Types</span></a> 🧮</div>
 <div class="line">Primary, compositional, mixed, and nestable functions</div>
 <div class="line"><br /></div>
-<div class="line">(c) <a class="reference internal" href="deep_dive/superset_behaviour.html#superset-behaviour"><span class="std std-ref">Superset Behaviour</span></a> ⊃</div>
+<div class="line">(c) <a class="reference internal" href="deep_dive/superset_behaviour.html"><span class="doc">Superset Behaviour</span></a> ⊃</div>
 <div class="line">Ivy goes for the superset when unifying the backend functions</div>
 <div class="line"><br /></div>
-<div class="line">(d) <a class="reference internal" href="deep_dive/backend_setting.html#backend-setting"><span class="std std-ref">Backend Setting</span></a> ⚙</div>
+<div class="line">(d) <a class="reference internal" href="deep_dive/backend_setting.html"><span class="doc">Backend Setting</span></a> ⚙</div>
 <div class="line">How the backend is set, and what this means for each function type️</div>
 <div class="line"><br /></div>
-<div class="line">(e) <a class="reference internal" href="deep_dive/arrays.html#arrays"><span class="std std-ref">Arrays</span></a> 🔢</div>
+<div class="line">(e) <a class="reference internal" href="deep_dive/arrays.html"><span class="doc">Arrays</span></a> 🔢</div>
 <div class="line">Different types of arrays, and how they’re handled</div>
 <div class="line"><br /></div>
-<div class="line">(f) <a class="reference internal" href="deep_dive/containers.html#containers"><span class="std std-ref">Containers</span></a> 🗂</div>
+<div class="line">(f) <a class="reference internal" href="deep_dive/containers.html"><span class="doc">Containers</span></a> 🗂</div>
 <div class="line">What the <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> does</div>
 <div class="line"><br /></div>
-<div class="line">(g) <a class="reference internal" href="deep_dive/data_types.html#data-types"><span class="std std-ref">Data Types</span></a> 💾</div>
+<div class="line">(g) <a class="reference internal" href="deep_dive/data_types.html"><span class="doc">Data Types</span></a> 💾</div>
 <div class="line">How functions infer the correct data type</div>
 <div class="line"><br /></div>
-<div class="line">(h) <a class="reference internal" href="deep_dive/devices.html#devices"><span class="std std-ref">Devices</span></a> 📱</div>
+<div class="line">(h) <a class="reference internal" href="deep_dive/devices.html"><span class="doc">Devices</span></a> 📱</div>
 <div class="line">How functions infer the correct device</div>
 <div class="line"><br /></div>
-<div class="line">(i) <a class="reference internal" href="deep_dive/inplace_updates.html#inplace-updates"><span class="std std-ref">Inplace Updates</span></a> 🎯</div>
+<div class="line">(i) <a class="reference internal" href="deep_dive/inplace_updates.html"><span class="doc">Inplace Updates</span></a> 🎯</div>
 <div class="line">How the <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument is used to specify the output target</div>
 <div class="line"><br /></div>
-<div class="line">(j) <a class="reference internal" href="deep_dive/function_wrapping.html#function-wrapping"><span class="std std-ref">Function Wrapping</span></a> 🎁</div>
+<div class="line">(j) <a class="reference internal" href="deep_dive/function_wrapping.html"><span class="doc">Function Wrapping</span></a> 🎁</div>
 <div class="line">How functions are dynamically wrapped at runtime</div>
 <div class="line"><br /></div>
-<div class="line">(k) <a class="reference internal" href="deep_dive/formatting.html#formatting"><span class="std std-ref">Formatting</span></a> 📋</div>
+<div class="line">(k) <a class="reference internal" href="deep_dive/formatting.html"><span class="doc">Formatting</span></a> 📋</div>
 <div class="line">How the code is automatically formatted</div>
 <div class="line"><br /></div>
-<div class="line">(l) <a class="reference internal" href="deep_dive/function_arguments.html#function-arguments"><span class="std std-ref">Function Arguments</span></a> 📑</div>
+<div class="line">(l) <a class="reference internal" href="deep_dive/function_arguments.html"><span class="doc">Function Arguments</span></a> 📑</div>
 <div class="line">How to add the correct function arguments</div>
 <div class="line"><br /></div>
-<div class="line">(m) <a class="reference internal" href="deep_dive/docstrings.html#docstrings"><span class="std std-ref">Docstrings</span></a> 📄</div>
+<div class="line">(m) <a class="reference internal" href="deep_dive/docstrings.html"><span class="doc">Docstrings</span></a> 📄</div>
 <div class="line">How to properly write docstrings</div>
 <div class="line"><br /></div>
-<div class="line">(n) <a class="reference internal" href="deep_dive/docstring_examples.html#docstring-examples"><span class="std std-ref">Docstring Examples</span></a> 💯</div>
+<div class="line">(n) <a class="reference internal" href="deep_dive/docstring_examples.html"><span class="doc">Docstring Examples</span></a> 💯</div>
 <div class="line">How to add useful examples to the docstrings</div>
 <div class="line"><br /></div>
-<div class="line">(o) <a class="reference internal" href="deep_dive/continuous_integration.html#array-api-tests"><span class="std std-ref">Array API Tests</span></a> 🤝</div>
+<div class="line">(o) <a class="reference internal" href="deep_dive/array_api_tests.html"><span class="doc">Array API Tests</span></a> 🤝</div>
 <div class="line">How we’re borrowing the test suite from the Array API Standard</div>
 <div class="line"><br /></div>
-<div class="line">(p) <a class="reference internal" href="deep_dive/ivy_tests.html#ivy-tests"><span class="std std-ref">Ivy Tests</span></a> 🧪</div>
+<div class="line">(p) <a class="reference internal" href="deep_dive/ivy_tests.html"><span class="doc">Ivy Tests</span></a> 🧪</div>
 <div class="line">How to add new tests for each Ivy function</div>
 <div class="line"><br /></div>
-<div class="line">(q) <a class="reference internal" href="deep_dive/ivy_frontends.html#ivy-frontends"><span class="std std-ref">Ivy Frontends</span></a> ➡</div>
+<div class="line">(q) <a class="reference internal" href="deep_dive/ivy_frontends.html"><span class="doc">Ivy Frontends</span></a> ➡</div>
 <div class="line">How to implement frontend functions</div>
 <div class="line"><br /></div>
-<div class="line">(r) <a class="reference internal" href="deep_dive/ivy_frontends_tests.html#ivy-frontend-tests"><span class="std std-ref">Ivy Frontend Tests</span></a> 🧪</div>
+<div class="line">(r) <a class="reference internal" href="deep_dive/ivy_frontends_tests.html"><span class="doc">Ivy Frontend Tests</span></a> 🧪</div>
 <div class="line">How to add new tests for each frontend function</div>
 <div class="line"><br /></div>
-<div class="line">(s) <a class="reference internal" href="deep_dive/function_wrapping.html#exception-handling"><span class="std std-ref">Exception Handling</span></a> ⚠</div>
+<div class="line">(s) <a class="reference internal" href="deep_dive/exception_handling.html"><span class="doc">Exception Handling</span></a> ⚠</div>
 <div class="line">How to handle exceptions and assertions in a function</div>
 <div class="line"><br /></div>
-<div class="line">(t) <a class="reference internal" href="deep_dive/formatting.html#continuous-integration"><span class="std std-ref">Continuous Integration</span></a> 🔁</div>
+<div class="line">(t) <a class="reference internal" href="deep_dive/continuous_integration.html"><span class="doc">Continuous Integration</span></a> 🔁</div>
 <div class="line">Ivy Tests running on the Repository</div>
 <div class="line"><br /></div>
-<div class="line">(u) <a class="reference internal" href="../docs/functional/ivy/experimental/ivy.functional.ivy.experimental.gradients.html#gradients"><span class="std std-ref">Gradients</span></a> 🔁</div>
+<div class="line">(u) <a class="reference internal" href="deep_dive/gradients.html"><span class="doc">Gradients</span></a> 🔁</div>
 <div class="line">Everything about our Gradients API</div>
 <div class="line"><br /></div>
-<div class="line">(v) <a class="reference internal" href="deep_dive/operating_modes.html#operating-modes"><span class="std std-ref">Operating Modes</span></a> 🧮</div>
+<div class="line">(v) <a class="reference internal" href="deep_dive/operating_modes.html"><span class="doc">Operating Modes</span></a> 🧮</div>
 <div class="line">Everything about modes Ivy can operate in, along with their purposes</div>
 <div class="line"><br /></div>
-<div class="line">(w) <a class="reference internal" href="deep_dive/building_the_docs_pipline.html#building-the-docs-pipeline"><span class="std std-ref">Building the Docs Pipeline</span></a> 📚</div>
+<div class="line">(w) <a class="reference internal" href="deep_dive/building_the_docs_pipeline.html"><span class="doc">Building the Docs Pipeline</span></a> 📚</div>
 <div class="line">How are we building our docs</div>
 </div>
 <div class="toctree-wrapper compound">

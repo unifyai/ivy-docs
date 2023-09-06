@@ -387,7 +387,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="continuous_integration.html">Continuous Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gradients.html">Gradients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="operating_modes.html">Operating Modes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="building_the_docs_pipline.html">Building the Docs Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="building_the_docs_pipeline.html">Building the Docs Pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
@@ -1319,7 +1319,7 @@ document.write(`
   <section id="function-arguments">
 <h1>Function Arguments<a class="headerlink" href="#function-arguments" title="Link to this heading">#</a></h1>
 <p>Here, we explain how the function arguments differ between the placeholder implementation at <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy/functional/ivy/category_name.py</span></code>, and the backend-specific implementation at <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy/functional/backends/backend_name/category_name.py</span></code>.</p>
-<p>Many of these points are already addressed in the previous sections: <a class="reference internal" href="arrays.html#arrays"><span class="std std-ref">Arrays</span></a>, <a class="reference internal" href="data_types.html#data-types"><span class="std std-ref">Data Types</span></a>, <a class="reference internal" href="devices.html#devices"><span class="std std-ref">Devices</span></a> and <a class="reference internal" href="inplace_updates.html#inplace-updates"><span class="std std-ref">Inplace Updates</span></a>.
+<p>Many of these points are already addressed in the previous sections: <a class="reference internal" href="arrays.html"><span class="doc">Arrays</span></a>, <a class="reference internal" href="data_types.html"><span class="doc">Data Types</span></a>, <a class="reference internal" href="devices.html"><span class="doc">Devices</span></a> and <a class="reference internal" href="inplace_updates.html"><span class="doc">Inplace Updates</span></a>.
 However, we thought it would be convenient to revisit all of these considerations in a single section, dedicated to function arguments.</p>
 <p>As for type-hints, all functions in the Ivy API at <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy/functional/ivy/category_name.py</span></code> should have full and thorough type-hints.
 Likewise, all backend implementations at <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy/functional/backends/backend_name/category_name.py</span></code> should also have full and thorough type-hints.</p>
@@ -1457,19 +1457,19 @@ We always return an <code class="xref py py-class docutils literal notranslate">
 For example, calling any of (<code class="code docutils literal notranslate"><span class="pre">+</span></code>, <code class="code docutils literal notranslate"><span class="pre">-</span></code>, <code class="code docutils literal notranslate"><span class="pre">*</span></code>, <code class="code docutils literal notranslate"><span class="pre">/</span></code> etc.) on the array will result in (<code class="code docutils literal notranslate"><span class="pre">__add__</span></code>, <code class="code docutils literal notranslate"><span class="pre">__sub__</span></code>, <code class="code docutils literal notranslate"><span class="pre">__mul__</span></code>, <code class="code docutils literal notranslate"><span class="pre">__div__</span></code> etc.) being called on the array class.</p>
 <p><code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.NativeArray</span></code> instances are also not permitted for the <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument, which is used in many functions.
 This is because the <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument dictates the array to which the result should be written, and so it effectively serves the same purpose as the function return when no <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument is specified.
-This is all explained in more detail in the <a class="reference internal" href="arrays.html#arrays"><span class="std std-ref">Arrays</span></a> section.</p>
+This is all explained in more detail in the <a class="reference internal" href="arrays.html"><span class="doc">Arrays</span></a> section.</p>
 </section>
 <section id="out-argument">
 <h2>out Argument<a class="headerlink" href="#out-argument" title="Link to this heading">#</a></h2>
 <p>The <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument should always be provided as a keyword-only argument, and it should be added to all functions in the Ivy API and backend API which support inplace updates, with a default value of <code class="code docutils literal notranslate"><span class="pre">None</span></code> in all cases.
-The <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument is explained in more detail in the <a class="reference internal" href="inplace_updates.html#inplace-updates"><span class="std std-ref">Inplace Updates</span></a> section.</p>
+The <code class="code docutils literal notranslate"><span class="pre">out</span></code> argument is explained in more detail in the <a class="reference internal" href="inplace_updates.html"><span class="doc">Inplace Updates</span></a> section.</p>
 </section>
 <section id="dtype-and-device-arguments">
 <h2>dtype and device arguments<a class="headerlink" href="#dtype-and-device-arguments" title="Link to this heading">#</a></h2>
 <p>In the Ivy API at <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy/functional/ivy/category_name.py</span></code>, the <code class="code docutils literal notranslate"><span class="pre">dtype</span></code> and <code class="code docutils literal notranslate"><span class="pre">device</span></code> arguments should both always be provided as keyword-only arguments, with a default value of <code class="code docutils literal notranslate"><span class="pre">None</span></code>.
 In contrast, these arguments should both be added as required arguments in the backend implementation at <code class="xref py py-mod docutils literal notranslate"><span class="pre">ivy/functional/backends/backend_name/category_name.py</span></code>.
 In a nutshell, by the time the backend implementation is entered, the correct <code class="code docutils literal notranslate"><span class="pre">dtype</span></code> and <code class="code docutils literal notranslate"><span class="pre">device</span></code> to use have both already been correctly handled by code which is wrapped around the backend implementation.
-This is further explained in the <a class="reference internal" href="data_types.html#data-types"><span class="std std-ref">Data Types</span></a> and <a class="reference internal" href="devices.html#devices"><span class="std std-ref">Devices</span></a> sections respectively.</p>
+This is further explained in the <a class="reference internal" href="data_types.html"><span class="doc">Data Types</span></a> and <a class="reference internal" href="devices.html"><span class="doc">Devices</span></a> sections respectively.</p>
 </section>
 <section id="numbers-in-operator-functions">
 <h2>Numbers in Operator Functions<a class="headerlink" href="#numbers-in-operator-functions" title="Link to this heading">#</a></h2>

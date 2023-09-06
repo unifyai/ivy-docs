@@ -387,7 +387,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../deep_dive/continuous_integration.html">Continuous Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../deep_dive/gradients.html">Gradients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../deep_dive/operating_modes.html">Operating Modes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../deep_dive/building_the_docs_pipline.html">Building the Docs Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deep_dive/building_the_docs_pipeline.html">Building the Docs Pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
@@ -1377,7 +1377,7 @@ Let’s take the function <a class="reference internal" href="../../docs/functio
  <span class="n">stack</span><span class="o">.</span><span class="n">support_native_out</span> <span class="o">=</span> <span class="kc">True</span>
 </pre></div>
 </div>
-<p>There were no changes required for this function, however NumPy and PyTorch both had to be marked as supporting the <a class="reference external" href="https://unify.ai/docs/ivy/overview/deep_dive/inplace_updates.html#out-argument">out argument</a> natively.</p>
+<p>There were no changes required for this function, however NumPy and PyTorch both had to be marked as supporting the <a class="reference internal" href="../deep_dive/inplace_updates.html#out-argument"><span class="std std-ref">out argument</span></a> natively.</p>
 <p>For more complicated functions, we need to do more than simply wrap and maybe change the name.
 For functions with differing behavior then we must modify the function to fit the unified in-out behavior of Ivy’s API.
 For example, the APIs of JAX, PyTorch, and NumPy all have a <code class="code docutils literal notranslate"><span class="pre">logspace</span></code> method, but TensorFlow does not at the time of writing.
@@ -1865,7 +1865,7 @@ Let’s take another example, but compile to Tensorflow, NumPy, and JAX:</p>
 Specifically, the same Ivy code compiles to different graphs depending on the selected backend.
 However, when compiling native framework code, we are only able to compile a graph for that same framework.
 For example, we cannot take torch code and compile this into tensorflow code.
-However, we can transpile torch code into tensorflow code (see <a class="reference internal" href="../../demos/quickstart.html#Ivy-as-a-Transpiler"><span class="std std-ref">Ivy as a Transpiler</span></a> for more details).</p>
+However, we can transpile torch code into tensorflow code (see <a class="reference internal" href="ivy_as_a_transpiler.html"><span class="doc">Ivy as a Transpiler</span></a> for more details).</p>
 <p>The graph compiler does not compile to C++, CUDA, or any other lower level language.
 It simply traces the backend functional methods in the graph, stores this graph, and then efficiently traverses this graph at execution time, all in Python.
 Compiling to lower level languages (C++, CUDA, TorchScript etc.) is supported for most backend frameworks via <a class="reference internal" href="../one_liners/compile.html#ivy.compile" title="ivy.compile"><code class="xref py py-func docutils literal notranslate"><span class="pre">ivy.compile()</span></code></a>, which wraps backend-specific compilation code, for example:</p>

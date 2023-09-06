@@ -387,7 +387,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../deep_dive/continuous_integration.html">Continuous Integration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../deep_dive/gradients.html">Gradients</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../deep_dive/operating_modes.html">Operating Modes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../deep_dive/building_the_docs_pipline.html">Building the Docs Pipeline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../deep_dive/building_the_docs_pipeline.html">Building the Docs Pipeline</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
@@ -1332,7 +1332,7 @@ However, for the time being, we are focusing exclusively on Python, in order to 
 <section id="wrapper-frameworks">
 <h2>Wrapper Frameworks<a class="headerlink" href="#wrapper-frameworks" title="Link to this heading">#</a></h2>
 <p>Ivy is itself a Python Wrapper Framework.
-The biggest difference between Ivy and all others listed in the <a class="reference internal" href="wrapper_frameworks.html#wrapper-frameworks"><span class="std std-ref">Wrapper Frameworks</span></a> section is that Ivy supports transpilations between frameworks, while all other frameworks only enable the creation of entirely new code which itself is framework-agnostic.
+The biggest difference between Ivy and all others listed in the <a class="reference internal" href="wrapper_frameworks.html"><span class="doc">Wrapper Frameworks</span></a> section is that Ivy supports transpilations between frameworks, while all other frameworks only enable the creation of entirely new code which itself is framework-agnostic.
 There are also other more subtle differences.
 For example, Ivy includes both a low level fully functional API and a high level stateful API, offering both low level control and high level convenience.
 In contrast, <a class="reference external" href="https://eagerpy.jonasrauber.de/">EagerPy</a> and <a class="reference external" href="http://tensorly.org/">TensorLy</a> both only include functional APIs, <a class="reference external" href="https://thinc.ai/">Thinc</a> only includes a high level stateful API, and <a class="reference external" href="https://neuropod.ai/">NeuroPod</a> only supports an even higher level wrapper for deployment.
@@ -1345,7 +1345,7 @@ It therefore extends what is possible in any of the specific individual framewor
 </section>
 <section id="graph-tracers">
 <h2>Graph Tracers<a class="headerlink" href="#graph-tracers" title="Link to this heading">#</a></h2>
-<p>Ivy’s <a class="reference internal" href="../../demos/misc/odsc.html#Graph-Compiler"><span class="std std-ref">Graph Compiler</span></a> exhibits similar properties to many of the framework-specific graph tracers.
+<p>Ivy’s <a class="reference external" href="../one_liners/compile">Graph Compiler</a> exhibits similar properties to many of the framework-specific graph tracers.
 Ivy’s graph compiler employs function tracing for computing the graph, and uses this graph as an intermediate representation during the transpilation process.
 Of all the graph tracers, Ivy’s graph compiler is most similar to <a class="reference external" href="https://pytorch.org/docs/stable/fx.html">torch.fx</a>.
 This is because <code class="code docutils literal notranslate"><span class="pre">torch.fx</span></code> also operates entirely in Python, without deferring to lower level languages for tracing and extracting the computation graph or the intermediate representation.
@@ -1393,7 +1393,7 @@ However, again they do nothing to address the challenge of running code from one
 </section>
 <section id="ml-unifying-companies">
 <h2>ML-Unifying Companies<a class="headerlink" href="#ml-unifying-companies" title="Link to this heading">#</a></h2>
-<p>The ML-unifying companies <a class="reference external" href="https://quansight.com/">Quansight</a>, <a class="reference external" href="https://octoml.ai/">OctoML</a> and <a class="reference external" href="https://www.modular.com/">Modular</a> are/were directly involved with the <a class="reference external" href="https://data-apis.org/array-api">Array API Standard</a>, <a class="reference external" href="https://tvm.apache.org/">Apache TVM</a> and <a class="reference external" href="https://mlir.llvm.org/">MLIR</a> respectively, as explained in the <a class="reference internal" href="#ml-unifying-companies"><span class="std std-ref">ML-Unifying Companies</span></a> section.
+<p>The ML-unifying companies <a class="reference external" href="https://quansight.com/">Quansight</a>, <a class="reference external" href="https://octoml.ai/">OctoML</a> and <a class="reference external" href="https://www.modular.com/">Modular</a> are/were directly involved with the <a class="reference external" href="https://data-apis.org/array-api">Array API Standard</a>, <a class="reference external" href="https://tvm.apache.org/">Apache TVM</a> and <a class="reference external" href="https://mlir.llvm.org/">MLIR</a> respectively, as explained in the <a class="reference internal" href="ml_unifying_companies.html"><span class="doc">ML-Unifying Companies</span></a> section.
 For the same reasons that Ivy as a framework is complementary to these three frameworks, Ivy as a company is also complementary to these three companies.
 Firstly, we are adhering to the <a class="reference external" href="https://data-apis.org/array-api">Array API Standard</a> defined by Quansight.
 In essence, they have written the standard and we have implemented it, which is pretty much as complementary as it gets.

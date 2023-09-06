@@ -718,6 +718,7 @@ document.write(`
 <li class="toctree-l4"><a class="reference internal" href="docs/functional/ivy/experimental/linear_algebra/ivy.functional.ivy.experimental.linear_algebra.eig.html">eig</a></li>
 <li class="toctree-l4"><a class="reference internal" href="docs/functional/ivy/experimental/linear_algebra/ivy.functional.ivy.experimental.linear_algebra.eigh_tridiagonal.html">eigh_tridiagonal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="docs/functional/ivy/experimental/linear_algebra/ivy.functional.ivy.experimental.linear_algebra.eigvals.html">eigvals</a></li>
+<li class="toctree-l4"><a class="reference internal" href="docs/functional/ivy/experimental/linear_algebra/ivy.functional.ivy.experimental.linear_algebra.general_inner_product.html">general_inner_product</a></li>
 <li class="toctree-l4"><a class="reference internal" href="docs/functional/ivy/experimental/linear_algebra/ivy.functional.ivy.experimental.linear_algebra.initialize_tucker.html">initialize_tucker</a></li>
 <li class="toctree-l4"><a class="reference internal" href="docs/functional/ivy/experimental/linear_algebra/ivy.functional.ivy.experimental.linear_algebra.khatri_rao.html">khatri_rao</a></li>
 <li class="toctree-l4"><a class="reference internal" href="docs/functional/ivy/experimental/linear_algebra/ivy.functional.ivy.experimental.linear_algebra.kron.html">kron</a></li>
@@ -4901,6 +4902,18 @@ document.write(`
       </ul></li>
       <li><a href="docs/utils/ivy.utils.einsum_parser.html#ivy.utils.einsum_parser.gen_unused_symbols">gen_unused_symbols() (in module ivy.utils.einsum_parser)</a>
 </li>
+      <li><a href="docs/functional/ivy/experimental/ivy.functional.ivy.experimental.linear_algebra.html#ivy.general_inner_product">general_inner_product() (in module ivy)</a>, <a href="docs/functional/ivy/experimental/linear_algebra/ivy.functional.ivy.experimental.linear_algebra.general_inner_product.html#ivy.general_inner_product">[1]</a>
+
+      <ul>
+        <li><a href="docs/functional/ivy/experimental/linear_algebra/ivy.functional.ivy.experimental.linear_algebra.general_inner_product.html#ivy.Array.general_inner_product">(ivy.Array method)</a>
+</li>
+        <li><a href="docs/functional/ivy/experimental/linear_algebra/ivy.functional.ivy.experimental.linear_algebra.general_inner_product.html#ivy.Container.general_inner_product">(ivy.Container method)</a>
+</li>
+        <li><a href="docs/data_classes/data_classes/array/ivy.data_classes.array.experimental.html#ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental.general_inner_product">(ivy.data_classes.array.experimental.linear_algebra._ArrayWithLinearAlgebraExperimental method)</a>
+</li>
+        <li><a href="docs/data_classes/data_classes/container/ivy.data_classes.container.linear_algebra.html#ivy.data_classes.container.linear_algebra._ContainerWithLinearAlgebra.general_inner_product">(ivy.data_classes.container.linear_algebra._ContainerWithLinearAlgebra method)</a>
+</li>
+      </ul></li>
       <li><a href="docs/functional/ivy/experimental/ivy.functional.ivy.experimental.layers.html#ivy.generate_einsum_equation">generate_einsum_equation() (in module ivy)</a>, <a href="docs/functional/ivy/experimental/layers/ivy.functional.ivy.experimental.layers.generate_einsum_equation.html#ivy.generate_einsum_equation">[1]</a>
 </li>
       <li><a href="docs/functional/ivy/general/ivy.functional.ivy.general.get_all_arrays_in_memory.html#ivy.get_all_arrays_in_memory">get_all_arrays_in_memory() (in module ivy)</a>, <a href="docs/functional/ivy/ivy.functional.ivy.general.html#ivy.get_all_arrays_in_memory">[1]</a>
@@ -4911,12 +4924,12 @@ document.write(`
 </li>
       <li><a href="docs/functional/ivy/experimental/ivy.functional.ivy.experimental.layers.html#ivy.get_interpolate_kernel">get_interpolate_kernel() (in module ivy)</a>, <a href="docs/functional/ivy/experimental/layers/ivy.functional.ivy.experimental.layers.get_interpolate_kernel.html#ivy.get_interpolate_kernel">[1]</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="docs/functional/ivy/general/ivy.functional.ivy.general.get_item.html#ivy.get_item">get_item() (in module ivy)</a>, <a href="docs/functional/ivy/ivy.functional.ivy.general.html#ivy.get_item">[1]</a>
 </li>
       <li><a href="docs/stateful/ivy.stateful.helpers.html#ivy.stateful.helpers.ModuleHelpers.get_mod_key">get_mod_key() (ivy.stateful.helpers.ModuleHelpers method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="docs/functional/ivy/general/ivy.functional.ivy.general.get_num_dims.html#ivy.get_num_dims">get_num_dims() (in module ivy)</a>, <a href="docs/functional/ivy/ivy.functional.ivy.general.html#ivy.get_num_dims">[1]</a>
 
       <ul>
@@ -9199,8 +9212,6 @@ document.write(`
         <li><a href="docs/data_classes/data_classes/container/ivy.data_classes.container.general.html#ivy.data_classes.container.general._ContainerWithGeneral.stable_pow">(ivy.data_classes.container.general._ContainerWithGeneral method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="docs/functional/ivy/ivy.functional.ivy.manipulation.html#ivy.stack">stack() (in module ivy)</a>, <a href="docs/functional/ivy/manipulation/ivy.functional.ivy.manipulation.stack.html#ivy.stack">[1]</a>
 
       <ul>
@@ -9213,6 +9224,8 @@ document.write(`
         <li><a href="docs/data_classes/data_classes/container/ivy.data_classes.container.manipulation.html#ivy.data_classes.container.manipulation._ContainerWithManipulation.stack">(ivy.data_classes.container.manipulation._ContainerWithManipulation method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="overview/glossary.html#term-Standalone-Functions"><strong>Standalone Functions</strong></a>
 </li>
       <li><a href="docs/stateful/ivy.stateful.optimizers.html#ivy.stateful.optimizers.Adam.state">state (ivy.stateful.optimizers.Adam property)</a>
@@ -9338,6 +9351,8 @@ document.write(`
       <li><a href="docs/data_classes/data_classes/container/ivy.data_classes.container.experimental.html#ivy.data_classes.container.experimental.random._ContainerWithRandomExperimental.static_gamma">static_gamma() (ivy.data_classes.container.experimental.random._ContainerWithRandomExperimental static method)</a>
 </li>
       <li><a href="docs/data_classes/data_classes/container/ivy.data_classes.container.elementwise.html#ivy.data_classes.container.elementwise._ContainerWithElementwise.static_gcd">static_gcd() (ivy.data_classes.container.elementwise._ContainerWithElementwise static method)</a>
+</li>
+      <li><a href="docs/data_classes/data_classes/container/ivy.data_classes.container.linear_algebra.html#ivy.data_classes.container.linear_algebra._ContainerWithLinearAlgebra.static_general_inner_product">static_general_inner_product() (ivy.data_classes.container.linear_algebra._ContainerWithLinearAlgebra static method)</a>
 </li>
       <li><a href="docs/data_classes/data_classes/container/ivy.data_classes.container.experimental.html#ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental.static_gradient">static_gradient() (ivy.data_classes.container.experimental.elementwise._ContainerWithElementWiseExperimental static method)</a>
 </li>

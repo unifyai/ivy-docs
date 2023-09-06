@@ -33,6 +33,9 @@ Linear algebra
    ivy.functional.ivy.experimental.linear_algebra.eigvals
    
    
+   ivy.functional.ivy.experimental.linear_algebra.general_inner_product
+   
+   
    ivy.functional.ivy.experimental.linear_algebra.initialize_tucker
    
    
@@ -101,6 +104,8 @@ Linear algebra
 .. autofunction:: ivy.eigh_tridiagonal
 
 .. autofunction:: ivy.eigvals
+
+.. autofunction:: ivy.general_inner_product
 
 .. autofunction:: ivy.initialize_tucker
 

@@ -1,8 +1,0 @@
-asarray\_handle\_nestable
-=========================
-
-.. autofunction:: ivy.asarray_handle_nestable
-
-.. autoskippablemethod:: ivy.Array.asarray_handle_nestable
-
-.. autoskippablemethod:: ivy.Container.asarray_handle_nestable

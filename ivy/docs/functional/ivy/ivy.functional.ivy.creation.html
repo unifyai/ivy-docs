@@ -433,11 +433,6 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="creation/ivy.functional.ivy.creation.arange.html">arange</a></li>
 <li class="toctree-l3"><a class="reference internal" href="creation/ivy.functional.ivy.creation.array.html">array</a></li>
 <li class="toctree-l3"><a class="reference internal" href="creation/ivy.functional.ivy.creation.asarray.html">asarray</a></li>
-<li class="toctree-l3"><a class="reference internal" href="creation/ivy.functional.ivy.creation.asarray_handle_nestable.html">asarray_handle_nestable</a></li>
-<li class="toctree-l3"><a class="reference internal" href="creation/ivy.functional.ivy.creation.asarray_infer_device.html">asarray_infer_device</a></li>
-<li class="toctree-l3"><a class="reference internal" href="creation/ivy.functional.ivy.creation.asarray_infer_dtype.html">asarray_infer_dtype</a></li>
-<li class="toctree-l3"><a class="reference internal" href="creation/ivy.functional.ivy.creation.asarray_inputs_to_native_shapes.html">asarray_inputs_to_native_shapes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="creation/ivy.functional.ivy.creation.asarray_to_native_arrays_and_back.html">asarray_to_native_arrays_and_back</a></li>
 <li class="toctree-l3"><a class="reference internal" href="creation/ivy.functional.ivy.creation.copy_array.html">copy_array</a></li>
 <li class="toctree-l3"><a class="reference internal" href="creation/ivy.functional.ivy.creation.empty.html">empty</a></li>
 <li class="toctree-l3"><a class="reference internal" href="creation/ivy.functional.ivy.creation.empty_like.html">empty_like</a></li>
@@ -1520,56 +1515,6 @@ in the standard.</p>
 <p>Both the description and the type hints above assumes an array input for simplicity,
 but this function is <em>nestable</em>, and therefore also accepts <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code>
 instances in place of any of the arguments.</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="ivy.asarray_handle_nestable">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">asarray_handle_nestable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/creation.py#L42-L75"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.asarray_handle_nestable" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="ivy.asarray_infer_device">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">asarray_infer_device</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/creation.py#L211-L247"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.asarray_infer_device" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="ivy.asarray_infer_dtype">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">asarray_infer_dtype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/creation.py#L153-L208"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.asarray_infer_dtype" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="ivy.asarray_inputs_to_native_shapes">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">asarray_inputs_to_native_shapes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/creation.py#L250-L258"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.asarray_inputs_to_native_shapes" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="ivy.asarray_to_native_arrays_and_back">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">asarray_to_native_arrays_and_back</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/creation.py#L129-L150"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.asarray_to_native_arrays_and_back" title="Link to this definition">#</a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Return type<span class="colon">:</span></dt>
-<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Callable</span></code></p>
-</dd>
-</dl>
 </dd></dl>
 
 <dl class="py function">
@@ -3017,11 +2962,6 @@ instances in place of any of the arguments.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.arange"><code class="docutils literal notranslate"><span class="pre">arange()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.array"><code class="docutils literal notranslate"><span class="pre">array()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.asarray"><code class="docutils literal notranslate"><span class="pre">asarray()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.asarray_handle_nestable"><code class="docutils literal notranslate"><span class="pre">asarray_handle_nestable()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.asarray_infer_device"><code class="docutils literal notranslate"><span class="pre">asarray_infer_device()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.asarray_infer_dtype"><code class="docutils literal notranslate"><span class="pre">asarray_infer_dtype()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.asarray_inputs_to_native_shapes"><code class="docutils literal notranslate"><span class="pre">asarray_inputs_to_native_shapes()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.asarray_to_native_arrays_and_back"><code class="docutils literal notranslate"><span class="pre">asarray_to_native_arrays_and_back()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.copy_array"><code class="docutils literal notranslate"><span class="pre">copy_array()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.empty"><code class="docutils literal notranslate"><span class="pre">empty()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.empty_like"><code class="docutils literal notranslate"><span class="pre">empty_like()</span></code></a></li>

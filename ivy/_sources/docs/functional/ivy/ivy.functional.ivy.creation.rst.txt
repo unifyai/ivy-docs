@@ -13,6 +13,11 @@ Creation
    
    
    
+   
+   
+   
+   
+   
    ivy.functional.ivy.creation.arange
    
    
@@ -20,21 +25,6 @@ Creation
    
    
    ivy.functional.ivy.creation.asarray
-   
-   
-   ivy.functional.ivy.creation.asarray_handle_nestable
-   
-   
-   ivy.functional.ivy.creation.asarray_infer_device
-   
-   
-   ivy.functional.ivy.creation.asarray_infer_dtype
-   
-   
-   ivy.functional.ivy.creation.asarray_inputs_to_native_shapes
-   
-   
-   ivy.functional.ivy.creation.asarray_to_native_arrays_and_back
    
    
    ivy.functional.ivy.creation.copy_array
@@ -107,6 +97,16 @@ Creation
 
 
 
+.. autofunction:: ivy._asarray_handle_nestable
+
+.. autofunction:: ivy._asarray_infer_device
+
+.. autofunction:: ivy._asarray_infer_dtype
+
+.. autofunction:: ivy._asarray_inputs_to_native_shapes
+
+.. autofunction:: ivy._asarray_to_native_arrays_and_back
+
 .. autofunction:: ivy._flatten_nest
 
 .. autofunction:: ivy._ivy_to_native
@@ -120,16 +120,6 @@ Creation
 .. autofunction:: ivy.array
 
 .. autofunction:: ivy.asarray
-
-.. autofunction:: ivy.asarray_handle_nestable
-
-.. autofunction:: ivy.asarray_infer_device
-
-.. autofunction:: ivy.asarray_infer_dtype
-
-.. autofunction:: ivy.asarray_inputs_to_native_shapes
-
-.. autofunction:: ivy.asarray_to_native_arrays_and_back
 
 .. autofunction:: ivy.copy_array
 

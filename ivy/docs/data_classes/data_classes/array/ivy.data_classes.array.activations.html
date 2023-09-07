@@ -359,7 +359,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../../../overview/contributing/building_the_docs.html">Building the Docs</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://unify.ai/docs/ivy/overview/deep_dive.html">Deep Dive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../overview/contributing/open_tasks.html">Open Tasks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../../overview/contributing/applied_libraries.html">Applied Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../overview/contributing/helpful_resources.html">Helpful Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../overview/contributing/error_handling.html">Error Handling</a></li>
 </ul>
@@ -1201,62 +1200,6 @@ document.write(`
 
     </div>
 </nav></div>
-        <div class="sidebar-primary-item">
-
-<nav class="bd-docs-nav bd-links">
-    <div class="bd-toc-item navbar-nav">
-        <p aria-level="2" class="caption" role="heading">
-            <span class="caption-text">Docs</span>
-        </p>
-        <ul class="nav bd-sidenav">
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/ivy">
-                    Ivy
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/mech">
-                    Ivy mech
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/vision">
-                    Ivy vision
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/robot">
-                    Ivy robot
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/gym">
-                    Ivy gym
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/memory">
-                    Ivy memory
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/builder">
-                    Ivy builder
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/models">
-                    Ivy models
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/ecosystem">
-                    Ivy ecosystem
-                </a>
-            </li>
-            </ul>
-    </div>
-</nav></div>
     </div>
   
   
@@ -1318,7 +1261,7 @@ document.write(`
 <span id="activations"></span><h1>Activations<a class="headerlink" href="#module-ivy.data_classes.array.activations" title="Link to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="ivy.data_classes.array.activations._ArrayWithActivations">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.data_classes.array.activations.</span></span><span class="sig-name descname"><span class="pre">_ArrayWithActivations</span></span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/activations.py#L12-L357"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.activations._ArrayWithActivations" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.data_classes.array.activations.</span></span><span class="sig-name descname"><span class="pre">_ArrayWithActivations</span></span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/activations.py#L12-L361"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.activations._ArrayWithActivations" title="Link to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="ivy.data_classes.array.activations._ArrayWithActivations._abc_impl">
@@ -1360,7 +1303,7 @@ that the inputs broadcast to.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.activations._ArrayWithActivations.hardswish">
-<span class="sig-name descname"><span class="pre">hardswish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/activations.py#L321-L357"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.activations._ArrayWithActivations.hardswish" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">hardswish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/activations.py#L325-L361"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.activations._ArrayWithActivations.hardswish" title="Link to this definition">#</a></dt>
 <dd><p>Apply the hardswish activation function element-wise.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1432,7 +1375,7 @@ that the inputs broadcast to.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.activations._ArrayWithActivations.log_softmax">
-<span class="sig-name descname"><span class="pre">log_softmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/activations.py#L258-L296"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.activations._ArrayWithActivations.log_softmax" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">log_softmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/activations.py#L262-L300"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.activations._ArrayWithActivations.log_softmax" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array instance method variant of ivy.log_softmax. This method simply wraps
 the function, and so the docstring for ivy.log_softmax also applies to this
 method with minimal changes.</p>
@@ -1468,7 +1411,7 @@ that the inputs broadcast to.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.activations._ArrayWithActivations.mish">
-<span class="sig-name descname"><span class="pre">mish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/activations.py#L298-L319"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.activations._ArrayWithActivations.mish" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">mish</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/activations.py#L302-L323"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.activations._ArrayWithActivations.mish" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array instance method variant of ivy.mish. This method simply wraps the
 function, and so the docstring for ivy.mish also applies to this method with
 minimal changes.</p>
@@ -1557,7 +1500,7 @@ the input broadcast to default: None</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.activations._ArrayWithActivations.softmax">
-<span class="sig-name descname"><span class="pre">softmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/activations.py#L164-L198"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.activations._ArrayWithActivations.softmax" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">softmax</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">axis</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complex_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jax'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/activations.py#L164-L202"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.activations._ArrayWithActivations.softmax" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array instance method variant of ivy.softmax. This method simply wraps the
 function, and so the docstring for ivy.softmax also applies to this method with
 minimal changes.</p>
@@ -1566,6 +1509,8 @@ minimal changes.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>self</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>) – input array.</p></li>
 <li><p><strong>axis</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code>], default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – the axis or axes along which the softmax should be computed</p></li>
+<li><p><strong>complex_mode</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Literal</span></code>[<code class="docutils literal notranslate"><span class="pre">'split'</span></code>, <code class="docutils literal notranslate"><span class="pre">'magnitude'</span></code>, <code class="docutils literal notranslate"><span class="pre">'jax'</span></code>], default: <code class="docutils literal notranslate"><span class="pre">'jax'</span></code>) – optional specifier for how to handle complex data types. See
+<code class="docutils literal notranslate"><span class="pre">ivy.func_wrapper.handle_complex_input</span></code> for more detail.</p></li>
 <li><p><strong>out</strong> (<code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">Array</span></code>], default: <code class="docutils literal notranslate"><span class="pre">None</span></code>) – optional output array, for writing the result to. It must have a shape
 that the inputs broadcast to.</p></li>
 </ul>
@@ -1588,7 +1533,7 @@ that the inputs broadcast to.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="ivy.data_classes.array.activations._ArrayWithActivations.softplus">
-<span class="sig-name descname"><span class="pre">softplus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complex_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jax'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/activations.py#L200-L256"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.activations._ArrayWithActivations.softplus" title="Link to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">softplus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">complex_mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'jax'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/data_classes/array/activations.py#L204-L260"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.data_classes.array.activations._ArrayWithActivations.softplus" title="Link to this definition">#</a></dt>
 <dd><p>ivy.Array instance method variant of ivy.softplus. This method simply wraps the
 function, and so the docstring for ivy.softplus also applies to this method with
 minimal changes.</p>

@@ -359,7 +359,6 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="contributing/building_the_docs.html">Building the Docs</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://unify.ai/docs/ivy/overview/deep_dive.html">Deep Dive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing/open_tasks.html">Open Tasks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing/applied_libraries.html">Applied Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing/helpful_resources.html">Helpful Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="contributing/error_handling.html">Error Handling</a></li>
 </ul>
@@ -1201,62 +1200,6 @@ document.write(`
 
     </div>
 </nav></div>
-        <div class="sidebar-primary-item">
-
-<nav class="bd-docs-nav bd-links">
-    <div class="bd-toc-item navbar-nav">
-        <p aria-level="2" class="caption" role="heading">
-            <span class="caption-text">Docs</span>
-        </p>
-        <ul class="nav bd-sidenav">
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/ivy">
-                    Ivy
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/mech">
-                    Ivy mech
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/vision">
-                    Ivy vision
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/robot">
-                    Ivy robot
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/gym">
-                    Ivy gym
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/memory">
-                    Ivy memory
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/builder">
-                    Ivy builder
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/models">
-                    Ivy models
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/ecosystem">
-                    Ivy ecosystem
-                </a>
-            </li>
-            </ul>
-    </div>
-</nav></div>
     </div>
   
   
@@ -1425,8 +1368,7 @@ Will Ivy support this ability also?</p>
 <h2>The Pipeline<a class="headerlink" href="#the-pipeline" title="Link to this heading">#</a></h2>
 <p><strong>Q:</strong> How will Ivy manage the training loop and input pipeline?  What about loading and saving models, recording of scalar metrics, visualization, etc.? These are often also somewhat framework-dependent.</p>
 <p><strong>A:</strong> We are not advocating to replace all code with Ivy.
-We would encourage users to continue using whatever data loaders they want to, and perhaps just use an Ivy model, or use Ivy to convert a model, or even just a single function from a library.
-If users want to use Ivy more deeply, then they can use <a class="reference external" href="https://github.com/unifyai/builder">Ivy Builder</a>, which includes framework-agnostic abstract data loaders, trainers, and other higher level classes for composing full training pipelines.</p>
+We would encourage users to continue using whatever data loaders they want to, and perhaps just use an Ivy model, or use Ivy to convert a model, or even just a single function from a library.</p>
 </section>
 <section id="state">
 <h2>State<a class="headerlink" href="#state" title="Link to this heading">#</a></h2>

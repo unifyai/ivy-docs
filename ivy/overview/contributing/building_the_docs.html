@@ -359,7 +359,6 @@ document.write(`
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Building the Docs</a></li>
 <li class="toctree-l2"><a class="reference external" href="https://unify.ai/docs/ivy/overview/deep_dive.html">Deep Dive</a></li>
 <li class="toctree-l2"><a class="reference internal" href="open_tasks.html">Open Tasks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="applied_libraries.html">Applied Libraries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="helpful_resources.html">Helpful Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="error_handling.html">Error Handling</a></li>
 </ul>
@@ -1201,62 +1200,6 @@ document.write(`
 
     </div>
 </nav></div>
-        <div class="sidebar-primary-item">
-
-<nav class="bd-docs-nav bd-links">
-    <div class="bd-toc-item navbar-nav">
-        <p aria-level="2" class="caption" role="heading">
-            <span class="caption-text">Docs</span>
-        </p>
-        <ul class="nav bd-sidenav">
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/ivy">
-                    Ivy
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/mech">
-                    Ivy mech
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/vision">
-                    Ivy vision
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/robot">
-                    Ivy robot
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/gym">
-                    Ivy gym
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/memory">
-                    Ivy memory
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/builder">
-                    Ivy builder
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/models">
-                    Ivy models
-                </a>
-            </li>
-            <li class="toctree-l1">
-                <a class="reference external" href="/docs/ecosystem">
-                    Ivy ecosystem
-                </a>
-            </li>
-            </ul>
-    </div>
-</nav></div>
     </div>
   
   
@@ -1330,15 +1273,15 @@ our custom building pipeline work, check our <a class="reference external" href=
 <h3>Using existing image on Docker Hub<a class="headerlink" href="#using-existing-image-on-docker-hub" title="Link to this heading">#</a></h3>
 <p>You can also use the <code class="docutils literal notranslate"><span class="pre">unifyai/doc-builder</span></code> image hosted on
 <a class="reference external" href="https://hub.docker.com/r/unifyai/doc-builder">Docker Hub</a> to build the
-docs. This will be helpful if you want to build the docs for Ivy applied libraries.</p>
+docs.</p>
 <p>Run <code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span></code> to build the docs. The following command will build the docs for
 the project in the current directory and output them to <code class="docutils literal notranslate"><span class="pre">docs/build</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>&lt;ivy<span class="w"> </span>directory<span class="w"> </span>or<span class="w"> </span>applied<span class="w"> </span>library<span class="w"> </span>directory&gt;
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>&lt;ivy<span class="w"> </span>directory&gt;
 docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/project<span class="w"> </span>unifyai/doc-builder
 </pre></div>
 </div>
 <p>This command will mount the module directory to <code class="docutils literal notranslate"><span class="pre">/project</span></code> in the container, the
-current directory can be the root of <code class="docutils literal notranslate"><span class="pre">ivy</span></code> or any applied library such as <code class="docutils literal notranslate"><span class="pre">mech</span></code>.</p>
+current directory should be the root of <code class="docutils literal notranslate"><span class="pre">ivy</span></code>.</p>
 </section>
 <section id="building-the-image-locally">
 <h3>Building the image locally<a class="headerlink" href="#building-the-image-locally" title="Link to this heading">#</a></h3>
@@ -1374,12 +1317,12 @@ docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </
 </div>
 <p>Then, run the following command to build the docs:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>doc-builder
-./make_docs_without_docker.sh<span class="w"> </span>&lt;ivy<span class="w"> </span>directory<span class="w"> </span>or<span class="w"> </span>applied<span class="w"> </span>library<span class="w"> </span>directory&gt;
+./make_docs_without_docker.sh<span class="w"> </span>&lt;ivy<span class="w"> </span>directory&gt;
 </pre></div>
 </div>
 <p>The script will install the required dependencies for <a class="reference external" href="https://www.sphinx-doc.org">sphinx</a>
-which is used to build the docs, as well as dependencies required by Ivy or the Ivy
-applied library. Then it will build the docs for Ivy and store it in <code class="docutils literal notranslate"><span class="pre">docs/build</span></code>.</p>
+which is used to build the docs, as well as dependencies required by Ivy. Then it will
+build the docs for Ivy and store it in <code class="docutils literal notranslate"><span class="pre">docs/build</span></code>.</p>
 </section>
 </section>
 

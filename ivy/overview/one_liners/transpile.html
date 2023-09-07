@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>ivy.transpile / ivy.unify &#8212; Ivy Documentation</title>
+    <title>ivy.transpile() &#8212; Ivy Documentation</title>
   
   
   
@@ -53,7 +53,7 @@
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Functions" href="../../docs/functional/ivy.functional.ivy.html" />
+    <link rel="next" title="ivy.unify()" href="unify.html" />
     <link rel="prev" title="ivy.compile()" href="compile.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -396,7 +396,8 @@ document.write(`
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../one_liners.html">One liners</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="compile.html"><code class="docutils literal notranslate"><span class="pre">ivy.compile()</span></code></a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">ivy.transpile</span></code> / <code class="docutils literal notranslate"><span class="pre">ivy.unify</span></code></a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">ivy.transpile()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="unify.html"><code class="docutils literal notranslate"><span class="pre">ivy.unify()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1237,7 +1238,7 @@ document.write(`
     
     <li class="breadcrumb-item"><a href="../one_liners.html" class="nav-link">One liners</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page"><code class="docutils literal notranslate"><span class="pre">ivy.transpile</span></code> / <code class="docutils literal notranslate"><span class="pre">ivy.unify</span></code></li>
+    <li class="breadcrumb-item active" aria-current="page"><code class="docutils literal notranslate"><span class="pre">ivy.transpile()</span></code></li>
   </ul>
 </nav>
 </div>
@@ -1254,8 +1255,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="ivy-transpile-ivy-unify">
-<h1><code class="docutils literal notranslate"><span class="pre">ivy.transpile</span></code> / <code class="docutils literal notranslate"><span class="pre">ivy.unify</span></code><a class="headerlink" href="#ivy-transpile-ivy-unify" title="Link to this heading">#</a></h1>
+  <section id="ivy-transpile">
+<h1><code class="docutils literal notranslate"><span class="pre">ivy.transpile()</span></code><a class="headerlink" href="#ivy-transpile" title="Link to this heading">#</a></h1>
 <blockquote>
 <div><p>⚠️ <strong>Warning</strong>: The compiler and the transpiler are not publicly available yet, so certain parts of this doc won’t work as expected as of now!</p>
 </div></blockquote>
@@ -1304,30 +1305,6 @@ need to be passed explicitly to the function call.</p></li>
 </dd>
 <dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Union[Graph,</span> <span class="pre">LazyGraph,</span> <span class="pre">ModuleType,</span> <span class="pre">ivy.Module,</span> <span class="pre">torch.nn.Module,</span> <span class="pre">tf.keras.Model,</span> <span class="pre">hk.Module]</span></code></p>
-</dd>
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>A transpiled <code class="docutils literal notranslate"><span class="pre">Graph</span></code> or a non-initialized <code class="docutils literal notranslate"><span class="pre">LazyGraph</span></code>. If the object is a native trainable module, the corresponding module in the target framework will be returned. If the object is a <code class="docutils literal notranslate"><span class="pre">ModuleType</span></code>, the function will return a copy of the module with every method lazily transpiled.</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="ivy.unify">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">unify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">objs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">transpile_kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ivy.unify" title="Link to this definition">#</a></dt>
-<dd><p>Transpiles an object into Ivy code. It’s an alias to
-<code class="docutils literal notranslate"><span class="pre">ivy.transpile(...,</span> <span class="pre">to=&quot;ivy&quot;,</span> <span class="pre">...)</span></code></p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>objs</strong> (<code class="docutils literal notranslate"><span class="pre">Callable</span></code>) – Native callable(s) to transpile.</p></li>
-<li><p><strong>source</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[str]</span></code>) – The framework that <code class="docutils literal notranslate"><span class="pre">obj</span></code> is from. This must be provided unless <code class="docutils literal notranslate"><span class="pre">obj</span></code> is a framework-specific module.</p></li>
-<li><p><strong>args</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[Tuple]</span></code>) – If specified, arguments that will be used to unify eagerly.</p></li>
-<li><p><strong>kwargs</strong> (<code class="docutils literal notranslate"><span class="pre">Optional[dict]</span></code>) – If specified, keyword arguments that will be used to unify eagerly.</p></li>
-<li><p><strong>transpile_kwargs</strong> – Arbitrary keyword arguments that will be passed to <code class="docutils literal notranslate"><span class="pre">ivy.transpile</span></code>.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Return type<span class="colon">:</span></dt>
-<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">Union[Graph,</span> <span class="pre">LazyGraph,</span> <span class="pre">ModuleType,</span> <span class="pre">ivy.Module]</span></code></p>
 </dd>
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A transpiled <code class="docutils literal notranslate"><span class="pre">Graph</span></code> or a non-initialized <code class="docutils literal notranslate"><span class="pre">LazyGraph</span></code>. If the object is a native trainable module, the corresponding module in the target framework will be returned. If the object is a <code class="docutils literal notranslate"><span class="pre">ModuleType</span></code>, the function will return a copy of the module with every method lazily transpiled.</p>
@@ -1444,24 +1421,6 @@ another, at the moment we support <code class="docutils literal notranslate"><sp
 </pre></div>
 </div>
 </section>
-<section id="ivy-unify">
-<h3>Ivy.unify<a class="headerlink" href="#ivy-unify" title="Link to this heading">#</a></h3>
-<p>As mentioned above, <code class="docutils literal notranslate"><span class="pre">ivy.unify</span></code> is an alias for transpilation to Ivy, so you can use it
-exactly in the same way to convert framework specific code to Ivy.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
-<span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s2">&quot;jax&quot;</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">test_fn</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">jax</span><span class="o">.</span><span class="n">numpy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">x1</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">])</span>
-
-<span class="c1"># transpiled_func and unified_func will have the same result</span>
-<span class="n">transpiled_func</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">transpile</span><span class="p">(</span><span class="n">test_fn</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="s2">&quot;ivy&quot;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">x1</span><span class="p">,))</span>
-<span class="n">unified_func</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">unify</span><span class="p">(</span><span class="n">test_fn</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">x1</span><span class="p">,))</span>
-</pre></div>
-</div>
-</section>
 </section>
 <section id="sharp-bits">
 <h2>Sharp bits<a class="headerlink" href="#sharp-bits" title="Link to this heading">#</a></h2>
@@ -1543,11 +1502,11 @@ resulting model with tensorflow tensors directly:</p>
       </div>
     </a>
     <a class="right-next"
-       href="../../docs/functional/ivy.functional.ivy.html"
+       href="unify.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Functions</p>
+        <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">ivy.unify()</span></code></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1571,14 +1530,12 @@ resulting model with tensorflow tensors directly:</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#transpiler-api">Transpiler API</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.transpile"><code class="docutils literal notranslate"><span class="pre">ivy.transpile()</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy.unify"><code class="docutils literal notranslate"><span class="pre">ivy.unify()</span></code></a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-transpiler">Using the transpiler</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transpiling-functions">Transpiling functions</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transpiling-libraries">Transpiling Libraries</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transpiling-modules">Transpiling Modules</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ivy-unify">Ivy.unify</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sharp-bits">Sharp bits</a></li>

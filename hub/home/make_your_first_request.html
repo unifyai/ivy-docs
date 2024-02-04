@@ -384,7 +384,7 @@ For each model, the available <code class="code docutils literal notranslate"><s
 <p>Using <strong>cURL</strong>, the request would look like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://api.unify.ai/v0/inference&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;accept: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_UNIFY_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">        &quot;model&quot;: &quot;llama-2-7b-chat&quot;,</span>
@@ -406,7 +406,7 @@ For each model, the available <code class="code docutils literal notranslate"><s
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.unify.ai/v0/inference&quot;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer YOUR_API_KEY&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer YOUR_UNIFY_KEY&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -449,7 +449,7 @@ simply use <code class="code docutils literal notranslate"><span class="pre">lla
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span><span class="s1">&#39;https://api.unify.ai/v0/chat/completions&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer YOUR_API_KEY&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer YOUR_UNIFY_KEY&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
 <span class="s1">    &quot;model&quot;: &quot;llama-2-7b-chat@anyscale&quot;,</span>
@@ -466,7 +466,7 @@ simply use <code class="code docutils literal notranslate"><span class="pre">lla
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.unify.ai/v0/chat/completions&quot;</span>
 <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer YOUR_API_KEY&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer YOUR_UNIFY_KEY&quot;</span><span class="p">,</span>
 <span class="p">}</span>
 
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
@@ -492,6 +492,50 @@ simply use <code class="code docutils literal notranslate"><span class="pre">lla
 </pre></div>
 </div>
 <p>Or any other language!</p>
+</section>
+<section id="compatible-tools">
+<h2>Compatible Tools<a class="headerlink" href="#compatible-tools" title="Link to this heading">#</a></h2>
+<p>Thanks to the OpenAI-compatible endpoint, you can easily integrate with lots of LLM tools. For example:</p>
+<section id="openai-sdk">
+<h3>OpenAI SDK<a class="headerlink" href="#openai-sdk" title="Link to this heading">#</a></h3>
+<p>If your code is using the <a class="reference external" href="https://github.com/openai/openai-python">OpenAI SDK</a>, you can switch to the Hub
+endpoints by simply configuring the OpenAI Client like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pip install openai</span>
+<span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
+    <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://api.unify.ai/v0/&quot;</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;YOUR_UNIFY_KEY&quot;</span>
+<span class="p">)</span>
+
+<span class="n">stream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;llama-2-7b-chat@anyscale&quot;</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Can you say that this is a test? Use some words to showcase the streaming function&quot;</span><span class="p">}],</span>
+    <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">stream</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">delta</span><span class="o">.</span><span class="n">content</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="open-interpreter">
+<h3>Open Interpreter<a class="headerlink" href="#open-interpreter" title="Link to this heading">#</a></h3>
+<p>Likewise, you can easily use other tools such as
+<a class="reference external" href="https://github.com/KillianLucas/open-interpreter">Open Interpreter.</a></p>
+<p>Let’s take a look at this code snippet:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pip install open-interpreter</span>
+<span class="kn">from</span> <span class="nn">interpreter</span> <span class="kn">import</span> <span class="n">interpreter</span>
+
+<span class="n">interpreter</span><span class="o">.</span><span class="n">offline</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">interpreter</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;YOUR_UNIFY_KEY&quot;</span>
+<span class="n">interpreter</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">api_base</span> <span class="o">=</span> <span class="s2">&quot;https://api.unify.ai/v0/&quot;</span>
+<span class="n">interpreter</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="s2">&quot;openai/llama-2-7b-chat@anyscale&quot;</span>
+
+<span class="n">interpreter</span><span class="o">.</span><span class="n">chat</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In this case, we only need to mark the model as <code class="code docutils literal notranslate"><span class="pre">openai/x</span></code> to use the <code class="code docutils literal notranslate"><span class="pre">/chat/completions</span></code> format!</p>
+</section>
 </section>
 </section>
 
@@ -544,6 +588,11 @@ simply use <code class="code docutils literal notranslate"><span class="pre">lla
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-inference-endpoint">Using the <code class="code docutils literal notranslate"><span class="pre">inference</span></code> Endpoint</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-openai-api-format">Using the OpenAI API Format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#compatible-tools">Compatible Tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-sdk">OpenAI SDK</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#open-interpreter">Open Interpreter</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

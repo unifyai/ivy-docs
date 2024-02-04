@@ -32,7 +32,7 @@ Using **cURL**, the request would look like this:
 
     curl -X POST "https://api.unify.ai/v0/inference" \
         -H "accept: application/json" \
-        -H "Authorization: Bearer YOUR_API_KEY" \
+        -H "Authorization: Bearer YOUR_UNIFY_KEY" \
         -H "Content-Type: application/json" \
         -d '{
             "model": "llama-2-7b-chat",
@@ -56,7 +56,7 @@ If you are using **Python**, you can use the :code:`requests` library to query t
 
     url = "https://api.unify.ai/v0/inference"
     headers = {
-        "Authorization": "Bearer YOUR_API_KEY",
+        "Authorization": "Bearer YOUR_UNIFY_KEY",
     }
 
     payload = {
@@ -104,7 +104,7 @@ This is again just an HTTP endpoint, so you can query it using **cURL**:
     curl -X 'POST' \
         'https://api.unify.ai/v0/chat/completions' \
         -H 'accept: application/json' \
-        -H 'Authorization: Bearer YOUR_API_KEY' \
+        -H 'Authorization: Bearer YOUR_UNIFY_KEY' \
         -H 'Content-Type: application/json' \
         -d '{
         "model": "llama-2-7b-chat@anyscale",
@@ -123,7 +123,7 @@ Or using **Python**:
 
     url = "https://api.unify.ai/v0/chat/completions"
     headers = {
-        "Authorization": "Bearer YOUR_API_KEY",
+        "Authorization": "Bearer YOUR_UNIFY_KEY",
     }
 
     payload = {
@@ -148,3 +148,54 @@ Or using **Python**:
         print(response.text)
 
 Or any other language!
+
+Compatible Tools
+----------------
+
+Thanks to the OpenAI-compatible endpoint, you can easily integrate with lots of LLM tools. For example:
+
+OpenAI SDK
+**********
+
+If your code is using the `OpenAI SDK <https://github.com/openai/openai-python>`_, you can switch to the Hub 
+endpoints by simply configuring the OpenAI Client like this:
+
+.. code-block:: python
+
+    # pip install openai
+    from openai import OpenAI
+
+    client = OpenAI(
+        base_url="https://api.unify.ai/v0/",
+        api_key="YOUR_UNIFY_KEY"
+    )
+
+    stream = client.chat.completions.create(
+        model="llama-2-7b-chat@anyscale",
+        messages=[{"role": "user", "content": "Can you say that this is a test? Use some words to showcase the streaming function"}],
+        stream=True,
+    )
+    for chunk in stream:
+        print(chunk.choices[0].delta.content or "", end="")
+
+Open Interpreter
+****************
+
+Likewise, you can easily use other tools such as 
+`Open Interpreter. <https://github.com/KillianLucas/open-interpreter>`_ 
+
+Let's take a look at this code snippet:
+
+.. code-block:: python
+
+    # pip install open-interpreter
+    from interpreter import interpreter
+
+    interpreter.offline = True
+    interpreter.llm.api_key = "YOUR_UNIFY_KEY"
+    interpreter.llm.api_base = "https://api.unify.ai/v0/"
+    interpreter.llm.model = "openai/llama-2-7b-chat@anyscale"
+
+    interpreter.chat()
+
+In this case, we only need to mark the model as :code:`openai/x` to use the :code:`/chat/completions` format!

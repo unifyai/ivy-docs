@@ -1,0 +1,8 @@
+mish
+====
+
+.. autofunction:: ivy.mish
+
+.. autoskippablemethod:: ivy.Array.mish
+
+.. autoskippablemethod:: ivy.Container.mish

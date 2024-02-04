@@ -1,0 +1,8 @@
+tpu\_is\_available
+==================
+
+.. autofunction:: ivy.tpu_is_available
+
+.. autoskippablemethod:: ivy.Array.tpu_is_available
+
+.. autoskippablemethod:: ivy.Container.tpu_is_available

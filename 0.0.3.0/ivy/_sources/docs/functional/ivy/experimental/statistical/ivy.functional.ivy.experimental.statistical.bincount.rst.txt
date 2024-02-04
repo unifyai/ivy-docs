@@ -1,0 +1,8 @@
+bincount
+========
+
+.. autofunction:: ivy.bincount
+
+.. autoskippablemethod:: ivy.Array.bincount
+
+.. autoskippablemethod:: ivy.Container.bincount

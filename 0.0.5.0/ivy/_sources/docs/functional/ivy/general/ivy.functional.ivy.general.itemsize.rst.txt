@@ -1,0 +1,8 @@
+itemsize
+========
+
+.. autofunction:: ivy.itemsize
+
+.. autoskippablemethod:: ivy.Array.itemsize
+
+.. autoskippablemethod:: ivy.Container.itemsize

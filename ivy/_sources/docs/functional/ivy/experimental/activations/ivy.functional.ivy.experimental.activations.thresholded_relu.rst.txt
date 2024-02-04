@@ -1,0 +1,8 @@
+thresholded\_relu
+=================
+
+.. autofunction:: ivy.thresholded_relu
+
+.. autoskippablemethod:: ivy.Array.thresholded_relu
+
+.. autoskippablemethod:: ivy.Container.thresholded_relu

@@ -1,0 +1,8 @@
+cond
+====
+
+.. autofunction:: ivy.cond
+
+.. autoskippablemethod:: ivy.Array.cond
+
+.. autoskippablemethod:: ivy.Container.cond

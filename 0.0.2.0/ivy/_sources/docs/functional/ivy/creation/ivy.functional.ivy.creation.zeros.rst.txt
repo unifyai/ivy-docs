@@ -1,0 +1,8 @@
+zeros
+=====
+
+.. autofunction:: ivy.zeros
+
+.. autoskippablemethod:: ivy.Array.zeros
+
+.. autoskippablemethod:: ivy.Container.zeros

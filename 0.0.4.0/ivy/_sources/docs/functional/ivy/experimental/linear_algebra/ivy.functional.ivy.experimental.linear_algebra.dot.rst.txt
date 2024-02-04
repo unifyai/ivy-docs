@@ -1,0 +1,8 @@
+dot
+===
+
+.. autofunction:: ivy.dot
+
+.. autoskippablemethod:: ivy.Array.dot
+
+.. autoskippablemethod:: ivy.Container.dot

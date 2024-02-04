@@ -1,0 +1,20 @@
+﻿Utils
+=====
+
+.. autosummary::
+    :toctree: utils
+    :template: top_level_module_recursive.rst
+    :recursive:
+
+
+    ivy.utils.assertions
+    ivy.utils.backend
+    ivy.utils.binaries
+    ivy.utils.dynamic_import
+    ivy.utils.einsum_parser
+    ivy.utils.exceptions
+    ivy.utils.inspection
+    ivy.utils.logging
+    ivy.utils.profiler
+    ivy.utils.verbosity
+

@@ -1,0 +1,8 @@
+logsigmoid
+==========
+
+.. autofunction:: ivy.logsigmoid
+
+.. autoskippablemethod:: ivy.Array.logsigmoid
+
+.. autoskippablemethod:: ivy.Container.logsigmoid

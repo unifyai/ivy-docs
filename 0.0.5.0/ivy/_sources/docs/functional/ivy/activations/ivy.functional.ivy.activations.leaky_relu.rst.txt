@@ -1,0 +1,8 @@
+leaky\_relu
+===========
+
+.. autofunction:: ivy.leaky_relu
+
+.. autoskippablemethod:: ivy.Array.leaky_relu
+
+.. autoskippablemethod:: ivy.Container.leaky_relu

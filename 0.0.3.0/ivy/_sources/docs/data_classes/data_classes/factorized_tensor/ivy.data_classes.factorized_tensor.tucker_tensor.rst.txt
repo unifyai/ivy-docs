@@ -1,0 +1,17 @@
+Tucker tensor
+=============
+
+
+
+.. automodule:: ivy.data_classes.factorized_tensor.tucker_tensor
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+    :private-members:
+
+
+
+
+
+.. discussion-links:: ivy.data_classes.factorized_tensor.tucker_tensor

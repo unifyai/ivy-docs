@@ -1,0 +1,8 @@
+conv\_general\_transpose
+========================
+
+.. autofunction:: ivy.conv_general_transpose
+
+.. autoskippablemethod:: ivy.Array.conv_general_transpose
+
+.. autoskippablemethod:: ivy.Container.conv_general_transpose

@@ -1,0 +1,8 @@
+make\_svd\_non\_negative
+========================
+
+.. autofunction:: ivy.make_svd_non_negative
+
+.. autoskippablemethod:: ivy.Array.make_svd_non_negative
+
+.. autoskippablemethod:: ivy.Container.make_svd_non_negative

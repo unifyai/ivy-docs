@@ -1,0 +1,8 @@
+median
+======
+
+.. autofunction:: ivy.median
+
+.. autoskippablemethod:: ivy.Array.median
+
+.. autoskippablemethod:: ivy.Container.median

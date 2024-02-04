@@ -1,0 +1,8 @@
+isreal
+======
+
+.. autofunction:: ivy.isreal
+
+.. autoskippablemethod:: ivy.Array.isreal
+
+.. autoskippablemethod:: ivy.Container.isreal

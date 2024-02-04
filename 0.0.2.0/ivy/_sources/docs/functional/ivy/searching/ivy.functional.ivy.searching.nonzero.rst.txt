@@ -1,0 +1,8 @@
+nonzero
+=======
+
+.. autofunction:: ivy.nonzero
+
+.. autoskippablemethod:: ivy.Array.nonzero
+
+.. autoskippablemethod:: ivy.Container.nonzero

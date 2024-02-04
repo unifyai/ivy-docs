@@ -1,0 +1,38 @@
+Sorting
+=======
+
+
+.. autosummary::
+   :toctree: sorting
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.experimental.sorting.invert_permutation
+   
+   
+   ivy.functional.ivy.experimental.sorting.lexsort
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.sorting
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.invert_permutation
+
+.. autofunction:: ivy.lexsort
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.sorting

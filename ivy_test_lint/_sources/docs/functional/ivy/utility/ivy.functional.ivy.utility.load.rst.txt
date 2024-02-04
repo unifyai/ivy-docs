@@ -1,0 +1,8 @@
+load
+====
+
+.. autofunction:: ivy.load
+
+.. autoskippablemethod:: ivy.Array.load
+
+.. autoskippablemethod:: ivy.Container.load

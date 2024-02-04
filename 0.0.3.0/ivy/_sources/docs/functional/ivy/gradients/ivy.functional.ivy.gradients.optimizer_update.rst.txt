@@ -1,0 +1,8 @@
+optimizer\_update
+=================
+
+.. autofunction:: ivy.optimizer_update
+
+.. autoskippablemethod:: ivy.Array.optimizer_update
+
+.. autoskippablemethod:: ivy.Container.optimizer_update

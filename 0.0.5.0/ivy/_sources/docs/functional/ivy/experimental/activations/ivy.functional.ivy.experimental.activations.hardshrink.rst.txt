@@ -1,0 +1,8 @@
+hardshrink
+==========
+
+.. autofunction:: ivy.hardshrink
+
+.. autoskippablemethod:: ivy.Array.hardshrink
+
+.. autoskippablemethod:: ivy.Container.hardshrink

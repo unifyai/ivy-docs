@@ -1,0 +1,8 @@
+kronecker
+=========
+
+.. autofunction:: ivy.kronecker
+
+.. autoskippablemethod:: ivy.Array.kronecker
+
+.. autoskippablemethod:: ivy.Container.kronecker

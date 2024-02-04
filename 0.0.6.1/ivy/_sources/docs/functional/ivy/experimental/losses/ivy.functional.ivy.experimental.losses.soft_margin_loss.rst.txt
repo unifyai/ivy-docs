@@ -1,0 +1,8 @@
+soft\_margin\_loss
+==================
+
+.. autofunction:: ivy.soft_margin_loss
+
+.. autoskippablemethod:: ivy.Array.soft_margin_loss
+
+.. autoskippablemethod:: ivy.Container.soft_margin_loss

@@ -1,0 +1,8 @@
+grad
+====
+
+.. autofunction:: ivy.grad
+
+.. autoskippablemethod:: ivy.Array.grad
+
+.. autoskippablemethod:: ivy.Container.grad

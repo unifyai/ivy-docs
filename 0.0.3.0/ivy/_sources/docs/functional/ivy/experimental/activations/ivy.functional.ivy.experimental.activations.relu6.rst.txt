@@ -1,0 +1,8 @@
+relu6
+=====
+
+.. autofunction:: ivy.relu6
+
+.. autoskippablemethod:: ivy.Array.relu6
+
+.. autoskippablemethod:: ivy.Container.relu6

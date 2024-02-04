@@ -1,0 +1,8 @@
+asarray\_inputs\_to\_native\_shapes
+===================================
+
+.. autofunction:: ivy.asarray_inputs_to_native_shapes
+
+.. autoskippablemethod:: ivy.Array.asarray_inputs_to_native_shapes
+
+.. autoskippablemethod:: ivy.Container.asarray_inputs_to_native_shapes

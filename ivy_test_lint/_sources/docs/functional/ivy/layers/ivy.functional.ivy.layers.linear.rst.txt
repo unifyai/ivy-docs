@@ -1,0 +1,8 @@
+linear
+======
+
+.. autofunction:: ivy.linear
+
+.. autoskippablemethod:: ivy.Array.linear
+
+.. autoskippablemethod:: ivy.Container.linear

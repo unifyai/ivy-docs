@@ -1,0 +1,8 @@
+random\_parafac2
+================
+
+.. autofunction:: ivy.random_parafac2
+
+.. autoskippablemethod:: ivy.Array.random_parafac2
+
+.. autoskippablemethod:: ivy.Container.random_parafac2

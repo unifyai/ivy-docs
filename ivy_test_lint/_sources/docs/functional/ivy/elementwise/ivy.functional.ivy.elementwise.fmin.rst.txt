@@ -1,0 +1,8 @@
+fmin
+====
+
+.. autofunction:: ivy.fmin
+
+.. autoskippablemethod:: ivy.Array.fmin
+
+.. autoskippablemethod:: ivy.Container.fmin

@@ -1,0 +1,8 @@
+conv3d\_transpose
+=================
+
+.. autofunction:: ivy.conv3d_transpose
+
+.. autoskippablemethod:: ivy.Array.conv3d_transpose
+
+.. autoskippablemethod:: ivy.Container.conv3d_transpose

@@ -1,0 +1,48 @@
+Utility
+=======
+
+
+.. autosummary::
+   :toctree: utility
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.utility.all
+   
+   
+   ivy.functional.ivy.utility.any
+   
+   
+   ivy.functional.ivy.utility.load
+   
+   
+   ivy.functional.ivy.utility.save
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.utility
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.all
+
+.. autofunction:: ivy.any
+
+.. autofunction:: ivy.load
+
+.. autofunction:: ivy.save
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.utility

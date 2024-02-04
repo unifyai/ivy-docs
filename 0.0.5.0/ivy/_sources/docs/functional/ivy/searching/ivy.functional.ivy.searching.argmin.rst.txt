@@ -1,0 +1,8 @@
+argmin
+======
+
+.. autofunction:: ivy.argmin
+
+.. autoskippablemethod:: ivy.Array.argmin
+
+.. autoskippablemethod:: ivy.Container.argmin

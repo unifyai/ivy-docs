@@ -1,0 +1,8 @@
+vector\_to\_skew\_symmetric\_matrix
+===================================
+
+.. autofunction:: ivy.vector_to_skew_symmetric_matrix
+
+.. autoskippablemethod:: ivy.Array.vector_to_skew_symmetric_matrix
+
+.. autoskippablemethod:: ivy.Container.vector_to_skew_symmetric_matrix

@@ -1,0 +1,8 @@
+put\_along\_axis
+================
+
+.. autofunction:: ivy.put_along_axis
+
+.. autoskippablemethod:: ivy.Array.put_along_axis
+
+.. autoskippablemethod:: ivy.Container.put_along_axis

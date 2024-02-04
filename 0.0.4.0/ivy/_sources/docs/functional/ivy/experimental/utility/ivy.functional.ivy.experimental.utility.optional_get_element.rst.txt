@@ -1,0 +1,8 @@
+optional\_get\_element
+======================
+
+.. autofunction:: ivy.optional_get_element
+
+.. autoskippablemethod:: ivy.Array.optional_get_element
+
+.. autoskippablemethod:: ivy.Container.optional_get_element

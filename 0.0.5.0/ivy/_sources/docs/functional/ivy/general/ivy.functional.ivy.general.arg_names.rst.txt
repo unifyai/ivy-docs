@@ -1,0 +1,8 @@
+arg\_names
+==========
+
+.. autofunction:: ivy.arg_names
+
+.. autoskippablemethod:: ivy.Array.arg_names
+
+.. autoskippablemethod:: ivy.Container.arg_names

@@ -1,0 +1,8 @@
+for\_loop
+=========
+
+.. autofunction:: ivy.for_loop
+
+.. autoskippablemethod:: ivy.Array.for_loop
+
+.. autoskippablemethod:: ivy.Container.for_loop

@@ -1,0 +1,8 @@
+meshgrid
+========
+
+.. autofunction:: ivy.meshgrid
+
+.. autoskippablemethod:: ivy.Array.meshgrid
+
+.. autoskippablemethod:: ivy.Container.meshgrid

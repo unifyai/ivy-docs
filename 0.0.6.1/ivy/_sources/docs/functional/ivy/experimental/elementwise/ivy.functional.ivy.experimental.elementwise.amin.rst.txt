@@ -1,0 +1,8 @@
+amin
+====
+
+.. autofunction:: ivy.amin
+
+.. autoskippablemethod:: ivy.Array.amin
+
+.. autoskippablemethod:: ivy.Container.amin

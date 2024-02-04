@@ -1,0 +1,53 @@
+Random
+======
+
+
+.. autosummary::
+   :toctree: random
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.experimental.random.bernoulli
+   
+   
+   ivy.functional.ivy.experimental.random.beta
+   
+   
+   ivy.functional.ivy.experimental.random.dirichlet
+   
+   
+   ivy.functional.ivy.experimental.random.gamma
+   
+   
+   ivy.functional.ivy.experimental.random.poisson
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.random
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.bernoulli
+
+.. autofunction:: ivy.beta
+
+.. autofunction:: ivy.dirichlet
+
+.. autofunction:: ivy.gamma
+
+.. autofunction:: ivy.poisson
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.random

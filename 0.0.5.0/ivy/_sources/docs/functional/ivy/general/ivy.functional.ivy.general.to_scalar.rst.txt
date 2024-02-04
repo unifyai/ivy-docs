@@ -1,0 +1,8 @@
+to\_scalar
+==========
+
+.. autofunction:: ivy.to_scalar
+
+.. autoskippablemethod:: ivy.Array.to_scalar
+
+.. autoskippablemethod:: ivy.Container.to_scalar

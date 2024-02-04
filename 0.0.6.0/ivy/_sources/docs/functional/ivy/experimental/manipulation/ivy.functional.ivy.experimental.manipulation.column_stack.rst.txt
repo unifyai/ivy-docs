@@ -1,0 +1,8 @@
+column\_stack
+=============
+
+.. autofunction:: ivy.column_stack
+
+.. autoskippablemethod:: ivy.Array.column_stack
+
+.. autoskippablemethod:: ivy.Container.column_stack

@@ -1,0 +1,8 @@
+avg\_pool3d
+===========
+
+.. autofunction:: ivy.avg_pool3d
+
+.. autoskippablemethod:: ivy.Array.avg_pool3d
+
+.. autoskippablemethod:: ivy.Container.avg_pool3d

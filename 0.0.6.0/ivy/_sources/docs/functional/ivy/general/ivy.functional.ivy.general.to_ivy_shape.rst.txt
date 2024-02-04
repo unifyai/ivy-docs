@@ -1,0 +1,8 @@
+to\_ivy\_shape
+==============
+
+.. autofunction:: ivy.to_ivy_shape
+
+.. autoskippablemethod:: ivy.Array.to_ivy_shape
+
+.. autoskippablemethod:: ivy.Container.to_ivy_shape

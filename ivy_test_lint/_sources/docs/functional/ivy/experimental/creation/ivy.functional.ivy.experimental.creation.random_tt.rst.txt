@@ -1,0 +1,8 @@
+random\_tt
+==========
+
+.. autofunction:: ivy.random_tt
+
+.. autoskippablemethod:: ivy.Array.random_tt
+
+.. autoskippablemethod:: ivy.Container.random_tt

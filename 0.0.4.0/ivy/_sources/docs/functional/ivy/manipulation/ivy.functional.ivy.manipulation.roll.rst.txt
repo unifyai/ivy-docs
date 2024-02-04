@@ -1,0 +1,8 @@
+roll
+====
+
+.. autofunction:: ivy.roll
+
+.. autoskippablemethod:: ivy.Array.roll
+
+.. autoskippablemethod:: ivy.Container.roll

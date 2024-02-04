@@ -1,0 +1,8 @@
+pool
+====
+
+.. autofunction:: ivy.pool
+
+.. autoskippablemethod:: ivy.Array.pool
+
+.. autoskippablemethod:: ivy.Container.pool

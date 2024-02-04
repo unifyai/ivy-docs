@@ -1,0 +1,8 @@
+equal
+=====
+
+.. autofunction:: ivy.equal
+
+.. autoskippablemethod:: ivy.Array.equal
+
+.. autoskippablemethod:: ivy.Container.equal

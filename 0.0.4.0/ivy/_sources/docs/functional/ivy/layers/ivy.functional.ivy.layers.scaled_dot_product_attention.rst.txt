@@ -1,0 +1,8 @@
+scaled\_dot\_product\_attention
+===============================
+
+.. autofunction:: ivy.scaled_dot_product_attention
+
+.. autoskippablemethod:: ivy.Array.scaled_dot_product_attention
+
+.. autoskippablemethod:: ivy.Container.scaled_dot_product_attention

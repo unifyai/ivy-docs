@@ -1,0 +1,8 @@
+fourier\_encode
+===============
+
+.. autofunction:: ivy.fourier_encode
+
+.. autoskippablemethod:: ivy.Array.fourier_encode
+
+.. autoskippablemethod:: ivy.Container.fourier_encode

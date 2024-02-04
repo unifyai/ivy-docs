@@ -1,0 +1,36 @@
+General
+=======
+
+
+.. autosummary::
+   :toctree: general
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   
+   ivy.functional.ivy.experimental.general.reduce
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.general
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy._correct_ivy_callable
+
+.. autofunction:: ivy.reduce
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.general

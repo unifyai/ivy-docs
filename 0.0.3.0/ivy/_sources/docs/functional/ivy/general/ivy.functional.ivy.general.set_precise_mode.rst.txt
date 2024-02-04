@@ -1,0 +1,8 @@
+set\_precise\_mode
+==================
+
+.. autofunction:: ivy.set_precise_mode
+
+.. autoskippablemethod:: ivy.Array.set_precise_mode
+
+.. autoskippablemethod:: ivy.Container.set_precise_mode

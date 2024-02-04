@@ -1,0 +1,8 @@
+container\_types
+================
+
+.. autofunction:: ivy.container_types
+
+.. autoskippablemethod:: ivy.Array.container_types
+
+.. autoskippablemethod:: ivy.Container.container_types

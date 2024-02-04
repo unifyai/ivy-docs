@@ -1,0 +1,8 @@
+batched\_outer
+==============
+
+.. autofunction:: ivy.batched_outer
+
+.. autoskippablemethod:: ivy.Array.batched_outer
+
+.. autoskippablemethod:: ivy.Container.batched_outer

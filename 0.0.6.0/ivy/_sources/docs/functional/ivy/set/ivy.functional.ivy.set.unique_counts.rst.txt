@@ -1,0 +1,8 @@
+unique\_counts
+==============
+
+.. autofunction:: ivy.unique_counts
+
+.. autoskippablemethod:: ivy.Array.unique_counts
+
+.. autoskippablemethod:: ivy.Container.unique_counts

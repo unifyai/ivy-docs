@@ -1,0 +1,711 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Ivy Models &#8212; Ivy Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=e2296dfd" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=4ea706d9"></script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://unify.ai/docs/versions/models.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
+        </script>
+    <script src="_static/js/kapa.ai.js?v=996880f3"></script>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Transformers" href="models-transformers/ivy_models.transformers.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+   
+
+<a class="navbar-brand logo" href="https://unify.ai">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://uploads-ssl.webflow.com/643fb31f2ef62cf324fab8ca/65423c2ce1f61fda416b592c_logo_unify.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="https://assets-global.website-files.com/643fb31f2ef62cf324fab8ca/6546745c0b48a47df4098dec_logo_unify-white.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+<nav role="navigation" class="nav-menu">
+    <div class="menu-holder">
+        <div class="menu-link-holder">
+            
+                
+                    <a href="/hub" class="nav-link-header w-nav-link">Hub</a>
+                
+            
+                
+                    <a href="/framework" class="nav-link-header w-nav-link">Ivy</a>
+                
+            
+                
+                    <div class="nav-horizontal-bar">|</div>
+                
+            
+                
+                    <a href="/database" class="nav-link-header w-nav-link">Database</a>
+                
+            
+                
+                    <a href="/blog" class="nav-link-header w-nav-link">Blog</a>
+                
+            
+                
+                    <a href="https://discord.com/invite/sXyFF8tDtm" class="nav-link-header w-nav-link">Discord</a>
+                
+            </div>
+    </div>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
+      dev  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+    <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+
+<nav role="navigation" class="nav-menu">
+    <div class="menu-holder">
+        <div class="menu-link-holder">
+            
+                
+                    <a href="/hub" class="nav-link-header w-nav-link">Hub</a>
+                
+            
+                
+                    <a href="/framework" class="nav-link-header w-nav-link">Ivy</a>
+                
+            
+                
+                    <div class="nav-horizontal-bar">|</div>
+                
+            
+                
+                    <a href="/database" class="nav-link-header w-nav-link">Database</a>
+                
+            
+                
+                    <a href="/blog" class="nav-link-header w-nav-link">Blog</a>
+                
+            
+                
+                    <a href="https://discord.com/invite/sXyFF8tDtm" class="nav-link-header w-nav-link">Discord</a>
+                
+            </div>
+    </div>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <div class="version-switcher__container dropdown">
+    <button type="button" class="version-switcher__button btn btn-sm navbar-btn dropdown-toggle" data-bs-toggle="dropdown">
+      dev  <!-- this text may get changed later by javascript -->
+      <span class="caret"></span>
+    </button>
+    <div class="version-switcher__menu dropdown-menu list-group-flush py-0">
+    <!-- dropdown will be populated by javascript on page load -->
+    </div>
+  </div>
+`);
+</script></div>
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="models-transformers/ivy_models.transformers.html">Transformers</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="models-transformers/transformers/ivy_models.transformers.helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models-transformers/transformers/ivy_models.transformers.perceiver_io.html">Perceiver io</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links">
+    <div class="bd-toc-item navbar-nav">
+        <p aria-level="2" class="caption" role="heading">
+            <span class="caption-text">Docs</span>
+        </p>
+        <ul class="nav bd-sidenav">
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/ivy">
+                    Ivy
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/mech">
+                    Ivy mech
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/vision">
+                    Ivy vision
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/robot">
+                    Ivy robot
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/gym">
+                    Ivy gym
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/memory">
+                    Ivy memory
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/builder">
+                    Ivy builder
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/models">
+                    Ivy models
+                </a>
+            </li>
+            <li class="toctree-l1">
+                <a class="reference external" href="/docs/ecosystem">
+                    Ivy ecosystem
+                </a>
+            </li>
+            </ul>
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article"></div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <a class="only-light reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/logo.png?raw=true#gh-light-mode-only"><img alt="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/logo.png?raw=true#gh-light-mode-only" class="only-light" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/logo.png?raw=true#gh-light-mode-only" style="width: 100%;" /></a>
+<a class="only-dark reference internal image-reference" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/logo_dark.png?raw=true#gh-dark-mode-only"><img alt="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/logo_dark.png?raw=true#gh-dark-mode-only" class="only-dark" src="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/logo_dark.png?raw=true#gh-dark-mode-only" style="width: 100%;" /></a>
+<br/>
+<a href="https://pypi.org/project/ivy-models">
+    <img class="dark-light" style="float: left; padding-right: 4px; padding-bottom: 4px;" src="https://badge.fury.io/py/ivy-models.svg">
+</a>
+<a href="https://github.com/unifyai/models/actions?query=workflow%3Adocs">
+    <img class="dark-light" style="float: left; padding-right: 4px; padding-bottom: 4px;" src="https://github.com/unifyai/models/actions/workflows/docs.yml/badge.svg">
+</a>
+<a href="https://github.com/unifyai/models/actions?query=workflow%3Anightly-tests">
+    <img class="dark-light" style="float: left; padding-right: 4px; padding-bottom: 4px;" src="https://github.com/unifyai/models/actions/workflows/nightly-tests.yml/badge.svg">
+</a>
+<a href="https://discord.gg/G4aR9Q7DTN">
+    <img class="dark-light" style="float: left; padding-right: 4px; padding-bottom: 4px;" src="https://img.shields.io/discord/799879767196958751?color=blue&label=%20&logo=discord&logoColor=white">
+</a>
+<br clear="all" /><section id="ivy-models">
+<h1>Ivy Models<a class="headerlink" href="#ivy-models" title="Link to this heading">#</a></h1>
+<p>This repository houses a collection of popular machine learning models written in the <a class="reference external" href="https://github.com/unifyai/ivy">Ivy framework</a>.</p>
+<p>Code written in Ivy is compatible with PyTorch, TensorFlow, JAX and NumPy.
+This means that these models can be integrated into a working pipeline for any of these standard ML frameworks.</p>
+<p>The purpose of this repository is to provide reference Ivy implementations of common machine learning models, as well as giving a demonstration of how to write custom models in Ivy.</p>
+<p>Check out our <a class="reference external" href="https://unify.ai/demos/#examples-and-demos">demos</a> to see these models in action.
+In particular, <a class="reference external" href="https://unify.ai/demos/examples_and_demos/image_segmentation_with_ivy_unet.html">UNet</a>
+and <a class="reference external" href="https://unify.ai/demos/examples_and_demos/alexnet_demo.html">AlexNet</a> demonstrate using models from this repository.</p>
+<p>The models can be loaded with pretrained weights, we have tests to ensure that our models give the same output as the reference implementation.
+Models can also be initialised with random weights by passing <code class="code docutils literal notranslate"><span class="pre">pretrained=False</span></code> to the loading function.</p>
+<p>To learn more about Ivy, check out <a class="reference external" href="https://unify.ai">unify.ai</a>, our <a class="reference external" href="https://unify.ai/docs/ivy/">Docs</a>, and our <a class="reference external" href="https://github.com/unifyai/ivy">GitHub</a>.</p>
+<section id="setting-up">
+<h2>Setting up<a class="headerlink" href="#setting-up" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/unifyai/models
+<span class="nb">cd</span><span class="w"> </span>models
+pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+<section id="getting-started">
+<h2>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ivy</span>
+<span class="kn">from</span> <span class="nn">ivy_models</span> <span class="kn">import</span> <span class="n">alexnet</span>
+<span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s2">&quot;torch&quot;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">alexnet</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The pretrained AlexNet model is now ready to be used, and is compatible with any other PyTorch code.
+See <a class="reference external" href="https://unify.ai/demos/examples_and_demos/alexnet_demo.html">this demo</a> for more details.</p>
+</section>
+<section id="navigating-this-repository">
+<h2>Navigating this repository<a class="headerlink" href="#navigating-this-repository" title="Link to this heading">#</a></h2>
+<p>The models are contained in the ivy_models folder.
+The functions that automatically load the pretrained weights are found at the end of <code class="code docutils literal notranslate"><span class="pre">model_name.py</span></code>, some models have multiple sizes.
+The layers are sometimes kept in a separate file, usually named <code class="code docutils literal notranslate"><span class="pre">layers.py</span></code>.</p>
+<p><strong>Off-the-shelf models for a variety of domains.</strong></p>
+<div style="display: block;" align="center">
+    <img class="dark-light" width="6%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/supported/empty.png">
+    <a href="https://jax.readthedocs.io">
+        <img class="dark-light" width="13%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/supported/jax_logo.png">
+    </a>
+    <img class="dark-light" width="12%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/supported/empty.png">
+    <a href="https://www.tensorflow.org">
+        <img class="dark-light" width="13%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/supported/tensorflow_logo.png">
+    </a>
+    <img class="dark-light" width="12%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/supported/empty.png">
+    <a href="https://pytorch.org">
+        <img class="dark-light" width="13%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/supported/pytorch_logo.png">
+    </a>
+    <img class="dark-light" width="12%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/supported/empty.png">
+    <a href="https://numpy.org">
+        <img class="dark-light" width="13%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/supported/numpy_logo.png">
+    </a>
+    <img class="dark-light" width="6%" style="float: left;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/supported/empty.png">
+</div>
+<br clear="all" /><p><strong>Ivy Libraries</strong></p>
+<p>There are a host of derived libraries written in Ivy, in the areas of mechanics, 3D vision, robotics, gym environments,
+neural memory, pre-trained models + implementations, and builder tools with trainers, data loaders and more. Click on the icons below to learn more!</p>
+<div style="display: block;">
+    <a href="https://github.com/unifyai/mech">
+        <picture>
+            <source class="dark-light" width="15%" style="float: left; margin: 0% 5%;" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_mech_dark.png">
+            <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_mech.png">
+        </picture>
+    </a>
+    <a href="https://github.com/unifyai/vision">
+        <picture>
+            <source class="dark-light" width="15%" style="float: left; margin: 0% 5%;" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_vision_dark.png">
+            <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_vision.png">
+        </picture>
+    </a>
+    <a href="https://github.com/unifyai/robot">
+        <picture>
+            <source class="dark-light" width="15%" style="float: left; margin: 0% 5%;" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_robot_dark.png">
+            <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_robot.png">
+        </picture>
+    </a>
+    <a href="https://github.com/unifyai/gym">
+        <picture>
+            <source class="dark-light" width="15%" style="float: left; margin: 0% 5%;" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_gym_dark.png">
+            <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_gym.png">
+        </picture>
+    </a>
+
+    <br clear="all" />
+
+    <a href="https://pypi.org/project/ivy-mech">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://badge.fury.io/py/ivy-mech.svg">
+    </a>
+    <a href="https://pypi.org/project/ivy-vision">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://badge.fury.io/py/ivy-vision.svg">
+    </a>
+    <a href="https://pypi.org/project/ivy-robot">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://badge.fury.io/py/ivy-robot.svg">
+    </a>
+    <a href="https://pypi.org/project/ivy-gym">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;"width="15%" style="float: left; margin: 0% 5%;" src="https://badge.fury.io/py/ivy-gym.svg">
+    </a>
+
+    <br clear="all" />
+
+    <a href="https://github.com/unifyai/mech/actions?query=workflow%3Anightly-tests">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;"src="https://github.com/unifyai/mech/actions/workflows/nightly-tests.yml/badge.svg">
+    </a>
+    <a href="https://github.com/unifyai/vision/actions?query=workflow%3Anightly-tests">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://github.com/unifyai/vision/actions/workflows/nightly-tests.yml/badge.svg">
+    </a>
+    <a href="https://github.com/unifyai/robot/actions?query=workflow%3Anightly-tests">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://github.com/unifyai/robot/actions/workflows/nightly-tests.yml/badge.svg">
+    </a>
+    <a href="https://github.com/unifyai/gym/actions?query=workflow%3Anightly-tests">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://github.com/unifyai/gym/actions/workflows/nightly-tests.yml/badge.svg">
+    </a>
+
+    <br clear="all" />
+
+    <a href="https://github.com/unifyai/memory">
+        <picture>
+            <source class="dark-light" width="15%" style="float: left; margin: 0% 5%;" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_memory_dark.png">
+            <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_memory.png">
+        </picture>
+    </a>
+    <a href="https://github.com/unifyai/builder">
+        <picture>
+            <source class="dark-light" width="15%" style="float: left; margin: 0% 5%;" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_builder_dark.png">
+            <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_builder.png">
+        </picture>
+    </a>
+    <a href="https://github.com/unifyai/models">
+        <picture>
+            <source class="dark-light" width="15%" style="float: left; margin: 0% 5%;" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_models_dark.png">
+            <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_models.png">
+        </picture>
+    </a>
+    <a href="https://github.com/unifyai/ecosystem">
+        <picture>
+            <source class="dark-light" width="15%" style="float: left; margin: 0% 5%;" media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_ecosystem_dark.png">
+            <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://raw.githubusercontent.com/unifyai/unifyai.github.io/main/img/externally_linked/logos/ivy_ecosystem.png">
+        </picture>
+    </a>
+
+    <br clear="all" />
+
+    <a href="https://pypi.org/project/ivy-memory">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://badge.fury.io/py/ivy-memory.svg">
+    </a>
+    <a href="https://pypi.org/project/ivy-builder">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://badge.fury.io/py/ivy-builder.svg">
+    </a>
+    <a href="https://pypi.org/project/ivy-models">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://badge.fury.io/py/ivy-models.svg">
+    </a>
+    <a href="https://github.com/unifyai/ecosystem/actions?query=workflow%3Adocs">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://github.com/unifyai/ecosystem/actions/workflows/docs.yml/badge.svg">
+    </a>
+
+    <br clear="all" />
+
+    <a href="https://github.com/unifyai/memory/actions?query=workflow%3Anightly-tests">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://github.com/unifyai/memory/actions/workflows/nightly-tests.yml/badge.svg">
+    </a>
+    <a href="https://github.com/unifyai/builder/actions?query=workflow%3Anightly-tests">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://github.com/unifyai/builder/actions/workflows/nightly-tests.yml/badge.svg">
+    </a>
+    <a href="https://github.com/unifyai/models/actions?query=workflow%3Anightly-tests">
+        <img class="dark-light" width="15%" style="float: left; margin: 0% 5%;" src="https://github.com/unifyai/models/actions/workflows/nightly-tests.yml/badge.svg">
+    </a>
+
+    <br clear="all" />
+
+</div>
+<br clear="all" /></section>
+<section id="citation">
+<h2>Citation<a class="headerlink" href="#citation" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@article</span><span class="p">{</span><span class="n">lenton2021ivy</span><span class="p">,</span>
+  <span class="n">title</span><span class="o">=</span><span class="p">{</span><span class="n">Ivy</span><span class="p">:</span> <span class="n">Templated</span> <span class="n">deep</span> <span class="n">learning</span> <span class="k">for</span> <span class="n">inter</span><span class="o">-</span><span class="n">framework</span> <span class="n">portability</span><span class="p">},</span>
+  <span class="n">author</span><span class="o">=</span><span class="p">{</span><span class="n">Lenton</span><span class="p">,</span> <span class="n">Daniel</span> <span class="ow">and</span> <span class="n">Pardo</span><span class="p">,</span> <span class="n">Fabio</span> <span class="ow">and</span> <span class="n">Falck</span><span class="p">,</span> <span class="n">Fabian</span> <span class="ow">and</span> <span class="n">James</span><span class="p">,</span> <span class="n">Stephen</span> <span class="ow">and</span> <span class="n">Clark</span><span class="p">,</span> <span class="n">Ronald</span><span class="p">},</span>
+  <span class="n">journal</span><span class="o">=</span><span class="p">{</span><span class="n">arXiv</span> <span class="n">preprint</span> <span class="n">arXiv</span><span class="p">:</span><span class="mf">2102.02886</span><span class="p">},</span>
+  <span class="n">year</span><span class="o">=</span><span class="p">{</span><span class="mi">2021</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="right-next"
+       href="models-transformers/ivy_models.transformers.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Transformers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up">Setting up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#navigating-this-repository">Navigating this repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citation">Citation</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2020-2023, Unify.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

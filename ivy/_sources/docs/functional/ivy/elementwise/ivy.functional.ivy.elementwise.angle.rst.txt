@@ -1,0 +1,8 @@
+angle
+=====
+
+.. autofunction:: ivy.angle
+
+.. autoskippablemethod:: ivy.Array.angle
+
+.. autoskippablemethod:: ivy.Container.angle

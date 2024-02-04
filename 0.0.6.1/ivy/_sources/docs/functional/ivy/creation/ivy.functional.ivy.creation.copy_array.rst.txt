@@ -1,0 +1,8 @@
+copy\_array
+===========
+
+.. autofunction:: ivy.copy_array
+
+.. autoskippablemethod:: ivy.Array.copy_array
+
+.. autoskippablemethod:: ivy.Container.copy_array

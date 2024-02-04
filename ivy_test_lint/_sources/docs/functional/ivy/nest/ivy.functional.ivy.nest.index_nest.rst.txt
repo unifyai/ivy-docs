@@ -1,0 +1,8 @@
+index\_nest
+===========
+
+.. autofunction:: ivy.index_nest
+
+.. autoskippablemethod:: ivy.Array.index_nest
+
+.. autoskippablemethod:: ivy.Container.index_nest

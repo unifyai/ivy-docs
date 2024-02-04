@@ -1,0 +1,8 @@
+asarray\_to\_native\_arrays\_and\_back
+======================================
+
+.. autofunction:: ivy.asarray_to_native_arrays_and_back
+
+.. autoskippablemethod:: ivy.Array.asarray_to_native_arrays_and_back
+
+.. autoskippablemethod:: ivy.Container.asarray_to_native_arrays_and_back

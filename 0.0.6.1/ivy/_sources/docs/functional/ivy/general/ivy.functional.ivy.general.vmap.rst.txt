@@ -1,0 +1,8 @@
+vmap
+====
+
+.. autofunction:: ivy.vmap
+
+.. autoskippablemethod:: ivy.Array.vmap
+
+.. autoskippablemethod:: ivy.Container.vmap

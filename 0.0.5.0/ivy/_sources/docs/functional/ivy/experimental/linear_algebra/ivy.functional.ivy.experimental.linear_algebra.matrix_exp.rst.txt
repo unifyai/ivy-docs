@@ -1,0 +1,8 @@
+matrix\_exp
+===========
+
+.. autofunction:: ivy.matrix_exp
+
+.. autoskippablemethod:: ivy.Array.matrix_exp
+
+.. autoskippablemethod:: ivy.Container.matrix_exp

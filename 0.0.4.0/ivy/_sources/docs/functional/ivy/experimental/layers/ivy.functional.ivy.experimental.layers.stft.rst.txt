@@ -1,0 +1,8 @@
+stft
+====
+
+.. autofunction:: ivy.stft
+
+.. autoskippablemethod:: ivy.Array.stft
+
+.. autoskippablemethod:: ivy.Container.stft

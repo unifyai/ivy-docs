@@ -1,0 +1,8 @@
+lcm
+===
+
+.. autofunction:: ivy.lcm
+
+.. autoskippablemethod:: ivy.Array.lcm
+
+.. autoskippablemethod:: ivy.Container.lcm

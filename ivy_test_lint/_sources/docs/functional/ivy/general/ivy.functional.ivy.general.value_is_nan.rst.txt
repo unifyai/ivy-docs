@@ -1,0 +1,8 @@
+value\_is\_nan
+==============
+
+.. autofunction:: ivy.value_is_nan
+
+.. autoskippablemethod:: ivy.Array.value_is_nan
+
+.. autoskippablemethod:: ivy.Container.value_is_nan

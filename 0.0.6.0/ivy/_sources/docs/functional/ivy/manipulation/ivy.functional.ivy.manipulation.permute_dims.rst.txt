@@ -1,0 +1,8 @@
+permute\_dims
+=============
+
+.. autofunction:: ivy.permute_dims
+
+.. autoskippablemethod:: ivy.Array.permute_dims
+
+.. autoskippablemethod:: ivy.Container.permute_dims

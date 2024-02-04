@@ -1,0 +1,8 @@
+conv1d\_transpose
+=================
+
+.. autofunction:: ivy.conv1d_transpose
+
+.. autoskippablemethod:: ivy.Array.conv1d_transpose
+
+.. autoskippablemethod:: ivy.Container.conv1d_transpose

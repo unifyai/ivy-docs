@@ -1,0 +1,8 @@
+asarray
+=======
+
+.. autofunction:: ivy.asarray
+
+.. autoskippablemethod:: ivy.Array.asarray
+
+.. autoskippablemethod:: ivy.Container.asarray

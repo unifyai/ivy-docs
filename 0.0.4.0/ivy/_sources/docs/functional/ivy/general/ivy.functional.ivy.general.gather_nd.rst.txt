@@ -1,0 +1,8 @@
+gather\_nd
+==========
+
+.. autofunction:: ivy.gather_nd
+
+.. autoskippablemethod:: ivy.Array.gather_nd
+
+.. autoskippablemethod:: ivy.Container.gather_nd

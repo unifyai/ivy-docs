@@ -1,0 +1,8 @@
+hardtanh
+========
+
+.. autofunction:: ivy.hardtanh
+
+.. autoskippablemethod:: ivy.Array.hardtanh
+
+.. autoskippablemethod:: ivy.Container.hardtanh

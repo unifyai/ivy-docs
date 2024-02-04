@@ -1,0 +1,8 @@
+msort
+=====
+
+.. autofunction:: ivy.msort
+
+.. autoskippablemethod:: ivy.Array.msort
+
+.. autoskippablemethod:: ivy.Container.msort

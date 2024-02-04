@@ -1,0 +1,8 @@
+mean
+====
+
+.. autofunction:: ivy.mean
+
+.. autoskippablemethod:: ivy.Array.mean
+
+.. autoskippablemethod:: ivy.Container.mean

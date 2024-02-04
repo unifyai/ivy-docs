@@ -1,0 +1,8 @@
+all\_nested\_indices
+====================
+
+.. autofunction:: ivy.all_nested_indices
+
+.. autoskippablemethod:: ivy.Array.all_nested_indices
+
+.. autoskippablemethod:: ivy.Container.all_nested_indices

@@ -1,0 +1,8 @@
+bitwise\_invert
+===============
+
+.. autofunction:: ivy.bitwise_invert
+
+.. autoskippablemethod:: ivy.Array.bitwise_invert
+
+.. autoskippablemethod:: ivy.Container.bitwise_invert

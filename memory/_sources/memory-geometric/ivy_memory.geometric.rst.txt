@@ -1,0 +1,12 @@
+﻿Geometric
+=========
+
+.. autosummary::
+    :toctree: geometric
+    :template: top_level_module.rst
+    :recursive:
+
+
+    ivy_memory.geometric.containers
+    ivy_memory.geometric.esm
+

@@ -1,0 +1,8 @@
+matrix\_rank
+============
+
+.. autofunction:: ivy.matrix_rank
+
+.. autoskippablemethod:: ivy.Array.matrix_rank
+
+.. autoskippablemethod:: ivy.Container.matrix_rank

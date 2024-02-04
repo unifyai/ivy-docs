@@ -1,0 +1,8 @@
+hamming\_window
+===============
+
+.. autofunction:: ivy.hamming_window
+
+.. autoskippablemethod:: ivy.Array.hamming_window
+
+.. autoskippablemethod:: ivy.Container.hamming_window

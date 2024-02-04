@@ -1,0 +1,8 @@
+partial\_vec\_to\_tensor
+========================
+
+.. autofunction:: ivy.partial_vec_to_tensor
+
+.. autoskippablemethod:: ivy.Array.partial_vec_to_tensor
+
+.. autoskippablemethod:: ivy.Container.partial_vec_to_tensor

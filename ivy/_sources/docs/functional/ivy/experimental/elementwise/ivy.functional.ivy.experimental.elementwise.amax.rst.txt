@@ -1,0 +1,8 @@
+amax
+====
+
+.. autofunction:: ivy.amax
+
+.. autoskippablemethod:: ivy.Array.amax
+
+.. autoskippablemethod:: ivy.Container.amax

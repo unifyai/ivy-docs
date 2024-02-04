@@ -1,0 +1,8 @@
+choose
+======
+
+.. autofunction:: ivy.choose
+
+.. autoskippablemethod:: ivy.Array.choose
+
+.. autoskippablemethod:: ivy.Container.choose

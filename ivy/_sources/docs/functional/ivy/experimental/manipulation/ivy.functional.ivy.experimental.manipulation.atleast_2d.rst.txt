@@ -1,0 +1,8 @@
+atleast\_2d
+===========
+
+.. autofunction:: ivy.atleast_2d
+
+.. autoskippablemethod:: ivy.Array.atleast_2d
+
+.. autoskippablemethod:: ivy.Container.atleast_2d

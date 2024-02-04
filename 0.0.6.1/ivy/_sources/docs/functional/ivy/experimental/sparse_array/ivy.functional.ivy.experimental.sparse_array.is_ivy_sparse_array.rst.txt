@@ -1,0 +1,8 @@
+is\_ivy\_sparse\_array
+======================
+
+.. autofunction:: ivy.is_ivy_sparse_array
+
+.. autoskippablemethod:: ivy.Array.is_ivy_sparse_array
+
+.. autoskippablemethod:: ivy.Container.is_ivy_sparse_array

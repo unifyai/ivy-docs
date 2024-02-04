@@ -1,0 +1,8 @@
+less\_equal
+===========
+
+.. autofunction:: ivy.less_equal
+
+.. autoskippablemethod:: ivy.Array.less_equal
+
+.. autoskippablemethod:: ivy.Container.less_equal

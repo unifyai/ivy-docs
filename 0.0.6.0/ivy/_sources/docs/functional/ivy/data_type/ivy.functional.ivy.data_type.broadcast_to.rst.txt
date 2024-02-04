@@ -1,0 +1,8 @@
+broadcast\_to
+=============
+
+.. autofunction:: ivy.broadcast_to
+
+.. autoskippablemethod:: ivy.Array.broadcast_to
+
+.. autoskippablemethod:: ivy.Container.broadcast_to

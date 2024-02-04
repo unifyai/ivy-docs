@@ -1,0 +1,8 @@
+ones\_like
+==========
+
+.. autofunction:: ivy.ones_like
+
+.. autoskippablemethod:: ivy.Array.ones_like
+
+.. autoskippablemethod:: ivy.Container.ones_like

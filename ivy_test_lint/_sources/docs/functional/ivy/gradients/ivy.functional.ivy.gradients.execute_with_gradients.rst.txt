@@ -1,0 +1,8 @@
+execute\_with\_gradients
+========================
+
+.. autofunction:: ivy.execute_with_gradients
+
+.. autoskippablemethod:: ivy.Array.execute_with_gradients
+
+.. autoskippablemethod:: ivy.Container.execute_with_gradients

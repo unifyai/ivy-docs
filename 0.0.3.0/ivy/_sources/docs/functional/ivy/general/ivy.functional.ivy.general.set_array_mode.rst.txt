@@ -1,0 +1,8 @@
+set\_array\_mode
+================
+
+.. autofunction:: ivy.set_array_mode
+
+.. autoskippablemethod:: ivy.Array.set_array_mode
+
+.. autoskippablemethod:: ivy.Container.set_array_mode

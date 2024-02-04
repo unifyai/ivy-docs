@@ -1,0 +1,8 @@
+isinf
+=====
+
+.. autofunction:: ivy.isinf
+
+.. autoskippablemethod:: ivy.Array.isinf
+
+.. autoskippablemethod:: ivy.Container.isinf

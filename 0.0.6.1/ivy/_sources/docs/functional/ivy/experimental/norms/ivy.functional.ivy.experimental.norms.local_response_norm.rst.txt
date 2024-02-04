@@ -1,0 +1,8 @@
+local\_response\_norm
+=====================
+
+.. autofunction:: ivy.local_response_norm
+
+.. autoskippablemethod:: ivy.Array.local_response_norm
+
+.. autoskippablemethod:: ivy.Container.local_response_norm

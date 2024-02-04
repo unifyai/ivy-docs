@@ -1,0 +1,8 @@
+fill\_diagonal
+==============
+
+.. autofunction:: ivy.fill_diagonal
+
+.. autoskippablemethod:: ivy.Array.fill_diagonal
+
+.. autoskippablemethod:: ivy.Container.fill_diagonal

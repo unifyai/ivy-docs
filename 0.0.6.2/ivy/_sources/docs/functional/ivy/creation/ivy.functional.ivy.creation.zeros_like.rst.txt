@@ -1,0 +1,8 @@
+zeros\_like
+===========
+
+.. autofunction:: ivy.zeros_like
+
+.. autoskippablemethod:: ivy.Array.zeros_like
+
+.. autoskippablemethod:: ivy.Container.zeros_like

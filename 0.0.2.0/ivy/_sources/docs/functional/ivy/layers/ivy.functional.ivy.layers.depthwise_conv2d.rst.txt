@@ -1,0 +1,8 @@
+depthwise\_conv2d
+=================
+
+.. autofunction:: ivy.depthwise_conv2d
+
+.. autoskippablemethod:: ivy.Array.depthwise_conv2d
+
+.. autoskippablemethod:: ivy.Container.depthwise_conv2d

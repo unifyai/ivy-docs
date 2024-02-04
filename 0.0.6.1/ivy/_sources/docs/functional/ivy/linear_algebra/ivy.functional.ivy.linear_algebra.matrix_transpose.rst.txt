@@ -1,0 +1,8 @@
+matrix\_transpose
+=================
+
+.. autofunction:: ivy.matrix_transpose
+
+.. autoskippablemethod:: ivy.Array.matrix_transpose
+
+.. autoskippablemethod:: ivy.Container.matrix_transpose

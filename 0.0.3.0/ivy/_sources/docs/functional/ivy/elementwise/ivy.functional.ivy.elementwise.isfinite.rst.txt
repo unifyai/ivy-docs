@@ -1,0 +1,8 @@
+isfinite
+========
+
+.. autofunction:: ivy.isfinite
+
+.. autoskippablemethod:: ivy.Array.isfinite
+
+.. autoskippablemethod:: ivy.Container.isfinite

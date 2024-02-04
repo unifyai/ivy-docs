@@ -1,0 +1,8 @@
+asin
+====
+
+.. autofunction:: ivy.asin
+
+.. autoskippablemethod:: ivy.Array.asin
+
+.. autoskippablemethod:: ivy.Container.asin

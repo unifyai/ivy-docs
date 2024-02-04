@@ -1,0 +1,8 @@
+unset\_show\_func\_wrapper\_trace\_mode
+=======================================
+
+.. autofunction:: ivy.unset_show_func_wrapper_trace_mode
+
+.. autoskippablemethod:: ivy.Array.unset_show_func_wrapper_trace_mode
+
+.. autoskippablemethod:: ivy.Container.unset_show_func_wrapper_trace_mode

@@ -1,0 +1,8 @@
+cumprod
+=======
+
+.. autofunction:: ivy.cumprod
+
+.. autoskippablemethod:: ivy.Array.cumprod
+
+.. autoskippablemethod:: ivy.Container.cumprod

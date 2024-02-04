@@ -1,0 +1,8 @@
+lu\_factor
+==========
+
+.. autofunction:: ivy.lu_factor
+
+.. autoskippablemethod:: ivy.Array.lu_factor
+
+.. autoskippablemethod:: ivy.Container.lu_factor

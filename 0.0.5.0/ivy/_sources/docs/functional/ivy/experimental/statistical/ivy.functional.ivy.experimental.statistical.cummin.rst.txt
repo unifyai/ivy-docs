@@ -1,0 +1,8 @@
+cummin
+======
+
+.. autofunction:: ivy.cummin
+
+.. autoskippablemethod:: ivy.Array.cummin
+
+.. autoskippablemethod:: ivy.Container.cummin

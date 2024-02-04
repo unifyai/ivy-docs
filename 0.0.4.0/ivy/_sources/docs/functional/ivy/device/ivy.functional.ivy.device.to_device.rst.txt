@@ -1,0 +1,8 @@
+to\_device
+==========
+
+.. autofunction:: ivy.to_device
+
+.. autoskippablemethod:: ivy.Array.to_device
+
+.. autoskippablemethod:: ivy.Container.to_device

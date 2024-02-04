@@ -1,0 +1,8 @@
+atleast\_1d
+===========
+
+.. autofunction:: ivy.atleast_1d
+
+.. autoskippablemethod:: ivy.Array.atleast_1d
+
+.. autoskippablemethod:: ivy.Container.atleast_1d

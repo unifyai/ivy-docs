@@ -1,0 +1,8 @@
+native\_sparse\_array\_to\_indices\_values\_and\_shape
+======================================================
+
+.. autofunction:: ivy.native_sparse_array_to_indices_values_and_shape
+
+.. autoskippablemethod:: ivy.Array.native_sparse_array_to_indices_values_and_shape
+
+.. autoskippablemethod:: ivy.Container.native_sparse_array_to_indices_values_and_shape

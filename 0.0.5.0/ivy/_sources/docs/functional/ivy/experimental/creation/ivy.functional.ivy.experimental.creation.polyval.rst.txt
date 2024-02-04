@@ -1,0 +1,8 @@
+polyval
+=======
+
+.. autofunction:: ivy.polyval
+
+.. autoskippablemethod:: ivy.Array.polyval
+
+.. autoskippablemethod:: ivy.Container.polyval

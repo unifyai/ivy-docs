@@ -1,0 +1,8 @@
+prelu
+=====
+
+.. autofunction:: ivy.prelu
+
+.. autoskippablemethod:: ivy.Array.prelu
+
+.. autoskippablemethod:: ivy.Container.prelu

@@ -1,0 +1,8 @@
+inplace\_decrement
+==================
+
+.. autofunction:: ivy.inplace_decrement
+
+.. autoskippablemethod:: ivy.Array.inplace_decrement
+
+.. autoskippablemethod:: ivy.Container.inplace_decrement

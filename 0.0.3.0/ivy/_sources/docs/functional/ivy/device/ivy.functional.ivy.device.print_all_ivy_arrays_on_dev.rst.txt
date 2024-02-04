@@ -1,0 +1,8 @@
+print\_all\_ivy\_arrays\_on\_dev
+================================
+
+.. autofunction:: ivy.print_all_ivy_arrays_on_dev
+
+.. autoskippablemethod:: ivy.Array.print_all_ivy_arrays_on_dev
+
+.. autoskippablemethod:: ivy.Container.print_all_ivy_arrays_on_dev

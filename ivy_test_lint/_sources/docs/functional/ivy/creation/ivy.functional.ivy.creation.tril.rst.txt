@@ -1,0 +1,8 @@
+tril
+====
+
+.. autofunction:: ivy.tril
+
+.. autoskippablemethod:: ivy.Array.tril
+
+.. autoskippablemethod:: ivy.Container.tril

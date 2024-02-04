@@ -1,0 +1,8 @@
+get\_num\_dims
+==============
+
+.. autofunction:: ivy.get_num_dims
+
+.. autoskippablemethod:: ivy.Array.get_num_dims
+
+.. autoskippablemethod:: ivy.Container.get_num_dims

@@ -1,0 +1,8 @@
+atan
+====
+
+.. autofunction:: ivy.atan
+
+.. autoskippablemethod:: ivy.Array.atan
+
+.. autoskippablemethod:: ivy.Container.atan

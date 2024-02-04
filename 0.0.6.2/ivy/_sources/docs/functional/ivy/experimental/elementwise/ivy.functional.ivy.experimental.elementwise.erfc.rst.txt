@@ -1,0 +1,8 @@
+erfc
+====
+
+.. autofunction:: ivy.erfc
+
+.. autoskippablemethod:: ivy.Array.erfc
+
+.. autoskippablemethod:: ivy.Container.erfc

@@ -1,0 +1,33 @@
+Searching
+=========
+
+
+.. autosummary::
+   :toctree: searching
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.experimental.searching.unravel_index
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.experimental.searching
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.unravel_index
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.experimental.searching

@@ -1,0 +1,8 @@
+stable\_pow
+===========
+
+.. autofunction:: ivy.stable_pow
+
+.. autoskippablemethod:: ivy.Array.stable_pow
+
+.. autoskippablemethod:: ivy.Container.stable_pow

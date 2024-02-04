@@ -1,0 +1,8 @@
+random\_uniform
+===============
+
+.. autofunction:: ivy.random_uniform
+
+.. autoskippablemethod:: ivy.Array.random_uniform
+
+.. autoskippablemethod:: ivy.Container.random_uniform

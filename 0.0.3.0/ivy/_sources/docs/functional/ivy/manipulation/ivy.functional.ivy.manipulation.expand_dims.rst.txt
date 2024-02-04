@@ -1,0 +1,8 @@
+expand\_dims
+============
+
+.. autofunction:: ivy.expand_dims
+
+.. autoskippablemethod:: ivy.Array.expand_dims
+
+.. autoskippablemethod:: ivy.Container.expand_dims

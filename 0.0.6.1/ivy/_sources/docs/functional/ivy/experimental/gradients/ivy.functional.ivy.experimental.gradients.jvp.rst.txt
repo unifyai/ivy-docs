@@ -1,0 +1,8 @@
+jvp
+===
+
+.. autofunction:: ivy.jvp
+
+.. autoskippablemethod:: ivy.Array.jvp
+
+.. autoskippablemethod:: ivy.Container.jvp

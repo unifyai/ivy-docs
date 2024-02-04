@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome to the Hub! &#8212; Ivy Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e2296dfd" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'home/home';</script>
+    <script src="../_static/js/kapa.ai.js?v=996880f3"></script>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+   
+
+<a class="navbar-brand logo" href="https://unify.ai">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://uploads-ssl.webflow.com/643fb31f2ef62cf324fab8ca/65423c2ce1f61fda416b592c_logo_unify.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="https://assets-global.website-files.com/643fb31f2ef62cf324fab8ca/6546745c0b48a47df4098dec_logo_unify-white.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+<nav role="navigation" class="nav-menu">
+    <div class="menu-holder">
+        <div class="menu-link-holder">
+            
+                
+                    <a href="/hub" class="nav-link-header w-nav-link">Hub</a>
+                
+            
+                
+                    <a href="/framework" class="nav-link-header w-nav-link">Ivy</a>
+                
+            
+                
+                    <div class="nav-horizontal-bar">|</div>
+                
+            
+                
+                    <a href="/database" class="nav-link-header w-nav-link">Database</a>
+                
+            
+                
+                    <a href="/blog" class="nav-link-header w-nav-link">Blog</a>
+                
+            
+                
+                    <a href="https://discord.com/invite/sXyFF8tDtm" class="nav-link-header w-nav-link">Discord</a>
+                
+            </div>
+    </div>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+
+<nav role="navigation" class="nav-menu">
+    <div class="menu-holder">
+        <div class="menu-link-holder">
+            
+                
+                    <a href="/hub" class="nav-link-header w-nav-link">Hub</a>
+                
+            
+                
+                    <a href="/framework" class="nav-link-header w-nav-link">Ivy</a>
+                
+            
+                
+                    <div class="nav-horizontal-bar">|</div>
+                
+            
+                
+                    <a href="/database" class="nav-link-header w-nav-link">Database</a>
+                
+            
+                
+                    <a href="/blog" class="nav-link-header w-nav-link">Blog</a>
+                
+            
+                
+                    <a href="https://discord.com/invite/sXyFF8tDtm" class="nav-link-header w-nav-link">Discord</a>
+                
+            </div>
+    </div>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the Hub!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_access.html">Getting Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="make_your_first_request.html">Make your First Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pricing.html">Pricing and Credits</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../concepts/models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/providers.html">Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/benchmarks.html">Benchmarks</a></li>
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/endpoints.html">Endpoints</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Welcome to the Hub!</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="welcome-to-the-hub">
+<h1>Welcome to the Hub!<a class="headerlink" href="#welcome-to-the-hub" title="Link to this heading">#</a></h1>
+<p>This is your central hub for machine learning deployment stacks and inference endpoints. If you’re using or planning to use
+AI in your application or service, the hub offers various benefits:</p>
+<ul class="simple">
+<li><p><strong>🚀 Infrastructure Autotuning</strong>: For any given model, the Hub benchmarks all kind of deployment services and stacks,
+giving you the best infrastructure based on your priorities, be it high-throughput, low cost or low latency.</p></li>
+<li><p><strong>⚖️ Impartial Arbiter</strong>: We have no vested interest in you using one provider or another, we deploy and benchmark models accross
+different providers to objectively measure their performance. This allows you to make an informed decision when selecting the
+model or provider that fits your needs.</p></li>
+<li><p><strong>🌐 Streamlined Model Access</strong>: Using any model is as simple as making a request to an endpoint. No need to set up any infrastructure
+yourself.</p></li>
+<li><p><strong>🔑 One Single Key</strong>: You only need a Unify API Key to access all the endpoints in the hub. No need to create accounts with every provider that
+you want to test.</p></li>
+<li><p><strong>🔓 No vendor lock-in</strong>: Each model has a unfied API that enables seamless provider switching. Don’t worry about refactoring your code, we handle
+the intricacies and make it painless to move to a different provider or stack if it becomes a better option.</p></li>
+</ul>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
+<p>The best way to try the Hub yourself is to <a class="reference external" href="https://unify.ai/docs/hub/home/getting_access.html">get an API Key</a> and go through the
+tutorial in <a class="reference external" href="https://unify.ai/docs/hub/home/make_your_first_request.html">Make your First Request</a>. Once you are familiar with the
+interface and have access to the endpoints, then the <a class="reference external" href="https://unify.ai/hub">Web Interface</a> is the place to go. Now, you can pick any
+model and see the differences between its endpoints before running your queries!</p>
+</section>
+<section id="uploading-your-own-models">
+<h2>Uploading your own models<a class="headerlink" href="#uploading-your-own-models" title="Link to this heading">#</a></h2>
+<p>You will very soon be able to upload your own models to the Hub, both publicly and privately. We will do all the benchmarking and deployment for
+you so that you only have to worry about your application and use the best deployment stack at all times. We are testing this feature internally at the
+moment, but if you really want to deploy your models in the hub, feel free to send us an email to <code class="code docutils literal notranslate"><span class="pre">hub&#64;unify.ai</span></code>!</p>
+</section>
+<section id="feedback-and-feature-requests">
+<h2>Feedback and Feature Requests<a class="headerlink" href="#feedback-and-feature-requests" title="Link to this heading">#</a></h2>
+<p>We are excited to hear from you! Whether this is about something that you would do differently, or about a feature that you think would be useful to
+include, please let us know either through <a class="reference external" href="https://discord.com/invite/sXyFF8tDtm">our Discord community</a> or send an email to
+<code class="code docutils literal notranslate"><span class="pre">hub&#64;unify.ai</span></code>, we’ll be more than happy to look into it.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting Started</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uploading-your-own-models">Uploading your own models</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feedback-and-feature-requests">Feedback and Feature Requests</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2020-2023, Unify.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

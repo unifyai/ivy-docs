@@ -1,0 +1,8 @@
+igamma
+======
+
+.. autofunction:: ivy.igamma
+
+.. autoskippablemethod:: ivy.Array.igamma
+
+.. autoskippablemethod:: ivy.Container.igamma

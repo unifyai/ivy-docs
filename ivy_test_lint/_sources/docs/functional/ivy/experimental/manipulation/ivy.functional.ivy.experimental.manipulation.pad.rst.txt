@@ -1,0 +1,8 @@
+pad
+===
+
+.. autofunction:: ivy.pad
+
+.. autoskippablemethod:: ivy.Array.pad
+
+.. autoskippablemethod:: ivy.Container.pad

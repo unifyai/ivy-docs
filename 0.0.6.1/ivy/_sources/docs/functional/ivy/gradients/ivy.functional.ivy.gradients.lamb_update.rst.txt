@@ -1,0 +1,8 @@
+lamb\_update
+============
+
+.. autofunction:: ivy.lamb_update
+
+.. autoskippablemethod:: ivy.Array.lamb_update
+
+.. autoskippablemethod:: ivy.Container.lamb_update

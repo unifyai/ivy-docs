@@ -1,0 +1,8 @@
+argsort
+=======
+
+.. autofunction:: ivy.argsort
+
+.. autoskippablemethod:: ivy.Array.argsort
+
+.. autoskippablemethod:: ivy.Container.argsort

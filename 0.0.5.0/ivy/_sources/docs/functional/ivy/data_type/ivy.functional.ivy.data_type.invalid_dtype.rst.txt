@@ -1,0 +1,8 @@
+invalid\_dtype
+==============
+
+.. autofunction:: ivy.invalid_dtype
+
+.. autoskippablemethod:: ivy.Array.invalid_dtype
+
+.. autoskippablemethod:: ivy.Container.invalid_dtype

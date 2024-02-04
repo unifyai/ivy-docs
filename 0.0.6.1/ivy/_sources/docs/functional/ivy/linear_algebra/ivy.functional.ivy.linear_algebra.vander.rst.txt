@@ -1,0 +1,8 @@
+vander
+======
+
+.. autofunction:: ivy.vander
+
+.. autoskippablemethod:: ivy.Array.vander
+
+.. autoskippablemethod:: ivy.Container.vander

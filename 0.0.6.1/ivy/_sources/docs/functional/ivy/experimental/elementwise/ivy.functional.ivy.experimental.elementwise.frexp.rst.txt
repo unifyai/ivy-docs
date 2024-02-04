@@ -1,0 +1,8 @@
+frexp
+=====
+
+.. autofunction:: ivy.frexp
+
+.. autoskippablemethod:: ivy.Array.frexp
+
+.. autoskippablemethod:: ivy.Container.frexp

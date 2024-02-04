@@ -1,0 +1,8 @@
+sum
+===
+
+.. autofunction:: ivy.sum
+
+.. autoskippablemethod:: ivy.Array.sum
+
+.. autoskippablemethod:: ivy.Container.sum

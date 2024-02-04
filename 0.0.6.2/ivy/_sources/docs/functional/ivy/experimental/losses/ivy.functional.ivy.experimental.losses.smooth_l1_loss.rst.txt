@@ -1,0 +1,8 @@
+smooth\_l1\_loss
+================
+
+.. autofunction:: ivy.smooth_l1_loss
+
+.. autoskippablemethod:: ivy.Array.smooth_l1_loss
+
+.. autoskippablemethod:: ivy.Container.smooth_l1_loss

@@ -1,0 +1,8 @@
+hardswish
+=========
+
+.. autofunction:: ivy.hardswish
+
+.. autoskippablemethod:: ivy.Array.hardswish
+
+.. autoskippablemethod:: ivy.Container.hardswish

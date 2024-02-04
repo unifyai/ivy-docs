@@ -1,0 +1,8 @@
+softshrink
+==========
+
+.. autofunction:: ivy.softshrink
+
+.. autoskippablemethod:: ivy.Array.softshrink
+
+.. autoskippablemethod:: ivy.Container.softshrink

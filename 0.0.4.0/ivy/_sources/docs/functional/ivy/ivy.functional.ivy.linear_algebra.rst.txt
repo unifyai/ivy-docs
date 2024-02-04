@@ -1,0 +1,178 @@
+Linear algebra
+==============
+
+
+.. autosummary::
+   :toctree: linear_algebra
+   :template: functional_module.rst
+   :hide-table:
+   :recursive:
+
+   
+   ivy.functional.ivy.linear_algebra.cholesky
+   
+   
+   ivy.functional.ivy.linear_algebra.cross
+   
+   
+   ivy.functional.ivy.linear_algebra.det
+   
+   
+   ivy.functional.ivy.linear_algebra.diag
+   
+   
+   ivy.functional.ivy.linear_algebra.diagonal
+   
+   
+   ivy.functional.ivy.linear_algebra.eig
+   
+   
+   ivy.functional.ivy.linear_algebra.eigh
+   
+   
+   ivy.functional.ivy.linear_algebra.eigvalsh
+   
+   
+   ivy.functional.ivy.linear_algebra.inner
+   
+   
+   ivy.functional.ivy.linear_algebra.inv
+   
+   
+   ivy.functional.ivy.linear_algebra.lu_factor
+   
+   
+   ivy.functional.ivy.linear_algebra.matmul
+   
+   
+   ivy.functional.ivy.linear_algebra.matrix_norm
+   
+   
+   ivy.functional.ivy.linear_algebra.matrix_power
+   
+   
+   ivy.functional.ivy.linear_algebra.matrix_rank
+   
+   
+   ivy.functional.ivy.linear_algebra.matrix_transpose
+   
+   
+   ivy.functional.ivy.linear_algebra.outer
+   
+   
+   ivy.functional.ivy.linear_algebra.pinv
+   
+   
+   ivy.functional.ivy.linear_algebra.qr
+   
+   
+   ivy.functional.ivy.linear_algebra.slogdet
+   
+   
+   ivy.functional.ivy.linear_algebra.solve
+   
+   
+   ivy.functional.ivy.linear_algebra.svd
+   
+   
+   ivy.functional.ivy.linear_algebra.svdvals
+   
+   
+   ivy.functional.ivy.linear_algebra.tensordot
+   
+   
+   ivy.functional.ivy.linear_algebra.tensorsolve
+   
+   
+   ivy.functional.ivy.linear_algebra.trace
+   
+   
+   ivy.functional.ivy.linear_algebra.vander
+   
+   
+   ivy.functional.ivy.linear_algebra.vecdot
+   
+   
+   ivy.functional.ivy.linear_algebra.vector_norm
+   
+   
+   ivy.functional.ivy.linear_algebra.vector_to_skew_symmetric_matrix
+   
+
+
+
+
+.. automodule:: ivy.functional.ivy.linear_algebra
+   :special-members: __init__
+   :show-inheritance:
+
+
+
+
+.. autofunction:: ivy.cholesky
+
+.. autofunction:: ivy.cross
+
+.. autofunction:: ivy.det
+
+.. autofunction:: ivy.diag
+
+.. autofunction:: ivy.diagonal
+
+.. autofunction:: ivy.eig
+
+.. autofunction:: ivy.eigh
+
+.. autofunction:: ivy.eigvalsh
+
+.. autofunction:: ivy.inner
+
+.. autofunction:: ivy.inv
+
+.. autofunction:: ivy.lu_factor
+
+.. autofunction:: ivy.matmul
+
+.. autofunction:: ivy.matrix_norm
+
+.. autofunction:: ivy.matrix_power
+
+.. autofunction:: ivy.matrix_rank
+
+.. autofunction:: ivy.matrix_transpose
+
+.. autofunction:: ivy.outer
+
+.. autofunction:: ivy.pinv
+
+.. autofunction:: ivy.qr
+
+.. autofunction:: ivy.slogdet
+
+.. autofunction:: ivy.solve
+
+.. autofunction:: ivy.svd
+
+.. autofunction:: ivy.svdvals
+
+.. autofunction:: ivy.tensordot
+
+.. autofunction:: ivy.tensorsolve
+
+.. autofunction:: ivy.trace
+
+.. autofunction:: ivy.vander
+
+.. autofunction:: ivy.vecdot
+
+.. autofunction:: ivy.vector_norm
+
+.. autofunction:: ivy.vector_to_skew_symmetric_matrix
+
+
+
+
+
+
+
+.. discussion-links:: ivy.functional.ivy.linear_algebra

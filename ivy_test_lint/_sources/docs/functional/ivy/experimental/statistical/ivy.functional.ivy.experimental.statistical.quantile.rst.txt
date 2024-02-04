@@ -1,0 +1,8 @@
+quantile
+========
+
+.. autofunction:: ivy.quantile
+
+.. autoskippablemethod:: ivy.Array.quantile
+
+.. autoskippablemethod:: ivy.Container.quantile

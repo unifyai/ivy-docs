@@ -1,0 +1,8 @@
+linspace
+========
+
+.. autofunction:: ivy.linspace
+
+.. autoskippablemethod:: ivy.Array.linspace
+
+.. autoskippablemethod:: ivy.Container.linspace

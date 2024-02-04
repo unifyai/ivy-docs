@@ -1,0 +1,8 @@
+nanprod
+=======
+
+.. autofunction:: ivy.nanprod
+
+.. autoskippablemethod:: ivy.Array.nanprod
+
+.. autoskippablemethod:: ivy.Container.nanprod

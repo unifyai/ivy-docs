@@ -1,0 +1,8 @@
+einops\_rearrange
+=================
+
+.. autofunction:: ivy.einops_rearrange
+
+.. autoskippablemethod:: ivy.Array.einops_rearrange
+
+.. autoskippablemethod:: ivy.Container.einops_rearrange

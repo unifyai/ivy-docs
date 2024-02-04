@@ -1,0 +1,8 @@
+tan
+===
+
+.. autofunction:: ivy.tan
+
+.. autoskippablemethod:: ivy.Array.tan
+
+.. autoskippablemethod:: ivy.Container.tan

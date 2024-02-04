@@ -1,0 +1,8 @@
+try\_else\_none
+===============
+
+.. autofunction:: ivy.try_else_none
+
+.. autoskippablemethod:: ivy.Array.try_else_none
+
+.. autoskippablemethod:: ivy.Container.try_else_none

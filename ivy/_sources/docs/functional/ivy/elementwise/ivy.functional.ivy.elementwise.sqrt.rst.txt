@@ -1,0 +1,8 @@
+sqrt
+====
+
+.. autofunction:: ivy.sqrt
+
+.. autoskippablemethod:: ivy.Array.sqrt
+
+.. autoskippablemethod:: ivy.Container.sqrt

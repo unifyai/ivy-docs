@@ -1,0 +1,8 @@
+nested\_argwhere
+================
+
+.. autofunction:: ivy.nested_argwhere
+
+.. autoskippablemethod:: ivy.Array.nested_argwhere
+
+.. autoskippablemethod:: ivy.Container.nested_argwhere

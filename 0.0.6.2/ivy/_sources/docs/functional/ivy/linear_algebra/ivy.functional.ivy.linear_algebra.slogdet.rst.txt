@@ -1,0 +1,8 @@
+slogdet
+=======
+
+.. autofunction:: ivy.slogdet
+
+.. autoskippablemethod:: ivy.Array.slogdet
+
+.. autoskippablemethod:: ivy.Container.slogdet

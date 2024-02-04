@@ -1,0 +1,8 @@
+std
+===
+
+.. autofunction:: ivy.std
+
+.. autoskippablemethod:: ivy.Array.std
+
+.. autoskippablemethod:: ivy.Container.std

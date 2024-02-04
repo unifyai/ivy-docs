@@ -1,0 +1,8 @@
+instance\_norm
+==============
+
+.. autofunction:: ivy.instance_norm
+
+.. autoskippablemethod:: ivy.Array.instance_norm
+
+.. autoskippablemethod:: ivy.Container.instance_norm

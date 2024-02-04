@@ -1,0 +1,8 @@
+gelu
+====
+
+.. autofunction:: ivy.gelu
+
+.. autoskippablemethod:: ivy.Array.gelu
+
+.. autoskippablemethod:: ivy.Container.gelu

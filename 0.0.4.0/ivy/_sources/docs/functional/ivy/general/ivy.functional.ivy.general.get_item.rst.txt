@@ -1,0 +1,8 @@
+get\_item
+=========
+
+.. autofunction:: ivy.get_item
+
+.. autoskippablemethod:: ivy.Array.get_item
+
+.. autoskippablemethod:: ivy.Container.get_item

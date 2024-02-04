@@ -1,0 +1,8 @@
+sinc
+====
+
+.. autofunction:: ivy.sinc
+
+.. autoskippablemethod:: ivy.Array.sinc
+
+.. autoskippablemethod:: ivy.Container.sinc

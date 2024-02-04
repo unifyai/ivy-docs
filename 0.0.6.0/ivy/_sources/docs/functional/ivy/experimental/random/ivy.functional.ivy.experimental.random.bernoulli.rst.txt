@@ -1,0 +1,8 @@
+bernoulli
+=========
+
+.. autofunction:: ivy.bernoulli
+
+.. autoskippablemethod:: ivy.Array.bernoulli
+
+.. autoskippablemethod:: ivy.Container.bernoulli

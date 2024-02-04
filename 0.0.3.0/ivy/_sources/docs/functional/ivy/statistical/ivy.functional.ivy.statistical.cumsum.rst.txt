@@ -1,0 +1,8 @@
+cumsum
+======
+
+.. autofunction:: ivy.cumsum
+
+.. autoskippablemethod:: ivy.Array.cumsum
+
+.. autoskippablemethod:: ivy.Container.cumsum

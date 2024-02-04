@@ -1,0 +1,8 @@
+higher\_order\_moment
+=====================
+
+.. autofunction:: ivy.higher_order_moment
+
+.. autoskippablemethod:: ivy.Array.higher_order_moment
+
+.. autoskippablemethod:: ivy.Container.higher_order_moment

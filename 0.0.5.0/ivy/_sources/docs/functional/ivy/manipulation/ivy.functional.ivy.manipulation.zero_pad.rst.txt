@@ -1,0 +1,8 @@
+zero\_pad
+=========
+
+.. autofunction:: ivy.zero_pad
+
+.. autoskippablemethod:: ivy.Array.zero_pad
+
+.. autoskippablemethod:: ivy.Container.zero_pad

@@ -1,0 +1,8 @@
+moveaxis
+========
+
+.. autofunction:: ivy.moveaxis
+
+.. autoskippablemethod:: ivy.Array.moveaxis
+
+.. autoskippablemethod:: ivy.Container.moveaxis

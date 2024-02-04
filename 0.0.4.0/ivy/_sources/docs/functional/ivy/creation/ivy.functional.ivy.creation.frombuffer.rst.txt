@@ -1,0 +1,8 @@
+frombuffer
+==========
+
+.. autofunction:: ivy.frombuffer
+
+.. autoskippablemethod:: ivy.Array.frombuffer
+
+.. autoskippablemethod:: ivy.Container.frombuffer

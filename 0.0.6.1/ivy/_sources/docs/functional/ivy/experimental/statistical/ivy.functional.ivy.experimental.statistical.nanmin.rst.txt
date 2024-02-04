@@ -1,0 +1,8 @@
+nanmin
+======
+
+.. autofunction:: ivy.nanmin
+
+.. autoskippablemethod:: ivy.Array.nanmin
+
+.. autoskippablemethod:: ivy.Container.nanmin

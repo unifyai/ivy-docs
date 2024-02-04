@@ -1,0 +1,8 @@
+unset\_exception\_trace\_mode
+=============================
+
+.. autofunction:: ivy.unset_exception_trace_mode
+
+.. autoskippablemethod:: ivy.Array.unset_exception_trace_mode
+
+.. autoskippablemethod:: ivy.Container.unset_exception_trace_mode

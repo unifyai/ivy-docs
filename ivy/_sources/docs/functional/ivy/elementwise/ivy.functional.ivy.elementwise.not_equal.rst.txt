@@ -1,0 +1,8 @@
+not\_equal
+==========
+
+.. autofunction:: ivy.not_equal
+
+.. autoskippablemethod:: ivy.Array.not_equal
+
+.. autoskippablemethod:: ivy.Container.not_equal

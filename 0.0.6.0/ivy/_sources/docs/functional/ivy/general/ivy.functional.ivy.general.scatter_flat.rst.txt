@@ -1,0 +1,8 @@
+scatter\_flat
+=============
+
+.. autofunction:: ivy.scatter_flat
+
+.. autoskippablemethod:: ivy.Array.scatter_flat
+
+.. autoskippablemethod:: ivy.Container.scatter_flat

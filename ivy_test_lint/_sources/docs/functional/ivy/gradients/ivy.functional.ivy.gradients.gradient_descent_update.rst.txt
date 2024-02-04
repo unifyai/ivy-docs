@@ -1,0 +1,8 @@
+gradient\_descent\_update
+=========================
+
+.. autofunction:: ivy.gradient_descent_update
+
+.. autoskippablemethod:: ivy.Array.gradient_descent_update
+
+.. autoskippablemethod:: ivy.Container.gradient_descent_update

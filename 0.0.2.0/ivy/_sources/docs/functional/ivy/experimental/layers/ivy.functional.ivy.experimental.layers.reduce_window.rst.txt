@@ -1,0 +1,8 @@
+reduce\_window
+==============
+
+.. autofunction:: ivy.reduce_window
+
+.. autoskippablemethod:: ivy.Array.reduce_window
+
+.. autoskippablemethod:: ivy.Container.reduce_window

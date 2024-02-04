@@ -1,0 +1,8 @@
+unique\_consecutive
+===================
+
+.. autofunction:: ivy.unique_consecutive
+
+.. autoskippablemethod:: ivy.Array.unique_consecutive
+
+.. autoskippablemethod:: ivy.Container.unique_consecutive

@@ -1,0 +1,8 @@
+conv3d
+======
+
+.. autofunction:: ivy.conv3d
+
+.. autoskippablemethod:: ivy.Array.conv3d
+
+.. autoskippablemethod:: ivy.Container.conv3d

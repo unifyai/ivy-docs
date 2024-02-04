@@ -1,0 +1,8 @@
+get\_all\_arrays\_in\_memory
+============================
+
+.. autofunction:: ivy.get_all_arrays_in_memory
+
+.. autoskippablemethod:: ivy.Array.get_all_arrays_in_memory
+
+.. autoskippablemethod:: ivy.Container.get_all_arrays_in_memory

@@ -1,0 +1,8 @@
+nearest\_interpolate
+====================
+
+.. autofunction:: ivy.nearest_interpolate
+
+.. autoskippablemethod:: ivy.Array.nearest_interpolate
+
+.. autoskippablemethod:: ivy.Container.nearest_interpolate

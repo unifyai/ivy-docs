@@ -1,0 +1,8 @@
+adjoint
+=======
+
+.. autofunction:: ivy.adjoint
+
+.. autoskippablemethod:: ivy.Array.adjoint
+
+.. autoskippablemethod:: ivy.Container.adjoint

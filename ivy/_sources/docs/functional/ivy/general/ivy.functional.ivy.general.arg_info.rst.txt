@@ -1,0 +1,8 @@
+arg\_info
+=========
+
+.. autofunction:: ivy.arg_info
+
+.. autoskippablemethod:: ivy.Array.arg_info
+
+.. autoskippablemethod:: ivy.Container.arg_info

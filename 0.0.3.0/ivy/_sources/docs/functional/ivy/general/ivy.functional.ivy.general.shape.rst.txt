@@ -1,0 +1,8 @@
+shape
+=====
+
+.. autofunction:: ivy.shape
+
+.. autoskippablemethod:: ivy.Array.shape
+
+.. autoskippablemethod:: ivy.Container.shape

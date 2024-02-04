@@ -1,0 +1,547 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Benchmarks &#8212; Ivy Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e2296dfd" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'concepts/benchmarks';</script>
+    <script src="../_static/js/kapa.ai.js?v=996880f3"></script>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Endpoints" href="../reference/endpoints.html" />
+    <link rel="prev" title="Providers" href="providers.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+   
+
+<a class="navbar-brand logo" href="https://unify.ai">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://uploads-ssl.webflow.com/643fb31f2ef62cf324fab8ca/65423c2ce1f61fda416b592c_logo_unify.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="https://assets-global.website-files.com/643fb31f2ef62cf324fab8ca/6546745c0b48a47df4098dec_logo_unify-white.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+<nav role="navigation" class="nav-menu">
+    <div class="menu-holder">
+        <div class="menu-link-holder">
+            
+                
+                    <a href="/hub" class="nav-link-header w-nav-link">Hub</a>
+                
+            
+                
+                    <a href="/framework" class="nav-link-header w-nav-link">Ivy</a>
+                
+            
+                
+                    <div class="nav-horizontal-bar">|</div>
+                
+            
+                
+                    <a href="/database" class="nav-link-header w-nav-link">Database</a>
+                
+            
+                
+                    <a href="/blog" class="nav-link-header w-nav-link">Blog</a>
+                
+            
+                
+                    <a href="https://discord.com/invite/sXyFF8tDtm" class="nav-link-header w-nav-link">Discord</a>
+                
+            </div>
+    </div>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+
+<nav role="navigation" class="nav-menu">
+    <div class="menu-holder">
+        <div class="menu-link-holder">
+            
+                
+                    <a href="/hub" class="nav-link-header w-nav-link">Hub</a>
+                
+            
+                
+                    <a href="/framework" class="nav-link-header w-nav-link">Ivy</a>
+                
+            
+                
+                    <div class="nav-horizontal-bar">|</div>
+                
+            
+                
+                    <a href="/database" class="nav-link-header w-nav-link">Database</a>
+                
+            
+                
+                    <a href="/blog" class="nav-link-header w-nav-link">Blog</a>
+                
+            
+                
+                    <a href="https://discord.com/invite/sXyFF8tDtm" class="nav-link-header w-nav-link">Discord</a>
+                
+            </div>
+    </div>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the Hub!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../home/getting_access.html">Getting Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../home/make_your_first_request.html">Make your First Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../home/pricing.html">Pricing and Credits</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="providers.html">Providers</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Benchmarks</a></li>
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/endpoints.html">Endpoints</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Benchmarks</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="benchmarks">
+<h1>Benchmarks<a class="headerlink" href="#benchmarks" title="Link to this heading">#</a></h1>
+<p>The main goal of the Hub is to allow you to use the endpoint (and model!) that better suits your use case. This is not a trivial decision to make, and therefore it needs to be made based on data.</p>
+<p>We have the goal of benchmarking every single inference endpoint exposing LLMs out there, so being transparent with the way we do these measurements is necessary to avoid unfair comparisons and objectiveness.</p>
+<p>That’s why we want to be crystal clear with our methodology ⬇️ and our code, which is available in <a class="reference external" href="https://github.com/unifyai/aibench-llm-endpoints">this repo</a>!</p>
+</section>
+<hr class="docutils" />
+<section id="design-principles">
+<h1>Design Principles<a class="headerlink" href="#design-principles" title="Link to this heading">#</a></h1>
+<ul class="simple">
+<li><p><strong>Community-driven:</strong> We invite everyone to audit or improve the logic and the code. We are building these benchmarks for the community, so contributions and discussions around them are more than welcome!</p></li>
+<li><p><strong>User-centric:</strong> The logic we use is subject to certain factors external to the model. In the case of publicly available endpoints, how different providers set up their infrastructure (e.g. autoscaling), or the amount of requests they are receiving at the moment of the benchmark will have an effect on the measurements. While these details may distort the efficiency and optimizations behind certain endpoints, they ultimately reflect in the experience for an external user. This benchmark is not designed to measure model performance internally in a controlled environment, but to measure performance from a user perspective</p></li>
+<li><p><strong>Model and Provider-agnostic:</strong> While some metrics are more relevant to certain scenarios (e.g. cold start time in model endpoints that scale to zero), we try to make as few assumptions as possible on the providers or technologies being benchmarked. We only assume that endpoints take a string as the input and return a streaming response.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="methodology">
+<h1>Methodology<a class="headerlink" href="#methodology" title="Link to this heading">#</a></h1>
+<section id="tokenizer">
+<h2>Tokenizer<a class="headerlink" href="#tokenizer" title="Link to this heading">#</a></h2>
+<p>To avoid biases towards any model-specific tokenizer, we calculate all metrics using the same tokenizer across different models. We have chosen the <cite>cl100k_base</cite> tokenizer from OpenAI’s <a class="reference external" href="https://github.com/openai/tiktoken">tiktoken</a> library for this since it’s MIT licensed and already widely adopted by the community.</p>
+</section>
+<section id="inputs-and-outputs">
+<h2>Inputs and Outputs<a class="headerlink" href="#inputs-and-outputs" title="Link to this heading">#</a></h2>
+<p>To fairly assess optimizations such as speculative decoding, we use real text as the input and avoid using randomly generated data. The length of the input affects prefill time and therefore can affect the responsiveness of the system. To account for this, we run the benchmark with two input regimes.</p>
+<ul class="simple">
+<li><p>Short inputs: Using sentences with an average length of 200 tokens and a standard deviation of 20.</p></li>
+<li><p>Long inputs: Using sentences with an average length of 1000 tokens and a standard deviation of 100.</p></li>
+</ul>
+<p>To build these clusters, we programmatically select sentences from <a class="reference external" href="https://huggingface.co/datasets/bookcorpus">BookCorpus</a> and create two subsets of it. For instruct/chat models to answer appropriately and ensure a long enough response, we preface each prompt with <code class="code docutils literal notranslate"><span class="pre">Repeat</span> <span class="pre">the</span> <span class="pre">following</span> <span class="pre">lines</span> <span class="pre">&lt;#&gt;</span> <span class="pre">times</span> <span class="pre">without</span> <span class="pre">generating</span> <span class="pre">the</span> <span class="pre">EOS</span> <span class="pre">token</span> <span class="pre">earlier</span> <span class="pre">than</span> <span class="pre">that</span></code>, where <code class="code docutils literal notranslate"><span class="pre">&lt;#&gt;</span></code> is randomly sampled.</p>
+<p>For the outputs, we use randomized discrete values from the same distributions (i.e. N(200, 20) for short inputs and N(1000, 100) for long ones) to cap the number of tokens in the output. This ensures variable output length, which is necessary to consider algorithms such as Paged Attention or Dynamic Batching.</p>
+<p>When running one benchmark across different endpoints, we seed each runner with the same initial value, so that the inputs are the same for all endpoints.</p>
+</section>
+<section id="computation">
+<h2>Computation<a class="headerlink" href="#computation" title="Link to this heading">#</a></h2>
+<p>To execute the benchmarks, we run three processes periodically from three different regions: <strong>Hong Kong, Belgium and Iowa</strong>. Each one of these processes is triggered every three hours and benchmarks every available endpoint.</p>
+<p>To evaluate how endpoints respond to higher-volume traffic, we conduct the benchmarks under two different load scenarios: <strong>1 single request and 20 concurrent requests</strong>..</p>
+<p>Accounting for the different input policies, we run a total of 4 benchmarks for each endpoint every time a region benchmark is triggered.</p>
+</section>
+<section id="metrics">
+<h2>Metrics<a class="headerlink" href="#metrics" title="Link to this heading">#</a></h2>
+<p>Several key metrics are captured and calculated during the benchmarking process:</p>
+<ul class="simple">
+<li><p><strong>Time to First Token (TTFT):</strong> Time between request initiation and the arrival of the first streaming response packet. TTFT directly reflects the prompt processing speed, offering insights into the efficiency of the model’s initial response. A lower TTFT signifies quicker engagement, which is crucial for applications that require dynamic interactions or real-time feedback.</p></li>
+<li><p><strong>End to End Latency:</strong> Time between request initiation and the arrival of the final packet in the streaming response. This metric provides a holistic view of the response time, including processing and transmission.</p></li>
+<li><p><strong>Inter Token Latency (ITL):</strong> Average time between consecutive tokens in the response. We compute this as <code class="code docutils literal notranslate"><span class="pre">(End</span> <span class="pre">to</span> <span class="pre">End</span> <span class="pre">Latency)</span> <span class="pre">/</span> <span class="pre">(Output</span> <span class="pre">Tokens</span> <span class="pre">-</span> <span class="pre">1)</span></code>.  ITL provides valuable information about the pacing of token generation and the overall temporal dynamics within the model’s output. As expected, a lower ITL signifies a more cohesive and fluid generation of tokens, which contributes to a more seamless and human-like interaction with the model.</p></li>
+<li><p><strong>Number of Output Tokens per Second:</strong> Relation between the number of tokens generated and the time taken. We don’t consider the TTFT here, so this is equivalent to <code class="code docutils literal notranslate"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">ITL</span></code>. In this case, a higher Number of Output Tokens per Second means a faster and more productive model output. It’s important to note that this is <strong>not</strong> a measurement of the throughput of the inference server since it doesn’t account for batched inputs.</p></li>
+<li><p><strong>Cold Start:</strong> Time taken for a server to boot up in environments where the number of active instances can get to zero. We consider a threshold of 15 seconds. What this means is that we do an initial “dumb” request to the endpoint and record its TTFT. If this TTFT is greater than 15 seconds, we measure the time it takes to get the second token. If the ratio between the TTFT and first ITL measurements is at least 10:1, we consider the TTFT to be Cold Start time. Once this process has finished. We start the benchmark process in the warmed-up instance. This metric reflects the time it takes for the system to be ready for processing requests, rendering it essential for users relying on prompt and consistent model responses, allowing you to account for any potential initialization delays in the responses and ensuring a more accurate expectation of the model’s responsiveness.</p></li>
+<li><p><strong>Cost</strong>: Last but not least, we present information about the cost of querying the model. This is usually different for the input tokens and the response tokens, so it can be beneficial to choose different models depending on the end task. As an example, to summarize a document, a provider with lower price in the input tokens would be better, even if it comes with a slightly higher price in the output. On the other hand, if you want to generate long-format content, a provider with a lower price per generated token will be the most appropriate option.</p></li>
+</ul>
+</section>
+<section id="data-presentation">
+<h2>Data Presentation<a class="headerlink" href="#data-presentation" title="Link to this heading">#</a></h2>
+<p>When aggregating metrics, particularly in benchmark regimes with multiple concurrent requests, we calculate and present the P90 (90th percentile) value from the set of measurements. We choose the P90 to reduce the influence of extreme values and provide a reliable snapshot of the model’s performance.</p>
+<p>When applicable, aggregated data is shown both in the plots and the benchmark tables.</p>
+<p>Additionally, we also include a MA5 view (Moving Average of the last 5 measurements) in the graphs. This smoothing technique helps mitigate short-term fluctuations and should provide a clearer trend representation over time.</p>
+<section id="not-computed-no-metrics-are-available-yet">
+<h3>Not computed / No metrics are available yet<a class="headerlink" href="#not-computed-no-metrics-are-available-yet" title="Link to this heading">#</a></h3>
+<p>In some cases, you will find <code class="code docutils literal notranslate"><span class="pre">Not</span> <span class="pre">computed</span></code> instead of a value, or even a <code class="code docutils literal notranslate"><span class="pre">No</span> <span class="pre">metrics</span> <span class="pre">are</span> <span class="pre">available</span> <span class="pre">yet</span></code> message instead of the benchmark data. This basically means that we don’t have valid data to show you. Most of the time, this means we have hit a rate limit or there is an internal issue. We try to stay on top of these messages and we are probably working on (1) getting our quotas increased for the specific endpoint/provider or (2) fixing the problem. We’ll try to get you the data ASAP!</p>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="considerations-and-limitations">
+<h1>Considerations and Limitations<a class="headerlink" href="#considerations-and-limitations" title="Link to this heading">#</a></h1>
+<p>We try to tackle some of the more significant limitations of benchmarking inference endpoints. For example, network latency, by running the benchmarks in different regions; or unreliable point-measurements, by continuously benchmarking the endpoints and plotting their trends over time.</p>
+<p>However, there are still some relevant considerations to have in mind. Our methodology at the moment is solely focused on performance, which means that we don’t look at the output of the models. Nonetheless, even accounting for the public-facing nature of these endpoints (no gibberish allowed!), there might be some implementation differences that affect the output quality, such as quantization/compression of the models, different context window sizes, or different speculative decoding models, among others. We are working towards mitigating this as well, so stay tuned!</p>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="providers.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Providers</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../reference/endpoints.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Endpoints</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Benchmarks</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#design-principles">Design Principles</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#methodology">Methodology</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenizer">Tokenizer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inputs-and-outputs">Inputs and Outputs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computation">Computation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metrics">Metrics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-presentation">Data Presentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#not-computed-no-metrics-are-available-yet">Not computed / No metrics are available yet</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#considerations-and-limitations">Considerations and Limitations</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2020-2023, Unify.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

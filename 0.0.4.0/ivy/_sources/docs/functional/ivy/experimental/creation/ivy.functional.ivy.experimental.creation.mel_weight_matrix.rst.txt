@@ -1,0 +1,8 @@
+mel\_weight\_matrix
+===================
+
+.. autofunction:: ivy.mel_weight_matrix
+
+.. autoskippablemethod:: ivy.Array.mel_weight_matrix
+
+.. autoskippablemethod:: ivy.Container.mel_weight_matrix

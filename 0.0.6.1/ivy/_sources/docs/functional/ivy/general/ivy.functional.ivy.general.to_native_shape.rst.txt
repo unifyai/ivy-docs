@@ -1,0 +1,8 @@
+to\_native\_shape
+=================
+
+.. autofunction:: ivy.to_native_shape
+
+.. autoskippablemethod:: ivy.Array.to_native_shape
+
+.. autoskippablemethod:: ivy.Container.to_native_shape

@@ -1,0 +1,8 @@
+reduce
+======
+
+.. autofunction:: ivy.reduce
+
+.. autoskippablemethod:: ivy.Array.reduce
+
+.. autoskippablemethod:: ivy.Container.reduce

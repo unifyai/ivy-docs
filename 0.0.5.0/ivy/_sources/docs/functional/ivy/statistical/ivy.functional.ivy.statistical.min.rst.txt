@@ -1,0 +1,8 @@
+min
+===
+
+.. autofunction:: ivy.min
+
+.. autoskippablemethod:: ivy.Array.min
+
+.. autoskippablemethod:: ivy.Container.min

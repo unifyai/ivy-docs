@@ -1,0 +1,8 @@
+prod
+====
+
+.. autofunction:: ivy.prod
+
+.. autoskippablemethod:: ivy.Array.prod
+
+.. autoskippablemethod:: ivy.Container.prod

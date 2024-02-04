@@ -1,0 +1,8 @@
+log\_softmax
+============
+
+.. autofunction:: ivy.log_softmax
+
+.. autoskippablemethod:: ivy.Array.log_softmax
+
+.. autoskippablemethod:: ivy.Container.log_softmax

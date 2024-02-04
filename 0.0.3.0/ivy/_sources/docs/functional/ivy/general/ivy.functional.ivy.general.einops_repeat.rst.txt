@@ -1,0 +1,8 @@
+einops\_repeat
+==============
+
+.. autofunction:: ivy.einops_repeat
+
+.. autoskippablemethod:: ivy.Array.einops_repeat
+
+.. autoskippablemethod:: ivy.Container.einops_repeat

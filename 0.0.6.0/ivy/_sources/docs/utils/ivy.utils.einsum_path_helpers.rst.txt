@@ -1,0 +1,16 @@
+Einsum path helpers
+===================
+
+
+
+
+.. automodule:: ivy.utils.einsum_path_helpers
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: ivy.utils.einsum_path_helpers

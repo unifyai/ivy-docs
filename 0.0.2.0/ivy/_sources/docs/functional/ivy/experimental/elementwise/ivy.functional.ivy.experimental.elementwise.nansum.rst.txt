@@ -1,0 +1,8 @@
+nansum
+======
+
+.. autofunction:: ivy.nansum
+
+.. autoskippablemethod:: ivy.Array.nansum
+
+.. autoskippablemethod:: ivy.Container.nansum

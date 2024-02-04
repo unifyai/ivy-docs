@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Make your First Request &#8212; Ivy Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e2296dfd" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'home/make_your_first_request';</script>
+    <script src="../_static/js/kapa.ai.js?v=996880f3"></script>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Pricing and Credits" href="pricing.html" />
+    <link rel="prev" title="Getting Access" href="getting_access.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+   
+
+<a class="navbar-brand logo" href="https://unify.ai">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://uploads-ssl.webflow.com/643fb31f2ef62cf324fab8ca/65423c2ce1f61fda416b592c_logo_unify.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="https://assets-global.website-files.com/643fb31f2ef62cf324fab8ca/6546745c0b48a47df4098dec_logo_unify-white.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+<nav role="navigation" class="nav-menu">
+    <div class="menu-holder">
+        <div class="menu-link-holder">
+            
+                
+                    <a href="/hub" class="nav-link-header w-nav-link">Hub</a>
+                
+            
+                
+                    <a href="/framework" class="nav-link-header w-nav-link">Ivy</a>
+                
+            
+                
+                    <div class="nav-horizontal-bar">|</div>
+                
+            
+                
+                    <a href="/database" class="nav-link-header w-nav-link">Database</a>
+                
+            
+                
+                    <a href="/blog" class="nav-link-header w-nav-link">Blog</a>
+                
+            
+                
+                    <a href="https://discord.com/invite/sXyFF8tDtm" class="nav-link-header w-nav-link">Discord</a>
+                
+            </div>
+    </div>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+
+<nav role="navigation" class="nav-menu">
+    <div class="menu-holder">
+        <div class="menu-link-holder">
+            
+                
+                    <a href="/hub" class="nav-link-header w-nav-link">Hub</a>
+                
+            
+                
+                    <a href="/framework" class="nav-link-header w-nav-link">Ivy</a>
+                
+            
+                
+                    <div class="nav-horizontal-bar">|</div>
+                
+            
+                
+                    <a href="/database" class="nav-link-header w-nav-link">Database</a>
+                
+            
+                
+                    <a href="/blog" class="nav-link-header w-nav-link">Blog</a>
+                
+            
+                
+                    <a href="https://discord.com/invite/sXyFF8tDtm" class="nav-link-header w-nav-link">Discord</a>
+                
+            </div>
+    </div>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the Hub!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_access.html">Getting Access</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Make your First Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pricing.html">Pricing and Credits</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../concepts/models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/providers.html">Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/benchmarks.html">Benchmarks</a></li>
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../reference/endpoints.html">Endpoints</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Make your First Request</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="make-your-first-request">
+<h1>Make your First Request<a class="headerlink" href="#make-your-first-request" title="Link to this heading">#</a></h1>
+<p>Before starting to make requests, you will need two things:</p>
+<ol class="arabic simple">
+<li><p><strong>A Unify API Key</strong>. If you don’t have one yet, you can follow the instructions in
+<a class="reference external" href="https://unify.ai/docs/hub/home/getting_access.html">Getting Access</a> to generate it.</p></li>
+<li><p><strong>A model ID</strong>. You can find the model you want to query using the
+<a class="reference external" href="https://unify.ai/hub">Hub web interface.</a> For this example, we will use the <code class="code docutils literal notranslate"><span class="pre">llama-2-7b-chat</span></code>
+model, hosted in <code class="code docutils literal notranslate"><span class="pre">anyscale</span></code>. We (Unify) are managing this model, so we can refer to it using only its
+name (as explained <a class="reference external" href="https://unify.ai/docs/hub/concepts/models.html">here!</a>)</p></li>
+</ol>
+<section id="using-the-inference-endpoint">
+<h2>Using the <code class="code docutils literal notranslate"><span class="pre">inference</span></code> Endpoint<a class="headerlink" href="#using-the-inference-endpoint" title="Link to this heading">#</a></h2>
+<p>All models, independently of the task, can be queried through the <code class="code docutils literal notranslate"><span class="pre">inference</span></code> endpoint. The API reference for this is
+<a class="reference external" href="https://unify.ai/docs/hub/reference/endpoints.html#post-query">here.</a></p>
+<p>In this case, you will have to specify the <code class="code docutils literal notranslate"><span class="pre">model</span></code> and the <code class="code docutils literal notranslate"><span class="pre">provider</span></code> that you want to use. In our case,
+this are <code class="code docutils literal notranslate"><span class="pre">llama-2-7b-chat</span></code> and <code class="code docutils literal notranslate"><span class="pre">anyscale</span></code>. Additionaly, you’ll have to pass the model <code class="code docutils literal notranslate"><span class="pre">arguments</span></code>.
+For each model, the available <code class="code docutils literal notranslate"><span class="pre">arguments</span></code> may vary, you can always double check them in the corresponding model page.</p>
+<p>In the header, you will need to include the <strong>Unify API Key</strong> that is associated with your account.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is just an HTTP POST request, you can interact with the Hub using your preferred language!</p>
+</div>
+<p>Using <strong>cURL</strong>, the request would look like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://api.unify.ai/v0/inference&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;accept: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">        &quot;model&quot;: &quot;llama-2-7b-chat&quot;,</span>
+<span class="s1">        &quot;provider&quot;: &quot;anyscale&quot;,</span>
+<span class="s1">        &quot;arguments&quot;: {</span>
+<span class="s1">            &quot;messages&quot;: [{</span>
+<span class="s1">                &quot;role&quot;: &quot;user&quot;,</span>
+<span class="s1">                &quot;content&quot;: &quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
+<span class="s1">            }],</span>
+<span class="s1">            &quot;temperature&quot;: 0.5,</span>
+<span class="s1">            &quot;max_tokens&quot;: 1000,</span>
+<span class="s1">            &quot;stream&quot;: true</span>
+<span class="s1">        }</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>If you are using <strong>Python</strong>, you can use the <code class="code docutils literal notranslate"><span class="pre">requests</span></code> library to query the model:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.unify.ai/v0/inference&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer YOUR_API_KEY&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;llama-2-7b-chat&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;provider&quot;</span><span class="p">:</span> <span class="s2">&quot;anyscale&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
+        <span class="p">}],</span>
+        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+        <span class="s2">&quot;max_tokens&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="s2">&quot;stream&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">chunk</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="using-the-openai-api-format">
+<h2>Using the OpenAI API Format<a class="headerlink" href="#using-the-openai-api-format" title="Link to this heading">#</a></h2>
+<p>We also support the OpenAI API format for <code class="code docutils literal notranslate"><span class="pre">text-generation</span></code> models. More specifically, the <code class="code docutils literal notranslate"><span class="pre">/chat/completions</span></code> endpoint.
+The docs for this endpoint are available <a class="reference external" href="https://unify.ai/docs/hub/reference/endpoints.html#post-chat-completions">here.</a></p>
+<p>This API format wouldn’t normally allow you to choose between providers for a given model. To bypass this limitation, the model
+name should have the format <code class="code docutils literal notranslate"><span class="pre">&lt;uploaded_by&gt;/&lt;model_name&gt;&#64;&lt;provider_name&gt;</span></code>. For example, if <code class="code docutils literal notranslate"><span class="pre">john_doe</span></code> uploads a
+<code class="code docutils literal notranslate"><span class="pre">llama-2-7b-chat</span></code> model and we want to query the endpoint that has been deployed in replicate, we would have to use
+<code class="code docutils literal notranslate"><span class="pre">john_doe/llama-2-7b-chat&#64;replicate</span></code> as the model id in the OpenAI API. In this case, there is no username, so we will
+simply use <code class="code docutils literal notranslate"><span class="pre">llama-2-7b-chat&#64;replicate</span></code>.</p>
+<p>This is again just an HTTP endpoint, so you can query it using <strong>cURL</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s1">&#39;https://api.unify.ai/v0/chat/completions&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer YOUR_API_KEY&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;model&quot;: &quot;llama-2-7b-chat@anyscale&quot;,</span>
+<span class="s1">        &quot;messages&quot;: [{</span>
+<span class="s1">            &quot;role&quot;: &quot;user&quot;,</span>
+<span class="s1">            &quot;content&quot;: &quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
+<span class="s1">        }],</span>
+<span class="s1">        &quot;stream&quot;: true</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>Or using <strong>Python</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.unify.ai/v0/chat/completions&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer YOUR_API_KEY&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;llama-2-7b-chat@anyscale&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
+        <span class="p">}],</span>
+    <span class="s2">&quot;stream&quot;</span><span class="p">:</span> <span class="kc">True</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">chunk</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Or any other language!</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="getting_access.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Getting Access</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="pricing.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Pricing and Credits</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-inference-endpoint">Using the <code class="code docutils literal notranslate"><span class="pre">inference</span></code> Endpoint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-openai-api-format">Using the OpenAI API Format</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2020-2023, Unify.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+get\_referrers\_recursive
+=========================
+
+.. autofunction:: ivy.get_referrers_recursive
+
+.. autoskippablemethod:: ivy.Array.get_referrers_recursive
+
+.. autoskippablemethod:: ivy.Container.get_referrers_recursive

@@ -1,0 +1,8 @@
+is\_uint\_dtype
+===============
+
+.. autofunction:: ivy.is_uint_dtype
+
+.. autoskippablemethod:: ivy.Array.is_uint_dtype
+
+.. autoskippablemethod:: ivy.Container.is_uint_dtype

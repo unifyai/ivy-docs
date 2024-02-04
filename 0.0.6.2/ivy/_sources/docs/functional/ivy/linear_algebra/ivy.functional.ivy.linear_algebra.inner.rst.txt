@@ -1,0 +1,8 @@
+inner
+=====
+
+.. autofunction:: ivy.inner
+
+.. autoskippablemethod:: ivy.Array.inner
+
+.. autoskippablemethod:: ivy.Container.inner

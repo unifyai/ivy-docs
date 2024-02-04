@@ -1,0 +1,8 @@
+vjp
+===
+
+.. autofunction:: ivy.vjp
+
+.. autoskippablemethod:: ivy.Array.vjp
+
+.. autoskippablemethod:: ivy.Container.vjp

@@ -1,0 +1,8 @@
+multi\_dot
+==========
+
+.. autofunction:: ivy.multi_dot
+
+.. autoskippablemethod:: ivy.Array.multi_dot
+
+.. autoskippablemethod:: ivy.Container.multi_dot

@@ -1,0 +1,8 @@
+unfold
+======
+
+.. autofunction:: ivy.unfold
+
+.. autoskippablemethod:: ivy.Array.unfold
+
+.. autoskippablemethod:: ivy.Container.unfold

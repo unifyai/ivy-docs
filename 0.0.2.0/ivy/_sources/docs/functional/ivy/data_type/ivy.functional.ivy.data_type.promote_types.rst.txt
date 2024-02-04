@@ -1,0 +1,8 @@
+promote\_types
+==============
+
+.. autofunction:: ivy.promote_types
+
+.. autoskippablemethod:: ivy.Array.promote_types
+
+.. autoskippablemethod:: ivy.Container.promote_types

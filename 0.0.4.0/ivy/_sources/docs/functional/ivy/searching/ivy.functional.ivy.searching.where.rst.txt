@@ -1,0 +1,8 @@
+where
+=====
+
+.. autofunction:: ivy.where
+
+.. autoskippablemethod:: ivy.Array.where
+
+.. autoskippablemethod:: ivy.Container.where

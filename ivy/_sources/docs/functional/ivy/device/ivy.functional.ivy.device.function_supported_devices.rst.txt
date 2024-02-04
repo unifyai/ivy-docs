@@ -1,0 +1,8 @@
+function\_supported\_devices
+============================
+
+.. autofunction:: ivy.function_supported_devices
+
+.. autoskippablemethod:: ivy.Array.function_supported_devices
+
+.. autoskippablemethod:: ivy.Container.function_supported_devices

@@ -1,0 +1,8 @@
+greater
+=======
+
+.. autofunction:: ivy.greater
+
+.. autoskippablemethod:: ivy.Array.greater
+
+.. autoskippablemethod:: ivy.Container.greater

@@ -1,0 +1,8 @@
+handle\_soft\_device\_variable
+==============================
+
+.. autofunction:: ivy.handle_soft_device_variable
+
+.. autoskippablemethod:: ivy.Array.handle_soft_device_variable
+
+.. autoskippablemethod:: ivy.Container.handle_soft_device_variable

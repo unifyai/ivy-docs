@@ -1,0 +1,8 @@
+sigmoid
+=======
+
+.. autofunction:: ivy.sigmoid
+
+.. autoskippablemethod:: ivy.Array.sigmoid
+
+.. autoskippablemethod:: ivy.Container.sigmoid

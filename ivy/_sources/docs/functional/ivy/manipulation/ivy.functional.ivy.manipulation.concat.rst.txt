@@ -1,0 +1,8 @@
+concat
+======
+
+.. autofunction:: ivy.concat
+
+.. autoskippablemethod:: ivy.Array.concat
+
+.. autoskippablemethod:: ivy.Container.concat

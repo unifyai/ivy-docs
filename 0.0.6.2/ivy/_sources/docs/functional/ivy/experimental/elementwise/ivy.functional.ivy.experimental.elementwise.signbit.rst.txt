@@ -1,0 +1,8 @@
+signbit
+=======
+
+.. autofunction:: ivy.signbit
+
+.. autoskippablemethod:: ivy.Array.signbit
+
+.. autoskippablemethod:: ivy.Container.signbit

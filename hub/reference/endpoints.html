@@ -1,0 +1,664 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Endpoints &#8212; Ivy Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=e2296dfd" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script src="../_static/documentation_options.js?v=f26bd01d"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'reference/endpoints';</script>
+    <script src="../_static/js/kapa.ai.js?v=996880f3"></script>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Benchmarks" href="../concepts/benchmarks.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  <div class="navbar-header-items__start">
+    
+      <div class="navbar-item">
+   
+
+<a class="navbar-brand logo" href="https://unify.ai">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://uploads-ssl.webflow.com/643fb31f2ef62cf324fab8ca/65423c2ce1f61fda416b592c_logo_unify.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="https://assets-global.website-files.com/643fb31f2ef62cf324fab8ca/6546745c0b48a47df4098dec_logo_unify-white.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+
+<nav role="navigation" class="nav-menu">
+    <div class="menu-holder">
+        <div class="menu-link-holder">
+            
+                
+                    <a href="/hub" class="nav-link-header w-nav-link">Hub</a>
+                
+            
+                
+                    <a href="/framework" class="nav-link-header w-nav-link">Ivy</a>
+                
+            
+                
+                    <div class="nav-horizontal-bar">|</div>
+                
+            
+                
+                    <a href="/database" class="nav-link-header w-nav-link">Database</a>
+                
+            
+                
+                    <a href="/blog" class="nav-link-header w-nav-link">Blog</a>
+                
+            
+                
+                    <a href="https://discord.com/invite/sXyFF8tDtm" class="nav-link-header w-nav-link">Discord</a>
+                
+            </div>
+    </div>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+        </div>
+      
+      
+        <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+
+<nav role="navigation" class="nav-menu">
+    <div class="menu-holder">
+        <div class="menu-link-holder">
+            
+                
+                    <a href="/hub" class="nav-link-header w-nav-link">Hub</a>
+                
+            
+                
+                    <a href="/framework" class="nav-link-header w-nav-link">Ivy</a>
+                
+            
+                
+                    <div class="nav-horizontal-bar">|</div>
+                
+            
+                
+                    <a href="/database" class="nav-link-header w-nav-link">Database</a>
+                
+            
+                
+                    <a href="/blog" class="nav-link-header w-nav-link">Blog</a>
+                
+            
+                
+                    <a href="https://discord.com/invite/sXyFF8tDtm" class="nav-link-header w-nav-link">Discord</a>
+                
+            </div>
+    </div>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the Hub!</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../home/getting_access.html">Getting Access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../home/make_your_first_request.html">Make your First Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../home/pricing.html">Pricing and Credits</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../concepts/models.html">Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/providers.html">Providers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/benchmarks.html">Benchmarks</a></li>
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API reference</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Endpoints</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumbs">
+  <ul class="bd-breadcrumbs" role="navigation" aria-label="Breadcrumb">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Endpoints</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="endpoints">
+<h1>Endpoints<a class="headerlink" href="#endpoints" title="Link to this heading">#</a></h1>
+<p>Welcome to the Endpoints API reference!
+This page is your go-to resource when it comes to learning about the different endpoints that allow you to
+interact with the Hub.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To use the endpoints you will need an API Key. If you don’t have one yet, you can go through the instructions in
+<a class="reference external" href="https://unify.ai/docs/hub/home/getting_access.html">this page</a>.</p>
+</div>
+<hr class="docutils" />
+<section id="get-get-credits">
+<h2>GET /get_credits<a class="headerlink" href="#get-get-credits" title="Link to this heading">#</a></h2>
+<p><strong>Get Current Credit Balance</strong></p>
+<p>Retrieve the credit balance for the authenticated account.</p>
+<p><strong>Example Request (curl)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;https://api.unify.ai/v0/get_credits&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer YOUR_API_KEY&#39;</span>
+</pre></div>
+</div>
+<p><strong>Responses</strong></p>
+<ul>
+<li><p><strong>200 OK</strong></p>
+<p>Successful operation.</p>
+<dl>
+<dt><strong>Response</strong></dt><dd><div class="line-block">
+<div class="line">Credits balance in the account associated with the API key used for the request.</div>
+</div>
+</dd>
+</dl>
+<p><strong>Example Response</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="s2">&quot;corresponding_user_id&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;credits&quot;</span>:<span class="w"> </span><span class="m">232</span>.32
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>401 Unauthorized</strong></p>
+<p>Invalid API key.</p>
+<p><strong>Example Response</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;error&quot;</span>:<span class="w"> </span><span class="s2">&quot;Invalid API key&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>403 Forbidden</strong></p>
+<p>Not authenticated.</p>
+<p><strong>Example Response</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;detail&quot;</span>:<span class="w"> </span><span class="s2">&quot;Not authenticated&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="post-inference">
+<h2>POST /inference<a class="headerlink" href="#post-inference" title="Link to this heading">#</a></h2>
+<p><strong>Query a Model hosted in a given Provider</strong></p>
+<p>Send a given input to the specified model hosted in the specified provider.
+Both the <strong>arguments and the response are model-specific</strong> and, therefore, their format is expected
+to change from model to model. You can find the specific arguments and the response format in the
+corresponding model documentation.</p>
+<p>For Text-Generation models, you might want to use the <code class="code docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/chat/completions</span></code> endpoint.</p>
+<dl>
+<dt><strong>Request Body</strong></dt><dd><div class="line-block">
+<div class="line"><strong>model</strong> <em>(string)</em>: ID of the model to query.</div>
+<div class="line"><strong>provider</strong> <em>(string)</em>: ID of the provider to query.</div>
+<div class="line"><strong>arguments</strong> <em>(object)</em>: Model-specific parameters. Check out the model documentation for more information.</div>
+</div>
+</dd>
+</dl>
+<p><strong>Example Request (curl)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://api.unify.ai/v0/inference&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;accept: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">        &quot;model&quot;: &quot;&lt;model_name&gt;&quot;,</span>
+<span class="s1">        &quot;provider&quot;: &quot;&lt;provider_name&gt;&quot;,</span>
+<span class="s1">        &quot;arguments&quot;: &lt;Model Inference Input Arguments&gt;</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p><strong>Responses</strong></p>
+<ul>
+<li><p><strong>200 OK</strong></p>
+<p>Successful operation.</p>
+<dl>
+<dt><strong>Response</strong></dt><dd><div class="line-block">
+<div class="line">Model-specific response, check out the model documentation for more information.</div>
+</div>
+</dd>
+</dl>
+<p><strong>Example Response</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;response&quot;</span>:<span class="w"> </span>&lt;Model<span class="w"> </span>Inference<span class="w"> </span>Output<span class="w"> </span>Format&gt;
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>401 Unauthorized</strong></p>
+<p>Invalid API key.</p>
+<p><strong>Example Response</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;error&quot;</span>:<span class="w"> </span><span class="s2">&quot;Invalid API key&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>422 Unprocessable Entity</strong></p>
+<p>Invalid arguments. The provided arguments don’t correspond to the specified model.</p>
+<p><strong>Example Response</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;error&quot;</span>:<span class="w"> </span><span class="s2">&quot;The provided arguments don&#39;t correspond to the specified model.&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="post-chat-completions">
+<h2>POST /chat/completions<a class="headerlink" href="#post-chat-completions" title="Link to this heading">#</a></h2>
+<p><strong>Query a Text-Generation Model hosted in a given Provider using the OpenAI API format</strong></p>
+<p>Send a given input to the specified model hosted in the specified provider.
+This endpoint follows the OpenAI specification for text completion, which is available
+<a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create">here.</a></p>
+<p>To specify the provider, make sure to append its name after the model id using <code class="code docutils literal notranslate"><span class="pre">&#64;</span></code>.</p>
+<p><strong>Example Request (curl)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="s1">&#39;https://api.unify.ai/v0/chat/completions&#39;</span><span class="w"> </span><span class="se">\</span>
+-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer YOUR_API_KEY&#39;</span><span class="w"> </span><span class="se">\</span>
+-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">&quot;model&quot;: &quot;llama-2-7b-chat@anyscale&quot;,</span>
+<span class="s1">&quot;messages&quot;: [</span>
+<span class="s1">    {</span>
+<span class="s1">        &quot;role&quot;: &quot;user&quot;,</span>
+<span class="s1">        &quot;content&quot;: &quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
+<span class="s1">    }</span>
+<span class="s1">],</span>
+<span class="s1">&quot;stream&quot;: false</span>
+<span class="s1">}&#39;</span>
+</pre></div>
+</div>
+<p><strong>Responses</strong></p>
+<ul>
+<li><p><strong>200 OK</strong></p>
+<p>Successful operation.</p>
+<dl>
+<dt><strong>Response</strong></dt><dd><div class="line-block">
+<div class="line">Response following the schema of the chat completion object from OpenAI, defined <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/object">here.</a></div>
+</div>
+</dd>
+</dl>
+<p><strong>Example Response</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">    </span><span class="s1">&#39;model&#39;</span>:<span class="w"> </span><span class="s1">&#39;llama-2-7b-chat@anyscale&#39;</span>,
+<span class="w">    </span><span class="s1">&#39;created&#39;</span>:<span class="w"> </span><span class="m">1704999905</span>,
+<span class="w">    </span><span class="s1">&#39;id&#39;</span>:<span class="w"> </span><span class="s1">&#39;meta-llama/Llama-2-7b-chat-hf-xR868C-T4Z-TKLtfXxZSvq57WmhxB34El5ZUuXsAtFU&#39;</span>,
+<span class="w">    </span><span class="s1">&#39;object&#39;</span>:<span class="w"> </span><span class="s1">&#39;chat.completion&#39;</span>,
+<span class="w">    </span><span class="s1">&#39;usage&#39;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="s1">&#39;completion_tokens&#39;</span>:<span class="w"> </span><span class="m">512</span>,
+<span class="w">        </span><span class="s1">&#39;prompt_tokens&#39;</span>:<span class="w"> </span><span class="m">34</span>,
+<span class="w">        </span><span class="s1">&#39;total_tokens&#39;</span>:<span class="w"> </span><span class="m">546</span>
+<span class="w">        </span><span class="o">}</span>,
+<span class="w">    </span><span class="s1">&#39;choices&#39;</span>:<span class="w"> </span><span class="o">[{</span>
+<span class="w">        </span><span class="s1">&#39;finish_reason&#39;</span>:<span class="w"> </span><span class="s1">&#39;length&#39;</span>,
+<span class="w">        </span><span class="s1">&#39;index&#39;</span>:<span class="w"> </span><span class="m">0</span>,
+<span class="w">        </span><span class="s1">&#39;message&#39;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="s1">&#39;content&#39;</span>:<span class="w"> </span><span class="s1">&#39;Isaac Newton (1643-1727) was a...&#39;</span>,
+<span class="w">            </span><span class="s1">&#39;role&#39;</span>:<span class="w"> </span><span class="s1">&#39;assistant&#39;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}]</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>401 Unauthorized</strong></p>
+<p>Invalid API key.</p>
+<p><strong>Example Response</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;error&quot;</span>:<span class="w"> </span><span class="s2">&quot;Invalid API key&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>422 Unprocessable Entity</strong></p>
+<p>Invalid arguments. The provided arguments don’t correspond to the specified model.</p>
+<p><strong>Example Response</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;error&quot;</span>:<span class="w"> </span><span class="s2">&quot;The provided arguments don&#39;t correspond to the specified model.&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<hr class="docutils" />
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../concepts/benchmarks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Benchmarks</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-get-credits">GET /get_credits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-inference">POST /inference</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-chat-completions">POST /chat/completions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+  <p class="copyright">
+    
+      © Copyright 2020-2023, Unify.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item"><p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.13.3.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

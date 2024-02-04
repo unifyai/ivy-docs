@@ -1,0 +1,8 @@
+logical\_and
+============
+
+.. autofunction:: ivy.logical_and
+
+.. autoskippablemethod:: ivy.Array.logical_and
+
+.. autoskippablemethod:: ivy.Container.logical_and

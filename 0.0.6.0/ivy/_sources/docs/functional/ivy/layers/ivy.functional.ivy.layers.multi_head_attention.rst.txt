@@ -1,0 +1,8 @@
+multi\_head\_attention
+======================
+
+.. autofunction:: ivy.multi_head_attention
+
+.. autoskippablemethod:: ivy.Array.multi_head_attention
+
+.. autoskippablemethod:: ivy.Container.multi_head_attention

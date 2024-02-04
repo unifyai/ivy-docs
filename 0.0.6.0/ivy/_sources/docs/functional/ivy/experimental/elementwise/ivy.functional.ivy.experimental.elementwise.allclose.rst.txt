@@ -1,0 +1,8 @@
+allclose
+========
+
+.. autofunction:: ivy.allclose
+
+.. autoskippablemethod:: ivy.Array.allclose
+
+.. autoskippablemethod:: ivy.Container.allclose

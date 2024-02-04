@@ -1,0 +1,8 @@
+conv\_general\_dilated
+======================
+
+.. autofunction:: ivy.conv_general_dilated
+
+.. autoskippablemethod:: ivy.Array.conv_general_dilated
+
+.. autoskippablemethod:: ivy.Container.conv_general_dilated

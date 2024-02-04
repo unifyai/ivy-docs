@@ -1,0 +1,8 @@
+unsorted\_segment\_sum
+======================
+
+.. autofunction:: ivy.unsorted_segment_sum
+
+.. autoskippablemethod:: ivy.Array.unsorted_segment_sum
+
+.. autoskippablemethod:: ivy.Container.unsorted_segment_sum

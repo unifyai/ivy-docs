@@ -1,0 +1,8 @@
+svd\_flip
+=========
+
+.. autofunction:: ivy.svd_flip
+
+.. autoskippablemethod:: ivy.Array.svd_flip
+
+.. autoskippablemethod:: ivy.Container.svd_flip

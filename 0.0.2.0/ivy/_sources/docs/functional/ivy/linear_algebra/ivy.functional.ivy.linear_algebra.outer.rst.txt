@@ -1,0 +1,8 @@
+outer
+=====
+
+.. autofunction:: ivy.outer
+
+.. autoskippablemethod:: ivy.Array.outer
+
+.. autoskippablemethod:: ivy.Container.outer

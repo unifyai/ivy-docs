@@ -1,0 +1,8 @@
+nms
+===
+
+.. autofunction:: ivy.nms
+
+.. autoskippablemethod:: ivy.Array.nms
+
+.. autoskippablemethod:: ivy.Container.nms

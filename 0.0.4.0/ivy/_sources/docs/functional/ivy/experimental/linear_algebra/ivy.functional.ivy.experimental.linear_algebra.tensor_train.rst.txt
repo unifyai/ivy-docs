@@ -1,0 +1,8 @@
+tensor\_train
+=============
+
+.. autofunction:: ivy.tensor_train
+
+.. autoskippablemethod:: ivy.Array.tensor_train
+
+.. autoskippablemethod:: ivy.Container.tensor_train

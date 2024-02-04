@@ -1,0 +1,12 @@
+.. title:: Ivy Robot
+
+.. include:: ../README.rst
+
+.. autosummary::
+  :toctree: robot
+  :template: top_level_toc.rst
+  :recursive:
+  :caption: API Reference
+  :hide-table:
+
+  ivy_robot

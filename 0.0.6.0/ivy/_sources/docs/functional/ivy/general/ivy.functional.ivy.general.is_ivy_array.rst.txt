@@ -1,0 +1,8 @@
+is\_ivy\_array
+==============
+
+.. autofunction:: ivy.is_ivy_array
+
+.. autoskippablemethod:: ivy.Array.is_ivy_array
+
+.. autoskippablemethod:: ivy.Container.is_ivy_array

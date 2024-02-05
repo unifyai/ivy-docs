@@ -27,10 +27,11 @@ The example assumes that your API key is stored in the environment variable :cod
         def __init__(self, model: str):
             self._message_history = []
             self._model = model
-            self._key = os.environ["UNIFY_KEY"]
-            self._base_url = "https://api.unify.ai/v0/"
-            if self._key is None:
+            try:
+                self._key = os.environ["UNIFY_KEY"]
+            except KeyError:
                 raise Exception("Please set your UNIFY_KEY environment variable")
+            self._base_url = "https://api.unify.ai/v0/"
             self._headers = {
                 "accept": "application/json",
                 "Authorization": "Bearer " + self._key,

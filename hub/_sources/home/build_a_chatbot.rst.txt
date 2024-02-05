@@ -27,6 +27,7 @@ The example assumes that your API key is stored in the environment variable :cod
         def __init__(self, model: str):
             self._message_history = []
             self._model = model
+            self._paused = False
             try:
                 self._key = os.environ["UNIFY_KEY"]
             except KeyError:
@@ -68,7 +69,7 @@ The example assumes that your API key is stored in the environment variable :cod
                 else:
                     continue
             if show_credits:
-                print("\n(spent {:.6f} credits)".format(pre_credits - self._get_credits()))
+                sys.stdout.write("\n(spent {:.6f} credits)".format(pre_credits - self._get_credits()))
 
         def _update_message_history(self, inp):
             self._message_history.append({
@@ -76,12 +77,38 @@ The example assumes that your API key is stored in the environment variable :cod
                 'content': inp
             })
 
+        @property
+        def model(self):
+            return self._model
+
+        @model.setter
+        def model(self, value):
+            error_message = "model string must use the OpenAI format: <uploaded_by>/<model_name>@<provider_name>"
+            assert type(value) is str, error_message
+            model_name, provider_name = value.split('/')[-1].split("@")
+            assert len(model_name) and len(provider_name), error_message
+            self._model = value
+
+        # Public Methods
+
+        def clear_chat_history(self):
+            self._message_history.clear()
+
         def run(self, show_credits: bool = False):
-            sys.stdout.write("Let's have a chat. (Enter `quit` to exit)\n")
+            if not self._paused:
+                sys.stdout.write("Let's have a chat. (Enter `pause` to pause and `quit` to exit)\n")
+                self.clear_chat_history()
+            else:
+                sys.stdout.write("Welcome back! (Remember, enter `pause` to pause and `quit` to exit)\n")
+            self._paused = False
             while True:
                 sys.stdout.write('> ')
                 inp = input()
                 if inp == 'quit':
+                    self.clear_chat_history()
+                    break
+                elif inp == 'pause':
+                    self._paused = True
                     break
                 for word in self._process_input(inp, show_credits):
                     sys.stdout.write(word)
@@ -90,12 +117,14 @@ The example assumes that your API key is stored in the environment variable :cod
 
 
 
+
+
 Let's Chat!
 -----------
 
 Provided our environment variable :code:`UNIFY_KEY` is set correctly,
 we can now simply instantiate this agent and chat with it, using the format
-:code:`model@provider` as per the `OpenAI API Format
+:code:`<uploaded_by>/<model_name>@<provider_name>` as per the `OpenAI API Format
 <https://unify.ai/docs/hub/home/make_your_first_request.html#using-the-openai-api-format>`_,
 like so:
 
@@ -108,7 +137,7 @@ This will start an interactive session, where you can converse with the model:
 
 .. code-block::
 
-    Let's have a chat. (Enter `quit` to exit)
+    Let's have a chat. (Enter `pause` to pause and `quit` to exit)
     > Hi, nice to meet you. My name is Foo Barrymore, and I am 25 years old.
      Nice to meet you too, Foo! I'm just an AI, I don't have a personal name, but I'm here to help you with any questions or concerns you might have. How has your day been so far?
     > How old am I?
@@ -128,7 +157,67 @@ Each response from the chatbot will then be appended with the credits spent:
 
 .. code-block::
 
-    Let's have a chat. (Enter `quit` to exit)
+    Let's have a chat. (Enter `pause` to pause and `quit` to exit)
     > What is the capital of Spain?
      The capital of Spain is Madrid.
     (spent 0.000014 credits)
+
+You can also switch the provider half-way through the conversation easily.
+We can start with a small model for answering simple questions, such as fact recall,
+and then move to a larger model for a more complex task, such as creative writing.
+
+.. code-block:: python
+
+    agent = Agent("llama-2-7b-chat@anyscale")
+    agent.run(show_credits=True)
+
+.. code-block::
+
+    Let's have a chat. (Enter `pause` to pause and `quit` to exit)
+    > What is the capital of Portugal?
+     The capital of Spain is Lisbon.
+    (spent 0.000002 credits)
+    > My name is José Mourinho.
+     Okay. Nice to meet you José.
+    (spent 0.000002 credits)
+    > pause
+
+.. code-block:: python
+
+    agent.model = "llama-2-70b-chat@anyscale"
+    agent.run(show_credits=True)
+
+.. code-block::
+
+    Welcome back! (Remember, enter `pause` to pause and `quit` to exit)
+    > Please write me a poem about my life in Lisbon, using my name in the poem.
+     Sure, here's a short poem about your life in Lisbon, using your name:
+
+    José Mourinho, a man of great renown,
+    In Lisbon, a city of ancient crown.
+    You walked its streets, with purpose and drive,
+    A man on a mission, with a burning fire inside.
+
+    You breathed in the scent of the ocean's spray,
+    And felt the warmth of the sun on your face each day.
+    You marveled at the beauty of the city's old town,
+    And felt at home, in this place you'd found.
+
+    You savored the flavors of the local cuisine,
+    And quenched your thirst with a glass of fine wine.
+    You listened to the music of the street performers,
+    And felt the rhythm of the city's vibrant pulse.
+
+    José Mourinho, a man of great ambition,
+    In Lisbon, a city of endless tradition.
+    You found your place, in this ancient land,
+    And made your mark, with a helping hand.
+
+    For in Lisbon, you found your home,
+    A place where your heart would forever roam.
+    José Mourinho, a man of great fame,
+    In Lisbon, a city that would forever bear your name.
+    (spent 0.000260 credits)
+
+Switching between providers mid-conversation makes it much easier to maximize quality,
+maximize runtime performance based on the latest metrics, and also save on costs!

@@ -381,6 +381,7 @@ The example assumes that your API key is stored in the environment variable <cod
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_message_history</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="n">model</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_paused</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;UNIFY_KEY&quot;</span><span class="p">]</span>
         <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
@@ -422,7 +423,7 @@ The example assumes that your API key is stored in the environment variable <cod
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">continue</span>
         <span class="k">if</span> <span class="n">show_credits</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">(spent </span><span class="si">{:.6f}</span><span class="s2"> credits)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pre_credits</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_credits</span><span class="p">()))</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">(spent </span><span class="si">{:.6f}</span><span class="s2"> credits)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pre_credits</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_credits</span><span class="p">()))</span>
 
     <span class="k">def</span> <span class="nf">_update_message_history</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inp</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_message_history</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
@@ -430,12 +431,38 @@ The example assumes that your API key is stored in the environment variable <cod
             <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="n">inp</span>
         <span class="p">})</span>
 
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">model</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_model</span>
+
+    <span class="nd">@model</span><span class="o">.</span><span class="n">setter</span>
+    <span class="k">def</span> <span class="nf">model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="n">error_message</span> <span class="o">=</span> <span class="s2">&quot;model string must use the OpenAI format: &lt;uploaded_by&gt;/&lt;model_name&gt;@&lt;provider_name&gt;&quot;</span>
+        <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="ow">is</span> <span class="nb">str</span><span class="p">,</span> <span class="n">error_message</span>
+        <span class="n">model_name</span><span class="p">,</span> <span class="n">provider_name</span> <span class="o">=</span> <span class="n">value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;@&quot;</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">model_name</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">provider_name</span><span class="p">),</span> <span class="n">error_message</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_model</span> <span class="o">=</span> <span class="n">value</span>
+
+    <span class="c1"># Public Methods</span>
+
+    <span class="k">def</span> <span class="nf">clear_chat_history</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_message_history</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+
     <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">show_credits</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Let&#39;s have a chat. (Enter `quit` to exit)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_paused</span><span class="p">:</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Let&#39;s have a chat. (Enter `pause` to pause and `quit` to exit)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">clear_chat_history</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Welcome back! (Remember, enter `pause` to pause and `quit` to exit)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_paused</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
             <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;&gt; &#39;</span><span class="p">)</span>
             <span class="n">inp</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
             <span class="k">if</span> <span class="n">inp</span> <span class="o">==</span> <span class="s1">&#39;quit&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">clear_chat_history</span><span class="p">()</span>
+                <span class="k">break</span>
+            <span class="k">elif</span> <span class="n">inp</span> <span class="o">==</span> <span class="s1">&#39;pause&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">_paused</span> <span class="o">=</span> <span class="kc">True</span>
                 <span class="k">break</span>
             <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_process_input</span><span class="p">(</span><span class="n">inp</span><span class="p">,</span> <span class="n">show_credits</span><span class="p">):</span>
                 <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
@@ -448,14 +475,14 @@ The example assumes that your API key is stored in the environment variable <cod
 <h2>Let’s Chat!<a class="headerlink" href="#let-s-chat" title="Link to this heading">#</a></h2>
 <p>Provided our environment variable <code class="code docutils literal notranslate"><span class="pre">UNIFY_KEY</span></code> is set correctly,
 we can now simply instantiate this agent and chat with it, using the format
-<code class="code docutils literal notranslate"><span class="pre">model&#64;provider</span></code> as per the <a class="reference external" href="https://unify.ai/docs/hub/home/make_your_first_request.html#using-the-openai-api-format">OpenAI API Format</a>,
+<code class="code docutils literal notranslate"><span class="pre">&lt;uploaded_by&gt;/&lt;model_name&gt;&#64;&lt;provider_name&gt;</span></code> as per the <a class="reference external" href="https://unify.ai/docs/hub/home/make_your_first_request.html#using-the-openai-api-format">OpenAI API Format</a>,
 like so:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="s2">&quot;llama-2-70b-chat@anyscale&quot;</span><span class="p">)</span>
 <span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>This will start an interactive session, where you can converse with the model:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Let&#39;s have a chat. (Enter `quit` to exit)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Let&#39;s have a chat. (Enter `pause` to pause and `quit` to exit)
 &gt; Hi, nice to meet you. My name is Foo Barrymore, and I am 25 years old.
  Nice to meet you too, Foo! I&#39;m just an AI, I don&#39;t have a personal name, but I&#39;m here to help you with any questions or concerns you might have. How has your day been so far?
 &gt; How old am I?
@@ -471,12 +498,66 @@ but it can be overwritten during the run command, as follows:</p>
 </pre></div>
 </div>
 <p>Each response from the chatbot will then be appended with the credits spent:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Let&#39;s have a chat. (Enter `quit` to exit)
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Let&#39;s have a chat. (Enter `pause` to pause and `quit` to exit)
 &gt; What is the capital of Spain?
  The capital of Spain is Madrid.
 (spent 0.000014 credits)
 </pre></div>
 </div>
+<p>You can also switch the provider half-way through the conversation easily.
+We can start with a small model for answering simple questions, such as fact recall,
+and then move to a larger model for a more complex task, such as creative writing.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span> <span class="o">=</span> <span class="n">Agent</span><span class="p">(</span><span class="s2">&quot;llama-2-7b-chat@anyscale&quot;</span><span class="p">)</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">show_credits</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Let&#39;s have a chat. (Enter `pause` to pause and `quit` to exit)
+&gt; What is the capital of Portugal?
+ The capital of Spain is Lisbon.
+(spent 0.000002 credits)
+&gt; My name is José Mourinho.
+ Okay. Nice to meet you José.
+(spent 0.000002 credits)
+&gt; pause
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">agent</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="s2">&quot;llama-2-70b-chat@anyscale&quot;</span>
+<span class="n">agent</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">show_credits</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Welcome back! (Remember, enter `pause` to pause and `quit` to exit)
+&gt; Please write me a poem about my life in Lisbon, using my name in the poem.
+ Sure, here&#39;s a short poem about your life in Lisbon, using your name:
+
+José Mourinho, a man of great renown,
+In Lisbon, a city of ancient crown.
+You walked its streets, with purpose and drive,
+A man on a mission, with a burning fire inside.
+
+You breathed in the scent of the ocean&#39;s spray,
+And felt the warmth of the sun on your face each day.
+You marveled at the beauty of the city&#39;s old town,
+And felt at home, in this place you&#39;d found.
+
+You savored the flavors of the local cuisine,
+And quenched your thirst with a glass of fine wine.
+You listened to the music of the street performers,
+And felt the rhythm of the city&#39;s vibrant pulse.
+
+José Mourinho, a man of great ambition,
+In Lisbon, a city of endless tradition.
+You found your place, in this ancient land,
+And made your mark, with a helping hand.
+
+For in Lisbon, you found your home,
+A place where your heart would forever roam.
+José Mourinho, a man of great fame,
+In Lisbon, a city that would forever bear your name.
+(spent 0.000260 credits)
+</pre></div>
+</div>
+<p>Switching between providers mid-conversation makes it much easier to maximize quality,
+maximize runtime performance based on the latest metrics, and also save on costs!</p>
 </section>
 </section>
 

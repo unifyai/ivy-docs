@@ -9,6 +9,7 @@
   Welcome to the Hub! <self>
   home/getting_access.rst
   home/make_your_first_request.rst
+  home/build_a_chatbot.rst
   home/pricing.rst
 
 .. toctree::

@@ -49,7 +49,7 @@
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pricing and Credits" href="pricing.html" />
+    <link rel="next" title="Build a Chatbot" href="build_a_chatbot.html" />
     <link rel="prev" title="Getting Access" href="getting_access.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -289,6 +289,7 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to the Hub!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="getting_access.html">Getting Access</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Make your First Request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_a_chatbot.html">Build a Chatbot</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pricing.html">Pricing and Credits</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
@@ -365,7 +366,7 @@ document.write(`
 <li><p><strong>A Unify API Key</strong>. If you don’t have one yet, you can follow the instructions in
 <a class="reference external" href="https://unify.ai/docs/hub/home/getting_access.html">Getting Access</a> to generate it.</p></li>
 <li><p><strong>A model ID</strong>. You can find the model you want to query using the
-<a class="reference external" href="https://unify.ai/hub">Hub web interface.</a> For this example, we will use the <code class="code docutils literal notranslate"><span class="pre">llama-2-7b-chat</span></code>
+<a class="reference external" href="https://unify.ai/hub">Hub web interface.</a> For this example, we will use the <code class="code docutils literal notranslate"><span class="pre">llama-2-70b-chat</span></code>
 model, hosted in <code class="code docutils literal notranslate"><span class="pre">anyscale</span></code>. We (Unify) are managing this model, so we can refer to it using only its
 name (as explained <a class="reference external" href="https://unify.ai/docs/hub/concepts/models.html">here!</a>)</p></li>
 </ol>
@@ -374,7 +375,7 @@ name (as explained <a class="reference external" href="https://unify.ai/docs/hub
 <p>All models, independently of the task, can be queried through the <code class="code docutils literal notranslate"><span class="pre">inference</span></code> endpoint. The API reference for this is
 <a class="reference external" href="https://unify.ai/docs/hub/reference/endpoints.html#post-query">here.</a></p>
 <p>In this case, you will have to specify the <code class="code docutils literal notranslate"><span class="pre">model</span></code> and the <code class="code docutils literal notranslate"><span class="pre">provider</span></code> that you want to use. In our case,
-this are <code class="code docutils literal notranslate"><span class="pre">llama-2-7b-chat</span></code> and <code class="code docutils literal notranslate"><span class="pre">anyscale</span></code>. Additionaly, you’ll have to pass the model <code class="code docutils literal notranslate"><span class="pre">arguments</span></code>.
+this are <code class="code docutils literal notranslate"><span class="pre">llama-2-70b-chat</span></code> and <code class="code docutils literal notranslate"><span class="pre">anyscale</span></code>. Additionaly, you’ll have to pass the model <code class="code docutils literal notranslate"><span class="pre">arguments</span></code>.
 For each model, the available <code class="code docutils literal notranslate"><span class="pre">arguments</span></code> may vary, you can always double check them in the corresponding model page.</p>
 <p>In the header, you will need to include the <strong>Unify API Key</strong> that is associated with your account.</p>
 <div class="admonition note">
@@ -387,7 +388,7 @@ For each model, the available <code class="code docutils literal notranslate"><s
 <span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_UNIFY_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">        &quot;model&quot;: &quot;llama-2-7b-chat&quot;,</span>
+<span class="s1">        &quot;model&quot;: &quot;llama-2-70b-chat&quot;,</span>
 <span class="s1">        &quot;provider&quot;: &quot;anyscale&quot;,</span>
 <span class="s1">        &quot;arguments&quot;: {</span>
 <span class="s1">            &quot;messages&quot;: [{</span>
@@ -410,7 +411,7 @@ For each model, the available <code class="code docutils literal notranslate"><s
 <span class="p">}</span>
 
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;llama-2-7b-chat&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;llama-2-70b-chat&quot;</span><span class="p">,</span>
     <span class="s2">&quot;provider&quot;</span><span class="p">:</span> <span class="s2">&quot;anyscale&quot;</span><span class="p">,</span>
     <span class="s2">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[{</span>
@@ -442,9 +443,9 @@ For each model, the available <code class="code docutils literal notranslate"><s
 The docs for this endpoint are available <a class="reference external" href="https://unify.ai/docs/hub/reference/endpoints.html#post-chat-completions">here.</a></p>
 <p>This API format wouldn’t normally allow you to choose between providers for a given model. To bypass this limitation, the model
 name should have the format <code class="code docutils literal notranslate"><span class="pre">&lt;uploaded_by&gt;/&lt;model_name&gt;&#64;&lt;provider_name&gt;</span></code>. For example, if <code class="code docutils literal notranslate"><span class="pre">john_doe</span></code> uploads a
-<code class="code docutils literal notranslate"><span class="pre">llama-2-7b-chat</span></code> model and we want to query the endpoint that has been deployed in replicate, we would have to use
-<code class="code docutils literal notranslate"><span class="pre">john_doe/llama-2-7b-chat&#64;replicate</span></code> as the model id in the OpenAI API. In this case, there is no username, so we will
-simply use <code class="code docutils literal notranslate"><span class="pre">llama-2-7b-chat&#64;replicate</span></code>.</p>
+<code class="code docutils literal notranslate"><span class="pre">llama-2-70b-chat</span></code> model and we want to query the endpoint that has been deployed in replicate, we would have to use
+<code class="code docutils literal notranslate"><span class="pre">john_doe/llama-2-70b-chat&#64;replicate</span></code> as the model id in the OpenAI API. In this case, there is no username, so we will
+simply use <code class="code docutils literal notranslate"><span class="pre">llama-2-70b-chat&#64;replicate</span></code>.</p>
 <p>This is again just an HTTP endpoint, so you can query it using <strong>cURL</strong>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span><span class="s1">&#39;https://api.unify.ai/v0/chat/completions&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -452,7 +453,7 @@ simply use <code class="code docutils literal notranslate"><span class="pre">lla
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer YOUR_UNIFY_KEY&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">    &quot;model&quot;: &quot;llama-2-7b-chat@anyscale&quot;,</span>
+<span class="s1">    &quot;model&quot;: &quot;llama-2-70b-chat@anyscale&quot;,</span>
 <span class="s1">        &quot;messages&quot;: [{</span>
 <span class="s1">            &quot;role&quot;: &quot;user&quot;,</span>
 <span class="s1">            &quot;content&quot;: &quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
@@ -470,7 +471,7 @@ simply use <code class="code docutils literal notranslate"><span class="pre">lla
 <span class="p">}</span>
 
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;llama-2-7b-chat@anyscale&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;llama-2-70b-chat@anyscale&quot;</span><span class="p">,</span>
     <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
@@ -509,7 +510,7 @@ endpoints by simply configuring the OpenAI Client like this:</p>
 <span class="p">)</span>
 
 <span class="n">stream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;llama-2-7b-chat@anyscale&quot;</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;llama-2-70b-chat@anyscale&quot;</span><span class="p">,</span>
     <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Can you say that this is a test? Use some words to showcase the streaming function&quot;</span><span class="p">}],</span>
     <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
@@ -529,12 +530,12 @@ endpoints by simply configuring the OpenAI Client like this:</p>
 <span class="n">interpreter</span><span class="o">.</span><span class="n">offline</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">interpreter</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;YOUR_UNIFY_KEY&quot;</span>
 <span class="n">interpreter</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">api_base</span> <span class="o">=</span> <span class="s2">&quot;https://api.unify.ai/v0/&quot;</span>
-<span class="n">interpreter</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="s2">&quot;openai/llama-2-7b-chat@anyscale&quot;</span>
+<span class="n">interpreter</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="s2">&quot;openai/llama-2-70b-chat@anyscale&quot;</span>
 
 <span class="n">interpreter</span><span class="o">.</span><span class="n">chat</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>In this case, we only need to mark the model as <code class="code docutils literal notranslate"><span class="pre">openai/x</span></code> to use the <code class="code docutils literal notranslate"><span class="pre">/chat/completions</span></code> format!</p>
+<p>In this case, in order to use the <code class="code docutils literal notranslate"><span class="pre">/chat/completions</span></code> format, we simply need to set the model as <code class="code docutils literal notranslate"><span class="pre">openai/&lt;insert_model&gt;</span></code>!</p>
 </section>
 </section>
 </section>
@@ -560,11 +561,11 @@ endpoints by simply configuring the OpenAI Client like this:</p>
       </div>
     </a>
     <a class="right-next"
-       href="pricing.html"
+       href="build_a_chatbot.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pricing and Credits</p>
+        <p class="prev-next-title">Build a Chatbot</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -1,7 +1,7 @@
 Benchmarks
 ==========
 
-The main goal of the Hub is to allow you to use the endpoint (and model!) that better suits your use case. This is not a trivial decision to make, and therefore it needs to be made based on data. 
+The main goal of the Hub is to allow you to use the endpoint (and model!) that better suits your use case. This is not a trivial decision to make, and therefore it needs to be made based on data.
 
 We have the goal of benchmarking every single inference endpoint exposing LLMs out there, so being transparent with the way we do these measurements is necessary to avoid unfair comparisons and objectiveness.
 
@@ -88,6 +88,6 @@ In some cases, you will find :code:`Not computed` instead of a value, or even a 
 Considerations and Limitations
 ==============================
 
-We try to tackle some of the more significant limitations of benchmarking inference endpoints. For example, network latency, by running the benchmarks in different regions; or unreliable point-measurements, by continuously benchmarking the endpoints and plotting their trends over time. 
+We try to tackle some of the more significant limitations of benchmarking inference endpoints. For example, network latency, by running the benchmarks in different regions; or unreliable point-measurements, by continuously benchmarking the endpoints and plotting their trends over time.
 
 However, there are still some relevant considerations to have in mind. Our methodology at the moment is solely focused on performance, which means that we don't look at the output of the models. Nonetheless, even accounting for the public-facing nature of these endpoints (no gibberish allowed!), there might be some implementation differences that affect the output quality, such as quantization/compression of the models, different context window sizes, or different speculative decoding models, among others. We are working towards mitigating this as well, so stay tuned!

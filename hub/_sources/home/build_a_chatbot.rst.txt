@@ -175,7 +175,7 @@ and then move to a larger model for a more complex task, such as creative writin
 
     Let's have a chat. (Enter `pause` to pause and `quit` to exit)
     > What is the capital of Portugal?
-     The capital of Spain is Lisbon.
+     The capital of Portugal is Lisbon.
     (spent 0.000002 credits)
     > My name is José Mourinho.
      Okay. Nice to meet you José.

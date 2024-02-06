@@ -207,6 +207,10 @@ document.write(`
   
 
   
+    <label class="sidebar-toggle secondary-toggle" for="__secondary">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
 </div>
 
     </nav>
@@ -368,6 +372,19 @@ Feel free to dive in, explore, and share any feedback with us!</p>
 <p>You will soon be able to check this out properly in a dashboard, but in the meantime, you can query the
 <a class="reference external" href="https://unify.ai/docs/hub/reference/endpoints.html#get-credits">Get Credits Endpoint</a> of the Hub API to get your
 current credit balance.</p>
+<section id="top-up-code">
+<h2>Top-up Code<a class="headerlink" href="#top-up-code" title="Link to this heading">#</a></h2>
+<p>You may have received a code to increase your number of free weekly credits, if that’s the case, you can
+activate it doing a request to this endpoint:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="s1">&#39;https://api.unify.ai/v0/promo?code=&lt;CODE&gt;&#39;</span><span class="w"> </span><span class="se">\</span>
+-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer &lt;YOUR_UNIFY_KEY&gt;&#39;</span><span class="w"> </span><span class="se">\</span>
+</pre></div>
+</div>
+<p>Simply replace <code class="code docutils literal notranslate"><span class="pre">&lt;CODE&gt;</span></code> with your top up code and <code class="code docutils literal notranslate"><span class="pre">&lt;YOUR_UNIFY_KEY&gt;</span></code> with your API Key and
+do the request 🚀</p>
+</section>
 </section>
 
 
@@ -408,6 +425,20 @@ current credit balance.</p>
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#top-up-code">Top-up Code</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

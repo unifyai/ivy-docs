@@ -9,7 +9,7 @@ This means that the cost will depend on your input and can be calculated using t
 each provider endpoint on the corresponding model pages.
 
 We're currently integrating a payment system to allow you to purchase additional credits for your Hub API usage. Meanwhile,
-we're granting each user the equivalent of $5 in free credits per week if they are using the Hub.
+we're granting each user the equivalent of $2.50 in free credits per week if they are using the Hub.
 Feel free to dive in, explore, and share any feedback with us!
 
 You will soon be able to check this out properly in a dashboard, but in the meantime, you can query the

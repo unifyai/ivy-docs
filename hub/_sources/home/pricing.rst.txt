@@ -27,7 +27,7 @@ activate it doing a request to this endpoint:
     curl -X 'POST' \
     'https://api.unify.ai/v0/promo?code=<CODE>' \
     -H 'accept: application/json' \
-    -H 'Authorization: Bearer <YOUR_UNIFY_KEY>' \
+    -H 'Authorization: Bearer <YOUR_UNIFY_KEY>'
 
 Simply replace :code:`<CODE>` with your top up code and :code:`<YOUR_UNIFY_KEY>` with your API Key and 
 do the request 🚀

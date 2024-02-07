@@ -1,9 +1,6 @@
 Welcome to the Hub!
 =========================
 
-Video Tutorial
---------------
-
 .. raw:: html
 
     <iframe width="560" height="315" style="margin-bottom: 1rem;"

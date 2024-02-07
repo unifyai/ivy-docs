@@ -1,6 +1,17 @@
 Welcome to the Hub!
 =========================
 
+Video Tutorial
+--------------
+
+.. raw:: html
+
+    <iframe width="560" height="315" style="margin-bottom: 1rem;"
+        src="https://www.youtube.com/embed/o8yD_QBhmsw"
+        frameborder="0" allow="encrypted-media; picture-in-picture" allowfullscreen>
+    </iframe>
+    <br>
+
 This is your central hub for machine learning deployment stacks and inference endpoints. If you're using or planning to use
 AI in your application or service, the hub offers various benefits:
 

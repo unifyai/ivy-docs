@@ -1405,7 +1405,7 @@ document.write(`
 <h1>log2<a class="headerlink" href="#log2" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.log2">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">log2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/elementwise.py#L4158-L4252"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.log2" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">log2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/elementwise.py#L4159-L4253"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.log2" title="Link to this definition">#</a></dt>
 <dd><p>Calculate an implementation-dependent approximation to the base <code class="docutils literal notranslate"><span class="pre">2</span></code>
 logarithm, having domain <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">+infinity]</span></code> and codomain <code class="docutils literal notranslate"><span class="pre">[-infinity,</span>
 <span class="pre">+infinity]</span></code>, for each element <code class="docutils literal notranslate"><span class="pre">x_i</span></code> of the input array <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
@@ -1459,12 +1459,12 @@ ivy.array([2.32, 0., -inf, nan])
 &gt;&gt;&gt; y = ivy.empty_like(x)
 &gt;&gt;&gt; ivy.log2(x, out=y)
 &gt;&gt;&gt; print(y)
-ivy.array([[nan, 0., 2.58, inf],[inf, nan, nan, nan]])
+ivy.array([[nan, 0., 2.58, inf],[-inf, nan, nan, nan]])
 &gt;&gt;&gt; x = ivy.array([[float(‘nan’), 1, 7.0, float(‘+inf’)],
 …               [+0, -3.0, -8, float(‘-inf’)]])
 &gt;&gt;&gt; ivy.log2(x, out=x)
 &gt;&gt;&gt; print(x)
-ivy.array([[nan, 0., 2.81, inf],[inf, nan, nan, nan]])</p>
+ivy.array([[nan, 0., 2.81, inf],[-inf, nan, nan, nan]])</p>
 <p>With <code class="xref py py-class docutils literal notranslate"><span class="pre">ivy.Container</span></code> input:
 &gt;&gt;&gt; x = ivy.Container(a=ivy.array([0.0, float(‘nan’)]),
 …                   b=ivy.array([-0., -4.9, float(‘+inf’)]),

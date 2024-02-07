@@ -1403,7 +1403,7 @@ document.write(`
 <h1>get_referrers_recursive<a class="headerlink" href="#get-referrers-recursive" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.get_referrers_recursive">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">get_referrers_recursive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seen_set</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_set</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/general.py#L182-L279"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.get_referrers_recursive" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">get_referrers_recursive</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">item</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_depth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seen_set</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_set</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/general.py#L182-L272"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.get_referrers_recursive" title="Link to this definition">#</a></dt>
 <dd><p>Recursively retrieve referrers for an object.</p>
 <p>This function recursively fetches referrers for the specified <cite>item</cite> up to a given
 <cite>max_depth</cite>.</p>
@@ -1427,17 +1427,10 @@ document.write(`
 </dl>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">gc</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">example_function</span><span class="p">():</span>
-<span class="gp">... </span>    <span class="n">obj</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-<span class="gp">... </span>    <span class="k">return</span> <span class="n">get_referrers_recursive</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">example_function</span> <span class="o">=</span> <span class="k">lambda</span><span class="p">:</span> <span class="p">(</span><span class="n">obj</span> <span class="o">:=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span> <span class="ow">and</span> <span class="n">ivy</span><span class="o">.</span><span class="n">get_referrers_recursive</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">example_function</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
-<span class="go">Container(</span>
-<span class="go">    &#39;ref_id_1&#39;: Container(</span>
-<span class="go">        &#39;ref_id_2&#39;: &#39;tracked&#39;,</span>
-<span class="go">        &#39;ref_id_3&#39;: &#39;tracked&#39;</span>
-<span class="go">    )</span>
-<span class="go">)</span>
+<span class="go">{repr:[1,2,3]}</span>
 </pre></div>
 </div>
 </dd></dl>

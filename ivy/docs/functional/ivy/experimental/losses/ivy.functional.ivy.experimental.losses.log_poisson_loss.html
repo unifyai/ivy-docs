@@ -1493,7 +1493,7 @@ that the inputs broadcast to.</p></li>
 </pre></div>
 </div>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">loss</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">x</span><span class="o">.</span><span class="n">log_poisson_loss</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">loss</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">log_poisson_loss</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="n">reduction</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">loss</span><span class="p">)</span>
 <span class="go">ivy.array(1.1573164)</span>
 </pre></div>
@@ -1543,8 +1543,8 @@ that the inputs broadcast to.</p></li>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">log_poisson_loss</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="go">{</span>
-<span class="go">    a: ivy.array(1.),</span>
-<span class="go">    b: ivy.array(0.)</span>
+<span class="go">    a: ivy.array(3.3890561),</span>
+<span class="go">    b: ivy.array(123.413159)</span>
 <span class="go">}</span>
 </pre></div>
 </div>

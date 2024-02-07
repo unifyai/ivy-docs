@@ -1403,7 +1403,7 @@ document.write(`
 <h1>set_tmp_dir<a class="headerlink" href="#set-tmp-dir" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.set_tmp_dir">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">set_tmp_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tmp_dr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/general.py#L2531-L2554"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.set_tmp_dir" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">set_tmp_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tmp_dr</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/general.py#L2527-L2553"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.set_tmp_dir" title="Link to this definition">#</a></dt>
 <dd><p>Set the directory for saving temporary files.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -1423,6 +1423,10 @@ document.write(`
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">tmp_dir</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 <span class="go">/my_tmp</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Unset the tmp_dr</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_tmp_dir</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>

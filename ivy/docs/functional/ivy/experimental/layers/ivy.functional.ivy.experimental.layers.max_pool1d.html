@@ -1462,16 +1462,16 @@ This ensures that every element in ‘x’ is covered by a sliding window.</p></
 <div><p>[[16., 17., 18., 19.]]])</p>
 </div></blockquote>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">24.</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">max_pool1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)],</span> <span class="n">data_format</span><span class="o">=</span><span class="s2">&quot;NCW&quot;</span><span class="p">,</span> <span class="n">dilation</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ceil_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
-<span class="go">ivy.array([[[ 1.,  3.],</span>
-<span class="go">        [ 5.,  7.],</span>
-<span class="go">        [ 9., 11.]],</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">max_pool1d</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">)],</span> <span class="n">data_format</span><span class="o">=</span><span class="s2">&quot;NCW&quot;</span><span class="p">,</span> <span class="n">dilation</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ceil_mode</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="go">ivy.array([[[ 0.,  2.,  3.],</span>
+<span class="go">    [ 4.,  6.,  7.],</span>
+<span class="go">    [ 8., 10., 11.]],</span>
 </pre></div>
 </div>
 <blockquote>
 <div><dl class="simple">
-<dt>[[13., 15.],</dt><dd><p>[17., 19.],
-[21., 23.]]])</p>
+<dt>[[12., 14., 15.],</dt><dd><p>[16., 18., 19.],
+[20., 22., 23.]]])</p>
 </dd>
 </dl>
 </div></blockquote>

@@ -1608,7 +1608,7 @@ first gpu is returned if available, otherwise the cpu is returned.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.function_supported_devices">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">function_supported_devices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recurse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/device.py#L1199-L1248"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.function_supported_devices" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">function_supported_devices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recurse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/device.py#L1199-L1254"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.function_supported_devices" title="Link to this definition">#</a></dt>
 <dd><p>Return the supported devices of the current backend’s function. The
 function returns a dict containing the supported devices for the
 compositional and primary implementations in case of partial mixed
@@ -1629,7 +1629,14 @@ functions.</p>
 </dl>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ivy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s1">&#39;numpy&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">function_supported_devices</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">ones</span><span class="p">))</span>
+<span class="go">(&#39;cpu&#39;,)</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s1">&#39;torch&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">ivy</span><span class="o">.</span><span class="n">function_supported_devices</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">ones</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="go">(&#39;cpu&#39;, &#39;gpu&#39;)</span>
 </pre></div>
 </div>
@@ -1637,7 +1644,7 @@ functions.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.function_unsupported_devices">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">function_unsupported_devices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recurse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/device.py#L1251-L1298"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.function_unsupported_devices" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">function_unsupported_devices</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fn</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recurse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/device.py#L1257-L1304"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.function_unsupported_devices" title="Link to this definition">#</a></dt>
 <dd><p>Return the unsupported devices of the current backend’s function. The
 function returns a dict containing the unsupported devices for the
 compositional and primary implementations in case of partial mixed
@@ -2122,7 +2129,7 @@ case of CPU, the total RAM is returned.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_backend</span><span class="p">(</span><span class="s2">&quot;torch&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ivy</span><span class="o">.</span><span class="n">tpu_is_available</span><span class="p">())</span>
-<span class="go">True</span>
+<span class="go">False</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -2214,7 +2221,7 @@ False.</p></li>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="ivy.Profiler">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">Profiler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_dir</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/device.py#L1304-L1338"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.Profiler" title="Link to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">Profiler</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">save_dir</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/device.py#L1310-L1344"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.Profiler" title="Link to this definition">#</a></dt>
 <dd><p>The profiler class is used to profile the execution of some code.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>

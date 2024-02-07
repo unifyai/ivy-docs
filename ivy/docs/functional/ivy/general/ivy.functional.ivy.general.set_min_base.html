@@ -1403,7 +1403,7 @@ document.write(`
 <h1>set_min_base<a class="headerlink" href="#set-min-base" title="Link to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="ivy.set_min_base">
-<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">set_min_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/general.py#L2142-L2177"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.set_min_base" title="Link to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">ivy.</span></span><span class="sig-name descname"><span class="pre">set_min_base</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">val</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/unifyai/ivy/blob/main/ivy/functional/ivy/general.py#L2135-L2173"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#ivy.set_min_base" title="Link to this definition">#</a></dt>
 <dd><p>Set the global minimum base used by ivy for numerically stable power
 raising.</p>
 <dl class="field-list simple">
@@ -1419,12 +1419,18 @@ raising.</p>
 &gt;&gt;&gt; x = ivy.min_base
 &gt;&gt;&gt; print(x)
 1e-05</p>
-<p>Set the minimum base to 1e-04:
-&gt;&gt;&gt; ivy.set_min_base(1e-04)</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Set the minimum base to 1e-04:</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">set_min_base</span><span class="p">(</span><span class="mf">1e-04</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>Retrieve the minimum base:
 &gt;&gt;&gt; y = ivy.min_base
 &gt;&gt;&gt; print(y)
 1e-04</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># unset the min_base</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ivy</span><span class="o">.</span><span class="n">unset_min_base</span><span class="p">()</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>

@@ -11,7 +11,7 @@ json_file = os.path.join(os.path.dirname(__file__), f"{REPO}.json")
 with open(json_file, "r", encoding="utf8") as f:
     data = json.load(f)
 
-data.append({
+data.insert(1, {
     "version": VERSION,
     "url": f"https://unify.ai/docs/{VERSION}/{REPO}/"
 })

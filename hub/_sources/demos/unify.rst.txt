@@ -29,6 +29,11 @@ Python Package Examples
 
         Ask any question to two anonymous LLMs and vote for the better one!
 
+    .. grid-item-card:: LLM Debate App
+        :link: ./demos/Unify/LLM_Debate/README.md
+
+        Provide a topic and watch two LLMs debate on it.
+
 
 .. toctree::
     :hidden:
@@ -40,3 +45,4 @@ Python Package Examples
     ./demos/Unify/LLM-Wars/README.md
     ./demos/Unify/SemanticRouter/README.md
     ./demos/Unify/Chatbot_Arena/README.md
+    ./demos/Unify/LLM_Debate/README.md

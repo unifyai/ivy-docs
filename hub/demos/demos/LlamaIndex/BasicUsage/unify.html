@@ -1,0 +1,761 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>LlamaIndex &#8212; Unify Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/nbsphinx-code-cells.css" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=7c465b21" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../../../../_static/documentation_options.js?v=3ce10a4d"></script>
+    <script src="../../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../../../../_static/design-tabs.js?v=36754332"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-QP5BET66XH"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-QP5BET66XH');
+            </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-QP5BET66XH');
+            </script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'demos/demos/LlamaIndex/BasicUsage/unify';</script>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="Model Endpoints" href="../../../../concepts/endpoints.html" />
+    <link rel="prev" title="RAG Playground" href="../RAGPlayground/README.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar"><div id="unify-navbar"></div>
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../index.html">
+                        Welcome to Unify!
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../interfaces/connecting_stack.html">
+                        Connecting your stack
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../interfaces/running_benchmarks.html">
+                        Benchmarking endpoints
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../interfaces/building_router.html">
+                        Building a custom router
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/first_request.html">
+                        Making your first request
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/deploy_router.html">
+                        Deploying a router
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../api/reference.html">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../unify.html">
+                        Python Package Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../langchain.html">
+                        LangChain Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="../../../llamaindex.html">
+                        LlamaIndex Examples
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../concepts/endpoints.html">
+                        Model Endpoints
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../concepts/benchmarks.html">
+                        Benchmarks
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../concepts/routing.html">
+                        Routing
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Welcome to Unify!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interfaces</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../interfaces/connecting_stack.html">Connecting your stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interfaces/running_benchmarks.html">Benchmarking endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interfaces/building_router.html">Building a custom router</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/first_request.html">Making your first request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/deploy_router.html">Deploying a router</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/reference.html">API Reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../unify.html">Python Package Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Unify/ChatBot/ChatBot.html">Build a ChatBot</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Unify/AsyncVsSync/AsyncVsSync.html">Synchronous VS Asynchronous Clients</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../Unify/LLM-Wars/README.html">LLM-Wars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unify/SemanticRouter/README.html">Semantic Router</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unify/Chatbot_Arena/README.html">Chatbot Arena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unify/LLM_Debate/README.html">AI Debate App</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../langchain.html">LangChain Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../LangChain/RAG_playground/README.html">RAG Playground 🛝</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../llamaindex.html">LlamaIndex Examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../RAGPlayground/README.html">RAG Playground</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">LlamaIndex</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../concepts/endpoints.html">Model Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../concepts/benchmarks.html">Benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../concepts/routing.html">Routing</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../../llamaindex.html" class="nav-link">LlamaIndex Examples</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">LlamaIndex</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="LlamaIndex">
+<h1>LlamaIndex<a class="headerlink" href="#LlamaIndex" title="Link to this heading">#</a></h1>
+<p><a class="reference external" href="https://www.llamaindex.ai/">LlamaIndex</a> is a simple, flexible data framework for connecting custom data sources to large language models (LLMs). The integration with Unify allows you to route your queries to the best LLM endpoints, benchmark performance, and seamlessly switch providers with a single API key in your LlamaIndex LLM applications.</p>
+<section id="Installation">
+<h2>Installation<a class="headerlink" href="#Installation" title="Link to this heading">#</a></h2>
+<p>First, let’s install LlamaIndex 🦙 and the Unify integration.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install llama-index-llms-unify llama-index
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Environment-Setup">
+<h2>Environment Setup<a class="headerlink" href="#Environment-Setup" title="Link to this heading">#</a></h2>
+<p>Make sure to set the <code class="docutils literal notranslate"><span class="pre">UNIFY_API_KEY</span></code> environment variable. You can get a key from the <a class="reference external" href="https://console.unify.ai/login">Unify Console</a>.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;UNIFY_API_KEY&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;&lt;YOUR API KEY&gt;&quot;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Using-LlamaIndex-with-Unify">
+<h2>Using LlamaIndex with Unify<a class="headerlink" href="#Using-LlamaIndex-with-Unify" title="Link to this heading">#</a></h2>
+<section id="Basic-Usage">
+<h3>Basic Usage<a class="headerlink" href="#Basic-Usage" title="Link to this heading">#</a></h3>
+<p>Below we initialize and query a chat model using the <code class="docutils literal notranslate"><span class="pre">llama-3-70b-chat</span></code> endpoint from <code class="docutils literal notranslate"><span class="pre">together-ai</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">llama_index.llms.unify</span> <span class="kn">import</span> <span class="n">Unify</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;llama-3-70b-chat@together-ai&quot;</span><span class="p">)</span>
+<span class="n">llm</span><span class="o">.</span><span class="n">complete</span><span class="p">(</span><span class="s2">&quot;How are you today, llama?&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+CompletionResponse(text=&#34;I&#39;m not actually a llama, but I&#39;m doing great, thanks for asking! I&#39;m a large language model, so I don&#39;t have feelings like humans do, but I&#39;m always happy to chat with you and help with any questions or topics you&#39;d like to discuss. How about you? How&#39;s your day going?&#34;, additional_kwargs={}, raw={&#39;id&#39;: &#39;88b5fcf02e259527-LHR&#39;, &#39;choices&#39;: [Choice(finish_reason=&#39;stop&#39;, index=0, logprobs=None, message=ChatCompletionMessage(content=&#34;I&#39;m not actually a llama, but I&#39;m doing great, thanks for asking! I&#39;m a large language model, so I don&#39;t have feelings like humans do, but I&#39;m always happy to chat with you and help with any questions or topics you&#39;d like to discuss. How about you? How&#39;s your day going?&#34;, role=&#39;assistant&#39;, function_call=None, tool_calls=None))], &#39;created&#39;: 1716980504, &#39;model&#39;: &#39;llama-3-70b-chat@together-ai&#39;, &#39;object&#39;: &#39;chat.completion&#39;, &#39;system_fingerprint&#39;: None, &#39;usage&#39;: CompletionUsage(completion_tokens=67, prompt_tokens=17, total_tokens=84, cost=7.56e-05)}, logprobs=None, delta=None)
+</pre></div></div>
+</div>
+</section>
+<section id="Single-Sign-On">
+<h3>Single Sign-On<a class="headerlink" href="#Single-Sign-On" title="Link to this heading">#</a></h3>
+<p>You can use Unify’s SSO to query endpoints in different providers without making accounts with all of them. For example, all of these are valid endpoints:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">llm</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;llama-2-70b-chat@together-ai&quot;</span><span class="p">)</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo@openai&quot;</span><span class="p">)</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;mixtral-8x7b-instruct-v0.1@mistral-ai&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>This allows you to quickly switch and test different models and providers. You can look at all the available models/providers <a class="reference external" href="https://unify.ai/hub">here</a>!</p>
+</section>
+<section id="Runtime-Dynamic-Routing">
+<h3>Runtime Dynamic Routing<a class="headerlink" href="#Runtime-Dynamic-Routing" title="Link to this heading">#</a></h3>
+<p>As evidenced by our <a class="reference external" href="https://unify.ai/benchmarks">benchmarks</a>, the optimal provider for each model varies by geographic location and time of day due to fluctuating API performances. To cirumvent this, we automatically direct your requests to the “top performing provider” at runtime. To enable this feature, simply replace your query’s provider with one of the <a class="reference external" href="https://unify.ai/docs/api/deploy_router.html#optimizing-a-metric">available routing modes</a>. Let’s look at some examples:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">llm</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;llama-2-70b-chat@input-cost&quot;</span><span class="p">)</span> <span class="c1"># route to lowest input cost provider</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo@itl&quot;</span><span class="p">)</span> <span class="c1"># route to provider with lowest inter token latency</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;mixtral-8x7b-instruct-v0.1@ttft&quot;</span><span class="p">)</span> <span class="c1"># route to provider with lowest time to first token.</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Quality-Routing">
+<h3>Quality Routing<a class="headerlink" href="#Quality-Routing" title="Link to this heading">#</a></h3>
+<p>Unify routes your queries to the best LLM on every prompt to consistently achieve better quality outputs than using a single, all-purpose, powerful model, at a fraction of the cost. This is achieved by using smaller models for simpler tasks, only using largers ones to handle complex queries.</p>
+<p>The router is benchmarked on various different data-sets such as <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Hermes</span></code>, <code class="docutils literal notranslate"><span class="pre">GSM8K</span></code>, <code class="docutils literal notranslate"><span class="pre">HellaSwag</span></code>, <code class="docutils literal notranslate"><span class="pre">MMLU</span></code> and <code class="docutils literal notranslate"><span class="pre">MT-Bench</span></code> revealing that it can peform better than indivudal endpoints on average as explained <a class="reference external" href="https://unify.ai/docs/concepts/routing.html#quality-routing">here</a>. One can choose various different configurations of the router for a particular data-set from the <a class="reference external" href="https://unify.ai/chat">chat-interface</a> as shown below:</p>
+<p><img alt="000b891d60384a7f83cd2c9f0a4541dc" src="../../../../_images/unify.gif" /></p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">llm</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;router_2.58e-01_9.51e-04_3.91e-03@unify&quot;</span><span class="p">)</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;router_2.12e-01_5.00e-04_2.78e-04@unify&quot;</span><span class="p">)</span>
+<span class="n">llm</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;router_2.12e-01_5.00e-04_2.78e-04@unify&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>To learn more about quality routing, please refer to this <a class="reference external" href="https://www.youtube.com/watch?v=ZpY6SIkBosE&amp;feature=youtu.be">video</a>.</p>
+</section>
+<section id="Streaming-and-optimizing-for-latency">
+<h3>Streaming and optimizing for latency<a class="headerlink" href="#Streaming-and-optimizing-for-latency" title="Link to this heading">#</a></h3>
+<p>If you are building an application where responsiveness is key, you most likely want to get a streaming response. On top of that, ideally you would use the provider with the lowest Time to First Token, to reduce the time your users are waiting for a response. Using Unify this would look something like:</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">llm</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;mixtral-8x7b-instruct-v0.1@ttft&quot;</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">llm</span><span class="o">.</span><span class="n">stream_complete</span><span class="p">(</span>
+    <span class="s2">&quot;Translate the following to German: &quot;</span>
+    <span class="s2">&quot;Hey, there&#39;s an emergency in translation street, &quot;</span>
+    <span class="s2">&quot;please send help asap!&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_provider</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">show_provider</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model and provider are : </span><span class="si">{</span><span class="n">r</span><span class="o">.</span><span class="n">raw</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">show_provider</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">delta</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">flush</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Model and provider are : mixtral-8x7b-instruct-v0.1@mistral-ai
+
+Hallo, es gibt einen Notfall in der Übersetzungsstraße, bitte senden Sie Hilfe so schnell wie möglich!
+
+(Note: This is a loose translation and the phrase &#34;Übersetzungsstraße&#34; does not literally exist, but I tried to convey the same meaning as the original message.)
+</pre></div></div>
+</div>
+</section>
+<section id="Async-calls-and-Lowest-Input-Cost">
+<h3>Async calls and Lowest Input Cost<a class="headerlink" href="#Async-calls-and-Lowest-Input-Cost" title="Link to this heading">#</a></h3>
+<p>Last but not the least, you can also run multiple requests asynchronously. For tasks such as document summarization, optimizing for input costs is crucial. We can use the <code class="docutils literal notranslate"><span class="pre">input-cost</span></code> dynamic routing mode to route our queries to the cheapest provider.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">llm</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;mixtral-8x7b-instruct-v0.1@input-cost&quot;</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="k">await</span> <span class="n">llm</span><span class="o">.</span><span class="n">acomplete</span><span class="p">(</span>
+    <span class="s2">&quot;Summarize this in 10 words or less. OpenAI is a U.S. based artificial intelligence &quot;</span>
+    <span class="s2">&quot;(AI) research organization founded in December 2015, researching artificial intelligence &quot;</span>
+    <span class="s2">&quot;with the goal of developing &#39;safe and beneficial&#39; artificial general intelligence, &quot;</span>
+    <span class="s2">&quot;which it defines as &#39;highly autonomous systems that outperform humans at most economically &quot;</span>
+    <span class="s2">&quot;valuable work&#39;. As one of the leading organizations of the AI spring, it has developed &quot;</span>
+    <span class="s2">&quot;several large language models, advanced image generation models, and previously, released &quot;</span>
+    <span class="s2">&quot;open-source models. Its release of ChatGPT has been credited with starting the AI spring&quot;</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model and provider are : </span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">raw</span><span class="p">[</span><span class="s1">&#39;model&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Model and provider are : mixtral-8x7b-instruct-v0.1@deepinfra
+
+ OpenAI: Pioneering &#39;safe&#39; artificial general intelligence.
+</pre></div></div>
+</div>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../RAGPlayground/README.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">RAG Playground</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../../../concepts/endpoints.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Model Endpoints</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Environment-Setup">Environment Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#Using-LlamaIndex-with-Unify">Using LlamaIndex with Unify</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Basic-Usage">Basic Usage</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Single-Sign-On">Single Sign-On</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Runtime-Dynamic-Routing">Runtime Dynamic Routing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Quality-Routing">Quality Routing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Streaming-and-optimizing-for-latency">Streaming and optimizing for latency</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#Async-calls-and-Lowest-Input-Cost">Async calls and Lowest Input Cost</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+<script src="https://cdn.saas.unify.ai/js/unify-components-shared.js"></script>
+<script src="https://cdn.saas.unify.ai/js/unify-components.js"></script>
+<div id="navbar-contents" style="display: none;">
+  
+  <div class="navbar-header-items__end">
+    
+    <div class="navbar-item navbar-persistent--container">
+      
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+    </div>
+    
+    
+    <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+    
+  </div>
+  
+</div>
+<script>
+  const html = `<div></div>`;
+  const toc = `<nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../index.html">Welcome to Unify!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Interfaces</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../interfaces/connecting_stack.html">Connecting your stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interfaces/running_benchmarks.html">Benchmarking endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../interfaces/building_router.html">Building a custom router</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/first_request.html">Making your first request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/deploy_router.html">Deploying a router</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../api/reference.html">API Reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../unify.html">Python Package Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Unify/ChatBot/ChatBot.html">Build a ChatBot</a></li>
+
+
+<li class="toctree-l2"><a class="reference internal" href="../../Unify/AsyncVsSync/AsyncVsSync.html">Synchronous VS Asynchronous Clients</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../Unify/LLM-Wars/README.html">LLM-Wars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unify/SemanticRouter/README.html">Semantic Router</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unify/Chatbot_Arena/README.html">Chatbot Arena</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Unify/LLM_Debate/README.html">AI Debate App</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../langchain.html">LangChain Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../LangChain/RAG_playground/README.html">RAG Playground 🛝</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../llamaindex.html">LlamaIndex Examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../RAGPlayground/README.html">RAG Playground</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">LlamaIndex</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../../concepts/endpoints.html">Model Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../concepts/benchmarks.html">Benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../concepts/routing.html">Routing</a></li>
+</ul>
+
+    </div>
+</nav>`;
+  initializeNavbar(html, true, toc);
+  Promise.all([waitForElm("unify-navbar-end"), waitForElm("unify-mobile-navbar-end")]).then(([target, mobileTarget]) => {
+    for (let elem of document.getElementById("navbar-contents").children) {
+      target.children[0].appendChild(elem.cloneNode(true));
+      mobileTarget.children[0].appendChild(elem.cloneNode(true));
+    }
+    document.getElementById("navbar-contents").remove();
+    const scripts = `
+  &lt!-- Scripts loaded after &ltbody&gt so the DOM is not blocked --&gt
+  &ltscript src="../../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"&gt&lt/script&gt
+&ltscript src="../../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"&gt&lt/script&gt
+`.replace(/&lt/g, "<").replace(/&gt/g, ">");
+    const divFragment = document.createRange().createContextualFragment(scripts);
+    document.body.prepend(divFragment);
+  });
+</script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2020-2023, Unify.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -405,77 +405,13 @@ document.write(`
 </div>
 <p>In addition, the Python package supports both synchronous and asynchronous clients, as well as streaming responses. Check out the <a class="reference external" href="https://github.com/unifyai/unify-llm-python?tab=readme-ov-file#unify-python-api-library">package repo</a> to learn more!</p>
 </section>
-<section id="using-the-inference-endpoint">
-<h3>Using the <code class="code docutils literal notranslate"><span class="pre">inference</span></code> Endpoint<a class="headerlink" href="#using-the-inference-endpoint" title="Link to this heading">#</a></h3>
-<p>All models can be queried through the <code class="code docutils literal notranslate"><span class="pre">inference</span></code> endpoint, which also requires a <code class="code docutils literal notranslate"><span class="pre">model</span></code> Id, <code class="code docutils literal notranslate"><span class="pre">provider</span></code> Id, and model <code class="code docutils literal notranslate"><span class="pre">arguments</span></code> that may vary across models.</p>
-<p>In the header, you will need to include your <code class="code docutils literal notranslate"><span class="pre">Unify</span> <span class="pre">API</span> <span class="pre">Key</span></code>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Like any HTTP POST request, you can interact with the API using your preferred language!</p>
-</div>
-<p>Using <strong>cURL</strong>, the request would look like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://api.unify.ai/v0/inference&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;accept: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_UNIFY_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">        &quot;model&quot;: &quot;mistral-7b-instruct-v0.2&quot;,</span>
-<span class="s1">        &quot;provider&quot;: &quot;fireworks-ai&quot;,</span>
-<span class="s1">        &quot;arguments&quot;: {</span>
-<span class="s1">            &quot;messages&quot;: [{</span>
-<span class="s1">                &quot;role&quot;: &quot;user&quot;,</span>
-<span class="s1">                &quot;content&quot;: &quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
-<span class="s1">            }],</span>
-<span class="s1">            &quot;temperature&quot;: 0.5,</span>
-<span class="s1">            &quot;max_tokens&quot;: 1000,</span>
-<span class="s1">            &quot;stream&quot;: true</span>
-<span class="s1">        }</span>
-<span class="s1">    }&#39;</span>
-</pre></div>
-</div>
-<p>If you are using <strong>Python</strong>, you can use the <code class="code docutils literal notranslate"><span class="pre">requests</span></code> library to query the model:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.unify.ai/v0/inference&quot;</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer YOUR_UNIFY_KEY&quot;</span><span class="p">,</span>
-<span class="p">}</span>
-
-<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;mistral-7b-instruct-v0.2&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;provider&quot;</span><span class="p">:</span> <span class="s2">&quot;fireworks-ai&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;arguments&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
-        <span class="p">}],</span>
-        <span class="s2">&quot;temperature&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
-        <span class="s2">&quot;max_tokens&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
-        <span class="s2">&quot;stream&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">chunk</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Check out the <a class="reference external" href="https://unify.ai/docs/api/reference.html">API reference</a> to learn more.</p>
-</section>
 <section id="using-the-openai-api-format">
 <h3>Using the OpenAI API Format<a class="headerlink" href="#using-the-openai-api-format" title="Link to this heading">#</a></h3>
-<p>We also support the OpenAI API format for <code class="code docutils literal notranslate"><span class="pre">text-generation</span></code> models. Specifically, the <code class="code docutils literal notranslate"><span class="pre">/chat/completions</span></code> endpoint.</p>
+<p>We support the OpenAI API format for <code class="code docutils literal notranslate"><span class="pre">text-generation</span></code> models. Specifically, the <code class="code docutils literal notranslate"><span class="pre">/chat/completions</span></code> endpoint.</p>
 <p>This API format wouldn’t normally allow you to choose between providers for a given model. To bypass this limitation, the model
-name should have the format <code class="code docutils literal notranslate"><span class="pre">&lt;uploaded_by&gt;/&lt;model_name&gt;&#64;&lt;provider_name&gt;</span></code>.</p>
-<p>For example, if <code class="code docutils literal notranslate"><span class="pre">john_doe</span></code> uploads a <code class="code docutils literal notranslate"><span class="pre">mistral-7b-instruct-v0.2</span></code> model and we want to query the endpoint that has been deployed in <code class="code docutils literal notranslate"><span class="pre">fireworks-ai</span></code> replicate, we would have to use <code class="code docutils literal notranslate"><span class="pre">john_doe/mistral-7b-instruct-v0.2&#64;fireworks-ai</span></code> as the model Id in the OpenAI API. In this case, there is no username, so we will simply use <code class="code docutils literal notranslate"><span class="pre">mistral-7b-instruct-v0.2&#64;fireworks-ai</span></code>.</p>
-<p>This is again just an HTTP endpoint, so you can query it using any language or tool. For example, <strong>cURL</strong>:</p>
+name should have the format <code class="code docutils literal notranslate"><span class="pre">&lt;model_name&gt;&#64;&lt;provider_name&gt;</span></code>.</p>
+<p>For example, if we want to query the <code class="code docutils literal notranslate"><span class="pre">mistral-7b-instruct-v0.2</span></code> model that has been deployed in <code class="code docutils literal notranslate"><span class="pre">fireworks-ai</span></code>, we would have to use <code class="code docutils literal notranslate"><span class="pre">mistral-7b-instruct-v0.2&#64;fireworks-ai</span></code> as the model Id in the OpenAI API.</p>
+<p>This is just an HTTP endpoint, so you can query it using any language or tool. For example, <strong>cURL</strong>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span><span class="s1">&#39;https://api.unify.ai/v0/chat/completions&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -623,7 +559,6 @@ name should have the format <code class="code docutils literal notranslate"><spa
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-a-model-and-provider">Finding a model and provider</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-an-endpoint">Querying an endpoint</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-python-package">Using the Python Package</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-inference-endpoint">Using the <code class="code docutils literal notranslate"><span class="pre">inference</span></code> Endpoint</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-openai-api-format">Using the OpenAI API Format</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compatible-tools">Compatible Tools</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-sdk">OpenAI SDK</a></li>

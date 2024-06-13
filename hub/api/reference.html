@@ -415,72 +415,6 @@ This page is your go-to resource when it comes to learning about the different U
 </ul>
 </section>
 <hr class="docutils" />
-<section id="post-inference">
-<h2>POST /inference<a class="headerlink" href="#post-inference" title="Link to this heading">#</a></h2>
-<p><strong>Query a Model hosted in a given Provider</strong></p>
-<p>Send a given input to the specified model hosted in the specified provider.
-Both the <strong>arguments and the response are model-specific</strong> and, therefore, their format is expected
-to change from model to model. You can find the specific arguments and the response format in the
-corresponding model documentation.</p>
-<p>For Text-Generation models, you might want to use the <code class="code docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/chat/completions</span></code> endpoint.</p>
-<dl>
-<dt><strong>Request Body</strong></dt><dd><div class="line-block">
-<div class="line"><strong>model</strong> <em>(string)</em>: ID of the model to query.</div>
-<div class="line"><strong>provider</strong> <em>(string)</em>: ID of the provider to query.</div>
-<div class="line"><strong>arguments</strong> <em>(object)</em>: Model-specific parameters. Check out the model documentation for more information.</div>
-</div>
-</dd>
-</dl>
-<p><strong>Example Request (curl)</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;https://api.unify.ai/v0/inference&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;accept: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Authorization: Bearer YOUR_API_KEY&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">        &quot;model&quot;: &quot;&lt;model_name&gt;&quot;,</span>
-<span class="s1">        &quot;provider&quot;: &quot;&lt;provider_name&gt;&quot;,</span>
-<span class="s1">        &quot;arguments&quot;: &lt;Model Inference Input Arguments&gt;</span>
-<span class="s1">    }&#39;</span>
-</pre></div>
-</div>
-<p><strong>Responses</strong></p>
-<ul>
-<li><p><strong>200 OK</strong></p>
-<p>Successful operation.</p>
-<dl>
-<dt><strong>Response</strong></dt><dd><div class="line-block">
-<div class="line">Model-specific response, check out the model documentation for more information.</div>
-</div>
-</dd>
-</dl>
-<p><strong>Example Response</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-<span class="w">  </span><span class="s2">&quot;response&quot;</span>:<span class="w"> </span>&lt;Model<span class="w"> </span>Inference<span class="w"> </span>Output<span class="w"> </span>Format&gt;
-<span class="o">}</span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>401 Unauthorized</strong></p>
-<p>Invalid API key.</p>
-<p><strong>Example Response</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-<span class="w">  </span><span class="s2">&quot;error&quot;</span>:<span class="w"> </span><span class="s2">&quot;Invalid API key&quot;</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-</li>
-<li><p><strong>422 Unprocessable Entity</strong></p>
-<p>Invalid arguments. The provided arguments don’t correspond to the specified model.</p>
-<p><strong>Example Response</strong></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
-<span class="w">  </span><span class="s2">&quot;error&quot;</span>:<span class="w"> </span><span class="s2">&quot;The provided arguments don&#39;t correspond to the specified model.&quot;</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-</li>
-</ul>
-</section>
-<hr class="docutils" />
 <section id="post-chat-completions">
 <h2>POST /chat/completions<a class="headerlink" href="#post-chat-completions" title="Link to this heading">#</a></h2>
 <p><strong>Query a Text-Generation Model hosted in a given Provider using the OpenAI API format</strong></p>
@@ -609,7 +543,6 @@ This endpoint follows the OpenAI specification for text completion, which is ava
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-get-credits">GET /get_credits</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-inference">POST /inference</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-chat-completions">POST /chat/completions</a></li>
 </ul>
   </nav></div>

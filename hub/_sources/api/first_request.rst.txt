@@ -65,87 +65,18 @@ This will return a string containing the model's response.
 
 In addition, the Python package supports both synchronous and asynchronous clients, as well as streaming responses. Check out the `package repo <https://github.com/unifyai/unify-llm-python?tab=readme-ov-file#unify-python-api-library>`_ to learn more!
 
-Using the :code:`inference` Endpoint
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-All models can be queried through the :code:`inference` endpoint, which also requires a :code:`model` Id, :code:`provider` Id, and model :code:`arguments` that may vary across models. 
-
-In the header, you will need to include your :code:`Unify API Key`.
-
-.. note::
-    Like any HTTP POST request, you can interact with the API using your preferred language!
-
-Using **cURL**, the request would look like this:
-
-.. code-block:: bash
-
-    curl -X POST "https://api.unify.ai/v0/inference" \
-        -H "accept: application/json" \
-        -H "Authorization: Bearer YOUR_UNIFY_KEY" \
-        -H "Content-Type: application/json" \
-        -d '{
-            "model": "mistral-7b-instruct-v0.2",
-            "provider": "fireworks-ai",
-            "arguments": {
-                "messages": [{
-                    "role": "user",
-                    "content": "Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements"
-                }],
-                "temperature": 0.5,
-                "max_tokens": 1000,
-                "stream": true
-            }
-        }'
-
-If you are using **Python**, you can use the :code:`requests` library to query the model:
-
-.. code-block:: python
-
-    import requests
-
-    url = "https://api.unify.ai/v0/inference"
-    headers = {
-        "Authorization": "Bearer YOUR_UNIFY_KEY",
-    }
-
-    payload = {
-        "model": "mistral-7b-instruct-v0.2",
-        "provider": "fireworks-ai",
-        "arguments": {
-            "messages": [{
-                "role": "user",
-                "content": "Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements"
-            }],
-            "temperature": 0.5,
-            "max_tokens": 1000,
-            "stream": True,
-        }
-    }
-
-    response = requests.post(url, json=payload, headers=headers, stream=True)
-
-    print(response.status_code)
-
-    if response.status_code == 200:
-        for chunk in response.iter_content(chunk_size=1024):
-            if chunk:
-                print(chunk.decode("utf-8"))
-    else:
-        print(response.text)
-
-Check out the `API reference <https://unify.ai/docs/api/reference.html>`_ to learn more.
 
 Using the OpenAI API Format
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We also support the OpenAI API format for :code:`text-generation` models. Specifically, the :code:`/chat/completions` endpoint.
+We support the OpenAI API format for :code:`text-generation` models. Specifically, the :code:`/chat/completions` endpoint.
 
 This API format wouldn't normally allow you to choose between providers for a given model. To bypass this limitation, the model
-name should have the format :code:`<uploaded_by>/<model_name>@<provider_name>`. 
+name should have the format :code:`<model_name>@<provider_name>`. 
 
-For example, if :code:`john_doe` uploads a :code:`mistral-7b-instruct-v0.2` model and we want to query the endpoint that has been deployed in :code:`fireworks-ai` replicate, we would have to use :code:`john_doe/mistral-7b-instruct-v0.2@fireworks-ai` as the model Id in the OpenAI API. In this case, there is no username, so we will simply use :code:`mistral-7b-instruct-v0.2@fireworks-ai`.
+For example, if we want to query the :code:`mistral-7b-instruct-v0.2` model that has been deployed in :code:`fireworks-ai`, we would have to use :code:`mistral-7b-instruct-v0.2@fireworks-ai` as the model Id in the OpenAI API.
 
-This is again just an HTTP endpoint, so you can query it using any language or tool. For example, **cURL**:
+This is just an HTTP endpoint, so you can query it using any language or tool. For example, **cURL**:
 
 .. code-block:: bash
 

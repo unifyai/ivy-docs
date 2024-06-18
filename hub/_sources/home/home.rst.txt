@@ -20,17 +20,3 @@ We recommend you give the concepts section a quick read to get familiar with rou
 
 .. warning::
     Throughout the guides, you'll notice some sections marked as (Beta). **Any section marked as Beta is currently not available** and only illustrate planned features we are currently working on. We're constantly iterating on our roadmap so if you'd like to leave some feedback or suggestion on features you'd like to see, `we'd love to discuss <https://calendly.com/daniel-lenton/beta-discussion>`_ this with you!
-
-Welcome Gift
-------------
-
-Before diving in, you may have received a code to increase your credits. If that's the case, you can activate it with a simple request to this endpoint once you've grabbed your API key from the console:
-
-.. code-block:: bash
-
-    curl -X 'POST' \
-    'https://api.unify.ai/v0/promo?code=<CODE>' \
-    -H 'accept: application/json' \
-    -H 'Authorization: Bearer <YOUR_UNIFY_KEY>'
-
-Simply replace :code:`<CODE>` with your top up code and :code:`<YOUR_UNIFY_KEY>` with your API Key in the request, and you're ready to take-off with extra credits! 🚀

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Deploying a router &#8212; Unify Documentation</title>
+    <title>Universal API &#8212; Unify Documentation</title>
   
   
   
@@ -58,10 +58,12 @@
                 gtag('js', new Date());
                 gtag('config', 'G-QP5BET66XH');
             </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'api/deploy_router';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/unify_api';</script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Benchmarking" href="benchmarks.html" />
+    <link rel="prev" title="Welcome to Unify!" href="../index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -145,8 +145,8 @@
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="unify_api.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Universal API
                       </a>
                     </li>
@@ -261,8 +261,8 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Unify!</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="unify_api.html">Universal API</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Universal API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="router.html">Routing</a></li>
 </ul>
@@ -339,7 +339,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Deploying a router</li>
+    <li class="breadcrumb-item active" aria-current="page">Universal API</li>
   </ul>
 </nav>
 </div>
@@ -356,98 +356,155 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="deploying-a-router">
-<h1>Deploying a router<a class="headerlink" href="#deploying-a-router" title="Link to this heading">#</a></h1>
-<p>In this section, we’ll learn how to use the Unify router through the API.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you haven’t done so, we recommend you learn how to <a class="reference external" href="https://unify.ai/docs/api/first_request.html">make a request</a> first to get familiar with using the Unify API.</p>
-</div>
-<section id="using-the-base-router">
-<h2>Using the base router<a class="headerlink" href="#using-the-base-router" title="Link to this heading">#</a></h2>
-<section id="optimizing-a-metric">
-<h3>Optimizing a metric<a class="headerlink" href="#optimizing-a-metric" title="Link to this heading">#</a></h3>
-<p>When making requests, you can leverage the information from the <a class="reference external" href="https://unify.ai/docs/concepts/benchmarks.html">benchmark interface</a>
-to automatically route to the best performing provider for the metric you choose.</p>
-<p>Benchmark values change over time, so dynamically routing ensures you always get the best option without having to monitor the data yourself.</p>
-<p>To use the base router, you only need to change the provier name to one of the supported configurations. Currently, we support the following configs:</p>
+  <section id="universal-api">
+<h1>Universal API<a class="headerlink" href="#universal-api" title="Link to this heading">#</a></h1>
+<p>There’s a sea of models and providers, with new LLMs coming out all the time.
+Each provider has its own API keys, account balance, and subtle nuances in how the models are queried.</p>
+<p>The Unify Universal API provides:</p>
 <ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">lowest-input-cost</span></code> / <code class="code docutils literal notranslate"><span class="pre">input-cost</span></code></p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">lowest-output-cost</span></code> / <code class="code docutils literal notranslate"><span class="pre">output-cost</span></code></p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">lowest-itl</span></code> / <code class="code docutils literal notranslate"><span class="pre">itl</span></code></p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">lowest-ttft</span></code> / <code class="code docutils literal notranslate"><span class="pre">ttft</span></code></p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">highest-tks-per-sec</span></code> / <code class="code docutils literal notranslate"><span class="pre">tks-per-sec</span></code></p></li>
+<li><p>A single, common interface for all models and providers</p></li>
+<li><p>One account, with one balance and one API key</p></li>
 </ul>
-<p>For e.g, with the Python package, we can route to the lowest TTFT endpoints as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
-
-<span class="c1"># Assuming you added &quot;UNIFY_KEY&quot; to your environment variables. Otherwise you would specify the api_key argument.</span>
-<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;mistral-7b-instruct-v0.2@lowest-ttft&quot;</span><span class="p">)</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
+<p>You can interact with the API through a HTTP request from any programming language, through our own Unify Python package, or through the OpenAI Python package.</p>
+<section id="authentication">
+<h2>Authentication<a class="headerlink" href="#authentication" title="Link to this heading">#</a></h2>
+<p>You need an API key to query the API. <a class="reference external" href="https://console.unify.ai/login">Sign up for an account</a>, and get your API key from the <a class="reference external" href="https://console.unify.ai/">console</a>.</p>
 </section>
-<section id="defining-thresholds">
-<h3>Defining thresholds<a class="headerlink" href="#defining-thresholds" title="Link to this heading">#</a></h3>
-<p>Additionally, you have the option to include multiple thresholds for other metrics in each configuration.</p>
-<p>This feature enables you to get, for example, the highest tokens per second (<code class="code docutils literal notranslate"><span class="pre">highest-tks-per-sec</span></code>) for any provider whose <code class="code docutils literal notranslate"><span class="pre">ttft</span></code> is lower than a specific threshold. To set this up, just append <code class="code docutils literal notranslate"><span class="pre">&lt;[float][metric]</span></code> to your preferred mode when specifying a provider. To keep things simple, we have added aliases for <code class="code docutils literal notranslate"><span class="pre">output-cost</span></code> (<code class="code docutils literal notranslate"><span class="pre">oc</span></code>), <code class="code docutils literal notranslate"><span class="pre">input-cost</span></code> (<code class="code docutils literal notranslate"><span class="pre">ic</span></code>) and <code class="code docutils literal notranslate"><span class="pre">output-tks-per-sec</span></code> (<code class="code docutils literal notranslate"><span class="pre">ots</span></code>).</p>
-<p>Let’s illustrate this with some examples:</p>
+<section id="querying-the-api">
+<h2>Querying the API<a class="headerlink" href="#querying-the-api" title="Link to this heading">#</a></h2>
+<p>There are three ways to query the API:</p>
 <ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">lowest-itl&lt;0.5input-cost</span></code> - In this case, the request will be routed to the provider with the lowest
-Inter-Token-Latency that has an Input Cost smaller than 0.5 credits per million tokens.</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">highest-tks-per-sec&lt;1output-cost</span></code> - Likewise, in this scenario, the request will be directed to the provider
-offering the highest Output Tokens per Second, provided their cost is below 1 credit per million tokens.</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">ttft&lt;0.5ic&lt;15itl</span></code> - Now we have something similar to the first example, but we are using <code class="code docutils literal notranslate"><span class="pre">ic</span></code> as
-an alias to <code class="code docutils literal notranslate"><span class="pre">input-cost</span></code>, and we have also added <code class="code docutils literal notranslate"><span class="pre">&lt;15itl</span></code> to only consider endpoints
-that have an Inter-Token-Latency of less than 15 ms.</p></li>
+<li><p>HTTP request</p></li>
+<li><p>Unify Python package</p></li>
+<li><p>OpenAI Python package</p></li>
 </ul>
-<p>Depending on the specified threshold, there might be scenarios where no providers meet the criteria,
-rendering the request unfulfillable. In such cases, the API response will be a 404 error with the corresponding
-explanation. You can detect this and change your policy doing something like:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
-
-<span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
-
-<span class="c1"># This won&#39;t work since no provider has this price! (yet?)</span>
-<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;mistral-7b-instruct-v0.2@lowest-itl&lt;0.001ic&quot;</span><span class="p">)</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">404</span><span class="p">:</span>
-  <span class="c1"># We&#39;ll get the cheapest endpoint as a fallback</span>
-  <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mistral-7b-instruct-v0.2@lowest-input-cost&quot;</span>
-  <span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<section id="http-request">
+<h3>HTTP request<a class="headerlink" href="#http-request" title="Link to this heading">#</a></h3>
+<p>Run the following command in a terminal (replacing <code class="code docutils literal notranslate"><span class="pre">$UNIFY_API_KEY</span></code> with your own).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="s1">&#39;POST&#39;</span> \
+    <span class="s1">&#39;https://api.unify.ai/v0/chat/completions&#39;</span> \
+    <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Authorization: Bearer $UNIFY_API_KEY&#39;</span> \
+    <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Content-Type: application/json&#39;</span> \
+    <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;llama-3-8b-chat@fireworks-ai&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Say hello.&quot;</span><span class="p">}]</span>
+    <span class="p">}</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
-<div style="text-align: center;">
-  <iframe width="420" height="315" allow="fullscreen;"
-    src="https://www.youtube.com/embed/SBwr32iSU8Q?si=Rj3xknJEg0765Psb" class="video">
-  </iframe>
-</div></section>
-</section>
-<section id="using-a-custom-router">
-<h2>Using a custom router<a class="headerlink" href="#using-a-custom-router" title="Link to this heading">#</a></h2>
-<p>If you <a class="reference external" href="https://unify.ai/docs/interfaces/building_router.html">trained a custom router</a>, you can deploy it with the Unify API much like using any other endpoint. Assuming we want to deploy the custom router we trained before, we can use the configuration Id in the same API call code to send our prompts to our custom router as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
+<p>The <code class="code docutils literal notranslate"><span class="pre">model</span></code> field is used to specify both the model and the provider, in the format <code class="code docutils literal notranslate"><span class="pre">model&#64;provider</span></code>. You can find a list of models and providers either in our <a class="reference external" href="https://unify.ai/chat">chat</a> interface, or through our <a class="reference external" href="https://unify.ai/benchmarks">runtime benchmarks</a>.</p>
+<p>Requests can be made from any language, for example using Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="c1"># Assuming you added &quot;UNIFY_KEY&quot; to your environment variables. Otherwise you would specify the api_key argument.</span>
-<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;gpt-claude-llama3-calls-&gt;no-anthropic_8.28e-03_4.66e-0.4_1.00e-06@custom”)</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span><span class="p">)</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.unify.ai/v0/chat/completions&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer UNIFY_API_KEY&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;llama-3-8b-chat@together-ai&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Say hello.&quot;</span><span class="p">}]</span>
+<span class="p">}</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can also query the API with a CuRL request, among others. Just like explained in the first request page.</p>
+<p>The response from a request should look something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;llama-3-8b-chat@together-ai&quot;</span><span class="p">,</span>
+<span class="s2">&quot;created&quot;</span><span class="p">:</span> <span class="mi">1718888877</span><span class="p">,</span>
+<span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;896bfc1ae84271aa-LHR&quot;</span><span class="p">,</span>
+<span class="s2">&quot;object&quot;</span><span class="p">:</span> <span class="s2">&quot;chat.completion&quot;</span><span class="p">,</span>
+<span class="s2">&quot;usage&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;completion_tokens&quot;</span><span class="p">:</span> <span class="mi">25</span><span class="p">,</span>
+    <span class="s2">&quot;prompt_tokens&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span>
+    <span class="s2">&quot;total_tokens&quot;</span><span class="p">:</span> <span class="mi">38</span><span class="p">,</span>
+    <span class="s2">&quot;cost&quot;</span><span class="p">:</span> <span class="mf">7.6e-06</span>
+<span class="p">},</span>
+<span class="s2">&quot;choices&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+    <span class="s2">&quot;finish_reason&quot;</span><span class="p">:</span> <span class="s2">&quot;stop&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;index&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;message&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Hello! It&#39;s nice to meet you. Is there something I can help you with or would you like to chat?&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;assistant&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;seed&quot;</span><span class="p">:</span> <span class="mi">11563975138181362140</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The output from the LLM is accessed via <code class="code docutils literal notranslate"><span class="pre">choices[0].message.content</span></code>.
+The <code class="code docutils literal notranslate"><span class="pre">usage</span></code> field contains the number of prompt/completion tokens, as well as the total cost of the request, in US$.
+In the request you can specify other common parameters, like
+<code class="code docutils literal notranslate"><span class="pre">temperature</span></code>, <code class="code docutils literal notranslate"><span class="pre">stream</span></code> and <code class="code docutils literal notranslate"><span class="pre">max_tokens</span></code>.</p>
+<p>You can specify all of the parameters that OpenAI supports, but they may not be compatible with every model or provider.</p>
+</section>
+<section id="unify-python-package">
+<h3>Unify Python Package<a class="headerlink" href="#unify-python-package" title="Link to this heading">#</a></h3>
+<p>First, download our <a class="reference external" href="https://github.com/unifyai/unify">Python package</a> with <code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">unifyai</span></code>.</p>
+<p>There is complete documentation in the <a class="reference external" href="https://github.com/unifyai/unify/blob/main/README.md">readme</a>.
+Sample inference</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
+<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;llama-3-8b-chat@fireworks-ai&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;$UNIFY_API_KEY&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;Say hi.&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
 </section>
-<section id="round-up">
-<h2>Round Up<a class="headerlink" href="#round-up" title="Link to this heading">#</a></h2>
-<p>That’s it! You now know how to deploy a router to send your prompts to the best endpoints for the metrics or tasks you care about. You can now start optimizing your LLM applications!</p>
+<section id="openai-python-package">
+<h3>OpenAI Python package<a class="headerlink" href="#openai-python-package" title="Link to this heading">#</a></h3>
+<p>The Unify API is designed to be compatible with the OpenAI standard, so if you have existing code that uses the OpenAI Python package, it’s straightforward to try out our API.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
+    <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://api.unify.ai/v0/&quot;</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;YOUR_UNIFY_KEY&quot;</span>
+<span class="p">)</span>
+
+<span class="n">stream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;mistral-7b-instruct-v0.2@fireworks-ai&quot;</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Say hi.&quot;</span><span class="p">}],</span>
+    <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">stream</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">delta</span><span class="o">.</span><span class="n">content</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Remember that the <code class="code docutils literal notranslate"><span class="pre">model</span></code> field needs to contain a string of the form <code class="code docutils literal notranslate"><span class="pre">model&#64;provider</span></code>.</p>
+</section>
+</section>
+<section id="billing">
+<h2>Billing<a class="headerlink" href="#billing" title="Link to this heading">#</a></h2>
+<p>You only have to manage the balance and billing details for your Unify account, and we handle the spending with each provider behind the scenes.</p>
+<p>You can see your balance, top-up your balance, and set automatic refill on the <a class="reference external" href="https://console.unify.ai/billing">billing page</a>.</p>
+<p>You can get your current credit balance with a HTTP request:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="s1">&#39;GET&#39;</span> \
+<span class="s1">&#39;https://api.unify.ai/v0/get_credits&#39;</span> \
+<span class="o">-</span><span class="n">H</span> <span class="s1">&#39;accept: application/json&#39;</span> \
+<span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Authorization: Bearer YOUR_API_KEY&#39;</span>
+</pre></div>
+</div>
+<p>which will return something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;your_user_id&quot;</span><span class="p">,</span>
+<span class="s2">&quot;credits&quot;</span><span class="p">:</span> <span class="mf">232.32</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="advanced-features">
+<h2>Advanced features<a class="headerlink" href="#advanced-features" title="Link to this heading">#</a></h2>
+<section id="custom-endpoints">
+<h3>Custom endpoints<a class="headerlink" href="#custom-endpoints" title="Link to this heading">#</a></h3>
+<p>If you have a custom model which is deployed as an endpoint on (for example a fine-tuned model with OpenAI or Together AI) you can <a class="reference external" href="https://console.unify.ai/endpoints">add your own custom endpoint</a>.</p>
+<p>To create a custom endpoint, you need the Endpoint URL and the relevant API key. You can query a custom endpoint using the model string <code class="code docutils literal notranslate"><span class="pre">&lt;endpoint-name&gt;&#64;custom</span></code></p>
+</section>
+<section id="llm-fallbacks">
+<h3>LLM Fallbacks<a class="headerlink" href="#llm-fallbacks" title="Link to this heading">#</a></h3>
+<p>Sometimes individual providers have outages, which can disrupt live workflows in production.</p>
+<p>To combat this, set a list of fallback models, so if one provider is down or fails for some reason, the request will go to the next model on the list, and so on, until either the request succeeds, or the end of the list is reached.</p>
+<p>To specify the list of fallback models, use <code class="code docutils literal notranslate"><span class="pre">-&gt;</span></code> between individual model tags, so the model string becomes <code class="code docutils literal notranslate"><span class="pre">model_a&#64;provider_a-&gt;model_b&#64;provider_b</span></code>.</p>
+<p>There is no limit on the number of models that can be specified. The <code class="code docutils literal notranslate"><span class="pre">model</span></code> field in the response contains the model and provider that the request actually went to.</p>
+</section>
 </section>
 </section>
 
@@ -461,6 +518,24 @@ explanation. You can detect this and change your policy doing something like:</p
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to Unify!</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="benchmarks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Benchmarking</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -479,13 +554,19 @@ explanation. You can detect this and change your policy doing something like:</p
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-base-router">Using the base router</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizing-a-metric">Optimizing a metric</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-thresholds">Defining thresholds</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authentication">Authentication</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-the-api">Querying the API</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#http-request">HTTP request</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unify-python-package">Unify Python Package</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-python-package">OpenAI Python package</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-custom-router">Using a custom router</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#round-up">Round Up</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#billing">Billing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-features">Advanced features</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-endpoints">Custom endpoints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#llm-fallbacks">LLM Fallbacks</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
@@ -544,8 +625,8 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Unify!</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="unify_api.html">Universal API</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Universal API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="router.html">Routing</a></li>
 </ul>

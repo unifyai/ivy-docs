@@ -11,20 +11,11 @@
 .. toctree::
   :hidden:
   :maxdepth: -1
-  :caption: Interfaces
-
-  interfaces/connecting_stack.rst
-  interfaces/running_benchmarks.rst
-  interfaces/building_router.rst
-
-.. toctree::
-  :hidden:
-  :maxdepth: -1
   :caption: API
 
-  api/first_request.rst
-  api/deploy_router.rst
-  api/reference.rst
+  api/unify_api.rst
+  api/benchmarks.rst
+  api/router.rst
 
 ..  reference/images.rst
 
@@ -36,6 +27,15 @@
   demos/unify.rst
   demos/langchain.rst
   demos/llamaindex.rst
+
+.. toctree::
+  :hidden:
+  :maxdepth: -1
+  :caption: Interfaces
+
+  interfaces/connecting_stack.rst
+  interfaces/running_benchmarks.rst
+  interfaces/building_router.rst
 
 ..
   .. toctree::

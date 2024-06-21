@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>On-Prem Images &#8212; Unify Documentation</title>
+    <title>Routing &#8212; Unify Documentation</title>
   
   
   
@@ -58,10 +58,12 @@
                 gtag('js', new Date());
                 gtag('config', 'G-QP5BET66XH');
             </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'concepts/on_prem_images';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/router';</script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Python Package Examples" href="../demos/unify.html" />
+    <link rel="prev" title="Benchmarking" href="benchmarks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -146,21 +146,21 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api/unify_api.html">
+                      <a class="nav-link nav-internal" href="unify_api.html">
                         Universal API
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api/benchmarks.html">
+                      <a class="nav-link nav-internal" href="benchmarks.html">
                         Benchmarking
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api/router.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Routing
                       </a>
                     </li>
@@ -209,21 +209,21 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="endpoints.html">
+                      <a class="nav-link nav-internal" href="../concepts/endpoints.html">
                         Model Endpoints
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="benchmarks.html">
+                      <a class="nav-link nav-internal" href="../concepts/benchmarks.html">
                         Benchmarks
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="routing.html">
+                      <a class="nav-link nav-internal" href="../concepts/routing.html">
                         Routing
                       </a>
                     </li>
@@ -261,10 +261,10 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Unify!</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../api/unify_api.html">Universal API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/benchmarks.html">Benchmarking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/router.html">Routing</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="unify_api.html">Universal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarking</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Routing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
 <ul class="nav bd-sidenav">
@@ -298,9 +298,9 @@ document.write(`
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="endpoints.html">Model Endpoints</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/endpoints.html">Model Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/benchmarks.html">Benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/routing.html">Routing</a></li>
 </ul>
 
     </div>
@@ -339,7 +339,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">On-Prem Images</li>
+    <li class="breadcrumb-item active" aria-current="page">Routing</li>
   </ul>
 </nav>
 </div>
@@ -356,9 +356,62 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="on-prem-images">
-<h1>On-Prem Images<a class="headerlink" href="#on-prem-images" title="Link to this heading">#</a></h1>
-<p>Lorem ipsum</p>
+  <section id="routing">
+<h1>Routing<a class="headerlink" href="#routing" title="Link to this heading">#</a></h1>
+<p>Learn how to use the LLM routing endpoints.</p>
+<section id="what-is-llm-routing">
+<h2>What is LLM routing?<a class="headerlink" href="#what-is-llm-routing" title="Link to this heading">#</a></h2>
+<p>LLM routing allows you to be flexible about which model handles each prompt. Flexibility can be advantageous for several reasons:</p>
+<ol class="arabic simple">
+<li><p>Small models are (in general) faster and cheaper, whereas bigger models are more capable.</p></li>
+<li><p>Tasks often contain a range of difficulties.</p></li>
+<li><p>Different providers have different latencies, and these <strong>change</strong> over time.</p></li>
+<li><p>New models come out every week, each having different strengths and weaknesses.</p></li>
+</ol>
+<p>LLM routing provides:</p>
+<ul class="simple">
+<li><p>Faster and cheaper responses when a smaller model is capable of answering</p></li>
+<li><p>Continuous improvement: ‘riding the wave’ of new model releases</p></li>
+<li><p>Ability to maximise throughput or minimise latency based on live runtime statistics</p></li>
+</ul>
+</section>
+<section id="foundation-router">
+<h2>Foundation router<a class="headerlink" href="#foundation-router" title="Link to this heading">#</a></h2>
+<p>We have trained a general-purpose router on a wide variety of prompts.
+To query the foundation router, select a green star on the graph on the <a class="reference external" href="https://unify.ai/chat">chat interface</a> and copy the router string.</p>
+<p>For example <code class="code docutils literal notranslate"><span class="pre">router&#64;q:1|c:4.65e-03|t:2.08e-05|i:2.07e-03</span></code></p>
+<p>The parameters stand for the relative weighing of: quality, cost, time-to-first-token, and inter-token latency. They are completely customizable, but it’s most meaningful to select a configuration directly from the graph.</p>
+<section id="filtering-endpoints">
+<h3>Filtering endpoints<a class="headerlink" href="#filtering-endpoints" title="Link to this heading">#</a></h3>
+<p>You can restrict the model and providers that are routed between, by specifying them in the router string as follows:</p>
+<p><code class="code docutils literal notranslate"><span class="pre">router&#64;models:model1,model2,model3|providers:provider1,provider2</span></code></p>
+</section>
+<section id="maximising-throughput">
+<h3>Maximising throughput<a class="headerlink" href="#maximising-throughput" title="Link to this heading">#</a></h3>
+<p>When using the router, if provider specific rate-limits are hit then the router moves on to the next best model. This means that you can get much higher throughput than is available from a single provider.</p>
+</section>
+</section>
+<section id="fine-tuned-custom-router">
+<h2>Fine-tuned custom router<a class="headerlink" href="#fine-tuned-custom-router" title="Link to this heading">#</a></h2>
+<p>We’ve found that the best results for LLM routing come when you train on similar prompts to those that are going to be used in production.
+To train a custom router, you need to:</p>
+<ul class="simple">
+<li><p>Prepare a training dataset</p></li>
+<li><p>Train a router, and visualise the results</p></li>
+<li><p>Query your trained router</p></li>
+</ul>
+<section id="preparing-a-dataset">
+<h3>Preparing a dataset<a class="headerlink" href="#preparing-a-dataset" title="Link to this heading">#</a></h3>
+<p>The format for the dataset is the same as the one used in <a class="reference external" href="https://unify.ai/docs/api/benchmarks.html">benchmarking</a>, i.e.
+a JSONL file with entries of the form <code class="code docutils literal notranslate"><span class="pre">{&quot;prompt&quot;:</span> <span class="pre">xxx,</span> <span class="pre">&quot;ref_answer&quot;:</span> <span class="pre">yyy}</span></code>. Reference answers are optional, but improve accuracy of the final system.</p>
+</section>
+<section id="training-a-router-beta">
+<h3>Training a router (beta)<a class="headerlink" href="#training-a-router-beta" title="Link to this heading">#</a></h3>
+<p>In your <a class="reference external" href="https://console.unify.ai/dashboard">dashboard</a>, click <code class="code docutils literal notranslate"><span class="pre">Select</span> <span class="pre">Benchmark</span></code> and then <code class="code docutils literal notranslate"><span class="pre">Train</span> <span class="pre">a</span> <span class="pre">router</span></code>, to upload your dataset.</p>
+<p>After uploading the dataset, a router will be trained. Once it’s finished training, you’ll receive an email, and the graph will be displayed in your <a class="reference external" href="https://console.unify.ai/dashboard">dashboard</a>.
+Here you will be able to choose a router configuration, and copy the router string to use in the API.</p>
+</section>
+</section>
 </section>
 
 
@@ -371,6 +424,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="benchmarks.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Benchmarking</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../demos/unify.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Python Package Examples</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -378,7 +449,32 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-llm-routing">What is LLM routing?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foundation-router">Foundation router</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-endpoints">Filtering endpoints</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximising-throughput">Maximising throughput</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuned-custom-router">Fine-tuned custom router</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-a-dataset">Preparing a dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#training-a-router-beta">Training a router (beta)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -433,10 +529,10 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Unify!</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../api/unify_api.html">Universal API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/benchmarks.html">Benchmarking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/router.html">Routing</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="unify_api.html">Universal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarking</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Routing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
 <ul class="nav bd-sidenav">
@@ -470,9 +566,9 @@ document.write(`
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="endpoints.html">Model Endpoints</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/endpoints.html">Model Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/benchmarks.html">Benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/routing.html">Routing</a></li>
 </ul>
 
     </div>

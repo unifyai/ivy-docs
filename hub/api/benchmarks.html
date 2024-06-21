@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>On-Prem Images &#8212; Unify Documentation</title>
+    <title>Benchmarking &#8212; Unify Documentation</title>
   
   
   
@@ -58,10 +58,12 @@
                 gtag('js', new Date());
                 gtag('config', 'G-QP5BET66XH');
             </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'concepts/on_prem_images';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'api/benchmarks';</script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Routing" href="router.html" />
+    <link rel="prev" title="Universal API" href="unify_api.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -146,21 +146,21 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api/unify_api.html">
+                      <a class="nav-link nav-internal" href="unify_api.html">
                         Universal API
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api/benchmarks.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Benchmarking
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../api/router.html">
+                      <a class="nav-link nav-internal" href="router.html">
                         Routing
                       </a>
                     </li>
@@ -209,21 +209,21 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="endpoints.html">
+                      <a class="nav-link nav-internal" href="../concepts/endpoints.html">
                         Model Endpoints
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="benchmarks.html">
+                      <a class="nav-link nav-internal" href="../concepts/benchmarks.html">
                         Benchmarks
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="routing.html">
+                      <a class="nav-link nav-internal" href="../concepts/routing.html">
                         Routing
                       </a>
                     </li>
@@ -261,10 +261,10 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Unify!</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../api/unify_api.html">Universal API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/benchmarks.html">Benchmarking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/router.html">Routing</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="unify_api.html">Universal API</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="router.html">Routing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
 <ul class="nav bd-sidenav">
@@ -298,9 +298,9 @@ document.write(`
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="endpoints.html">Model Endpoints</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/endpoints.html">Model Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/benchmarks.html">Benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/routing.html">Routing</a></li>
 </ul>
 
     </div>
@@ -339,7 +339,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">On-Prem Images</li>
+    <li class="breadcrumb-item active" aria-current="page">Benchmarking</li>
   </ul>
 </nav>
 </div>
@@ -356,9 +356,34 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="on-prem-images">
-<h1>On-Prem Images<a class="headerlink" href="#on-prem-images" title="Link to this heading">#</a></h1>
-<p>Lorem ipsum</p>
+  <section id="benchmarking">
+<h1>Benchmarking<a class="headerlink" href="#benchmarking" title="Link to this heading">#</a></h1>
+<p>When comparing LLMs, there is a constant tradeoff to make between quality, cost and latency. Stronger models are (in general) slower and more expensive - and sometimes overkill for the task at hand. Complicating matters further, new models are released weekly, each claiming to be state-of-the-art.</p>
+<p>Benchmarking on your data lets you see how each of the different models perform on your task.</p>
+<a class="reference internal image-reference" href="../_images/benchmarks.png"><img alt="Benchmarks Image." class="align-center" src="../_images/benchmarks.png" style="width: 800px;" /></a>
+<p>You can compare how quality relates to cost and latency, with live stats pulled from our <a class="reference external" href="https://unify.ai/benchmarks">runtime benchmarks</a>.</p>
+<p>When new models come out, simply re-run the benchmark to see how they perform on your task.</p>
+<section id="preparing-your-dataset">
+<h2>Preparing your dataset<a class="headerlink" href="#preparing-your-dataset" title="Link to this heading">#</a></h2>
+<p>First create a dataset which is representative of the task you want to evaluate.
+You will need a list of prompts, optionally including a reference, <em>gold-standard</em> answer. Datasets containing reference answers tend to get more accurate benchmarks.</p>
+<p>The file itself should be in JSONL format, with one entry per line, as in the example below.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s2">&quot;prompt&quot;</span><span class="p">:</span> <span class="s2">&quot;This is the first prompt&quot;</span><span class="p">,</span> <span class="s2">&quot;ref_answer&quot;</span><span class="p">:</span> <span class="s2">&quot;This is the first reference answer&quot;</span><span class="p">}</span>
+<span class="p">{</span><span class="s2">&quot;prompt&quot;</span><span class="p">:</span> <span class="s2">&quot;This is the second prompt&quot;</span><span class="p">,</span> <span class="s2">&quot;ref_answer&quot;</span><span class="p">:</span> <span class="s2">&quot;This is the second reference answer&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Use at least 50 prompts to get the most accurate results. Currently there is an maximum limit of 500 prompts, for most tasks we don’t tend to see much extra detail past ~250.</p>
+</section>
+<section id="benchmarking-your-dataset">
+<h2>Benchmarking your dataset<a class="headerlink" href="#benchmarking-your-dataset" title="Link to this heading">#</a></h2>
+<p>In <a class="reference external" href="https://console.unify.ai/dashboard">your dashboard</a>, clicking <code class="code docutils literal notranslate"><span class="pre">Select</span> <span class="pre">benchmark</span></code> and then <code class="code docutils literal notranslate"><span class="pre">Benchmark</span> <span class="pre">your</span> <span class="pre">prompts</span></code> opens the interface to upload a dataset.</p>
+<p>When the benchmark finishes, you’ll receive an email, and the graph will be displayed in your <a class="reference external" href="https://console.unify.ai/dashboard">dashboard</a>.</p>
+<p>The x-axis can be set to represent <code class="code docutils literal notranslate"><span class="pre">cost</span></code>, <code class="code docutils literal notranslate"><span class="pre">time-to-first-token</span></code>, or <code class="code docutils literal notranslate"><span class="pre">inter-token</span> <span class="pre">latency</span></code>, and on either a linear or log scale.</p>
+<section id="how-does-it-work">
+<h3>How does it work?<a class="headerlink" href="#how-does-it-work" title="Link to this heading">#</a></h3>
+<p>Currently, we use gpt4o-as-a-judge (cf. <a class="reference external" href="https://arxiv.org/abs/2306.05685">https://arxiv.org/abs/2306.05685</a>), to evaluate the quality of each model’s responses.</p>
+</section>
+</section>
 </section>
 
 
@@ -371,6 +396,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="unify_api.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Universal API</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="router.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Routing</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -378,7 +421,26 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-your-dataset">Preparing your dataset</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benchmarking-your-dataset">Benchmarking your dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-it-work">How does it work?</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -433,10 +495,10 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Unify!</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../api/unify_api.html">Universal API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/benchmarks.html">Benchmarking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../api/router.html">Routing</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="unify_api.html">Universal API</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="router.html">Routing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
 <ul class="nav bd-sidenav">
@@ -470,9 +532,9 @@ document.write(`
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="endpoints.html">Model Endpoints</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="routing.html">Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/endpoints.html">Model Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/benchmarks.html">Benchmarks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../concepts/routing.html">Routing</a></li>
 </ul>
 
     </div>

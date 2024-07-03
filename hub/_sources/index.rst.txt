@@ -7,6 +7,7 @@
   :maxdepth: -1
 
   Welcome to Unify! <self>
+  API Reference <https://api.unify.ai/v0/docs>
 
 .. toctree::
   :hidden:

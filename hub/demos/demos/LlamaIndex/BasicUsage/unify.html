@@ -177,6 +177,13 @@
                 
 
                     <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../../../../docs/unify/unify.html">
+                        Unify
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
                       <a class="nav-link nav-internal" href="../../../unify.html">
                         Python Package Examples
                       </a>
@@ -277,9 +284,20 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../../../../api/benchmarks.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../api/router.html">Routing</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Docs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../docs/unify/unify.html">Unify</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../docs/unify/unify/unify.chat.html">Chat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../docs/unify/unify/unify.clients.html">Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../docs/unify/unify/unify.exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../docs/unify/unify/unify.tests.html">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../docs/unify/unify/unify.utils.html">Utils</a></li>
+</ul>
+</li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../unify.html">Python Package Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../unify.html">Python Package Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../Unify/ChatBot/ChatBot.html">Build a ChatBot</a></li>
 
 
@@ -291,11 +309,11 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../Unify/LLM_Debate/README.html">AI Debate App</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../langchain.html">LangChain Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../langchain.html">LangChain Examples</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../LangChain/RAG_playground/README.html">RAG Playground 🛝</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../llamaindex.html">LlamaIndex Examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../llamaindex.html">LlamaIndex Examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../RAGPlayground/README.html">RAG Playground</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">LlamaIndex</a></li>
 </ul>
@@ -456,7 +474,7 @@ CompletionResponse(text=&#34;I&#39;m not actually a llama, but I&#39;m doing gre
 <h3>Quality Routing<a class="headerlink" href="#Quality-Routing" title="Link to this heading">#</a></h3>
 <p>Unify routes your queries to the best LLM on every prompt to consistently achieve better quality outputs than using a single, all-purpose, powerful model, at a fraction of the cost. This is achieved by using smaller models for simpler tasks, only using largers ones to handle complex queries.</p>
 <p>The router is benchmarked on various different data-sets such as <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Hermes</span></code>, <code class="docutils literal notranslate"><span class="pre">GSM8K</span></code>, <code class="docutils literal notranslate"><span class="pre">HellaSwag</span></code>, <code class="docutils literal notranslate"><span class="pre">MMLU</span></code> and <code class="docutils literal notranslate"><span class="pre">MT-Bench</span></code> revealing that it can peform better than indivudal endpoints on average as explained <a class="reference external" href="https://unify.ai/docs/concepts/routing.html#quality-routing">here</a>. One can choose various different configurations of the router for a particular data-set from the <a class="reference external" href="https://unify.ai/chat">chat-interface</a> as shown below:</p>
-<p><img alt="a307ad375f3445a4bc8c745f7676e3e2" src="../../../../_images/unify.gif" /></p>
+<p><img alt="181a27e1c58f4950959a051a5252fc84" src="../../../../_images/unify.gif" /></p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
 </pre></div>
@@ -671,9 +689,20 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../../../../api/benchmarks.html">Benchmarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../api/router.html">Routing</a></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Docs</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../../docs/unify/unify.html">Unify</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../docs/unify/unify/unify.chat.html">Chat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../docs/unify/unify/unify.clients.html">Clients</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../docs/unify/unify/unify.exceptions.html">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../docs/unify/unify/unify.tests.html">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../docs/unify/unify/unify.utils.html">Utils</a></li>
+</ul>
+</li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Demos</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../unify.html">Python Package Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../unify.html">Python Package Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../Unify/ChatBot/ChatBot.html">Build a ChatBot</a></li>
 
 
@@ -685,11 +714,11 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="../../Unify/LLM_Debate/README.html">AI Debate App</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../langchain.html">LangChain Examples</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../langchain.html">LangChain Examples</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../LangChain/RAG_playground/README.html">RAG Playground 🛝</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../llamaindex.html">LlamaIndex Examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../../llamaindex.html">LlamaIndex Examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../RAGPlayground/README.html">RAG Playground</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">LlamaIndex</a></li>
 </ul>

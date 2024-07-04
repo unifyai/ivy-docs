@@ -20,6 +20,15 @@
 
 ..  reference/images.rst
 
+.. autosummary::
+  :toctree: docs/unify
+  :template: top_level_toc_recursive.rst
+  :recursive:
+  :hide-table:
+  :caption: Docs
+
+  unify
+
 .. toctree::
   :hidden:
   :maxdepth: 4

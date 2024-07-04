@@ -1,0 +1,16 @@
+Exceptions
+==========
+
+
+
+
+.. automodule:: unify.exceptions
+    :members:
+    :special-members: __init__
+    :undoc-members:
+    :show-inheritance:
+
+
+
+
+.. discussion-links:: unify.exceptions

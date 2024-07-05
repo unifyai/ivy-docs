@@ -25,7 +25,7 @@
   :template: top_level_toc_recursive.rst
   :recursive:
   :hide-table:
-  :caption: Docs
+  :caption: Python Client Docs
 
   unify
 

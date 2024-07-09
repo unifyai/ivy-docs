@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Deploying a router &#8212; Unify Documentation</title>
+    <title>SSO (Single Sign On) &#8212; Unify Documentation</title>
   
   
   
@@ -58,10 +58,11 @@
                 gtag('js', new Date());
                 gtag('config', 'G-QP5BET66XH');
             </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'api/deploy_router';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'on_prem/sso';</script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="On-Prem access" href="on_prem_access.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +124,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -153,21 +152,21 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="unify_api.html">
+                      <a class="nav-link nav-internal" href="../api/unify_api.html">
                         Universal API
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="benchmarks.html">
+                      <a class="nav-link nav-internal" href="../api/benchmarks.html">
                         Benchmarking
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="router.html">
+                      <a class="nav-link nav-internal" href="../api/router.html">
                         Routing
                       </a>
                     </li>
@@ -244,14 +243,14 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../on_prem/on_prem_access.html">
+                      <a class="nav-link nav-internal" href="on_prem_access.html">
                         On-Prem access
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../on_prem/sso.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         SSO (Single Sign On)
                       </a>
                     </li>
@@ -291,9 +290,9 @@ document.write(`
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="unify_api.html">Universal API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="router.html">Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/unify_api.html">Universal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/benchmarks.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/router.html">Routing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Client Docs</span></p>
 <ul class="nav bd-sidenav">
@@ -340,9 +339,9 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../concepts/routing.html">Routing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">On-Prem</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../on_prem/on_prem_access.html">On-Prem access</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../on_prem/sso.html">SSO (Single Sign On)</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="on_prem_access.html">On-Prem access</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">SSO (Single Sign On)</a></li>
 </ul>
 
     </div>
@@ -381,7 +380,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Deploying a router</li>
+    <li class="breadcrumb-item active" aria-current="page">SSO (Single Sign On)</li>
   </ul>
 </nav>
 </div>
@@ -398,99 +397,76 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="deploying-a-router">
-<h1>Deploying a router<a class="headerlink" href="#deploying-a-router" title="Link to this heading">#</a></h1>
-<p>In this section, we’ll learn how to use the Unify router through the API.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>If you haven’t done so, we recommend you learn how to <a class="reference external" href="https://unify.ai/docs/api/first_request.html">make a request</a> first to get familiar with using the Unify API.</p>
+  <section id="sso-single-sign-on">
+<h1>SSO (Single Sign On)<a class="headerlink" href="#sso-single-sign-on" title="Link to this heading">#</a></h1>
+<p>Steps to use on-prem SSO microservice.</p>
+<ol class="arabic simple">
+<li><p>Once granted access, run <code class="code docutils literal notranslate"><span class="pre">docker</span> <span class="pre">pull</span> <span class="pre">unifyai/sso:latest</span></code></p></li>
+<li><p>Then run <code class="code docutils literal notranslate"><span class="pre">docker</span> <span class="pre">run</span> <span class="pre">-dt</span> <span class="pre">-p</span> <span class="pre">8000:8000</span> <span class="pre">–env-file</span> <span class="pre">&lt;env_file_path&gt;</span> <span class="pre">unifyai/sso:latest</span></code></p></li>
+<li><p>The env file should look like this.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">DEEPINFRA_API_KEY</span><span class="o">=</span>
+<span class="nv">STABILITY_API_KEY</span><span class="o">=</span>
+<span class="nv">MISTRAL_AI_API_KEY</span><span class="o">=</span>
+<span class="nv">PERPLEXITY_AI_API_KEY</span><span class="o">=</span>
+<span class="nv">ANYSCALE_API_KEY</span><span class="o">=</span>
+<span class="nv">OCTOAI_API_KEY</span><span class="o">=</span>
+<span class="nv">OPENAI_API_KEY</span><span class="o">=</span>
+<span class="nv">TOGETHER_AI_API_KEY</span><span class="o">=</span>
+<span class="nv">REPLICATE_API_KEY</span><span class="o">=</span>
+<span class="nv">LEPTON_AI_API_KEY</span><span class="o">=</span>
+<span class="nv">FIREWORKS_AI_API_KEY</span><span class="o">=</span>
+<span class="nv">ANTHROPIC_API_KEY</span><span class="o">=</span>
+<span class="c1">###</span>
+<span class="nv">VERTEXAI_SERVICE_ACC_JSON</span><span class="o">=</span>
+<span class="nv">VERTEXAI_GCLOUD_PATH</span><span class="o">=</span>
+<span class="nv">VERTEXAI_PROJECT</span><span class="o">=</span>
+<span class="nv">VERTEXAI_LOCATION</span><span class="o">=</span>
+</pre></div>
 </div>
-<section id="using-the-base-router">
-<h2>Using the base router<a class="headerlink" href="#using-the-base-router" title="Link to this heading">#</a></h2>
-<section id="optimizing-a-metric">
-<h3>Optimizing a metric<a class="headerlink" href="#optimizing-a-metric" title="Link to this heading">#</a></h3>
-<p>When making requests, you can leverage the information from the <a class="reference external" href="https://unify.ai/docs/concepts/benchmarks.html">benchmark interface</a>
-to automatically route to the best performing provider for the metric you choose.</p>
-<p>Benchmark values change over time, so dynamically routing ensures you always get the best option without having to monitor the data yourself.</p>
-<p>To use the base router, you only need to change the provier name to one of the supported configurations. Currently, we support the following configs:</p>
-<ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">lowest-input-cost</span></code> / <code class="code docutils literal notranslate"><span class="pre">input-cost</span></code></p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">lowest-output-cost</span></code> / <code class="code docutils literal notranslate"><span class="pre">output-cost</span></code></p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">lowest-itl</span></code> / <code class="code docutils literal notranslate"><span class="pre">itl</span></code></p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">lowest-ttft</span></code> / <code class="code docutils literal notranslate"><span class="pre">ttft</span></code></p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">highest-tks-per-sec</span></code> / <code class="code docutils literal notranslate"><span class="pre">tks-per-sec</span></code></p></li>
+<ol class="arabic" start="4">
+<li><dl>
+<dt>Now you have your sso service running locally which you can use like this.</dt><dd><ul class="simple">
+<li><p>Using python + requests</p></li>
 </ul>
-<p>For e.g, with the Python package, we can route to the lowest TTFT endpoints as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">messages</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;What&#39;s the weather like in San Francisco, Tokyo, and Paris?&quot;</span><span class="p">}]</span>
 
-<span class="c1"># Assuming you added &quot;UNIFY_KEY&quot; to your environment variables. Otherwise you would specify the api_key argument.</span>
-<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;mistral-7b-instruct-v0.2@lowest-ttft&quot;</span><span class="p">)</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="s2">&quot;http://localhost:8000/chat/completions&quot;</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;claude-3-haiku@anthropic&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="n">messages</span><span class="p">,</span>
+<span class="p">},)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
 </pre></div>
 </div>
-</section>
-<section id="defining-thresholds">
-<h3>Defining thresholds<a class="headerlink" href="#defining-thresholds" title="Link to this heading">#</a></h3>
-<p>Additionally, you have the option to include multiple thresholds for other metrics in each configuration.</p>
-<p>This feature enables you to get, for example, the highest tokens per second (<code class="code docutils literal notranslate"><span class="pre">highest-tks-per-sec</span></code>) for any provider whose <code class="code docutils literal notranslate"><span class="pre">ttft</span></code> is lower than a specific threshold. To set this up, just append <code class="code docutils literal notranslate"><span class="pre">&lt;[float][metric]</span></code> to your preferred mode when specifying a provider. To keep things simple, we have added aliases for <code class="code docutils literal notranslate"><span class="pre">output-cost</span></code> (<code class="code docutils literal notranslate"><span class="pre">oc</span></code>), <code class="code docutils literal notranslate"><span class="pre">input-cost</span></code> (<code class="code docutils literal notranslate"><span class="pre">ic</span></code>) and <code class="code docutils literal notranslate"><span class="pre">output-tks-per-sec</span></code> (<code class="code docutils literal notranslate"><span class="pre">ots</span></code>).</p>
-<p>Let’s illustrate this with some examples:</p>
 <ul class="simple">
-<li><p><code class="code docutils literal notranslate"><span class="pre">lowest-itl&lt;0.5input-cost</span></code> - In this case, the request will be routed to the provider with the lowest
-Inter-Token-Latency that has an Input Cost smaller than 0.5 credits per million tokens.</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">highest-tks-per-sec&lt;1output-cost</span></code> - Likewise, in this scenario, the request will be directed to the provider
-offering the highest Output Tokens per Second, provided their cost is below 1 credit per million tokens.</p></li>
-<li><p><code class="code docutils literal notranslate"><span class="pre">ttft&lt;0.5ic&lt;15itl</span></code> - Now we have something similar to the first example, but we are using <code class="code docutils literal notranslate"><span class="pre">ic</span></code> as
-an alias to <code class="code docutils literal notranslate"><span class="pre">input-cost</span></code>, and we have also added <code class="code docutils literal notranslate"><span class="pre">&lt;15itl</span></code> to only consider endpoints
-that have an Inter-Token-Latency of less than 15 ms.</p></li>
+<li><p>Using our python client</p></li>
 </ul>
-<p>Depending on the specified threshold, there might be scenarios where no providers meet the criteria,
-rendering the request unfulfillable. In such cases, the API response will be a 404 error with the corresponding
-explanation. You can detect this and change your policy doing something like:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
-
-<span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
-
-<span class="c1"># This won&#39;t work since no provider has this price! (yet?)</span>
-<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;mistral-7b-instruct-v0.2@lowest-itl&lt;0.001ic&quot;</span><span class="p">)</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">404</span><span class="p">:</span>
-  <span class="c1"># We&#39;ll get the cheapest endpoint as a fallback</span>
-  <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mistral-7b-instruct-v0.2@lowest-input-cost&quot;</span>
-  <span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
+<span class="n">api</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;claude-3-haiku@anthropic&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=&lt;</span><span class="n">RANDOM_KEY_WONT_BE_USED</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="n">api</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="err">“</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8000</span><span class="err">”</span>
+<span class="n">api</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;What is the meaning of life?&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div style="text-align: center;">
-  <iframe width="420" height="315" allow="fullscreen;"
-    src="https://www.youtube.com/embed/SBwr32iSU8Q?si=Rj3xknJEg0765Psb" class="video">
-  </iframe>
-</div></section>
-</section>
-<section id="using-a-custom-router">
-<h2>Using a custom router<a class="headerlink" href="#using-a-custom-router" title="Link to this heading">#</a></h2>
-<p>If you <a class="reference external" href="https://unify.ai/docs/interfaces/building_router.html">trained a custom router</a>, you can deploy it with the Unify API much like using any other endpoint. Assuming we want to deploy the custom router we trained before, we can use the configuration Id in the same API call code to send our prompts to our custom router as follows:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
-
-<span class="c1"># Assuming you added &quot;UNIFY_KEY&quot; to your environment variables. Otherwise you would specify the api_key argument.</span>
-<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;gpt-claude-llama3-calls-&gt;no-anthropic_8.28e-03_4.66e-0.4_1.00e-06@custom”)</span>
-
-<span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span><span class="p">)</span>
+<ul class="simple">
+<li><p>Using curl</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="s1">&#39;http://localhost:8000/chat/completions&#39;</span><span class="w"> </span><span class="se">\</span>
+-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">&quot;model&quot;: &quot;claude-3-haiku@anthropic&quot;,</span>
+<span class="s1">    &quot;messages&quot;: [{</span>
+<span class="s1">        &quot;role&quot;: &quot;user&quot;,</span>
+<span class="s1">        &quot;content&quot;: &quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
+<span class="s1">    }],</span>
+<span class="s1">}&#39;</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can also query the API with a CuRL request, among others. Just like explained in the first request page.</p>
-</div>
-</section>
-<section id="round-up">
-<h2>Round Up<a class="headerlink" href="#round-up" title="Link to this heading">#</a></h2>
-<p>That’s it! You now know how to deploy a router to send your prompts to the best endpoints for the metrics or tasks you care about. You can now start optimizing your LLM applications!</p>
-</section>
+</dd>
+</dl>
+</li>
+</ol>
 </section>
 
 
@@ -503,6 +479,15 @@ explanation. You can detect this and change your policy doing something like:</p
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="on_prem_access.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">On-Prem access</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -510,28 +495,7 @@ explanation. You can detect this and change your policy doing something like:</p
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-<div
-    id="pst-page-navigation-heading-2"
-    class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> On this page
-  </div>
-  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-base-router">Using the base router</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizing-a-metric">Optimizing a metric</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-thresholds">Defining thresholds</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-custom-router">Using a custom router</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#round-up">Round Up</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
@@ -588,9 +552,9 @@ document.write(`
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="unify_api.html">Universal API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="router.html">Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/unify_api.html">Universal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/benchmarks.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api/router.html">Routing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Python Client Docs</span></p>
 <ul class="nav bd-sidenav">
@@ -637,9 +601,9 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../concepts/routing.html">Routing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">On-Prem</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../on_prem/on_prem_access.html">On-Prem access</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../on_prem/sso.html">SSO (Single Sign On)</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="on_prem_access.html">On-Prem access</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">SSO (Single Sign On)</a></li>
 </ul>
 
     </div>

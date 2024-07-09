@@ -65,3 +65,13 @@
   concepts/benchmarks.rst
   concepts/routing.rst
 ..  concepts/on_prem_images.rst
+
+.. toctree::
+  :hidden:
+  :maxdepth: -1
+  :caption: On-Prem
+
+  on_prem/on_prem_access
+  on_prem/sso.rst
+
+

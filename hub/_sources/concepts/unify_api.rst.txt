@@ -24,7 +24,7 @@ There are three ways to query the API:
 - OpenAI Python package
 
 
-HTTP request
+HTTP Request
 ^^^^^^^^^^^^
 Run the following command in a terminal (replacing :code:`$UNIFY_API_KEY` with your own).
 
@@ -103,10 +103,10 @@ Sample inference
 .. code-block:: python
 
     from unify import Unify
-    unify = Unify("llama-3-8b-chat@fireworks-ai", api_key="$UNIFY_API_KEY")
-    response = unify.generate("Say hi.")
+    client = Unify("llama-3-8b-chat@fireworks-ai", api_key="$UNIFY_API_KEY")
+    response = client.generate("Say hi.")
 
-OpenAI Python package
+OpenAI Python Package
 ^^^^^^^^^^^^^^^^^^^^^
 The Unify API is designed to be compatible with the OpenAI standard, so if you have existing code that uses the OpenAI Python package, it's straightforward to try out our API.
 
@@ -128,6 +128,25 @@ The Unify API is designed to be compatible with the OpenAI standard, so if you h
         print(chunk.choices[0].delta.content or "", end="")
 
 Remember that the :code:`model` field needs to contain a string of the form :code:`model@provider`.
+
+OpenAI NodeJS Package
+^^^^^^^^^^^^^^^^^^^^^
+Likewise, if you have existing code that uses the OpenAI NodeJS package, it's straightforward to try out our API.
+
+.. code-block:: javascript
+
+    const openai = new OpenAI({
+      baseUrl: "https://api.unify.ai/v0/",
+      apiKey: "YOUR_UNIFY_KEY"
+    });
+
+    const stream = await openai.chat.completions.create({
+      model: "mistral-7b-instruct-v0.3@fireworks-ai",
+      messages: [{"role": "user", "content": "Say hi."}],
+      stream: true
+    });
+
+Again, remember that the :code:`model` field needs to contain a string of the form :code:`model@provider`.
 
 Billing
 -------

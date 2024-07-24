@@ -349,7 +349,7 @@ Each provider has its own API keys, account balance, and subtle nuances in how t
 <li><p>OpenAI Python package</p></li>
 </ul>
 <section id="http-request">
-<h3>HTTP request<a class="headerlink" href="#http-request" title="Link to this heading">#</a></h3>
+<h3>HTTP Request<a class="headerlink" href="#http-request" title="Link to this heading">#</a></h3>
 <p>Run the following command in a terminal (replacing <code class="code docutils literal notranslate"><span class="pre">$UNIFY_API_KEY</span></code> with your own).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="s1">&#39;POST&#39;</span> \
     <span class="s1">&#39;https://api.unify.ai/v0/chat/completions&#39;</span> \
@@ -415,13 +415,13 @@ In the request you can specify other common parameters, like
 <p>There is complete documentation in the <a class="reference external" href="https://github.com/unifyai/unify/blob/main/README.md">readme</a>.
 Sample inference</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
-<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;llama-3-8b-chat@fireworks-ai&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;$UNIFY_API_KEY&quot;</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;Say hi.&quot;</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;llama-3-8b-chat@fireworks-ai&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;$UNIFY_API_KEY&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;Say hi.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="openai-python-package">
-<h3>OpenAI Python package<a class="headerlink" href="#openai-python-package" title="Link to this heading">#</a></h3>
+<h3>OpenAI Python Package<a class="headerlink" href="#openai-python-package" title="Link to this heading">#</a></h3>
 <p>The Unify API is designed to be compatible with the OpenAI standard, so if you have existing code that uses the OpenAI Python package, it’s straightforward to try out our API.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 
@@ -440,6 +440,23 @@ Sample inference</p>
 </pre></div>
 </div>
 <p>Remember that the <code class="code docutils literal notranslate"><span class="pre">model</span></code> field needs to contain a string of the form <code class="code docutils literal notranslate"><span class="pre">model&#64;provider</span></code>.</p>
+</section>
+<section id="openai-nodejs-package">
+<h3>OpenAI NodeJS Package<a class="headerlink" href="#openai-nodejs-package" title="Link to this heading">#</a></h3>
+<p>Likewise, if you have existing code that uses the OpenAI NodeJS package, it’s straightforward to try out our API.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">openai</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">OpenAI</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">baseUrl</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://api.unify.ai/v0/&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">apiKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;YOUR_UNIFY_KEY&quot;</span>
+<span class="p">});</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">stream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">openai</span><span class="p">.</span><span class="nx">chat</span><span class="p">.</span><span class="nx">completions</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;mistral-7b-instruct-v0.3@fireworks-ai&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;content&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Say hi.&quot;</span><span class="p">}],</span>
+<span class="w">  </span><span class="nx">stream</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>Again, remember that the <code class="code docutils literal notranslate"><span class="pre">model</span></code> field needs to contain a string of the form <code class="code docutils literal notranslate"><span class="pre">model&#64;provider</span></code>.</p>
 </section>
 </section>
 <section id="billing">
@@ -526,9 +543,10 @@ Sample inference</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authentication">Authentication</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-the-api">Querying the API</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#http-request">HTTP request</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#http-request">HTTP Request</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unify-python-package">Unify Python Package</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-python-package">OpenAI Python package</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-python-package">OpenAI Python Package</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-nodejs-package">OpenAI NodeJS Package</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#billing">Billing</a></li>

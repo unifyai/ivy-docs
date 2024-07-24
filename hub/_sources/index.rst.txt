@@ -12,11 +12,11 @@
 .. toctree::
   :hidden:
   :maxdepth: -1
-  :caption: API
+  :caption: Concepts
 
-  api/unify_api.rst
-  api/benchmarks.rst
-  api/router.rst
+  concepts/unify_api.rst
+  concepts/benchmarks.rst
+  concepts/router.rst
 
 ..  reference/images.rst
 
@@ -25,27 +25,18 @@
   :template: top_level_toc_recursive.rst
   :recursive:
   :hide-table:
-  :caption: Python Client Docs
+  :caption: API
 
   unify
 
 .. toctree::
   :hidden:
-  :maxdepth: 4
-  :caption: Demos
-
-  demos/unify.rst
-  demos/langchain.rst
-  demos/llamaindex.rst
-
-.. toctree::
-  :hidden:
   :maxdepth: -1
-  :caption: Interfaces
+  :caption: Console
 
-  interfaces/connecting_stack.rst
-  interfaces/running_benchmarks.rst
-  interfaces/building_router.rst
+  console/connecting_stack.rst
+  console/running_benchmarks.rst
+  console/building_router.rst
 
 ..
   .. toctree::
@@ -59,19 +50,7 @@
 .. toctree::
   :hidden:
   :maxdepth: -1
-  :caption: Concepts
-
-  concepts/endpoints.rst
-  concepts/benchmarks.rst
-  concepts/routing.rst
-..  concepts/on_prem_images.rst
-
-.. toctree::
-  :hidden:
-  :maxdepth: -1
   :caption: On-Prem
 
   on_prem/on_prem_access
   on_prem/sso.rst
-
-

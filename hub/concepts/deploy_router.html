@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python Library &#8212; Unify Documentation</title>
+    <title>Deploying a router &#8212; Unify Documentation</title>
   
   
   
@@ -58,7 +58,7 @@
                 gtag('js', new Date());
                 gtag('config', 'G-QP5BET66XH');
             </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tools/python_library';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'concepts/deploy_router';</script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -153,21 +153,21 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../concepts/unify_api.html">
+                      <a class="nav-link nav-internal" href="unify_api.html">
                         Universal API
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../concepts/benchmarks.html">
+                      <a class="nav-link nav-internal" href="benchmarks.html">
                         Benchmarking
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../concepts/router.html">
+                      <a class="nav-link nav-internal" href="router.html">
                         Routing
                       </a>
                     </li>
@@ -249,9 +249,9 @@ document.write(`
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../concepts/unify_api.html">Universal API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../concepts/benchmarks.html">Benchmarking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../concepts/router.html">Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unify_api.html">Universal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="router.html">Routing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="nav bd-sidenav">
@@ -309,7 +309,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Python Library</li>
+    <li class="breadcrumb-item active" aria-current="page">Deploying a router</li>
   </ul>
 </nav>
 </div>
@@ -326,9 +326,99 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="python-library">
-<h1>Python Library<a class="headerlink" href="#python-library" title="Link to this heading">#</a></h1>
-<p>Lorem ipsum</p>
+  <section id="deploying-a-router">
+<h1>Deploying a router<a class="headerlink" href="#deploying-a-router" title="Link to this heading">#</a></h1>
+<p>In this section, we’ll learn how to use the Unify router through the API.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you haven’t done so, we recommend you learn how to <a class="reference external" href="https://unify.ai/docs/api/first_request.html">make a request</a> first to get familiar with using the Unify API.</p>
+</div>
+<section id="using-the-base-router">
+<h2>Using the base router<a class="headerlink" href="#using-the-base-router" title="Link to this heading">#</a></h2>
+<section id="optimizing-a-metric">
+<h3>Optimizing a metric<a class="headerlink" href="#optimizing-a-metric" title="Link to this heading">#</a></h3>
+<p>When making requests, you can leverage the information from the <a class="reference external" href="https://unify.ai/docs/concepts/benchmarks.html">benchmark interface</a>
+to automatically route to the best performing provider for the metric you choose.</p>
+<p>Benchmark values change over time, so dynamically routing ensures you always get the best option without having to monitor the data yourself.</p>
+<p>To use the base router, you only need to change the provier name to one of the supported configurations. Currently, we support the following configs:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">lowest-input-cost</span></code> / <code class="code docutils literal notranslate"><span class="pre">input-cost</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">lowest-output-cost</span></code> / <code class="code docutils literal notranslate"><span class="pre">output-cost</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">lowest-itl</span></code> / <code class="code docutils literal notranslate"><span class="pre">itl</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">lowest-ttft</span></code> / <code class="code docutils literal notranslate"><span class="pre">ttft</span></code></p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">highest-tks-per-sec</span></code> / <code class="code docutils literal notranslate"><span class="pre">tks-per-sec</span></code></p></li>
+</ul>
+<p>For e.g, with the Python package, we can route to the lowest TTFT endpoints as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
+
+<span class="c1"># Assuming you added &quot;UNIFY_KEY&quot; to your environment variables. Otherwise you would specify the api_key argument.</span>
+<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;mistral-7b-instruct-v0.3@lowest-ttft&quot;</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="defining-thresholds">
+<h3>Defining thresholds<a class="headerlink" href="#defining-thresholds" title="Link to this heading">#</a></h3>
+<p>Additionally, you have the option to include multiple thresholds for other metrics in each configuration.</p>
+<p>This feature enables you to get, for example, the highest tokens per second (<code class="code docutils literal notranslate"><span class="pre">highest-tks-per-sec</span></code>) for any provider whose <code class="code docutils literal notranslate"><span class="pre">ttft</span></code> is lower than a specific threshold. To set this up, just append <code class="code docutils literal notranslate"><span class="pre">&lt;[float][metric]</span></code> to your preferred mode when specifying a provider. To keep things simple, we have added aliases for <code class="code docutils literal notranslate"><span class="pre">output-cost</span></code> (<code class="code docutils literal notranslate"><span class="pre">oc</span></code>), <code class="code docutils literal notranslate"><span class="pre">input-cost</span></code> (<code class="code docutils literal notranslate"><span class="pre">ic</span></code>) and <code class="code docutils literal notranslate"><span class="pre">output-tks-per-sec</span></code> (<code class="code docutils literal notranslate"><span class="pre">ots</span></code>).</p>
+<p>Let’s illustrate this with some examples:</p>
+<ul class="simple">
+<li><p><code class="code docutils literal notranslate"><span class="pre">lowest-itl&lt;0.5input-cost</span></code> - In this case, the request will be routed to the provider with the lowest
+Inter-Token-Latency that has an Input Cost smaller than 0.5 credits per million tokens.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">highest-tks-per-sec&lt;1output-cost</span></code> - Likewise, in this scenario, the request will be directed to the provider
+offering the highest Output Tokens per Second, provided their cost is below 1 credit per million tokens.</p></li>
+<li><p><code class="code docutils literal notranslate"><span class="pre">ttft&lt;0.5ic&lt;15itl</span></code> - Now we have something similar to the first example, but we are using <code class="code docutils literal notranslate"><span class="pre">ic</span></code> as
+an alias to <code class="code docutils literal notranslate"><span class="pre">input-cost</span></code>, and we have also added <code class="code docutils literal notranslate"><span class="pre">&lt;15itl</span></code> to only consider endpoints
+that have an Inter-Token-Latency of less than 15 ms.</p></li>
+</ul>
+<p>Depending on the specified threshold, there might be scenarios where no providers meet the criteria,
+rendering the request unfulfillable. In such cases, the API response will be a 404 error with the corresponding
+explanation. You can detect this and change your policy doing something like:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
+
+<span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
+
+<span class="c1"># This won&#39;t work since no provider has this price! (yet?)</span>
+<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;mistral-7b-instruct-v0.3@lowest-itl&lt;0.001ic&quot;</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">404</span><span class="p">:</span>
+  <span class="c1"># We&#39;ll get the cheapest endpoint as a fallback</span>
+  <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mistral-7b-instruct-v0.3@lowest-input-cost&quot;</span>
+  <span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
+</pre></div>
+</div>
+<div style="text-align: center;">
+  <iframe width="420" height="315" allow="fullscreen;"
+    src="https://www.youtube.com/embed/SBwr32iSU8Q?si=Rj3xknJEg0765Psb" class="video">
+  </iframe>
+</div></section>
+</section>
+<section id="using-a-custom-router">
+<h2>Using a custom router<a class="headerlink" href="#using-a-custom-router" title="Link to this heading">#</a></h2>
+<p>If you <a class="reference external" href="https://unify.ai/docs/interfaces/building_router.html">trained a custom router</a>, you can deploy it with the Unify API much like using any other endpoint. Assuming we want to deploy the custom router we trained before, we can use the configuration Id in the same API call code to send our prompts to our custom router as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
+
+<span class="c1"># Assuming you added &quot;UNIFY_KEY&quot; to your environment variables. Otherwise you would specify the api_key argument.</span>
+<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;gpt-claude-llama3-calls-&gt;no-anthropic_8.28e-03_4.66e-0.4_1.00e-06@custom&quot;</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also query the API with a CuRL request, among others. Just like explained in the first request page.</p>
+</div>
+</section>
+<section id="round-up">
+<h2>Round Up<a class="headerlink" href="#round-up" title="Link to this heading">#</a></h2>
+<p>That’s it! You now know how to deploy a router to send your prompts to the best endpoints for the metrics or tasks you care about. You can now start optimizing your LLM applications!</p>
+</section>
 </section>
 
 
@@ -348,7 +438,28 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-base-router">Using the base router</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optimizing-a-metric">Optimizing a metric</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#defining-thresholds">Defining thresholds</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-a-custom-router">Using a custom router</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#round-up">Round Up</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -405,9 +516,9 @@ document.write(`
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../concepts/unify_api.html">Universal API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../concepts/benchmarks.html">Benchmarking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../concepts/router.html">Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unify_api.html">Universal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="router.html">Routing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="nav bd-sidenav">

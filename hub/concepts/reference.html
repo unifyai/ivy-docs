@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python Library &#8212; Unify Documentation</title>
+    <title>API Reference &#8212; Unify Documentation</title>
   
   
   
@@ -58,7 +58,7 @@
                 gtag('js', new Date());
                 gtag('config', 'G-QP5BET66XH');
             </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tools/python_library';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'concepts/reference';</script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -153,21 +153,21 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../concepts/unify_api.html">
+                      <a class="nav-link nav-internal" href="unify_api.html">
                         Universal API
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../concepts/benchmarks.html">
+                      <a class="nav-link nav-internal" href="benchmarks.html">
                         Benchmarking
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../concepts/router.html">
+                      <a class="nav-link nav-internal" href="router.html">
                         Routing
                       </a>
                     </li>
@@ -249,9 +249,9 @@ document.write(`
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../concepts/unify_api.html">Universal API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../concepts/benchmarks.html">Benchmarking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../concepts/router.html">Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unify_api.html">Universal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="router.html">Routing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="nav bd-sidenav">
@@ -309,7 +309,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Python Library</li>
+    <li class="breadcrumb-item active" aria-current="page">API Reference</li>
   </ul>
 </nav>
 </div>
@@ -326,9 +326,144 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="python-library">
-<h1>Python Library<a class="headerlink" href="#python-library" title="Link to this heading">#</a></h1>
-<p>Lorem ipsum</p>
+  <section id="api-reference">
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading">#</a></h1>
+<p>Welcome to the Endpoints API reference!
+This page is your go-to resource when it comes to learning about the different Unify API endpoints you can interact with.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t have one yet, <a class="reference external" href="https://console.unify.ai">Sign Up</a> first to get your API key.</p>
+</div>
+<hr class="docutils" />
+<section id="get-get-credits">
+<h2>GET /get_credits<a class="headerlink" href="#get-get-credits" title="Link to this heading">#</a></h2>
+<p><strong>Get Current Credit Balance</strong></p>
+<p>Retrieve the credit balance for the authenticated account.</p>
+<p><strong>Example Request (curl)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;GET&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span><span class="s1">&#39;https://api.unify.ai/v0/get_credits&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">  </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer YOUR_API_KEY&#39;</span>
+</pre></div>
+</div>
+<p><strong>Responses</strong></p>
+<ul>
+<li><p><strong>200 OK</strong></p>
+<p>Successful operation.</p>
+<dl>
+<dt><strong>Response</strong></dt><dd><div class="line-block">
+<div class="line">Credits balance in the account associated with the API key used for the request.</div>
+</div>
+</dd>
+</dl>
+<p><strong>Example Response</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;id&quot;</span>:<span class="w"> </span><span class="s2">&quot;corresponding_user_id&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;credits&quot;</span>:<span class="w"> </span><span class="m">232</span>.32
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>401 Unauthorized</strong></p>
+<p>Invalid API key.</p>
+<p><strong>Example Response</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;error&quot;</span>:<span class="w"> </span><span class="s2">&quot;Invalid API key&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>403 Forbidden</strong></p>
+<p>Not authenticated.</p>
+<p><strong>Example Response</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;detail&quot;</span>:<span class="w"> </span><span class="s2">&quot;Not authenticated&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="post-chat-completions">
+<h2>POST /chat/completions<a class="headerlink" href="#post-chat-completions" title="Link to this heading">#</a></h2>
+<p><strong>Query a Text-Generation Model hosted in a given Provider using the OpenAI API format</strong></p>
+<p>Send a given input to the specified model hosted in the specified provider.
+This endpoint follows the OpenAI specification for text completion, which is available
+<a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/create">here.</a></p>
+<p>To specify the provider, make sure to append its name after the model id using <code class="code docutils literal notranslate"><span class="pre">&#64;</span></code>.</p>
+<p><strong>Example Request (curl)</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="s1">&#39;https://api.unify.ai/v0/chat/completions&#39;</span><span class="w"> </span><span class="se">\</span>
+-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer YOUR_API_KEY&#39;</span><span class="w"> </span><span class="se">\</span>
+-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">&quot;model&quot;: &quot;llama-3-8b-chat@anyscale&quot;,</span>
+<span class="s1">&quot;messages&quot;: [</span>
+<span class="s1">    {</span>
+<span class="s1">        &quot;role&quot;: &quot;user&quot;,</span>
+<span class="s1">        &quot;content&quot;: &quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
+<span class="s1">    }</span>
+<span class="s1">],</span>
+<span class="s1">&quot;stream&quot;: false</span>
+<span class="s1">}&#39;</span>
+</pre></div>
+</div>
+<p><strong>Responses</strong></p>
+<ul>
+<li><p><strong>200 OK</strong></p>
+<p>Successful operation.</p>
+<dl>
+<dt><strong>Response</strong></dt><dd><div class="line-block">
+<div class="line">Response following the schema of the chat completion object from OpenAI, defined <a class="reference external" href="https://platform.openai.com/docs/api-reference/chat/object">here.</a></div>
+</div>
+</dd>
+</dl>
+<p><strong>Example Response</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">    </span><span class="s1">&#39;model&#39;</span>:<span class="w"> </span><span class="s1">&#39;llama-3-8b-chat@anyscale&#39;</span>,
+<span class="w">    </span><span class="s1">&#39;created&#39;</span>:<span class="w"> </span><span class="m">1704999905</span>,
+<span class="w">    </span><span class="s1">&#39;id&#39;</span>:<span class="w"> </span><span class="s1">&#39;meta-llama/Llama-3-8b-chat-hf-xR868C-T4Z-TKLtfXxZSvq57WmhxB34El5ZUuXsAtFU&#39;</span>,
+<span class="w">    </span><span class="s1">&#39;object&#39;</span>:<span class="w"> </span><span class="s1">&#39;chat.completion&#39;</span>,
+<span class="w">    </span><span class="s1">&#39;usage&#39;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span><span class="s1">&#39;completion_tokens&#39;</span>:<span class="w"> </span><span class="m">512</span>,
+<span class="w">        </span><span class="s1">&#39;prompt_tokens&#39;</span>:<span class="w"> </span><span class="m">34</span>,
+<span class="w">        </span><span class="s1">&#39;total_tokens&#39;</span>:<span class="w"> </span><span class="m">546</span>
+<span class="w">        </span><span class="o">}</span>,
+<span class="w">    </span><span class="s1">&#39;choices&#39;</span>:<span class="w"> </span><span class="o">[{</span>
+<span class="w">        </span><span class="s1">&#39;finish_reason&#39;</span>:<span class="w"> </span><span class="s1">&#39;length&#39;</span>,
+<span class="w">        </span><span class="s1">&#39;index&#39;</span>:<span class="w"> </span><span class="m">0</span>,
+<span class="w">        </span><span class="s1">&#39;message&#39;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">            </span><span class="s1">&#39;content&#39;</span>:<span class="w"> </span><span class="s1">&#39;Isaac Newton (1643-1727) was a...&#39;</span>,
+<span class="w">            </span><span class="s1">&#39;role&#39;</span>:<span class="w"> </span><span class="s1">&#39;assistant&#39;</span>
+<span class="w">        </span><span class="o">}</span>
+<span class="w">    </span><span class="o">}]</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>401 Unauthorized</strong></p>
+<p>Invalid API key.</p>
+<p><strong>Example Response</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;error&quot;</span>:<span class="w"> </span><span class="s2">&quot;Invalid API key&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>422 Unprocessable Entity</strong></p>
+<p>Invalid arguments. The provided arguments don’t correspond to the specified model.</p>
+<p><strong>Example Response</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;error&quot;</span>:<span class="w"> </span><span class="s2">&quot;The provided arguments don&#39;t correspond to the specified model.&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<hr class="docutils" />
+</section>
 </section>
 
 
@@ -348,7 +483,23 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-get-credits">GET /get_credits</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#post-chat-completions">POST /chat/completions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -405,9 +556,9 @@ document.write(`
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../concepts/unify_api.html">Universal API</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../concepts/benchmarks.html">Benchmarking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../concepts/router.html">Routing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unify_api.html">Universal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="router.html">Routing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
 <ul class="nav bd-sidenav">

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python Library &#8212; Unify Documentation</title>
+    <title>Connecting your stack &#8212; Unify Documentation</title>
   
   
   
@@ -58,10 +58,12 @@
                 gtag('js', new Date());
                 gtag('config', 'G-QP5BET66XH');
             </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tools/python_library';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'console/connecting_stack';</script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Benchmarking endpoints" href="running_benchmarks.html" />
+    <link rel="prev" title="Utils" href="../docs/unify/unify/unify.utils.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -180,22 +180,22 @@
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../console/connecting_stack.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Connecting your stack
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../console/running_benchmarks.html">
+                      <a class="nav-link nav-internal" href="running_benchmarks.html">
                         Benchmarking endpoints
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../console/building_router.html">
+                      <a class="nav-link nav-internal" href="building_router.html">
                         Building a custom router
                       </a>
                     </li>
@@ -262,10 +262,10 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../docs/unify/unify/unify.utils.html">Utils</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Console</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../console/connecting_stack.html">Connecting your stack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../console/running_benchmarks.html">Benchmarking endpoints</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../console/building_router.html">Building a custom router</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Connecting your stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_benchmarks.html">Benchmarking endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_router.html">Building a custom router</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">On-Prem</span></p>
 <ul class="nav bd-sidenav">
@@ -309,7 +309,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Python Library</li>
+    <li class="breadcrumb-item active" aria-current="page">Connecting...</li>
   </ul>
 </nav>
 </div>
@@ -326,9 +326,38 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="python-library">
-<h1>Python Library<a class="headerlink" href="#python-library" title="Link to this heading">#</a></h1>
-<p>Lorem ipsum</p>
+  <section id="connecting-your-stack">
+<h1>Connecting your stack<a class="headerlink" href="#connecting-your-stack" title="Link to this heading">#</a></h1>
+<p>In this section, you’ll learn how to add your own endpoints and datasets to the console.</p>
+<section id="custom-endpoints-beta">
+<h2>Custom endpoints (Beta)<a class="headerlink" href="#custom-endpoints-beta" title="Link to this heading">#</a></h2>
+<section id="prerequisite">
+<h3>Prerequisite<a class="headerlink" href="#prerequisite" title="Link to this heading">#</a></h3>
+<p>In this section, we’ll assume you have already set up your own LLM endpoints.</p>
+<p>If not, one option is to use off-the-shelf endpoints, such as those available in the <a class="reference external" href="https://learn.microsoft.com/en-us/azure/machine-learning/concept-model-catalog">Azure ML Model Catalog</a>, <a class="reference external" href="https://cloud.google.com/model-garden">Vertex AI Model Garden</a> and <a class="reference external" href="https://aws.amazon.com/bedrock">AWS Bedrock</a>. Alternatively, you can create and host your own LLM endpoint. There are a whole variety of ways to do this, but again it’s most common to do so via one of the major cloud providers.</p>
+<p>Regardless of how you set up your LLM endpoints, you’ll need to expose an API for this. The API should also <strong>adhere to</strong> the <a class="reference external" href="https://platform.openai.com/docs/api-reference">OpenAI standard</a> to integrate with Unify.</p>
+</section>
+<section id="adding-the-endpoints">
+<h3>Adding the endpoints<a class="headerlink" href="#adding-the-endpoints" title="Link to this heading">#</a></h3>
+<p>Once you’ve got your custom LLM endpoints set up, the next step is to add these to the <code class="code docutils literal notranslate"><span class="pre">Endpoints</span></code> section of the console.</p>
+<p>Click on <code class="code docutils literal notranslate"><span class="pre">Add</span> <span class="pre">Endpoint</span></code> to upload a new endpoint. You’ll have to specify a name, and the cloud provider used for the endpoint. You will also need to include your API key for said provider so we can query your endpoint on your behalf.</p>
+<a class="reference internal image-reference" href="../_images/console_custom_endpoints.png"><img alt="Console Custom Endpoints." class="align-center" src="../_images/console_custom_endpoints.png" style="width: 650px;" /></a>
+<p>That’s all! Your custom endpoints are now available through the Unify API as well as our interfaces, ready to be benchmarked and routed across.</p>
+</section>
+</section>
+<section id="custom-datasets">
+<h2>Custom datasets<a class="headerlink" href="#custom-datasets" title="Link to this heading">#</a></h2>
+<p>You can add a dataset on the <code class="code docutils literal notranslate"><span class="pre">Datasets</span></code> section of the console. There, click the <strong>Add Dataset</strong> button.</p>
+<a class="reference internal image-reference" href="../_images/console_datasets_start.png"><img alt="Console Dataset Start." class="align-center" src="../_images/console_datasets_start.png" style="width: 650px;" /></a>
+<p>The resulting screen lets you specify the local <code class="code docutils literal notranslate"><span class="pre">.jsonl</span></code> file to upload, containing the prompts you would like to benchmark on. You can also upload a file with reference answer prompts if you want to build a labelled dataset.</p>
+<a class="reference internal image-reference" href="../_images/console_datasets_add.png"><img alt="Console Dataset Add." class="align-center" src="../_images/console_datasets_add.png" style="width: 650px;" /></a>
+<p>Once your dataset is uploaded, you can click on it to preview the prompts. For example, the image below shows the preview for a labelled dataset.</p>
+<a class="reference internal image-reference" href="../_images/console_datasets_preview.png"><img alt="Console Dataset Preview." class="align-center" src="../_images/console_datasets_preview.png" style="width: 650px;" /></a>
+</section>
+<section id="round-up">
+<h2>Round Up<a class="headerlink" href="#round-up" title="Link to this heading">#</a></h2>
+<p>That’s it, you now know how to upload your own endpoints and datasets! You can now <a class="reference external" href="https://unify.ai/docs/interfaces/running_benchmarks.html">run custom benchmarks</a>, <a class="reference external" href="https://unify.ai/docs/interfaces/building_router.html">build a custom router</a>, or <a class="reference external" href="https://unify.ai/docs/api/first_request.html">query your endpoint</a> with the Unify API.</p>
+</section>
 </section>
 
 
@@ -341,6 +370,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../docs/unify/unify/unify.utils.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Utils</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="running_benchmarks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Benchmarking endpoints</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -348,7 +395,28 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-endpoints-beta">Custom endpoints (Beta)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisite">Prerequisite</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-the-endpoints">Adding the endpoints</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#custom-datasets">Custom datasets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#round-up">Round Up</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -418,10 +486,10 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../docs/unify/unify/unify.utils.html">Utils</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Console</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../console/connecting_stack.html">Connecting your stack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../console/running_benchmarks.html">Benchmarking endpoints</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../console/building_router.html">Building a custom router</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Connecting your stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_benchmarks.html">Benchmarking endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_router.html">Building a custom router</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">On-Prem</span></p>
 <ul class="nav bd-sidenav">

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python Library &#8212; Unify Documentation</title>
+    <title>Benchmarking endpoints &#8212; Unify Documentation</title>
   
   
   
@@ -58,10 +58,12 @@
                 gtag('js', new Date());
                 gtag('config', 'G-QP5BET66XH');
             </script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tools/python_library';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'console/running_benchmarks';</script>
     <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Building a custom router" href="building_router.html" />
+    <link rel="prev" title="Connecting your stack" href="connecting_stack.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,8 +125,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -181,21 +181,21 @@
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../console/connecting_stack.html">
+                      <a class="nav-link nav-internal" href="connecting_stack.html">
                         Connecting your stack
                       </a>
                     </li>
                 
 
-                    <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../console/running_benchmarks.html">
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="#">
                         Benchmarking endpoints
                       </a>
                     </li>
                 
 
                     <li class="nav-item">
-                      <a class="nav-link nav-internal" href="../console/building_router.html">
+                      <a class="nav-link nav-internal" href="building_router.html">
                         Building a custom router
                       </a>
                     </li>
@@ -262,10 +262,10 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../docs/unify/unify/unify.utils.html">Utils</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Console</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../console/connecting_stack.html">Connecting your stack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../console/running_benchmarks.html">Benchmarking endpoints</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../console/building_router.html">Building a custom router</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="connecting_stack.html">Connecting your stack</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Benchmarking endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_router.html">Building a custom router</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">On-Prem</span></p>
 <ul class="nav bd-sidenav">
@@ -309,7 +309,7 @@ document.write(`
         <i class="fa-solid fa-home"></i>
       </a>
     </li>
-    <li class="breadcrumb-item active" aria-current="page">Python Library</li>
+    <li class="breadcrumb-item active" aria-current="page">Benchmarking...</li>
   </ul>
 </nav>
 </div>
@@ -326,9 +326,85 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="python-library">
-<h1>Python Library<a class="headerlink" href="#python-library" title="Link to this heading">#</a></h1>
-<p>Lorem ipsum</p>
+  <section id="benchmarking-endpoints">
+<h1>Benchmarking endpoints<a class="headerlink" href="#benchmarking-endpoints" title="Link to this heading">#</a></h1>
+<p>In this section, you’ll explore how to navigate our benchmarks and run your own custom ones.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can learn about the methodology behind our benchmarks, and the various metrics used, on the <a class="reference external" href="https://unify.ai/docs/concepts/benchmarks.html">benchmarks design</a> section.</p>
+</div>
+<section id="quality-benchmarks">
+<h2>Quality benchmarks<a class="headerlink" href="#quality-benchmarks" title="Link to this heading">#</a></h2>
+<p>To compare the quality of different LLMs, you head to the <code class="code docutils literal notranslate"><span class="pre">Dashboard</span></code> page on the console.</p>
+<p>By default, all endpoints will be plotted on six datasets, with the <code class="code docutils literal notranslate"><span class="pre">OpenHermes</span></code> dataset shown first. The default router will also be plotted, with various configurations of this router plotted as stars.</p>
+<a class="reference internal image-reference" href="../_images/console_dashboard.png"><img alt="Console Dashboard." class="align-center" src="../_images/console_dashboard.png" style="width: 650px;" /></a>
+<p>On the dataset dropdown at the top, you can select any dataset of prompts to benchmark each model and provider against. The scatter graph will then be replotted for the selected dataset.</p>
+<a class="reference internal image-reference" href="../_images/console_dashboard_dataset.png"><img alt="Console Dashboard Dataset." class="align-center" src="../_images/console_dashboard_dataset.png" style="width: 650px;" /></a>
+<p>Similarily, you can change the metric plotted on the x axis from cost to something else, by clicking on the <code class="code docutils literal notranslate"><span class="pre">Metric</span></code> dropdown. This will let us plot the score against time-to-first-token (TTFT) for e.g.</p>
+<a class="reference internal image-reference" href="../_images/console_dashboard_metric.png"><img alt="Console Dashboard Metric." class="align-center" src="../_images/console_dashboard_metric.png" style="width: 650px;" /></a>
+<p>You can remove any of these points by simply clicking on the model names on the legend. That model will then be removed from the graph, and the router points will be updated to only account for the remaining endpoints.</p>
+<a class="reference internal image-reference" href="../_images/console_dashboard_filtered.png"><img alt="Console Dashboard Filtered." class="align-center" src="../_images/console_dashboard_filtered.png" style="width: 650px;" /></a>
+</section>
+<section id="runtime-benchmarks">
+<h2>Runtime benchmarks<a class="headerlink" href="#runtime-benchmarks" title="Link to this heading">#</a></h2>
+<p>The benchmarks displayed on the console allow you to compare the average quality and runtime performance of LLM endpoints. As explained on the <a class="reference external" href="https://unify.ai/docs/concepts/benchmarks.html">benchmarks design</a> section, runtime metrics tend to change over time.</p>
+<p>For granular runtime benchmarks, head to the <a class="reference external" href="https://unify.ai/benchmarks">benchmarks interface</a> outside of the console. There, you can find a list of popular LLM endpoints, periodically updated with new models and providers.</p>
+<a class="reference internal image-reference" href="../_images/benchmarks_main.png"><img alt="Benchmarks Page." class="align-center" src="../_images/benchmarks_main.png" style="width: 650px;" /></a>
+<p>Each page contains a suite of runtime benchmarks providing timely information on the speed, cost and latency of the endpoints exposed by different endpoint providers.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can learn more about endpoints providers on the dedicated <a class="reference external" href="https://unify.ai/docs/concepts/endpoints.html">endpoints</a> section</p>
+</div>
+<p>For e.g, the image below corresponds to the benchmark page for <code class="code docutils literal notranslate"><span class="pre">mistral-7b-instruct-v0.3</span></code>.</p>
+<a class="reference internal image-reference" href="../_images/benchmarks_model_page.png"><img alt="Benchmarks Model Page." class="align-center" src="../_images/benchmarks_model_page.png" style="width: 650px;" /></a>
+<p>The plot displays the changing value of the metric selected on the table for the region and sequence length specified, across time and providers. On the other hand, the table displays the latest values for all metrics across providers, and allows you to sort them by metric.</p>
+<p>You can plot a different metric on the graph by clicking on the graph icon next metric’s column label. For e.g, the image below shows how the plot for <code class="code docutils literal notranslate"><span class="pre">TTFT</span></code> reveals different performance patterns than the default <code class="code docutils literal notranslate"><span class="pre">Output</span> <span class="pre">Tokens</span> <span class="pre">/</span> <span class="pre">Sec</span></code> figure.</p>
+<a class="reference internal image-reference" href="../_images/benchmarks_model_page_changed_setup.png"><img alt="Benchmarks Model Page TTFT." class="align-center" src="../_images/benchmarks_model_page_changed_setup.png" style="width: 650px;" /></a>
+</section>
+<section id="running-your-own-benchmarks-beta">
+<h2>Running your own benchmarks (Beta)<a class="headerlink" href="#running-your-own-benchmarks-beta" title="Link to this heading">#</a></h2>
+<p>If you are using custom endpoints or need to compare endpoints for a specific task, you can customize the benchmarks to fit your needs.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you haven’t done so, we recommend you learn how you can <a class="reference external" href="https://unify.ai/docs/interfaces/connecting_stack.html">add your own datasets and endpoints</a> to the console before resuming.</p>
+</div>
+<p>Once you’ve added your endpoints and / or datasets, head to the <code class="code docutils literal notranslate"><span class="pre">Benchmarks</span></code> page on the console. There, you can see all of the current and previous benchmark jobs you triggered, and you can also specify which endpoints you would like to include for benchmarking.</p>
+<section id="id2">
+<h3>Runtime benchmarks<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>If you have various private endpoints deployed across various servers, each with varying latencies, it can be useful to track these speeds across time, to ensure you’re always sending your requests to the fastest servers.</p>
+<p>To trigger periodic runtime benchmarking for a custom endpoint, simply add it to the list under <code class="code docutils literal notranslate"><span class="pre">Runtime</span> <span class="pre">Benchmarks</span></code>. You also need to specify at least one IP address from where you would like to test this endpoint, and also at least one prompt dataset against which you would like to perform the benchmarking.</p>
+<a class="reference internal image-reference" href="../_images/console_runtime_benchmarks.png"><img alt="Console Runtime Benchmarks." class="align-center" src="../_images/console_runtime_benchmarks.png" style="width: 650px;" /></a>
+<p>Once all endpoints are added, you can then go to the <a class="reference external" href="https://unify.ai/benchmarks">benchmarks interface</a> where you’ll find your model listed with a lock icon, indicating that the benchmark is private (only accessible from your account).</p>
+<a class="reference internal image-reference" href="../_images/custom_benchmarks.png"><img alt="Custom Benchmarks." class="align-center" src="../_images/custom_benchmarks.png" style="width: 650px;" /></a>
+<p>You can then open the benchmark page like with any other model, and view the performance for various metrics plotted across time.</p>
+<a class="reference internal image-reference" href="../_images/custom_benchmarks_model.png"><img alt="Custom Benchmarks Model." class="align-center" src="../_images/custom_benchmarks_model.png" style="width: 650px;" /></a>
+</section>
+<section id="id4">
+<h3>Quality benchmarks<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>In order to train a router, or just compare the quality of endpoints, it’s necessary to first evaluate the performance of each model on each prompt of a dataset.</p>
+<p>On the <code class="code docutils literal notranslate"><span class="pre">Quality</span> <span class="pre">Benchmarks</span></code> subsection. You can click on <code class="code docutils literal notranslate"><span class="pre">Submit</span> <span class="pre">Job</span></code> to trigger a new benchmark comparing the output quality across different LLMs.</p>
+<p>You need to specify the endpoints and datasets you would like to benchmark.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All selected endpoints will be tested on all selected datasets. So, if you only want to test some endpoints on some datasets, then you should submit separate jobs.</p>
+</div>
+<a class="reference internal image-reference" href="../_images/console_benchmarks_quality.png"><img alt="Console Benchmarks Quality." class="align-center" src="../_images/console_benchmarks_quality.png" style="width: 650px;" /></a>
+<p>Once you are happy with the selection, press <code class="code docutils literal notranslate"><span class="pre">Submit</span></code> and the job will appear under <code class="code docutils literal notranslate"><span class="pre">Running</span> <span class="pre">Jobs</span></code>, as shown below.</p>
+<a class="reference internal image-reference" href="../_images/console_benchmarks_quality_submitted.png"><img alt="Console Benchmarks Quality Submitted." class="align-center" src="../_images/console_benchmarks_quality_submitted.png" style="width: 650px;" /></a>
+<p>The job can be expanded, to see each endpoint and dataset pair, and check the progress.</p>
+<a class="reference internal image-reference" href="../_images/console_benchmarks_quality_jobs.png"><img alt="Console Benchmarks Quality Quality Jobs." class="align-center" src="../_images/console_benchmarks_quality_jobs.png" style="width: 650px;" /></a>
+<p>The entire history of benchmarking jobs can also be viewed by clicking on <code class="code docutils literal notranslate"><span class="pre">History</span></code>, like so.</p>
+<a class="reference internal image-reference" href="../_images/console_benchmarks_quality_history.png"><img alt="Console Benchmarks Quality History." class="align-center" src="../_images/console_benchmarks_quality_history.png" style="width: 650px;" /></a>
+<p>Once the benchmarking is complete, you can visualize the results in the <code class="code docutils literal notranslate"><span class="pre">Dashboard</span></code> page.</p>
+<p>Like before, we can select the dataset through the <code class="code docutils literal notranslate"><span class="pre">Dataset</span></code> dropdown. In this case, we’ll plot the benchmarks for the custom dataset we uploaded.</p>
+<a class="reference internal image-reference" href="../_images/console_dashboard_custom_dataset.png"><img alt="Console Dashboard Custom Dataset." class="align-center" src="../_images/console_dashboard_custom_dataset.png" style="width: 650px;" /></a>
+<p>We can see that the custom endpoints <code class="code docutils literal notranslate"><span class="pre">mixtral-tuned-finances</span></code>, <code class="code docutils literal notranslate"><span class="pre">llama-3-tuned-calls1</span></code> and <code class="code docutils literal notranslate"><span class="pre">llama-3-tuned-calls2</span></code> we added earlier are all plotted, alongside the foundation router, which is always plotted by default.</p>
+</section>
+</section>
+<section id="round-up">
+<h2>Round Up<a class="headerlink" href="#round-up" title="Link to this heading">#</a></h2>
+<p>That’s it! You now know how to compare LLM endpoints on quality and runtime metrics, and run benchmarks on your own endpoints and datasets. In the next section, we’ll learn how to train and deploy a custom router.</p>
+</section>
 </section>
 
 
@@ -341,6 +417,24 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="connecting_stack.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Connecting your stack</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="building_router.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Building a custom router</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -348,7 +442,29 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quality-benchmarks">Quality benchmarks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#runtime-benchmarks">Runtime benchmarks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-your-own-benchmarks-beta">Running your own benchmarks (Beta)</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Runtime benchmarks</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Quality benchmarks</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#round-up">Round Up</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -418,10 +534,10 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="../docs/unify/unify/unify.utils.html">Utils</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Console</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../console/connecting_stack.html">Connecting your stack</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../console/running_benchmarks.html">Benchmarking endpoints</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../console/building_router.html">Building a custom router</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="connecting_stack.html">Connecting your stack</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Benchmarking endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="building_router.html">Building a custom router</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">On-Prem</span></p>
 <ul class="nav bd-sidenav">

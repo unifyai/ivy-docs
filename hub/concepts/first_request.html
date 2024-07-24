@@ -1,0 +1,666 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Making your first request &#8212; Unify Documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=7c465b21" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=3ce10a4d"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=4ea706d9"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-QP5BET66XH"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-QP5BET66XH');
+            </script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-QP5BET66XH');
+            </script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'concepts/first_request';</script>
+    <link rel="icon" href="https://github.com/unifyai/unifyai.github.io/blob/main/img/externally_linked/ivy_logo_only.png?raw=true"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar"><div id="unify-navbar"></div>
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../index.html">
+                        Welcome to Unify!
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-external" href="https://api.unify.ai/v0/docs">
+                        API Reference
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="unify_api.html">
+                        Universal API
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="benchmarks.html">
+                        Benchmarking
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="router.html">
+                        Routing
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../docs/unify/unify.html">
+                        <no title>
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../console/connecting_stack.html">
+                        Connecting your stack
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../console/running_benchmarks.html">
+                        Benchmarking endpoints
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../console/building_router.html">
+                        Building a custom router
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../on_prem/on_prem_access.html">
+                        On-Prem access
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../on_prem/sso.html">
+                        SSO (Single Sign On)
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item"><nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Unify!</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://api.unify.ai/v0/docs">API Reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="unify_api.html">Universal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="router.html">Routing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../docs/unify/unify/unify.chat.html">Chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/unify/unify/unify.clients.html">Clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/unify/unify/unify.exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/unify/unify/unify.tests.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/unify/unify/unify.utils.html">Utils</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Console</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../console/connecting_stack.html">Connecting your stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/running_benchmarks.html">Benchmarking endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/building_router.html">Building a custom router</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">On-Prem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../on_prem/on_prem_access.html">On-Prem access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../on_prem/sso.html">SSO (Single Sign On)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Making your...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="making-your-first-request">
+<h1>Making your first request<a class="headerlink" href="#making-your-first-request" title="Link to this heading">#</a></h1>
+<p>In this section, you will learn how to use the Unify API to query and route across LLM endpoints. If you haven’t done so already, start by <a class="reference external" href="https://console.unify.ai">Signing Up</a> to get your API key.</p>
+<section id="getting-a-key">
+<h2>Getting a key<a class="headerlink" href="#getting-a-key" title="Link to this heading">#</a></h2>
+<p>When opening the console, you will first be greeted with the <code class="code docutils literal notranslate"><span class="pre">API</span></code> page. This is where you’ll find your API key. There, you will also find useful links to our interfaces, where you can interact with the endpoints and the benchmarks, in no-code environments.</p>
+<a class="reference internal image-reference" href="../_images/console_api.png"><img alt="Console API." class="align-center" src="../_images/console_api.png" style="width: 650px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you suspect your API key was leaked in some way, you can safely regenerate it through this page. You would then only need to replace the old key with the new one in your workflows with the same balance and account settings as before.</p>
+</div>
+</section>
+<section id="finding-a-model-and-provider">
+<h2>Finding a model and provider<a class="headerlink" href="#finding-a-model-and-provider" title="Link to this heading">#</a></h2>
+<p>To query an endpoint you will need to specify the model Id and provider Id, both used to identify the endpoint. You can find the Ids for a given model and provider through the model pages on the <a class="reference external" href="https://unify.ai/benchmarks">benchmark interface.</a></p>
+<p>Going through one of the pages, the model Id can be copied from the model name at the top, and the provider Id can be copied from the corresponding rows on the table. For e.g, the model page for <strong>Mistral 7B V2</strong> below shows that the model Id is <code class="code docutils literal notranslate"><span class="pre">mistral-7b-instruct-v0.3</span></code>. If you wanted to query the <strong>Fireworks AI</strong> endpoint you would then use <code class="code docutils literal notranslate"><span class="pre">fireworks-ai</span></code> as the provider name.</p>
+<a class="reference internal image-reference" href="../_images/benchmarks_model_page.png"><img alt="Benchmarks Model Page." class="align-center" src="../_images/benchmarks_model_page.png" style="width: 650px;" /></a>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you <a class="reference external" href="https://unify.ai/docs/interfaces/connecting_stack.html">uploaded a custom endpoint</a> then you should be able to query it through the API using the name as the model Id and the provider name as the provider Id.</p>
+</div>
+</section>
+<section id="querying-an-endpoint">
+<h2>Querying an endpoint<a class="headerlink" href="#querying-an-endpoint" title="Link to this heading">#</a></h2>
+<section id="using-the-python-package">
+<h3>Using the Python Package<a class="headerlink" href="#using-the-python-package" title="Link to this heading">#</a></h3>
+<p>The easiest way to use the Unify API is through the <a class="reference external" href="https://pypi.org/project/unifyai/">unifyai</a> Python package.  You can install it by doing:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>unifyai
+</pre></div>
+</div>
+<p>To use it in your script, import the package and insert the line <code class="code docutils literal notranslate"><span class="pre">UNIFY_KEY=&quot;Your_API_Key&quot;</span></code> into the <code class="code docutils literal notranslate"><span class="pre">.env</span></code> file of your project. You can also pass your key into the <code class="code docutils literal notranslate"><span class="pre">api_key</span></code> argument or the Unify client but we recommend you store your key in an environment file for safety. We will assume you added your key to your <code class="code docutils literal notranslate"><span class="pre">.env</span></code> file for the remaining code examples.</p>
+<p>You are now ready to query any endpoint through the <code class="code docutils literal notranslate"><span class="pre">.generate</span></code> method. To specify the endpoint, you can use the model and provider Ids from above.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
+
+<span class="c1"># Assuming you added &quot;UNIFY_KEY&quot; to your environment variables. Otherwise you would specify the api_key argument.</span>
+<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;mistral-7b-instruct-v0.3@fireworks-ai&quot;</span><span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This will return a string containing the model’s response.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Python package also lets you access the list of models and providers for a given model with a couple lines of code. You just need to run
+<code class="code docutils literal notranslate"><span class="pre">unify.list_models()</span></code> to get a list of models and <code class="code docutils literal notranslate"><span class="pre">unify.list_providers(&quot;mistral-7b-instruct-v0.3&quot;)</span></code> to get the providers for a given model.</p>
+</div>
+<p>In addition, the Python package supports both synchronous and asynchronous clients, as well as streaming responses. Check out the <a class="reference external" href="https://github.com/unifyai/unify-llm-python?tab=readme-ov-file#unify-python-api-library">package repo</a> to learn more!</p>
+</section>
+<section id="using-the-openai-api-format">
+<h3>Using the OpenAI API Format<a class="headerlink" href="#using-the-openai-api-format" title="Link to this heading">#</a></h3>
+<p>We support the OpenAI API format for <code class="code docutils literal notranslate"><span class="pre">text-generation</span></code> models. Specifically, the <code class="code docutils literal notranslate"><span class="pre">/chat/completions</span></code> endpoint.</p>
+<p>This API format wouldn’t normally allow you to choose between providers for a given model. To bypass this limitation, the model
+name should have the format <code class="code docutils literal notranslate"><span class="pre">&lt;model_name&gt;&#64;&lt;provider_name&gt;</span></code>.</p>
+<p>For example, if we want to query the <code class="code docutils literal notranslate"><span class="pre">mistral-7b-instruct-v0.3</span></code> model that has been deployed in <code class="code docutils literal notranslate"><span class="pre">fireworks-ai</span></code>, we would have to use <code class="code docutils literal notranslate"><span class="pre">mistral-7b-instruct-v0.3&#64;fireworks-ai</span></code> as the model Id in the OpenAI API.</p>
+<p>This is just an HTTP endpoint, so you can query it using any language or tool. For example, <strong>cURL</strong>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="s1">&#39;https://api.unify.ai/v0/chat/completions&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;accept: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer YOUR_UNIFY_KEY&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
+<span class="s1">    &quot;model&quot;: &quot;mistral-7b-instruct-v0.3@fireworks-ai&quot;,</span>
+<span class="s1">        &quot;messages&quot;: [{</span>
+<span class="s1">            &quot;role&quot;: &quot;user&quot;,</span>
+<span class="s1">            &quot;content&quot;: &quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
+<span class="s1">        }],</span>
+<span class="s1">        &quot;stream&quot;: true</span>
+<span class="s1">    }&#39;</span>
+</pre></div>
+</div>
+<p>Or <strong>Python</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.unify.ai/v0/chat/completions&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;Bearer YOUR_UNIFY_KEY&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;mistral-7b-instruct-v0.3@fireworks-ai&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
+        <span class="p">}],</span>
+    <span class="s2">&quot;stream&quot;</span><span class="p">:</span> <span class="kc">True</span>
+<span class="p">}</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">json</span><span class="o">=</span><span class="n">payload</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">200</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">iter_content</span><span class="p">(</span><span class="n">chunk_size</span><span class="o">=</span><span class="mi">1024</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">chunk</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The docs for this endpoint are available <a class="reference external" href="https://unify.ai/docs/api/reference.html">here.</a></p>
+</section>
+<section id="compatible-tools">
+<h3>Compatible Tools<a class="headerlink" href="#compatible-tools" title="Link to this heading">#</a></h3>
+<p>Thanks to the OpenAI-compatible endpoint, you can easily integrate with lots of LLM tools. For example:</p>
+<section id="openai-sdk">
+<h4>OpenAI SDK<a class="headerlink" href="#openai-sdk" title="Link to this heading">#</a></h4>
+<p>If your code is using the <a class="reference external" href="https://github.com/openai/openai-python">OpenAI SDK</a>, you can switch to the Unify endpoints by simply configuring the OpenAI Client like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pip install openai</span>
+<span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
+    <span class="n">base_url</span><span class="o">=</span><span class="s2">&quot;https://api.unify.ai/v0/&quot;</span><span class="p">,</span>
+    <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;YOUR_UNIFY_KEY&quot;</span>
+<span class="p">)</span>
+
+<span class="n">stream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;mistral-7b-instruct-v0.3@fireworks-ai&quot;</span><span class="p">,</span>
+    <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Can you say that this is a test? Use some words to showcase the streaming function&quot;</span><span class="p">}],</span>
+    <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">stream</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">chunk</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">delta</span><span class="o">.</span><span class="n">content</span> <span class="ow">or</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="open-interpreter">
+<h4>Open Interpreter<a class="headerlink" href="#open-interpreter" title="Link to this heading">#</a></h4>
+<p>Likewise, you can easily use other tools such as
+<a class="reference external" href="https://github.com/KillianLucas/open-interpreter">Open Interpreter.</a></p>
+<p>Let’s take a look at this code snippet:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># pip install open-interpreter</span>
+<span class="kn">from</span> <span class="nn">interpreter</span> <span class="kn">import</span> <span class="n">interpreter</span>
+
+<span class="n">interpreter</span><span class="o">.</span><span class="n">offline</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">interpreter</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;YOUR_UNIFY_KEY&quot;</span>
+<span class="n">interpreter</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">api_base</span> <span class="o">=</span> <span class="s2">&quot;https://api.unify.ai/v0/&quot;</span>
+<span class="n">interpreter</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="s2">&quot;openai/mistral-7b-instruct-v0.3@fireworks-ai&quot;</span>
+
+<span class="n">interpreter</span><span class="o">.</span><span class="n">chat</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>In this case, in order to use the <code class="code docutils literal notranslate"><span class="pre">/chat/completions</span></code> format, we simply need to set the model as <code class="code docutils literal notranslate"><span class="pre">openai/&lt;insert_model&gt;</span></code>!</p>
+</section>
+</section>
+</section>
+<section id="round-up">
+<h2>Round Up<a class="headerlink" href="#round-up" title="Link to this heading">#</a></h2>
+<p>You now know how to query LLM endpoints through the Unify API. In the next section, you will learn how to use the API to route across endpoints.</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-a-key">Getting a key</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-a-model-and-provider">Finding a model and provider</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-an-endpoint">Querying an endpoint</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-python-package">Using the Python Package</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-openai-api-format">Using the OpenAI API Format</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compatible-tools">Compatible Tools</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-sdk">OpenAI SDK</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#open-interpreter">Open Interpreter</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#round-up">Round Up</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+<script src="https://cdn.saas.unify.ai/js/unify-components-shared.js"></script>
+<script src="https://cdn.saas.unify.ai/js/unify-components.js"></script>
+<div id="navbar-contents" style="display: none;">
+  
+  <div class="navbar-header-items__end">
+    
+    <div class="navbar-item navbar-persistent--container">
+      
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+    </div>
+    
+    
+    <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+    
+  </div>
+  
+</div>
+<script>
+  const html = `<div></div>`;
+  const toc = `<nav class="bd-docs-nav bd-links"
+  aria-label="Section Navigation">
+    <div class="bd-toc-item navbar-nav">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Unify!</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://api.unify.ai/v0/docs">API Reference</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Concepts</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="unify_api.html">Universal API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="benchmarks.html">Benchmarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="router.html">Routing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">API</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../docs/unify/unify/unify.chat.html">Chat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/unify/unify/unify.clients.html">Clients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/unify/unify/unify.exceptions.html">Exceptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/unify/unify/unify.tests.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/unify/unify/unify.utils.html">Utils</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Console</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../console/connecting_stack.html">Connecting your stack</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/running_benchmarks.html">Benchmarking endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../console/building_router.html">Building a custom router</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">On-Prem</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../on_prem/on_prem_access.html">On-Prem access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../on_prem/sso.html">SSO (Single Sign On)</a></li>
+</ul>
+
+    </div>
+</nav>`;
+  initializeNavbar(html, true, toc);
+  Promise.all([waitForElm("unify-navbar-end"), waitForElm("unify-mobile-navbar-end")]).then(([target, mobileTarget]) => {
+    for (let elem of document.getElementById("navbar-contents").children) {
+      target.children[0].appendChild(elem.cloneNode(true));
+      mobileTarget.children[0].appendChild(elem.cloneNode(true));
+    }
+    document.getElementById("navbar-contents").remove();
+    const scripts = `
+  &lt!-- Scripts loaded after &ltbody&gt so the DOM is not blocked --&gt
+  &ltscript src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"&gt&lt/script&gt
+&ltscript src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"&gt&lt/script&gt
+`.replace(/&lt/g, "<").replace(/&gt/g, ">");
+    const divFragment = document.createRange().createContextualFragment(scripts);
+    document.body.prepend(divFragment);
+  });
+</script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2020-2023, Unify.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.5.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

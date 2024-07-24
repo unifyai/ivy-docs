@@ -57,7 +57,7 @@ Each page contains a suite of runtime benchmarks providing timely information on
 .. note::
     You can learn more about endpoints providers on the dedicated `endpoints <https://unify.ai/docs/concepts/endpoints.html>`_ section
 
-For e.g, the image below corresponds to the benchmark page for :code:`mistral-7b-instruct-v0.2`.
+For e.g, the image below corresponds to the benchmark page for :code:`mistral-7b-instruct-v0.3`.
 
 .. image:: ../images/benchmarks_model_page.png
   :align: center

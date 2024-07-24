@@ -92,7 +92,7 @@ To specify the provider, make sure to append its name after the model id using :
     -H 'Authorization: Bearer YOUR_API_KEY' \
     -H 'Content-Type: application/json' \
     -d '{
-    "model": "llama-2-7b-chat@anyscale",
+    "model": "llama-3-8b-chat@anyscale",
     "messages": [
         {
             "role": "user",
@@ -116,9 +116,9 @@ To specify the provider, make sure to append its name after the model id using :
   .. code-block:: bash
 
     {
-        'model': 'llama-2-7b-chat@anyscale',
+        'model': 'llama-3-8b-chat@anyscale',
         'created': 1704999905,
-        'id': 'meta-llama/Llama-2-7b-chat-hf-xR868C-T4Z-TKLtfXxZSvq57WmhxB34El5ZUuXsAtFU',
+        'id': 'meta-llama/Llama-3-8b-chat-hf-xR868C-T4Z-TKLtfXxZSvq57WmhxB34El5ZUuXsAtFU',
         'object': 'chat.completion',
         'usage': {
             'completion_tokens': 512,

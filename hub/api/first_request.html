@@ -413,7 +413,7 @@ document.write(`
 <section id="finding-a-model-and-provider">
 <h2>Finding a model and provider<a class="headerlink" href="#finding-a-model-and-provider" title="Link to this heading">#</a></h2>
 <p>To query an endpoint you will need to specify the model Id and provider Id, both used to identify the endpoint. You can find the Ids for a given model and provider through the model pages on the <a class="reference external" href="https://unify.ai/benchmarks">benchmark interface.</a></p>
-<p>Going through one of the pages, the model Id can be copied from the model name at the top, and the provider Id can be copied from the corresponding rows on the table. For e.g, the model page for <strong>Mistral 7B V2</strong> below shows that the model Id is <code class="code docutils literal notranslate"><span class="pre">mistral-7b-instruct-v0.2</span></code>. If you wanted to query the <strong>Fireworks AI</strong> endpoint you would then use <code class="code docutils literal notranslate"><span class="pre">fireworks-ai</span></code> as the provider name.</p>
+<p>Going through one of the pages, the model Id can be copied from the model name at the top, and the provider Id can be copied from the corresponding rows on the table. For e.g, the model page for <strong>Mistral 7B V2</strong> below shows that the model Id is <code class="code docutils literal notranslate"><span class="pre">mistral-7b-instruct-v0.3</span></code>. If you wanted to query the <strong>Fireworks AI</strong> endpoint you would then use <code class="code docutils literal notranslate"><span class="pre">fireworks-ai</span></code> as the provider name.</p>
 <a class="reference internal image-reference" href="../_images/benchmarks_model_page.png"><img alt="Benchmarks Model Page." class="align-center" src="../_images/benchmarks_model_page.png" style="width: 650px;" /></a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -434,7 +434,7 @@ document.write(`
 <span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
 
 <span class="c1"># Assuming you added &quot;UNIFY_KEY&quot; to your environment variables. Otherwise you would specify the api_key argument.</span>
-<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;mistral-7b-instruct-v0.2@fireworks-ai&quot;</span><span class="p">)</span>
+<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;mistral-7b-instruct-v0.3@fireworks-ai&quot;</span><span class="p">)</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span><span class="p">)</span>
 </pre></div>
@@ -443,7 +443,7 @@ document.write(`
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The Python package also lets you access the list of models and providers for a given model with a couple lines of code. You just need to run
-<code class="code docutils literal notranslate"><span class="pre">unify.list_models()</span></code> to get a list of models and <code class="code docutils literal notranslate"><span class="pre">unify.list_providers(&quot;mistral-7b-instruct-v0.2&quot;)</span></code> to get the providers for a given model.</p>
+<code class="code docutils literal notranslate"><span class="pre">unify.list_models()</span></code> to get a list of models and <code class="code docutils literal notranslate"><span class="pre">unify.list_providers(&quot;mistral-7b-instruct-v0.3&quot;)</span></code> to get the providers for a given model.</p>
 </div>
 <p>In addition, the Python package supports both synchronous and asynchronous clients, as well as streaming responses. Check out the <a class="reference external" href="https://github.com/unifyai/unify-llm-python?tab=readme-ov-file#unify-python-api-library">package repo</a> to learn more!</p>
 </section>
@@ -452,7 +452,7 @@ document.write(`
 <p>We support the OpenAI API format for <code class="code docutils literal notranslate"><span class="pre">text-generation</span></code> models. Specifically, the <code class="code docutils literal notranslate"><span class="pre">/chat/completions</span></code> endpoint.</p>
 <p>This API format wouldn’t normally allow you to choose between providers for a given model. To bypass this limitation, the model
 name should have the format <code class="code docutils literal notranslate"><span class="pre">&lt;model_name&gt;&#64;&lt;provider_name&gt;</span></code>.</p>
-<p>For example, if we want to query the <code class="code docutils literal notranslate"><span class="pre">mistral-7b-instruct-v0.2</span></code> model that has been deployed in <code class="code docutils literal notranslate"><span class="pre">fireworks-ai</span></code>, we would have to use <code class="code docutils literal notranslate"><span class="pre">mistral-7b-instruct-v0.2&#64;fireworks-ai</span></code> as the model Id in the OpenAI API.</p>
+<p>For example, if we want to query the <code class="code docutils literal notranslate"><span class="pre">mistral-7b-instruct-v0.3</span></code> model that has been deployed in <code class="code docutils literal notranslate"><span class="pre">fireworks-ai</span></code>, we would have to use <code class="code docutils literal notranslate"><span class="pre">mistral-7b-instruct-v0.3&#64;fireworks-ai</span></code> as the model Id in the OpenAI API.</p>
 <p>This is just an HTTP endpoint, so you can query it using any language or tool. For example, <strong>cURL</strong>:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span><span class="s1">&#39;https://api.unify.ai/v0/chat/completions&#39;</span><span class="w"> </span><span class="se">\</span>
@@ -460,7 +460,7 @@ name should have the format <code class="code docutils literal notranslate"><spa
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Authorization: Bearer YOUR_UNIFY_KEY&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-H<span class="w"> </span><span class="s1">&#39;Content-Type: application/json&#39;</span><span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-d<span class="w"> </span><span class="s1">&#39;{</span>
-<span class="s1">    &quot;model&quot;: &quot;mistral-7b-instruct-v0.2@fireworks-ai&quot;,</span>
+<span class="s1">    &quot;model&quot;: &quot;mistral-7b-instruct-v0.3@fireworks-ai&quot;,</span>
 <span class="s1">        &quot;messages&quot;: [{</span>
 <span class="s1">            &quot;role&quot;: &quot;user&quot;,</span>
 <span class="s1">            &quot;content&quot;: &quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
@@ -478,7 +478,7 @@ name should have the format <code class="code docutils literal notranslate"><spa
 <span class="p">}</span>
 
 <span class="n">payload</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;mistral-7b-instruct-v0.2@fireworks-ai&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;mistral-7b-instruct-v0.3@fireworks-ai&quot;</span><span class="p">,</span>
     <span class="s2">&quot;messages&quot;</span><span class="p">:</span> <span class="p">[</span>
         <span class="p">{</span>
             <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span>
@@ -516,7 +516,7 @@ name should have the format <code class="code docutils literal notranslate"><spa
 <span class="p">)</span>
 
 <span class="n">stream</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
-    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;mistral-7b-instruct-v0.2@fireworks-ai&quot;</span><span class="p">,</span>
+    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;mistral-7b-instruct-v0.3@fireworks-ai&quot;</span><span class="p">,</span>
     <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Can you say that this is a test? Use some words to showcase the streaming function&quot;</span><span class="p">}],</span>
     <span class="n">stream</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
@@ -536,7 +536,7 @@ name should have the format <code class="code docutils literal notranslate"><spa
 <span class="n">interpreter</span><span class="o">.</span><span class="n">offline</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">interpreter</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="s2">&quot;YOUR_UNIFY_KEY&quot;</span>
 <span class="n">interpreter</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">api_base</span> <span class="o">=</span> <span class="s2">&quot;https://api.unify.ai/v0/&quot;</span>
-<span class="n">interpreter</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="s2">&quot;openai/mistral-7b-instruct-v0.2@fireworks-ai&quot;</span>
+<span class="n">interpreter</span><span class="o">.</span><span class="n">llm</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="s2">&quot;openai/mistral-7b-instruct-v0.3@fireworks-ai&quot;</span>
 
 <span class="n">interpreter</span><span class="o">.</span><span class="n">chat</span><span class="p">()</span>
 </pre></div>

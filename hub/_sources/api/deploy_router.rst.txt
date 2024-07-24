@@ -33,7 +33,7 @@ For e.g, with the Python package, we can route to the lowest TTFT endpoints as f
     from unify import Unify
 
     # Assuming you added "UNIFY_KEY" to your environment variables. Otherwise you would specify the api_key argument.
-    unify = Unify("mistral-7b-instruct-v0.2@lowest-ttft")
+    unify = Unify("mistral-7b-instruct-v0.3@lowest-ttft")
 
     response = unify.generate("Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements")
 
@@ -68,13 +68,13 @@ explanation. You can detect this and change your policy doing something like:
     prompt = "Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements"
 
     # This won't work since no provider has this price! (yet?)
-    unify = Unify("mistral-7b-instruct-v0.2@lowest-itl<0.001ic")
+    unify = Unify("mistral-7b-instruct-v0.3@lowest-itl<0.001ic")
 
     response = unify.generate(prompt)
 
     if response.status_code == 404:
       # We'll get the cheapest endpoint as a fallback
-      payload["model"] = "mistral-7b-instruct-v0.2@lowest-input-cost"
+      payload["model"] = "mistral-7b-instruct-v0.3@lowest-input-cost"
       response = unify.generate(prompt)
 
 
@@ -97,7 +97,7 @@ If you `trained a custom router <https://unify.ai/docs/interfaces/building_route
     from unify import Unify
 
     # Assuming you added "UNIFY_KEY" to your environment variables. Otherwise you would specify the api_key argument.
-    unify = Unify("gpt-claude-llama3-calls->no-anthropic_8.28e-03_4.66e-0.4_1.00e-06@custom”)
+    unify = Unify("gpt-claude-llama3-calls->no-anthropic_8.28e-03_4.66e-0.4_1.00e-06@custom")
 
     response = unify.generate("Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements")
 

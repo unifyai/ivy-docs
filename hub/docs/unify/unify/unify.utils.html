@@ -404,6 +404,115 @@ document.write(`
   <section id="module-unify.utils">
 <span id="utils"></span><h1>Utils<a class="headerlink" href="#module-unify.utils" title="Link to this heading">#</a></h1>
 <dl class="py function">
+<dt class="sig sig-object py" id="unify.utils.delete_dataset">
+<span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">delete_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.delete_dataset" title="Link to this definition">#</a></dt>
+<dd><p>Deletes a dataset from the platform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str): Name given to the uploaded dataset.
+path (str): Path to the file to be uploaded.
+api_key (str): If specified, unify API key to be used. Defaults
+to the value in the <cite>UNIFY_KEY</cite> environment variable.</p>
+</dd>
+<dt>Returns:</dt><dd><p>str: Info msg with the response from the HTTP endpoint.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If there was an HTTP error.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unify.utils.delete_evaluation">
+<span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">delete_evaluation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.delete_evaluation" title="Link to this definition">#</a></dt>
+<dd><p>Deletes an evaluation from the platform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str): Name of the dataset in the evaluation.
+endpoint (str): Name of the endpoint whose evaluation will be removed.
+api_key (str): If specified, unify API key to be used. Defaults
+to the value in the <cite>UNIFY_KEY</cite> environment variable.</p>
+</dd>
+<dt>Returns:</dt><dd><p>str: Info msg with the response from the HTTP endpoint.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If there was an HTTP error.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unify.utils.download_dataset">
+<span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">download_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.download_dataset" title="Link to this definition">#</a></dt>
+<dd><p>Downloads a dataset from the platform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-data docutils literal notranslate"><span class="pre">Optional</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str): Name of the dataset to download.
+path (str): If specified, path to save the dataset.
+api_key (str): If specified, unify API key to be used. Defaults
+to the value in the <cite>UNIFY_KEY</cite> environment variable.</p>
+</dd>
+<dt>Returns:</dt><dd><p>str: If path is not specified, returns the dataset content, if
+specified, returns None.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If there was an HTTP error.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unify.utils.evaluate">
+<span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">endpoints</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.evaluate" title="Link to this definition">#</a></dt>
+<dd><p>Evaluates a list of endpoints on a given dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str): Name of the dataset to be uploaded.
+endpoints List[str]: List of endpoints.
+api_key (str): If specified, unify API key to be used. Defaults
+to the value in the <cite>UNIFY_KEY</cite> environment variable.</p>
+</dd>
+<dt>Returns:</dt><dd><p>str: Info msg with the response from the HTTP endpoint.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If there was an HTTP error.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unify.utils.list_datasets">
+<span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">list_datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.list_datasets" title="Link to this definition">#</a></dt>
+<dd><p>Fetches a list of all uploaded datasets.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Args:</dt><dd><p>api_key (str): If specified, unify API key to be used. Defaults
+to the value in the <cite>UNIFY_KEY</cite> environment variable.</p>
+</dd>
+<dt>Returns:</dt><dd><p>List[str]: List with the names of the uploaded datasets.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If there was an HTTP error.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="unify.utils.list_endpoints">
 <span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">list_endpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.list_endpoints" title="Link to this definition">#</a></dt>
 <dd><p>Get a list of endpoints for a specific model.</p>
@@ -420,6 +529,28 @@ otherwise an empty list.</p>
 </dd>
 <dt>Raises:</dt><dd><p>BadRequestError: If there was an HTTP error.
 ValueError: If there was an error parsing the JSON response.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unify.utils.list_evaluations">
+<span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">list_evaluations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.list_evaluations" title="Link to this definition">#</a></dt>
+<dd><p>Fetches a list of all evaluations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Args:</dt><dd><p>dataset (str): Name of the dataset to fetch evaluation from.
+If not specified, all evaluations will be returned.
+api_key (str): If specified, unify API key to be used. Defaults
+to the value in the <cite>UNIFY_KEY</cite> environment variable.</p>
+</dd>
+<dt>Returns:</dt><dd><p>List[Dict[str, List[str]]]: List with the names of the uploaded datasets.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If there was an HTTP error.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -459,6 +590,51 @@ otherwise an empty list.</p>
 </dd>
 <dt>Raises:</dt><dd><p>BadRequestError: If there was an HTTP error.
 ValueError: If there was an error parsing the JSON response.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unify.utils.upload_dataset_from_dictionary">
+<span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">upload_dataset_from_dictionary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">content</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.upload_dataset_from_dictionary" title="Link to this definition">#</a></dt>
+<dd><p>Uploads a list of dictionaries as a dataset to the platform.
+Each dictionary in the list must contain a <cite>prompt</cite> key.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str): Name given to the uploaded dataset.
+content List[Dict[str, str]]: Path to the file to be uploaded.
+api_key (str): If specified, unify API key to be used. Defaults
+to the value in the <cite>UNIFY_KEY</cite> environment variable.</p>
+</dd>
+<dt>Returns:</dt><dd><p>str: Info msg with the response from the HTTP endpoint.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If there was an HTTP error.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="unify.utils.upload_dataset_from_file">
+<span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">upload_dataset_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.upload_dataset_from_file" title="Link to this definition">#</a></dt>
+<dd><p>Uploads a local file as a dataset to the platform.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name (str): Name given to the uploaded dataset.
+path (str): Path to the file to be uploaded.
+api_key (str): If specified, unify API key to be used. Defaults
+to the value in the <cite>UNIFY_KEY</cite> environment variable.</p>
+</dd>
+<dt>Returns:</dt><dd><p>str: Info msg with the response from the HTTP endpoint.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If there was an HTTP error.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -511,9 +687,17 @@ ValueError: If there was an error parsing the JSON response.</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.delete_dataset"><code class="docutils literal notranslate"><span class="pre">delete_dataset()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.delete_evaluation"><code class="docutils literal notranslate"><span class="pre">delete_evaluation()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.download_dataset"><code class="docutils literal notranslate"><span class="pre">download_dataset()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.evaluate"><code class="docutils literal notranslate"><span class="pre">evaluate()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.list_datasets"><code class="docutils literal notranslate"><span class="pre">list_datasets()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.list_endpoints"><code class="docutils literal notranslate"><span class="pre">list_endpoints()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.list_evaluations"><code class="docutils literal notranslate"><span class="pre">list_evaluations()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.list_models"><code class="docutils literal notranslate"><span class="pre">list_models()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.list_providers"><code class="docutils literal notranslate"><span class="pre">list_providers()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.upload_dataset_from_dictionary"><code class="docutils literal notranslate"><span class="pre">upload_dataset_from_dictionary()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.upload_dataset_from_file"><code class="docutils literal notranslate"><span class="pre">upload_dataset_from_file()</span></code></a></li>
 </ul>
   </nav></div>
 

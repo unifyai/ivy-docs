@@ -21,7 +21,7 @@ Finding a model and provider
 
 To query an endpoint you will need to specify the model Id and provider Id, both used to identify the endpoint. You can find the Ids for a given model and provider through the model pages on the `benchmark interface. <https://unify.ai/benchmarks>`_
 
-Going through one of the pages, the model Id can be copied from the model name at the top, and the provider Id can be copied from the corresponding rows on the table. For e.g, the model page for **Mistral 7B V2** below shows that the model Id is :code:`mistral-7b-instruct-v0.2`. If you wanted to query the **Fireworks AI** endpoint you would then use :code:`fireworks-ai` as the provider name.
+Going through one of the pages, the model Id can be copied from the model name at the top, and the provider Id can be copied from the corresponding rows on the table. For e.g, the model page for **Mistral 7B V2** below shows that the model Id is :code:`mistral-7b-instruct-v0.3`. If you wanted to query the **Fireworks AI** endpoint you would then use :code:`fireworks-ai` as the provider name.
 
 .. image:: ../images/benchmarks_model_page.png
   :align: center
@@ -53,7 +53,7 @@ You are now ready to query any endpoint through the :code:`.generate` method. To
     from unify import Unify
 
     # Assuming you added "UNIFY_KEY" to your environment variables. Otherwise you would specify the api_key argument.
-    unify = Unify("mistral-7b-instruct-v0.2@fireworks-ai")
+    unify = Unify("mistral-7b-instruct-v0.3@fireworks-ai")
 
     response = unify.generate("Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements")
 
@@ -61,7 +61,7 @@ This will return a string containing the model's response.
 
 .. note::
     The Python package also lets you access the list of models and providers for a given model with a couple lines of code. You just need to run
-    :code:`unify.list_models()` to get a list of models and :code:`unify.list_providers("mistral-7b-instruct-v0.2")` to get the providers for a given model.
+    :code:`unify.list_models()` to get a list of models and :code:`unify.list_providers("mistral-7b-instruct-v0.3")` to get the providers for a given model.
 
 In addition, the Python package supports both synchronous and asynchronous clients, as well as streaming responses. Check out the `package repo <https://github.com/unifyai/unify-llm-python?tab=readme-ov-file#unify-python-api-library>`_ to learn more!
 
@@ -74,7 +74,7 @@ We support the OpenAI API format for :code:`text-generation` models. Specificall
 This API format wouldn't normally allow you to choose between providers for a given model. To bypass this limitation, the model
 name should have the format :code:`<model_name>@<provider_name>`. 
 
-For example, if we want to query the :code:`mistral-7b-instruct-v0.2` model that has been deployed in :code:`fireworks-ai`, we would have to use :code:`mistral-7b-instruct-v0.2@fireworks-ai` as the model Id in the OpenAI API.
+For example, if we want to query the :code:`mistral-7b-instruct-v0.3` model that has been deployed in :code:`fireworks-ai`, we would have to use :code:`mistral-7b-instruct-v0.3@fireworks-ai` as the model Id in the OpenAI API.
 
 This is just an HTTP endpoint, so you can query it using any language or tool. For example, **cURL**:
 
@@ -86,7 +86,7 @@ This is just an HTTP endpoint, so you can query it using any language or tool. F
         -H 'Authorization: Bearer YOUR_UNIFY_KEY' \
         -H 'Content-Type: application/json' \
         -d '{
-        "model": "mistral-7b-instruct-v0.2@fireworks-ai",
+        "model": "mistral-7b-instruct-v0.3@fireworks-ai",
             "messages": [{
                 "role": "user",
                 "content": "Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements"
@@ -106,7 +106,7 @@ Or **Python**:
     }
 
     payload = {
-        "model": "mistral-7b-instruct-v0.2@fireworks-ai",
+        "model": "mistral-7b-instruct-v0.3@fireworks-ai",
         "messages": [
             {
                 "role": "user",
@@ -148,7 +148,7 @@ If your code is using the `OpenAI SDK <https://github.com/openai/openai-python>`
     )
 
     stream = client.chat.completions.create(
-        model="mistral-7b-instruct-v0.2@fireworks-ai",
+        model="mistral-7b-instruct-v0.3@fireworks-ai",
         messages=[{"role": "user", "content": "Can you say that this is a test? Use some words to showcase the streaming function"}],
         stream=True,
     )
@@ -171,7 +171,7 @@ Let's take a look at this code snippet:
     interpreter.offline = True
     interpreter.llm.api_key = "YOUR_UNIFY_KEY"
     interpreter.llm.api_base = "https://api.unify.ai/v0/"
-    interpreter.llm.model = "openai/mistral-7b-instruct-v0.2@fireworks-ai"
+    interpreter.llm.model = "openai/mistral-7b-instruct-v0.3@fireworks-ai"
 
     interpreter.chat()
 

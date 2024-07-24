@@ -120,7 +120,7 @@ The Unify API is designed to be compatible with the OpenAI standard, so if you h
     )
 
     stream = client.chat.completions.create(
-        model="mistral-7b-instruct-v0.2@fireworks-ai",
+        model="mistral-7b-instruct-v0.3@fireworks-ai",
         messages=[{"role": "user", "content": "Say hi."}],
         stream=True,
     )

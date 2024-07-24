@@ -425,7 +425,7 @@ to automatically route to the best performing provider for the metric you choose
 <span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
 
 <span class="c1"># Assuming you added &quot;UNIFY_KEY&quot; to your environment variables. Otherwise you would specify the api_key argument.</span>
-<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;mistral-7b-instruct-v0.2@lowest-ttft&quot;</span><span class="p">)</span>
+<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;mistral-7b-instruct-v0.3@lowest-ttft&quot;</span><span class="p">)</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span><span class="p">)</span>
 </pre></div>
@@ -454,13 +454,13 @@ explanation. You can detect this and change your policy doing something like:</p
 <span class="n">prompt</span> <span class="o">=</span> <span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span>
 
 <span class="c1"># This won&#39;t work since no provider has this price! (yet?)</span>
-<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;mistral-7b-instruct-v0.2@lowest-itl&lt;0.001ic&quot;</span><span class="p">)</span>
+<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;mistral-7b-instruct-v0.3@lowest-itl&lt;0.001ic&quot;</span><span class="p">)</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="n">response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">==</span> <span class="mi">404</span><span class="p">:</span>
   <span class="c1"># We&#39;ll get the cheapest endpoint as a fallback</span>
-  <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mistral-7b-instruct-v0.2@lowest-input-cost&quot;</span>
+  <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;mistral-7b-instruct-v0.3@lowest-input-cost&quot;</span>
   <span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">prompt</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -477,7 +477,7 @@ explanation. You can detect this and change your policy doing something like:</p
 <span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
 
 <span class="c1"># Assuming you added &quot;UNIFY_KEY&quot; to your environment variables. Otherwise you would specify the api_key argument.</span>
-<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;gpt-claude-llama3-calls-&gt;no-anthropic_8.28e-03_4.66e-0.4_1.00e-06@custom”)</span>
+<span class="n">unify</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;gpt-claude-llama3-calls-&gt;no-anthropic_8.28e-03_4.66e-0.4_1.00e-06@custom&quot;</span><span class="p">)</span>
 
 <span class="n">response</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements&quot;</span><span class="p">)</span>
 </pre></div>

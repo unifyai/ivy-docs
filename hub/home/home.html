@@ -329,27 +329,33 @@ document.write(`
 <h1>Welcome to Unify!<a class="headerlink" href="#welcome-to-unify" title="Link to this heading">#</a></h1>
 <p>We’re on a mission to unify and simplify the LLM landscape. Unify lets you:</p>
 <ul class="simple">
-<li><p><strong>🔑 Use any LLM from any Provider</strong>: With a single interface, you can use all LLMs from all providers by simply changing one string.</p></li>
-</ul>
-<p>No need to manage several API keys or handle different input-output formats. Unify handles all of that for you!</p>
-<ul class="simple">
-<li><p><strong>📊 Improve LLM Performance</strong>: Add your own custom tests and evals, and benchmark your own prompts on all models and providers.</p></li>
-</ul>
-<p>Comparing quality, cost and speed, and iterate on your system prompt until all test cases pass, and you can deploy your app!</p>
-<ul class="simple">
+<li><p><strong>🔑 Use any LLM from any Provider</strong>: With a single interface, you can use all LLMs from all providers by simply changing one string. No need to manage several API keys or handle different input-output formats. Unify handles all of that for you!</p></li>
+<li><p><strong>📊 Improve LLM Performance</strong>: Add your own custom tests and evals, and benchmark your own prompts on all models and providers. Comparing quality, cost and speed, and iterate on your system prompt until all test cases pass, and you can deploy your app!</p></li>
 <li><p><strong>🔀 Route to the Best LLM</strong>: Improve quality, cost and speed by routing to the perfect model and provider for each individual prompt.</p></li>
 </ul>
 <section id="getting-started">
 <h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h2>
-<p>We recommend you give the concepts section a quick read to get familiar with routing and benchmarking. Once you’re ready to go, start by <a class="reference external" href="https://console.unify.ai">Signing In</a>. From this point you can either learn how to:</p>
-<ul class="simple">
-<li><p><strong>Use our interfaces (Recommended)</strong>: The interfaces guides explain how to interact with endpoints and deploy your custom router in a no-code environment.</p></li>
-<li><p><strong>Make your first request</strong>: The api guides explains how to start querying endpoints and using the router with our API.</p></li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Throughout the guides, you’ll notice some sections marked as (Beta). <strong>Any section marked as Beta is currently not available</strong> and only illustrate planned features we are currently working on. We’re constantly iterating on our roadmap so if you’d like to leave some feedback or suggestion on features you’d like to see, <a class="reference external" href="https://calendly.com/daniel-lenton/beta-discussion">we’d love to discuss</a> this with you!</p>
+<p>It’s easiest to get started using our Python client. Simply install the package:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>unifyai
+</pre></div>
 </div>
+<p><a class="reference external" href="https://console.unify.ai">Sign up</a> to get your API key. Then you’re ready to go! 🚀</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unify</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;gpt-4o@openai&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=&lt;</span><span class="n">your_key</span><span class="o">&gt;</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;hello world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can also save your key as <code class="code docutils literal notranslate"><span class="pre">UNIFY_KEY</span></code> in your environment variables, avoiding the need to use the <code class="code docutils literal notranslate"><span class="pre">api_key</span></code> argument.</p>
+<p>You can list all available endpoints like so, any of which can be passed into the client:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unify</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="n">endpoints</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">list_endpoints</span><span class="p">()</span>
+<span class="n">endpoint</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">endpoints</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">Unify</span><span class="p">(</span><span class="n">endpoint</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;hello world!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>That’s it! You now have all models and providers at your fingertips ✨</p>
 </section>
 </section>
 

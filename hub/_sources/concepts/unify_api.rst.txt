@@ -1,38 +1,36 @@
 Universal API
 ==============
 
-There’s a sea of models and providers, with new LLMs coming out all the time.
-Each provider has its own API keys, account balance, and subtle nuances in how the models are queried.
+There’s an ever expanding ocean of models and providers, with new LLMs coming out all the time 🌊
+Each provider requires a unique API key, unique payment processing system, and unique format for querying the API.
+When testing out different models and providers, it can quickly become very cumbersome to manage all of these nuances 🫠
 
-The Unify Universal API provides:
+Our Universal API provides:
 
-- A single, common interface for all models and providers
-- One account, with one balance and one API key
+- A single, common interface for all models and providers 🟢
+- One account, with one balance and one API key 🔑
 
-You can interact with the API through a HTTP request from any programming language, through our own Unify Python package, or through the OpenAI Python package.
-
-Authentication
---------------
-You need an API key to query the API. `Sign up for an account <https://console.unify.ai/login>`_, and get your API key from the `console <https://console.unify.ai/>`_.
+To get your universal API key, simply `sign up<https://console.unify.ai>`_!
 
 Querying the API
 ----------------
-There are three ways to query the API:
 
-- HTTP request
-- Unify Python package
-- OpenAI Python package
+You can interact with the API via:
 
+- `HTTP Requests`_ from any programming language
+- Our own `Unify Python Package`_
+- The `OpenAI Python Package`_
+- The `OpenAI NodeJS Package`_
 
-HTTP Request
-^^^^^^^^^^^^
-Run the following command in a terminal (replacing :code:`$UNIFY_API_KEY` with your own).
+HTTP Requests
+^^^^^^^^^^^^^
+Run the following command in a terminal (replacing :code:`$UNIFY_KEY` with your own).
 
 .. code-block::
 
     curl -X 'POST' \
         'https://api.unify.ai/v0/chat/completions' \
-        -H 'Authorization: Bearer $UNIFY_API_KEY' \
+        -H 'Authorization: Bearer $UNIFY_KEY' \
         -H 'Content-Type: application/json' \
         -d '{
         "model": "llama-3-8b-chat@fireworks-ai",
@@ -103,7 +101,7 @@ Sample inference
 .. code-block:: python
 
     from unify import Unify
-    client = Unify("llama-3-8b-chat@fireworks-ai", api_key="$UNIFY_API_KEY")
+    client = Unify("llama-3-8b-chat@fireworks-ai", api_key="$UNIFY_KEY")
     response = client.generate("Say hi.")
 
 OpenAI Python Package

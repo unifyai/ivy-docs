@@ -327,32 +327,30 @@ document.write(`
                   
   <section id="universal-api">
 <h1>Universal API<a class="headerlink" href="#universal-api" title="Link to this heading">#</a></h1>
-<p>There’s a sea of models and providers, with new LLMs coming out all the time.
-Each provider has its own API keys, account balance, and subtle nuances in how the models are queried.</p>
-<p>The Unify Universal API provides:</p>
+<p>There’s an ever expanding ocean of models and providers, with new LLMs coming out all the time 🌊
+Each provider requires a unique API key, unique payment processing system, and unique format for querying the API.
+When testing out different models and providers, it can quickly become very cumbersome to manage all of these nuances 🫠</p>
+<p>Our Universal API provides:</p>
 <ul class="simple">
-<li><p>A single, common interface for all models and providers</p></li>
-<li><p>One account, with one balance and one API key</p></li>
+<li><p>A single, common interface for all models and providers 🟢</p></li>
+<li><p>One account, with one balance and one API key 🔑</p></li>
 </ul>
-<p>You can interact with the API through a HTTP request from any programming language, through our own Unify Python package, or through the OpenAI Python package.</p>
-<section id="authentication">
-<h2>Authentication<a class="headerlink" href="#authentication" title="Link to this heading">#</a></h2>
-<p>You need an API key to query the API. <a class="reference external" href="https://console.unify.ai/login">Sign up for an account</a>, and get your API key from the <a class="reference external" href="https://console.unify.ai/">console</a>.</p>
-</section>
+<p>To get your universal API key, simply <a href="#id1"><span class="problematic" id="id2">`sign up&lt;https://console.unify.ai&gt;`_</span></a>!</p>
 <section id="querying-the-api">
 <h2>Querying the API<a class="headerlink" href="#querying-the-api" title="Link to this heading">#</a></h2>
-<p>There are three ways to query the API:</p>
+<p>You can interact with the API via:</p>
 <ul class="simple">
-<li><p>HTTP request</p></li>
-<li><p>Unify Python package</p></li>
-<li><p>OpenAI Python package</p></li>
+<li><p><a class="reference internal" href="#http-requests">HTTP Requests</a> from any programming language</p></li>
+<li><p>Our own <a class="reference internal" href="#unify-python-package">Unify Python Package</a></p></li>
+<li><p>The <a class="reference internal" href="#openai-python-package">OpenAI Python Package</a></p></li>
+<li><p>The <a class="reference internal" href="#openai-nodejs-package">OpenAI NodeJS Package</a></p></li>
 </ul>
-<section id="http-request">
-<h3>HTTP Request<a class="headerlink" href="#http-request" title="Link to this heading">#</a></h3>
-<p>Run the following command in a terminal (replacing <code class="code docutils literal notranslate"><span class="pre">$UNIFY_API_KEY</span></code> with your own).</p>
+<section id="http-requests">
+<h3>HTTP Requests<a class="headerlink" href="#http-requests" title="Link to this heading">#</a></h3>
+<p>Run the following command in a terminal (replacing <code class="code docutils literal notranslate"><span class="pre">$UNIFY_KEY</span></code> with your own).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="s1">&#39;POST&#39;</span> \
     <span class="s1">&#39;https://api.unify.ai/v0/chat/completions&#39;</span> \
-    <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Authorization: Bearer $UNIFY_API_KEY&#39;</span> \
+    <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Authorization: Bearer $UNIFY_KEY&#39;</span> \
     <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Content-Type: application/json&#39;</span> \
     <span class="o">-</span><span class="n">d</span> <span class="s1">&#39;{</span>
     <span class="s2">&quot;model&quot;</span><span class="p">:</span> <span class="s2">&quot;llama-3-8b-chat@fireworks-ai&quot;</span><span class="p">,</span>
@@ -414,7 +412,7 @@ In the request you can specify other common parameters, like
 <p>There is complete documentation in the <a class="reference external" href="https://github.com/unifyai/unify/blob/main/README.md">readme</a>.
 Sample inference</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;llama-3-8b-chat@fireworks-ai&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;$UNIFY_API_KEY&quot;</span><span class="p">)</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;llama-3-8b-chat@fireworks-ai&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;$UNIFY_KEY&quot;</span><span class="p">)</span>
 <span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;Say hi.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -540,9 +538,8 @@ Sample inference</p>
   </div>
   <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authentication">Authentication</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#querying-the-api">Querying the API</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#http-request">HTTP Request</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#http-requests">HTTP Requests</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#unify-python-package">Unify Python Package</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-python-package">OpenAI Python Package</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#openai-nodejs-package">OpenAI NodeJS Package</a></li>

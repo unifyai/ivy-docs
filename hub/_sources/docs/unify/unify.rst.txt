@@ -9,6 +9,5 @@
     unify.chat
     unify.clients
     unify.exceptions
-    unify.tests
     unify.utils
 

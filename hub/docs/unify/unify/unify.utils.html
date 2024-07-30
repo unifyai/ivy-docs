@@ -63,7 +63,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Connecting your stack" href="../../../console/connecting_stack.html" />
-    <link rel="prev" title="Tests" href="unify.tests.html" />
+    <link rel="prev" title="Exceptions" href="unify.exceptions.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -258,7 +258,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="unify.chat.html">Chat</a></li>
 <li class="toctree-l1"><a class="reference internal" href="unify.clients.html">Clients</a></li>
 <li class="toctree-l1"><a class="reference internal" href="unify.exceptions.html">Exceptions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="unify.tests.html">Tests</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Utils</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Console</span></p>
@@ -442,18 +441,18 @@ to the value in the <cite>UNIFY_KEY</cite> environment variable.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="unify.utils.list_endpoints">
-<span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">list_endpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.list_endpoints" title="Link to this definition">#</a></dt>
-<dd><p>Get a list of endpoints for a specific model.</p>
+<span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">list_endpoints</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">provider</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.list_endpoints" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of available endpoints, either in total or for a specific model or provider.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
 </dd>
 </dl>
 <dl class="simple">
-<dt>Args:</dt><dd><p>model (str): The name of the model.</p>
+<dt>Args:</dt><dd><p>model (str): If specified, returns the list of endpoints supporting this model.
+provider (str): If specified, returns the list of endpoints supporting this provider.</p>
 </dd>
-<dt>Returns:</dt><dd><p>List[str]: A list of endpoint names associated with the model if successful,
-otherwise an empty list.</p>
+<dt>Returns:</dt><dd><p>List[str]: A list of endpoint names if successful, otherwise an empty list.</p>
 </dd>
 <dt>Raises:</dt><dd><p>BadRequestError: If there was an HTTP error.
 ValueError: If there was an error parsing the JSON response.</p>
@@ -485,14 +484,16 @@ to the value in the <cite>UNIFY_KEY</cite> environment variable.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="unify.utils.list_models">
-<span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">list_models</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.list_models" title="Link to this definition">#</a></dt>
-<dd><p>Get a list of available models.</p>
+<span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">list_models</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">provider</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.list_models" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of available models, either in total or for a specific provider.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
 </dd>
 </dl>
 <dl class="simple">
+<dt>Args:</dt><dd><p>provider (str): If specified, returns the list of models supporting this provider.</p>
+</dd>
 <dt>Returns:</dt><dd><p>List[str]: A list of available model names if successful, otherwise an empty list.</p>
 </dd>
 <dt>Raises:</dt><dd><p>BadRequestError: If there was an HTTP error.
@@ -503,15 +504,15 @@ ValueError: If there was an error parsing the JSON response.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="unify.utils.list_providers">
-<span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">list_providers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.list_providers" title="Link to this definition">#</a></dt>
-<dd><p>Get a list of providers for a specific model.</p>
+<span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">list_providers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.list_providers" title="Link to this definition">#</a></dt>
+<dd><p>Get a list of available providers, either in total or for a specific model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">List</span></code>[<code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code>]</p>
 </dd>
 </dl>
 <dl class="simple">
-<dt>Args:</dt><dd><p>model (str): The name of the model.</p>
+<dt>Args:</dt><dd><p>model (str): If specified, returns the list of providers supporting this model.</p>
 </dd>
 <dt>Returns:</dt><dd><p>List[str]: A list of provider names associated with the model if successful,
 otherwise an empty list.</p>
@@ -580,12 +581,12 @@ to the value in the <cite>UNIFY_KEY</cite> environment variable.</p>
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="unify.tests.html"
+       href="unify.exceptions.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Tests</p>
+        <p class="prev-next-title">Exceptions</p>
       </div>
     </a>
     <a class="right-next"
@@ -695,7 +696,6 @@ document.write(`
 <li class="toctree-l1"><a class="reference internal" href="unify.chat.html">Chat</a></li>
 <li class="toctree-l1"><a class="reference internal" href="unify.clients.html">Clients</a></li>
 <li class="toctree-l1"><a class="reference internal" href="unify.exceptions.html">Exceptions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="unify.tests.html">Tests</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Utils</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Console</span></p>

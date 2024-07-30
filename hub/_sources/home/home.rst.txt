@@ -1,13 +1,15 @@
 Welcome to Unify!
 =================
 
-Unify is your centralized platform for LLM endpoints. If you’re using or planning to use an LLM in your application or service, Unify lets you:
+We're on a mission to unify and simplify the LLM landscape. Unify lets you:
 
-* **🚀 Route to the best endpoints**: Send each prompt to the endpoint(s) that will (a) return the best response, and (b) yield the best performance for a target metric of your choice, including high-throughput, low cost or low latency.
+* **🔑 Use any LLM from any Provider**: With a single interface, you can use all LLMs from all providers by simply changing one string.
+No need to manage several API keys or handle different input-output formats. Unify handles all of that for you!
 
-* **⚖️ Benchmark endpoint performance**: Objectively compare endpoints speed, latency and costs with our dynamic benchmarks to make informed decisions when selecting a model or provider.
+* **📊 Improve LLM Performance**: Add your own custom tests and evals, and benchmark your own prompts on all models and providers.
+Comparing quality, cost and speed, and iterate on your system prompt until all test cases pass, and you can deploy your app!
 
-* **🔑 Use any endpoint with a single key**: Access the latest LLMs through any endpoint provider with a single API Key to. Each model has a unfied API that enables seamless provider switching without needing to refactor your code.
+* **🔀 Route to the Best LLM**: Improve quality, cost and speed by routing to the perfect model and provider for each individual prompt.
 
 Getting Started
 ---------------

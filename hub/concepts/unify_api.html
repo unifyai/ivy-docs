@@ -335,7 +335,7 @@ When testing out different models and providers, it can quickly become very cumb
 <li><p>A single, common interface for all models and providers 🟢</p></li>
 <li><p>One account, with one balance and one API key 🔑</p></li>
 </ul>
-<p>To get your universal API key, simply <a href="#id1"><span class="problematic" id="id2">`sign up&lt;https://console.unify.ai&gt;`_</span></a>!</p>
+<p>To get your universal API key, simply <a class="reference external" href="https://console.unify.ai">sign up</a>!</p>
 <section id="querying-the-api">
 <h2>Querying the API<a class="headerlink" href="#querying-the-api" title="Link to this heading">#</a></h2>
 <p>You can interact with the API via:</p>
@@ -358,8 +358,46 @@ When testing out different models and providers, it can quickly become very cumb
     <span class="p">}</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
-<p>The <code class="code docutils literal notranslate"><span class="pre">model</span></code> field is used to specify both the model and the provider, in the format <code class="code docutils literal notranslate"><span class="pre">model&#64;provider</span></code>. You can find a list of models and providers either in our <a class="reference external" href="https://unify.ai/chat">chat</a> interface, or through our <a class="reference external" href="https://unify.ai/benchmarks">runtime benchmarks</a>.</p>
-<p>Requests can be made from any language, for example using Python:</p>
+<p>The <code class="code docutils literal notranslate"><span class="pre">model</span></code> field is used to specify both the model and the provider, in the format <code class="code docutils literal notranslate"><span class="pre">model&#64;provider</span></code>.</p>
+<p>You can find a list of all models, all providers and all endpoints (model + provider pairs) using the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="s1">&#39;GET&#39;</span> \
+  <span class="s1">&#39;https://api.unify.ai/v0/models&#39;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Authorization: Bearer $UNIFY_KEY&#39;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;accept: application/json&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="s1">&#39;GET&#39;</span> \
+  <span class="s1">&#39;https://api.unify.ai/v0/providers&#39;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Authorization: Bearer $UNIFY_KEY&#39;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;accept: application/json&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="s1">&#39;GET&#39;</span> \
+  <span class="s1">&#39;https://api.unify.ai/v0/endpoints&#39;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Authorization: Bearer $UNIFY_KEY&#39;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;accept: application/json&#39;</span>
+</pre></div>
+</div>
+<p>You can also pass models and providers as arguments to the above functions, to limit the returned list, like so:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="s1">&#39;GET&#39;</span> \
+  <span class="s1">&#39;https://api.unify.ai/v0/models?provider=&lt;some_provider&gt;&#39;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Authorization: Bearer $UNIFY_KEY&#39;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;accept: application/json&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="s1">&#39;GET&#39;</span> \
+  <span class="s1">&#39;https://api.unify.ai/v0/providers?model=&lt;some_model&gt;&#39;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Authorization: Bearer $UNIFY_KEY&#39;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;accept: application/json&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="s1">&#39;GET&#39;</span> \
+  <span class="s1">&#39;https://api.unify.ai/v0/endpoints?&lt;model or provider&gt;=&lt;some_model or some_provider&gt;&#39;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;Authorization: Bearer $UNIFY_KEY&#39;</span> \
+  <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;accept: application/json&#39;</span>
+</pre></div>
+</div>
+<p>Requests can easily be made from any language, for example using Python:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.unify.ai/v0/chat/completions&quot;</span>
@@ -408,18 +446,21 @@ In the request you can specify other common parameters, like
 </section>
 <section id="unify-python-package">
 <h3>Unify Python Package<a class="headerlink" href="#unify-python-package" title="Link to this heading">#</a></h3>
-<p>First, download our <a class="reference external" href="https://github.com/unifyai/unify">Python package</a> with <code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">unifyai</span></code>.</p>
-<p>There is complete documentation in the <a class="reference external" href="https://github.com/unifyai/unify/blob/main/README.md">readme</a>.
-Sample inference</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">unify</span> <span class="kn">import</span> <span class="n">Unify</span>
-<span class="n">client</span> <span class="o">=</span> <span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;llama-3-8b-chat@fireworks-ai&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;$UNIFY_KEY&quot;</span><span class="p">)</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;Say hi.&quot;</span><span class="p">)</span>
+<p>First, download our <a class="reference external" href="https://github.com/unifyai/unify">Python package</a> with <code class="code docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">unifyai</span></code>. You can then quickly get started like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unify</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">Unify</span><span class="p">(</span><span class="s2">&quot;llama-3-8b-chat@fireworks-ai&quot;</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;$UNIFY_KEY&quot;</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="s2">&quot;hello world!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>If you save your API key to the environment variables <code class="code docutils literal notranslate"><span class="pre">UNIFY_KEY</span></code>,
+then you don’t need to specify the <code class="code docutils literal notranslate"><span class="pre">api_key</span></code> argument in the example above.</p>
+<p>You can list the models, providers and endpoints using the functions <code class="code docutils literal notranslate"><span class="pre">unify.utils.list_models()</span></code>,
+<code class="code docutils literal notranslate"><span class="pre">unify.utils.list_providers()</span></code> and <code class="code docutils literal notranslate"><span class="pre">unify.utils.list_endpoints()</span></code></p>
 </section>
 <section id="openai-python-package">
 <h3>OpenAI Python Package<a class="headerlink" href="#openai-python-package" title="Link to this heading">#</a></h3>
-<p>The Unify API is designed to be compatible with the OpenAI standard, so if you have existing code that uses the OpenAI Python package, it’s straightforward to try out our API.</p>
+<p>The Unify API is designed to be compatible with the OpenAI standard, so if you have existing code that uses the OpenAI Python package,
+it’s straightforward to try out our API.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">(</span>
@@ -440,7 +481,7 @@ Sample inference</p>
 </section>
 <section id="openai-nodejs-package">
 <h3>OpenAI NodeJS Package<a class="headerlink" href="#openai-nodejs-package" title="Link to this heading">#</a></h3>
-<p>Likewise, if you have existing code that uses the OpenAI NodeJS package, it’s straightforward to try out our API.</p>
+<p>Likewise, if you have existing code that uses the OpenAI NodeJS package, it’s again very straightforward to try out our API.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">openai</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">OpenAI</span><span class="p">({</span>
 <span class="w">  </span><span class="nx">baseUrl</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://api.unify.ai/v0/&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nx">apiKey</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;YOUR_UNIFY_KEY&quot;</span>
@@ -460,7 +501,7 @@ Sample inference</p>
 <h2>Billing<a class="headerlink" href="#billing" title="Link to this heading">#</a></h2>
 <p>You only have to manage the balance and billing details for your Unify account, and we handle the spending with each provider behind the scenes.</p>
 <p>You can see your balance, top-up your balance, and set automatic refill on the <a class="reference external" href="https://console.unify.ai/billing">billing page</a>.</p>
-<p>You can get your current credit balance with a HTTP request:</p>
+<p>You can also get your current credit balance with a HTTP request:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">X</span> <span class="s1">&#39;GET&#39;</span> \
 <span class="s1">&#39;https://api.unify.ai/v0/get_credits&#39;</span> \
 <span class="o">-</span><span class="n">H</span> <span class="s1">&#39;accept: application/json&#39;</span> \
@@ -472,6 +513,11 @@ Sample inference</p>
 <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;your_user_id&quot;</span><span class="p">,</span>
 <span class="s2">&quot;credits&quot;</span><span class="p">:</span> <span class="mf">232.32</span>
 <span class="p">}</span>
+</pre></div>
+</div>
+<p>This is also supported in our Python client:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">unify</span>
+<span class="n">credits</span> <span class="o">=</span> <span class="n">unify</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">get_credits</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

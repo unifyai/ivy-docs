@@ -420,6 +420,26 @@ to the value in the <cite>UNIFY_KEY</cite> environment variable.</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="unify.utils.get_credits">
+<span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">get_credits</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.get_credits" title="Link to this definition">#</a></dt>
+<dd><p>Returns the credits remaining in the user account, in USD.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">float</span></code></p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Args:</dt><dd><p>api_key (str): If specified, unify API key to be used. Defaults
+to the value in the <cite>UNIFY_KEY</cite> environment variable.</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The credits remaining in USD.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If there was an HTTP error.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="unify.utils.list_datasets">
 <span class="sig-prename descclassname"><span class="pre">unify.utils.</span></span><span class="sig-name descname"><span class="pre">list_datasets</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unify.utils.list_datasets" title="Link to this definition">#</a></dt>
 <dd><p>Fetches a list of all uploaded datasets.</p>
@@ -620,6 +640,7 @@ to the value in the <cite>UNIFY_KEY</cite> environment variable.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.delete_evaluation"><code class="docutils literal notranslate"><span class="pre">delete_evaluation()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.download_dataset"><code class="docutils literal notranslate"><span class="pre">download_dataset()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.evaluate"><code class="docutils literal notranslate"><span class="pre">evaluate()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.get_credits"><code class="docutils literal notranslate"><span class="pre">get_credits()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.list_datasets"><code class="docutils literal notranslate"><span class="pre">list_datasets()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.list_endpoints"><code class="docutils literal notranslate"><span class="pre">list_endpoints()</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#unify.utils.list_evaluations"><code class="docutils literal notranslate"><span class="pre">list_evaluations()</span></code></a></li>

@@ -10,7 +10,7 @@ Our Universal API provides:
 - A single, common interface for all models and providers 🟢
 - One account, with one balance and one API key 🔑
 
-To get your universal API key, simply `sign up<https://console.unify.ai>`_!
+To get your universal API key, simply `sign up <https://console.unify.ai>`_!
 
 Querying the API
 ----------------
@@ -37,9 +37,55 @@ Run the following command in a terminal (replacing :code:`$UNIFY_KEY` with your 
             "messages": [{"role": "user", "content": "Say hello."}]
         }'
 
-The :code:`model` field is used to specify both the model and the provider, in the format :code:`model@provider`. You can find a list of models and providers either in our `chat <https://unify.ai/chat>`_ interface, or through our `runtime benchmarks <https://unify.ai/benchmarks>`_.
+The :code:`model` field is used to specify both the model and the provider, in the format :code:`model@provider`.
 
-Requests can be made from any language, for example using Python:
+You can find a list of all models, all providers and all endpoints (model + provider pairs) using the following commands:
+
+.. code-block::
+
+    curl -X 'GET' \
+      'https://api.unify.ai/v0/models' \
+      -H 'Authorization: Bearer $UNIFY_KEY' \
+      -H 'accept: application/json'
+
+.. code-block::
+
+    curl -X 'GET' \
+      'https://api.unify.ai/v0/providers' \
+      -H 'Authorization: Bearer $UNIFY_KEY' \
+      -H 'accept: application/json'
+
+.. code-block::
+
+    curl -X 'GET' \
+      'https://api.unify.ai/v0/endpoints' \
+      -H 'Authorization: Bearer $UNIFY_KEY' \
+      -H 'accept: application/json'
+
+You can also pass models and providers as arguments to the above functions, to limit the returned list, like so:
+
+.. code-block::
+
+    curl -X 'GET' \
+      'https://api.unify.ai/v0/models?provider=<some_provider>' \
+      -H 'Authorization: Bearer $UNIFY_KEY' \
+      -H 'accept: application/json'
+
+.. code-block::
+
+    curl -X 'GET' \
+      'https://api.unify.ai/v0/providers?model=<some_model>' \
+      -H 'Authorization: Bearer $UNIFY_KEY' \
+      -H 'accept: application/json'
+
+.. code-block::
+
+    curl -X 'GET' \
+      'https://api.unify.ai/v0/endpoints?<model or provider>=<some_model or some_provider>' \
+      -H 'Authorization: Bearer $UNIFY_KEY' \
+      -H 'accept: application/json'
+
+Requests can easily be made from any language, for example using Python:
 
 .. code-block:: python
 
@@ -93,20 +139,24 @@ You can specify all of the parameters that OpenAI supports, but they may not be 
 
 Unify Python Package
 ^^^^^^^^^^^^^^^^^^^^
-First, download our `Python package <https://github.com/unifyai/unify>`_ with :code:`pip install unifyai`.
-
-There is complete documentation in the `readme <https://github.com/unifyai/unify/blob/main/README.md>`_.
-Sample inference
+First, download our `Python package <https://github.com/unifyai/unify>`_ with :code:`pip install unifyai`. You can then quickly get started like so:
 
 .. code-block:: python
 
-    from unify import Unify
-    client = Unify("llama-3-8b-chat@fireworks-ai", api_key="$UNIFY_KEY")
-    response = client.generate("Say hi.")
+    import unify
+    client = unify.Unify("llama-3-8b-chat@fireworks-ai", api_key="$UNIFY_KEY")
+    response = client.generate("hello world!")
+
+If you save your API key to the environment variables :code:`UNIFY_KEY`,
+then you don't need to specify the :code:`api_key` argument in the example above.
+
+You can list the models, providers and endpoints using the functions :code:`unify.utils.list_models()`,
+:code:`unify.utils.list_providers()` and :code:`unify.utils.list_endpoints()`
 
 OpenAI Python Package
 ^^^^^^^^^^^^^^^^^^^^^
-The Unify API is designed to be compatible with the OpenAI standard, so if you have existing code that uses the OpenAI Python package, it's straightforward to try out our API.
+The Unify API is designed to be compatible with the OpenAI standard, so if you have existing code that uses the OpenAI Python package,
+it's straightforward to try out our API.
 
 .. code-block:: python
 
@@ -129,7 +179,7 @@ Remember that the :code:`model` field needs to contain a string of the form :cod
 
 OpenAI NodeJS Package
 ^^^^^^^^^^^^^^^^^^^^^
-Likewise, if you have existing code that uses the OpenAI NodeJS package, it's straightforward to try out our API.
+Likewise, if you have existing code that uses the OpenAI NodeJS package, it's again very straightforward to try out our API.
 
 .. code-block:: javascript
 
@@ -152,7 +202,7 @@ You only have to manage the balance and billing details for your Unify account, 
 
 You can see your balance, top-up your balance, and set automatic refill on the `billing page <https://console.unify.ai/billing>`_.
 
-You can get your current credit balance with a HTTP request:
+You can also get your current credit balance with a HTTP request:
 
 .. code-block::
 
@@ -170,8 +220,16 @@ which will return something like:
     "credits": 232.32
     }
 
+This is also supported in our Python client:
+
+.. code-block:: python
+
+    import unify
+    credits = unify.utils.get_credits()
+
 Advanced features
 -----------------
+
 Custom endpoints
 ^^^^^^^^^^^^^^^^^
 If you have a custom model which is deployed as an endpoint on (for example a fine-tuned model with OpenAI or Together AI) you can `add your own custom endpoint <https://console.unify.ai/endpoints>`_.

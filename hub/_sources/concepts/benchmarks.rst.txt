@@ -40,5 +40,3 @@ The x-axis can be set to represent :code:`cost`, :code:`time-to-first-token`, or
 How does it work?
 ^^^^^^^^^^^^^^^^^^
 Currently, we use gpt4o-as-a-judge (cf. https://arxiv.org/abs/2306.05685), to evaluate the quality of each model’s responses.
-
-

@@ -1,4 +1,0 @@
-OpenAPI Specification
-=====================
-
-Lorem ipsum

@@ -1,4 +1,0 @@
-Python Library
-==============
-
-Lorem ipsum

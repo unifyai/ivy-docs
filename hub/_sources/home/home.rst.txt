@@ -9,8 +9,8 @@ We're on a mission to unify and simplify the LLM landscape. Unify lets you:
 
 * **🔀 Route to the Best LLM**: Improve quality, cost and speed by routing to the perfect model and provider for each individual prompt.
 
-Getting Started
----------------
+Quick Start
+-----------
 
 It's easiest to get started using our Python client. Simply install the package:
 

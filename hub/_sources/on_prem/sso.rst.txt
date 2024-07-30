@@ -64,8 +64,3 @@ Steps to use on-prem SSO microservice.
                 "content": "Explain who Newton was and his entire theory of gravitation. Give a long detailed response please and explain all of his achievements"
             }],
         }'
-        
-
-
-
-

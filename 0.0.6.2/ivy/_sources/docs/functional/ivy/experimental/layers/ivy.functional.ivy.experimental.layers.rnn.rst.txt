@@ -1,8 +1,0 @@
-rnn
-===
-
-.. autofunction:: ivy.rnn
-
-.. autoskippablemethod:: ivy.Array.rnn
-
-.. autoskippablemethod:: ivy.Container.rnn

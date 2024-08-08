@@ -1,8 +1,0 @@
-conv1d
-======
-
-.. autofunction:: ivy.conv1d
-
-.. autoskippablemethod:: ivy.Array.conv1d
-
-.. autoskippablemethod:: ivy.Container.conv1d

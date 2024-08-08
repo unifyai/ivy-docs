@@ -1,8 +1,0 @@
-huber\_loss
-===========
-
-.. autofunction:: ivy.huber_loss
-
-.. autoskippablemethod:: ivy.Array.huber_loss
-
-.. autoskippablemethod:: ivy.Container.huber_loss

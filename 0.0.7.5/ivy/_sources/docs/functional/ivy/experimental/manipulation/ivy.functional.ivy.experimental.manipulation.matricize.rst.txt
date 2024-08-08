@@ -1,8 +1,0 @@
-matricize
-=========
-
-.. autofunction:: ivy.matricize
-
-.. autoskippablemethod:: ivy.Array.matricize
-
-.. autoskippablemethod:: ivy.Container.matricize

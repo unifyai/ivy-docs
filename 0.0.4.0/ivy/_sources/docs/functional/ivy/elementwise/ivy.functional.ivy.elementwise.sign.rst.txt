@@ -1,8 +1,0 @@
-sign
-====
-
-.. autofunction:: ivy.sign
-
-.. autoskippablemethod:: ivy.Array.sign
-
-.. autoskippablemethod:: ivy.Container.sign

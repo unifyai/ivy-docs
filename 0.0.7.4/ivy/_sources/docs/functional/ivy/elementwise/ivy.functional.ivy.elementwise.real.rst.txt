@@ -1,8 +1,0 @@
-real
-====
-
-.. autofunction:: ivy.real
-
-.. autoskippablemethod:: ivy.Array.real
-
-.. autoskippablemethod:: ivy.Container.real

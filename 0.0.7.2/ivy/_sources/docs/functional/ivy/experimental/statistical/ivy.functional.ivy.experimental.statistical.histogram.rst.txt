@@ -1,8 +1,0 @@
-histogram
-=========
-
-.. autofunction:: ivy.histogram
-
-.. autoskippablemethod:: ivy.Array.histogram
-
-.. autoskippablemethod:: ivy.Container.histogram

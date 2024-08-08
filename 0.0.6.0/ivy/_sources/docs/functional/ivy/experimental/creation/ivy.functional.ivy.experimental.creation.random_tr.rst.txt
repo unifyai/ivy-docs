@@ -1,8 +1,0 @@
-random\_tr
-==========
-
-.. autofunction:: ivy.random_tr
-
-.. autoskippablemethod:: ivy.Array.random_tr
-
-.. autoskippablemethod:: ivy.Container.random_tr

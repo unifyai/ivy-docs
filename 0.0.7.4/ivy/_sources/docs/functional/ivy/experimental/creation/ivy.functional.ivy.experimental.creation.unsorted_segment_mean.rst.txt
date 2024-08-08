@@ -1,8 +1,0 @@
-unsorted\_segment\_mean
-=======================
-
-.. autofunction:: ivy.unsorted_segment_mean
-
-.. autoskippablemethod:: ivy.Array.unsorted_segment_mean
-
-.. autoskippablemethod:: ivy.Container.unsorted_segment_mean

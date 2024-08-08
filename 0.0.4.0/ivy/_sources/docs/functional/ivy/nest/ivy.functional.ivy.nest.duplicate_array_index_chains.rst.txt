@@ -1,8 +1,0 @@
-duplicate\_array\_index\_chains
-===============================
-
-.. autofunction:: ivy.duplicate_array_index_chains
-
-.. autoskippablemethod:: ivy.Array.duplicate_array_index_chains
-
-.. autoskippablemethod:: ivy.Container.duplicate_array_index_chains

@@ -1,8 +1,0 @@
-split
-=====
-
-.. autofunction:: ivy.split
-
-.. autoskippablemethod:: ivy.Array.split
-
-.. autoskippablemethod:: ivy.Container.split

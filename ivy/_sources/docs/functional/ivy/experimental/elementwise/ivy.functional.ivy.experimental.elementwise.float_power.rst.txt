@@ -1,8 +1,0 @@
-float\_power
-============
-
-.. autofunction:: ivy.float_power
-
-.. autoskippablemethod:: ivy.Array.float_power
-
-.. autoskippablemethod:: ivy.Container.float_power

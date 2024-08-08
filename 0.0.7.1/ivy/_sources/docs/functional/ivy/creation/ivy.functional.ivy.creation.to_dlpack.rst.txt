@@ -1,8 +1,0 @@
-to\_dlpack
-==========
-
-.. autofunction:: ivy.to_dlpack
-
-.. autoskippablemethod:: ivy.Array.to_dlpack
-
-.. autoskippablemethod:: ivy.Container.to_dlpack

@@ -1,8 +1,0 @@
-stanh
-=====
-
-.. autofunction:: ivy.stanh
-
-.. autoskippablemethod:: ivy.Array.stanh
-
-.. autoskippablemethod:: ivy.Container.stanh

@@ -1,8 +1,0 @@
-rfft
-====
-
-.. autofunction:: ivy.rfft
-
-.. autoskippablemethod:: ivy.Array.rfft
-
-.. autoskippablemethod:: ivy.Container.rfft

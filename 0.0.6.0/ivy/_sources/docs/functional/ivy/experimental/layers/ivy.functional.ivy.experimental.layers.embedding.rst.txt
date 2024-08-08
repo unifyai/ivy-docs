@@ -1,8 +1,0 @@
-embedding
-=========
-
-.. autofunction:: ivy.embedding
-
-.. autoskippablemethod:: ivy.Array.embedding
-
-.. autoskippablemethod:: ivy.Container.embedding

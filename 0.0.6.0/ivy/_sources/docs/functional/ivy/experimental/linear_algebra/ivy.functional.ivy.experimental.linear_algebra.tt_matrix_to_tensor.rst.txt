@@ -1,8 +1,0 @@
-tt\_matrix\_to\_tensor
-======================
-
-.. autofunction:: ivy.tt_matrix_to_tensor
-
-.. autoskippablemethod:: ivy.Array.tt_matrix_to_tensor
-
-.. autoskippablemethod:: ivy.Container.tt_matrix_to_tensor

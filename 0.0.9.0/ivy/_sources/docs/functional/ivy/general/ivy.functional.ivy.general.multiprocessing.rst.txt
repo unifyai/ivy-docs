@@ -1,8 +1,0 @@
-multiprocessing
-===============
-
-.. autofunction:: ivy.multiprocessing
-
-.. autoskippablemethod:: ivy.Array.multiprocessing
-
-.. autoskippablemethod:: ivy.Container.multiprocessing

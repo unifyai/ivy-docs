@@ -1,8 +1,0 @@
-supports\_inplace\_updates
-==========================
-
-.. autofunction:: ivy.supports_inplace_updates
-
-.. autoskippablemethod:: ivy.Array.supports_inplace_updates
-
-.. autoskippablemethod:: ivy.Container.supports_inplace_updates

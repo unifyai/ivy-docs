@@ -1,8 +1,0 @@
-hsplit
-======
-
-.. autofunction:: ivy.hsplit
-
-.. autoskippablemethod:: ivy.Array.hsplit
-
-.. autoskippablemethod:: ivy.Container.hsplit

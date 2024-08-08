@@ -1,8 +1,0 @@
-scaled\_tanh
-============
-
-.. autofunction:: ivy.scaled_tanh
-
-.. autoskippablemethod:: ivy.Array.scaled_tanh
-
-.. autoskippablemethod:: ivy.Container.scaled_tanh

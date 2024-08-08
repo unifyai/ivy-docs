@@ -1,8 +1,0 @@
-default\_complex\_dtype
-=======================
-
-.. autofunction:: ivy.default_complex_dtype
-
-.. autoskippablemethod:: ivy.Array.default_complex_dtype
-
-.. autoskippablemethod:: ivy.Container.default_complex_dtype

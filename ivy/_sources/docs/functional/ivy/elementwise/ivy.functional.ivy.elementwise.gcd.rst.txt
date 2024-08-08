@@ -1,8 +1,0 @@
-gcd
-===
-
-.. autofunction:: ivy.gcd
-
-.. autoskippablemethod:: ivy.Array.gcd
-
-.. autoskippablemethod:: ivy.Container.gcd

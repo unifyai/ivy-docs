@@ -1,8 +1,0 @@
-fold
-====
-
-.. autofunction:: ivy.fold
-
-.. autoskippablemethod:: ivy.Array.fold
-
-.. autoskippablemethod:: ivy.Container.fold

@@ -1,8 +1,0 @@
-ndenumerate
-===========
-
-.. autofunction:: ivy.ndenumerate
-
-.. autoskippablemethod:: ivy.Array.ndenumerate
-
-.. autoskippablemethod:: ivy.Container.ndenumerate

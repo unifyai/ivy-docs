@@ -1,8 +1,0 @@
-logit
-=====
-
-.. autofunction:: ivy.logit
-
-.. autoskippablemethod:: ivy.Array.logit
-
-.. autoskippablemethod:: ivy.Container.logit

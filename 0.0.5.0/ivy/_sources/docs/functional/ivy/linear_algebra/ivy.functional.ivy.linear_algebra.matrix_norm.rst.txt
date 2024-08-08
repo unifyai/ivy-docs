@@ -1,8 +1,0 @@
-matrix\_norm
-============
-
-.. autofunction:: ivy.matrix_norm
-
-.. autoskippablemethod:: ivy.Array.matrix_norm
-
-.. autoskippablemethod:: ivy.Container.matrix_norm

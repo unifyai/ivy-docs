@@ -1,8 +1,0 @@
-take
-====
-
-.. autofunction:: ivy.take
-
-.. autoskippablemethod:: ivy.Array.take
-
-.. autoskippablemethod:: ivy.Container.take

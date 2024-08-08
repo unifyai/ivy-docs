@@ -1,8 +1,0 @@
-exp
-===
-
-.. autofunction:: ivy.exp
-
-.. autoskippablemethod:: ivy.Array.exp
-
-.. autoskippablemethod:: ivy.Container.exp

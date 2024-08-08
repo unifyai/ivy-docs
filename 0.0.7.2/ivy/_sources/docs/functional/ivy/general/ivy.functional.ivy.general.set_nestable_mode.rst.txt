@@ -1,8 +1,0 @@
-set\_nestable\_mode
-===================
-
-.. autofunction:: ivy.set_nestable_mode
-
-.. autoskippablemethod:: ivy.Array.set_nestable_mode
-
-.. autoskippablemethod:: ivy.Container.set_nestable_mode

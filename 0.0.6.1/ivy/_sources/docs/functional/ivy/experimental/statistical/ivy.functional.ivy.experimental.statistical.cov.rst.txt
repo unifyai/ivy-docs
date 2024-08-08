@@ -1,8 +1,0 @@
-cov
-===
-
-.. autofunction:: ivy.cov
-
-.. autoskippablemethod:: ivy.Array.cov
-
-.. autoskippablemethod:: ivy.Container.cov

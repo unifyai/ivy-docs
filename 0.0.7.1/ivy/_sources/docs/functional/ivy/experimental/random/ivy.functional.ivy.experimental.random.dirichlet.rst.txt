@@ -1,8 +1,0 @@
-dirichlet
-=========
-
-.. autofunction:: ivy.dirichlet
-
-.. autoskippablemethod:: ivy.Array.dirichlet
-
-.. autoskippablemethod:: ivy.Container.dirichlet

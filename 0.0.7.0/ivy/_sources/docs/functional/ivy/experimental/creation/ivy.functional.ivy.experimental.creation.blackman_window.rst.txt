@@ -1,8 +1,0 @@
-blackman\_window
-================
-
-.. autofunction:: ivy.blackman_window
-
-.. autoskippablemethod:: ivy.Array.blackman_window
-
-.. autoskippablemethod:: ivy.Container.blackman_window

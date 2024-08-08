@@ -1,8 +1,0 @@
-trim\_zeros
-===========
-
-.. autofunction:: ivy.trim_zeros
-
-.. autoskippablemethod:: ivy.Array.trim_zeros
-
-.. autoskippablemethod:: ivy.Container.trim_zeros

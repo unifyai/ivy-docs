@@ -1,8 +1,0 @@
-seed
-====
-
-.. autofunction:: ivy.seed
-
-.. autoskippablemethod:: ivy.Array.seed
-
-.. autoskippablemethod:: ivy.Container.seed

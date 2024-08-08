@@ -1,8 +1,0 @@
-strides
-=======
-
-.. autofunction:: ivy.strides
-
-.. autoskippablemethod:: ivy.Array.strides
-
-.. autoskippablemethod:: ivy.Container.strides

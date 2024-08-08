@@ -1,8 +1,0 @@
-isclose
-=======
-
-.. autofunction:: ivy.isclose
-
-.. autoskippablemethod:: ivy.Array.isclose
-
-.. autoskippablemethod:: ivy.Container.isclose

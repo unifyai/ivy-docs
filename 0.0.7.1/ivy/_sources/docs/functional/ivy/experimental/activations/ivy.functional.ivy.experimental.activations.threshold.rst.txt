@@ -1,8 +1,0 @@
-threshold
-=========
-
-.. autofunction:: ivy.threshold
-
-.. autoskippablemethod:: ivy.Array.threshold
-
-.. autoskippablemethod:: ivy.Container.threshold

@@ -1,8 +1,0 @@
-roi\_align
-==========
-
-.. autofunction:: ivy.roi_align
-
-.. autoskippablemethod:: ivy.Array.roi_align
-
-.. autoskippablemethod:: ivy.Container.roi_align

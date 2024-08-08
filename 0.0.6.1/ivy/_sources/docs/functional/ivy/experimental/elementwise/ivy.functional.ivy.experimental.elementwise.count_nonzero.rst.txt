@@ -1,8 +1,0 @@
-count\_nonzero
-==============
-
-.. autofunction:: ivy.count_nonzero
-
-.. autoskippablemethod:: ivy.Array.count_nonzero
-
-.. autoskippablemethod:: ivy.Container.count_nonzero

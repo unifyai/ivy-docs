@@ -1,8 +1,0 @@
-negative
-========
-
-.. autofunction:: ivy.negative
-
-.. autoskippablemethod:: ivy.Array.negative
-
-.. autoskippablemethod:: ivy.Container.negative

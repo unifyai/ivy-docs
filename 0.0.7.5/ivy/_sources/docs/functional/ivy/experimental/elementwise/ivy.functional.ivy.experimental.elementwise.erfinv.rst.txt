@@ -1,8 +1,0 @@
-erfinv
-======
-
-.. autofunction:: ivy.erfinv
-
-.. autoskippablemethod:: ivy.Array.erfinv
-
-.. autoskippablemethod:: ivy.Container.erfinv

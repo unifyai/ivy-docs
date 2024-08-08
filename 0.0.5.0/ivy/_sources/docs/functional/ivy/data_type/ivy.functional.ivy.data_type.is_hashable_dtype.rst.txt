@@ -1,8 +1,0 @@
-is\_hashable\_dtype
-===================
-
-.. autofunction:: ivy.is_hashable_dtype
-
-.. autoskippablemethod:: ivy.Array.is_hashable_dtype
-
-.. autoskippablemethod:: ivy.Container.is_hashable_dtype

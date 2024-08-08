@@ -1,8 +1,0 @@
-trapz
-=====
-
-.. autofunction:: ivy.trapz
-
-.. autoskippablemethod:: ivy.Array.trapz
-
-.. autoskippablemethod:: ivy.Container.trapz

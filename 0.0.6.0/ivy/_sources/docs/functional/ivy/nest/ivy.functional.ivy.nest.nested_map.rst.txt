@@ -1,8 +1,0 @@
-nested\_map
-===========
-
-.. autofunction:: ivy.nested_map
-
-.. autoskippablemethod:: ivy.Array.nested_map
-
-.. autoskippablemethod:: ivy.Container.nested_map

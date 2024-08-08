@@ -1,8 +1,0 @@
-beta
-====
-
-.. autofunction:: ivy.beta
-
-.. autoskippablemethod:: ivy.Array.beta
-
-.. autoskippablemethod:: ivy.Container.beta

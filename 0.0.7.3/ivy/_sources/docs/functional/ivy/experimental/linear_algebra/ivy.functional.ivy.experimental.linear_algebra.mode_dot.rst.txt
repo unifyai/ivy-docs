@@ -1,8 +1,0 @@
-mode\_dot
-=========
-
-.. autofunction:: ivy.mode_dot
-
-.. autoskippablemethod:: ivy.Array.mode_dot
-
-.. autoskippablemethod:: ivy.Container.mode_dot

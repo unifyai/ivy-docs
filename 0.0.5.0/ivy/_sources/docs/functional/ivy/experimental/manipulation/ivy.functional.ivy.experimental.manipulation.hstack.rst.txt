@@ -1,8 +1,0 @@
-hstack
-======
-
-.. autofunction:: ivy.hstack
-
-.. autoskippablemethod:: ivy.Array.hstack
-
-.. autoskippablemethod:: ivy.Container.hstack

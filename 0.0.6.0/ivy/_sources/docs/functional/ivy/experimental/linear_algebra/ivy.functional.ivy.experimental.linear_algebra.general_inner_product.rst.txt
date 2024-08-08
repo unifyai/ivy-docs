@@ -1,8 +1,0 @@
-general\_inner\_product
-=======================
-
-.. autofunction:: ivy.general_inner_product
-
-.. autoskippablemethod:: ivy.Array.general_inner_product
-
-.. autoskippablemethod:: ivy.Container.general_inner_product

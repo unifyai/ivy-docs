@@ -1,8 +1,0 @@
-constant\_pad
-=============
-
-.. autofunction:: ivy.constant_pad
-
-.. autoskippablemethod:: ivy.Array.constant_pad
-
-.. autoskippablemethod:: ivy.Container.constant_pad

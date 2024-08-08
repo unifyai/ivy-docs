@@ -1,8 +1,0 @@
-gather
-======
-
-.. autofunction:: ivy.gather
-
-.. autoskippablemethod:: ivy.Array.gather
-
-.. autoskippablemethod:: ivy.Container.gather

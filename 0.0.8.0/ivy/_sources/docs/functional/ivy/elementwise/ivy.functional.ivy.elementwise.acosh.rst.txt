@@ -1,8 +1,0 @@
-acosh
-=====
-
-.. autofunction:: ivy.acosh
-
-.. autoskippablemethod:: ivy.Array.acosh
-
-.. autoskippablemethod:: ivy.Container.acosh

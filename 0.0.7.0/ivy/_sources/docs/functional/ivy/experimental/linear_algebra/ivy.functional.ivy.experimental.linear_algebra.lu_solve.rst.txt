@@ -1,8 +1,0 @@
-lu\_solve
-=========
-
-.. autofunction:: ivy.lu_solve
-
-.. autoskippablemethod:: ivy.Array.lu_solve
-
-.. autoskippablemethod:: ivy.Container.lu_solve

@@ -1,8 +1,0 @@
-diag
-====
-
-.. autofunction:: ivy.diag
-
-.. autoskippablemethod:: ivy.Array.diag
-
-.. autoskippablemethod:: ivy.Container.diag

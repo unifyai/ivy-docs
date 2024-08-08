@@ -1,8 +1,0 @@
-tanh
-====
-
-.. autofunction:: ivy.tanh
-
-.. autoskippablemethod:: ivy.Array.tanh
-
-.. autoskippablemethod:: ivy.Container.tanh

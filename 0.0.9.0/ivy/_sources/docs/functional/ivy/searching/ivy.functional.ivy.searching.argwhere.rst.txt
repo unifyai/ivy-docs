@@ -1,8 +1,0 @@
-argwhere
-========
-
-.. autofunction:: ivy.argwhere
-
-.. autoskippablemethod:: ivy.Array.argwhere
-
-.. autoskippablemethod:: ivy.Container.argwhere

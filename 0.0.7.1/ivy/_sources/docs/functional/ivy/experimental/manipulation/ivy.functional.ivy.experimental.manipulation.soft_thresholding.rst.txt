@@ -1,8 +1,0 @@
-soft\_thresholding
-==================
-
-.. autofunction:: ivy.soft_thresholding
-
-.. autoskippablemethod:: ivy.Array.soft_thresholding
-
-.. autoskippablemethod:: ivy.Container.soft_thresholding

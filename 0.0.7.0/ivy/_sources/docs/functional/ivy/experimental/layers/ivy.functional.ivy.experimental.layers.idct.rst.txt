@@ -1,8 +1,0 @@
-idct
-====
-
-.. autofunction:: ivy.idct
-
-.. autoskippablemethod:: ivy.Array.idct
-
-.. autoskippablemethod:: ivy.Container.idct

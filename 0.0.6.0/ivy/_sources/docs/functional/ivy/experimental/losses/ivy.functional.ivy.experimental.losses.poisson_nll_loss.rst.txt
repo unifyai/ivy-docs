@@ -1,8 +1,0 @@
-poisson\_nll\_loss
-==================
-
-.. autofunction:: ivy.poisson_nll_loss
-
-.. autoskippablemethod:: ivy.Array.poisson_nll_loss
-
-.. autoskippablemethod:: ivy.Container.poisson_nll_loss

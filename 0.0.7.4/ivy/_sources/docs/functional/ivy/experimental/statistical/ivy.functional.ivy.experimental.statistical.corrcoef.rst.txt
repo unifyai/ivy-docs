@@ -1,8 +1,0 @@
-corrcoef
-========
-
-.. autofunction:: ivy.corrcoef
-
-.. autoskippablemethod:: ivy.Array.corrcoef
-
-.. autoskippablemethod:: ivy.Container.corrcoef

@@ -1,8 +1,0 @@
-dsplit
-======
-
-.. autofunction:: ivy.dsplit
-
-.. autoskippablemethod:: ivy.Array.dsplit
-
-.. autoskippablemethod:: ivy.Container.dsplit

@@ -1,8 +1,0 @@
-copysign
-========
-
-.. autofunction:: ivy.copysign
-
-.. autoskippablemethod:: ivy.Array.copysign
-
-.. autoskippablemethod:: ivy.Container.copysign

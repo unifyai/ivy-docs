@@ -1,8 +1,0 @@
-truncated\_svd
-==============
-
-.. autofunction:: ivy.truncated_svd
-
-.. autoskippablemethod:: ivy.Array.truncated_svd
-
-.. autoskippablemethod:: ivy.Container.truncated_svd

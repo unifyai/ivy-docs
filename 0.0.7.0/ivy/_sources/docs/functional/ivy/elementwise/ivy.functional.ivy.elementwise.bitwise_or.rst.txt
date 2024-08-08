@@ -1,8 +1,0 @@
-bitwise\_or
-===========
-
-.. autofunction:: ivy.bitwise_or
-
-.. autoskippablemethod:: ivy.Array.bitwise_or
-
-.. autoskippablemethod:: ivy.Container.bitwise_or

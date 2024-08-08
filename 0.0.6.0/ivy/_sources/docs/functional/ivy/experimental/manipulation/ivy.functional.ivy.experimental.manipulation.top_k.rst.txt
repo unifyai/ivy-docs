@@ -1,8 +1,0 @@
-top\_k
-======
-
-.. autofunction:: ivy.top_k
-
-.. autoskippablemethod:: ivy.Array.top_k
-
-.. autoskippablemethod:: ivy.Container.top_k

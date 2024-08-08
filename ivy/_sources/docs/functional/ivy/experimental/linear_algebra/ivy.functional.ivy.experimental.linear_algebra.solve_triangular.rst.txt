@@ -1,8 +1,0 @@
-solve\_triangular
-=================
-
-.. autofunction:: ivy.solve_triangular
-
-.. autoskippablemethod:: ivy.Array.solve_triangular
-
-.. autoskippablemethod:: ivy.Container.solve_triangular

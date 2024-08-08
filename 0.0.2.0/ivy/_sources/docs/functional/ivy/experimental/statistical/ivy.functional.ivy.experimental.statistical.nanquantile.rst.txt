@@ -1,8 +1,0 @@
-nanquantile
-===========
-
-.. autofunction:: ivy.nanquantile
-
-.. autoskippablemethod:: ivy.Array.nanquantile
-
-.. autoskippablemethod:: ivy.Container.nanquantile

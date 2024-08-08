@@ -1,8 +1,0 @@
-qr
-==
-
-.. autofunction:: ivy.qr
-
-.. autoskippablemethod:: ivy.Array.qr
-
-.. autoskippablemethod:: ivy.Container.qr

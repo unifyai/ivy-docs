@@ -1,8 +1,0 @@
-interp
-======
-
-.. autofunction:: ivy.interp
-
-.. autoskippablemethod:: ivy.Array.interp
-
-.. autoskippablemethod:: ivy.Container.interp

@@ -1,8 +1,0 @@
-lars\_update
-============
-
-.. autofunction:: ivy.lars_update
-
-.. autoskippablemethod:: ivy.Array.lars_update
-
-.. autoskippablemethod:: ivy.Container.lars_update

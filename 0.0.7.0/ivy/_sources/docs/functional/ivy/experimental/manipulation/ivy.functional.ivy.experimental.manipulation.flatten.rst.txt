@@ -1,8 +1,0 @@
-flatten
-=======
-
-.. autofunction:: ivy.flatten
-
-.. autoskippablemethod:: ivy.Array.flatten
-
-.. autoskippablemethod:: ivy.Container.flatten

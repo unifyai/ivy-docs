@@ -1,8 +1,0 @@
-softplus
-========
-
-.. autofunction:: ivy.softplus
-
-.. autoskippablemethod:: ivy.Array.softplus
-
-.. autoskippablemethod:: ivy.Container.softplus

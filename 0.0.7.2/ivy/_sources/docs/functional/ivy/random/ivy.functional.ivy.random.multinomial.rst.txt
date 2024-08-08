@@ -1,8 +1,0 @@
-multinomial
-===========
-
-.. autofunction:: ivy.multinomial
-
-.. autoskippablemethod:: ivy.Array.multinomial
-
-.. autoskippablemethod:: ivy.Container.multinomial

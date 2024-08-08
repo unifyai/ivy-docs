@@ -1,8 +1,0 @@
-hypot
-=====
-
-.. autofunction:: ivy.hypot
-
-.. autoskippablemethod:: ivy.Array.hypot
-
-.. autoskippablemethod:: ivy.Container.hypot

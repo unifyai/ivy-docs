@@ -1,8 +1,0 @@
-associative\_scan
-=================
-
-.. autofunction:: ivy.associative_scan
-
-.. autoskippablemethod:: ivy.Array.associative_scan
-
-.. autoskippablemethod:: ivy.Container.associative_scan

@@ -1,8 +1,0 @@
-adam\_step
-==========
-
-.. autofunction:: ivy.adam_step
-
-.. autoskippablemethod:: ivy.Array.adam_step
-
-.. autoskippablemethod:: ivy.Container.adam_step

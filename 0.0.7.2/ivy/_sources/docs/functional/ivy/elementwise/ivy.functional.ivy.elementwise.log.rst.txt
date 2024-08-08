@@ -1,8 +1,0 @@
-log
-===
-
-.. autofunction:: ivy.log
-
-.. autoskippablemethod:: ivy.Array.log
-
-.. autoskippablemethod:: ivy.Container.log

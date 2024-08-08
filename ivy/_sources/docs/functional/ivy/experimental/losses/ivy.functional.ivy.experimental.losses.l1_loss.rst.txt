@@ -1,8 +1,0 @@
-l1\_loss
-========
-
-.. autofunction:: ivy.l1_loss
-
-.. autoskippablemethod:: ivy.Array.l1_loss
-
-.. autoskippablemethod:: ivy.Container.l1_loss

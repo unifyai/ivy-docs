@@ -1,8 +1,0 @@
-zeta
-====
-
-.. autofunction:: ivy.zeta
-
-.. autoskippablemethod:: ivy.Array.zeta
-
-.. autoskippablemethod:: ivy.Container.zeta

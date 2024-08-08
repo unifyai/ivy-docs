@@ -1,8 +1,0 @@
-default
-=======
-
-.. autofunction:: ivy.default
-
-.. autoskippablemethod:: ivy.Array.default
-
-.. autoskippablemethod:: ivy.Container.default

@@ -1,8 +1,0 @@
-conj
-====
-
-.. autofunction:: ivy.conj
-
-.. autoskippablemethod:: ivy.Array.conj
-
-.. autoskippablemethod:: ivy.Container.conj

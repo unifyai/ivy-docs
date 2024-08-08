@@ -1,8 +1,0 @@
-as\_strided
-===========
-
-.. autofunction:: ivy.as_strided
-
-.. autoskippablemethod:: ivy.Array.as_strided
-
-.. autoskippablemethod:: ivy.Container.as_strided

@@ -1,8 +1,0 @@
-subtract
-========
-
-.. autofunction:: ivy.subtract
-
-.. autoskippablemethod:: ivy.Array.subtract
-
-.. autoskippablemethod:: ivy.Container.subtract

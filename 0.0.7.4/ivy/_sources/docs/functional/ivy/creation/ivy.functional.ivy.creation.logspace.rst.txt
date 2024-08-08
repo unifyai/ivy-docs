@@ -1,8 +1,0 @@
-logspace
-========
-
-.. autofunction:: ivy.logspace
-
-.. autoskippablemethod:: ivy.Array.logspace
-
-.. autoskippablemethod:: ivy.Container.logspace

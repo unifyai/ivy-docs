@@ -1,8 +1,0 @@
-as\_native\_dev
-===============
-
-.. autofunction:: ivy.as_native_dev
-
-.. autoskippablemethod:: ivy.Array.as_native_dev
-
-.. autoskippablemethod:: ivy.Container.as_native_dev

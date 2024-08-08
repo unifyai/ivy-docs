@@ -1,8 +1,0 @@
-isscalar
-========
-
-.. autofunction:: ivy.isscalar
-
-.. autoskippablemethod:: ivy.Array.isscalar
-
-.. autoskippablemethod:: ivy.Container.isscalar

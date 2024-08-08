@@ -1,8 +1,0 @@
-random\_cp
-==========
-
-.. autofunction:: ivy.random_cp
-
-.. autoskippablemethod:: ivy.Array.random_cp
-
-.. autoskippablemethod:: ivy.Container.random_cp

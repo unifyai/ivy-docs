@@ -1,8 +1,0 @@
-random\_tucker
-==============
-
-.. autofunction:: ivy.random_tucker
-
-.. autoskippablemethod:: ivy.Array.random_tucker
-
-.. autoskippablemethod:: ivy.Container.random_tucker

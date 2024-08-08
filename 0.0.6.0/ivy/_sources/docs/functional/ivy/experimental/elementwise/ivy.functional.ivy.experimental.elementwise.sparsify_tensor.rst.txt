@@ -1,8 +1,0 @@
-sparsify\_tensor
-================
-
-.. autofunction:: ivy.sparsify_tensor
-
-.. autoskippablemethod:: ivy.Array.sparsify_tensor
-
-.. autoskippablemethod:: ivy.Container.sparsify_tensor

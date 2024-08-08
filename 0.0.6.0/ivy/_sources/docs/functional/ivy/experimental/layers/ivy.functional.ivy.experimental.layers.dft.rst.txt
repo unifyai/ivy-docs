@@ -1,8 +1,0 @@
-dft
-===
-
-.. autofunction:: ivy.dft
-
-.. autoskippablemethod:: ivy.Array.dft
-
-.. autoskippablemethod:: ivy.Container.dft

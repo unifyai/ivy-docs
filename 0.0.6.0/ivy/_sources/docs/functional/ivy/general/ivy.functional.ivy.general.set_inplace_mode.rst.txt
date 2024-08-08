@@ -1,8 +1,0 @@
-set\_inplace\_mode
-==================
-
-.. autofunction:: ivy.set_inplace_mode
-
-.. autoskippablemethod:: ivy.Array.set_inplace_mode
-
-.. autoskippablemethod:: ivy.Container.set_inplace_mode

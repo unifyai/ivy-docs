@@ -1,8 +1,0 @@
-kl\_div
-=======
-
-.. autofunction:: ivy.kl_div
-
-.. autoskippablemethod:: ivy.Array.kl_div
-
-.. autoskippablemethod:: ivy.Container.kl_div

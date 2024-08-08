@@ -1,8 +1,0 @@
-argmax
-======
-
-.. autofunction:: ivy.argmax
-
-.. autoskippablemethod:: ivy.Array.argmax
-
-.. autoskippablemethod:: ivy.Container.argmax

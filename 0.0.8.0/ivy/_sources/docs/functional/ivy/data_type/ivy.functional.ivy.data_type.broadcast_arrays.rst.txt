@@ -1,8 +1,0 @@
-broadcast\_arrays
-=================
-
-.. autofunction:: ivy.broadcast_arrays
-
-.. autoskippablemethod:: ivy.Array.broadcast_arrays
-
-.. autoskippablemethod:: ivy.Container.broadcast_arrays

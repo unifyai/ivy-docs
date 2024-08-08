@@ -1,8 +1,0 @@
-cross
-=====
-
-.. autofunction:: ivy.cross
-
-.. autoskippablemethod:: ivy.Array.cross
-
-.. autoskippablemethod:: ivy.Container.cross

@@ -1,8 +1,0 @@
-khatri\_rao
-===========
-
-.. autofunction:: ivy.khatri_rao
-
-.. autoskippablemethod:: ivy.Array.khatri_rao
-
-.. autoskippablemethod:: ivy.Container.khatri_rao

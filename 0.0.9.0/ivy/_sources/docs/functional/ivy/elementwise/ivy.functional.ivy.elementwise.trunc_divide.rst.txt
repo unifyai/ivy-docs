@@ -1,8 +1,0 @@
-trunc\_divide
-=============
-
-.. autofunction:: ivy.trunc_divide
-
-.. autoskippablemethod:: ivy.Array.trunc_divide
-
-.. autoskippablemethod:: ivy.Container.trunc_divide

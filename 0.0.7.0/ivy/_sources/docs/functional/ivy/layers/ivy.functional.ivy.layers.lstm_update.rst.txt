@@ -1,8 +1,0 @@
-lstm\_update
-============
-
-.. autofunction:: ivy.lstm_update
-
-.. autoskippablemethod:: ivy.Array.lstm_update
-
-.. autoskippablemethod:: ivy.Container.lstm_update

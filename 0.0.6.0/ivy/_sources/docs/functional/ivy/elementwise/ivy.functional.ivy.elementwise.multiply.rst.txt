@@ -1,8 +1,0 @@
-multiply
-========
-
-.. autofunction:: ivy.multiply
-
-.. autoskippablemethod:: ivy.Array.multiply
-
-.. autoskippablemethod:: ivy.Container.multiply

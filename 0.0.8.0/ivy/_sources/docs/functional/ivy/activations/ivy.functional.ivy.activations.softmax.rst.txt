@@ -1,8 +1,0 @@
-softmax
-=======
-
-.. autofunction:: ivy.softmax
-
-.. autoskippablemethod:: ivy.Array.softmax
-
-.. autoskippablemethod:: ivy.Container.softmax

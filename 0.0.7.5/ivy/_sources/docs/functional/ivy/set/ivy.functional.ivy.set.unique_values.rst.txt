@@ -1,8 +1,0 @@
-unique\_values
-==============
-
-.. autofunction:: ivy.unique_values
-
-.. autoskippablemethod:: ivy.Array.unique_values
-
-.. autoskippablemethod:: ivy.Container.unique_values

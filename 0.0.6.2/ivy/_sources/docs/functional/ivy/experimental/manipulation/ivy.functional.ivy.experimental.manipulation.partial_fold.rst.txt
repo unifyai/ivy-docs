@@ -1,8 +1,0 @@
-partial\_fold
-=============
-
-.. autofunction:: ivy.partial_fold
-
-.. autoskippablemethod:: ivy.Array.partial_fold
-
-.. autoskippablemethod:: ivy.Container.partial_fold

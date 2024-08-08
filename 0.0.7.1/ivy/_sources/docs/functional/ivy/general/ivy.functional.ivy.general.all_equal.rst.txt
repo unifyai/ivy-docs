@@ -1,8 +1,0 @@
-all\_equal
-==========
-
-.. autofunction:: ivy.all_equal
-
-.. autoskippablemethod:: ivy.Array.all_equal
-
-.. autoskippablemethod:: ivy.Container.all_equal

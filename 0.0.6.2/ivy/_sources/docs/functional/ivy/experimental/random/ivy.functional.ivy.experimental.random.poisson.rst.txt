@@ -1,8 +1,0 @@
-poisson
-=======
-
-.. autofunction:: ivy.poisson
-
-.. autoskippablemethod:: ivy.Array.poisson
-
-.. autoskippablemethod:: ivy.Container.poisson

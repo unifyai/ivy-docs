@@ -1,8 +1,0 @@
-einops\_reduce
-==============
-
-.. autofunction:: ivy.einops_reduce
-
-.. autoskippablemethod:: ivy.Array.einops_reduce
-
-.. autoskippablemethod:: ivy.Container.einops_reduce

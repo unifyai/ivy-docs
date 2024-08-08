@@ -1,8 +1,0 @@
-unset\_precise\_mode
-====================
-
-.. autofunction:: ivy.unset_precise_mode
-
-.. autoskippablemethod:: ivy.Array.unset_precise_mode
-
-.. autoskippablemethod:: ivy.Container.unset_precise_mode

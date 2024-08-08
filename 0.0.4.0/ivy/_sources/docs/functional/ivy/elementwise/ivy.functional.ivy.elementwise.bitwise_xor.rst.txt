@@ -1,8 +1,0 @@
-bitwise\_xor
-============
-
-.. autofunction:: ivy.bitwise_xor
-
-.. autoskippablemethod:: ivy.Array.bitwise_xor
-
-.. autoskippablemethod:: ivy.Container.bitwise_xor

@@ -1,8 +1,0 @@
-tanhshrink
-==========
-
-.. autofunction:: ivy.tanhshrink
-
-.. autoskippablemethod:: ivy.Array.tanhshrink
-
-.. autoskippablemethod:: ivy.Container.tanhshrink

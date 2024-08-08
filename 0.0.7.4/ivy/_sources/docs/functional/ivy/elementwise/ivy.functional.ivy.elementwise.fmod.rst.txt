@@ -1,8 +1,0 @@
-fmod
-====
-
-.. autofunction:: ivy.fmod
-
-.. autoskippablemethod:: ivy.Array.fmod
-
-.. autoskippablemethod:: ivy.Container.fmod

@@ -1,8 +1,0 @@
-isnan
-=====
-
-.. autofunction:: ivy.isnan
-
-.. autoskippablemethod:: ivy.Array.isnan
-
-.. autoskippablemethod:: ivy.Container.isnan

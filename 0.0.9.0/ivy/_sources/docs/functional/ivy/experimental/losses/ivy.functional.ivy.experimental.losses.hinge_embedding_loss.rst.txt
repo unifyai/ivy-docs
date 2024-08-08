@@ -1,8 +1,0 @@
-hinge\_embedding\_loss
-======================
-
-.. autofunction:: ivy.hinge_embedding_loss
-
-.. autoskippablemethod:: ivy.Array.hinge_embedding_loss
-
-.. autoskippablemethod:: ivy.Container.hinge_embedding_loss

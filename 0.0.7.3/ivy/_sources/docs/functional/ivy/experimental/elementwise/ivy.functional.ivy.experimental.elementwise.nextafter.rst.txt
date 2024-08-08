@@ -1,8 +1,0 @@
-nextafter
-=========
-
-.. autofunction:: ivy.nextafter
-
-.. autoskippablemethod:: ivy.Array.nextafter
-
-.. autoskippablemethod:: ivy.Container.nextafter

@@ -1,8 +1,0 @@
-sliding\_window
-===============
-
-.. autofunction:: ivy.sliding_window
-
-.. autoskippablemethod:: ivy.Array.sliding_window
-
-.. autoskippablemethod:: ivy.Container.sliding_window

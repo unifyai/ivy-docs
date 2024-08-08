@@ -1,8 +1,0 @@
-check\_scalar
-=============
-
-.. autofunction:: ivy.check_scalar
-
-.. autoskippablemethod:: ivy.Array.check_scalar
-
-.. autoskippablemethod:: ivy.Container.check_scalar

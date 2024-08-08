@@ -1,8 +1,0 @@
-trilu
-=====
-
-.. autofunction:: ivy.trilu
-
-.. autoskippablemethod:: ivy.Array.trilu
-
-.. autoskippablemethod:: ivy.Container.trilu

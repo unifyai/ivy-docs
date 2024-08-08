@@ -1,8 +1,0 @@
-unflatten
-=========
-
-.. autofunction:: ivy.unflatten
-
-.. autoskippablemethod:: ivy.Array.unflatten
-
-.. autoskippablemethod:: ivy.Container.unflatten

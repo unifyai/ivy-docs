@@ -1,8 +1,0 @@
-logaddexp
-=========
-
-.. autofunction:: ivy.logaddexp
-
-.. autoskippablemethod:: ivy.Array.logaddexp
-
-.. autoskippablemethod:: ivy.Container.logaddexp

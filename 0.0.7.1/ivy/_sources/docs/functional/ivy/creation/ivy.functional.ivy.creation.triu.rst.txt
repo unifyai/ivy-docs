@@ -1,8 +1,0 @@
-triu
-====
-
-.. autofunction:: ivy.triu
-
-.. autoskippablemethod:: ivy.Array.triu
-
-.. autoskippablemethod:: ivy.Container.triu

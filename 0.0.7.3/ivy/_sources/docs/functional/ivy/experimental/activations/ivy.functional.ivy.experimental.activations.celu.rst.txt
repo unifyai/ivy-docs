@@ -1,8 +1,0 @@
-celu
-====
-
-.. autofunction:: ivy.celu
-
-.. autoskippablemethod:: ivy.Array.celu
-
-.. autoskippablemethod:: ivy.Container.celu
